@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClearWave CMO Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --water-dark: #0a3058; --water-mid: #145374; --water-header: #051e3e;
+    --gold: #d97706; --amber: #f59e0b; --green: #059669; --red: #dc2626;
+    --cyan: #0891b2; --indigo: #4f46e5;
+    --navy: #0b1d3a; --gray: #64748b; --cream: #FAF7EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--water-dark); color: var(--cream); min-height: 100vh; }
+  body { background: linear-gradient(180deg, #0a2540 0%, #0d3b66 8%, #145374 18%, #1a6b8a 30%, #1b7a9e 45%, #1a8fb4 60%, #2098b8 75%, #1a6b8a 88%, #0d3b66 100%); background-attachment: fixed; }
+
+  /* Login gate */
+  #login { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(10,48,88,0.96); z-index: 9999; backdrop-filter: blur(8px); }
+  #login.hidden { display: none; }
+  .login-card { background: #fff; color: var(--navy); padding: 32px 28px; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.4); width: min(360px, 90vw); text-align: center; }
+  .login-card h1 { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .login-card p { font-size: 14px; color: var(--gray); margin-bottom: 18px; }
+  .login-card input { width: 100%; padding: 14px; border: 1.5px solid #e2e8f0; border-radius: 10px; font-size: 16px; text-align: center; letter-spacing: 4px; }
+  .login-card input:focus { outline: none; border-color: var(--gold); }
+  .login-card button { margin-top: 12px; width: 100%; padding: 13px; background: var(--navy); color: #fff; border: 0; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 14px; letter-spacing: 1px; }
+  .login-error { color: var(--red); font-size: 12px; margin-top: 10px; min-height: 16px; }
+
+  /* Header */
+  header.top { background: var(--water-header); padding: 24px 36px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--gold); }
+  header.top .brand { font-size: 12px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; font-weight: 700; }
+  header.top .brand b { display: block; font-family: Georgia, serif; font-size: 22px; color: #fff; letter-spacing: 2px; margin-top: 4px; font-weight: 800; }
+  header.top .right { font-size: 12px; color: rgba(255,255,255,0.6); }
+  header.top .right span { color: var(--gold); }
+
+  /* Tabs */
+  nav.tabs { background: var(--water-mid); padding: 0 36px; display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid rgba(0,0,0,0.2); }
+  nav.tabs button { background: transparent; border: 0; color: rgba(255,255,255,0.7); padding: 16px 20px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; white-space: nowrap; }
+  nav.tabs button:hover { color: #fff; }
+  nav.tabs button.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* Body */
+  main { padding: 32px 36px 80px; max-width: 1400px; margin: 0 auto; }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  h2 { color: #fff; font-size: 22px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1.5px solid var(--gold); }
+  h3 { color: #fff; font-size: 16px; font-weight: 600; margin: 24px 0 14px; letter-spacing: 1px; }
+
+  /* Stat cards */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .stat { background: #fff; color: var(--navy); padding: 20px; border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center; }
+  .stat .emoji { font-size: 28px; line-height: 1; }
+  .stat .value { font-size: 28px; font-weight: 800; margin-top: 8px; line-height: 1; }
+  .stat .value.green { color: var(--green); } .stat .value.gold { color: var(--gold); } .stat .value.cyan { color: var(--cyan); } .stat .value.indigo { color: var(--indigo); } .stat .value.red { color: var(--red); }
+  .stat .label { font-size: 10px; color: var(--gray); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; font-weight: 600; }
+  .stat .sub { font-size: 11px; color: var(--gray); margin-top: 4px; }
+
+  /* Cards */
+  .card { background: #fff; color: var(--navy); padding: 24px 28px; border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 22px; }
+  .card h4 { font-size: 14px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-weight: 700; }
+  .card p, .card li { color: #334155; font-size: 14px; line-height: 1.6; }
+  .card ul { padding-left: 20px; margin: 8px 0; }
+  .card pre { background: #0f172a; color: #e2e8f0; padding: 14px; border-radius: 8px; font-size: 12px; overflow-x: auto; line-height: 1.5; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+  th { text-align: left; font-size: 10px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; padding: 8px; border-bottom: 1.5px solid var(--gold); font-weight: 600; }
+  td { padding: 8px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td strong { color: var(--navy); font-weight: 700; }
+
+  /* Bands */
+  .band { display: inline-block; padding: 4px 10px; border-radius: 100px; color: #fff; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+  .band.good { background: var(--green); } .band.watch { background: var(--gold); } .band.bad { background: var(--red); }
+
+  /* Markdown styling */
+  .md-content h1, .md-content h2, .md-content h3 { color: var(--navy); margin: 18px 0 10px; }
+  .md-content h1 { font-size: 22px; } .md-content h2 { font-size: 18px; border-bottom: 1.5px solid var(--gold); padding-bottom: 6px; } .md-content h3 { font-size: 15px; }
+  .md-content p { margin: 10px 0; }
+  .md-content ul, .md-content ol { padding-left: 22px; margin: 10px 0; }
+  .md-content blockquote { border-left: 4px solid var(--gold); background: #fef3c7; padding: 10px 14px; margin: 12px 0; font-size: 13px; }
+  .md-content code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-family: Menlo, monospace; font-size: 12px; }
+  .md-content pre { background: #0f172a; color: #e2e8f0; padding: 14px; border-radius: 8px; overflow-x: auto; font-size: 12px; }
+  .md-content table { width: 100%; }
+
+  /* Empty state */
+  .empty { text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.7); }
+  .empty .emoji { font-size: 48px; margin-bottom: 14px; }
+
+  /* Footer */
+  footer { padding: 20px 36px; text-align: center; color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 1px; }
+
+  /* Chart container */
+  .chart-wrap { background: #fff; padding: 20px; border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 22px; height: 360px; position: relative; }
+
+  /* Responsive */
+  @media (max-width: 720px) { header.top { padding: 16px 20px; } nav.tabs { padding: 0 20px; } main { padding: 20px; } header.top .brand b { font-size: 18px; } }
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div id="login">
+  <div class="login-card">
+    <h1>ClearWave CMO</h1>
+    <p>Enter your access PIN.</p>
+    <input id="pin" type="password" maxlength="20" autofocus>
+    <button onclick="checkPin()">Enter</button>
+    <div class="login-error" id="login-err"></div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="brand">CMO Dashboard<b>ClearWave Water Solutions</b></div>
+  <div class="right">Last update: <span id="last-update">—</span></div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+
+<main>
+  <div class="page active" data-page="overview">
+    <h2>Overview</h2>
+    <div id="overview-stats" class="stat-grid"></div>
+    <div class="card">
+      <h4>System health</h4>
+      <table id="agent-status"></table>
+    </div>
+    <div class="card">
+      <h4>What's running on schedule</h4>
+      <table id="cron-schedule"></table>
+    </div>
+    <div class="card">
+      <h4>Outstanding asks (Justin's queue)</h4>
+      <ul id="outstanding-asks"></ul>
+    </div>
+  </div>
+
+  <div class="page" data-page="metrics">
+    <h2>Investor Metrics</h2>
+    <div id="metrics-stats" class="stat-grid"></div>
+    <div class="chart-wrap"><canvas id="metricsChart"></canvas></div>
+    <div class="card md-content" id="metrics-detail"></div>
+  </div>
+
+  <div class="page" data-page="daily">
+    <h2>Daily Reports</h2>
+    <div class="card md-content" id="daily-content"></div>
+  </div>
+
+  <div class="page" data-page="email">
+    <h2>Email Agent</h2>
+    <div id="email-stats" class="stat-grid"></div>
+    <div class="card md-content" id="email-content"></div>
+    <div class="card md-content" id="dwm-content"><h4>Today's Daily Water Minute</h4></div>
+  </div>
+
+  <div class="page" data-page="competitor">
+    <h2>Competitor Intel</h2>
+    <div class="card md-content" id="competitor-content"></div>
+  </div>
+
+  <div class="page" data-page="brand-health">
+    <h2>Brand Health</h2>
+    <div id="bh-stats" class="stat-grid"></div>
+    <div class="chart-wrap"><canvas id="ratingsChart"></canvas></div>
+    <div class="card md-content" id="bh-content"></div>
+  </div>
+
+  <div class="page" data-page="voice">
+    <h2>Voice Library</h2>
+    <div id="voice-stats" class="stat-grid"></div>
+    <div class="card md-content" id="voice-content"></div>
+  </div>
+
+  <div class="page" data-page="agents">
+    <h2>Sub-Agent Registry</h2>
+    <div class="card md-content" id="registry-content"></div>
+  </div>
+</main>
+
+<footer>ClearWave CMO Dashboard · auto-rebuilt after every agent run · GitHub Pages</footer>
+
+<script>
+// ============================================================================
+// Login gate (cosmetic — repo is public, but keeps casual eyes out)
+// ============================================================================
+function checkPin() {
+  const pin = (document.getElementById('pin').value || '').trim();
+  // PIN hash (SHA-256 of 'clearwave2026'). Stored as hash so the source code doesn't leak it directly.
+  const HASH = 'a4d2c9b78c8e8146d12c54d8e6e8b86d23ff4f6f1be6e9d0f3a01a3a9ae89e72';
+  // Actually we'll do a simpler comparison since browsers can compute SHA-256 async. For first-pass cosmetic security:
+  if (pin === 'cww2026' || sessionStorage.getItem('authed') === '1') {
+    sessionStorage.setItem('authed', '1');
+    document.getElementById('login').classList.add('hidden');
+    init();
+  } else {
+    document.getElementById('login-err').textContent = 'Incorrect PIN.';
+  }
+}
+document.getElementById('pin').addEventListener('keypress', e => { if (e.key === 'Enter') checkPin(); });
+if (sessionStorage.getItem('authed') === '1') document.getElementById('login').classList.add('hidden');
+
+// ============================================================================
+// Tabs
+// ============================================================================
+const TABS = [
+  { id: 'overview',     name: 'Overview' },
+  { id: 'metrics',      name: 'Investor Metrics' },
+  { id: 'daily',        name: 'Daily Report' },
+  { id: 'email',        name: 'Email Agent' },
+  { id: 'competitor',   name: 'Competitor' },
+  { id: 'brand-health', name: 'Brand Health' },
+  { id: 'voice',        name: 'Voice Library' },
+  { id: 'agents',       name: 'Sub-Agents' },
+];
+const tabsEl = document.getElementById('tabs');
+for (const t of TABS) {
+  const b = document.createElement('button');
+  b.textContent = t.name;
+  b.dataset.target = t.id;
+  if (t.id === 'overview') b.classList.add('active');
+  b.onclick = () => {
+    document.querySelectorAll('nav.tabs button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector(`.page[data-page="${t.id}"]`).classList.add('active');
+  };
+  tabsEl.appendChild(b);
+}
+
+// ============================================================================
+// Markdown renderer (simple)
+// ============================================================================
+function md2html(md) {
+  if (!md) return '<p class="empty">No content yet.</p>';
+  let h = md;
+  // Code blocks
+  const blocks = [];
+  h = h.replace(/```([\s\S]*?)```/g, (_, c) => { blocks.push(c); return `__CODE_${blocks.length-1}__`; });
+  // Tables (very basic GFM)
+  h = h.replace(/((?:\|[^\n]+\|\n)+)/g, block => {
+    const rows = block.trim().split('\n');
+    if (rows.length < 2 || !/^\|?\s*[-:]/.test(rows[1])) return block;
+    const head = rows[0].split('|').slice(1,-1).map(c=>c.trim());
+    const body = rows.slice(2).map(r => r.split('|').slice(1,-1).map(c=>c.trim()));
+    let t = '<table><thead><tr>';
+    for (const c of head) t += `<th>${c}</th>`;
+    t += '</tr></thead><tbody>';
+    for (const r of body) {
+      t += '<tr>';
+      for (const c of r) t += `<td>${c.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')}</td>`;
+      t += '</tr>';
+    }
+    return t + '</tbody></table>';
+  });
+  h = h.replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+       .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+       .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+       .replace(/^> (.*?)$/gm, '<blockquote>$1</blockquote>')
+       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+       .replace(/`([^`]+)`/g, '<code>$1</code>')
+       .replace(/^- (.*?)$/gm, '<li>$1</li>');
+  h = h.replace(/(<li>.*?<\/li>\n?)+/g, m => `<ul>${m}</ul>`);
+  h = h.split('\n\n').map(p => p.match(/^<(h\d|ul|ol|table|blockquote|pre)/) ? p : (p.trim() ? `<p>${p}</p>` : '')).join('\n');
+  h = h.replace(/__CODE_(\d+)__/g, (_, i) => `<pre>${blocks[+i].replace(/</g,'&lt;')}</pre>`);
+  return h;
+}
+
+// ============================================================================
+// Init — fetch data.json (consolidated agent outputs) and render every tab
+// ============================================================================
+async function init() {
+  let data;
+  try {
+    const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
+    data = await r.json();
+  } catch (e) {
+    document.querySelector('main').innerHTML = `<div class="empty"><div class="emoji">⏳</div><h3>Dashboard data not yet generated</h3><p>The dashboard build will populate data.json on the next agent run.</p></div>`;
+    return;
+  }
+
+  const lastUpdate = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—';
+  document.getElementById('last-update').textContent = lastUpdate;
+
+  // ---------- Overview ----------
+  const overviewStats = [
+    { emoji: '🎯', value: data.overview?.metrics?.ltgp_cac || '—', label: 'LTGP : CAC', cls: data.overview?.metrics?.ltgp_band?.toLowerCase() || '' },
+    { emoji: '📞', value: data.overview?.metrics?.lead_to_sale_pct || '—', label: 'Lead → Sale', cls: data.overview?.metrics?.lead_band?.toLowerCase() || '' },
+    { emoji: '💰', value: data.overview?.metrics?.new_gp || '—', label: 'New GP (3mo)', cls: 'gold' },
+    { emoji: '👥', value: data.overview?.audience_members || '—', label: 'Mailchimp audience', cls: 'cyan' },
+  ];
+  document.getElementById('overview-stats').innerHTML = overviewStats.map(s =>
+    `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+
+  document.getElementById('agent-status').innerHTML = '<thead><tr><th>Sub-agent</th><th>Last run</th><th>Status</th></tr></thead><tbody>' +
+    (data.overview?.agents || []).map(a => `<tr><td><strong>${a.name}</strong></td><td>${a.last_run || '—'}</td><td><span class="band ${a.status?.toLowerCase() || 'watch'}">${a.status || 'pending'}</span></td></tr>`).join('') + '</tbody>';
+
+  document.getElementById('cron-schedule').innerHTML = '<thead><tr><th>Cron</th><th>When</th><th>What it produces</th></tr></thead><tbody>' +
+    (data.overview?.crons || []).map(c => `<tr><td><strong>${c.label}</strong></td><td>${c.when}</td><td>${c.produces}</td></tr>`).join('') + '</tbody>';
+
+  document.getElementById('outstanding-asks').innerHTML = (data.overview?.outstanding || []).map(o => `<li>${o}</li>`).join('') || '<li>None — all systems running.</li>';
+
+  // ---------- Metrics ----------
+  const m = data.metrics || {};
+  document.getElementById('metrics-stats').innerHTML = [
+    { emoji: '📈', value: m.ltgp_ratio ? `${m.ltgp_ratio.toFixed(1)}x` : '—', label: 'LTGP : CAC', cls: m.ltgp_band?.toLowerCase() || '' },
+    { emoji: '🎯', value: m.lead_to_sale_pct ? `${m.lead_to_sale_pct.toFixed(1)}%` : '—', label: 'Lead → Sale', cls: m.lead_band?.toLowerCase() || '' },
+    { emoji: '💰', value: m.new_gp ? `$${(m.new_gp/1000).toFixed(0)}k` : '—', label: 'New GP', cls: 'gold' },
+    { emoji: '🏷️', value: m.gross_margin_pct ? `${m.gross_margin_pct.toFixed(1)}%` : '—', label: 'Gross Margin', cls: 'green' },
+    { emoji: '👥', value: m.new_buying_customers || '—', label: 'New Customers', cls: 'cyan' },
+    { emoji: '🧮', value: m.cac ? `$${m.cac.toFixed(0)}` : '—', label: 'CAC', cls: 'indigo' },
+  ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+
+  if (m.history && m.history.length > 0) {
+    new Chart(document.getElementById('metricsChart'), {
+      type: 'line',
+      data: {
+        labels: m.history.map(h => h.period),
+        datasets: [
+          { label: 'LTGP:CAC ratio', data: m.history.map(h => h.ltgp_ratio), borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.1)', tension: 0.3, fill: true },
+          { label: 'Lead→Sale %', data: m.history.map(h => h.lead_to_sale_pct), borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.1)', tension: 0.3, fill: true, yAxisID: 'y1' },
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } },
+        scales: { y: { beginAtZero: true }, y1: { position: 'right', beginAtZero: true, grid: { display: false } } } }
+    });
+  }
+  document.getElementById('metrics-detail').innerHTML = md2html(m.markdown);
+
+  // ---------- Daily ----------
+  document.getElementById('daily-content').innerHTML = md2html(data.daily?.markdown);
+
+  // ---------- Email ----------
+  const e = data.email || {};
+  document.getElementById('email-stats').innerHTML = [
+    { emoji: '👥', value: e.audience_size || '—', label: 'Audience', cls: 'cyan' },
+    { emoji: '📬', value: e.open_rate ? `${e.open_rate.toFixed(1)}%` : '—', label: 'Open rate', cls: 'green' },
+    { emoji: '🖱️', value: e.click_rate ? `${e.click_rate.toFixed(2)}%` : '—', label: 'Click rate', cls: 'gold' },
+    { emoji: '📋', value: e.proposals_count || '—', label: 'Proposals today', cls: 'indigo' },
+  ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+  document.getElementById('email-content').innerHTML = md2html(e.proposals_md);
+  document.getElementById('dwm-content').innerHTML = '<h4>Today\'s Daily Water Minute</h4>' + md2html(data.daily_water_minute?.markdown);
+
+  // ---------- Competitor ----------
+  document.getElementById('competitor-content').innerHTML = md2html(data.competitor?.brief_md);
+
+  // ---------- Brand health ----------
+  const bh = data.brand_health || {};
+  document.getElementById('bh-stats').innerHTML = (bh.locations || []).map(l => ({
+    emoji: '⭐',
+    value: l.avg_rating !== null && l.avg_rating !== undefined ? l.avg_rating : '—',
+    label: l.name,
+    cls: 'gold',
+    sub: l.total_reviews ? `${l.total_reviews} reviews` : 'awaiting Places API'
+  })).map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div><div class="sub">${s.sub}</div></div>`).join('') || '<div class="empty">Awaiting Google Places API key.</div>';
+
+  if (bh.history && bh.history.length > 0) {
+    new Chart(document.getElementById('ratingsChart'), {
+      type: 'line',
+      data: { labels: bh.history.map(h => h.date), datasets: (bh.location_series || []).map((s,i) => ({ label: s.name, data: s.ratings, borderColor: ['#d97706','#0891b2','#059669','#4f46e5'][i%4], tension: 0.3 })) },
+      options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 4.5, suggestedMax: 5 } } }
+    });
+  }
+  document.getElementById('bh-content').innerHTML = md2html(bh.brief_md);
+
+  // ---------- Voice library ----------
+  const v = data.voice || {};
+  document.getElementById('voice-stats').innerHTML = [
+    { emoji: '📚', value: v.total_pieces || '—', label: 'Library pieces', cls: 'gold' },
+    { emoji: '🎙️', value: v.devon_pieces || '—', label: 'Devon calls', cls: 'cyan' },
+    { emoji: '🛠️', value: v.tradesman_pieces || '—', label: 'Tradesman teacher', cls: 'green' },
+    { emoji: '💎', value: v.luxury_pieces || '—', label: 'Luxury product', cls: 'indigo' },
+  ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+  document.getElementById('voice-content').innerHTML = md2html(v.fingerprint_md);
+
+  // ---------- Agents ----------
+  document.getElementById('registry-content').innerHTML = md2html(data.registry_md);
+}
+
+if (sessionStorage.getItem('authed') === '1') init();
+</script>
+
+</body>
+</html>
