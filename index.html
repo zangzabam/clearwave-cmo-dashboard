@@ -174,6 +174,67 @@
     <div class="card md-content" id="voice-content"></div>
   </div>
 
+  <div class="page" data-page="content-studio">
+    <h2>Content Studio · Waterboy Machine</h2>
+    <div id="cd-stats" class="stat-grid"></div>
+    <div class="chart-wrap"><canvas id="followerChart"></canvas></div>
+
+    <div class="card">
+      <h4>This week's anchor</h4>
+      <div id="cd-week" style="font-size:14px;"></div>
+    </div>
+
+    <div class="card">
+      <h4>Pending approval queue</h4>
+      <div id="cd-queue"></div>
+    </div>
+
+    <div class="card">
+      <h4>Hook tracker · 70/20/10 system</h4>
+      <p style="margin-bottom:10px;font-size:13px;color:#64748b;">Each cell = one hook. Greener = more views. Click any cell for the full hook + CTA.</p>
+      <div id="cd-hooks-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:6px;"></div>
+    </div>
+
+    <div class="card md-content" id="cd-monday-brief">
+      <h4>Latest Monday shoot brief</h4>
+    </div>
+    <div class="card md-content" id="cd-thursday-brief">
+      <h4>Latest Thursday B-roll brief</h4>
+    </div>
+    <div class="card md-content" id="cd-scorecard">
+      <h4>Latest Friday scorecard</h4>
+    </div>
+  </div>
+
+  <div class="page" data-page="trend-watch">
+    <h2>Trend Watch</h2>
+    <div class="card md-content" id="trend-content"></div>
+  </div>
+
+  <div class="page" data-page="creative-studio">
+    <h2>Creative Studio · Ad Concepts</h2>
+    <div class="card md-content" id="creative-content"></div>
+  </div>
+
+  <div class="page" data-page="funnel">
+    <h2>Funnel Diagnostics</h2>
+    <div id="funnel-stats" class="stat-grid"></div>
+    <div class="card md-content" id="funnel-content"></div>
+  </div>
+
+  <div class="page" data-page="opportunities">
+    <h2>Opportunity Scout</h2>
+    <div class="card md-content" id="opp-content"></div>
+  </div>
+
+  <div class="page" data-page="board">
+    <h2>Board Comms + Agency Scorecard</h2>
+    <h3>Latest board update</h3>
+    <div class="card md-content" id="board-content"></div>
+    <h3>Matyx agency scorecard</h3>
+    <div class="card md-content" id="agency-content"></div>
+  </div>
+
   <div class="page" data-page="agents">
     <h2>Sub-Agent Registry</h2>
     <div class="card md-content" id="registry-content"></div>
@@ -206,14 +267,20 @@ if (sessionStorage.getItem('authed') === '1') document.getElementById('login').c
 // Tabs
 // ============================================================================
 const TABS = [
-  { id: 'overview',     name: 'Overview' },
-  { id: 'metrics',      name: 'Investor Metrics' },
-  { id: 'daily',        name: 'Daily Report' },
-  { id: 'email',        name: 'Email Agent' },
-  { id: 'competitor',   name: 'Competitor' },
-  { id: 'brand-health', name: 'Brand Health' },
-  { id: 'voice',        name: 'Voice Library' },
-  { id: 'agents',       name: 'Sub-Agents' },
+  { id: 'overview',        name: 'Overview' },
+  { id: 'content-studio',  name: '🎬 Content Studio' },
+  { id: 'metrics',         name: 'Investor Metrics' },
+  { id: 'daily',           name: 'Daily Report' },
+  { id: 'email',           name: 'Email Agent' },
+  { id: 'trend-watch',     name: 'Trend Watch' },
+  { id: 'creative-studio', name: 'Creative Studio' },
+  { id: 'competitor',      name: 'Competitor' },
+  { id: 'funnel',          name: 'Funnel' },
+  { id: 'opportunities',   name: 'Opportunities' },
+  { id: 'brand-health',    name: 'Brand Health' },
+  { id: 'board',           name: 'Board + Agency' },
+  { id: 'voice',           name: 'Voice Library' },
+  { id: 'agents',          name: 'Sub-Agents' },
 ];
 const tabsEl = document.getElementById('tabs');
 for (const t of TABS) {
@@ -374,6 +441,117 @@ async function init() {
     { emoji: '💎', value: v.luxury_pieces || '—', label: 'Luxury product', cls: 'indigo' },
   ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
   document.getElementById('voice-content').innerHTML = md2html(v.fingerprint_md);
+
+  // ---------- Content Studio ----------
+  const cd = data.content_director || {};
+  const week = cd.current_week || {};
+  const totalGoal = cd.goal || 500000;
+  const startCount = cd.starting || 7900;
+
+  // Stat cards: this week, hooks count, packages awaiting, viral candidates
+  document.getElementById('cd-stats').innerHTML = [
+    { emoji: '📅', value: week.week ? `Wk ${week.week}` : '—', label: 'This Week', cls: 'cyan' },
+    { emoji: '📦', value: cd.packages_count_total ?? '—', label: 'Packages Built', cls: 'green' },
+    { emoji: '⏳', value: cd.packages_awaiting_approval ?? '—', label: 'Awaiting Approval', cls: 'gold' },
+    { emoji: '🔥', value: cd.packages_viral_candidates ?? '—', label: 'Viral Candidates', cls: 'red' },
+    { emoji: '🎯', value: totalGoal.toLocaleString(), label: '500K Goal · Dec 31', cls: 'indigo' },
+    { emoji: '🚀', value: startCount.toLocaleString(), label: 'Starting Followers', cls: 'cyan' },
+  ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+
+  // Follower goal trajectory chart
+  const fcEl = document.getElementById('followerChart');
+  if (fcEl && (cd.milestone_targets || []).length > 0) {
+    new Chart(fcEl, {
+      type: 'line',
+      data: {
+        labels: cd.milestone_targets.map(t => t.checkpoint),
+        datasets: [
+          { label: 'TikTok',    data: cd.milestone_targets.map(t => t.tiktok),    borderColor: '#dc2626', backgroundColor: 'rgba(220,38,38,0.1)',  tension: 0.3, fill: true },
+          { label: 'Instagram', data: cd.milestone_targets.map(t => t.instagram), borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.1)',  tension: 0.3, fill: false },
+          { label: 'YouTube',   data: cd.milestone_targets.map(t => t.youtube),   borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.1)',  tension: 0.3, fill: false },
+          { label: 'X/Twitter', data: cd.milestone_targets.map(t => t.x_twitter), borderColor: '#059669', backgroundColor: 'rgba(5,150,105,0.1)',  tension: 0.3, fill: false },
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, title: { display: true, text: 'Follower Trajectory · 500K by Dec 31, 2026', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Followers' }, ticks: { callback: v => (v/1000) + 'K' } } } }
+    });
+  }
+
+  // This week's anchor
+  if (week.theme) {
+    document.getElementById('cd-week').innerHTML = `
+      <p><strong>Week ${week.week}</strong> (${week.dates})</p>
+      <p><strong>Theme:</strong> ${week.theme}</p>
+      <p><strong>YouTube long-form:</strong> "${week.youtube}"</p>
+      <p><strong>Default CTA:</strong> Comment "${week.cta_keyword}"</p>
+      <p><strong>Phase:</strong> ${week.phase}</p>
+      ${week.notes ? '<p style="background:#fef3c7;border-left:4px solid #d97706;padding:8px 12px;margin-top:10px;"><em>Note:</em> ' + week.notes + '</p>' : ''}
+    `;
+  } else {
+    document.getElementById('cd-week').innerHTML = '<p class="empty">Calendar not yet loaded.</p>';
+  }
+
+  // Pending approval queue
+  const pkgs = (cd.packages_recent || []).filter(p => p.status === 'awaiting_approval');
+  if (pkgs.length > 0) {
+    document.getElementById('cd-queue').innerHTML = pkgs.map(p => `
+      <div style="border-left:4px solid #d97706;background:#fef3c7;padding:10px 14px;margin-bottom:8px;">
+        <strong style="color:#0b1d3a;">${p.inferred_topic || p.filename}</strong>
+        <div style="font-size:12px;color:#64748b;margin-top:4px;">
+          ${p.media_type} · ${p.content_pillar} · reach band: <strong>${p.estimated_reach_band}</strong>
+        </div>
+        <div style="font-size:12px;color:#334155;margin-top:6px;">📱 TikTok ${p.tiktok?.best_post_time_et || '?'} · IG ${p.instagram_reels?.best_post_time_et || '?'} · YT ${p.youtube_shorts?.best_post_time_et || '?'} · X ${p.x_twitter?.best_post_time_et || '?'}</div>
+        <div style="font-size:11px;color:#dc2626;margin-top:6px;">Reply to approval email with <code>approve ${p.package_id}</code></div>
+      </div>`).join('');
+  } else {
+    document.getElementById('cd-queue').innerHTML = '<p class="empty">Inbox empty — drop new clips/photos into the Content Studio Drive folder and they\'ll show up here within 24 hours.</p>';
+  }
+
+  // Hook tracker grid
+  const hooks = cd.hooks || [];
+  const colorForHook = h => {
+    if (h.best_views > 1000000) return '#dc2626';      // viral red
+    if (h.best_views > 100000)  return '#d97706';       // gold
+    if (h.best_views > 10000)   return '#f59e0b';       // amber
+    if (h.best_views > 1000)    return '#059669';       // green
+    if (h.shoots > 0)           return '#0891b2';       // cyan (shot but low)
+    return '#cbd5e1';                                    // gray (untested)
+  };
+  document.getElementById('cd-hooks-grid').innerHTML = hooks.map(h => `
+    <div title="[${h.id}] ${h.hook}\nCTA: ${h.cta}\nPillar: ${h.pillar}\nShoots: ${h.shoots} · Best views: ${h.best_views?.toLocaleString() || 0}${h.notes ? '\n' + h.notes : ''}"
+         style="aspect-ratio:1;background:${colorForHook(h)};border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700;cursor:help;">
+      ${h.id}
+    </div>`).join('');
+
+  // Briefs + scorecard
+  document.getElementById('cd-monday-brief').innerHTML = '<h4>Latest Monday shoot brief</h4>' + md2html(cd.shoot_brief_monday_md);
+  document.getElementById('cd-thursday-brief').innerHTML = '<h4>Latest Thursday B-roll brief</h4>' + md2html(cd.shoot_brief_thursday_md);
+  document.getElementById('cd-scorecard').innerHTML = '<h4>Latest Friday scorecard</h4>' + md2html(cd.scorecard_md);
+
+  // ---------- Trend Watch ----------
+  document.getElementById('trend-content').innerHTML = md2html(data.trend_watch?.brief_md);
+
+  // ---------- Creative Studio ----------
+  document.getElementById('creative-content').innerHTML = md2html(data.creative_studio?.concepts_md);
+
+  // ---------- Funnel Diagnostics ----------
+  const fd = data.funnel_diagnostics || {};
+  if (fd.funnel?.stages) {
+    document.getElementById('funnel-stats').innerHTML = fd.funnel.stages.slice(0, 4).map(s => ({
+      emoji: '🔻', value: s.count.toLocaleString(), label: s.stage, cls: 'cyan'
+    })).map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+  } else {
+    document.getElementById('funnel-stats').innerHTML = '';
+  }
+  document.getElementById('funnel-content').innerHTML = md2html(fd.brief_md);
+
+  // ---------- Opportunity Scout ----------
+  document.getElementById('opp-content').innerHTML = md2html(data.opportunity_scout?.brief_md);
+
+  // ---------- Board + Agency ----------
+  document.getElementById('board-content').innerHTML = md2html(data.board_comms?.update_md);
+  document.getElementById('agency-content').innerHTML = md2html(data.agency_scorecard?.scorecard_md);
 
   // ---------- Agents ----------
   document.getElementById('registry-content').innerHTML = md2html(data.registry_md);

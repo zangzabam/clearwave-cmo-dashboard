@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T10:01:11.697Z",
+  "generated_at": "2026-05-01T10:30:08.660Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.6x",
@@ -39,6 +39,41 @@
         "name": "Brand Health",
         "last_run": "2026-05-01",
         "status": "Good"
+      },
+      {
+        "name": "Content Director",
+        "last_run": "—",
+        "status": "Watch"
+      },
+      {
+        "name": "Trend Watch",
+        "last_run": "2026-05-01",
+        "status": "Good"
+      },
+      {
+        "name": "Creative Studio",
+        "last_run": "—",
+        "status": "Watch"
+      },
+      {
+        "name": "Funnel Diagnostics",
+        "last_run": "—",
+        "status": "Watch"
+      },
+      {
+        "name": "Opportunity Scout",
+        "last_run": "—",
+        "status": "Watch"
+      },
+      {
+        "name": "Board Comms",
+        "last_run": "—",
+        "status": "Watch"
+      },
+      {
+        "name": "Agency Scorecard",
+        "last_run": "—",
+        "status": "Watch"
       }
     ],
     "crons": [
@@ -48,19 +83,69 @@
         "produces": "Daily report email + Email Agent + Daily Water Minute draft"
       },
       {
+        "label": "content_director.shoot.mon",
+        "when": "Sundays 7:00 PM ET",
+        "produces": "Monday shoot brief — 9 hooks + scripts + props + time budget"
+      },
+      {
+        "label": "content_director.drive",
+        "when": "Daily 8:00 AM ET",
+        "produces": "Drive folder scan + multi-platform packages + approval queue email"
+      },
+      {
+        "label": "content_director.shoot.thu",
+        "when": "Wednesdays 7:00 PM ET",
+        "produces": "Thursday B-roll brief — 5 voiceovers + shot list"
+      },
+      {
+        "label": "content_director.scorecard",
+        "when": "Fridays 5:00 PM ET",
+        "produces": "Friday scorecard — auto-fills weekly check-in"
+      },
+      {
+        "label": "trend_watch",
+        "when": "Tue + Fri 6:30 AM ET",
+        "produces": "Trending patterns + 5 experimental hook ideas"
+      },
+      {
+        "label": "creative_studio",
+        "when": "Mondays 7:00 AM ET",
+        "produces": "6 ad concepts (3 Meta + 3 Google) for Matyx hand-off"
+      },
+      {
         "label": "competitor_intel",
         "when": "Tuesdays 7:00 AM ET",
-        "produces": "Weekly 9-competitor brief"
+        "produces": "Weekly 8-competitor brief"
       },
       {
         "label": "brand_health",
         "when": "Tuesdays 8:00 AM ET",
-        "produces": "4-location Google Maps snapshot + cross-location asks (needs Places API key)"
+        "produces": "4-location Google Maps snapshot"
+      },
+      {
+        "label": "funnel_diagnostics",
+        "when": "Mondays 8:00 AM ET",
+        "produces": "Jobber funnel: leakiest stage + 3 ranked fixes"
+      },
+      {
+        "label": "opportunity_scout",
+        "when": "Thursdays 9:00 AM ET",
+        "produces": "3 ranked plays: geo / partnership / service line / M&A"
       },
       {
         "label": "metrics.monthly",
         "when": "1st of month 7:00 AM ET",
         "produces": "Investor metrics MD + auto-PDF on quarter starts"
+      },
+      {
+        "label": "board_comms",
+        "when": "1st of month 9:00 AM ET",
+        "produces": "Board-ready monthly update + investor PDF on quarters"
+      },
+      {
+        "label": "agency_scorecard",
+        "when": "1st of month 11:00 AM ET",
+        "produces": "Matyx scored across 6 dimensions with renew/replace rec"
       },
       {
         "label": "metrics.annual",
@@ -144,5 +229,584 @@
     "sales_pieces": 54,
     "fingerprint_md": "```\n{\n  \"refreshed_at\": \"2026-04-29T03:45:00.000Z\",\n  \"pieces_analyzed\": 60,\n  \"library_maturity\": \"seeded\",\n  \"product_name_remap_authority\": \"memory/reference/product_name_remap.md — FORBIDDEN names in customer-facing copy: FerroMax, NitraMax, SorbMax, OxiMax, Reionator Pro, H2O Protector/Shield/Sidekick, etc. Use new luxury names: CLEARWAVE FERRO/POSEIDON/AERO/PURA/ELARA/CASCADE (well water) and CLEARWAVE CREST/MERIDIAN/SOVEREIGN/PINNACLE (city water 4-tier).\",\n  \"registers\": {\n    \"luxury_product\": {\n      \"use_for\": [\n        \"paid ads\",\n        \"email lead nurture\",\n        \"SEO blog\",\n        \"organic social product\",\n        \"tank labels\",\n        \"brochures\",\n        \"website product pages\"\n      ],\n      \"tone\": \"Refined, minimal, quiet confidence. Says less, means more. Educates without selling. Parallel structure, periodic single-sentence paragraphs, triadic closes. Near-zero contractions.\",\n      \"do_use_approved_brand_words\": [\n        \"engineered\",\n        \"precision\",\n        \"pure\",\n        \"purity\",\n        \"curated\",\n        \"exceptional\",\n        \"distinguished\",\n        \"crafted\",\n        \"refined\",\n        \"elevated\",\n        \"uncompromising\",\n        \"collection\"\n      ],\n      \"do_not_use_brand_forbidden_words\": [\n        \"cheap\",\n        \"affordable\",\n        \"budget\",\n        \"elite\",\n        \"premium\",\n        \"deluxe\",\n        \"best\",\n        \"#1\",\n        \"top-rated\",\n        \"deal\",\n        \"discount\",\n        \"sale\",\n        \"basic\",\n        \"standard\",\n        \"entry\",\n        \"filter (standalone)\",\n        \"cutting-edge\",\n        \"state-of-the-art\"\n      ],\n      \"tone_examples\": [\n        \"USE: 'Engineered for purity' NOT 'The BEST system EVER'\",\n        \"USE: 'Multi-stage advanced filtration' NOT 'KDF-55 GAC carbon bed'\",\n        \"USE: 'Your family deserves exceptional water' NOT 'Hey, want clean water?'\"\n      ],\n      \"examples_in_library\": \"5 pieces — brand manifesto (01), City Water Collection tier ladder (02), PINNACLE top-of-line (03), Collection-deliberately-small philosophy (04), Lifetime Warranty Promise (05). Strong canonical anchors. Aggregate avg sentence length 11.5, contractions ~0/100 words, first-person ratio ~0.04. Triadic closes confirmed as signature ('Pure water. Pure life.', 'Curated. Crafted. Uncompromising.', 'Your water. Your home. Our promise.', 'Precision, engineered. Purity, guaranteed.'). Reframe pattern 'We do not sell X. We deliver Y.' is signature.\"\n    },\n    \"killing_bad_water_sales\": {\n      \"use_for\": [\n        \"sales scripts\",\n        \"objection handling\",\n        \"internal team comms\",\n        \"recruiting\",\n        \"behind-scenes social\",\n        \"rep training\"\n      ],\n      \"tone\": \"Bold, aggressive, military / savage cadence. 'We mean business.' Drill-instructor confidence with mentor warmth. Heavy imperatives, numbered frameworks, ALL-CAPS emphasis on identity words.\",\n      \"do_use_approved\": [\n        \"premium water filtration company\",\n        \"cutting-edge tech and service\",\n        \"best-in-class units\",\n        \"white-glove premium\",\n        \"#1 ranked\",\n        \"industry-leading\",\n        \"savage\",\n        \"winners win\",\n        \"deal-maker\"\n      ],\n      \"signature_phrases_observed_in_corpus\": [\n        \"Winners Win. Winners go hard. Winners don't quit.\",\n        \"Savages eat glass and smile\",\n        \"Deal Makers Make Shit Happen\",\n        \"Just. Do. More.\",\n        \"Just Win.\",\n        \"Stay Savage\",\n        \"Closed mouths don't get fed\",\n        \"If you can find it, I'll beat it\",\n        \"We are NOT a discount firm. We are prestigious.\",\n        \"FOLLOW THE FUCKING SCRIPT — no one is above the script\",\n        \"Either the clients close you, or you close them\",\n        \"BAMFAM — Book A Meeting From A Meeting\",\n        \"Get into the angry boat\",\n        \"It takes 5 magical moments to replace 1 bad moment\",\n        \"We have your back for life\"\n      ],\n      \"examples_in_library\": \"37 pieces — Sales Warrior Playbook chunks (welcome to war, how to\n```"
   },
-  "registry_md": "# ClearWave CMO — Sub-Agent Registry\n\n**Single source of truth for every agent that runs.** Every sub-agent must register here before it ships. Each entry: what it does · when it runs · what it produces · what it costs.\n\nLast updated: 2026-04-30\n\n---\n\n## LIVE — running on schedule\n\n| ID | Sub-agent | Cadence | Produces | Status |\n|---|---|---|---|---|\n| 00 | **Orchestrator** (`agents/00-orchestrator/`) | Daily 6:00 AM ET | `daily_report_<date>.md` + Hi-Fi 2 email to Justin | ✅ live |\n| 01 | **Voice Library** (`agents/01-voice-library/`) | On every output (sync) | Voice fingerprint scoring, signature-phrase enforcement | ✅ live |\n| 02 | **Paid Ads — Budget Optimizer** (`agents/02-paid-ads/`) | Daily, in orchestrator | Pause/scale proposals (Meta CSV mode active; Google Ads pending creds) | 🟡 partial |\n| 04 | **Email Sub-Agent** (`agents/04-email/`) | Daily, in orchestrator | 1-2 campaign proposals/day in Justin's voice (annual service, referrals, lapsed quotes, RO replacement) | ✅ live |\n| 04a | **Daily Water Minute** (`scripts/daily_value_email.ts`) | Daily, in orchestrator | 1 educational email draft (~250 words, never repeats within 60 days) | ✅ live (drafts only — Justin reviews before send wires up) |\n| 12 | **Investor Metrics** (`scripts/investor_metrics_report.ts`) | Monthly 1st @ 7:00 AM ET (+ quarterly auto-PDF) | LTGP:CAC, Lead-to-Sale, New-GP-vs-Plan in Hi-Fi 2 PDF | ✅ live |\n\n---\n\n## NEW — building / scheduled to build\n\n| ID | Sub-agent | Cadence | Produces | Status |\n|---|---|---|---|---|\n| 03 | **SEO Local** (`agents/03-seo-local/`) | Weekly Mon @ 7:00 AM ET | GSC organic trend + keyword ranks + content gaps | 🟡 awaits GSC OAuth |\n| 05 | **Organic Social** (`agents/05-organic-social/`) | Weekly Mon @ 8:00 AM ET | Content calendar + hooks + manual-post checklist | 🟡 stub only |\n| 06 | **Competitor Intel** (`agents/06-competitor-intel/`) | Weekly Tue @ 7:00 AM ET | Competitor brief — pricing, ads, content, reviews trend (browser-driven) | 🚧 building |\n| 07 | **Trend Watch** (`agents/07-trend-watch/`) | Weekly Wed @ 7:00 AM ET | Industry news, search-volume shifts, regulatory changes | 🚧 building |\n| 08 | **Creative Studio** (`agents/08-creative-studio/`) | On-demand + weekly Thu refresh | Ad copy variants, video briefs, landing-page concepts | 🚧 building |\n| 09 | **Content Engine** (`agents/09-content-engine/`) | Weekly Fri @ 7:00 AM ET | Blog post drafts, PR angles, social hook library | 🚧 building |\n| 10 | **Funnel Diagnostics** (`agents/10-funnel-diagnostics/`) | Monthly 5th @ 7:00 AM ET | Where leads leak, conversion-rate breakdown, A/B test queue | 🚧 building |\n| 11 | **Opportunity Scout** (`agents/11-opportunity-scout/`) | Monthly 10th @ 7:00 AM ET | New geos, partnerships, channel tests, product-gap candidates | 🚧 building |\n| 13 | **Brand Health / Reviews** (`agents/13-brand-health/`) | Weekly Thu @ 8:00 AM ET | Review sentiment + secondary-Google-locations review-push (browser-driven Maps scrape since ReviewHarvest doesn't expose CSV) | 🚧 building |\n| 14 | **Board Comms** (`agents/14-board-comms/`) | Monthly 1st @ 9:00 AM ET (executive summary), Quarterly 1st (investor PDF — already part of Investor Metrics) | One-page exec summary in Hi-Fi 2 PDF | 🚧 building |\n| 15 | **Agency Scorecard** (`agents/15-agency-scorecard/`) | Monthly 15th @ 7:00 AM ET | Matyx deliverables vs invoice; recommend keep/renegotiate/replace | 🚧 building |\n| 16 | **GitHub Backup** (`scripts/git_autopush.ts`) | Daily after orchestrator + after any significant change | git add / commit / push to `zangzabam/clearwave-growth-agent` | 🚧 building |\n\n---\n\n## Agent design rules\n\n1. **Each sub-agent owns one job.** If a job grows multi-step, split into a parent + sub-sub-agents.\n2. **Each AGENT.md must declare:** Inputs · Tasks · Constraints · Output schema · Cadence · Cost (Claude API tokens estimate per run).\n3. **Browser-first.** Use `mcp__Claude_in_Chrome__*` for any external-web task (competitor scrape, Google Maps reviews, ad-library look-ups). Fall back to nimble web tools only if Chrome MCP fails.\n4. **Output discipline.** Every run writes ONE primary artifact to `data/processed/`. Email-able output goes through `scripts/email_template.ts` (Hi-Fi 2). Investor-facing PDF uses `scripts/build_investor_pdf.ts` patterns.\n5. **GitHub backup.** Every sub-agent ends with `await gitAutoPush(commit_msg)` — auto-commit + push.\n6. **Cost discipline.** Each Claude call should be the smallest model that does the job. `claude-haiku-*` for classification/parsing; `claude-sonnet-*` for creative/strategic; `claude-opus-*` only for the heaviest synthesis (rare).\n7. **No client name in code.** Read from `COMPANY_NAME` env var. Same for product names — read from `memory/reference/product_taxonomy.md`.\n8. **Sale-ready.** Naming, structure, configurability per the CMO mandate's sale-readiness clause.\n\n---\n\n## Sub-agent skeleton (use this when creating a new one)\n\n```\nagents/<NN>-<name>/\n  AGENT.md          # Spec — required reading every run\n  sub-agents/       # Optional — if the agent has further specialization\n  config.json       # Optional — per-run knobs (tracked competitors, etc.)\n\nscripts/\n  agent_<name>_run.ts   # Entry point, callable by cron\n\n~/Library/LaunchAgents/com.clearwave.growth.<name>.plist  # Schedule\n```\n\n---\n\n## Cost guardrails (CMO-level, hard limits)\n\n- **Per daily run:** ≤ $1.50 of Claude API tokens\n- **Per weekly sub-agent run:** ≤ $5\n- **Per monthly synthesis:** ≤ $10\n- **Total monthly burn target:** ≤ $300 across all agents\n\nIf approaching cap, the orchestrator throttles — Voice Library scoring is the only call we never skip.\n"
+  "registry_md": "# ClearWave CMO — Sub-Agent Registry\n\n**Single source of truth for every agent that runs.** Every sub-agent must register here before it ships. Each entry: what it does · when it runs · what it produces · what it costs.\n\nLast updated: 2026-04-30\n\n---\n\n## LIVE — running on schedule\n\n| ID | Sub-agent | Cadence | Produces | Status |\n|---|---|---|---|---|\n| 00 | **Orchestrator** (`agents/00-orchestrator/`) | Daily 6:00 AM ET | `daily_report_<date>.md` + Hi-Fi 2 email to Justin | ✅ live |\n| 01 | **Voice Library** (`agents/01-voice-library/`) | On every output (sync) | Voice fingerprint scoring, signature-phrase enforcement | ✅ live |\n| 02 | **Paid Ads — Budget Optimizer** (`agents/02-paid-ads/`) | Daily, in orchestrator | Pause/scale proposals (Meta CSV mode active; Google Ads pending creds) | 🟡 partial |\n| 04 | **Email Sub-Agent** (`agents/04-email/`) | Daily, in orchestrator | 1-2 campaign proposals/day in Justin's voice (annual service, referrals, lapsed quotes, RO replacement) | ✅ live |\n| 04a | **Daily Water Minute** (`scripts/daily_value_email.ts`) | Daily, in orchestrator | 1 educational email draft (~250 words, never repeats within 60 days) | ✅ live (drafts only — Justin reviews before send wires up) |\n| 12 | **Investor Metrics** (`scripts/investor_metrics_report.ts`) | Monthly 1st @ 7:00 AM ET (+ quarterly auto-PDF) | LTGP:CAC, Lead-to-Sale, New-GP-vs-Plan in Hi-Fi 2 PDF | ✅ live |\n\n---\n\n## NEW — building / scheduled to build\n\n| ID | Sub-agent | Cadence | Produces | Status |\n|---|---|---|---|---|\n| 03 | **SEO Local** (`agents/03-seo-local/`) | Weekly Mon @ 7:00 AM ET | GSC organic trend + keyword ranks + content gaps | 🟡 awaits GSC OAuth |\n| 05 | **Organic Social** (`agents/05-organic-social/`) | Weekly Mon @ 8:00 AM ET | Content calendar + hooks + manual-post checklist | 🟡 stub only |\n| 06 | **Competitor Intel** (`agents/06-competitor-intel/`) | Weekly Tue @ 7:00 AM ET | Competitor brief — pricing, ads, content, reviews trend (browser-driven) | 🚧 building |\n| 07 | **Trend Watch** (`agents/07-trend-watch/`) | Weekly Wed @ 7:00 AM ET | Industry news, search-volume shifts, regulatory changes | 🚧 building |\n| 08 | **Creative Studio** (`agents/08-creative-studio/`) | On-demand + weekly Thu refresh | Ad copy variants, video briefs, landing-page concepts | 🚧 building |\n| 09 | **Content Engine** (`agents/09-content-engine/`) | Weekly Fri @ 7:00 AM ET | Blog post drafts, PR angles, social hook library | 🚧 building |\n| 10 | **Funnel Diagnostics** (`agents/10-funnel-diagnostics/`) | Monthly 5th @ 7:00 AM ET | Where leads leak, conversion-rate breakdown, A/B test queue | 🚧 building |\n| 11 | **Opportunity Scout** (`agents/11-opportunity-scout/`) | Monthly 10th @ 7:00 AM ET | New geos, partnerships, channel tests, product-gap candidates | 🚧 building |\n| 13 | **Brand Health / Reviews** (`agents/13-brand-health/`) | Weekly Thu @ 8:00 AM ET | Review sentiment + secondary-Google-locations review-push (browser-driven Maps scrape since ReviewHarvest doesn't expose CSV) | 🚧 building |\n| 14 | **Board Comms** (`agents/14-board-comms/`) | Monthly 1st @ 9:00 AM ET (executive summary), Quarterly 1st (investor PDF — already part of Investor Metrics) | One-page exec summary in Hi-Fi 2 PDF | 🚧 building |\n| 15 | **Agency Scorecard** (`agents/15-agency-scorecard/`) | Monthly 15th @ 7:00 AM ET | Matyx deliverables vs invoice; recommend keep/renegotiate/replace | 🚧 building |\n| 16 | **GitHub Backup** (`scripts/git_autopush.ts`) | Daily after orchestrator + after any significant change | git add / commit / push to `zangzabam/clearwave-growth-agent` | 🚧 building |\n\n---\n\n## Agent design rules\n\n1. **Each sub-agent owns one job.** If a job grows multi-step, split into a parent + sub-sub-agents.\n2. **Each AGENT.md must declare:** Inputs · Tasks · Constraints · Output schema · Cadence · Cost (Claude API tokens estimate per run).\n3. **Browser-first.** Use `mcp__Claude_in_Chrome__*` for any external-web task (competitor scrape, Google Maps reviews, ad-library look-ups). Fall back to nimble web tools only if Chrome MCP fails.\n4. **Output discipline.** Every run writes ONE primary artifact to `data/processed/`. Email-able output goes through `scripts/email_template.ts` (Hi-Fi 2). Investor-facing PDF uses `scripts/build_investor_pdf.ts` patterns.\n5. **GitHub backup.** Every sub-agent ends with `await gitAutoPush(commit_msg)` — auto-commit + push.\n6. **Cost discipline.** Each Claude call should be the smallest model that does the job. `claude-haiku-*` for classification/parsing; `claude-sonnet-*` for creative/strategic; `claude-opus-*` only for the heaviest synthesis (rare).\n7. **No client name in code.** Read from `COMPANY_NAME` env var. Same for product names — read from `memory/reference/product_taxonomy.md`.\n8. **Sale-ready.** Naming, structure, configurability per the CMO mandate's sale-readiness clause.\n\n---\n\n## Sub-agent skeleton (use this when creating a new one)\n\n```\nagents/<NN>-<name>/\n  AGENT.md          # Spec — required reading every run\n  sub-agents/       # Optional — if the agent has further specialization\n  config.json       # Optional — per-run knobs (tracked competitors, etc.)\n\nscripts/\n  agent_<name>_run.ts   # Entry point, callable by cron\n\n~/Library/LaunchAgents/com.clearwave.growth.<name>.plist  # Schedule\n```\n\n---\n\n## Cost guardrails (CMO-level, hard limits)\n\n- **Per daily run:** ≤ $1.50 of Claude API tokens\n- **Per weekly sub-agent run:** ≤ $5\n- **Per monthly synthesis:** ≤ $10\n- **Total monthly burn target:** ≤ $300 across all agents\n\nIf approaching cap, the orchestrator throttles — Voice Library scoring is the only call we never skip.\n",
+  "content_director": {
+    "current_week": {
+      "week": 4,
+      "dates": "Apr 27-May 3",
+      "theme": "WATER: Filter Debunks",
+      "youtube": "$500 Amazon Filter vs $8K Whole-Home System — I Tested Both",
+      "hook_ids": [
+        "W11",
+        "W23",
+        "W13",
+        "W10"
+      ],
+      "cta_keyword": "BREAKDOWN",
+      "phase": "build_habit"
+    },
+    "shoot_brief_monday_md": null,
+    "shoot_brief_thursday_md": null,
+    "scorecard_md": null,
+    "hooks": [
+      {
+        "id": "W01",
+        "pillar": "water_truth",
+        "hook": "If you live in Virginia and your kid has eczema, this might be why.",
+        "cta": "Comment 'TEST'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W02",
+        "pillar": "water_truth",
+        "hook": "I test people's water for a living. Here are the 3 most disturbing results I've ever seen.",
+        "cta": "Comment 'REVIEW'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W03",
+        "pillar": "water_truth",
+        "hook": "Your Brita filter is a $30 lie. Here's what it actually removes.",
+        "cta": "Comment 'TRUTH'",
+        "shoots": 1,
+        "best_views": 7200000,
+        "best_platform": "tiktok",
+        "status": "proven_viral",
+        "notes": "ORIGINAL VIRAL — 7.2M views. Reshoot with proper CTA."
+      },
+      {
+        "id": "W04",
+        "pillar": "water_truth",
+        "hook": "Most homeowners don't realize their 'city-approved' water is wrecking their pipes AND their skin.",
+        "cta": "Comment 'REPORT'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W05",
+        "pillar": "water_truth",
+        "hook": "One day I tested a family's 'safe' tap water. Here's what the lab showed.",
+        "cta": "Follow for Part 2",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W06",
+        "pillar": "water_truth",
+        "hook": "Your shower is giving you more chlorine exposure than drinking the water.",
+        "cta": "Comment 'SHOWER'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W07",
+        "pillar": "water_truth",
+        "hook": "If your water smells like rotten eggs, do NOT do this one thing most people try first.",
+        "cta": "Comment 'EGGS'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W08",
+        "pillar": "water_truth",
+        "hook": "PFAS are in your water right now. Here's what actually removes them.",
+        "cta": "Comment 'PFAS'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W09",
+        "pillar": "water_truth",
+        "hook": "This is what hard water does to your body over 10 years.",
+        "cta": "Save this and share it",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W10",
+        "pillar": "water_truth",
+        "hook": "I put a Brita, a fridge filter, and our system under the microscope. Watch.",
+        "cta": "Comment 'COMPARE'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W11",
+        "pillar": "water_truth",
+        "hook": "The water filter you bought on Amazon is probably doing less than you think.",
+        "cta": "Watch to the end",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W12",
+        "pillar": "water_truth",
+        "hook": "Here's how I turned nasty orange well water into crystal-clear drinking water in 24 hours.",
+        "cta": "Comment 'WELL'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W13",
+        "pillar": "water_truth",
+        "hook": "This little box under my sink replaced thousands of plastic water bottles.",
+        "cta": "Comment 'RO'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W14",
+        "pillar": "water_truth",
+        "hook": "Your water company's annual report says 'safe.' Here's what that actually means.",
+        "cta": "Comment 'SAFE'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W15",
+        "pillar": "water_truth",
+        "hook": "If a water company won't show you third-party lab results, walk away.",
+        "cta": "Comment 'LAB'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W16",
+        "pillar": "water_truth",
+        "hook": "I've tested over 1,000 homes. This is the #1 thing nobody checks for.",
+        "cta": "Comment 'TEST'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W17",
+        "pillar": "water_truth",
+        "hook": "This $50 water test could save you $50,000 in health costs.",
+        "cta": "Comment 'TEST'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W18",
+        "pillar": "water_truth",
+        "hook": "POV: I show a homeowner what's actually in their water.",
+        "cta": "Follow for more POVs",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W19",
+        "pillar": "water_truth",
+        "hook": "The EPA just changed the rules on PFAS. Is YOUR water safe?",
+        "cta": "Comment 'PFAS'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W20",
+        "pillar": "water_truth",
+        "hook": "Stop buying bottled water. Seriously. Here's why.",
+        "cta": "Comment 'RO'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W21",
+        "pillar": "water_truth",
+        "hook": "Your fridge filter expires. You won't believe what happens if you don't change it.",
+        "cta": "Save this",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W22",
+        "pillar": "water_truth",
+        "hook": "3 signs your water is messing up your appliances right now.",
+        "cta": "Comment 'CHECK'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W23",
+        "pillar": "water_truth",
+        "hook": "This is the difference between a $500 filter and the systems we install.",
+        "cta": "Comment 'BREAKDOWN'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "W24",
+        "pillar": "water_truth",
+        "hook": "PSA to all parents: test your water before you make formula with it.",
+        "cta": "Share with a parent",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B01",
+        "pillar": "business_money",
+        "hook": "The dumbest loan I ever took almost killed my water company.",
+        "cta": "Comment 'MISTAKES'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B02",
+        "pillar": "business_money",
+        "hook": "How I built a 7-figure water business with a beat-up truck and zero followers.",
+        "cta": "Comment 'PLAYBOOK'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B03",
+        "pillar": "business_money",
+        "hook": "I had 18 employees and was losing money. Then I fired 14 of them.",
+        "cta": "Follow for Part 2",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B04",
+        "pillar": "business_money",
+        "hook": "How I sell $14K water systems without feeling slimy.",
+        "cta": "Comment 'SALES'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B05",
+        "pillar": "business_money",
+        "hook": "I helped scale a team from $600K to $25M in under 12 months. This is the playbook.",
+        "cta": "Comment 'SCALE'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B06",
+        "pillar": "business_money",
+        "hook": "My company went from almost dying to 6,500% profit growth.",
+        "cta": "Comment 'GROWTH'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B07",
+        "pillar": "business_money",
+        "hook": "Plumbers, HVAC, electricians: water treatment is the easiest add-on revenue.",
+        "cta": "Comment 'ADD-ON'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B08",
+        "pillar": "business_money",
+        "hook": "$138K month with 4 employees. Here's why small teams win.",
+        "cta": "Comment 'LEAN'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B09",
+        "pillar": "business_money",
+        "hook": "Home builders: water quality is the easiest upsell you're not doing.",
+        "cta": "Comment 'PARTNER'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "B10",
+        "pillar": "business_money",
+        "hook": "The follow-up sequence that closes 40% of my 'no' leads.",
+        "cta": "Comment 'CLOSE'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V01",
+        "pillar": "veteran_identity",
+        "hook": "Most vets are sitting on million-dollar skills and don't even know it.",
+        "cta": "Comment 'VET'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V02",
+        "pillar": "veteran_identity",
+        "hook": "I went from active duty to almost losing everything. Here's what I'd tell day-one Justin.",
+        "cta": "Follow for series",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V03",
+        "pillar": "veteran_identity",
+        "hook": "5 Navy habits that built my 7-figure business.",
+        "cta": "Comment 'HABITS'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V04",
+        "pillar": "veteran_identity",
+        "hook": "The military taught me one thing that closes more deals than any sales training.",
+        "cta": "Comment 'CLOSE'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V05",
+        "pillar": "veteran_identity",
+        "hook": "Why veteran-owned businesses outperform — and it's not just discipline.",
+        "cta": "Comment 'VET'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      },
+      {
+        "id": "V06",
+        "pillar": "veteran_identity",
+        "hook": "From MCA debt to 50% net margins. The vet entrepreneur comeback story.",
+        "cta": "Comment 'STORY'",
+        "shoots": 0,
+        "best_views": 0,
+        "best_platform": null,
+        "status": "untested"
+      }
+    ],
+    "packages_recent": [],
+    "packages_count_total": 0,
+    "packages_awaiting_approval": 0,
+    "packages_viral_candidates": 0,
+    "goal": 500000,
+    "starting": 7900,
+    "milestone_targets": [
+      {
+        "checkpoint": "START",
+        "date": "2026-03-31",
+        "tiktok": 3300,
+        "instagram": 3300,
+        "youtube": 183,
+        "x_twitter": 841
+      },
+      {
+        "checkpoint": "30 days",
+        "date": "2026-04-30",
+        "tiktok": 10000,
+        "instagram": 6000,
+        "youtube": 650,
+        "x_twitter": 1500
+      },
+      {
+        "checkpoint": "60 days",
+        "date": "2026-05-31",
+        "tiktok": 27500,
+        "instagram": 14000,
+        "youtube": 2250,
+        "x_twitter": 3000
+      },
+      {
+        "checkpoint": "90 days",
+        "date": "2026-06-30",
+        "tiktok": 65000,
+        "instagram": 32500,
+        "youtube": 7500,
+        "x_twitter": 5000
+      },
+      {
+        "checkpoint": "6 months",
+        "date": "2026-09-30",
+        "tiktok": 175000,
+        "instagram": 100000,
+        "youtube": 32500,
+        "x_twitter": 15000
+      },
+      {
+        "checkpoint": "9 months",
+        "date": "2026-12-31",
+        "tiktok": 275000,
+        "instagram": 135000,
+        "youtube": 65000,
+        "x_twitter": 30000
+      }
+    ],
+    "platforms": {
+      "tiktok": {
+        "handle": "@js_shoez_",
+        "priority": 1,
+        "posts_per_day": 3,
+        "starting_followers": 3300,
+        "active": true,
+        "auto_post": false,
+        "needs_setup": "Manus AI handoff (no direct API in v1)"
+      },
+      "instagram_personal": {
+        "handle": "@js_shoez_",
+        "priority": 2,
+        "posts_per_day": 3,
+        "starting_followers": 3300,
+        "active": true,
+        "auto_post": false,
+        "needs_setup": "Manus AI handoff (Meta Graph requires app review for Reels)"
+      },
+      "instagram_business": {
+        "handle": "@clearwave_water",
+        "priority": 5,
+        "posts_per_day": 1,
+        "starting_followers": 374,
+        "active": true,
+        "auto_post": false,
+        "needs_setup": "Manus AI handoff"
+      },
+      "youtube": {
+        "handle": "@justinshoemaker9582",
+        "priority": 3,
+        "posts_per_day": 1,
+        "starting_followers": 183,
+        "active": true,
+        "auto_post": false,
+        "needs_setup": "YouTube Data API v3 OAuth — direct API supported, will wire in v2"
+      },
+      "x_twitter": {
+        "handle": "@Shoeprenuer",
+        "priority": 4,
+        "posts_per_day": 3,
+        "starting_followers": 841,
+        "active": true,
+        "auto_post": false,
+        "needs_setup": "Manus AI handoff (X API now paid tier)"
+      }
+    }
+  },
+  "trend_watch": {
+    "brief_md": "# Trend Watch · 2025-01-XX\n\n## 🔥 React-now items (water industry, 48-hour window)\n\n- **Mountain View water crisis** — Bay Area neighborhood entering day 7 without safe drinking water due to water main failure. Local crisis = national content opportunity. Film: \"Why your city's pipes could fail tomorrow\" angle.\n- **PFAS in baby formula (FDA)** — Scientists unpacking FDA results on forever chemicals in infant formula. Huge fear factor for parents. Film: \"If you have kids, watch this\" hook immediately.\n- **NC sewage sludge PFAS** — State confirms PFAS in sewage sludge spread on farmland with zero regulations. Food supply contamination angle = viral potential.\n\n## 📈 Patterns hot this week\n\n1. **PFAS contamination cascade** — Seven separate headlines on forever chemicals in drinking water, fish, farmland, and baby formula. Public awareness hitting critical mass. Regulatory gaps becoming mainstream story. — *Water pillar*\n\n2. **Municipal water infrastructure failure** — Multiple cities (Mountain View, Frederick, Greenfield, St. Helena) facing treatment plant failures, pollution limit violations, and multi-million dollar repair needs. Systemic failure of public water = your commercial opportunity. — *Water + Business pillars*\n\n3. **\"Best water\" competitions + tap water myth-busting** — Belgrade wins \"best tap water\" contest while CNET publishes \"biggest myth about tap water\" piece. Consumer confusion at peak: is tap safe or not? Authority vacuum. — *Water pillar*\n\n4. **Creator debt/leverage flex** — Grant Cardone repeatedly headlines with \"$2.2B in debt\" and \"I'm broke anyway\" content. New transparency trend: showing massive debt as credibility signal, not shame. — *Business pillar*\n\n5. **Microplastic filtration breakthrough** — \"Miracle tree\" filtering 98% of microplastics from tap water goes viral on HN. Novel filtration tech = content goldmine, validates \"your filter isn't enough\" message. — *Water pillar*\n\n6. **AI/tech resource consumption** — AI water use becoming mainstream concern (California angle). Tech industry's hidden environmental cost = counter-narrative opportunity. — *Water + Business pillars*\n\n## 🧪 5 Experimental hook ideas (for Content Director 10% bucket)\n\n1. **\"I tested the baby formula in my fridge for PFAS... these are the results\"** → CTA: Comment FORMULA\n   *Why now:* FDA baby formula PFAS story breaking, parents in fear mode\n   *Pillar:* water_truth\n\n2. **\"Grant Cardone says he's broke with $2.2B in assets. I made $138K last month and actually kept it. Here's the difference\"** → CTA: Follow for real numbers\n   *Why now:* Cardone debt-flex cycle peaking, opportunity to counter with profit-first message\n   *Pillar:* business_money\n\n3. **\"Mountain View has been without clean water for 7 days. Your city's pipes are next. Here's why\"** → CTA: Comment YOUR CITY\n   *Why now:* Active crisis, infrastructure failure pattern across multiple cities\n   *Pillar:* water_truth\n\n4. **\"Scientists just found a tree that filters 98% of microplastics. I tested it against my $11K system\"** → CTA: Save this\n   *Why now:* Viral HN story, chance to position ClearWave against \"miracle\" solutions\n   *Pillar:* water_truth\n\n5. **\"North Carolina is spreading PFAS-contaminated sludge on your food. With zero regulations. Here's the map\"** → CTA: Comment SLUDGE\n   *Why now:* Breaking NC story, food supply fear, regulatory gap outrage\n   *Pillar:* water_truth\n\n## 🎬 Cross-niche format borrows\n\n- **Grant Cardone's \"I'm broke anyway\" transparency hook** — Adapt to: \"I did $138K last month and I'm still scared every day. Here's why that's good.\" Vulnerability + success = engagement. Use for business pillar content.\n\n- **Gary Vee \"zero interest in stores\" contrarian positioning** — Borrow framework: \"Why I'll never sell ClearWave systems in Home Depot (and why that protects you).\" Explain D2C model as customer advantage, not business limitation.\n\n- **CNET's \"biggest myth\" format** — Deploy across water content: \"The biggest myth about whole-home filters\" / \"...about water softeners\" / \"...about bottled water.\" Myth-busting = saves + authority.\n\n---\n\n**Watch next week:** FDA response to baby formula PFAS coverage, any municipal water crisis escalations, and Grant Cardone/Hormozi content format shifts (vulnerability trend may be peaking)."
+  },
+  "creative_studio": {
+    "concepts_md": null
+  },
+  "funnel_diagnostics": {
+    "brief_md": null,
+    "funnel": {
+      "stages": [
+        {
+          "stage": "Requests (qualified appts)",
+          "count": 0,
+          "pct_of_top": 100,
+          "pct_of_prev": 100
+        },
+        {
+          "stage": "Quotes sent",
+          "count": 0,
+          "pct_of_top": 0,
+          "pct_of_prev": 0
+        },
+        {
+          "stage": "Quotes converted (Jobs)",
+          "count": 0,
+          "pct_of_top": 0,
+          "pct_of_prev": 0
+        },
+        {
+          "stage": "Jobs invoiced",
+          "count": 0,
+          "pct_of_top": 0,
+          "pct_of_prev": 0
+        },
+        {
+          "stage": "Invoices paid",
+          "count": 0,
+          "pct_of_top": 0,
+          "pct_of_prev": 0
+        }
+      ],
+      "period_start": "2026-04-03",
+      "period_end": "2026-05-01"
+    }
+  },
+  "opportunity_scout": {
+    "brief_md": null
+  },
+  "board_comms": {
+    "update_md": null
+  },
+  "agency_scorecard": {
+    "scorecard_md": null
+  }
 }
