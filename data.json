@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T10:30:16.313Z",
+  "generated_at": "2026-05-01T10:30:21.044Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.6x",
@@ -62,8 +62,8 @@
       },
       {
         "name": "Opportunity Scout",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-01",
+        "status": "Good"
       },
       {
         "name": "Board Comms",
@@ -801,7 +801,7 @@
     }
   },
   "opportunity_scout": {
-    "brief_md": null
+    "brief_md": "# Opportunity Scout · 2026-05-01\n\n## TL;DR (1 sentence — the single bet to make this week)\nPartner with DC-area plumbers responding to the Potomac Interceptor collapse for emergency water quality testing and treatment installations while infrastructure trust is shattered.\n\n## 🥇 Opportunity 1 · DC Infrastructure Crisis Partnership Blitz\n- **Description:** Launch emergency water quality testing + treatment packages through plumber/contractor partnerships responding to DC Water's Potomac Interceptor sewer overflow\n- **Evidence:** \"DC Water Releases Key Findings on Extent of Sewer Overflow and Potomac River Impact\" + \"Potomac Interceptor Collapse\" — major infrastructure failure creates acute water safety concerns for 10,000+ nearby homes\n- **Est. annual GP:** $180K–$420K (assuming 150–350 installations at $600–$1,200 GP each over 12 months)\n- **Time to test:** 2–3 weeks (partner outreach + first co-branded mailer)\n- **Owner:** Justin (high-stakes relationship building required)\n- **Risk:** Low (riding genuine crisis, clear value prop, existing service)\n- **First action:** Identify top 8 plumbing/restoration companies responding to the crisis; offer 60/40 revenue split on co-marketed \"Post-Overflow Water Safety Assessment\" package this week\n\n## 🥈 Opportunity 2 · Acquire Aqua-Chem's Mid-Atlantic Orphan Accounts\n- **Description:** Target recently acquired Aqua-Chem customer lists in VA/MD (Hawkins focus = chemicals/industrial, likely shedding residential)\n- **Evidence:** \"Hawkins completes acquisition of Aqua-Chem water treatment assets\" — large consolidators often abandon small residential accounts post-acquisition as non-core\n- **Est. annual GP:** $90K–$240K (50–150 orphaned accounts at avg $1,800–$1,600 annual GP)\n- **Time to test:** 4–6 weeks (research + outreach to Hawkins + direct mail to known Aqua-Chem customers)\n- **Owner:** Michelle (list acquisition + CRM integration)\n- **Risk:** Medium (requires detective work to identify accounts; competitive bidding possible)\n- **First action:** Call Hawkins integration team to explore purchasing residential customer lists in ClearWave territory; simultaneously scrape Aqua-Chem Google reviews for VA/MD addressable leads\n\n## 🥉 Opportunity 3 · York County \"Best of\" Business Cross-Promotion\n- **Description:** Formalize referral partnerships with 3–5 of the \"100+ York County Businesses\" winning Coastal Virginia Best of Awards (targeting HVAC, builders, realtors)\n- **Evidence:** \"More than 100 York County Businesses Win 2025 Coastal Virginia Best of Awards\" — concentrated group of high-reputation local businesses with aligned customer base\n- **Est. annual GP:** $60K–$150K (20–50 referrals/year at $3K–$3K GP each from Hampton Roads office expansion)\n- **Time to test:** 3–4 weeks (identify winners, intro meetings, pilot referral structure)\n- **Owner:** Hampton Roads office lead (or Matyx if managing that market remotely)\n- **Risk:** Low (low cost, proven referral model, awards = quality filter)\n- **First action:** Pull full winner list from Coastal Virginia Magazine; prioritize HVAC/builders/realtors with 100+ Google reviews; send \"fellow award winner\" partnership pitch Monday\n\n## 👀 Watch list\n- **Baltimore metro expansion** — DC Water's \"Pure Water DC: Bold Vision to Strengthen Resilience and Secure a Second Source of Water\" signals regional infrastructure anxiety; Baltimore likely next (60 miles north, 2.8M metro, aging infrastructure)\n- **Gym/dermatology \"healthy water\" package** — No immediate news hook, but high-margin play; wait for summer or health scare to activate\n- **\"Flushable wipes\" consumer education campaign** — WaPo piece creates SEO/content opportunity but low urgency vs. crisis response\n\n---\n\n**Pursue Opportunity 1 first** — the DC sewer collapse is *happening now*, trust in municipal water is collapsing, and plumbers are already in-home with scared homeowners who will pay premium for peace of mind."
   },
   "board_comms": {
     "update_md": null
