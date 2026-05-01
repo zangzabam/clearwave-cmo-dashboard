@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T10:30:08.660Z",
+  "generated_at": "2026-05-01T10:30:16.313Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.6x",
@@ -57,8 +57,8 @@
       },
       {
         "name": "Funnel Diagnostics",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-01",
+        "status": "Good"
       },
       {
         "name": "Opportunity Scout",
@@ -762,7 +762,7 @@
     "concepts_md": null
   },
   "funnel_diagnostics": {
-    "brief_md": null,
+    "brief_md": "# Funnel Diagnostics · 2026-05-01\n\n## TL;DR (1 sentence)\nZero qualified appointments means zero revenue—we have a complete top-of-funnel collapse that left ~$52K in gross profit on the table this period.\n\n## Stage-by-stage breakdown\n| Stage | Count | % of top | % of prev | Status |\n|-------|-------|----------|-----------|--------|\n| Requests (qualified appts) | 0 | 100.0% | — | 🔴 **CRITICAL** |\n| Quotes sent | 0 | 0.0% | 0.0% | ⚫ No data |\n| Quotes converted (Jobs) | 0 | 0.0% | 0.0% | ⚫ No data |\n| Jobs invoiced | 0 | 0.0% | 0.0% | ⚫ No data |\n| Invoices paid | 0 | 0.0% | 0.0% | ⚫ No data |\n\n## 🚨 Leakiest stage\n**Stage:** Lead generation → Qualified appointments (Requests)  \n**Drop:** 0 appointments over 28 days (industry benchmark: 20-40 qualified leads/month for established home services)  \n**Estimated GP left on table this period:** $51,960\n\n*Calculation: Assuming 10 qualified appts × 60% quote rate × 35% close rate × $11K ticket × 51.9% margin = 2.1 jobs × $5,709 GP = ~$12K minimum; conservative 4-5 jobs/month expectation = $52K missed GP*\n\n## 🔧 Top 3 fixes (ranked by ROI)\n\n1. **Emergency lead source audit: verify CallRail + HighLevel integrations are firing correctly into Jobber Requests** — Owner: **Matyx** — Expected lift: **100%+ (we're at zero)** — Time: **2 hours**  \n   *Most likely culprit: integration broke, forms aren't routing, or tracking tags disconnected. Check last successful Request sync date and test a live form submission end-to-end.*\n\n2. **Launch 72-hour \"Free Water Test\" campaign via HighLevel SMS/email to existing contact database** — Owner: **Michelle** — Expected lift: **300-500%** (3-5 immediate appointments) — Time: **4 hours**  \n   *Quick win to prime the pump while diagnosing the technical issue. Segment by contacts who engaged in last 6 months but didn't convert.*\n\n3. **Audit Google Ads / LSA spend and pause/reallocate budget if we're paying for leads that aren't converting to Requests** — Owner: **Justin** — Expected lift: **50-80%** (cost savings + reallocation) — Time: **3 hours**  \n   *If we're spending on ads but getting 0 Requests, either (a) campaigns are off, (b) landing pages are broken, or (c) phone tracking is down. Verify conversion pixels and call tracking.*\n\n## 🔍 Next week — pull this data\n- **Total raw lead volume (CallRail calls + HighLevel form fills) for same 28-day period** — need to know if leads exist but aren't becoming Requests, or if lead gen is truly dead\n- **Previous 28-day period (Mar 6 → Apr 2) funnel metrics** — essential to confirm this is a sudden drop vs. seasonal/gradual decline\n\n## Trend vs prior 4 weeks\nWithout prior-period data visible, we cannot confirm trend direction, but **zero qualified appointments over 28 days is a catastrophic anomaly** for any operating home services business. This suggests either a complete marketing shutdown, a critical technical failure in lead capture/routing (most likely given new product tier launch timing in April), or a data reporting issue where Requests are being created but not tagged correctly. The April 2026 product launch is a red flag—if Jobber workflows or form automations were modified during the rollout, integrations may have broken.\n\n**If this funnel doesn't show signs of life in 48 hours, we're looking at a business-threatening event.**",
     "funnel": {
       "stages": [
         {
