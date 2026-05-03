@@ -176,12 +176,26 @@
 
   <div class="page" data-page="content-studio">
     <h2>Content Studio · Waterboy Machine</h2>
+
+    <!-- Drive command center -->
+    <div class="card" id="cd-drive-card" style="background:linear-gradient(135deg,#0a3058 0%,#145374 100%);color:#fff;">
+      <h4 style="color:#fef3c7;">📁 Content Studio Drive folder</h4>
+      <p style="color:#e0e0e0;margin:6px 0 14px;">Drop raw clips, photos, and screenshots into <strong>01_RAW_DROP_HERE</strong>. Agent picks them up at 8 AM ET daily and emails you ready-to-post packages.</p>
+      <div id="cd-drive-buttons" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      <div id="cd-drive-counts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:14px;"></div>
+    </div>
+
     <div id="cd-stats" class="stat-grid"></div>
     <div class="chart-wrap"><canvas id="followerChart"></canvas></div>
 
     <div class="card">
       <h4>This week's anchor</h4>
       <div id="cd-week" style="font-size:14px;"></div>
+    </div>
+
+    <div class="card">
+      <h4>📥 Inbox · raw files awaiting processing</h4>
+      <div id="cd-inbox-list"></div>
     </div>
 
     <div class="card">
@@ -447,6 +461,40 @@ async function init() {
   const week = cd.current_week || {};
   const totalGoal = cd.goal || 500000;
   const startCount = cd.starting || 7900;
+
+  // Drive command center — clickable buttons to each Drive folder
+  const driveButtons = [
+    { url: cd.drive_inbox_url,    label: '📥 Drop raw files here', sub: '01_RAW_DROP_HERE',    color: '#d97706', primary: true },
+    { url: cd.drive_edited_url,   label: '📦 Edited (awaiting approval)', sub: '02_EDITED_READY', color: '#0891b2' },
+    { url: cd.drive_approved_url, label: '✅ Approved · ready to post', sub: '03_APPROVED_TO_POST', color: '#059669' },
+    { url: cd.drive_archive_url,  label: '🗄️ Posted archive', sub: '04_POSTED_ARCHIVE', color: '#64748b' },
+  ];
+  document.getElementById('cd-drive-buttons').innerHTML = driveButtons.filter(b => b.url).map(b => `
+    <a href="${b.url}" target="_blank" rel="noopener" style="
+      display:inline-block;padding:${b.primary?'14px 22px':'10px 16px'};
+      background:${b.color};color:#fff;text-decoration:none;border-radius:10px;
+      font-weight:${b.primary?'700':'600'};font-size:${b.primary?'14px':'12px'};
+      letter-spacing:0.5px;${b.primary?'box-shadow:0 4px 12px rgba(217,119,6,0.4);':''}
+    ">${b.label}<div style="font-size:10px;font-weight:400;opacity:0.85;margin-top:2px;letter-spacing:1px;">${b.sub}</div></a>`).join('') || '<p style="color:#fbbf24;">Drive folders not yet configured.</p>';
+
+  document.getElementById('cd-drive-counts').innerHTML = [
+    { label: 'In Inbox',   count: (cd.inbox_files || []).length,   color: '#fef3c7' },
+    { label: 'Edited',     count: (cd.edited_files || []).length,  color: '#cffafe' },
+    { label: 'Approved',   count: (cd.approved_files || []).length, color: '#d1fae5' },
+  ].map(c => `<div style="background:rgba(255,255,255,0.08);padding:10px 14px;border-radius:8px;text-align:center;">
+    <div style="font-size:24px;font-weight:800;color:${c.color};">${c.count}</div>
+    <div style="font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-top:2px;">${c.label}</div>
+  </div>`).join('');
+
+  // Inbox file list
+  const inboxFiles = cd.inbox_files || [];
+  if (inboxFiles.length > 0) {
+    document.getElementById('cd-inbox-list').innerHTML = '<table><thead><tr><th>File</th><th>Size</th><th>Added</th></tr></thead><tbody>' +
+      inboxFiles.map(f => `<tr><td><strong>${f.filename}</strong></td><td class="num">${f.size_mb} MB</td><td>${f.mtime ? new Date(f.mtime).toLocaleString() : '—'}</td></tr>`).join('') + '</tbody></table>' +
+      `<p style="font-size:12px;color:#64748b;margin-top:10px;">Agent processes these at 8 AM ET. To process now, run <code>npx tsx scripts/agent_content_director_drive_watch.ts</code>.</p>`;
+  } else {
+    document.getElementById('cd-inbox-list').innerHTML = '<p class="empty">Inbox is empty. <a href="' + (cd.drive_inbox_url || '#') + '" target="_blank" style="color:#d97706;">Drop a file here</a> and the agent will turn it into a multi-platform package within 24 hours.</p>';
+  }
 
   // Stat cards: this week, hooks count, packages awaiting, viral candidates
   document.getElementById('cd-stats').innerHTML = [
