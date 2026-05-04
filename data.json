@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T20:58:46.407Z",
+  "generated_at": "2026-05-04T21:04:15.322Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -984,7 +984,10 @@
     "decisions": {
       "dwm_2026-05-04": {
         "decision": "approved",
-        "decided_at": "2026-05-04T20:57:54.575Z"
+        "decided_at": "2026-05-04T20:57:54.575Z",
+        "sent_at": "2026-05-04T21:04:12.614Z",
+        "send_status": "sent",
+        "mailchimp_campaign_id": "f4c2b06a1e"
       },
       "email_2026-05-04_c1": {
         "decision": "pending"
