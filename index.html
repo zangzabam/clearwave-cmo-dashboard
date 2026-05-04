@@ -174,6 +174,39 @@
     <div class="card md-content" id="voice-content"></div>
   </div>
 
+  <div class="page" data-page="morning-brief">
+    <h2>Morning Brief · Approval Queue</h2>
+    <div id="mb-stats" class="stat-grid"></div>
+    <div class="card" style="background:linear-gradient(90deg,#059669 0%,#10b981 100%);color:#fff;">
+      <h4 style="color:#fef3c7;">One-tap approve all</h4>
+      <p style="color:#e0fff4;margin:6px 0 14px;font-size:14px;">If everything below looks good, approve all in one click. Works on mobile — opens your email composer.</p>
+      <a id="mb-approve-all-btn" href="#" target="_blank" style="display:inline-block;background:#fff;color:#059669;text-decoration:none;padding:14px 26px;border-radius:10px;font-weight:800;font-size:15px;letter-spacing:0.5px;">✅ APPROVE ALL</a>
+    </div>
+    <div id="mb-items"></div>
+    <div class="card" style="background:#f1f5f9;">
+      <p style="font-size:13px;color:#475569;margin:0;line-height:1.6;">
+        <strong style="color:#0b1d3a;">How this works:</strong> The agent emails you a Morning Brief at 6:30 AM ET daily. Tap any button — your email opens with a pre-filled reply. Hit Send. The agent watches inbox replies every 15 min and processes them automatically. <strong>No app, no login — works from any device.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="page" data-page="seo">
+    <h2>SEO / Backlinks · Matyx</h2>
+    <div id="seo-stats" class="stat-grid"></div>
+    <div class="card">
+      <h4>Top 15 referring domains by Domain Rating</h4>
+      <table id="seo-domains"></table>
+    </div>
+    <div class="card">
+      <h4>Backlink state breakdown</h4>
+      <div id="seo-states"></div>
+    </div>
+    <div class="card">
+      <h4>Suspected toxic backlinks (low DR + spammy anchor)</h4>
+      <div id="seo-toxic"></div>
+    </div>
+  </div>
+
   <div class="page" data-page="content-studio">
     <h2>Content Studio · Waterboy Machine</h2>
 
@@ -282,7 +315,9 @@ if (sessionStorage.getItem('authed') === '1') document.getElementById('login').c
 // ============================================================================
 const TABS = [
   { id: 'overview',        name: 'Overview' },
+  { id: 'morning-brief',   name: '☀️ Morning Brief' },
   { id: 'content-studio',  name: '🎬 Content Studio' },
+  { id: 'seo',             name: 'SEO / Backlinks' },
   { id: 'metrics',         name: 'Investor Metrics' },
   { id: 'daily',           name: 'Daily Report' },
   { id: 'email',           name: 'Email Agent' },
@@ -455,6 +490,76 @@ async function init() {
     { emoji: '💎', value: v.luxury_pieces || '—', label: 'Luxury product', cls: 'indigo' },
   ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
   document.getElementById('voice-content').innerHTML = md2html(v.fingerprint_md);
+
+  // ---------- Morning Brief / Approval Queue ----------
+  const ap = data.approvals || { items: [], decisions: {} };
+  const APPROVAL_INBOX = 'clearwavewatersolutions@gmail.com';
+  const mailto = (subj, body = '') => `mailto:${APPROVAL_INBOX}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+  const totalItems = (ap.items || []).length;
+  const pendingCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'pending').length;
+  const approvedCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'approved').length;
+  const skippedCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'skipped').length;
+
+  document.getElementById('mb-stats').innerHTML = [
+    { emoji: '📋', value: totalItems, label: 'Today\'s Items', cls: 'cyan' },
+    { emoji: '⏳', value: pendingCount, label: 'Pending', cls: 'gold' },
+    { emoji: '✅', value: approvedCount, label: 'Approved', cls: 'green' },
+    { emoji: '⏭', value: skippedCount, label: 'Skipped', cls: '' },
+  ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+
+  // Approve-all button
+  const allApproveBody = `Approving everything in today's morning brief.\n\n— Justin`;
+  document.getElementById('mb-approve-all-btn').href = mailto(`APPROVE ALL ${ap.date || ''}`, allApproveBody);
+
+  // Per-item buttons
+  const itemsHtml = (ap.items || []).map(it => {
+    const d = ap.decisions[it.id] || { decision: 'pending' };
+    const badge = d.decision === 'approved' ? '<span class="band good">Approved</span>'
+               : d.decision === 'skipped'   ? '<span class="band watch">Skipped</span>'
+               : d.decision === 'edited'    ? '<span class="band watch">Edited</span>'
+               : '<span class="band bad">Pending</span>';
+    return `<div class="card" style="margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <div style="font-size:10px;letter-spacing:1.5px;color:#d97706;text-transform:uppercase;font-weight:700;margin-bottom:4px;">${(it.type || '').replace(/_/g, ' ')}</div>
+          <div style="font-size:15px;font-weight:700;color:#0b1d3a;">${it.title || it.id}</div>
+        </div>
+        <div>${badge}</div>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="${mailto(`APPROVE ${it.id}`, `Approving ${it.title}`)}" target="_blank" style="background:#059669;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">✅ Approve</a>
+        <a href="${mailto(`EDIT ${it.id}`, `Edit instructions for ${it.title}:\n\n[Type changes here]\n`)}" target="_blank" style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">✏️ Edit</a>
+        <a href="${mailto(`SKIP ${it.id}`, `Skipping ${it.title}`)}" target="_blank" style="background:#94a3b8;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">⏭ Skip</a>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('mb-items').innerHTML = itemsHtml || '<div class="empty"><div class="emoji">☕</div><h3>No pending approvals today</h3><p>All agents idle or upstream. Enjoy the morning.</p></div>';
+
+  // ---------- SEO / Backlinks ----------
+  const seo = data.matyx_seo;
+  if (seo?.summary) {
+    document.getElementById('seo-stats').innerHTML = [
+      { emoji: '🔗', value: seo.row_count, label: 'Total Backlinks', cls: 'cyan' },
+      { emoji: '📊', value: seo.summary.avg_domain_rating, label: 'Avg Domain Rating', cls: 'gold' },
+      { emoji: '🏆', value: seo.summary.top_15_referring_domains_by_dr?.[0]?.max_dr || '—', label: 'Top DR', cls: 'green' },
+      { emoji: '⚠️', value: seo.summary.suspected_toxic_count, label: 'Suspected Toxic', cls: 'red' },
+    ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+
+    document.getElementById('seo-domains').innerHTML = '<thead><tr><th>Domain</th><th>Max DR</th><th>Backlinks</th></tr></thead><tbody>' +
+      (seo.summary.top_15_referring_domains_by_dr || []).map(d => `<tr><td><strong>${d.domain}</strong></td><td class="num">${d.max_dr}</td><td class="num">${d.count}</td></tr>`).join('') + '</tbody>';
+
+    const states = seo.summary.backlink_states || {};
+    document.getElementById('seo-states').innerHTML = Object.keys(states).length > 0
+      ? Object.entries(states).map(([k, v]) => `<div style="display:inline-block;background:#f1f5f9;padding:8px 14px;border-radius:8px;margin:4px;font-size:13px;"><strong>${k}:</strong> ${v}</div>`).join('')
+      : '<p class="empty">No state data in current export.</p>';
+
+    document.getElementById('seo-toxic').innerHTML = (seo.summary.suspected_toxic_sample || []).length > 0
+      ? '<table><thead><tr><th>Source</th><th>Anchor</th><th>DR</th></tr></thead><tbody>' +
+        seo.summary.suspected_toxic_sample.map(t => `<tr><td><a href="${t.source_url}" target="_blank" style="color:#d97706;">${(t.source_url || '').slice(0, 60)}…</a></td><td>${(t.anchor || '').slice(0, 80)}</td><td class="num">${t.dr}</td></tr>`).join('') + '</tbody></table>'
+      : '<p class="empty">No toxic candidates flagged.</p>';
+  } else {
+    document.getElementById('seo-stats').innerHTML = '<div class="empty">No SEO export ingested yet. Drop the Matyx CSV in <code>data/raw/matyx_seo/</code> and run <code>npx tsx scripts/matyx_seo_parser.ts</code>.</div>';
+  }
 
   // ---------- Content Studio ----------
   const cd = data.content_director || {};
