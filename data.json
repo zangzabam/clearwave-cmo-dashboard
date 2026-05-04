@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T17:55:25.671Z",
+  "generated_at": "2026-05-04T20:41:20.993Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -973,8 +973,13 @@
         "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-05-04T15:49:27.001Z"
+    "last_brief_sent": "2026-05-04T20:40:21.627Z"
   },
   "approval_worker_url": null,
-  "approval_worker_token": null
+  "approval_worker_token": null,
+  "approval_github": {
+    "repo": "zangzabam/clearwave-approvals-state",
+    "branch": "main",
+    "path": "state.json"
+  }
 }
