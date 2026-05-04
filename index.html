@@ -493,48 +493,111 @@ async function init() {
 
   // ---------- Morning Brief / Approval Queue ----------
   const ap = data.approvals || { items: [], decisions: {} };
-  // The Cloudflare Worker URL + token are injected by the dashboard build (data.json).
-  // If not set yet (worker not deployed), buttons fall back to mailto.
-  const WORKER_URL = data.approval_worker_url || '';
-  const WORKER_TOKEN = data.approval_worker_token || '';
+  // GitHub-based one-click backend. PAT lives in localStorage on this device only,
+  // never in source. Repo + branch + path come from data.json.
+  const GH = data.approval_github || null;
   const APPROVAL_INBOX = 'clearwavewatersolutions@gmail.com';
   const mailto = (subj, body = '') => `mailto:${APPROVAL_INBOX}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
-  // One-click handler: POST to the Worker, update UI inline.
-  // Falls back to mailto if WORKER_URL not configured.
+  function getStoredToken() { return localStorage.getItem('clearwave_gh_pat') || ''; }
+  function promptForToken() {
+    const t = prompt('One-time setup on this device.\n\nPaste your GitHub PAT (starts with "github_pat_..."). It stays only on this device.');
+    if (t && t.trim().startsWith('github_pat_')) {
+      localStorage.setItem('clearwave_gh_pat', t.trim());
+      return t.trim();
+    }
+    return '';
+  }
+  function ensureToken() {
+    let t = getStoredToken();
+    if (!t) t = promptForToken();
+    return t;
+  }
+
+  async function ghGetState() {
+    const token = ensureToken();
+    if (!token) throw new Error('No PAT. Cancel will fall back to email.');
+    const url = `https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}`;
+    const r = await fetch(url, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } });
+    if (r.status === 401 || r.status === 403) {
+      localStorage.removeItem('clearwave_gh_pat');
+      throw new Error('Token rejected. Click again to re-enter.');
+    }
+    if (!r.ok) throw new Error(`GET state HTTP ${r.status}`);
+    const j = await r.json();
+    return { state: JSON.parse(atob(j.content.replace(/\n/g, ''))), sha: j.sha };
+  }
+  async function ghPutState(state, sha, message) {
+    const token = ensureToken();
+    if (!token) throw new Error('No PAT');
+    const r = await fetch(`https://api.github.com/repos/${GH.repo}/contents/${GH.path}`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: message || 'Approval state update',
+        content: btoa(JSON.stringify(state, null, 2)),
+        sha, branch: GH.branch,
+      }),
+    });
+    if (r.status === 401 || r.status === 403) {
+      localStorage.removeItem('clearwave_gh_pat');
+      throw new Error('Token rejected. Click again to re-enter.');
+    }
+    if (!r.ok) throw new Error(`PUT state HTTP ${r.status}`);
+    return r.json();
+  }
+
   async function actOn(itemId, action, btnEl) {
-    if (!WORKER_URL || !WORKER_TOKEN) {
-      window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via mailto fallback (worker not deployed)`);
+    if (!GH || !GH.repo) {
+      window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via mailto`);
       return;
     }
     const orig = btnEl.textContent;
     btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ saving…';
     try {
-      const r = await fetch(`${WORKER_URL}/${action}?id=${encodeURIComponent(itemId)}&t=${encodeURIComponent(WORKER_TOKEN)}`, { method: 'POST' });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          const { state, sha } = await ghGetState();
+          state.decisions = state.decisions || {};
+          state.decisions[itemId] = {
+            decision: action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited',
+            decided_at: new Date().toISOString(),
+          };
+          state.last_decision_at = state.decisions[itemId].decided_at;
+          await ghPutState(state, sha, `${action} ${itemId}`);
+          break;
+        } catch (e) { if (attempt === 1) throw e; }
+      }
       btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
       btnEl.style.background = action === 'approve' ? '#059669' : action === 'skip' ? '#94a3b8' : '#d97706';
       btnEl.style.opacity = '1';
-      // Mark as decided in local UI
       const card = btnEl.closest('.approval-card');
       if (card) card.style.opacity = '0.55';
     } catch (e) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't save: ${e.message}. Check the Worker is deployed and WORKER_URL is set.`);
+      alert(`Couldn't save: ${e.message}`);
     }
   }
   async function approveAll(date, btnEl) {
-    if (!WORKER_URL || !WORKER_TOKEN) {
+    if (!GH || !GH.repo) {
       window.location.href = mailto(`APPROVE ALL ${date}`, 'Approving everything for today.');
       return;
     }
     const orig = btnEl.textContent;
     btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ approving all…';
     try {
-      const r = await fetch(`${WORKER_URL}/approve_all?date=${encodeURIComponent(date)}&t=${encodeURIComponent(WORKER_TOKEN)}`, { method: 'POST' });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const j = await r.json();
-      btnEl.textContent = `✅ Approved ${j.approved_count}`;
+      const { state, sha } = await ghGetState();
+      state.decisions = state.decisions || {};
+      let count = 0;
+      for (const it of (ap.items || [])) {
+        if (!state.decisions[it.id] || state.decisions[it.id].decision === 'pending') {
+          state.decisions[it.id] = { decision: 'approved', decided_at: new Date().toISOString() };
+          count++;
+        }
+      }
+      state.last_decision_at = new Date().toISOString();
+      await ghPutState(state, sha, `Approve all ${date} (${count})`);
+      btnEl.textContent = `✅ Approved ${count}`;
       btnEl.style.opacity = '1';
       document.querySelectorAll('.approval-card').forEach(c => c.style.opacity = '0.55');
     } catch (e) {
@@ -542,7 +605,6 @@ async function init() {
       alert(`Couldn't approve all: ${e.message}`);
     }
   }
-  // Make accessible to inline onclick handlers
   window.actOn = actOn;
   window.approveAll = approveAll;
 
@@ -564,7 +626,27 @@ async function init() {
   approveAllBtn.style.cursor = 'pointer';
   approveAllBtn.onclick = (e) => { e.preventDefault(); approveAll(ap.date || '', approveAllBtn); };
 
-  // Per-item buttons — one-click via Worker
+  // Render the email body / preview text inside each card so Justin can read it before approving
+  function renderItemBody(text) {
+    if (!text) return '<p style="color:#94a3b8;font-style:italic;">No preview available.</p>';
+    // Strip the meta header lines if present (Subject:, Preview:)
+    const cleaned = String(text)
+      .replace(/^Subject:.*$/m, '')
+      .replace(/^Preview:.*$/m, '')
+      .replace(/^---\s*$/gm, '')
+      .trim();
+    // Convert paragraphs + render simple bold
+    const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const paras = cleaned.split(/\n\n+/).filter(p => p.trim());
+    return paras.map(p => {
+      const html = escape(p)
+        .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#0b1d3a;">$1</strong>')
+        .replace(/\n/g, '<br>');
+      return `<p style="margin:8px 0;color:#1e293b;font-size:14px;line-height:1.65;">${html}</p>`;
+    }).join('');
+  }
+
+  // Per-item buttons — one-click via GitHub Contents API
   const itemsHtml = (ap.items || []).map(it => {
     const d = ap.decisions[it.id] || { decision: 'pending' };
     const badge = d.decision === 'approved' ? '<span class="band good">Approved</span>'
@@ -572,15 +654,17 @@ async function init() {
                : d.decision === 'edited'    ? '<span class="band watch">Edited</span>'
                : '<span class="band bad">Pending</span>';
     const dimmed = d.decision !== 'pending' ? 'opacity:0.55;' : '';
+    const bodyHtml = renderItemBody(it.preview);
     return `<div class="card approval-card" style="margin-bottom:14px;${dimmed}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
         <div style="flex:1;min-width:200px;">
           <div style="font-size:10px;letter-spacing:1.5px;color:#d97706;text-transform:uppercase;font-weight:700;margin-bottom:4px;">${(it.type || '').replace(/_/g, ' ')}</div>
-          <div style="font-size:15px;font-weight:700;color:#0b1d3a;">${it.title || it.id}</div>
+          <div style="font-size:16px;font-weight:700;color:#0b1d3a;line-height:1.35;">${it.title || it.id}</div>
         </div>
         <div>${badge}</div>
       </div>
-      <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid #e2e8f0;">${bodyHtml}</div>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
         <button onclick="actOn('${it.id}', 'approve', this)" style="background:#059669;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✅ Approve</button>
         <button onclick="actOn('${it.id}', 'edit', this)"    style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✏️ Edit</button>
         <button onclick="actOn('${it.id}', 'skip', this)"    style="background:#94a3b8;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">⏭ Skip</button>

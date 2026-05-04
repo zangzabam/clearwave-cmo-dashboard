@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T20:41:44.906Z",
+  "generated_at": "2026-05-04T20:53:58.984Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -965,15 +965,34 @@
         "id": "dwm_2026-05-04",
         "type": "daily_water_minute",
         "title": "Daily Water Minute · How long should your system actually last?",
-        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-05-04.email.md"
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-05-04.email.md",
+        "preview": "Words I like;\n\"Buy once, cry once.\" Old tradesman saying. Applies to water treatment more than you'd think.\nMost water systems sold today are built for a 7-to-10-year window. After that, you're replacing media, rebuilding valves, or just buying new. The industry likes it that way. Repeat customers are easier than new ones.\nHere's what real longevity looks like: tanks rated for 15-plus years, control valves with 10-year warranties (not the cheap 5-year stuff), and media that regenerates instead of saturating. The difference isn't subtle. A well-built system costs more up front but runs 15, 20, sometimes 25 years with basic maintenance. A cheap one nickels and dimes you every few years until you replace it.\nIf you already own a ClearWave system, you made the right call. Our tanks are NSF-rated for the long haul, and every valve we install carries a real warranty because we expect it to last.\nIf you're still researching, ask this question: \"What's the expected lifespan, and what does year 12 look like?\" Most companies won't give you a straight answer.\nIf you want a second opinion on what you currently have, hit reply and I'll send you a free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-05-04_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: Annual Service Reminder (1-Year Post-Install)",
+        "preview": "Audience: 25 candidates hitting 12-month anniversary Send timing: Tuesday, 8:00 AM ET (mid-week, morning coffee scroll)  Subject Lines Primary: It's been a year. Time for your annual checkup. Alternates: 1. Your [system name] turns 1 this week 2. 12 months in: here's what happens next"
+      },
+      {
+        "id": "email_2026-05-04_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: Referral Bonus Push (30-60 Days Post-Install, Satisfied C",
+        "preview": "Audience: 20 satisfied clients in the \"honeymoon window\" Send timing: Thursday, 11:00 AM ET (late-morning, decision energy still high)  Subject Lines Primary: Know anyone still dealing with bad water? Alternates: 1. $500 for you. Pure water for them. 2. Your neighbors are asking about your water"
       }
     ],
     "decisions": {
       "dwm_2026-05-04": {
         "decision": "pending"
+      },
+      "email_2026-05-04_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-04_c2": {
+        "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-05-04T20:41:39.238Z"
+    "last_brief_sent": "2026-05-04T20:53:54.375Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
