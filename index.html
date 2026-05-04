@@ -493,8 +493,59 @@ async function init() {
 
   // ---------- Morning Brief / Approval Queue ----------
   const ap = data.approvals || { items: [], decisions: {} };
+  // The Cloudflare Worker URL + token are injected by the dashboard build (data.json).
+  // If not set yet (worker not deployed), buttons fall back to mailto.
+  const WORKER_URL = data.approval_worker_url || '';
+  const WORKER_TOKEN = data.approval_worker_token || '';
   const APPROVAL_INBOX = 'clearwavewatersolutions@gmail.com';
   const mailto = (subj, body = '') => `mailto:${APPROVAL_INBOX}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+
+  // One-click handler: POST to the Worker, update UI inline.
+  // Falls back to mailto if WORKER_URL not configured.
+  async function actOn(itemId, action, btnEl) {
+    if (!WORKER_URL || !WORKER_TOKEN) {
+      window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via mailto fallback (worker not deployed)`);
+      return;
+    }
+    const orig = btnEl.textContent;
+    btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ saving…';
+    try {
+      const r = await fetch(`${WORKER_URL}/${action}?id=${encodeURIComponent(itemId)}&t=${encodeURIComponent(WORKER_TOKEN)}`, { method: 'POST' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
+      btnEl.style.background = action === 'approve' ? '#059669' : action === 'skip' ? '#94a3b8' : '#d97706';
+      btnEl.style.opacity = '1';
+      // Mark as decided in local UI
+      const card = btnEl.closest('.approval-card');
+      if (card) card.style.opacity = '0.55';
+    } catch (e) {
+      btnEl.style.opacity = '1'; btnEl.textContent = orig;
+      alert(`Couldn't save: ${e.message}. Check the Worker is deployed and WORKER_URL is set.`);
+    }
+  }
+  async function approveAll(date, btnEl) {
+    if (!WORKER_URL || !WORKER_TOKEN) {
+      window.location.href = mailto(`APPROVE ALL ${date}`, 'Approving everything for today.');
+      return;
+    }
+    const orig = btnEl.textContent;
+    btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ approving all…';
+    try {
+      const r = await fetch(`${WORKER_URL}/approve_all?date=${encodeURIComponent(date)}&t=${encodeURIComponent(WORKER_TOKEN)}`, { method: 'POST' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      btnEl.textContent = `✅ Approved ${j.approved_count}`;
+      btnEl.style.opacity = '1';
+      document.querySelectorAll('.approval-card').forEach(c => c.style.opacity = '0.55');
+    } catch (e) {
+      btnEl.style.opacity = '1'; btnEl.textContent = orig;
+      alert(`Couldn't approve all: ${e.message}`);
+    }
+  }
+  // Make accessible to inline onclick handlers
+  window.actOn = actOn;
+  window.approveAll = approveAll;
+
   const totalItems = (ap.items || []).length;
   const pendingCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'pending').length;
   const approvedCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'approved').length;
@@ -507,18 +558,21 @@ async function init() {
     { emoji: '⏭', value: skippedCount, label: 'Skipped', cls: '' },
   ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
 
-  // Approve-all button
-  const allApproveBody = `Approving everything in today's morning brief.\n\n— Justin`;
-  document.getElementById('mb-approve-all-btn').href = mailto(`APPROVE ALL ${ap.date || ''}`, allApproveBody);
+  // Approve-all button — one-click via Worker, falls back to mailto
+  const approveAllBtn = document.getElementById('mb-approve-all-btn');
+  approveAllBtn.removeAttribute('href');
+  approveAllBtn.style.cursor = 'pointer';
+  approveAllBtn.onclick = (e) => { e.preventDefault(); approveAll(ap.date || '', approveAllBtn); };
 
-  // Per-item buttons
+  // Per-item buttons — one-click via Worker
   const itemsHtml = (ap.items || []).map(it => {
     const d = ap.decisions[it.id] || { decision: 'pending' };
     const badge = d.decision === 'approved' ? '<span class="band good">Approved</span>'
                : d.decision === 'skipped'   ? '<span class="band watch">Skipped</span>'
                : d.decision === 'edited'    ? '<span class="band watch">Edited</span>'
                : '<span class="band bad">Pending</span>';
-    return `<div class="card" style="margin-bottom:14px;">
+    const dimmed = d.decision !== 'pending' ? 'opacity:0.55;' : '';
+    return `<div class="card approval-card" style="margin-bottom:14px;${dimmed}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
         <div style="flex:1;min-width:200px;">
           <div style="font-size:10px;letter-spacing:1.5px;color:#d97706;text-transform:uppercase;font-weight:700;margin-bottom:4px;">${(it.type || '').replace(/_/g, ' ')}</div>
@@ -527,9 +581,9 @@ async function init() {
         <div>${badge}</div>
       </div>
       <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="${mailto(`APPROVE ${it.id}`, `Approving ${it.title}`)}" target="_blank" style="background:#059669;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">✅ Approve</a>
-        <a href="${mailto(`EDIT ${it.id}`, `Edit instructions for ${it.title}:\n\n[Type changes here]\n`)}" target="_blank" style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">✏️ Edit</a>
-        <a href="${mailto(`SKIP ${it.id}`, `Skipping ${it.title}`)}" target="_blank" style="background:#94a3b8;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;">⏭ Skip</a>
+        <button onclick="actOn('${it.id}', 'approve', this)" style="background:#059669;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✅ Approve</button>
+        <button onclick="actOn('${it.id}', 'edit', this)"    style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✏️ Edit</button>
+        <button onclick="actOn('${it.id}', 'skip', this)"    style="background:#94a3b8;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">⏭ Skip</button>
       </div>
     </div>`;
   }).join('');
