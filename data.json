@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T22:08:21.141Z",
+  "generated_at": "2026-05-04T22:11:23.052Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -990,11 +990,16 @@
             "sent_at": "2026-05-04T21:04:12.614Z",
             "mailchimp_campaign_id": "f4c2b06a1e",
             "send_status": "sent"
+          },
+          {
+            "sent_at": "2026-05-04T22:08:12.868Z",
+            "mailchimp_campaign_id": "e0268060ac",
+            "send_status": "sent"
           }
         ],
-        "sent_at": "2026-05-04T22:08:12.868Z",
+        "sent_at": "2026-05-04T22:11:20.254Z",
         "send_status": "sent",
-        "mailchimp_campaign_id": "e0268060ac"
+        "mailchimp_campaign_id": "35e5fab284"
       },
       "email_2026-05-04_c1": {
         "decision": "pending"
