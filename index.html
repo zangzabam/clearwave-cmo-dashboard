@@ -496,6 +496,21 @@ async function init() {
   // GitHub-based one-click backend. PAT lives in localStorage on this device only,
   // never in source. Repo + branch + path come from data.json.
   const GH = data.approval_github || null;
+
+  // Pull LIVE state.json (the source of truth) and merge over the static data.json view.
+  // Why: data.json only refreshes when the cron rebuilds; the live state file updates
+  // instantly when buttons are clicked. Reading both means refresh always shows accurate status.
+  if (GH && GH.repo) {
+    try {
+      const liveResp = await fetch(`https://raw.githubusercontent.com/${GH.repo}/${GH.branch}/${GH.path}?t=${Date.now()}`, { cache: 'no-store' });
+      if (liveResp.ok) {
+        const live = await liveResp.json();
+        if (live?.decisions && live.date === ap.date) {
+          ap.decisions = { ...(ap.decisions || {}), ...live.decisions };
+        }
+      }
+    } catch (e) { /* fall back silently to static decisions */ }
+  }
   const APPROVAL_INBOX = 'clearwavewatersolutions@gmail.com';
   const mailto = (subj, body = '') => `mailto:${APPROVAL_INBOX}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 
@@ -555,19 +570,27 @@ async function init() {
     const orig = btnEl.textContent;
     btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ saving…';
     try {
-      for (let attempt = 0; attempt < 2; attempt++) {
+      // Retry up to 4x with small backoff to ride through 409 conflicts and CDN propagation
+      let lastErr;
+      for (let attempt = 0; attempt < 4; attempt++) {
         try {
+          if (attempt > 0) await new Promise(r => setTimeout(r, 400 * attempt));
           const { state, sha } = await ghGetState();
           state.decisions = state.decisions || {};
+          // If already at the target decision, treat as success (idempotent)
+          if (state.decisions[itemId]?.decision === (action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited')) {
+            lastErr = null; break;
+          }
           state.decisions[itemId] = {
             decision: action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited',
             decided_at: new Date().toISOString(),
           };
           state.last_decision_at = state.decisions[itemId].decided_at;
           await ghPutState(state, sha, `${action} ${itemId}`);
-          break;
-        } catch (e) { if (attempt === 1) throw e; }
+          lastErr = null; break;
+        } catch (e) { lastErr = e; }
       }
+      if (lastErr) throw lastErr;
       btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
       btnEl.style.background = action === 'approve' ? '#059669' : action === 'skip' ? '#94a3b8' : '#d97706';
       btnEl.style.opacity = '1';
