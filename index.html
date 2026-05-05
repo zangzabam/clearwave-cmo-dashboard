@@ -506,11 +506,22 @@ async function init() {
       if (liveResp.ok) {
         const live = await liveResp.json();
         if (live && Array.isArray(live.items)) {
-          ap.items = live.items;
+          // Use state.json items but enrich with data.json fields (preview, source_path, meta)
+          // for any IDs that match — defensive in case state.json was seeded with a partial schema
+          const dataItemsById = Object.fromEntries((ap.items || []).map(it => [it.id, it]));
+          ap.items = live.items.map(li => {
+            const fallback = dataItemsById[li.id] || {};
+            return {
+              ...fallback,
+              ...li,
+              preview: li.preview || fallback.preview || '',
+              source_path: li.source_path || fallback.source_path,
+              meta: li.meta || fallback.meta,
+            };
+          });
           ap.decisions = live.decisions || {};
           ap.date = live.date || ap.date;
         } else if (live?.decisions) {
-          // Older state without items — just merge decisions
           ap.decisions = { ...(ap.decisions || {}), ...live.decisions };
         }
       }
