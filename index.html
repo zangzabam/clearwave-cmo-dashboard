@@ -497,19 +497,24 @@ async function init() {
   // never in source. Repo + branch + path come from data.json.
   const GH = data.approval_github || null;
 
-  // Pull LIVE state.json (the source of truth) and merge over the static data.json view.
-  // Why: data.json only refreshes when the cron rebuilds; the live state file updates
-  // instantly when buttons are clicked. Reading both means refresh always shows accurate status.
+  // Pull LIVE state.json — this is the authoritative source. data.json is just a static
+  // build-time view that may be stale (cron rebuild, build push failure, etc.). When state.json
+  // exists, fully replace items + decisions + date so the dashboard always shows today.
   if (GH && GH.repo) {
     try {
       const liveResp = await fetch(`https://raw.githubusercontent.com/${GH.repo}/${GH.branch}/${GH.path}?t=${Date.now()}`, { cache: 'no-store' });
       if (liveResp.ok) {
         const live = await liveResp.json();
-        if (live?.decisions && live.date === ap.date) {
+        if (live && Array.isArray(live.items)) {
+          ap.items = live.items;
+          ap.decisions = live.decisions || {};
+          ap.date = live.date || ap.date;
+        } else if (live?.decisions) {
+          // Older state without items — just merge decisions
           ap.decisions = { ...(ap.decisions || {}), ...live.decisions };
         }
       }
-    } catch (e) { /* fall back silently to static decisions */ }
+    } catch (e) { /* fall back silently */ }
   }
   const APPROVAL_INBOX = 'clearwavewatersolutions@gmail.com';
   const mailto = (subj, body = '') => `mailto:${APPROVAL_INBOX}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
@@ -695,6 +700,34 @@ async function init() {
     </div>`;
   }).join('');
   document.getElementById('mb-items').innerHTML = itemsHtml || '<div class="empty"><div class="emoji">☕</div><h3>No pending approvals today</h3><p>All agents idle or upstream. Enjoy the morning.</p></div>';
+
+  // One-tap auto-action via URL params from email buttons.
+  // Email buttons link to: ?act=approve&id=<item_id> (or skip / edit)
+  // Dashboard reads the params, scrolls to the item, and fires actOn() after a tiny
+  // delay so the DOM is ready. Then strips the param so refresh doesn't re-fire.
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const act = params.get('act');
+    const id = params.get('id');
+    if (act === 'approve_all') {
+      setTimeout(() => {
+        const btn = document.getElementById('mb-approve-all-btn');
+        if (btn) { btn.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => btn.click(), 400); }
+        history.replaceState({}, '', window.location.pathname);
+      }, 300);
+    } else if (act && id && ['approve', 'skip', 'edit'].includes(act)) {
+      setTimeout(() => {
+        const btn = document.querySelector(`button[onclick*="actOn('${id}', '${act}'"]`);
+        if (btn) {
+          btn.closest('.approval-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => btn.click(), 400);
+          history.replaceState({}, '', window.location.pathname);
+        } else {
+          alert(`Item ${id} not found on dashboard. It may have been processed already or not yet seeded.`);
+        }
+      }, 300);
+    }
+  } catch (e) { console.warn('auto-action handler failed:', e); }
 
   // ---------- SEO / Backlinks ----------
   const seo = data.matyx_seo;
