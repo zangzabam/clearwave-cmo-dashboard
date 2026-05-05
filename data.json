@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T11:23:06.553Z",
+  "generated_at": "2026-05-05T11:27:15.302Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -992,7 +992,7 @@
         "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-05-05T11:23:01.273Z"
+    "last_brief_sent": "2026-05-05T11:27:10.459Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
