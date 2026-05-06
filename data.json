@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T10:02:01.661Z",
+  "generated_at": "2026-05-06T10:30:04.547Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-06",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -960,8 +960,39 @@
   },
   "approvals": {
     "date": "2026-05-06",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-05-06",
+        "type": "daily_water_minute",
+        "title": "Daily Water Minute · The $2,920 math nobody talks about",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-05-06.email.md",
+        "preview": "Words I like;\n\"If you can't measure it, you can't improve it.\" Peter Drucker said that about business, but it works for your wallet too.\nHere's the math most people never do: one 24-pack of bottled water runs about $6 these days. If your family goes through two packs a week (pretty normal for a household of four), that's $624 a year. Over five years? $3,120. Over ten? $6,240.\nAnd that's conservative. Add in the gas stations, the vending machines, the convenience store runs when you're out, and the real number climbs fast.\nNobody wakes up and says \"I want to spend three grand on plastic bottles.\" It just happens a case at a time.\nFor folks who already have a ClearWave system, you know this. You did the math before you called us. You're drinking straight from the tap now, and that $50-a-month habit is gone.\nFor everyone else: I'm not saying bottled water is evil. I'm saying it's expensive, and most people genuinely don't realize how expensive until they add it up.\nThere's a better way. It starts with knowing what's actually in your water.\nHit reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-05-06_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: 1-Year Annual Service Reminder",
+        "preview": "Audience: 26 clients at 12-month mark Source: IDEA_SOURCING.md § Lifecycle trigger emails > Annual service reminder  Subject Lines Primary: `Your system's first birthday (book now)` Alternates: 1. `12 months in: one quick appointment`"
+      },
+      {
+        "id": "email_2026-05-06_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: Cold Lead Re-Engagement (New Water News Hook)",
+        "preview": "Audience: 1,000 cold subscribers (>60d no engagement, never reached quote stage) Source: IDEA_SOURCING.md § Re-engagement campaigns > \"Did something change?\" + Educational content repurposing > water news angle  Subject Lines Primary: `VA's new PFAS limits (what it means for you)` Alternates: 1. `The EPA just moved the"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-05-06": {
+        "decision": "pending"
+      },
+      "email_2026-05-06_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-06_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-06T10:30:00.810Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
