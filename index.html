@@ -624,13 +624,13 @@ async function init() {
       } catch (e) {
         lastErr = e;
         if (e.fatal) break; // auth: don't retry
-        // Non-409 errors that aren't conflicts: retry once or twice then stop
-        if (!String(e.message || '').includes('409') && attempt >= 2) break;
+        // Retry all transient errors (409 SHA conflict, "Failed to fetch", 5xx, etc.) the same way.
+        // Only bail fast on auth — network blips need full backoff.
       }
     }
     if (lastErr) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't save after retries: ${lastErr.message}`);
+      alert(`Couldn't save after 8 retries: ${lastErr.message}\n\nIf this is "Failed to fetch", check your internet connection or browser extensions blocking github.com.`);
       return;
     }
     btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
@@ -666,12 +666,11 @@ async function init() {
       } catch (e) {
         lastErr = e;
         if (e.fatal) break;
-        if (!String(e.message || '').includes('409') && attempt >= 2) break;
       }
     }
     if (lastErr) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't approve all after retries: ${lastErr.message}`);
+      alert(`Couldn't approve all after 8 retries: ${lastErr.message}`);
       return;
     }
     btnEl.textContent = count > 0 ? `✅ Approved ${count}` : `✅ All already approved`;
@@ -680,6 +679,80 @@ async function init() {
   }
   window.actOn = actOn;
   window.approveAll = approveAll;
+
+  // ---------- Real Edit Modal ----------
+  // Lets Justin actually rewrite the content. Saves edit text + decision:'edited' to state.
+  // Sender (or downstream agent) checks state.decisions[id].edited_content and uses it
+  // instead of the original source markdown when present.
+  async function openEditModal(itemId, btnEl) {
+    const item = (ap.items || []).find(i => i.id === itemId);
+    if (!item) { alert(`Item ${itemId} not loaded.`); return; }
+
+    // Try to load any prior edit_notes from state to pre-fill
+    let initial = item.preview || '';
+    try {
+      const { state } = await ghGetState();
+      if (state.decisions?.[itemId]?.edited_content) initial = state.decisions[itemId].edited_content;
+    } catch (e) { /* fall back to current preview */ }
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(11,29,58,0.85);z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;';
+    overlay.innerHTML = `
+      <div style="background:#fff;border-radius:14px;max-width:780px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+        <div style="padding:20px 26px;border-bottom:1px solid #e2e8f0;background:#0b1d3a;color:#fff;border-radius:14px 14px 0 0;">
+          <div style="font-size:11px;color:#fbbf24;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Edit Content</div>
+          <div style="font-size:17px;font-weight:700;margin-top:4px;line-height:1.35;">${(item.title || itemId).replace(/</g, '&lt;')}</div>
+        </div>
+        <div style="padding:20px 26px;flex:1;overflow:auto;">
+          <div style="font-size:13px;color:#475569;margin-bottom:12px;line-height:1.5;">Edit the content below. When you save, this text replaces what would have been sent. The agent picks up the edit and uses it for the actual send.</div>
+          <textarea id="edit-textarea" style="width:100%;min-height:340px;padding:14px;border:1px solid #cbd5e1;border-radius:8px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;line-height:1.55;resize:vertical;color:#0b1d3a;">${(initial).replace(/</g, '&lt;')}</textarea>
+        </div>
+        <div style="padding:16px 26px;border-top:1px solid #e2e8f0;display:flex;justify-content:flex-end;gap:10px;background:#f8fafc;border-radius:0 0 14px 14px;">
+          <button id="edit-cancel" style="background:#fff;color:#475569;border:1px solid #cbd5e1;padding:10px 20px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">Cancel</button>
+          <button id="edit-save" style="background:#d97706;color:#fff;border:0;padding:10px 22px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;">Save Edit</button>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
+    const close = () => overlay.remove();
+    overlay.querySelector('#edit-cancel').onclick = close;
+    overlay.onclick = (e) => { if (e.target === overlay) close(); };
+
+    overlay.querySelector('#edit-save').onclick = async () => {
+      const newContent = overlay.querySelector('#edit-textarea').value;
+      const saveBtn = overlay.querySelector('#edit-save');
+      saveBtn.disabled = true; saveBtn.textContent = '⏳ saving…';
+
+      let lastErr = null;
+      for (let attempt = 0; attempt < 8; attempt++) {
+        try {
+          if (attempt > 0) await new Promise(r => setTimeout(r, Math.min(150 * Math.pow(1.6, attempt), 3500)));
+          const { state, sha } = await ghGetState();
+          state.decisions = state.decisions || {};
+          state.decisions[itemId] = {
+            ...(state.decisions[itemId] || {}),
+            decision: 'edited',
+            decided_at: new Date().toISOString(),
+            edited_content: newContent,
+          };
+          state.last_decision_at = state.decisions[itemId].decided_at;
+          await ghPutState(state, sha, `edit ${itemId}`);
+          lastErr = null; break;
+        } catch (e) { lastErr = e; if (e.fatal) break; }
+      }
+      if (lastErr) {
+        saveBtn.disabled = false; saveBtn.textContent = 'Save Edit';
+        alert(`Couldn't save: ${lastErr.message}`);
+        return;
+      }
+      // Update the originating button + card visual state
+      btnEl.textContent = '✏️ Saved';
+      btnEl.style.background = '#d97706';
+      const card = btnEl.closest('.approval-card');
+      if (card) card.style.opacity = '0.55';
+      close();
+    };
+  }
+  window.openEditModal = openEditModal;
 
   const totalItems = (ap.items || []).length;
   const pendingCount = Object.values(ap.decisions || {}).filter(d => d.decision === 'pending').length;
@@ -739,7 +812,7 @@ async function init() {
       <div style="margin-top:14px;padding-top:14px;border-top:1px solid #e2e8f0;">${bodyHtml}</div>
       <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
         <button onclick="actOn('${it.id}', 'approve', this)" style="background:#059669;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✅ Approve</button>
-        <button onclick="actOn('${it.id}', 'edit', this)"    style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✏️ Edit</button>
+        <button onclick="openEditModal('${it.id}', this)"    style="background:#d97706;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">✏️ Edit</button>
         <button onclick="actOn('${it.id}', 'skip', this)"    style="background:#94a3b8;color:#fff;padding:9px 16px;border-radius:8px;border:0;font-weight:700;font-size:13px;cursor:pointer;">⏭ Skip</button>
       </div>
     </div>`;
@@ -762,7 +835,11 @@ async function init() {
       }, 300);
     } else if (act && id && ['approve', 'skip', 'edit'].includes(act)) {
       setTimeout(() => {
-        const btn = document.querySelector(`button[onclick*="actOn('${id}', '${act}'"]`);
+        // Edit uses openEditModal, approve/skip uses actOn — both reachable via the buttons
+        const selector = act === 'edit'
+          ? `button[onclick*="openEditModal('${id}'"]`
+          : `button[onclick*="actOn('${id}', '${act}'"]`;
+        const btn = document.querySelector(selector);
         if (btn) {
           btn.closest('.approval-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setTimeout(() => btn.click(), 400);
