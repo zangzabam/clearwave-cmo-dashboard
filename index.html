@@ -548,11 +548,24 @@ async function init() {
   async function ghGetState() {
     const token = ensureToken();
     if (!token) throw new Error('No PAT. Cancel will fall back to email.');
-    const url = `https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}`;
-    const r = await fetch(url, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } });
+    // Guarantee fresh SHA: unique URL (defeats browser/CDN cache) + no-store + disable
+    // conditional requests (If-None-Match would let GitHub return 304 with stale ETag).
+    const cacheBust = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const url = `https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}&_cb=${cacheBust}`;
+    const r = await fetch(url, {
+      cache: 'no-store',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github+json',
+        'If-None-Match': '',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        Pragma: 'no-cache',
+      },
+    });
     if (r.status === 401 || r.status === 403) {
       localStorage.removeItem('clearwave_gh_pat');
-      throw new Error('Token rejected. Click again to re-enter.');
+      const err = new Error('Token rejected. Click again to re-enter.');
+      err.fatal = true; throw err;
     }
     if (!r.ok) throw new Error(`GET state HTTP ${r.status}`);
     const j = await r.json();
@@ -583,39 +596,48 @@ async function init() {
       window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via mailto`);
       return;
     }
+    const target = action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited';
     const orig = btnEl.textContent;
     btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ saving…';
-    try {
-      // Retry up to 4x with small backoff to ride through 409 conflicts and CDN propagation
-      let lastErr;
-      for (let attempt = 0; attempt < 4; attempt++) {
-        try {
-          if (attempt > 0) await new Promise(r => setTimeout(r, 400 * attempt));
-          const { state, sha } = await ghGetState();
-          state.decisions = state.decisions || {};
-          // If already at the target decision, treat as success (idempotent)
-          if (state.decisions[itemId]?.decision === (action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited')) {
-            lastErr = null; break;
-          }
-          state.decisions[itemId] = {
-            decision: action === 'approve' ? 'approved' : action === 'skip' ? 'skipped' : 'edited',
-            decided_at: new Date().toISOString(),
-          };
-          state.last_decision_at = state.decisions[itemId].decided_at;
-          await ghPutState(state, sha, `${action} ${itemId}`);
-          lastErr = null; break;
-        } catch (e) { lastErr = e; }
+    let lastErr = null;
+    // Up to 8 attempts. Exponential backoff. 409s (SHA conflict from concurrent sender cron
+    // or stale browser cache) trigger fresh re-read. Auth errors bail immediately.
+    for (let attempt = 0; attempt < 8; attempt++) {
+      try {
+        if (attempt > 0) {
+          const delay = Math.min(150 * Math.pow(1.6, attempt), 3500);
+          await new Promise(r => setTimeout(r, delay));
+        }
+        const { state, sha } = await ghGetState();
+        state.decisions = state.decisions || {};
+        // Idempotent: if already at target, treat as success
+        if (state.decisions[itemId]?.decision === target) { lastErr = null; break; }
+        // Patch only this decision — preserve sender's sent_at and other concurrent fields
+        state.decisions[itemId] = {
+          ...(state.decisions[itemId] || {}),
+          decision: target,
+          decided_at: new Date().toISOString(),
+        };
+        state.last_decision_at = state.decisions[itemId].decided_at;
+        await ghPutState(state, sha, `${action} ${itemId}`);
+        lastErr = null; break;
+      } catch (e) {
+        lastErr = e;
+        if (e.fatal) break; // auth: don't retry
+        // Non-409 errors that aren't conflicts: retry once or twice then stop
+        if (!String(e.message || '').includes('409') && attempt >= 2) break;
       }
-      if (lastErr) throw lastErr;
-      btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
-      btnEl.style.background = action === 'approve' ? '#059669' : action === 'skip' ? '#94a3b8' : '#d97706';
-      btnEl.style.opacity = '1';
-      const card = btnEl.closest('.approval-card');
-      if (card) card.style.opacity = '0.55';
-    } catch (e) {
-      btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't save: ${e.message}`);
     }
+    if (lastErr) {
+      btnEl.style.opacity = '1'; btnEl.textContent = orig;
+      alert(`Couldn't save after retries: ${lastErr.message}`);
+      return;
+    }
+    btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
+    btnEl.style.background = action === 'approve' ? '#059669' : action === 'skip' ? '#94a3b8' : '#d97706';
+    btnEl.style.opacity = '1';
+    const card = btnEl.closest('.approval-card');
+    if (card) card.style.opacity = '0.55';
   }
   async function approveAll(date, btnEl) {
     if (!GH || !GH.repo) {
@@ -624,25 +646,37 @@ async function init() {
     }
     const orig = btnEl.textContent;
     btnEl.style.opacity = '0.5'; btnEl.textContent = '⏳ approving all…';
-    try {
-      const { state, sha } = await ghGetState();
-      state.decisions = state.decisions || {};
-      let count = 0;
-      for (const it of (ap.items || [])) {
-        if (!state.decisions[it.id] || state.decisions[it.id].decision === 'pending') {
-          state.decisions[it.id] = { decision: 'approved', decided_at: new Date().toISOString() };
-          count++;
+    let lastErr = null, count = 0;
+    for (let attempt = 0; attempt < 8; attempt++) {
+      try {
+        if (attempt > 0) await new Promise(r => setTimeout(r, Math.min(150 * Math.pow(1.6, attempt), 3500)));
+        const { state, sha } = await ghGetState();
+        state.decisions = state.decisions || {};
+        count = 0;
+        for (const it of (ap.items || [])) {
+          if (!state.decisions[it.id] || state.decisions[it.id].decision === 'pending') {
+            state.decisions[it.id] = { ...(state.decisions[it.id] || {}), decision: 'approved', decided_at: new Date().toISOString() };
+            count++;
+          }
         }
+        if (count === 0) { lastErr = null; break; } // already all approved
+        state.last_decision_at = new Date().toISOString();
+        await ghPutState(state, sha, `Approve all ${date} (${count})`);
+        lastErr = null; break;
+      } catch (e) {
+        lastErr = e;
+        if (e.fatal) break;
+        if (!String(e.message || '').includes('409') && attempt >= 2) break;
       }
-      state.last_decision_at = new Date().toISOString();
-      await ghPutState(state, sha, `Approve all ${date} (${count})`);
-      btnEl.textContent = `✅ Approved ${count}`;
-      btnEl.style.opacity = '1';
-      document.querySelectorAll('.approval-card').forEach(c => c.style.opacity = '0.55');
-    } catch (e) {
-      btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't approve all: ${e.message}`);
     }
+    if (lastErr) {
+      btnEl.style.opacity = '1'; btnEl.textContent = orig;
+      alert(`Couldn't approve all after retries: ${lastErr.message}`);
+      return;
+    }
+    btnEl.textContent = count > 0 ? `✅ Approved ${count}` : `✅ All already approved`;
+    btnEl.style.opacity = '1';
+    document.querySelectorAll('.approval-card').forEach(c => c.style.opacity = '0.55');
   }
   window.actOn = actOn;
   window.approveAll = approveAll;
