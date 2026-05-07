@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T10:01:52.507Z",
+  "generated_at": "2026-05-07T10:30:04.924Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-07",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -960,8 +960,29 @@
   },
   "approvals": {
     "date": "2026-05-07",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-07_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: 1-Year Annual Service (Priority)",
+        "preview": "**Audience:** 26 clients at 12-month mark\n**Segment:** Jobber lifecycle trigger (completedAt ~April 23-25, 2025)\n### Subject Lines\n**Primary:**\n`Your system just hit one year`\n**Alternates:**\n1. `Don, your Ironmax turns one this week`\n2. `One year down. Here's what happens next.`\n3. `The 12-month checkpoint for your system`\n4. `Annual service: what to expect (5 min read)`\n### Preview Text\n`Quick maintenance visit locks in warranty + catches small issues before they become big ones.`\n### Email Body\n---\n**Subject:** Your system just hit one year\nDon,\nYour Ironmax + Acid Neut hit the 12-month mark this week.\nThat means it's time for the annual service visit. Takes about 30 minutes. We check flow rates, inspect seals, confirm your media is doing its job, and swap any consumables that need it.\nSmall issues caught early stay small. That's the point.\nThree reasons this matters:\n**1. Warranty.** Your lifetime coverage on tanks and valves stays active when you stay current on annual service.\n**2. Performance.** Iron systems work hardest in year one. A quick tune keeps efficiency high.\n**3. Cost.** A $349 check-up now vs. a $1,200 service call later when a valve fails. Easy math.\nWe have two slots open this week in Amherst: Thursday 10 a.m. or Friday 2 p.m.\nReply with your preference, or call the office at (757) 410-0011 to grab a different day.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes\n- Swap \"Don\" / \"Ironmax + Acid Neut\" / \"Amherst\" / dates dynamically per recipient\n- For Sandra Widgon (system = \"not specified\"), use \"your ClearWave system\" instead of product name\n### Send Timing\n**Tuesday, May 6, 9:00 a.m. ET**\n(Weekday morning, mid-week, avoids Monday inbox crush + Friday drop-off)\n### Expected Performance\n- **Open rate:** 52-58%\n *Justification:* Hyper-personalized (name + product + city), transactional tone, time-sensitive trigger. ClearWave avg is 44%; lifecycle triggers historically beat broadcast by 15-20 pts.\n- **Click rate:** 8-12%\n *Justification:* Single CTA (reply or call), high intent audience (they already paid $6k-$15k and trust the brand), low friction ask.\n- **Conversion (booked service):** 40-50% (10-13 bookings)\n *Justification:* This is not optional maintenance for engaged customers. It's warranty-critical. Jobber shows most of these clients paid $349-$12k+ on install; they understand the value of protecting the asset.\n### Source Justification\n- **IDEA_SOURCING.md → Jobber lifecycle triggers:** \"1-year annual service\" is the #1 highest-intent, lowest-churn moment in the customer journey.\n- **Voice fingerprint (luxury_product register):** Educational without selling. Parallel structure (\"Small issues caught early stay small\"). Triadic reasoning (3 reasons). Near-zero contractions. Single-sentence paragraph for emphasis.\n- **Hard Rule #2:** Named the actual product (\"Ironmax + Acid Neut\") not \"your ClearWave.\"\n---"
+      },
+      {
+        "id": "email_2026-05-07_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: Referral Push (30-60 Days Post-Install)",
+        "preview": "**Audience:** 17 clients (satisfied, honeymoon phase)\n**Segment:** Jobber trigger, completedAt March 26 - April 2, 2026\n### Subject Lines\n**Primary:**\n`Paula, quick question about your neighbors`\n**Alternates:**\n1. `Who else on your street has bad water?`\n2. `$500 for you. Pure water for them.`\n3. `Your Re-Ionator Pro Ultra: 60 days in`\n4. `The referral bonus nobody uses (but should)`\n### Preview Text\n`You spent $12k on pure water. If your friends are still buying bottled, send them my way.`\n### Email Body\n---\n**Subject:** Paula, quick question about your neighbors\nPaula,\nYour Re-Ionator Pro Ultra has been running for about two months now.\nWhich means you've already noticed the difference. No more rust stains. Soap that actually lathers. Coffee that doesn't taste like a penny.\nHere's the question: who else on your street is dealing with the same bad water you used to have?\nBecause if you know someone in Richmond (or anywhere in Virginia) who's still hauling bottled water or scrubbing orange rings, I'll give them a free water assessment. And I'll give you $500 cash when they close.\nThe structure:\n**Referral closes:** $500 for referrals 1-5 this year, $750 for 6-9, $1,000 for 10+.\n**Referral books but doesn't close:** $50 gift card anyway.\nNo cap. No fine print. Just send them to me.\nReply with their name and number, or forward this email and CC me. I'll take it from there.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes\n- Swap \"Paula\" / \"Re-Ionator Pro Ultra\" / \"Richmond\" / \"two months\" dynamically per recipient\n- For Chelsea & Tyler Grell (total = $0), adjust preview text to remove \"$12k\" reference: `You've got pure water now. If your friends are still buying bottled, send them my way.`\n### Send Timing\n**Thursday, May 8, 10:00 a.m. ET**\n(Mid-morning, mid-week, gives recipients time to think of names over lunch/evening)\n### Expected Performance\n- **Open rate:** 48-54%\n *Justification:* Personalized subject line (first name + \"neighbors\"), curiosity hook, recent positive experience with brand. Slightly below annual service trigger because less urgent.\n- **Click rate:** 2-4%\n *Justification:* No link to click. CTA is reply or forward. Measure conversions via direct responses.\n- **Conversion (referrals submitted):** 15-25% (3-4 referrals)\n *Justification:* Small audience, high satisfaction window (30-60d post-install is peak delight), strong bonus structure. Historical ClearWave data (if available) would refine this, but industry standard for incentivized referral campaigns at this lifecycle stage is 10-20%; we're above that due to high-ticket purchase recency.\n### Source Justification\n- **IDEA_SOURCING.md → Jobber lifecycle triggers:** \"30-60 days post-install\" is the referral sweet spot (honeymoon phase, before habituation).\n- **Voice fingerprint (killing_bad_water_sales register for internal)** adapted to **luxury_product register for customer-facing:** Kept bold, direct imperatives (\"Just send them to me\") but removed ALL-CAPS and savage language. Used triadic structure for bonus tiers.\n- **Hard Rule #3:** Pushed REFERRALS with exact bonus structure ($500/$750/$1k + $50 gift card). Did NOT ask for a review.\n- **Hard Rule #3a:** Used \"free water assessment\" (not \"free water test\").\n---\n## Why These Two (and Not the Others)\n**RO replacement (24 candidates):** Too early. Caldwell's RO was serviced Oct 2025 (only 6 months ago). Ramos/Moser/Alattar are May 2025 (12 months, but RO membranes typically last 18-24 months). This cohort should be contacted in **July-August 2026** (18-month mark).\n**Concierge upsell (100 candidates):** Strong opportunity, but lower urgency than annual service. Propose for **next week** after the 26 annual-service clients are handled (they have hard 12-month deadlines; Concierge can wait 2-4 weeks).\n**Cold lead re-engagement (1,000):** Valuable, but requires a **content anchor** (e.g., recent water crisis news, new blog post, seasonal hook). Without a fresh \"reason to believe,\" it becomes a generic \"still interested?\" email (which Justin's voice would never send). Propose this when we have a **topical catalyst** (e.g., EPA PFAS ruling, Virginia drought, new product launch).\n---\n**Recommended action:** Send Campaign 1 (annual service) Tuesday 5/6 at 9 a.m., Campaign 2 (referral push) Thursday 5/8 at 10 a.m. Monitor reply volume; if office is slammed with annual service bookings by Wednesday, delay referral campaign to the following week to avoid overwhelming ops.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-07_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-07_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-07T10:30:00.880Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
