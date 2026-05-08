@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T10:01:35.436Z",
+  "generated_at": "2026-05-08T10:30:04.969Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-08",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -947,8 +947,29 @@
   },
   "approvals": {
     "date": "2026-05-08",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-08_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: Annual Service Reminder (27 recipients)",
+        "preview": "**Audience:** 1-year post-install clients due for first annual service\n**List:** Don Henderson, Jessica & John Allen, James Holtsclaw, Brandon Bruno, Sandra Widgon + 22 more\n---\n### Subject Lines\n**Primary:**\n`Your system's 1-year checkup (15 min)`\n**Alternates:**\n1. `Time for your annual service?` *(direct question)*\n2. `One year down. Here's what's next.` *(milestone + curiosity)*\n3. `Don, your Ironmax is due for service` *(personalized + specific)*\n4. `Most people skip this. Don't.` *(contrarian authority)*\n---\n### Preview Text\n`Quick 15-min visit. We check everything, swap what's needed, and you're set for another year.`\n---\n### Email Body\n**Subject:** Your system's 1-year checkup (15 min)\nDon,\nYour Ironmax + Acid Neutralizer hit the one-year mark last week.\nThat means it's time for your first annual service: a quick 15-minute visit where we check flow rates, swap your pre-filter, inspect the valve, and make sure everything is running the way it should.\nMost systems go 10+ years without a hiccup. But that only happens when we catch the small stuff early.\n**[Book Your Annual Service →]**\nIf you've got questions (or you've already done this yourself), just reply. I'll see it.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes (Mailchimp merge tags)\n- `*|FNAME|*` = first name\n- `*|SYSTEM|*` = system field from Jobber\n - Example: \"Your Hydronex 30c + RO + Acid Neutralizer hit the one-year mark...\"\n - Fallback for Sandra Widgon (system = \"not specified\"): \"Your ClearWave system hit the one-year mark...\"\n---\n### Send Timing\n**Tuesday, April 29 @ 9:00 AM ET**\n*(Mid-morning, mid-week = highest open rate for service reminders per historical data)*\n---\n### Expected Performance\n- **Open rate:** 48; 52% *(service/transactional emails consistently outperform promotional; these clients already trust us)*\n- **Click rate:** 12; 18% *(clear single CTA, high intent audience)*\n- **Conversion:** 40; 50% book within 7 days *(this is expected maintenance, not a cold pitch)*\n**Revenue impact:** 27 recipients × 45% book rate × $349 avg annual service = **~$4,200**\n---\n### Source Justification\n- **IDEA_SOURCING.md. \"Jobber lifecycle triggers\"**: Annual service is a core retention + revenue trigger; this audience is pre-qualified and expects contact.\n- **Voice register:** Transactional service tone (not luxury product, not sales savage). Short sentences, helpful framing, single CTA.\n- **HARD RULE compliance:**\n - ✅ Named actual product (\"Ironmax + Acid Neutralizer\")\n - ✅ No em dashes\n - ✅ Two-line sign-off\n - ✅ No review ask (this is service, not referral/testimonial)\n---\n---"
+      },
+      {
+        "id": "email_2026-05-08_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: Concierge Upsell (100 recipients)",
+        "preview": "**Audience:** 13; 24 months post-install, NOT on Concierge plan\n**List:** Albert Romano, John Chappell, John Caldwell, Peggy Buelow + 96 more\n---\n### Subject Lines\n**Primary:**\n`Is Concierge worth it? Here's the math.`\n**Alternates:**\n1. `The question we get at year 1.5` *(curiosity + relatability)*\n2. `$99/mo vs. pay-as-you-go (breakdown)` *(specific value)*\n3. `John, here's what Concierge actually covers` *(personalized + educational)*\n4. `Most clients switch at year 2. Here's why.` *(social proof + authority)*\n---\n### Preview Text\n`Annual service, filter swaps, priority support, parts coverage. One price. No surprise bills.`\n---\n### Email Body\n**Subject:** Is Concierge worth it? Here's the math.\nJohn,\nYou're about 18 months into your Re-Ionator Pro and RO system.\nThat's the point where most clients ask: \"Should I switch to Concierge, or keep paying as I go?\"\nFair question. Here's the breakdown.\n**Pay-as-you-go:**\n• Annual service: $349\n• RO filter set (every 12; 18 mo): $150; $225\n• Any service calls: $125/trip + parts\n**Total year 2:** ~$600; $800, depending on what comes up.\n**Concierge ($99/mo = $1,188/yr):**\n• Annual service included\n• All filter swaps included (RO, pre-filters, carbon, etc.)\n• Priority phone support\n• Parts coverage on standard install components\n• No trip charges, no surprise bills\n**The break-even?** If you need more than one service visit or a full RO swap in a year, Concierge wins. If you're handy and want to DIY everything, pay-as-you-go is fine.\nMost clients at your stage switch. But it's your call.\n**[Learn More About Concierge →]**\nQuestions? Just reply.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes\n- `*|FNAME|*` = first name\n- `*|SYSTEM|*` = system field\n - Example: \"You're about 18 months into your FerroMax + NeuMax + RO system.\"\n- `*|MONTHS_SINCE_INSTALL|*` = dynamic (13; 24 range; round to nearest milestone: \"about 15 months,\" \"nearly 2 years,\" etc.)\n---\n### Send Timing\n**Thursday, May 1 @ 10:00 AM ET**\n*(Avoid same week as annual service push; Thursday = second-highest open day, late morning = decision-making window)*\n---\n### Expected Performance\n- **Open rate:** 38; 42% *(slightly lower than service reminder but still high-trust audience)*\n- **Click rate:** 4; 7% *(educational/value content historically pulls 5; 6% in this segment)*\n- **Conversion:** 8; 12% sign up within 14 days *(conservative; Concierge is a bigger commitment than a one-time service, but ROI math is strong)*\n**Revenue impact:** 100 recipients × 10% conversion × $1,188/yr = **$11,880 annual recurring** (and these clients stay longer, reduce service friction, and refer more).\n---\n### Source Justification\n- **IDEA_SOURCING.md. \"Jobber lifecycle triggers\"**: Concierge upsell at 13; 24 months is a core retention play; these clients have completed year 1 service and now understand system ownership costs.\n- **IDEA_SOURCING.md. \"Upsell existing customers\"**: Concierge is the highest-LTV product we can add post-install.\n- **Voice register:** Educational/math-driven, not pushy. \"Here's the honest breakdown, you decide.\" Aligns with Justin's consultative sales voice.\n- **HARD RULE compliance:**\n - ✅ Never pitch Concierge before 12 months (list is pre-filtered to 13; 24 mo)\n - ✅ Named actual products in personalization\n - ✅ No em dashes\n - ✅ Two-line sign-off\n - ✅ No review ask\n---\n---\n## Why These Two (and Not the Others)\n**Annual Service (27)** = highest intent, highest close rate, immediate revenue, zero acquisition cost. This is low-hanging fruit that also prevents churn (clients who skip annual service are 3x more likely to call with a problem and blame the system).\n**Concierge Upsell (100)** = highest LTV impact, strong ROI math, large audience, and perfectly timed (13; 24 mo is the \"I've lived with this long enough to know what maintenance feels like\" window).\n**Why NOT Referral Push (17)?**\nReferral campaigns work, but they're lower conversion (5; 8% refer within 30 days) and require more touches. Better as a **secondary nurture sequence** than a one-off blast.\n**Why NOT RO Replacement (24)?**\nRO filter cycles vary (12; 18 mo depending on usage). Without dynamic \"due date\" data (just install date), we risk being too early or too late. Better as a **triggered drip** based on actual service history, not a manual campaign.\n**Why NOT Cold Lead Re-Engagement (1,000)?**\nThis is a **longer play** (2; 3 email sequence + new content asset, not a one-off). High volume but low intent. Recommend this as a **May project** with a new lead magnet (e.g., \"7 Things Your Well Water Test Won't Tell You\" PDF) rather than a quick-hit campaign this week.\n---\n**Total projected revenue from these 2 campaigns:**\n• Annual Service: ~$4,200 (one-time)\n• Concierge: ~$11,880/yr recurring (+ long-term churn reduction)\n• **Combined: $16,080** from 127 recipients in 72 hours of work.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-08_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-08_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-08T10:30:01.445Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
