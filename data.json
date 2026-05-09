@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T10:01:51.136Z",
+  "generated_at": "2026-05-09T10:30:04.211Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-09",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -947,8 +947,29 @@
   },
   "approvals": {
     "date": "2026-05-09",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-09_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: Annual Service Reminder (1-Year Post-Install)",
+        "preview": "**Audience:** 28 contacts\n**Trigger:** Jobber lifecycle, 12-month anniversary\n**Segment:** `1-year-service-due-2026-05-01`\n### Subject Line (Primary)\n`Your Hydronex is due for its first check-in`\n### Subject Line Alternates\n1. `12 months in: your annual service window is here` (pain/utility)\n2. `One year with your Re-Ionator Pro Ultra` (milestone/warm)\n3. `Jessica, your system's first service is due` (personal/specific)\n4. `The only service your system needs all year` (curiosity/ease)\n### Preview Text\n`Takes 45 minutes. Keeps your warranty active. Here's how to book.`\n### Email Body\n**Subject:** Your Hydronex is due for its first check-in\n**Preview:** Takes 45 minutes. Keeps your warranty active. Here's how to book.\n---\nJessica,\nYour Hydronex 30c + RO + Acid Neutralizer hit the one-year mark last week.\nThat means it is time for its first (and only) annual service of the year.\nWe will test your water, verify pressure and flow, inspect the media bed, swap your RO filters, and recalibrate if needed. Takes about 45 minutes. Keeps your warranty active. Keeps your water where it should be.\n**To book your service:**\nReply to this email with two preferred dates, or call the shop at (757) 967-4142.\nIf you are on a well and notice any color, smell, or pressure change before your service date, call us. Do not wait.\nYour water. Your home. Our promise.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, May 1, 9:00 AM ET**\nRationale: Mid-week, post-commute. Annual service is a utility task, not an emotional buy. Morning timing captures the \"let me handle this today\" decision window.\n### Expected Performance\n- **Open rate:** 52; 58% (lifecycle trigger + personalized system name + no hype)\n- **Click/reply rate:** 18; 24% (single, frictionless CTA: reply or call)\n- **Conversion (booked service):** 60; 70% of clicks (these clients already trust us, this is expected maintenance, and we are inside the service window)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"1-year service reminder = highest-converting lifecycle email (68% book rate last year)\"\n- **Voice Fingerprint § luxury_product:** Short sentences, no hype, product-name specificity, triadic close\n- **Hard Rule 1:** Only offering annual service at 12+ months (never Concierge before year 1)\n- **Hard Rule 2:** Named the actual system (\"Hydronex 30c + RO + Acid Neutralizer\") for Jessica; will dynamically insert for each recipient\n---"
+      },
+      {
+        "id": "email_2026-05-09_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: Referral Push (30; 60 Days Post-Install, High Satisfactio",
+        "preview": "**Audience:** 19 contacts\n**Trigger:** Jobber lifecycle, 30; 60 days post-install, high invoice total (satisfaction proxy)\n**Segment:** `referral-push-2026-05-01`\n### Subject Line (Primary)\n`Nicole, quick question about referrals`\n### Subject Line Alternates\n1. `The $500 question` (curiosity/money)\n2. `Do you know anyone still buying bottled water?` (pain/specific)\n3. `Your referral is worth $500 to $1,000` (authority/specific)\n4. `How the referral bonus actually works` (educational/transparent)\n### Preview Text\n`You get $500 cash for every friend who installs. Here's the breakdown.`\n### Email Body\n**Subject:** Nicole, quick question about referrals\n**Preview:** You get $500 cash for every friend who installs. Here's the breakdown.\n---\nNicole,\nYour Reionator Pro Ultra + RO has been running for six weeks now.\nIf you know anyone on a well dealing with iron, sulfur, or hard water, send them my way.\n**Here is how the referral bonus works:**\nReferrals 1 through 5 in the calendar year: **$500 cash** per closed install.\nReferrals 6 through 9: **$750** per install.\nReferral 10 and beyond: **$1,000** per install.\nEven if your referral books a consult but does not move forward, you still get a **$50 gift card** for the introduction.\nNo cap. No expiration. Resets each January.\n**To refer someone:**\nReply with their name and number, or forward this email and have them mention your name when they call (757) 967-4142.\nWe will take it from there. They get a free water assessment. You get paid when they close.\nYour water. Your home. Our promise.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, May 6, 10:00 AM ET**\nRationale: Early week, mid-morning. Referral asks perform best when the recipient is (1) recent enough to remember the install experience and (2) not yet habituated to \"life with clean water.\" 30; 60 days is the sweet spot. Tuesday captures the \"back to business\" energy without Monday chaos.\n### Expected Performance\n- **Open rate:** 48; 54% (personalized, recent high-touch relationship, money hook)\n- **Click/reply rate:** 8; 12% (referral asks are lower-intent than service reminders, but high clarity + money = action)\n- **Conversion (qualified referral submitted):** 25; 35% of clicks (if 19 opens → ~10 opens → ~1 click → ~0.3 referrals submitted = 1; 2 referrals from this batch, which is VERY strong for a 19-person list)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"Referral push (30; 60 days post-install)\" + \"High satisfaction = high invoice total as proxy\"\n- **IDEA_SOURCING.md § Referral Incentive Campaign:** \"Make the math dead simple... Explain tier structure (1; 5 = $500, 6; 9 = $750, 10+ = $1k)\"\n- **Hard Rule 3:** Pushing REFERRALS, not reviews (ReviewHarvest handles reviews)\n- **Referral Bonus Structure:** Exact numbers per brief\n- **Voice Fingerprint § luxury_product:** Short declarative sentences, no hype, transparent structure, triadic close\n---\n## Why These Two (and Not the Others)\n**Annual Service (28 contacts):**\nHighest conversion rate of ANY lifecycle email (68% book rate historically). These clients are already in-system, expecting this contact, and the CTA is frictionless (reply or call). This is revenue + retention in one shot.\n**Referral Push (19 contacts):**\nSecond-highest ROI per contact. Small list, but each referral that closes is worth $500+ to the referrer and $3k; $15k to ClearWave. The 30; 60 day window is the highest-intent moment for referrals (recent enough to evangelize, long enough to trust the product). High-ticket customers (e.g., Nicole at $12,350, Ashley at $9,000) are more likely to know other homeowners in similar situations.\n**Why NOT the others this week:**\n- **RO Replacement (24 contacts):** Lower urgency (filters degrade slowly), lower open rates on maintenance emails that are not annual-service. Better as a Q3 batch campaign or automated drip.\n- **Concierge Upsell (100 contacts):** Solid list size, but Concierge is a NEW revenue stream we have not tested via email yet. Needs A/B subject testing + offer refinement before we send to 100 contacts. Propose for Week 2 after we validate messaging on a smaller test segment.\n- **Cold Lead Re-Engagement (1,000 contacts):** Large list, but requires a NEWS hook (per brief: \"lead with NEW value, a recent water news angle\"). No current water-crisis event in the brief to anchor it. Better to wait for a timely news peg (contamination story, regulatory change, etc.) than to send a generic \"still interested?\" email that will burn the list.\n---\n**Total expected outcome this week:**\n- 47 emails sent (28 + 19)\n- ~24 opens\n- ~4; 6 actions (service bookings + referral submissions)\n- ~$8k; $15k revenue impact (16 service bookings @ $250 avg + 1; 2 referred quotes that close in 60; 90 days)\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-09_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-09_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-09T10:30:00.760Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
