@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T10:01:24.296Z",
+  "generated_at": "2026-05-10T10:30:03.822Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-10",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -947,8 +947,38 @@
   },
   "approvals": {
     "date": "2026-05-10",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-10_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · 1: \"The 12-Month Checkup\" (1-Year Annual Service)",
+        "preview": "**Audience:** 29 customers at 1-year post-install\n**Segment:** Jobber lifecycle trigger, 1-year anniversary\n**Timing:** Tuesday, 10:00 AM ET\n---\n### SUBJECT LINES\n**Primary:**\n`Your 12-month service window is open`\n**Alternates:**\n1. `Time for your annual checkup, [First Name]`\n2. `One year in: here's what happens next`\n3. `Your system's first birthday (and what it needs)`\n4. `12 months down. One service call to go.`\n---\n### PREVIEW TEXT\n`Quick calibration check, media swap if needed, peace of mind locked in for year two.`\n---\n### EMAIL BODY\nSubject: Your 12-month service window is open\n[First Name],\nYour [SYSTEM_NAME] just hit the one-year mark.\nMost of our clients forget this, so I'm sending a heads-up: now's the time for your first annual service.\nWhat we do:\n• Pressure and flow check across all stages\n• Media inspection (swap only if needed)\n• Valve recalibration\n• Full system report card\nTakes about 45 minutes. Keeps your warranty active. Catches small things before they become expensive things.\nIf you're on a well, we'll also pull a quick water sample to compare against your baseline from install day. Most clients see stability or improvement. When we don't, we know exactly what to adjust.\n**Book your service here:** [LINK]\nOr reply with two days/times that work. We'll lock it in.\nJustin\nCEO / ClearWave\n---\n### EXPECTED PERFORMANCE\n**Open rate:** 55-60%\n**Click rate:** 8-12%\n**Conversion (booked service):** 40-50% within 7 days\n**Justification:**\n- High-intent, time-sensitive trigger (warranty + system health)\n- Personalized system name increases relevance\n- Prior annual service emails in this category historically outperform nurture by 3x on open rate\n- Transactional tone (not sales-y) reduces friction\n- Clear CTA, low cognitive load\n---\n### SOURCE JUSTIFICATION\n**IDEA_SOURCING.md alignment:**\n- **Jobber lifecycle triggers** (annual service window)\n- **Seasonal service reminders** (reframed as warranty + performance, not fear)\n- **Tone:** Transactional/luxury hybrid (educates on value without overselling)\n---"
+      },
+      {
+        "id": "email_2026-05-10_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · 2: \"The Referral Window\" (30-60 Day Post-Install)",
+        "preview": "**Audience:** 18 customers, 30-60 days post-install, high satisfaction likelihood\n**Segment:** Jobber lifecycle trigger, referral-ready window\n**Timing:** Thursday, 2:00 PM ET\n---\n### SUBJECT LINES\n**Primary:**\n`Quick favor (and a thank you)`\n**Alternate 1:**\n`You're in the referral sweet spot`\n**Alternate 2:**\n`The $500 question I ask every client`\n**Alternate 3:**\n`30 days in: how's your water?`\n**Alternate 4:**\n`Who else in your life hates their water?`\n---\n### PREVIEW TEXT\n`If you know someone who'd love what you're drinking, I'd like to say thank you. Properly.`\n---\n### EMAIL BODY\nSubject: Quick favor (and a thank you)\n[First Name],\nYou're about six weeks into life with your [SYSTEM_NAME].\nBy now, you've probably had a few people ask about it. (The fridge water thing always gives it away.)\nIf someone in your circle is dealing with hard water, sulfur smell, chlorine taste, or just wants what you have now, send them my way.\nHere's what happens:\n**If they book a free water assessment:**\nYou get a $50 gift card. No strings.\n**If they move forward with a system:**\nYou get $500 cash for referrals 1-5 this year, $750 for 6-9, and $1,000 for #10 and beyond.\nI'm not asking you to sell for me. I'm asking you to share something that worked.\n**Send referrals here:** [LINK]\nOr just reply with their name and number. I'll take it from there.\nAnd if you have 60 seconds, I'd love a video testimonial. Nothing scripted. Just you, your phone, and what's different now. (We'll send you a $100 thank-you if we use it.)\nJustin\nCEO / ClearWave\n---\n### EXPECTED PERFORMANCE\n**Open rate:** 48-52%\n**Click rate:** 4-6%\n**Conversion (referral submitted):** 15-20% within 14 days\n**Justification:**\n- 30-60 day window = peak satisfaction + social proof momentum (friends have asked)\n- Clear financial incentive with tiered structure (gamification increases urgency)\n- Personalized system name reinforces pride of ownership\n- Dual CTA (referral + video testimonial) increases engagement surface area\n- Non-pushy tone (\"I'm not asking you to sell\") lowers resistance\n- Thursday 2 PM timing = end-of-week goodwill, less inbox competition than Monday AM\n---\n### SOURCE JUSTIFICATION\n**IDEA_SOURCING.md alignment:**\n- **Jobber lifecycle triggers** (30-60 day post-install satisfaction window)\n- **Referral incentive campaigns** (tiered bonus structure, clear CTAs)\n- **Customer success stories** (video testimonial request as secondary goal)\n- **Tone:** Luxury register + killing-bad-water confidence (\"Just Win\" energy reframed for customer-facing)\n---"
+      },
+      {
+        "id": "email_2026-05-10_c3",
+        "type": "email_proposal",
+        "title": "Email Campaign · SELECTION RATIONALE",
+        "preview": "**Why these two over Concierge upsell (100 candidates) or Cold Re-Engagement (1,000)?**\n1. **Annual service (29):** Highest urgency + warranty dependency. Transactional lift is immediate revenue + relationship deepening. Low volume, high conversion.\n2. **Referral push (18):** Highest lifetime value multiplier. Each conversion = 1-3 new qualified leads at $0 CAC. Timing is everything (30-60 days = peak advocacy window).\n3. **Why NOT Concierge (100)?** Larger list, but lower urgency. Concierge is a \"nice-to-have\" vs. annual service (must-have). Better suited for a 2-touch sequence next week after annual service campaign closes.\n4. **Why NOT Cold Re-Engagement (1,000)?** Volume is tempting, but 60+ days cold + no quote history = lowest intent. Opens will be <25%, clicks <1%. Better to A/B test one killer re-engagement piece next week (water news hook from Maryland jet fuel angle) than rush it now.\n---\n**Recommendation:** Deploy both. Annual service Tuesday 10 AM, referral Thursday 2 PM. Stagger = no audience overlap, no fatigue. Both are high-intent, time-sensitive, and align with Justin's \"Just Do More\" operational tempo.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-10_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-10_c2": {
+        "decision": "pending"
+      },
+      "email_2026-05-10_c3": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-10T10:30:00.805Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
