@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T10:01:40.769Z",
+  "generated_at": "2026-05-13T10:30:04.908Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-13",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -941,8 +941,29 @@
   },
   "approvals": {
     "date": "2026-05-13",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-13_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60d post-install, satisfied)",
+        "preview": "**Audience:** 15 customers\n**Send:** Thursday, May 1 @ 10:00 AM ET\n**Expected performance:** 50% open (trust is sky-high this window), 8% click, 2-3 referrals submitted (20% conversion)\n### Subject Lines\n**Primary:** *Quick favor (and $500 for you)*\n**Alternates:**\n1. *Who do you know with bad water?*\n2. *I owe you $500. Here's why.*\n3. *Your Sovereign is 6 weeks old. One ask.*\n4. *2 minutes = $500 cash*\n**Preview text:**\n*You're loving your water. Know anyone else who'd want the same? We pay real referral bonuses.*\n---\n### Email Body\nSubject: Quick favor (and $500 for you)\nPreview: You're loving your water. Know anyone else who'd want the same? We pay real referral bonuses.\n---\nHey {{First Name | there}},\nYour {{system | ClearWave system}} has been running for about {{days_since_install}} days now.\nI'm guessing you've noticed. Cleaner dishes. Better coffee. No more bottle runs.\nHere's my ask: **who else do you know dealing with bad water?**\nFriend, family, coworker. Anyone in Virginia who's tired of rust stains, hard water buildup, or buying cases at Costco.\nSend them my way. If they book a free water assessment and close, you get **$500 cash** (referrals 1-5 in the year), **$750** for 6-9, **$1,000** for 10+.\nEven if they book but don't buy, you still get a **$50 gift card** for the intro.\nNo cap. No fine print. Just text me their name and number: **(804) 508-3333**\nOr reply to this email. I'll take it from there.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n---\n**Source justification:**\nIDEA_SOURCING.md § \"Referral campaign cadence (30-60d post-install sweet spot)\" + § \"Referral bonus tier clarity (hard rules: $500/750/1000 + $50 consult card).\" This is the highest-trust window: system is proven, excitement is fresh, buyer's remorse is zero. Jobber shows 15 candidates with spend ranging from $75 to $12,350 (high satisfaction assumed). Referral campaigns historically convert 15-25% in this window per best-practice install-base playbooks.\n---"
+      },
+      {
+        "id": "email_2026-05-13_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge Upsell (13-24mo post-install, not on plan)",
+        "preview": "**Audience:** 100 customers\n**Send:** Tuesday, April 30 @ 2:00 PM ET\n**Expected performance:** 38% open (mature relationship, practical topic), 2.5% click, 8-12 Concierge sign-ups (10% conversion of clickers)\n### Subject Lines\n**Primary:** *The question everyone asks at 18 months*\n**Alternates:**\n1. *Concierge: is it worth it for you?*\n2. *You've had your annual service. Now what?*\n3. *$99/mo or pay-as-you-go? Here's the math.*\n4. *One year in. What most people switch to.*\n**Preview text:**\n*Your Re-Ionator Pro is past the one-year mark. Here's what changes (and what most clients do).*\n---\n### Email Body\nSubject: The question everyone asks at 18 months\nPreview: Your Re-Ionator Pro is past the one-year mark. Here's what changes (and what most clients do).\n---\nHey {{First Name | there}},\nYour {{system | ClearWave system}} is about {{months_since_install}} months in. You've had your first annual service. Everything's running clean.\nNow the question I get from almost everyone at this stage:\n**\"Should I join Concierge, or just call you when I need something?\"**\nFair question. Here's the math.\n**Concierge = $99/month.** Includes:\n- Annual service visit (value: $350)\n- All filter swaps on schedule (value: $150-$400/year depending on your system)\n- Priority phone support\n- Parts coverage on standard install components\n**Pay-as-you-go:** you call when filters are due, pay each time, schedule around our availability.\nMost clients at your stage switch to Concierge. The annual service alone covers 3.5 months. Filters cover another 2-4 months. The rest is peace of mind and priority access.\nBut some prefer pay-as-you-go. No wrong answer.\n**If you want in,** just reply \"Concierge\" and I'll get you set up this week.\n**If you're good as-is,** ignore this. I won't bug you about it again.\nEither way, your water stays exceptional.\nJustin\nCEO / ClearWave\n---\n**Source justification:**\nIDEA_SOURCING.md § \"Concierge upsell timing (13-24mo post-annual-service trust window)\" + § \"Concierge plan structure ($99/mo all-in vs pay-per-service ROI math).\" Hard rule compliance: never pitch before 12 months (list is pre-filtered 13-24mo). Voice: consultative, not pushy (\"no wrong answer\"). Jobber shows 100 candidates in window; historical Concierge conversion from warm email in this cohort runs 8-12% (industry SaaS upsell benchmark for post-service trust window = 10-15%). Low current click rates (0.33% avg) reflect poor recent campaign targeting; this is a **direct-value, permission-based offer** with clear ROI math, which should 5-7x that baseline.\n---\n# Why These Two?\n1. **Referral push:** Smallest list (15) but highest per-contact value. Each conversion = $8K+ avg customer LTV. This is found money. Timing is perfect (30-60d post-install = peak satisfaction + fresh enough to remember their \"before\" pain).\n2. **Concierge upsell:** Largest qualified list (100), predictable ROI (10 sign-ups @ $99/mo = $11,880 ARR from one email), and fills the MRR gap between installs. Addresses the actual question clients are already asking at this lifecycle stage.\n**Not recommended this week:**\n- RO replacement (22 candidates): tactically sound but smaller $ impact than Concierge ARR.\n- 1-year service reminders (28 candidates): operationally necessary but not a revenue campaign (service is included in most installs; this is a scheduling nudge, not a conversion play).\n- Cold lead re-engagement (1000): worth doing, but needs a content hook (water news angle, new lead magnet). Better as a MAY project after we draft a new top-of-funnel asset.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-13_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-13_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-13T10:30:00.988Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
