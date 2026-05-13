@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T11:00:00.708Z",
+  "generated_at": "2026-05-13T17:00:01.265Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -550,7 +550,8 @@
         "shoots": 0,
         "best_views": 0,
         "best_platform": null,
-        "status": "untested"
+        "status": "DO_NOT_USE_prior_solar_company_NOT_ClearWave",
+        "notes": "These numbers are from Justin's prior solar company that he scaled and sold. They are NOT ClearWave numbers. Do not let any AI generator pull these into ClearWave-branded content. Must be reworded to explicitly frame as 'a prior company I scaled' before use."
       },
       {
         "id": "B06",
@@ -560,7 +561,8 @@
         "shoots": 0,
         "best_views": 0,
         "best_platform": null,
-        "status": "untested"
+        "status": "DO_NOT_USE_prior_solar_company_NOT_ClearWave",
+        "notes": "Same as B05 — prior solar company, not ClearWave. Do not use until reworded."
       },
       {
         "id": "B07",
