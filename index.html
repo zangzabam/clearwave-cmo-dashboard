@@ -591,6 +591,100 @@ async function init() {
     return r.json();
   }
 
+  /**
+   * Run a 3-step diagnostic when actOn fails. Narrows the failure to a specific cause:
+   * extension blocking api.github.com, PAT invalid, scope mismatch, or network down.
+   * Returns a human-readable report shown in the alert dialog.
+   */
+  async function runConnectionDiagnostics(originalErr) {
+    const lines = [];
+    const errMsg = (originalErr?.message || '').toLowerCase();
+    const isFetchFail = errMsg.includes('failed to fetch') || errMsg.includes('networkerror');
+
+    // STEP 1: Unauthenticated reach test (api.github.com/zen)
+    try {
+      const r = await fetch('https://api.github.com/zen', { cache: 'no-store' });
+      if (r.ok) lines.push('✓ api.github.com is reachable');
+      else lines.push(`✗ api.github.com returned HTTP ${r.status}`);
+    } catch (e) {
+      lines.push(`✗ api.github.com UNREACHABLE: ${e.message}`);
+      lines.push('   → Likely a browser extension blocking GitHub.');
+      lines.push('   → Try: open this page in Incognito (Cmd-Shift-N).');
+      lines.push('   → If Incognito works, disable ad/privacy extensions for this site.');
+      return lines.join('\n');
+    }
+
+    // STEP 2: Authenticated reach test (api.github.com/user with PAT)
+    const token = getStoredToken();
+    if (!token) {
+      lines.push('✗ No PAT stored on this device.');
+      lines.push('   → Click any Approve button to re-prompt for the PAT.');
+      return lines.join('\n');
+    }
+    try {
+      const r = await fetch('https://api.github.com/user', {
+        cache: 'no-store',
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+      });
+      if (r.status === 401) {
+        lines.push('✗ PAT REJECTED (HTTP 401). Token expired or revoked.');
+        lines.push('   → Fix: generate a new fine-grained PAT at');
+        lines.push('     https://github.com/settings/personal-access-tokens');
+        lines.push('   → Scope: zangzabam/clearwave-approvals-state, Contents: Read+Write');
+        return lines.join('\n');
+      }
+      if (!r.ok) {
+        lines.push(`✗ /user returned HTTP ${r.status}. Unusual.`);
+        return lines.join('\n');
+      }
+      const u = await r.json();
+      lines.push(`✓ PAT authenticated as ${u.login}`);
+    } catch (e) {
+      lines.push(`✗ Authenticated request failed: ${e.message}`);
+      lines.push('   → CORS preflight may be intercepted by extension.');
+      lines.push('   → Try: open this page in Incognito (Cmd-Shift-N).');
+      return lines.join('\n');
+    }
+
+    // STEP 3: Test the actual repo+path write target
+    try {
+      const url = `https://api.github.com/repos/${GH.repo}/contents/${GH.path}?ref=${GH.branch}`;
+      const r = await fetch(url, {
+        cache: 'no-store',
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+      });
+      if (r.status === 404) {
+        lines.push(`✗ Repo or path not found: ${GH.repo}/${GH.path}`);
+        lines.push('   → Tell Justin to fix data.json approval_github settings.');
+        return lines.join('\n');
+      }
+      if (r.status === 403) {
+        lines.push('✗ HTTP 403 on read. PAT lacks contents:read on the approvals-state repo.');
+        lines.push('   → Fix: regenerate PAT with Contents: Read+Write scope.');
+        return lines.join('\n');
+      }
+      if (!r.ok) { lines.push(`✗ Read test returned HTTP ${r.status}`); return lines.join('\n'); }
+      lines.push(`✓ State file reachable at ${GH.repo}/${GH.path}`);
+    } catch (e) {
+      lines.push(`✗ Read test fetch failed: ${e.message}`);
+      return lines.join('\n');
+    }
+
+    // If we got here, GET works but PUT failed. That's narrow — usually CORS preflight
+    // for PUT being blocked while GET allowed by an extension.
+    if (isFetchFail) {
+      lines.push('');
+      lines.push('CONCLUSION: GET works, PUT failed with "Failed to fetch".');
+      lines.push('This means an extension or proxy is blocking PUT requests specifically.');
+      lines.push('   → Try Incognito (Cmd-Shift-N). If it works there, an extension is the cause.');
+      lines.push('   → Disable ad-blockers, privacy guards, or VPN extensions for this site.');
+    } else {
+      lines.push('');
+      lines.push(`CONCLUSION: GETs work, PUT raised "${originalErr.message}". Try refreshing the page (Cmd-Shift-R).`);
+    }
+    return lines.join('\n');
+  }
+
   async function actOn(itemId, action, btnEl) {
     if (!GH || !GH.repo) {
       window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via mailto`);
@@ -630,7 +724,8 @@ async function init() {
     }
     if (lastErr) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't save after 8 retries: ${lastErr.message}\n\nIf this is "Failed to fetch", check your internet connection or browser extensions blocking github.com.`);
+      const diag = await runConnectionDiagnostics(lastErr).catch(e => `diagnostic itself failed: ${e.message}`);
+      alert(`Couldn't save after 8 retries: ${lastErr.message}\n\n=== DIAGNOSTIC ===\n${diag}`);
       return;
     }
     btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
