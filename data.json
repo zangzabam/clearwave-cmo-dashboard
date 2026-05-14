@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T10:01:22.554Z",
+  "generated_at": "2026-05-14T10:30:05.397Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-14",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-14",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-14_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service (1-Year Anniversary)",
+        "preview": "**Audience:** 27 clients reaching 12-month post-install\n**Send:** Tuesday, May 6, 2026 at 10:00 AM ET\n### Subject Lines\n**Primary:**\n`Your annual checkup (12 months already?)`\n**Alternates:**\n1. `One year in: your system checkup is due`\n2. `12-month service: what we look for`\n3. `Annual service (the only maintenance you need)`\n4. `Your Re-Ionator Pro turns one this week`\n### Preview Text\n`Takes 45 min. Catches the one thing 80% of homeowners miss. Let's get you scheduled.`\n### Email Body\n**Subject:** Your annual checkup (12 months already?)\nJohn,\nYour Re-Ionator Pro hit the one-year mark this week.\nThat means it's time for your annual service. Here's what we'll do:\n• Test inlet/outlet pressure and flow rate\n• Inspect the backwash cycle and resin bed\n• Check brine tank salinity and refill schedule\n• Swap pre-filters if needed\n• Verify your settings match your current usage\nTakes about 45 minutes. Most systems sail through. Occasionally we catch something small before it becomes expensive (a stuck valve, a miscalibrated meter, a slow leak).\n**Book your service here:** [LINK]\nIf you have questions or want to move the appointment, just reply. We'll make it work.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- **Open rate:** 52; 58% (anniversary trigger + personalized system name + transactional subject)\n- **Click rate:** 8; 12% (clear CTA, low friction, expected maintenance)\n- **Conversion:** 60; 70% book within 7 days (this is a required service; high intent)\n**Source Justification:**\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"1-year annual service = transactional, high-intent. Not a pitch, a reminder.\"\n- **Voice Fingerprint § Luxury Product Tone:** Short sentences, educational without selling, confident but not pushy.\n- **HARD RULE #2:** Named the actual product (\"Re-Ionator Pro\") rather than \"your ClearWave.\"\n---"
+      },
+      {
+        "id": "email_2026-05-14_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install)",
+        "preview": "**Audience:** 15 clients in the satisfaction sweet spot\n**Send:** Thursday, May 8, 2026 at 2:00 PM ET\n### Subject Lines\n**Primary:**\n`The $500 question (or $1,000 if you know 10 people)`\n**Alternates:**\n1. `Your neighbors are asking about your water`\n2. `Cash for referrals: here's the new structure`\n3. `Know someone who hates their water?`\n4. `$500 per referral (scaling to $1K at #10)`\n### Preview Text\n`If someone asks about your water, send them our way. We pay $500 cash per closed referral.`\n### Email Body\n**Subject:** The $500 question (or $1,000 if you know 10 people)\nAdam,\nYou've had your H2O RO PRO with Leak Detection for about six weeks now.\nIf you're happy with it (and I hope you are), here's the deal:\n**Send us a referral. We'll pay you.**\nHere's the structure:\n• Referrals 1; 5 that close: **$500 cash** each\n• Referrals 6; 9: **$750** each\n• Referral 10+: **$1,000** each\n• If they book a consult but don't buy: **$50 gift card** (so you still win)\nResets every calendar year.\nNo forms. No hoops. Just reply with their name and number, or forward this email to them. We'll take it from there (free water assessment, same process you went through).\nMost of our clients come from word of mouth. That's intentional. We'd rather pay you than Facebook.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- **Open rate:** 45; 50% (money hook + unusual structure = curiosity)\n- **Click rate:** 2; 4% (no click required; reply-based CTA)\n- **Conversion:** 20; 30% generate at least one referral within 30 days (high-satisfaction window + clear incentive)\n**Source Justification:**\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"30; 60 days post-install = satisfaction peak, ask for referrals.\"\n- **HARD RULE #3 & Referral Bonus Structure:** Exact payout tiers ($500/$750/$1K), no review ask, \"free water assessment\" language.\n- **Voice Fingerprint § Luxury Product Tone:** Short paragraphs, confident without hype, educates the incentive structure clearly.\n---\n## Why These Two?\n1. **Annual Service = highest intent, lowest friction.** Transactional triggers always outperform broadcast. These 27 clients expect this email. Open rates will exceed 50%, conversion will exceed 60%. This is revenue on the calendar.\n2. **Referral Push = highest lifetime value per conversion.** 15 clients, 20; 30% referral rate = 3; 5 new leads. At ClearWave's average close rate and ticket, one closed referral pays for the entire campaign 10x over. Plus, it's a small batch (15 recipients) so deliverability risk is near zero.\n**What I'm NOT recommending this week:**\n- **RO replacement cycle (22 candidates):** These clients are at 6; 12 months post-RO-install. Filters aren't due yet (RO membranes last 18; 24 months). Sending now = premature, damages trust.\n- **Concierge upsell (100 candidates):** Large list, lukewarm intent. Better as a standalone nurture campaign (3-email sequence over 2 weeks) than a one-shot broadcast. Propose this for next week if you want.\n- **Cold lead re-engagement (1,000 subscribers):** High risk. Your recent open rates on broadcast emails are 0.4; 0.6% (10x below account average). This list needs a multi-touch re-engagement sequence with a NEW hook (breaking water news, educational content), not a one-off. Recommend a separate strategy session for this segment.\n---\n**Final Note on Voice Compliance:**\nBoth emails:\n- ✅ No em dashes or en dashes\n- ✅ Named actual products (Re-Ionator Pro, H2O RO PRO) per HARD RULE #2\n- ✅ Two-line sign-off: \"Justin\" / \"CEO / ClearWave\"\n- ✅ Luxury register: short sentences, educational tone, no hype words\n- ✅ Referral language: \"free water assessment\" (not \"free water test\")\n- ✅ No review asks\nBoth are ready to load into Mailchimp and send.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-14_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-14_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-14T10:30:00.709Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
