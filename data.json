@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T10:01:45.717Z",
+  "generated_at": "2026-05-15T10:30:05.175Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-15",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -944,7 +944,8 @@
   "approvals": {
     "date": "2026-05-15",
     "items": [],
-    "decisions": {}
+    "decisions": {},
+    "last_brief_sent": "2026-05-15T10:30:00.982Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
