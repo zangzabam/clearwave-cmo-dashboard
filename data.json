@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T10:01:41.199Z",
+  "generated_at": "2026-05-16T10:30:04.865Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-16",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-16",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-16_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service Campaign",
+        "preview": "**Audience:** 27 clients at 12-month mark (Kiana Jackson, Anders Lange, Ryan Hanley, Justin Fox, Zach Ramos + 22 more)\n**Subject Line (Primary):**\n`Your system's first checkup (it's been a year)`\n**Subject Line Alternates:**\n1. `12 months down. One service call to go.`\n2. `The only maintenance your system needs this year`\n3. `Kiana, year 1 service = 20 years of performance`\n4. `Annual service keeps your 25-year warranty active`\n**Preview Text:**\n`Book now, lock in May/June. Takes 45 min. Keeps everything running another decade.`\n**Email Body:**\n---\n**Subject:** Your system's first checkup (it's been a year)\nKiana,\nYour Ferroluxe + Acid Neutralizer + UV hit the one-year mark last week.\nThat means it's time for the only scheduled service it needs this year: the annual checkup.\nTakes about 45 minutes. We verify flow rates, swap consumables, recalibrate if needed, and document everything for your warranty file.\nIt's the difference between 25 years of flawless performance and \"why is my pressure dropping at year 8?\"\n**Book your annual service here:** [LINK]\nWe're scheduling May and June now. Rapidan and surrounding areas still have morning slots.\nJustin\nCEO / ClearWave\n---\n**Send Timing:** Tuesday, April 29, 10:00 AM ET (mid-morning, post-commute, high open window)\n**Expected Performance:**\n- Open: 48; 52% (lifecycle trigger + personalized system name + short subject = above-average)\n- Click: 8; 12% (single clear CTA, high intent audience, service is expected/welcomed at 12mo)\n- Conversion (booked): 35; 45% (12 of 27 = ~$4,200; $5,400 service revenue at ~$350/visit avg)\n**Source Justification:**\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"1-year annual service reminders\" = highest-intent, expected touchpoint\n- **IDEA_SOURCING.md § Personalization:** Uses actual product name (Ferroluxe + Acid Neut + UV), city, and completion date\n- **Voice Fingerprint § Luxury Product Register:** Short sentences, no hype, educational frame (\"the difference between 25 years of flawless performance and...\"), refined without selling\n---"
+      },
+      {
+        "id": "email_2026-05-16_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push Campaign (30; 60 Days Post-Install)",
+        "preview": "**Audience:** 15 satisfied clients (Matthew Kennedy, Adam Farris, Devin Nasvaderani, Nicole McFarlane, Ashley Diakoulas + 10 more)\n**Subject Line (Primary):**\n`Matthew, quick question about your neighbors`\n**Subject Line Alternates:**\n1. `Your $500 is waiting (seriously)`\n2. `Know anyone still buying bottled water?`\n3. `Referral update: we raised the bonus`\n4. `The easiest $500 you'll make this month`\n**Preview Text:**\n`You're 6 weeks in. If you love your water, we'll pay you $500 cash for every neighbor you send.`\n**Email Body:**\n---\n**Subject:** Matthew, quick question about your neighbors\nMatthew,\nYou've had your ClearWave system for six weeks now.\nIf you're anything like most of our clients, you've had at least one conversation with a neighbor or friend about your water. (Usually starts with \"wait, your ice cubes are *clear*?\")\nHere's the deal:\n**Send us a referral. If they close, you get $500 cash.**\nNot a gift card. Not a credit. A check, or Venmo, or however you want it.\nIf they book a free water assessment but don't move forward, you still get a $50 gift card for the introduction.\nThe breakdown:\n- Referrals 1; 5 in the year: **$500 each**\n- Referrals 6; 9: **$750 each**\n- Referrals 10+: **$1,000 each**\nWe work by referral. Always have. This is how we say thank you.\n**Send a referral here:** [LINK]\nOr just reply with their name and number. I'll take it from there.\nJustin\nCEO / ClearWave\n---\n**Send Timing:** Wednesday, April 30, 2:00 PM ET (afternoon, slightly more casual read time, post-lunch engagement spike)\n**Expected Performance:**\n- Open: 44; 48% (personalized, curiosity subject + relationship is fresh/warm)\n- Click: 4; 6% (lower than service campaign but normal for referral ask; not immediate need)\n- Conversion (referral submitted): 20; 30% (3; 5 referrals submitted = potential 2; 3 closed deals = $12K; $18K revenue, plus $1,000; $1,500 paid out in bonuses)\n**Source Justification:**\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"30; 60 day referral push = highest satisfaction window\"\n- **IDEA_SOURCING.md § Referral Program Content:** Exact bonus structure ($500/$750/$1K, resets annually, $50 for consult-only)\n- **HARD RULES § 3 & 3a:** Never ask for reviews; push referrals. Use exact phrase \"free water assessment\" for the offer\n- **Voice Fingerprint § Luxury Product Register:** Conversational but not hype-y (\"If you're anything like most of our clients\"), educational setup, specific numbers (builds trust)\n---\n## Why These Two (and Not the Others This Week)\n**Annual Service (27)** = Highest intent, highest immediate revenue, expected touchpoint (clients are waiting for this email). No friction. Pure execution.\n**Referral Push (15)** = Highest lifetime value multiplier. These 15 clients spent $3,530; $12,350. They're in the honeymoon window. One referral pays for itself 10x. Low lift, high upside.\n**Why NOT the others:**\n- **RO Replacement (21):** Lower urgency (filters last 6; 12mo depending on usage; we'd need more segmentation by actual install date + usage). Better as a drip nurture.\n- **Concierge Upsell (100):** Solid opportunity but needs more education (most clients don't yet understand the value prop at month 13; 24). Better as a 2-touch sequence (education email week 1, offer email week 2). Not a one-shot win.\n- **Cold Lead Re-Engagement (1,000):** High volume, low intent. Needs a NEW hook (water news angle, not \"still interested?\"). Worth doing, but not this week's highest ROI. Queue for next week with a timely water quality news angle (e.g., PFAS update, municipal report, etc.).\n---\n**Total Projected Week Revenue from These 2 Campaigns:**\n- Annual Service: $4,200; $5,400 (direct service bookings)\n- Referrals: $12,000; $18,000 (closed deals from 2; 3 referrals, net of $1K; $1.5K in bonuses paid)\n- **Combined: $16,200; $23,400**\n**Total Effort:** 2 emails. 42 recipients. Tuesday + Wednesday send.\nLet's go.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-16_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-16_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-16T10:30:01.437Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
