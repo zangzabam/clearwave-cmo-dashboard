@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T10:01:47.583Z",
+  "generated_at": "2026-05-17T10:30:04.443Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-17",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-17",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-17_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60d Post-Install)",
+        "preview": "**Audience:** 14 satisfied clients, 30-60 days post-install\n**Send:** Wednesday 9:00 AM ET\n### Subject Lines\n1. **Primary:** `The question I got three times this week` (50 chars)\n2. `Quick favor (takes 90 seconds)` (32 chars)\n3. `I built this company on 47 referrals` (39 chars)\n4. `Your neighbor just asked about you` (35 chars)\n5. `$500 for a text message` (24 chars)\n### Preview Text\n`Ashley in Virginia Beach asked if we work in her area. Yes. Because of you. Here's how referrals work.` (103 chars → trim to:)\n`Ashley in VB asked if we work in her area. Yes. Because of you. Here's how it works.` (84 chars)\n### Email Body\n**Subject:** The question I got three times this week\nAshley in Virginia Beach called Monday.\n\"Do you work in my area?\"\nYes. Because Nicole trusted us with her Reionator Pro Ultra six weeks ago, and her water is perfect.\nThat is how ClearWave grows. Not billboards. Not radio spots. One home at a time, one referral at a time.\nIf someone in your circle is dealing with hard water, sediment, chlorine taste, or sulfur smell, here is what happens when you send them my way:\n**When they close:** You receive $500 cash for referrals 1 through 5 this year, $750 for 6 through 9, $1,000 for 10 and beyond. Resets January 1.\n**If they book a free water assessment but do not move forward:** You still receive a $50 gift card. No risk to you.\nThree steps:\n1. Text me their name and number: **(757) 969-8480**\n2. I will reach out within 24 hours and offer a free water assessment\n3. You collect your bonus when they close (or your $50 card if they book but pass)\nYour Clearwave Sovereign is engineered to run 15 to 20 years with annual service. Your referrals will remember who sent them for just as long.\nJustin\nCEO / ClearWave\n---\n### Timing Justification\nWednesday mid-morning hits after Monday chaos, before Friday checkout. Referral asks perform best when the product experience is still fresh (30-60d window) but the \"honeymoon glow\" has settled into daily trust.\n### Expected Performance\n- **Open rate:** 38-42% (highly targeted, recent positive experience, personalized subject line)\n- **Click rate:** 8-12% (phone number CTA is low-friction; no form)\n- **Conversion:** 2-3 referrals generated within 7 days (14% of list)\n**Why this will work:**\n✅ Small, warm list (14 people)\n✅ Recent positive experience (30-60d = peak advocacy window)\n✅ Specific dollar amounts (removes \"what do I get?\" friction)\n✅ Story-led subject line (curiosity without clickbait)\n✅ Single, frictionless CTA (text a number)\n✅ References actual customer product (Nicole's Reionator Pro Ultra)\n### Source Justification\n- **IDEA_SOURCING.md § Referral Programs (Jobber lifecycle):** \"30-60 day post-install window = highest likelihood to refer\"\n- **Hard Rule #3:** Push referrals with exact bonus structure ($500/$750/$1k, $50 gift card)\n- **Killing Bad Water Sales register:** \"Closed mouths don't get fed\" ethos, but translated into luxury register's quiet confidence\n- **Voice fingerprint § luxury_product:** Story-led, triadic close (\"Your Clearwave Sovereign... Your referrals will remember...\"), no contractions, refined tone\n---"
+      },
+      {
+        "id": "email_2026-05-17_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service Reminder",
+        "preview": "**Audience:** 25 clients at 1-year post-install milestone\n**Send:** Thursday 10:00 AM ET\n### Subject Lines\n1. **Primary:** `Your system turns one this week` (33 chars)\n2. `12 months. Time for the checkup.` (33 chars)\n3. `One year in: here's what we check` (35 chars)\n4. `Ryan, your annual service is due` (33 chars)\n5. `The only maintenance call you'll get` (37 chars)\n### Preview Text\n`Most water systems fail at year 3 because nobody checked them at year 1. Here's our process.` (93 chars → trim to:)\n`Most systems fail at year 3 because nobody checked at year 1. Here's our process.` (82 chars)\n### Email Body\n**Subject:** Your system turns one this week\nMost whole-home water systems fail between year three and year five.\nNot because the equipment is poorly made. Because nobody opened the cabinet at year one to confirm proper operation.\nYour Pro Ultra + RO hit the 12-month mark this week. Here is what we check during your annual service:\n**Whole-home side:**\n• Media bed depth and distribution\n• Control valve cycle accuracy\n• Brine tank salt bridge check (if applicable)\n• Bypass and shutoff operation\n**RO side:**\n• Pre-filter and membrane condition\n• Storage tank pressure\n• Auto-shutoff function\n• TDS in/out comparison\nWe also test your raw water again. If your source chemistry has shifted (new well intrusion, municipal additive change), we catch it now, not three years from now when you are replacing a $900 control head.\nAnnual service is $349. Book in the next ten days and we will include your RO filter set (a $120 value) at no charge.\n**To schedule:** Reply to this email or call **(757) 969-8480**. Most appointments take 60 to 90 minutes.\nYour water has been pure for a year. Let's keep it that way for the next twenty.\nJustin\nCEO / ClearWave\n---\n### Timing Justification\nThursday mid-morning (10 AM) avoids Monday overwhelm and Friday dropoff. Annual service is a logical, expected expense (not an impulse), so mid-week professional hours match the decision context.\n### Expected Performance\n- **Open rate:** 44-48% (anniversary milestone, personal relevance, subject line uses \"your\")\n- **Click rate:** 2-4% (phone number + reply CTA)\n- **Conversion:** 8-12 service appointments booked (32-48% of list)\n**Why this will work:**\n✅ Trigger-based (actual 1-year anniversary = high relevance)\n✅ Education-first (explains *why* year-1 service matters)\n✅ Scarcity + value-add (10-day window, $120 filter set bonus)\n✅ References specific products (Pro Ultra + RO, brine tank for softener owners)\n✅ Frames service as investment protection, not expense\n✅ Low-friction CTA (reply OR call)\n### Source Justification\n- **IDEA_SOURCING.md § Annual Service (Jobber lifecycle):** \"1-year post-install = first maintenance window\"\n- **Hard Rule #1:** Never pitch Concierge before 1 year; this is the ENTRY point for future upsell\n- **Mailchimp health data:** \"The maintenance truth nobody tells you\" opened at 0.5% (subject line was vague + no personal hook). This version personalizes (\"Your system turns one\") and adds urgency (10-day filter bonus).\n- **Voice fingerprint § luxury_product:** Educational without selling, parallel structure (two equipment checklists), triadic close (\"pure for a year... next twenty\")\n---\n## Why Not the Others This Week?\n**RO replacement (21 candidates):** Smaller urgency (6-12mo window), less emotionally salient than anniversary or referral ask. Better as a drip sequence.\n**Concierge upsell (100 candidates):** Large list, but Mailchimp health shows consecutive 0.00-0.01% click rates on value/math messaging. This needs a **video testimonial** or **case study anchor** (e.g., \"Here's what Jane saved in year two\") to break the pattern. Propose next week with creative refresh.\n**Cold lead re-engagement (1,000):** Worthy target, but needs a **news hook** (e.g., local water quality report, EPA rule change) to reset the relationship. Current Jobber triggers (referral, annual service) have 10x higher intent and 20x better list quality.\n---\n**Recommendation:** Send BOTH campaigns this week. Lists do not overlap, voice is consistent, and both have clear conversion paths tied to revenue (referral pipeline + service bookings).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-17_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-17_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-17T10:30:01.066Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
