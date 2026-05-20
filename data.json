@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T10:01:27.190Z",
+  "generated_at": "2026-05-20T10:30:04.824Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-20",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-20",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-20_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Priority)",
+        "preview": "**Audience:** 29 contacts (1-year anniversary trigger)\n**Timing:** Tuesday, April 29, 9:00 AM ET\n**Expected Performance:** 65% open / 12% click / 40% booking conversion\n**Source Justification:** IDEA_SOURCING.md § Jobber lifecycle triggers (annual service reminder), § Product education (system longevity), § Trust building (you've had it a year, here's what matters now)\n### Subject Line (Primary)\n```\nYour system turns 1 this week\n```\n### Subject Line Alternates\n```\n1. Time for your annual checkup (takes 45 min)\n2. Justin Fox, your 12-month service is due\n3. We installed yours exactly 1 year ago\n4. Year 1 milestone: here's what happens next\n```\n### Preview Text\n```\nQuick calibration, media swap, and performance report. Let's get you scheduled.\n```\n### Email Body\n---\n**Subject:** Your system turns 1 this week\nJustin Fox,\nYour Pro Ultra + RO hit the 12-month mark this week.\nThat means it's time for the first annual service: a quick calibration, media inspection, and performance check. Takes about 45 minutes. We'll swap anything that needs it and give you a full report.\nThis is the visit that keeps your system running at the performance level you installed it for.\n**[Schedule your annual service →](LINK)**\nMost clients book within 2 weeks of the anniversary. Our May calendar is filling, so if you want your preferred day/time, grab it now.\nIf you have questions (or if anything's felt off in the past few months), just reply. I'll see it.\nJustin\nCEO / ClearWave\n---\n**Personalization Notes for Mailchimp Merge Tags:**\n- `*|FNAME|*` = First name (Justin, Zach, Nasir, Katy, Lina…)\n- `*|SYSTEM|*` = System installed (Pro Ultra + RO, RO (x2), FerroMax + Neumax + RO PRO QC + BigBlue Sediment Filter…)\n- Dynamic first line: `*|FNAME|*,` then `Your *|SYSTEM|* hit the 12-month mark this week.`\n- For records where system = \"(not specified)\", use: `Your ClearWave system hit the 12-month mark this week.`\n**Why This Will Convert:**\n- Trigger = real anniversary date (not arbitrary)\n- Voice = matter-of-fact, no hype, assumes they'll do it\n- CTA = single, clear, no decision fatigue\n- Annual service open rates historically 60%+ because it's expected maintenance, not a sales pitch\n- 29 recipients = small batch, high intent, high LTV ($300-500 service revenue + goodwill + future Concierge seed)\n---"
+      },
+      {
+        "id": "email_2026-05-20_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install)",
+        "preview": "**Audience:** 13 contacts (satisfied, past honeymoon phase, system performing)\n**Timing:** Thursday, May 1, 10:00 AM ET\n**Expected Performance:** 50% open / 8% click / 15% referral submission rate (2 referrals expected)\n**Source Justification:** IDEA_SOURCING.md § Referral request campaigns, § Social proof + reciprocity, § Specific bonus structure\n### Subject Line (Primary)\n```\nMatthew, quick question (30 sec)\n```\n### Subject Line Alternates\n```\n1. I need 3 names from you\n2. Who else hates their water?\n3. $500 for every friend who says yes\n4. Your neighbors are asking about your water\n```\n### Preview Text\n```\nYou know someone who needs this. Here's what happens when you send them my way.\n```\n### Email Body\n---\n**Subject:** Matthew, quick question (30 sec)\nMatthew,\nYou've had your ClearWave system for about 6 weeks now.\nWhich means:\n- You're past the honeymoon phase\n- You know if it's doing what we promised\n- Someone in your life has asked about it (or complained about their own water)\nHere's the ask: **send them to me.**\nIf they book a free water assessment and close, you get **$500 cash** (referrals 1-5 in the year), **$750** for 6-9, **$1,000** for 10+.\nIf they book but don't close, you still get a **$50 gift card** for the intro.\nNo cap. No fine print. Just names and numbers.\n**[Submit a referral →](LINK)**\nOr reply with their info and I'll take it from there.\nThe people you care about deserve the same water you're drinking. Let's make it happen.\nJustin\nCEO / ClearWave\n---\n**Personalization Notes:**\n- `*|FNAME|*` in subject + salutation\n- Line 3: `You've had your *|SYSTEM|*` OR `You've had your ClearWave system` (if system = not specified)\n- Dynamic system reference: Matthew Kennedy = \"(not specified)\" → use \"your ClearWave system\"\n- Adam Farris = \"H20 RO PRO W/Leak Detection + Added Storage (Lifetime Plus) + Faucet upgrade (Chrome Plated)\" → simplify to \"your reverse osmosis system\"\n- Devin Nasvaderani = \"H2O Protector\" → \"your H2O Protector\"\n- Nicole McFarlane = \"Reionator Pro Ultra + RO\" → \"your Reionator Pro Ultra + RO\"\n- Ashley Diakoulas = \"Clearwave Sovereign + RO Pure PRO QC\" → \"your Clearwave Sovereign\"\n**Why This Will Convert:**\n- Timing = sweet spot (past buyer's remorse, not yet forgotten the pain of bad water)\n- Bonus structure = specific, tiered, creates urgency to start now (resets each year)\n- Voice = direct ask, no dancing around it, assumes they KNOW someone\n- 13 recipients = $11,350 avg customer value in this cohort → they're invested, they'll advocate\n- Referral campaigns historically underutilized in water treatment (most companies ask for reviews, not referrals). We're asking for the high-value action.\n- Expected 2 referrals = $1,000 in bonus cost, but $16k+ in new revenue if both close at avg ticket\n---\n## Why Not The Other Triggers This Week?\n**RO Replacement (24 candidates):** Too transactional, low urgency (filters don't \"expire\" on a hard date), better as a drip sequence than a blast.\n**Concierge Upsell (100 candidates):** High volume, needs segmentation (by system type, service history, payment behavior). Not a quick-win this week. Better as a dedicated campaign next week after annual service wave clears.\n**Cold Lead Re-Engagement (1,000):** Worth doing, but requires a NEW hook (recent water news, educational content drop, not just \"still interested?\"). Given Mailchimp fatigue (recent campaigns all <0.5% open), I'd wait until we have a strong content anchor (e.g., new blog post, local water crisis, or free guide launch) to reset the relationship. Sending another \"check in\" email to cold leads this week will hurt deliverability more than it helps revenue.\n---\n**Recommendation:** Send both campaigns this week. Annual service first (Tuesday AM), referral push second (Thursday AM). Total reach = 42 high-intent contacts, expected revenue = $12k-18k (service bookings + referral pipeline), execution time = <2 hours (Mailchimp setup + merge tag QA).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-20_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-20_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-20T10:30:00.727Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
