@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T10:01:29.789Z",
+  "generated_at": "2026-05-22T10:30:04.641Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-22",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-22",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-22_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Maintenance Window)",
+        "preview": "**Audience:** 26 clients at 12-month mark\n**List:** Jobber lifecycle trigger (1-year annual service candidates)\n### Subject Lines\n**Primary:**\n`Your 12-month service window is here`\n**Alternates:**\n1. `Time for your annual checkup (year 1)`\n2. `Katy, your system turns 1 this week`\n3. `The one appointment that protects everything`\n4. `12 months in: here's what happens next`\n### Preview Text\n`Quick calibration, media check, peace of mind. Book your annual service in 60 seconds.`\n### Email Body\n---\n**Subject:** Your 12-month service window is here\n**Preview:** Quick calibration, media check, peace of mind. Book your annual service in 60 seconds.\n---\nKaty,\nYour Re-Ionator Pro Ultra + RO hit the one-year mark last week.\nThat means it's time for your first annual service: a quick calibration, media inspection, and performance check. Takes about an hour. Keeps your warranty active. Catches small things before they become expensive things.\n**What we do:**\n- Inspect valves, seals, and media bed depth\n- Test backwash cycles and flow rate\n- Swap pre-filters and check your RO membrane\n- Recalibrate settings if your water chemistry shifted\n**Your part:** Pick a day in the next 3 weeks. We'll handle the rest.\n[Book Your Annual Service →]\nThis is the only scheduled touchpoint for the year. After this, you're good until May 2027.\nJustin\nCEO / ClearWave\nP.S. If someone you know is still fighting hard water, rust, or chlorine taste, send them our way. We'll give them a free water assessment, and if they move forward, you'll earn $500 cash (referrals 1; 5), $750 (6; 9), or $1,000 (10+). Even if they just book a consult and don't close, you get a $50 gift card.\n---\n### Send Timing\n**Tuesday, May 6, 2026 at 9:00 AM ET**\n(Mid-week, morning, high-intent maintenance action)\n### Expected Performance\n- **Open rate:** 52; 58% (high-intent transactional trigger, named personalization, clear utility)\n- **Click rate:** 12; 18% (single clear CTA, no friction, expected expense)\n- **Conversion (booked service):** 60; 70% of clickers (15 of 26 likely to book within 7 days)\n**Justification:**\nThis is a **required maintenance trigger** with contractual/warranty weight. It's transactional, not promotional. Personalization (name, system, city) is trivial via Jobber merge tags. Mailchimp avg open is 41%; this will significantly exceed because it's 1:1 relevant and time-bound. Recent campaigns had <1% click because they were educational/abstract; this has a concrete next step tied to a known obligation.\n**IDEA_SOURCING.md compliance:**\n- **Lifecycle trigger (Jobber):** Annual service window is the #1 highest-intent, highest-conversion moment post-install.\n- **Personalization at scale:** Name, system, city from Jobber.\n- **Referral plug (non-invasive):** Bonus structure in P.S., does not dilute primary CTA.\n---"
+      },
+      {
+        "id": "email_2026-05-22_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement (Water News Hook)",
+        "preview": "**Audience:** 1,000 cold subscribers (no engagement >60 days, never reached quote stage)\n**List:** Mailchimp segment (cold leads)\n### Subject Lines\n**Primary:**\n`The EPA just changed the lead rule`\n**Alternates:**\n1. `New federal water regs hit Virginia this fall`\n2. `What the new lead limits mean for your home`\n3. `Testing alone won't fix this (new EPA rule)`\n4. `You asked about water 3 months ago. Here's why it matters now.`\n### Preview Text\n`New lead limits took effect April 2026. Here's what changed and what you can do about it.`\n### Email Body\n---\n**Subject:** The EPA just changed the lead rule\n**Preview:** New lead limits took effect April 2026. Here's what changed and what you can do about it.\n---\nYou reached out a few months ago about your water.\nLife got busy. I get it.\nBut something changed last month that's worth 90 seconds of your time.\n**The EPA's new Lead and Copper Rule took effect April 29, 2026.**\nThe old action level was 15 parts per billion. The new trigger is 10 ppb, and utilities now have to replace lead service lines within 10 years (not 30).\n**Translation:** If you're in an older neighborhood (pre-1986 plumbing, pre-1950s service lines), your risk profile just got flagged at the federal level.\nTesting tells you if you have a problem. It doesn't solve it.\n**A point-of-entry filtration system does both.**\nIf you want to know what's actually in your water and whether you need to do anything about it, we'll come out and run a free water assessment. No lab fees, no sales pitch if the water's fine, no obligation.\nTakes 20 minutes. You'll know exactly what you're drinking, bathing in, and cooking with.\n[Book Your Free Water Assessment →]\nJustin\nCEO / ClearWave\nP.S. If you're not interested right now, no worries. But if you know a family member, neighbor, or coworker who's dealing with hard water, staining, or taste issues, send them our way. If they move forward, you'll earn $500 cash. If they just book a consult, you get a $50 gift card.\n---\n### Send Timing\n**Thursday, May 8, 2026 at 10:00 AM ET**\n(Mid-week, mid-morning, news-cycle relevance still fresh)\n### Expected Performance\n- **Open rate:** 28; 34% (news hook, regulatory authority, segment is cold so baseline is lower)\n- **Click rate:** 2; 4% (realistic for re-engagement; 20; 40 clicks)\n- **Conversion (booked assessment):** 15; 25% of clickers (3; 10 booked assessments)\n**Justification:**\nCold leads are **low-intent by definition**, so we're not expecting the 41% house-list open rate. But a **timely, external news hook** (EPA rule change is real, recent, and relevant to VA/MD/DC audience) resets the conversation without sounding desperate (\"still interested?\"). The **new lead rule is a legitimate forcing function** and positions ClearWave as educator-first, not seller-first.\nRecent campaigns to the ALL audience had 0.4; 0.6% open and 0.00; 0.01% click because they were abstract (\"maintenance truth,\" \"how long should it last\"). This has **a concrete external event** and a **no-risk next step** (free water assessment).\nEven if we convert 5 cold leads to booked assessments, and 2 of those close at avg $8,000 invoice, that's $16,000 revenue from a list that was otherwise dormant.\n**IDEA_SOURCING.md compliance:**\n- **Regulatory/seasonal forcing function:** New EPA rule is a timely, credible hook (similar to \"32k gallons jet fuel\" but with personal relevance, not abstract fear).\n- **Re-engagement best practice:** Lead with new value, not \"hey, remember us?\" Frame it as \"here's what changed in YOUR world.\"\n- **Free water assessment as the only CTA:** Hard rule compliance, exact phrase.\n---\n## Why These Two (and Not Others)\n**Annual Service (26)** is the highest-conversion, highest-AOV opportunity this week. It's transactional, time-bound, and expected. Conversion rate will be 10; 20× higher than any nurture email.\n**Cold Lead Re-Engagement (1,000)** is the highest-volume opportunity to reactivate dead leads without burning goodwill. The EPA hook is fresh, relevant, and positions Justin as educator (not desperate closer).\n**Why NOT the others this week:**\n- **Referral push (17):** Good candidates, but referral emails historically underperform unless paired with a forcing function (holiday, milestone, or incentive expiration). Better to layer into the annual service P.S. or save for a summer \"refer 3, win a Yeti\" promo.\n- **RO replacement (25):** Solid, but lower urgency than annual service. RO membranes don't fail catastrophically; they degrade slowly. Better as a **secondary send next week** after annual service clears.\n- **Concierge upsell (100):** High volume, decent intent, but requires more education/math. Better as a **stand-alone 3-email sequence** (not a one-off). Propose separately if you want a Concierge nurture track.\n---\n**Ready to load into Mailchimp?** I can generate the Jobber merge-tag syntax and segment filters if you want to go live this week.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-22_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-22_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-22T10:30:01.216Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
