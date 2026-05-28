@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T23:00:01.097Z",
+  "generated_at": "2026-05-28T23:00:00.838Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -12,12 +12,12 @@
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Email Sub-Agent",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
@@ -27,58 +27,58 @@
       },
       {
         "name": "Investor Metrics",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Competitor Intel",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Brand Health",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Content Director",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Trend Watch",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Creative Studio",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Funnel Diagnostics",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Opportunity Scout",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Board Comms",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Agency Scorecard",
-        "last_run": "2026-05-23",
+        "last_run": "2026-05-28",
         "status": "Good"
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-05-23",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
@@ -942,10 +942,9 @@
     }
   },
   "approvals": {
-    "date": "2026-05-23",
+    "date": "2026-05-28",
     "items": [],
-    "decisions": {},
-    "last_brief_sent": "2026-05-23T10:30:01.014Z"
+    "decisions": {}
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
