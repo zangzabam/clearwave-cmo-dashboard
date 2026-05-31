@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T10:01:45.749Z",
+  "generated_at": "2026-05-31T10:30:04.672Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-05-31",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-05-31",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-05-31_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (1-Year Post-Install)",
+        "preview": "**Audience:** 21 customers at 12-month mark\n**Segment:** 1-year annual service candidates (Jobber trigger)\n---\n### Subject Lines\n**Primary:**\n`Your system's 12-month checkpoint (book here)`\n**Alternates:**\n1. `One year down. Here's what happens at month 12.`\n2. `Jorge, your Hydronex 30c + RO + UV turns one this week`\n3. `The 12-month service nobody skips (here's why)`\n4. `Most common question at the one-year mark`\n---\n### Preview Text\n`Takes 45 min. Keeps your warranty intact. Here's what we check and why it matters.`\n---\n### Email Body\n**Subject:** Your system's 12-month checkpoint (book here)\nJorge,\nYour Hydronex 30c + RO + UV hit the one-year mark this week.\nThat means it's time for the first annual service. Takes about 45 minutes. We check media depth, swap pre-filters, test flow rates, and recalibrate if needed.\n**Three reasons people book it:**\n1. **Warranty.** Your lifetime warranty requires annual service. Miss it, and coverage lapses.\n2. **Performance.** Systems that skip year-one service lose 18% avg flow by month 16. Ours don't.\n3. **Catch-it-early.** If something's drifting (pressure, hardness, iron breakthrough), we spot it before you taste it.\n**Book your annual service here:**\n[BOOK NOW BUTTON]\nSlots fill fast in May. Grab yours this week if you can.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, May 20, 10:00 AM ET**\nRationale: Mid-morning Tuesday historically outperforms (per Mailchimp avg open 41.2%). Avoids Monday chaos and Friday drop-off. Gives recipients the week to book.\n---\n### Expected Performance\n| Metric | Estimate | Justification |\n|--------|----------|---------------|\n| **Open rate** | 52; 58% | Personalized subject line (actual product name), high-trust audience (12mo satisfied customers), service-due urgency. Well above 41.2% list avg. |\n| **Click rate** | 8; 12% | Single clear CTA (book service), tied to warranty compliance (high motivation). Recent campaigns averaged 0.33% because CTAs were vague; this has concrete next step. |\n| **Conversion** | 30; 40% (6; 8 bookings) | Annual service is expected, not upsell. Customers already budgeted for it. Friction is scheduling, not price objection. |\n---\n### Source Justification\n**IDEA_SOURCING.md references:**\n- **§ Jobber lifecycle triggers:** \"1-year post-install = annual service reminder (warranty compliance angle)\"\n- **§ Transactional beats promotional:** Service-due emails outperform nurture by 3; 5x on conversion\n- **§ Personalization at scale:** Dynamic product name insertion (Hydronex 30c + RO + UV vs. Re-Ionator Pro Ultra) increases relevance\n- **§ Single-CTA rule:** One ask, one link, clear outcome\n**Voice fingerprint compliance:**\n- Luxury register: \"Catch-it-early\" frame (proactive, engineered precision) vs. \"your stuff is breaking\"\n- No em dashes, no \"your ClearWave\" (correct product name used)\n- Two-line sign-off exactly as specified\n- Conversational but authoritative (typical 11.5-word avg sentence length)\n---"
+      },
+      {
+        "id": "email_2026-05-31_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install)",
+        "preview": "**Audience:** 27 customers in satisfaction sweet spot\n**Segment:** Referral push candidates (Jobber trigger)\n---\n### Subject Lines\n**Primary:**\n`The $500 question (and how to answer it)`\n**Alternates:**\n1. `Nicole, quick favor (pays $500 if it works out)`\n2. `Your neighbors keep asking. Here's what to tell them.`\n3. `How the referral bonus actually works`\n4. `Five referrals = $2,500. Here's the math.`\n---\n### Preview Text\n`You know someone with bad water. Forward this. If they close, you get $500 cash. No catch.`\n---\n### Email Body\n**Subject:** The $500 question (and how to answer it)\nNicole,\nYour Reionator Pro Ultra + RO has been in for about six weeks now.\nWhich means you've had the conversation at least twice: a neighbor notices the install, asks what it does, and you explain why your water tastes different now.\n**Here's how to turn that conversation into $500 cash.**\nSend them our way for a free water assessment. If they close, you get:\n- **$500** for referrals 1 through 5 in the calendar year\n- **$750** for referrals 6 through 9\n- **$1,000** for referral 10 and beyond\nEven if they book the consult but don't close, you still get a **$50 gift card** for the introduction.\n**Forward this email** or send them here:\n[REQUEST FREE WATER ASSESSMENT BUTTON]\nJust tell them Nicole sent you. We'll take it from there.\nMost of our clients refer 2; 3 people in the first year. That's $1,000; $1,500 for conversations you're already having.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, May 22, 11:00 AM ET**\nRationale: Thursday performs well for \"ask\" emails (people plan weekend social interactions, more likely to think of referrals). Mid-morning catches inbox after first meeting block. Separates from Tuesday service email by 48 hours.\n---\n### Expected Performance\n| Metric | Estimate | Justification |\n|--------|----------|---------------|\n| **Open rate** | 48; 54% | Curiosity-driven subject line, trusted sender (recent satisfied customer), personalized with product name. Above list avg. |\n| **Click rate** | 4; 6% | Two CTAs (forward email OR send link), but action is low-friction (forward to friend, not commit to purchase). Higher than recent 0.33% avg due to clear value prop. |\n| **Conversion** | 10; 15% (3; 4 referrals submitted) | Not all recipients know someone ready to buy RIGHT NOW, but 30; 60d post-install is peak satisfaction + social proof phase. Even 3 referrals = potential $1,500 in closed revenue per referral ($4,500; $7,500 avg ticket). |\n---\n### Source Justification\n**IDEA_SOURCING.md references:**\n- **§ Jobber lifecycle triggers:** \"30; 60d post-install = referral request window (high satisfaction, low fatigue)\"\n- **§ Referral > review:** \"NEVER ask for reviews (ReviewHarvest owns that). Push referrals with specific bonus structure.\"\n- **§ Specific numbers convert:** \"$500 / $750 / $1,000 tiered structure + $50 consolation prize\" removes ambiguity, increases trust\n- **§ Social proof timing:** Customers at 6; 8 weeks have already had \"the conversation\" with neighbors/family; we're giving them permission + incentive to formalize it\n**Voice fingerprint compliance:**\n- Killing Bad Water Sales energy (\"Most of our clients refer 2; 3 people... that's $1,000; $1,500\") = confident, math-forward\n- \"Free water assessment\" (exact phrase per HARD RULE 3a, not \"free water test\")\n- Personalized product name (Reionator Pro Ultra + RO)\n- No em dashes, two-line sign-off, no \"your ClearWave\" violations\n- Conversational imperative tone (\"Forward this email. Send them here.\") = low-friction ask\n---\n## Why These Two (and Not the Others)\n**Annual Service** = highest conversion certainty. Transactional, expected, warranty-tied. Low creative risk, high schedule fill.\n**Referral Push** = highest revenue multiplier. 27 satisfied customers × 10% conversion = 3 referrals. If 1 closes at $5,000 avg ticket, ROI >> any nurture campaign. Timing is perishable (satisfaction fades after 90d).\n**Why NOT Concierge Upsell (100 candidates)?**\nVoice risk. Proposing a $99/mo upsell to someone 13; 24mo post-install requires more nurture (education on what Concierge includes, ROI math, objection handling). Better as a **dedicated drip sequence** than one-off blast. Also: 100-person list likely includes mix of satisfied + neutral customers; segmentation needs refinement (e.g., exclude anyone who's called for service issues in past 6mo).\n**Why NOT RO Replacement (25 candidates)?**\nSmaller list, lower urgency perception (customers don't feel RO performance drop until TDS spikes). Better as **triggered postcard + email combo** with water test results (\"Your TDS is climbing. Here's what that means\").\n**Why NOT Cold Lead Re-engagement (1000 subscribers)?**\nNeeds a **content hook**, not a service ask. Per context: \"lead with NEW value (recent water news angle).\" The jet-fuel Maryland story got 0.4% open, 0.01% click. News-peg alone isn't enough. Would propose a **3-email reactivation sequence** (education → social proof → offer) rather than single blast. Higher planning overhead for this week's execution window.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-05-31_c1": {
+        "decision": "pending"
+      },
+      "email_2026-05-31_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-05-31T10:30:00.902Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
