@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T10:01:25.836Z",
+  "generated_at": "2026-06-01T10:30:05.409Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "4.6x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-01",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -943,8 +943,29 @@
   },
   "approvals": {
     "date": "2026-06-01",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-01_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (High Priority)",
+        "preview": "**Audience:** 20 clients at 12-month mark\n**Send:** Tuesday, May 20 at 10:00 AM ET\n### Subject Lines\n**Primary:** \"Your annual service window just opened\"\n**Alt 1:** \"12 months in: time for your first checkup\"\n**Alt 2:** \"Chelsea, your Re-Ionator Pro Ultra turns 1 this week\"\n**Alt 3:** \"The one thing you need to do at year 1\"\n**Alt 4:** \"Your system earned its annual service\"\n**Preview text:** \"Book your complimentary first-year inspection. Takes 45 min. Keeps your warranty active.\"\n### Email Body\n**Subject:** Your annual service window just opened\nHi Chelsea,\nYour Re-Ionator Pro Ultra hit the 12-month mark this week.\nThat means it's time for the first annual service. We inspect the media bed, check valve cycles, test your water, and swap any consumables that need it. Takes about 45 minutes. Keeps your warranty active and your water dialed in.\nThis one's complimentary (part of your original install). We just need to get you on the calendar before the window closes.\nBook here: [LINK]\nOr text the office at (804) 508-8964 and mention \"annual service.\"\nJustin\nCEO / ClearWave\n---\n**Personalization notes for automation:**\n- Use actual system name when available (e.g., \"Re-Ionator Pro Ultra\" for Chelsea, \"Ferroluxe + Acid Neut + UV\" for Kiana)\n- For \"(not specified)\" records (CWWS Shop, Cindy Corvalan), use \"your ClearWave system\"\n- First name in subject line for high-ticket installs only (total >$3k); use generic subject for $0 or unknown\n### Expected Performance\n- **Open rate:** 55-65% (service reminder, high urgency, personalized system name)\n- **Click rate:** 18-22% (clear CTA, compliance/warranty hook)\n- **Conversion:** 70%+ book within 7 days (this is expected maintenance, not upsell)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year service reminders\"\n- **Voice fingerprint § luxury_product:** Service framing as \"inspection\" and \"complimentary,\" not transactional\n- **Hard Rule #1 enforced:** This is year-1 service, NOT Concierge pitch\n- **Hard Rule #2 enforced:** Uses actual product names (Re-Ionator Pro Ultra, Ferroluxe, etc.) where available; \"your ClearWave system\" only when \"(not specified)\"\n---"
+      },
+      {
+        "id": "email_2026-06-01_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (Warm Advocates)",
+        "preview": "**Audience:** 30 clients at 30-60 days post-install\n**Send:** Thursday, May 22 at 2:00 PM ET\n### Subject Lines\n**Primary:** \"I'll pay you $500 cash for this\"\n**Alt 1:** \"The referral math (it's stupid simple)\"\n**Alt 2:** \"James, got 10 minutes to talk about your water?\"\n**Alt 3:** \"Your neighbors are asking about your system\"\n**Alt 4:** \"How to turn your kitchen into a $500 ATM\"\n**Preview text:** \"Closed referral = $500. Just need a name + number. Scales to $1k each after referral #10.\"\n### Email Body\n**Subject:** I'll pay you $500 cash for this\nHi James,\nYour 30c system has been running for about six weeks now. You've probably had a neighbor or family member ask about it.\nHere's the deal:\nSend me their name and number. I'll offer them a free water assessment. If they go with us, you get $500 cash.\nThat's referrals 1 through 5. Referral #6 pays $750. Referral #10 and beyond pays $1,000 each.\nEven if they just book the consult and don't move forward, you still get a $50 gift card.\nThe math is stupid simple. The water sells itself. You just make the intro.\nReply to this email with a name and number, or text me directly at (804) 508-8964.\nJustin\nCEO / ClearWave\n**P.S.** Resets every January, so your first five this year are the $500 tier.\n---\n**Personalization notes for automation:**\n- Use actual system name when available (e.g., \"30c\" for James, \"30c + RO\" for Leo, \"Reionator Pro\" for Dorn)\n- For \"(not specified)\" records, use \"your system\"\n- First name in opener always\n### Expected Performance\n- **Open rate:** 48-54% (money hook in subject, recent satisfied customers)\n- **Click rate:** 2-4% (most will reply/text directly, not click; measure response rate instead)\n- **Conversion:** 8-12 referrals submitted within 14 days (~27-40% of list)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"30-60 day post-install referral asks (prime advocacy window)\"\n- **IDEA_SOURCING.md § Referral campaign ideas:** \"Make the bonus structure dead simple\"\n- **Hard Rule #3 enforced:** Pushes REFERRALS with exact bonus structure ($500/$750/$1k tiers, $50 consult card), never asks for reviews\n- **Hard Rule #3a enforced:** Uses \"free water assessment\" (not \"free water test\")\n- **Voice fingerprint § killing_bad_water_sales cadence:** \"The math is stupid simple\" / \"The water sells itself\" / reply-or-text CTA urgency\n- **Hard Rule #5 enforced:** Zero em dashes; uses periods and commas for pacing\n---\n## Why These Two (Not the Others)\n**Annual service** = highest urgency + contractual expectation + warranty compliance = 65%+ open, 70%+ conversion.\n**Referral push** = warmest advocates (30-60 day honeymoon) + clear financial incentive + low friction (just reply with a name) = highest referral yield per send.\n**Why NOT Concierge this week:**\nThe 100-person Concierge upsell list is strong, but it's a considered purchase ($99/mo recurring). Annual service is both more urgent (warranty/time-sensitive) and a better trust-builder. Run Concierge next week after annual service emails establish the service relationship.\n**Why NOT RO replacement:**\n25-person list is small and the \"due for replacement\" hook is weaker (RO membranes degrade slowly; no hard deadline). Better as a Q3 campaign when we can layer in a summer water-quality angle.\n**Why NOT cold lead re-engagement:**\n1,000-person list is large but coldest (no recent touchpoint, never reached quote stage). Needs a creative external hook (new legislation, local contamination story, etc.). Park it for a water-news trigger moment (next PFAS ruling, next EPA update).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-01_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-01_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-01T10:30:00.691Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
