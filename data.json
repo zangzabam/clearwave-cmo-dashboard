@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T12:00:06.483Z",
+  "generated_at": "2026-06-02T17:00:00.865Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -674,51 +674,36 @@
     "milestone_targets": [
       {
         "checkpoint": "START",
-        "date": "2026-03-31",
-        "tiktok": 3300,
-        "instagram": 3300,
-        "youtube": 183,
-        "x_twitter": 841
+        "date": "2026-06-08",
+        "tiktok": null,
+        "instagram": null,
+        "youtube": null,
+        "x_twitter": null,
+        "notes": "Set baseline on launch day"
       },
       {
         "checkpoint": "30 days",
-        "date": "2026-04-30",
-        "tiktok": 10000,
-        "instagram": 6000,
-        "youtube": 650,
-        "x_twitter": 1500
+        "date": "2026-07-08",
+        "tiktok": 5000,
+        "instagram": 3000,
+        "youtube": 300,
+        "x_twitter": 500
       },
       {
         "checkpoint": "60 days",
-        "date": "2026-05-31",
-        "tiktok": 27500,
-        "instagram": 14000,
-        "youtube": 2250,
-        "x_twitter": 3000
+        "date": "2026-08-07",
+        "tiktok": 15000,
+        "instagram": 8000,
+        "youtube": 1500,
+        "x_twitter": 1500
       },
       {
         "checkpoint": "90 days",
-        "date": "2026-06-30",
-        "tiktok": 65000,
-        "instagram": 32500,
-        "youtube": 7500,
-        "x_twitter": 5000
-      },
-      {
-        "checkpoint": "6 months",
-        "date": "2026-09-30",
-        "tiktok": 175000,
-        "instagram": 100000,
-        "youtube": 32500,
-        "x_twitter": 15000
-      },
-      {
-        "checkpoint": "9 months",
-        "date": "2026-12-31",
-        "tiktok": 275000,
-        "instagram": 135000,
-        "youtube": 65000,
-        "x_twitter": 30000
+        "date": "2026-09-06",
+        "tiktok": 35000,
+        "instagram": 18000,
+        "youtube": 5000,
+        "x_twitter": 3500
       }
     ],
     "platforms": {
