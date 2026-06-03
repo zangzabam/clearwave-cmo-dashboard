@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T10:01:56.185Z",
+  "generated_at": "2026-06-03T10:30:04.630Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-03",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-03",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-03_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service (21 recipients)",
+        "preview": "**Audience:** 1-year post-install clients due for annual service\n**Segment:** Jobber trigger: completedAt ~365 days ago\n### Subject Lines (60 char max)\n1. **Your annual service window just opened** *(PRIMARY)*\n2. It's been a year. Here's what happens next.\n3. 12-month checkpoint for your [SYSTEM]\n4. The one service call that actually matters\n5. Annual service: why we built it into year 1\n### Preview Text (90 char max)\nQuick 45-minute tune-up. We check everything, swap what needs swapping, you're done.\n### Email Body\n---\n**Subject:** Your annual service window just opened\nChelsea,\nYour Re-Ionator Pro Ultra hit the 12-month mark last week.\nThat means it's time for your first annual service: a 45-minute appointment where we check valves, test pressure, swap any media that needs swapping, and make sure everything is dialed in.\nMost systems run flawlessly between services. This is just the checkpoint we engineered into year one.\n**[Book your annual service here]**\nWe'll text you 24 hours before we arrive. You don't need to prep anything.\nIf you have questions (or if something feels off before we get there), just reply to this email.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes\n- Use actual system name from Jobber (e.g., \"Re-Ionator Pro Ultra\" for Chelsea Grell, \"your ClearWave system\" for CWWS Shop & Storage)\n- Keep body identical except for name + system in greeting/P1\n### Send Timing\n**Wednesday, 10:00 AM ET**\nRationale: Mid-week, mid-morning = highest open rate for service/transactional emails per Mailchimp benchmarks. Avoids Monday (inbox overload) and Friday (weekend mental checkout).\n### Expected Performance\n- **Open rate:** 62; 68%\n *Justification:* Transactional service reminder to engaged customers (already converted once). Mailchimp avg is 41.2%; service emails typically lift 50%+ vs. nurture.\n- **Click rate (book button):** 28; 35%\n *Justification:* Clear, low-friction CTA. No pitch, no upsell. Customer expects this service per warranty terms.\n- **Conversion (booked service):** 18; 24 appointments\n *Justification:* ~85; 90% will book within 7 days. Some will call instead of clicking; Jobber will capture those separately.\n### Source Justification\n- **IDEA_SOURCING.md § \"Jobber lifecycle triggers\"**: Annual service = highest-value, lowest-friction touchpoint. Customers expect it, budget for it, and it reinforces the service relationship.\n- **Voice fingerprint § luxury_product register**: Transactional clarity, no hype. \"Engineered into year one\" echoes precision/craftsmanship themes without overselling a service the customer already paid for (via warranty expectations).\n---"
+      },
+      {
+        "id": "email_2026-06-03_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (29 recipients)",
+        "preview": "**Audience:** 30; 60 days post-install, satisfied clients (Jobber trigger)\n**Segment:** High trust window, system performing well, top-of-mind recall still strong\n### Subject Lines (60 char max)\n1. **Quick ask: who else is dealing with bad water?** *(PRIMARY)*\n2. Know anyone fighting their water right now?\n3. $500 for you, pure water for them\n4. The referral bonus nobody expects\n5. Your neighbors are asking. Can we help them?\n### Preview Text (90 char max)\nIf you know someone struggling with their water, send them my way. You get paid either way.\n### Email Body\n---\n**Subject:** Quick ask: who else is dealing with bad water?\nLeo,\nYour 30c + RO has been running for about six weeks now.\nWhich means you've had time to notice the difference (softer skin, cleaner dishes, coffee that doesn't taste like a science experiment).\n**Here's my ask:**\nWho else in your circle is dealing with bad water?\nA neighbor with rusty stains. A family member filling up jugs at the grocery store. A coworker who complains about their well every Monday.\nIf you send them my way, here's what happens:\n- They get a **free water assessment** (no charge, no obligation, just lab-tested clarity on what's in their water and what it takes to fix it).\n- If they move forward, you get **$500 cash** (referrals 1; 5 this year).\n- If they book the consult but don't move forward, you still get a **$50 gift card**.\nYou get paid either way.\n**[Refer someone here]**\nOr just reply with their name and number. I'll take it from there.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n---\n### Personalization Notes\n- Use actual system name (\"30c + RO\" for Leo Dyce, \"your ClearWave system\" for unspecified)\n- Adjust \"six weeks\" dynamically based on completedAt date (e.g., \"about five weeks,\" \"just over a month\")\n### Send Timing\n**Thursday, 11:00 AM ET**\nRationale: Thursday = second-highest engagement day (per Mailchimp aggregate data). 11 AM gives recipients time to clear morning tasks but catches them before lunch/afternoon fatigue. Ask-based emails (vs. educational) perform slightly better late morning.\n### Expected Performance\n- **Open rate:** 48; 54%\n *Justification:* Lower than transactional service email, but still above list average (41.2%). \"Quick ask\" subject line signals brevity + personal request, which lifts opens among recent customers.\n- **Click rate:** 8; 12%\n *Justification:* Ask-based CTAs (referrals, testimonials) underperform educational/value CTAs. But explicit $ amounts + \"you get paid either way\" removes friction. Mailchimp list avg click is 0.33%; this should lift 24; 36×.\n- **Conversion (referrals submitted):** 3; 5 referrals\n *Justification:* ~10; 17% of recipients will submit at least one name. Referral programs typically convert 10; 15% of prompted customers when bonus structure is clear and ask is timely (30; 60 day window = peak satisfaction + recall).\n### Source Justification\n- **IDEA_SOURCING.md § \"Jobber lifecycle triggers\" + \"Referral program\"**: 30; 60 days post-install = highest-trust, highest-recall window. Customer is past buyer's remorse, system is performing, and they're still talking about it with friends/family.\n- **Voice fingerprint § luxury_product + killing_bad_water_sales hybrid**: Opens with sensory proof points (softer skin, cleaner dishes = luxury register), then shifts to direct ask + clear $ structure (sales register). Balances refinement with urgency.\n- **HARD RULE compliance**: Uses \"free water assessment\" (not \"free water test\"), includes exact referral bonus structure ($500 / $750 / $1,000 tiers + $50 gift card for non-close), avoids review ask.\n---\n## Why These 2 (and not the others)\n| Candidate | Why NOT this week |\n|-----------|------------------|\n| **RO replacement (25)** | Low urgency. RO filters last 12; 18 months; Jobber data shows completedAt dates in June; October 2025 = only 6; 8 months ago. Too early. Better to wait until month 10; 11 and send a \"your RO filters are due next month\" reminder. |\n| **Concierge upsell (100)** | High volume, but requires MORE educational lift (customers don't know what Concierge includes or why they need it at month 13; 24). Better as a **dedicated drip sequence** (3; 4 emails over 2 weeks) than a one-shot campaign. Propose this for NEXT planning cycle with proper nurture build-out. |\n| **Cold lead re-engagement (1,000)** | Huge opportunity, but needs a **content hook** (e.g., recent water news story, new case study, seasonal angle like \"before summer guests arrive\"). Current news cycle is quiet (no major contamination events this week per typical scan). Better to wait for a trigger event and hit them with urgency + relevance. |\n| **Lapsed quotes (0)** | Zero candidates this week. Nothing to send. |\n**Annual service** = highest conversion, lowest friction, time-sensitive (customers expect it).\n**Referral push** = highest ROI per recipient (each convert = 0.5; 1.0 new leads worth $3K; 8K LTV).\nBoth are **transactional** (vs. educational), which matches the current list fatigue pattern: recent campaigns were all educational/nurture (jet fuel leak, $2,920 math, maintenance truth) and clicked at 0.00; 0.01%. Time to ask for something specific.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-03_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-03_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-03T10:30:00.983Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
