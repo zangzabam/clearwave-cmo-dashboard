@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T23:00:01.181Z",
+  "generated_at": "2026-06-06T10:30:29.850Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -12,12 +12,12 @@
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Email Sub-Agent",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
@@ -27,57 +27,57 @@
       },
       {
         "name": "Investor Metrics",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Competitor Intel",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Brand Health",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Content Director",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Trend Watch",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Creative Studio",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Funnel Diagnostics",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Opportunity Scout",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Board Comms",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Agency Scorecard",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-06-05",
+        "last_run": "2026-06-06",
         "status": "Good"
       },
       {
@@ -200,7 +200,7 @@
     "history": []
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-06-05\n\n_Generated at 2026-06-05T10:00:06.150Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **0**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-06-06\n\n_Generated at 2026-06-06T10:02:20.574Z_\n\n## Executive summary\n- Jobs created yesterday: **2** ($17,450 in pipeline)\n- Inbound calls yesterday: **24**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
     "audience_size": null,
@@ -927,30 +927,30 @@
     }
   },
   "approvals": {
-    "date": "2026-06-05",
+    "date": "2026-06-06",
     "items": [
       {
-        "id": "email_2026-06-05_c1",
+        "id": "email_2026-06-06_c1",
         "type": "email_proposal",
         "title": "Email Campaign · : **1-Year Annual Service (High-Intent)**",
         "preview": "**Audience:** 17 clients at 12-month mark\n**Jobber trigger:** `1-year annual service candidates`\n---\n### Subject Lines\n**Primary:**\n`Your Re-Ionator Pro Ultra: 12-month service window`\n**Alternates:**\n1. `Chesapeake + VB: Annual service opens this week`\n2. `How's your water? (12 months in)`\n3. `Your system hits its first service milestone`\n4. `One year down. One quick check-in needed.`\n---\n### Preview Text\n`Quick system health check. Spot issues early. Keep your warranty active. Book below.`\n---\n### Email Body\nSubject: **Your Re-Ionator Pro Ultra: 12-month service window**\nHey Chris,\nYour Re-Ionator Pro Ultra and RO Drinking System hit the 12-month mark last week.\nThat means it's time for the first annual service.\n**What we do:**\n- Media inspection (catch issues before you notice them)\n- Resin and carbon bed health check\n- Valve calibration\n- Flow test\n- RO membrane pressure check\n**Why it matters:**\nYour system is engineered to last 15+ years. Annual service is how we make that happen. It also keeps your lifetime warranty active.\n**Next step:**\nHit reply with 2-3 days that work for you, or call the office at (757) 926-8840. We'll lock you in.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, May 29 at 9:00 AM ET**\nWhy: Mid-week, mid-morning = highest B2C open window. Service = calendar action, so Thursday gives them Friday + weekend to coordinate.\n---\n### Expected Performance\n- **Open rate:** 55; 65% (transactional trigger + named product = high relevance)\n- **Click/reply rate:** 18; 25% (direct CTA, time-bound action)\n- **Conversion (booked service):** 70; 80% of respondents (they already expect this; we're just reminding them)\n**Justification:**\nJobber data shows these clients are already past install. This is LOW-FRICTION maintenance they were told to expect. Named product (Re-Ionator Pro Ultra, Deepmax + Oximax, etc.) makes it feel personal, not batch-and-blast. High trust, high intent, high conversion.\n---\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"1-year service = transactional email, high open, keep it short + named product\"\n- **Voice fingerprint / luxury_product register:** Engineered, precision, \"lasts 15+ years\" = quiet confidence without hype\n- **HARD RULE 1 (Concierge floor):** Not pitching Concierge here; these clients just hit 12 months\n- **HARD RULE 2 (product naming):** \"Your Re-Ionator Pro Ultra\" (not \"your ClearWave\")\n---\n---"
       },
       {
-        "id": "email_2026-06-05_c2",
+        "id": "email_2026-06-06_c2",
         "type": "email_proposal",
         "title": "Email Campaign · : **Referral Push (Warm Advocates, 30; 60 Days Post-Install)",
         "preview": "**Audience:** 29 clients (30; 60 days post-install, satisfied systems)\n**Jobber trigger:** `Referral push candidates`\n---\n### Subject Lines\n**Primary:**\n`Gordonsville + Palmyra: I have a question for you`\n**Alternates:**\n1. `Quick favor (there's $500 in it for you)`\n2. `How's your water treating you?`\n3. `Your neighbors are asking about your system`\n4. `The referral bonus just went up`\n---\n### Preview Text\n`You're 6 weeks in. If you love your water, I want to ask you something. (And pay you for it.)`\n---\n### Email Body\nSubject: **Gordonsville + Palmyra: I have a question for you**\nHey James,\nYou're about six weeks in with your new system.\nBy now, you've showered in it. Cooked with it. Maybe noticed your soap lasts longer, or your skin feels different.\n**Here's my question:**\nDo you know anyone else on well water who's dealing with what you used to deal with?\nStaining. Smell. Hard water. Sulfur.\nIf so, send them my way. I'll give them the same free water assessment we gave you.\n**And I'll pay you for it:**\n- Referral closes: **$500 cash** (referrals 1; 5), **$750** (6; 9), **$1,000** (10+)\n- Referral books but doesn't close: **$50 gift card**\nNo catch. No fine print. Just reply with their name and number, and I'll take it from there.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, May 27 at 10:30 AM ET**\nWhy: Early week = people are thinking about their task list. Mid-morning = after email triage, before lunch. Referral asks perform better when the recipient feels settled (not Monday chaos, not Friday checkout).\n---\n### Expected Performance\n- **Open rate:** 48; 52% (geo-personalized subject, curiosity hook)\n- **Reply rate:** 8; 12% (smaller engaged list, direct question, clear incentive)\n- **Referrals generated:** 2; 4 qualified names (conservative: ~10% of repliers provide a real referral)\n**Justification:**\nThese clients are in the honeymoon window (30; 60 days). They've lived with the system long enough to notice the difference, but it's still fresh. Mailchimp avg open is 41%; transactional + geo-targeted + direct ask should beat that. Referral emails historically underperform on click-through (because the action is REPLY, not click), but reply rate + referral quality is what matters here.\n---\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:** \"30; 60 day post-install = referral window (still excited, system is proven)\"\n- **HARD RULE 3 (referral vs. review):** Pushes referral with exact bonus structure ($500/$750/$1k + $50 gift card), never asks for review\n- **HARD RULE 3a (offer phrase):** \"free water assessment\" (not \"free water test\")\n- **Voice / killing_bad_water_sales bleed-in:** \"$500 cash\" = direct, no fluff, deal-maker energy (but softened for customer-facing tone)\n- **Geo-personalization:** Subject line calls out \"Gordonsville + Palmyra\" (actual cities from the list) = higher perceived relevance\n---\n---\n## Why These Two (and Not the Others)\n| Campaign Option | Why NOT This Week |\n|---|---|\n| **RO replacement cycle (25 candidates)** | Valid, but lower urgency. These are 6; 12 months out from true need. Better as a drip nurture or quarterly check-in. |\n| **Concierge upsell (100 candidates)** | Large list, good long-term play, but LOWER urgency than annual service. Also, Concierge is a \"nice-to-have\" vs. annual service (which is warranty-tied + expectation-set at install). Move this to next week or as a A/B test against referral. |\n| **Cold lead re-engagement (1,000 subscribers)** | Huge list, but recent campaigns to broader audiences are bombing (0.4% open, 0.00% click). Cold leads need a DIFFERENT hook (news-jacking, education-first), not a transactional ask. This deserves a standalone strategy session, not a quick weekly blast. |\n**Prioritization logic:**\n1. **Annual service (17)** = highest intent, highest conversion, revenue-protecting (warranty + system longevity), time-bound urgency.\n2. **Referral push (29)** = smallest list, but highest-quality word-of-mouth source. Each referral could be worth $8k; $10k LTV. Even 2; 3 qualified names pays for the campaign 50x over.\n---\n**Recommendation: Send both. They target non-overlapping audiences, different days, different conversion paths. Total effort: <45 min to personalize + deploy.**\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
       }
     ],
     "decisions": {
-      "email_2026-06-05_c1": {
+      "email_2026-06-06_c1": {
         "decision": "pending"
       },
-      "email_2026-06-05_c2": {
+      "email_2026-06-06_c2": {
         "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-06-05T10:30:01.052Z"
+    "last_brief_sent": "2026-06-06T10:30:00.786Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
