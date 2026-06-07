@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T10:01:43.677Z",
+  "generated_at": "2026-06-07T10:30:03.671Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-07",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-07",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-07_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service (Year 1). High Priority",
+        "preview": "**Audience:** 18 customers at 12-month mark\n**Segment:** 1-year annual service candidates\n---\n### Subject Lines\n**Primary:**\n`Your first annual service (what to expect)`\n**Alternates:**\n1. `12 months in: time for your annual checkup`\n2. `James, your annual service window is here`\n3. `One year down. One quick appointment to go.`\n4. `The only maintenance your system needs this year`\n---\n### Preview Text\n`Quick checkup, clean media bed, validate warranty. In and out in 45 minutes.`\n---\n### Email Body\nJames,\nYour 30C + RO hit the one-year mark last week.\nThat means it's time for the only scheduled maintenance your system needs: the annual service.\n**What happens:**\nWe check pressures, inspect the media bed, swap pre-filters if needed, and validate your warranty. Takes about 45 minutes. Zero surprises.\n**Why it matters:**\nYour warranty requires it. And skipping it is the #1 reason systems that should last 15 years quit at year 8.\nWe have slots open this week in Norfolk. Reply with two days that work, and my team will lock you in.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, 10:00 AM ET**\n(Mid-morning, mid-week = highest open rates for service reminders per Mailchimp benchmark data)\n---\n### Expected Performance\n- **Open rate:** 55; 65% (service reminders to recent customers consistently outperform broadcast avg of 41%)\n- **Click rate:** 8; 12% (single, clear CTA; high intent audience)\n- **Conversion:** 40; 50% book within 7 days (these are warranty-required, and customers already trust us)\n**Revenue impact:** 18 customers × 40% booking rate × $149 annual service = **~$1,075 immediate**, plus parts upsells and goodwill for future Concierge conversion.\n---\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year annual service = high-intent, warranty-tied, known product\"\n- **IDEA_SOURCING.md § Service upsell:** \"Frame maintenance as investment protection, not cost\"\n- **Voice fingerprint (luxury_product register):** Educated without selling; \"why it matters\" = reframe pattern\n- **Hard Rule #2:** Product named exactly as in Jobber (`30C + RO` for James, `30c + MicroMax 7000 (RO)` for Ashley, etc.)\n---"
+      },
+      {
+        "id": "email_2026-06-07_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install). High Priority",
+        "preview": "**Audience:** 30 customers, 30; 60 days post-install, satisfied\n**Segment:** Referral push candidates\n---\n### Subject Lines\n**Primary:**\n`The $500 question (seriously)`\n**Alternates:**\n1. `James, who else needs what you just got?`\n2. `Your referral is worth $500. Maybe $1,000.`\n3. `Quick ask: know anyone still buying bottled water?`\n4. `One name = $500. It's that simple.`\n---\n### Preview Text\n`If someone you refer closes, you get $500 cash. If they just book? $50 gift card.`\n---\n### Email Body\nJames,\nQuick ask.\nYou have been drinking from your 30c for about six weeks now. Odds are, someone in your circle has noticed.\n**Here's the deal:**\nIf you refer someone and they buy, you get **$500 cash** (referrals 1; 5 this year). Referrals 6; 9 pay **$750**. Referral 10+ pays **$1,000**.\nEven if they just book a free water assessment and don't close, you still get a **$50 gift card**.\n**Who qualifies:**\nAnyone. Family, neighbors, coworkers. If they are in Virginia, DC, or Maryland and they drink water, they qualify.\nReply with their name and number. I will handle the rest. You collect the check when they close.\nSimple as that.\nJustin\nCEO / ClearWave\nP.S. Bonuses reset each calendar year. January 1, the count starts over. So referral 1 in 2027 pays $500 again, even if you hit 10+ this year.\n---\n### Send Timing\n**Thursday, 1:00 PM ET**\n(Early afternoon Thursday = highest engagement for \"light ask\" emails; avoids Monday crush and Friday drop-off)\n---\n### Expected Performance\n- **Open rate:** 48; 52% (recent happy customers; curiosity + money hook in subject)\n- **Click rate:** 2; 4% (no click required, reply-based CTA, but some will forward or screenshot)\n- **Conversion:** 15; 20% submit at least one referral within 14 days (industry standard for cash-incentive referral campaigns post-purchase)\n**Revenue impact:** 30 customers × 18% referral rate × 1.2 referrals avg × 25% close rate × $4,200 avg sale = **~$6,804 pipeline**, plus $500; $1,000 in referral bonuses paid (net margin still 6; 10× positive).\n---\n### Source Justification\n- **IDEA_SOURCING.md § Referral bonus structure:** Exact $500/$750/$1,000 tiers + $50 gift card for booked-but-not-closed\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"30; 60 days post-install = honeymoon period, high satisfaction, top referral window\"\n- **Hard Rule #3:** NO review ask. Pushes referrals instead (with specific bonus structure).\n- **Hard Rule #3a:** Offer is \"free water assessment\" (used once in body for clarity on what the referral books)\n- **Voice fingerprint (killing_bad_water_sales bleed into directness):** \"Simple as that.\" \"Reply with their name and number. I will handle the rest.\" Imperative, confident, no fluff.\n---\n## Why These Two (and Not the Others)\n| Campaign | Audience | Speed to Revenue | Effort | Expected Return |\n|----------|----------|------------------|--------|-----------------|\n| **Annual Service** | 18 | Immediate (1; 7 days) | Low (reply-based) | $1,075 + warranty protection + Concierge pipeline |\n| **Referral Push** | 30 | Medium (14; 30 days) | Low (reply-based) | $6,804 pipeline |\n| RO Replacement | 25 | Medium (7; 21 days) | Medium (may require pre-call to confirm RO age) | $1,200; $2,500 |\n| Concierge Upsell | 100 | Slow (30; 90 days) | Medium (education + objection handling) | $9,900 ARR IF 10% convert |\n| Cold Re-Engagement | 1,000 | Very slow (60; 180 days) | High (creative refresh required) | Unknown (low intent) |\n**Annual Service** and **Referral Push** both:\n- Target **recent, happy, high-trust customers**\n- Require **reply only** (no landing page, no complex funnel)\n- Deliver **fast cash or pipeline**\n- Leverage **existing Jobber lifecycle triggers** (no new segmentation work)\n**Concierge Upsell** is valuable but slower (education-heavy, longer decision cycle). **RO Replacement** is solid but smaller audience and requires confirming RO install date/type before pitching. **Cold Re-Engagement** is a long play with unknown ROI (needs creative testing, not a quick win).\nShip the two above this week. Bank the service revenue and referral pipeline. Run Concierge and RO next cycle when you have bandwidth for follow-up.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-07_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-07_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-07T10:30:01.080Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
