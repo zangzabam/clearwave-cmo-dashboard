@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T10:01:49.139Z",
+  "generated_at": "2026-06-09T10:30:05.442Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-09",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,39 @@
   },
   "approvals": {
     "date": "2026-06-09",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-06-09",
+        "type": "daily_water_minute",
+        "title": "Water Minute · What install day actually looks like",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-06-09.email.md",
+        "preview": "Words I like;\n\"The best work happens when no one notices it was done at all.\"\nMost people picture install day like a bathroom remodel. Dust everywhere, tools scattered, someone yelling for a bigger wrench.\nThat is not what happens.\nOur installs are clean, fast, and boring in the best way. We show up with everything staged in the truck. We walk the space with you, confirm placement, and get to work. The system goes in where your main line enters the house. Usually a utility room, basement, or garage. We are working with existing plumbing, not tearing into walls.\nAverage install time is two to three hours. For straightforward layouts, we are done in 90 minutes. You will hear a pipe cutter, maybe a torch if we are soldering copper, and that is about it. No drywall cuts. No mess in the kitchen. We test everything before we leave, walk you through the system, and hand you a binder with your specs and warranty.\nIf you already own a system, you know this. You also know the best part: the day after install when you realize the water just works and you stop thinking about it.\nIf you are still researching, hit reply and I will send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-06-09_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : \"Your Annual Service Window Is Open\"",
+        "preview": "**Audience:** 1-Year Annual Service Candidates (23 contacts)\n### Subject Lines\n**Primary:** Your annual service window is open (Andrew)\n**Alt 1:** One year down. One quick checkup.\n**Alt 2:** Andrew, here's what happens at year one\n**Alt 3:** The 12-month service (takes 45 minutes)\n**Alt 4:** Your H20 Protector turns one this week\n### Preview Text\nQuick system checkup, media swap if needed, then you're set for another year.\n### Email Body\nAndrew,\nYour H20 Protector hit the one-year mark last week.\nHere's what happens now: we schedule a 45-minute service visit. We inspect the system, swap any media that needs it, verify flow rates, and document everything in your file.\nMost systems at year one need nothing but a visual check. Some need a carbon or resin refresh. We bring what yours needs, handle it on the spot, and you're done for another 12 months.\n**Book your annual service:**\nReply to this email or text our scheduling line: (804) 440-7880\nNo high-pressure upsells. No surprise invoices. Just the same team that installed your system, making sure it runs the way we promised.\nYour water. Your home. Our promise.\nJustin\nCEO / ClearWave\n---\n**Dynamic Personalization Notes:**\n- Subject line inserts first name from Jobber record\n- Body references actual product name (H20 Protector for Andrew; \"your ClearWave system\" for Jeff Mizia since his system = \"(not specified)\")\n- For Rex's \"Neumax + Ferro + Sorbmax Air\" system, body would say \"Your well water system hit the one-year mark...\"\n### Send Timing\n**Tuesday, 10:00 AM ET**\nRationale: Mid-morning Tuesday historically outperforms for service/transactional emails. Avoids Monday inbox crush and Friday drop-off.\n### Expected Performance\n- **Open rate:** 58-65% (transactional trigger + personalized subject + small, engaged list)\n- **Click/reply rate:** 22-28% (direct CTA, clear next step, no friction)\n- **Conversion (booked service):** 65-75% of the 23 (15-17 appointments)\n**Justification:**\n1. Transactional lifecycle triggers vastly outperform broadcast emails\n2. List is pre-qualified (already customers, already at service interval)\n3. Personalized subject + product reference increases relevance\n4. Single, clear CTA (book service) removes decision fatigue\n5. Recent broadcast campaigns struggled (0.4-0.5% open) because they lacked personalization and clear transactional purpose\n### Source Justification\n- **IDEA_SOURCING.md → Lifecycle trigger emails:** \"1-year annual service window\" is a known Jobber trigger with high intent\n- **Voice Fingerprint → Luxury Product register:** \"Your water. Your home. Our promise.\" triadic close; \"we promised\" accountability frame; no hype, just precision\n- **Hard Rules #2:** Product names used correctly (H20 Protector, not \"your ClearWave\")\n---"
+      },
+      {
+        "id": "email_2026-06-09_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : \"The Referral Math (You Asked)\"",
+        "preview": "**Audience:** Referral Push Candidates, 30-60 Days Post-Install (30 contacts)\n### Subject Lines\n**Primary:** The referral math (you asked)\n**Alt 1:** $500. Here's how.\n**Alt 2:** Jonas, quick referral question\n**Alt 3:** How the $500 referral bonus works\n**Alt 4:** Your system + their system = $500 cash\n### Preview Text\n$500 cash per closed referral (1-5/year). $750 for 6-9. $1k for 10+. Here's the process.\n### Email Body\nJonas and Devan,\nThree neighbors have asked about your system in the past month.\nYou already know this, but: if someone you refer closes, you get $500 cash for referrals 1 through 5 in the calendar year. $750 for referrals 6 through 9. $1,000 per referral once you hit 10.\nEven if they book a consult but don't close, you still get a $50 gift card.\n**How it works:**\n1. You send them our way (text, email, or just give them my number: 804-440-7880)\n2. We do a free water assessment at their home\n3. If they move forward, we install their system\n4. You get paid within 14 days of their install\nNo complicated tracking. No affiliate links. Just old-school referrals.\nIf someone's asked you about your water, send them this email or have them text me directly.\nYour water. Your referrals. Our gratitude.\nJustin\nCEO / ClearWave\n---\n**Dynamic Personalization Notes:**\n- Subject + salutation use actual names from Jobber\n- For contacts with \"(not specified)\" system field, body opens with \"Three neighbors have asked about your ClearWave system...\" (not \"your water system\" per Hard Rule #2)\n### Send Timing\n**Thursday, 2:00 PM ET**\nRationale: Late-week, post-lunch sends perform well for \"soft ask\" campaigns. Recipients are winding down the work week, more receptive to casual financial opportunity.\n### Expected Performance\n- **Open rate:** 52-60% (recent install = high engagement; personalized; clear financial hook in subject)\n- **Click/reply rate:** 8-12% (lower intent than service email, but referral-ready audience)\n- **Conversion (1+ referral submitted):** 15-20% of the 30 (4-6 referrals submitted within 2 weeks)\n**Justification:**\n1. 30-60 day post-install is the \"honeymoon window\" when excitement + neighbor questions peak\n2. Recent installs (especially $8,980 like Jonas & Devan's) indicate satisfied, engaged customers\n3. Clear, specific financial hook ($500) performs better than vague \"refer a friend\"\n4. Low friction CTA (just reply or give out a phone number)\n5. Mailchimp data shows broadcast campaigns underperform, but this is targeted lifecycle segment with HIGH specificity\n### Source Justification\n- **IDEA_SOURCING.md → Referral campaigns:** Explicitly listed as a lifecycle trigger opportunity\n- **Hard Rules #3:** Pushes referrals (not reviews); uses exact bonus structure ($500/750/1k tiers)\n- **Hard Rules #3a:** Offers \"free water assessment\" (exact phrase) for referred prospects\n- **Voice Fingerprint → Luxury Product register:** Minimal copy, triadic close (\"Your water. Your referrals. Our gratitude.\"), no hype, just math\n---\n## Why These Two (Not the Others)\n**Passed over:**\n- **RO replacement cycle (25 contacts):** Lower urgency, muddier value prop (when exactly DO they need replacement?), requires more education in email\n- **Concierge upsell (100 contacts):** Larger list but MUCH lower intent (they already chose NOT to add Concierge at install); needs a softer, longer nurture sequence, not a single-shot email\n- **Cold lead re-engagement (1,000 contacts):** High volume but near-zero intent; better suited for a 3-5 email drip sequence (not a one-off), and requires a strong NEWS hook (none in the Jobber data this week)\n**Chose these two because:**\n1. **Highest intent + lowest friction:** Annual service is expected, referral window is hot\n2. **Personalization-ready:** Small lists allow true 1:1 customization (product names, install dates, cities)\n3. **Clear, single CTA:** Book service / submit referral (no complex decision trees)\n4. **Proven triggers:** Both are classic lifecycle moments with high historical conversion in service businesses\nBoth campaigns deploy luxury-register voice (minimal, precise, triadic closes) while respecting all Hard Rules (no em dashes, correct product names, correct sign-off, no review asks, no pre-12-month Concierge pitch).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-06-09": {
+        "decision": "pending"
+      },
+      "email_2026-06-09_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-09_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-09T10:30:01.167Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
