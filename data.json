@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T10:01:37.278Z",
+  "generated_at": "2026-06-11T10:33:07.273Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-11",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-11",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-11_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Priority)",
+        "preview": "**Audience:** 23 clients (1-year post-install trigger)\n**Send:** Thursday 10 AM ET\n---\n### Subject Lines\n**Primary:**\n`Your annual service window opens this week`\n**Alternates:**\n1. `12 months in: time for your first annual check`\n2. `Andrew, your H20 Protector hits the 1-year mark`\n3. `The one service call that actually matters`\n4. `Year-one checkpoint: here's what we check`\n---\n### Preview Text\n`Three things we inspect. 20 minutes. Keeps your warranty active and your system running pure.`\n---\n### Email Body\n**Subject:** Your annual service window opens this week\nHi {{First Name}},\nYour {{System Name}} just hit the 12-month mark.\nThat means it's time for your first annual service visit. This is the only scheduled maintenance your system needs in year one, and it's built into your install.\n**What we do:**\n1. Inspect all seals, valves, and housings\n2. Test water purity at the tap\n3. Replace consumables (if applicable to your system)\nTakes about 20 minutes. Keeps your warranty active. Keeps your water pure.\n**Book your service window:**\nReply to this email with 2-3 dates that work, or call the office at (757) 234-5678. We'll lock you in within 7-10 days.\nThat's it. One visit, once a year, and you're done.\nJustin\nCEO / ClearWave\n---\n### Performance Projection\n- **Expected open:** 48-52% (service = high relevance, personalized system name, existing trust)\n- **Expected click/reply:** 18-22% (clear CTA, low friction, calendar-based urgency)\n- **Expected conversion:** 75%+ book within 7 days (they already paid, this is included, and it protects warranty)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year annual service reminder\"\n- **Voice fingerprint § luxury_product tone:** Low-pressure, educational framing. \"This is what we do. This is why it matters.\"\n- **Hard Rule #1 compliance:** This IS the 12-month service, so we're not pitching Concierge (that comes at 13-24 months). We're fulfilling the original install promise.\n---"
+      },
+      {
+        "id": "email_2026-06-11_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install)",
+        "preview": "**Audience:** 30 clients (satisfied, honeymoon phase)\n**Send:** Tuesday 6 PM ET\n---\n### Subject Lines\n**Primary:**\n`The $500 question I get asked most`\n**Alternates:**\n1. `Your neighbors have been asking about your water`\n2. `You've had your system 6 weeks. Here's what happens next.`\n3. `James, quick favor (and $500 if it works out)`\n4. `The referral math: $500, $750, or $1,000`\n---\n### Preview Text\n`If someone you know needs cleaner water, send them our way. Here's exactly what you get.`\n---\n### Email Body\n**Subject:** The $500 question I get asked most\nHi {{First Name}},\nYou've had your {{System Name}} for about six weeks now.\nWhich means your neighbors have probably noticed. (The ice cubes look different. The coffee tastes better. The soap actually rinses off.)\nIf anyone asks, send them our way.\n**Here's the deal:**\n- They book a free water assessment, we come out, they close → **you get $500 cash** (referrals 1-5 this year)\n- Referrals 6-9 → **$750**\n- Referrals 10+ → **$1,000**\n- They book but don't close → **you still get a $50 gift card** for the introduction\nNo cap. No fine print. Just reply with their name and number, or have them mention your name when they call (757) 234-5678.\nWe don't advertise much. We grow by doing good work and asking people like you to tell people like them.\nThat's it.\nJustin\nCEO / ClearWave\nP.S. Referral bonuses reset each calendar year, so your counter starts fresh Jan 1. You're at zero right now, which means your next 5 are $500 each.\n---\n### Performance Projection\n- **Expected open:** 44-48% (curiosity subject line, dollar figure, short sender name)\n- **Expected click/reply:** 3-6% (referrals require external action, but high-intent when they happen)\n- **Expected conversion:** 1-2 qualified referrals generated per send (30 recipients, 6-week honeymoon window = high satisfaction, low activation friction)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"30-60 days post-install: referral request window\"\n- **Voice fingerprint § killing_bad_water_sales + luxury_product hybrid:** Dollar figures and imperatives (\"send them our way\") from sales voice, but framed in clean, educational luxury structure. Not pushy.\n- **Hard Rule #3 + referral bonus structure:** Exact cash tiers cited ($500/$750/$1,000 for closed, $50 gift card for booked-no-close). NO review ask. Referrals only.\n- **Hard Rule #3a:** Uses \"free water assessment\" (not \"free water test\").\n---\n## Why These Two (and Not the Others)\n**1-Year Service = Highest Immediate Revenue + Retention**\n- 23 people, 75%+ close rate = ~17 service calls booked\n- Each service call protects warranty, builds trust, surfaces upsell opportunities (Concierge at 13+ months, add-ons, RO replacements)\n- Zero creative risk: this is fulfillment, not marketing\n**Referral Push = Highest Lifetime Value**\n- 30 people in honeymoon phase (6 weeks post-install)\n- Even 1-2 referrals generated = $9,000-$18,000 revenue per closed deal\n- Costs nothing, builds brand advocate behavior early\n**Why NOT the others this week:**\n- **Concierge upsell (100 candidates):** Strong list, but needs a multi-touch sequence (education → math → testimonial), not a one-shot. Propose as a 3-email sequence next week.\n- **RO replacement (25 candidates):** Solid maintenance play, but lower urgency than annual service. Batch with Concierge sequence.\n- **Cold lead re-engagement (1,000):** Recent campaigns to cold lists bombed (0.4% open). Need a water-news hook + subject-line testing before burning the list again.\n---\n**Recommend sending both this week.** Service on Thursday (mid-week, business hours). Referral on Tuesday evening (end-of-day, when people are scrolling and thinking about home stuff).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-11_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-11_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-11T10:33:03.882Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
