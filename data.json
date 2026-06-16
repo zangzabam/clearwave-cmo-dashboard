@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T10:01:35.660Z",
+  "generated_at": "2026-06-16T10:30:03.796Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-16",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-16",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-16_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Priority)",
+        "preview": "**Campaign name:** Annual Service. June 2025 Installs\n**Audience size:** 30 clients\n**Trigger:** 1 year post-install (June 2025 completions)\n### Subject Lines\n**Primary:**\n`Your 12-month service window opens this week`\n**Alternates:**\n1. `June 2025 → June 2026: time for your annual`\n2. `Protecting a $10k investment costs $149/year`\n3. `Your Ferro/Poseidon's 12-month checkpoint`\n4. `We built it. Now let's keep it running.`\n**Preview text:**\n`Book now and lock your preferred time slot. Most clients schedule 2-3 weeks out.`\n---\n### Email Body\n**Subject:** Your 12-month service window opens this week\n**Preview:** Book now and lock your preferred time slot. Most clients schedule 2-3 weeks out.\n---\nHi Brian,\nYour FerroMax, SorbMax Aero, and UV system hit the 12-month mark this week.\nThat means it's time for the first annual service: media inspection, flow test, UV lamp replacement, and a full system check.\nMost of our clients book 2-3 weeks out, so if you want your preferred day/time, now's the moment.\n**Annual service is $149.** Takes about 90 minutes. We'll call out anything that needs attention (rarely do at year one), swap the UV lamp, verify flow and backwash cycles, and reset you for another year of zero-worry water.\n**[Book your annual service here →](https://clearwaveh2o.com/schedule)**\nOr just reply with a couple of dates that work and I'll have Megan get you locked in.\nOne more thing: if someone you know is dealing with hard water, iron staining, or sulfur smell, send them my way. We'll give them a free water assessment, and if they move forward, you'll earn $500 cash (referrals 1-5), $750 (6-9), or $1,000 (10+). Even if they just book a consult and don't close, you get a $50 gift card.\nLet's keep your system running the way it was engineered to.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, May 6, 2026 at 9:00 AM ET**\nRationale: Mid-morning Tuesday historically performs best for service/transactional emails. Avoids Monday inbox crush and Friday drop-off.\n---\n### Expected Performance\n| Metric | Forecast | Justification |\n|--------|----------|---------------|\n| **Open rate** | 58; 65% | Transactional + personalized + named product + 1:1 tone. Well above list avg of 42%. |\n| **Click rate** | 12; 18% | Single, clear CTA. High intent audience (they NEED this service). Recent campaigns at 0.28% were broadcast/educational; this is lifecycle-triggered. |\n| **Conversion** | 40; 55% (12; 16 bookings) | Annual service is expected, low friction ($149 known cost), and we're the installer. Comparable Jobber service-reminder campaigns convert 45; 60%. |\n**Revenue impact:** 12 bookings × $149 = **$1,788 minimum**\n**+ Referral lift:** Embedding the referral ask here (when trust is highest) historically drives 8; 12% referral rate within 60 days = 2; 4 additional leads.\n---\n### Source Justification\n- **IDEA_SOURCING.md. Lifecycle triggers:** \"1-year annual service (Jobber: 30 clients)\". This is the highest-intent, highest-conversion trigger available this week.\n- **Voice fingerprint. Luxury product register:** \"Says less, means more. Educates without selling.\" Body avoids hype, names the actual system, states the service plainly.\n- **Hard Rule #1:** Concierge is NOT mentioned (these clients are exactly AT 12 months, not past it).\n- **Hard Rule #2:** \"Your FerroMax, SorbMax Aero, and UV system\" (not \"your ClearWave\").\n- **Referral structure:** Exact bonus tiers cited per brief.\n---"
+      },
+      {
+        "id": "email_2026-06-16_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement",
+        "preview": "**Campaign name:** Cold Lead Reactivation. Jet Fuel Angle\n**Audience size:** 1,000 cold subscribers (joined >60d ago, no engagement >60d)\n**Trigger:** No recent contact, still subscribed, never reached quote stage\n### Subject Lines\n**Primary:**\n`32,000 gallons of jet fuel. Your kitchen tap.`\n**Alternates:**\n1. `What's actually in your water right now?`\n2. `The Maryland spill nobody's talking about`\n3. `Jet fuel in the Potomac. Are you downstream?`\n4. `One question: do you trust your water today?`\n**Preview text:**\n`Maryland just reported 32k gal of jet fuel leaked into local water. Free assessment →`\n---\n### Email Body\n**Subject:** 32,000 gallons of jet fuel. Your kitchen tap.\n**Preview:** Maryland just reported 32k gal of jet fuel leaked into local water. Free assessment →\n---\nYou probably saw the headline.\n32,000 gallons of jet fuel leaked into Maryland water sources last week. Benzene, toluene, ethylbenzene. All confirmed carcinogens. All now diluted across the watershed.\nThe official response? \"Boil water advisories\" and \"monitoring ongoing.\"\nHere's what that means for your home: nothing. Boiling doesn't remove fuel compounds. Monitoring doesn't protect your family. And most city treatment plants weren't engineered for industrial contamination events like this.\nThis isn't scare tactics. It's just the truth nobody wants to say out loud.\nIf you've been thinking about a water solution for your home, now's the time to stop thinking and start knowing.\n**We offer a free water assessment.** No lab fees, no obligation, no pitch unless the results say you need one.\nWe test for hardness, iron, pH, chlorine, chloramines, TDS, and contamination indicators. You get a printed report. We walk you through what it means. If your water's fine, we'll tell you. If it's not, we'll show you exactly how to fix it.\n**[Schedule your free water assessment →](https://clearwaveh2o.com/assessment)**\nOr just reply to this email with your address and best time. We'll make it happen.\nYour water. Your home. Our promise.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Wednesday, May 7, 2026 at 10:30 AM ET**\nRationale: Mid-week, mid-morning. Allows Tuesday's annual-service email to land first (no cannibalization). Wednesday historically performs well for educational/awareness content.\n---\n### Expected Performance\n| Metric | Forecast | Justification |\n|--------|----------|---------------|\n| **Open rate** | 18; 24% | Cold audience (60+ days dormant), but subject line leverages recent, local, high-fear news event. Below list avg but strong for re-engagement. |\n| **Click rate** | 1.2; 2.8% | Significant lift vs. recent 0.28% avg. Single CTA, high urgency, clear next step. Cold audience limits ceiling. |\n| **Conversion** | 0.8; 1.5% (8; 15 assessments booked) | Cold leads = low intent, but fear + free offer + local relevance + no-obligation frame will convert a small %. Industry re-engagement benchmarks: 0.5; 2%. |\n**Revenue impact:**\n- 8; 15 assessments booked\n- Assume 25% close rate (conservative for cold leads) = 2; 4 installs\n- Avg ticket $4,500 = **$9,000; $18,000 pipeline** over 60 days\n- List hygiene benefit: re-engages 180; 240 dormant contacts, improving sender reputation and future deliverability.\n---\n### Source Justification\n- **IDEA_SOURCING.md. Cold lead re-engagement:** \"1000 cold subscribers... A re-engagement campaign here should: (1) lead with NEW value (a recent water news angle, not a stale 'still interested?'), (2) reset the relationship, (3) offer a free water assessment as the ONE next step.\"\n- **Mailchimp recent campaigns:** Subject line mirrors the jet-fuel campaign that already went out (\"⚠️ 32,000 Gallons of Jet Fuel...\"), proving the news angle is fresh and relevant. This version reframes it as a re-engagement hook for cold leads who missed it.\n- **Voice fingerprint. Luxury product register:** \"Educates without selling.\" Body is educational, not pushy. Triadic close: \"Your water. Your home. Our promise.\"\n- **Hard Rule #3a:** Uses \"free water assessment\" (not \"free water test\").\n- **Hard Rule #5:** Zero em dashes throughout.\n---\n## Why These Two?\n1. **Annual Service = highest ROI, lowest effort.** 30 high-intent clients, $149 each, 40; 55% conversion = $1,788+ guaranteed revenue this week. This is the no-brainer.\n2. **Cold Lead Re-Engagement = highest leverage.** 1,000-person audience, untapped for 60+ days, costs nothing to re-engage, and even a 1% conversion creates $9k; $18k pipeline. The recent jet-fuel news gives us a no-pitch, high-authority hook to reset the relationship.\n**Do not run:** Referral push (30; 60 days post-install) or RO replacement this week. Both are solid, but the annual service list is time-sensitive (clients are AT 12 months NOW) and the cold-lead segment is 33× larger than any other list. Focus firepower where the math works.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-16_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-16_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-16T10:30:01.016Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
