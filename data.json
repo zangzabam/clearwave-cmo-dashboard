@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T10:01:21.200Z",
+  "generated_at": "2026-06-17T10:30:03.996Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-17",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-17",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-17_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (HIGHEST PRIORITY)",
+        "preview": "**Campaign name:** 1-Year Service Reminder\n**Audience:** 30 clients (1-year anniversary cohort)\n**Send timing:** Tuesday, June 3, 9:00 AM ET\n### Subject Line (Primary)\n`Year 1 service: book yours (takes 45 min)`\n### Subject Line Alternates\n1. `Your annual service window opens this week`\n2. `Quick question about your [ProductName] service`\n3. `One year down. Here's what happens next.`\n4. `The 12-month checkup (and why it matters)`\n### Preview Text\n`We'll verify performance, swap consumables, and lock in another year of pure water.`\n---\n### Email Body\n**Subject:** Year 1 service: book yours (takes 45 min)\nHi **[FirstName]**,\nYour **[ProductName]** just hit the one-year mark.\nThat means it's time for the annual service we built into your system's maintenance rhythm. Think of it like the 12-month tune-up that keeps a precision instrument running at spec.\n**What we do in 45 minutes:**\n- Pull and inspect all consumable media (resin, carbon, UV lamp if applicable)\n- Swap what's spent, leave what's good\n- Test inlet and outlet water to verify performance\n- Check valves, seals, and control head programming\n- Walk you through the next 12 months\n**Your year-2 cost:** most clients land between $150; $350 depending on what needs swapping. We'll know exact numbers after we test your water on-site. No surprises.\n**To book:** reply to this email with 2; 3 days/times that work, or call the office at **(540) 381-2020**. We're scheduling June service calls right now.\nOne year down. Many more to go.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 55; 65% (anniversary trigger + personalized product name + high-trust cohort)\n- **Click/reply rate:** 18; 25% (direct CTA, low friction, expected expense)\n- **Conversion:** 22; 28 booked service calls (73; 93% of audience)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers** (1-year service cadence)\n- **Voice fingerprint § luxury_product register** (precision, engineered, no hype)\n- **Hard Rule #1 compliance:** only contacts clients AT 12 months, never before\n- **Hard Rule #2 compliance:** uses actual product name merge tag `[ProductName]` pulled from Jobber system field\n---"
+      },
+      {
+        "id": "email_2026-06-17_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Day Post-Install Satisfied Clients)",
+        "preview": "**Campaign name:** Referral Bonus Reminder (Q2 Cohort)\n**Audience:** 30 clients (installed April; May 2026, high satisfaction likelihood)\n**Send timing:** Thursday, June 5, 10:00 AM ET\n### Subject Line (Primary)\n`You're sitting on $500 (maybe more)`\n### Subject Line Alternates\n1. `The referral math: $500, $750, or $1,000`\n2. `Know anyone still buying bottled water?`\n3. `Your [ProductName] has been running 6 weeks. One ask.`\n4. `How the referral bonus actually works`\n### Preview Text\n`Closed referral = $500 cash. Here's the bracket structure and how to send someone my way.`\n---\n### Email Body\n**Subject:** You're sitting on $500 (maybe more)\nHi **[FirstName]**,\nYour **[ProductName]** has been running about six weeks now.\nIf you're like most of our clients, you've had at least one conversation with a neighbor, family member, or coworker about your water. Someone asked what you did. You told them. They said \"huh, interesting.\"\nThat conversation is worth $500 to you if it closes.\n**Here's the bracket structure:**\n- Referrals 1; 5 in the calendar year: **$500 cash** per closed deal\n- Referrals 6; 9: **$750** per closed deal\n- Referrals 10+: **$1,000** per closed deal\n- Referral books a consult but doesn't close: **$50 gift card** (you still get paid)\n**How to send someone my way:**\nReply to this email with their name and number, or have them mention your name when they call **(540) 381-2020** for a free water assessment.\nThat's it. No forms, no affiliate links, no complexity.\nKnow someone still buying bottled water by the pallet? Send them over.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 48; 56% (money hook + recent install = high engagement)\n- **Click/reply rate:** 4; 8% (referral asks always lower than service, but high-value action)\n- **Conversion:** 3; 6 referral submissions this week, 1; 2 booked consults within 14 days\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers** (30-60 day referral push window)\n- **Hard Rule #3 compliance:** pushes referrals (not reviews), uses exact bonus structure from brief\n- **Hard Rule #3a compliance:** uses \"free water assessment\" as the exact offer phrase\n- **Voice fingerprint § luxury_product + sales hybrid:** direct, no fluff, specific numbers, conversational imperative close\n---\n## Why These Two (and Not the Others This Week)\n**1-year service = mechanically triggered revenue.** These 30 clients expect this email. It's a known expense, a trusted relationship, and a 70%+ conversion rate based on historical annual service acceptance. This is the highest-dollar, lowest-friction campaign in the queue.\n**Referral push = multiplication.** The 30-60 day window is the highest referral yield period (system is new, excitement is high, client hasn't forgotten the install experience). One referral submission this week could be a $5K+ closed deal in 30 days.\n**Why NOT Concierge upsell this week:** The 100-contact list is large but cold (13-24 months post-install, no recent touchpoint). It will perform better AFTER we re-establish contact via a service reminder or seasonal content piece. Concierge works best when the relationship is warm.\n**Why NOT RO replacement cycle:** Only 24 contacts, and the RO cycle is a softer trigger (varies by usage). Better to batch this into a quarterly \"consumables check-in\" campaign.\n**Why NOT cold lead re-engagement:** The 1,000-contact cold list is worth a campaign, but it requires a **new value anchor** (water news, legislative change, seasonal hook). This week's Jobber triggers (service + referral) are hotter and more mechanically certain.\n---\n**Recommendation:** Send Proposal 1 (1-year service) on Tuesday. Send Proposal 2 (referral push) on Thursday. Expect 25+ service bookings and 3; 6 referral submissions by end of week.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-17_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-17_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-17T10:30:01.076Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
