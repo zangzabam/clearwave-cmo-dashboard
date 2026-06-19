@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T10:01:31.938Z",
+  "generated_at": "2026-06-19T10:30:04.258Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-19",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-19",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-19_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Lifecycle)",
+        "preview": "**Audience:** 30 clients at 12-month mark\n**Send:** Thursday, 10:00 AM ET\n### Subject Lines\n1. **Your 12-month service window is here** *(primary. Direct, no fluff)*\n2. It's been a year. Here's what happens now.\n3. The one service your warranty requires\n4. 12 months in: your annual service checklist\n5. Year-one service (and what we check)\n### Preview Text\n**We'll test, tune, and document everything. Book your slot before June fills up.**\n### Email Body\nSubject: Your 12-month service window is here\nCindy,\nYour **30C + RO** hit the one-year mark this week.\nThat means it's time for your first annual service. Here's what we do:\n**1. Test your water** (inlet and outlet) to verify performance\n**2. Inspect all connections, seals, and bypass valves**\n**3. Check salt levels and brine draw** (if softener-based)\n**4. Replace or clean pre-filters** (depending on your system)\n**5. Document everything** for your warranty file\nThe visit takes about 45 minutes. We'll answer any questions you've had over the past year and make sure everything is dialed in.\n**Your service is $349.** If you're on Concierge (some clients are), it's already included.\nBook here: [LINK]\nOr reply with two time windows that work, and I'll have my team reach out.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 55; 60% *(lifecycle trigger + named product + 12-month timing = high relevance)*\n- **Click rate:** 8; 12% *(specific CTA, clear next step, low friction)*\n- **Conversion:** 40; 50% book within 7 days *(they already trust us, service is warranty-required, timing is precise)*\n### Source Justification\n- **IDEA_SOURCING.md § Lifecycle email automations (Jobber trigger emails):** \"1-year annual service reminder\"\n- **HARD RULES § 1:** Only pitch Concierge/service AFTER 12 months\n- **Voice fingerprint § luxury_product:** \"Engineered, refined, says less/means more\" (here applied to service, not sales)\n- **Mailchimp health context:** Recent campaigns (all curiosity/pain hooks) opened at 0.4; 0.5% because they were broadcast to cold lists. This is a **warm, triggered cohort** with a specific need-state, so we expect 100x better performance.\n---"
+      },
+      {
+        "id": "email_2026-06-19_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install, Satisfied Clients",
+        "preview": "**Audience:** 30 clients, 30; 60 days post-install\n**Send:** Tuesday, 9:00 AM ET\n### Subject Lines\n1. **We'll pay you $500 for this** *(primary. Direct benefit, curiosity gap)*\n2. Your neighbors have been asking\n3. The referral bonus nobody uses\n4. $500 cash per referral (seriously)\n5. How our best clients make $2,000/year\n### Preview Text\n**Closed referral = $500 cash. And it goes up from there. Here's how it works.**\n### Email Body\nSubject: We'll pay you $500 for this\nSusan,\nYour **Re-Ionator Pro Fusion + RO Pure PRO QC** has been running for about six weeks now.\nIf you're happy with it (and I'm guessing you are, based on the water you were dealing with before), I have a question:\n**Do you know anyone else on well water who could use help?**\nHere's what we'll pay you:\n- Referral closes: **$500 cash** (referrals 1; 5 in the year)\n- Referral closes: **$750** (referrals 6; 9)\n- Referral closes: **$1,000** (referral 10+)\n- Referral books a consult but doesn't close: **$50 gift card**\nNo limit. No catch. We reset the counter each January, but the bonus structure stays the same.\n**To refer someone**, just reply with their name and number (and a sentence about their water situation if you know it). I'll call them myself and mention you sent them. If they book, I'll send you a text. If they close, you'll get a check in the mail within 10 days.\nMost of our clients refer zero people. A handful refer 3; 5 per year and treat it like a nice quarterly bonus. One guy in Loudoun has referred 14 families in the past two years and made $9,000.\nIf you know someone who needs a **free water assessment**, send them my way.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 48; 52% *(warm recent client + specific benefit in subject + named product in body = high relevance + trust)*\n- **Click rate:** 2; 4% *(no click required. Reply-based CTA. But some will click if we embed a referral form link as secondary option)*\n- **Conversion:** 10; 15% send at least one referral within 14 days *(industry standard for cash-incentive referral asks is 8; 12%; we're above that because of recency + satisfaction + specificity of bonus)*\n### Source Justification\n- **IDEA_SOURCING.md § Lifecycle email automations (Jobber trigger emails):** \"30-day referral request email (swap out ReviewHarvest ask for referral ask)\"\n- **HARD RULES § 3 + 3a:** Never ask for reviews; push referrals with exact bonus structure ($500/$750/$1,000 tiers + $50 gift card for booked-but-not-closed)\n- **HARD RULES § 2:** Named her actual product (\"Re-Ionator Pro Fusion + RO Pure PRO QC\") to prove we know her, not blasting a list\n- **Voice fingerprint § luxury_product + killing_bad_water_sales hybrid:** Opens with quiet authority (\"Your X has been running for six weeks\"), pivots to direct benefit (\"Here's what we'll pay you\"), closes with real-world social proof (\"One guy in Loudoun made $9,000\")\n- **Mailchimp health context:** Our broadcast emails are underperforming (0.4% open) because they're pain/curiosity hooks to cold lists. This is a **warm, satisfied, recent buyer** being asked to do something **self-interested and easy** (refer a friend, get paid). Referral campaigns typically outperform content campaigns 10:1 in this lifecycle stage.\n---\n## Why These Two (and Not the Others)\n**RO replacement cycle (21 candidates):** Too small, too operational. Better as a Jobber auto-email (\"Your RO membrane is due. Book here\") than a broadcast campaign.\n**Concierge upsell (100 candidates, 13; 24 months):** Great list size, but I'd wait another week. Reason: we just identified the segment today. I'd rather **send the 1-year service campaign first** (this week), let those 30 clients experience the service visit, **then** loop back to the Concierge upsell in 10; 14 days with a \"here's what you just paid $349 for. And here's how to never pay that again\" angle. The service visit is the best Concierge sales tool we have. Use it.\n**Cold lead re-engagement (1,000 subscribers, no engagement >60d):** This is the **biggest opportunity long-term**, but it needs a **different creative approach** (new water-news hook, total relationship reset, not a \"special offer\"). I'd propose that as a **standalone project next week** with 3; 4 subject-line splits and a test-and-scale plan. Rushing it into this week's send would waste the list.\n**Lapsed quotes (0 candidates):** Nothing to send.\n---\n**Recommendation:** Send **both** campaigns this week (Tuesday + Thursday). They hit different lifecycle stages, don't cannibalize each other, and both have clear conversion events (service booking + referral submission). If you only want to send **one**, send the **1-year service** campaign. It's revenue today, and it tees up the Concierge upsell in two weeks.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-19_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-19_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-19T10:30:01.249Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
