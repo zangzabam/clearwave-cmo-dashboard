@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T10:01:31.070Z",
+  "generated_at": "2026-06-20T10:30:03.495Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-20",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-20",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-20_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service. Year 1 Milestone",
+        "preview": "**Audience:** 1-year annual service candidates (30 contacts)\n**Priority:** HIGH. Service revenue + relationship deepening at critical trust moment\n### Subject Lines\n**Primary:** `Your [system name]'s first annual checkup is due`\n**Alt 1:** `12 months with your [system]. Time for its first service.`\n**Alt 2:** `We built your system to last. Here's year 1 maintenance.`\n**Alt 3:** `One year in: your [system]'s annual service window`\n**Alt 4:** `The 12-month service your [system] needs (quick)`\n### Preview Text\n`Takes 45 min. Keeps your 25-year warranty intact. Book your annual service here.`\n### Email Body\n**Subject:** Your [system]'s first annual checkup is due\nHi [First Name],\nYour [system] hit the one-year mark this month.\nThat means it's time for its first annual service.\nHere's what we do:\n• Full system diagnostics and pressure test\n• Media bed inspection (if applicable)\n• Control valve calibration\n• Seal and o-ring check\n• Water quality verification\nTakes about 45 minutes. Keeps your warranty intact. Catches small things before they become big things.\nYou can book directly here: [SCHEDULING_LINK]\nOr reply to this email and we'll find a time that works.\nYour system was built to run 25+ years. This is how we make sure it does.\nJustin\nCEO / ClearWave\n---\n**Send Timing:** Tuesday, 10:00 AM ET (mid-morning, high open window for homeowners)\n**Expected Performance:**\n- Open: 48-52% (lifecycle trigger + personalized product reference + existing trust)\n- Click: 12-18% (single clear CTA, service due = immediate relevance)\n- Conversion (booked service): 35-45% (they already know us, this is expected maintenance, not a sale)\n**Source Justification:**\n- **IDEA_SOURCING.md § Lifecycle Email Triggers:** \"1-year annual service window\". This IS the canonical example\n- **Voice Fingerprint (Luxury Product Register):** Short sentences, no hype, engineered/built language, triadic structure in close\n- Obeys HARD RULE #2: uses actual product name from Jobber data (e.g., \"your Acid neut + UV\", \"your RIO Pro & RO\")\n- No premature Concierge pitch (they're AT 12mo, not past it yet)\n---"
+      },
+      {
+        "id": "email_2026-06-20_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. The $500 Question",
+        "preview": "**Audience:** Referral push candidates, 30-60 days post-install, satisfied (30 contacts)\n**Priority:** HIGH. Lowest-cost customer acquisition channel, honeymoon-phase goodwill\n### Subject Lines\n**Primary:** `The $500 question (seriously)`\n**Alt 1:** `Who else in your life has bad water?`\n**Alt 2:** `Your ClearWave [system] + $500 cash`\n**Alt 3:** `Quick question about your neighbors' water`\n**Alt 4:** `We pay $500 per closed referral. Here's why.`\n### Preview Text\n`You know someone with bad water. We'll pay you $500 cash when they go ClearWave. Details inside.`\n### Email Body\n**Subject:** The $500 question (seriously)\nHi [First Name],\nYou've had your [system] for about [X weeks] now.\nWhich means you've probably had at least one conversation that goes like this:\n**Neighbor / friend / family member:** \"Wait, you got a WHAT installed?\"\n**You:** \"A whole-home water system. Our water is insane now.\"\n**Them:** \"Huh. Our water is terrible. How much did that cost?\"\nHere's the thing.\nThat person is a referral.\nAnd we pay **$500 cash** when a referral closes. (Referrals 1; 5 in the calendar year. It goes up to $750 for 6; 9, and $1,000 for your 10th+.)\nEven if they just book a consult and don't move forward, you get a **$50 gift card** for the introduction.\nWhy do we do this?\nBecause the best ClearWave customers come from people who already have ClearWave. You know what bad water looks and tastes like. You know who else is dealing with it. And you know we're not going to waste their time.\nIf someone comes to mind, just reply to this email with their name and number. We'll take it from there.\nWe'll run a free water assessment, explain what's in their water, and show them what it would take to fix it.\nNo pressure. No games. Same process you went through.\nJustin\nCEO / ClearWave\nP.S. The $500 is paid by check within 14 days of their install. You can stack as many as you want. One of our clients in Loudoun County referred 11 families last year. Do the math.\n---\n**Send Timing:** Thursday, 6:00 PM ET (evening, when people are home and thinking about weekend plans / social circle)\n**Expected Performance:**\n- Open: 44-50% (curiosity subject line + recent positive experience with company)\n- Click: 3-6% (this is a reply/forward action, not a link click. Mailchimp won't capture the real conversion)\n- Conversion (referred contact info submitted): 8-12% (conservatively, 2; 4 referrals from 30-contact batch)\n**Source Justification:**\n- **IDEA_SOURCING.md § Lifecycle Email Triggers:** \"30; 60 day referral request window\". Explicitly called out as high-conversion timing\n- **HARD RULE #3:** Pushes referrals (with exact bonus structure), NOT reviews\n- **HARD RULE #3a:** Offer phrasing = \"free water assessment\" (used once, in context of what the referral will receive)\n- **Voice Fingerprint (Luxury Product Register):** Dialogue formatting, story-driven, conversational without being chummy, no em dashes\n- **Referral Bonus Structure:** Uses exact numbers ($500 / $750 / $1,000 tiers, $50 gift card for non-close)\n---\n## Why These Two (and Not the Others)\n**Not chosen:**\n- **RO replacement cycle (21 contacts):** Too narrow, too transactional, better as an automated Jobber reminder than a broadcast email.\n- **Concierge upsell (100 contacts):** Larger list, but Mailchimp health shows VERY low engagement on educational/value campaigns recently (0.4% open on last 5 campaigns). A cold Concierge pitch to this segment will likely underperform. Better to wait 2 weeks, seed some educational content, THEN pitch Concierge.\n- **Cold lead re-engagement (1,000 contacts):** High volume, but recent broadcast campaigns are bombing (0.4; 0.5% open). This segment needs a multi-touch re-activation sequence (3; 5 emails), not a single broadcast. Propose this as a **sequence build**, not this week's campaign.\n**Chosen:**\n- **Annual service:** Hottest lead temperature (expected event + existing trust + revenue-generating + warranty compliance angle). Highest predicted conversion.\n- **Referral push:** Lowest cost per acquisition, honeymoon timing, cash incentive + story-driven = highest ROI if even 10% convert.\nBoth are **lifecycle-triggered, personalized, and immediately relevant**. Both avoid the educational-fatigue trap that's killing the recent Mailchimp broadcasts.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-20_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-20_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-20T10:30:00.900Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
