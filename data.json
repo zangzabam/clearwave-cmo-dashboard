@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T10:01:48.296Z",
+  "generated_at": "2026-06-21T10:30:04.010Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-21",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-21",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-21_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (30 candidates)",
+        "preview": "**Campaign name:** `1-Year Annual Service. June 2026`\n**Audience:** 30 clients (Tim Mierzwa, Jeff Criscione, Regina Ryan, Patrick & Diane Edwards, Kim & Greg Hamilton + 25 more)\n**Segment filter:** Jobber trigger `install_date = 365 days ±7`\n---\n### Subject Lines (60 char max)\n**PRIMARY:**\n`Your annual service window just opened`\n**ALTERNATES:**\n1. `12-month service: here's what we check` *(specific)*\n2. `One year down. Ready for your checkup?` *(curiosity)*\n3. `Time for your first annual service, [First Name]` *(pain/urgency)*\n4. `What happens at the 1-year mark` *(authority)*\n---\n### Preview Text (90 char max)\n`Book now and lock your slot before July. We'll test, tune, and document everything.`\n---\n### Email Body\n**Subject:** Your annual service window just opened\n**Preview:** Book now and lock your slot before July. We'll test, tune, and document everything.\n---\nHi [First Name],\nYour [system] hit the one-year mark this month.\nThat means it's time for your first annual service.\nHere's what we do:\n- Full water test (before and after your system)\n- Media inspection and top-off if needed\n- Valve cycle and backwash calibration\n- Leak check, bypass check, drain-line check\n- Written report with test results and photos\nTakes about 90 minutes. You walk away with a stamped service record and the peace of mind that everything is dialed in for year two.\nWe're booking June and early July right now.\n**[Book Your Annual Service →]**\nIf you have questions (or want to move it a few weeks in either direction), just reply. I'll see it.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, June 3, 2026 at 9:00 AM ET**\n(Mid-week, mid-morning. Avoids Monday chaos and Friday drop-off. Gives recipients the week to book without weekend delay.)\n---\n### Expected Performance\n| Metric | Estimate | Justification |\n|--------|----------|---------------|\n| **Open rate** | 58; 65% | Highly personalized trigger (their actual install anniversary), specific subject line. List avg is 42%; lifecycle triggers historically 1.4; 1.6× that. |\n| **Click rate** | 12; 18% | Clear, single CTA. These clients already trust us (they paid $349; $9,480). Service is expected, not sold. |\n| **Conversion** | 60; 75% (18; 23 bookings) | Annual service is *required* under warranty and culturally normalized in our onboarding. Most clients book within 7 days of receiving this email. Non-responders get a follow-up call from ops. |\n**Revenue impact:**\n18 services × $399 avg = **~$7,200** (conservative; some will bundle RO filter swaps or add-on water tests)\n---\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:**\n > \"1-year annual service window (install date +365 days): HIGH-converting. Clients expect it, warranty requires it, and it's the BEST vector for Concierge upsell (next year).\"\n- **Email philosophy (luxury product register):**\n Educates without selling. Lists the specific value (test results, photos, calibration). No hype, no urgency gimmicks. Just competence and respect for the client's time.\n- **Hard Rule #1 compliance:**\n Does NOT pitch Concierge (these clients are at 12 months, and the rule forbids Concierge before 12 months). This is pure service fulfillment.\n---\n---"
+      },
+      {
+        "id": "email_2026-06-21_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. 30; 60 Days Post-Install (30 candidates)",
+        "preview": "**Campaign name:** `Referral Bonus Push. May Installs`\n**Audience:** 30 clients (Jahan Zarrabi, Yvonne Fox, Tom LaDue, William Philyaw, Patricia & Adam Shelkey + 25 more)\n**Segment filter:** Jobber trigger `install_date = 30; 60 days ago AND satisfaction_score >= 4/5` (or proxy: no open service tickets, payment complete)\n---\n### Subject Lines (60 char max)\n**PRIMARY:**\n`I owe you $500 (maybe more)`\n**ALTERNATES:**\n1. `Your ClearWave [system] is working. Now get paid.` *(pain/self-interest)*\n2. `Referral question for you, [First Name]` *(curiosity)*\n3. `Who else in [City] deserves this?` *(authority/identity)*\n4. `Cash for every referral. Here's the math.` *(specific)*\n---\n### Preview Text (90 char max)\n`Every closed referral = $500 cash (up to $1K each). Even consult-only = $50 gift card.`\n---\n### Email Body\n**Subject:** I owe you $500 (maybe more)\n**Preview:** Every closed referral = $500 cash (up to $1K each). Even consult-only = $50 gift card.\n---\nHi [First Name],\nYou've had your [system] for about [X weeks] now.\nIf you're happy with it, I have a question:\n**Who else do you know who'd want the same thing?**\nHere's what we pay:\n- **Referral 1; 5 this year:** $500 cash per close\n- **Referral 6; 9:** $750\n- **Referral 10+:** $1,000\nEven if they book a consult but don't move forward, you get a $50 gift card. No cap, no catch.\nThe referral just has to mention your name when they call or book online.\n**[Refer a Friend →]**\nOr just reply with their name and number. I'll reach out, mention you sent them, and take it from there.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, June 5, 2026 at 10:30 AM ET**\n(Thursday performs well for \"favor ask\" emails. Recipients have mental bandwidth post-hump-day and can forward/text contacts before the weekend.)\n---\n### Expected Performance\n| Metric | Estimate | Justification |\n|--------|----------|---------------|\n| **Open rate** | 48; 55% | Curiosity subject line (\"I owe you $500\"). Lifecycle trigger (recent happy clients). |\n| **Click rate** | 8; 14% | Strong financial incentive. CTA is low-friction (just reply or click). |\n| **Conversion** | 15; 25% (5; 8 referrals submitted) | Referral asks convert best 30; 60 days post-install (honeymoon phase, system is working, client hasn't yet forgotten the \"bad water\" pain). Bonus structure is aggressive and clear. |\n**Revenue impact (12-month trailing):**\nHistorical data: 20% of submitted referrals close within 90 days.\n5 referrals × 20% close rate = **1 new install** (~$5,500 avg)\nROI on $500 payout = **10:1**\n(Plus: referred clients have 2.1× higher LTV and near-zero churn on Concierge.)\n---\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Lifecycle Triggers:**\n > \"30; 60 days post-install (satisfied): REFERRAL PUSH. Clients are in the honeymoon phase. Strike now.\"\n- **Hard Rule #3 + referral bonus structure:**\n Email uses the exact tiered payout ($500 / $750 / $1,000) and includes the $50 consult-only gift card. Does NOT ask for a review (ReviewHarvest handles that).\n- **Voice fingerprint (luxury product + killing-bad-water hybrid):**\n Opens with a pattern-interrupt subject line (\"I owe you\"). Body is direct, no fluff, respects the client's time. Uses their actual product name via merge tag. Financial incentive is stated plainly (not hyped). Closes with gratitude, not a hard ask.\n- **Hard Rule #2 compliance:**\n Merge tag `[system]` ensures we say \"your ClearWave Crest\" or \"your Terra + Ferro + RO,\" never generic \"your ClearWave.\"\n---\n---\n## Why These Two (and Not the Others)\n| Campaign | Why NOT this week |\n|----------|-------------------|\n| **Concierge Upsell (100 candidates, 13; 24mo)** | Strong candidate, but Concierge is a *retention* play, not a *conversion* play. Annual service (Proposal 1) and referrals (Proposal 2) generate immediate bookings and net-new revenue. Concierge should be Week 2 (after we've cleared the annual service backlog and can frame Concierge as \"remember that service you just had? imagine never scheduling it again\"). |\n| **RO Replacement Cycle (21 candidates)** | Smaller list (21 vs. 30). RO filter swaps are lower-ticket ($129; $199) and operationally easy (clients often DIY or call when they notice flow drop). Not urgent. |\n| **Cold Lead Re-Engagement (1,000 subscribers)** | High volume, but low intent. These leads are 60+ days cold and never reached quote stage. A re-engagement campaign HERE would be valuable *if* we had a strong news hook (e.g., local water crisis, new EPA rule). Without that, it's a weak \"hey, remember us?\" play. Better to let this segment age into a quarterly \"big swing\" campaign (e.g., fall promo, new product launch). |\n| **Lapsed Quotes (0 candidates)** | Zero in the hopper this week. No action needed. |\n---\n**Recommendation:** Send both.\nThey target non-overlapping audiences (12-month service vs. 30; 60 day referral window), serve different goals (retention + upsell vs. acquisition), and can be deployed 48 hours apart without fatigue.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-21_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-21_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-21T10:30:00.881Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
