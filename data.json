@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T10:01:43.102Z",
+  "generated_at": "2026-06-22T10:30:04.368Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-22",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-22",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-22_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service Campaign",
+        "preview": "**Audience:** 30 customers (1-year post-install trigger)\n**Expected open:** 48% | **Expected click:** 3.5% | **Expected booking:** 25% (7-8 appointments)\n### Rationale\nHard trigger with clear value and urgency. These clients are hitting the 12-month maintenance window where sediment pre-filters need replacement and system health check is due. Higher engagement than broadcast emails because it's personalized and timely. Drawing from IDEA_SOURCING.md: lifecycle triggers + educational authority positioning.\n---\n### Subject Line (Primary)\n`Your Re-Ionator Pro: 12-month service window`\n### Subject Line Alternates\n1. `Jeff, your 30C hits 12 months this week`\n2. `Annual service: what happens at month 12`\n3. `Your Acid Neut + Ironmax is due for service`\n4. `12-month checkpoint for your H2O Protector`\n### Preview Text\n`Quick sediment swap + health check. Takes 20 min. Keeps your 25-year warranty intact.`\n---\n### Email Body\n**Subject:** Your {{system_name}} hits 12 months this week\nJeff,\nYour {{system_name}} was installed June 9, 2024.\nThat means you are entering the 12-month service window.\nHere is what happens at the annual service:\n**1. Sediment pre-filter swap** (5 min)\nCatches rust, silt, and particulate before it hits your main media. We swap it, you are clean for another year.\n**2. System health check** (10 min)\nPressure test, valve cycle, brine draw (if applicable), media bed inspection. We catch small things before they become expensive things.\n**3. Water quality spot-check** (5 min)\nQuick hardness/iron/pH test to confirm your system is performing as engineered.\nTotal time at your home: 20 minutes.\n**Cost: $349** (parts + labor + TDS test kit included)\nThis service keeps your 25-year warranty active and your water performing at the level you paid for.\n**Book your service:**\nReply to this email with 2-3 days/times that work, or call the office at {{phone}}.\nWe will get you on the calendar this month.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, 10:00 AM ET**\nTuesday/Wednesday mornings perform best for service booking emails (avoid Monday inbox crush, avoid Friday mental checkout). 10 AM captures both early risers who checked email at 7 AM and late starters who open around 11 AM.\n---\n### Source Justification\n- **IDEA_SOURCING.md § Lifecycle Triggers:** \"1-year annual service (explain what happens, why it matters, book the appt)\"\n- **IDEA_SOURCING.md § Educational Authority:** \"How long should your system last? (tie to maintenance)\". Reframed as maintenance-as-warranty-protection\n- **Voice Fingerprint § Luxury Product Register:** Short sentences, parallel structure (\"Sediment pre-filter swap... System health check... Water quality spot-check\"), educational without selling, triadic close implied by three-step structure\n---"
+      },
+      {
+        "id": "email_2026-06-22_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install)",
+        "preview": "**Audience:** 30 customers (satisfied, recent install, high invoice value)\n**Expected open:** 44% | **Expected click:** 2.8% | **Expected referral submission:** 15% (4-5 qualified referrals)\n### Rationale\nThis cohort just experienced the \"wow\" of installation and is in the honeymoon phase. High invoice values ($5K-$8K) indicate they are financially qualified and likely run in similar circles. Referral economics are strong: $500-$1,000 per close, $50 per consult. Drawing from IDEA_SOURCING.md: referral incentive + social proof + product-in-use happiness.\n---\n### Subject Line (Primary)\n`Veronica, quick question about your neighbors`\n### Subject Line Alternates\n1. `$500 for every friend who says yes`\n2. `Your Re-Ionator Pro Ultra: refer & earn`\n3. `Do your neighbors know what you just installed?`\n4. `The referral bonus nobody tells you about`\n### Preview Text\n`$500 cash per closed referral (1-5/year). $750 for 6-9. $1,000 for 10+. Here is how it works.`\n---\n### Email Body\n**Subject:** Veronica, quick question about your neighbors\nVeronica,\nYour Re-Ionator Pro Ultra went in three weeks ago.\nBy now you have noticed: the soap lathers differently. The coffee tastes cleaner. The glasses do not spot.\nHere is my question.\n**Do your neighbors know what you just installed?**\nMost clients at your system tier (well water, whole-home advanced filtration + RO) run in circles where 60-70% of friends also have well water and similar concerns.\nIf you know someone who would benefit from a free water assessment, we would like to thank you properly.\n**Referral bonus structure:**\nReferrals 1-5 that close in a calendar year: **$500 cash** each\nReferrals 6-9: **$750 cash** each\nReferrals 10+: **$1,000 cash** each\nReferrals that book a consult but do not close: **$50 gift card** as a thank-you for the introduction.\nNo cap. No expiration (resets each January). Just name, number, and city.\n**To refer someone:**\nReply to this email with their name, phone, and city. We will take it from there. You will never be the \"salesy friend.\" We handle the education, the assessment, and the follow-up.\nIf they close, you get paid within 14 days of install.\nThanks for trusting us with your water, Veronica. If you know someone who would benefit, we will take care of them the same way we took care of you.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, 11:00 AM ET**\nThursday late-morning hits when people are winding down the work week and more open to \"favor\" emails (referrals feel like helping a friend, not transacting). Avoids the Friday dropoff but captures the \"I can think about this over the weekend\" window.\n---\n### Source Justification\n- **IDEA_SOURCING.md § Referral Incentive:** \"$500 per closed referral, $50 gift card for consult-only... tier structure (1-5, 6-9, 10+)\"\n- **IDEA_SOURCING.md § Product-in-Use Happiness:** \"You are 3 weeks in. Here is what you have probably noticed...\". Sensory details (soap lathers, coffee tastes cleaner, glasses do not spot) create visceral recall of value\n- **HARD RULES § Referral Bonus Structure:** Exact tiers and numbers used verbatim\n- **Voice Fingerprint § Luxury Product Register:** \"Your Re-Ionator Pro Ultra went in three weeks ago\" (product name specificity), short-sentence rhythm, educational framing (\"most clients at your system tier...\"), no hype words\n---\n**End of proposals.**\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-22_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-22_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-22T10:30:01.104Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
