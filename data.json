@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T10:01:48.390Z",
+  "generated_at": "2026-06-23T10:30:04.506Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-23",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,39 @@
   },
   "approvals": {
     "date": "2026-06-23",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-06-23",
+        "type": "daily_water_minute",
+        "title": "Water Minute · What's actually in DC tap water",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-06-23.email.md",
+        "preview": "Words I like;\n\"If you wouldn't put it in your coffee, why would you put it in your body?\"\nYour DC tap water is treated. That's good. It keeps you safe from bacteria and pathogens that plagued cities 100 years ago. But what they add to make it safe doesn't just disappear when it hits your glass.\nMost municipal systems use chlorine or chloramine. Chlorine is older, cheaper, breaks down faster (which is why some cities switched). Chloramine is chlorine bonded to ammonia. It's more stable, lasts longer in the pipes, and doesn't create the same disinfection byproducts chlorine does.\nDC Water uses chloramine. So does most of the metro area. That's why your tap smells faintly like a pool some mornings, or why filling a fish tank without treatment can kill everything in it within hours.\nChloramine doesn't boil off. It doesn't evaporate. A basic pitcher won't touch it. It takes catalytic carbon, contact time, and flow control to remove it properly. If you already own one of our city water systems, that's exactly what's happening every time you turn on the tap. You made a smart call.\nIf you're still on straight municipal, hit reply and I'll send you a free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-06-23_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : One-Year Annual Service (Maintenance Window)",
+        "preview": "**Audience:** 1-year annual service candidates\n**Size:** 30 customers\n**Trigger:** 365 days post-install ±7 days\n### Subject Lines\n**Primary:**\n`Year one. Your Re-Ionator Pro Ultra needs this.`\n**Alternates:**\n1. `Jeff, 12 months means it's time` *(personalized w/ first name)*\n2. `The one thing your system needs at year 1`\n3. `Your annual service window just opened`\n4. `What happens at 365 days? This.`\n### Preview Text\n`Annual service keeps your warranty intact and your water perfect. Book your window now.`\n### Email Body\n---\n**Subject:** Year one. Your [SYSTEM] needs this.\nJeff,\nYour [SYSTEM] hit the one-year mark last week.\nThat means it's time for your first annual service. Not optional. Not \"when you get around to it.\" Now.\nHere's why:\n**Your warranty requires it.** Skip the annual, void the coverage. We don't make the rules softer just because the system runs perfectly.\n**Media needs a flush and check.** Even engineered systems accumulate sediment load over 12 months of work. We pull samples, verify flow rates, and swap or clean media as needed.\n**Small things become expensive things.** A $15 o-ring today is a $1,200 valve tomorrow. We catch it at annual.\nYour service window is June 9; June 30. After that, you're playing calendar Tetris with our July schedule.\n**Book here:** [LINK]\nOr reply with your best day/time and we'll lock it.\nJustin\nCEO / ClearWave\n---\n### Personalization Merge Tags\n- `*|FNAME|*` → first name\n- `*|SYSTEM|*` → actual product name (Re-Ionator Pro Ultra, ClearWave Crest, etc.)\n- Fallback: \"your ClearWave system\" when system=(not specified)\n### Send Timing\n**Tuesday, June 10, 9:00 AM ET**\nRationale: Tuesday morning, post-weekend. Customers are in planning mode, calendar is open, and \"annual service\" is a task-oriented email (not a Sunday leisure read).\n### Expected Performance\n- **Open rate:** 48; 52% *(higher than list avg; high-intent trigger, 1:1 personalized, short subject)*\n- **Click rate:** 8; 12% *(single clear CTA, time-bound urgency, warranty leverage)*\n- **Conversion (booked appt):** 35; 45% *(annual service is expected, non-controversial, and required)*\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Triggers** → lifecycle email, 1-year anniversary, maintenance-based\n- **Voice Fingerprint § killing_bad_water_sales** → \"Not optional. Not 'when you get around to it.' Now.\" Drill-instructor directness, imperative mood, framework (warranty/media/small-things)\n- **HARD RULES #2** → product name personalization enforced\n- **HARD RULES #1** → does NOT pitch Concierge (too early)\n---"
+      },
+      {
+        "id": "email_2026-06-23_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Day Satisfied Window)",
+        "preview": "**Audience:** Referral push candidates (30; 60 days post-install, satisfied)\n**Size:** 30 customers\n**Trigger:** High-ticket completed jobs, system running 30+ days, no service tickets\n### Subject Lines\n**Primary:**\n`Veronica, this pays you $500. Possibly $1,000.`\n**Alternates:**\n1. `The referral math: $500, $750, or $1,000 cash`\n2. `Your neighbors are asking. You get paid.`\n3. `I'll pay you $500 for a name. Here's how.`\n4. `Referral bonus structure (it's bigger than you think)`\n### Preview Text\n`Closed referral = $500 cash. And it scales. Here's the structure + how to send them our way.`\n### Email Body\n---\n**Subject:** Veronica, this pays you $500. Possibly $1,000.\nVeronica,\nYour Re-Ionator Pro Ultra has been running for five weeks.\nWhich means your neighbors have asked about it. (\"Wait, your water smells like *nothing*?\" \"You actually drink from the tap?\")\nWhen they ask, send them our way. We'll handle the rest. And you get paid.\nHere's the structure:\n**Referral closes** (they buy a system):\n• Referrals 1; 5 in the year: **$500 cash** each\n• Referrals 6; 9: **$750** each\n• Referrals 10+: **$1,000** each\n**Referral books a consult but doesn't close:**\n• **$50 gift card** (because you still made the introduction)\nCalendar year reset. No cap. No fine print runaround.\n**How to send them:**\n1. Text me their name + number: [JUSTIN_CELL]\n2. Or have them mention your name when they book a free water assessment: [BOOKING_LINK]\n3. Or forward this email and tell them to reply\nWe'll take it from there. Assessment, quote, install. You get paid when they do.\nThe system you have? Your neighbors want it. You might as well get paid for the conversation you're already having.\nJustin\nCEO / ClearWave\n---\n### Personalization Merge Tags\n- `*|FNAME|*` → first name\n- `*|SYSTEM|*` → actual product name\n- `*|TOTAL|*` → invoice total *(optional social proof: \"You invested $8,250 in your water. Your neighbors will too.\")*\n### Send Timing\n**Thursday, June 12, 11:00 AM ET**\nRationale: Mid-week, late morning. Customers are past Monday chaos, not yet in Friday checkout mode. Referral emails perform better when sent during \"life admin\" hours (mid-morning, mid-week).\n### Expected Performance\n- **Open rate:** 44; 49% *(high-ticket customers, personalized, money in subject line)*\n- **Click rate:** 3; 6% *(lower than service email, but referral asks are inherently lower-intent; click = \"I have someone in mind\")*\n- **Conversion (referral submitted):** 8; 15% *(of the 30-person list, expect 2; 4 referrals; realistic for a 30-60 day window)*\n### Source Justification\n- **IDEA_SOURCING.md § Jobber Triggers** → referral push, 30; 60 day satisfied window, high-ticket installs\n- **HARD RULES #3** → explicitly pushes REFERRALS (not reviews), uses exact bonus numbers ($500/$750/$1,000, $50 gift card)\n- **HARD RULES #3a** → \"free water assessment\" used exactly (not \"free water test\")\n- **Voice Fingerprint § killing_bad_water_sales** → \"You might as well get paid for the conversation you're already having.\" Closed-mouths-don't-get-fed energy, deal-maker framing, numbered structure\n- **HARD RULES #2** → product name personalization enforced\n---\n## Why These Two (And Not The Others)\n**Annual Service** is the highest-intent, highest-conversion trigger we have. 30 customers, 35; 45% conversion = 10; 13 booked appointments this week. It's also required (warranty lever), time-bound (service window), and non-controversial. This is revenue + relationship maintenance in one send.\n**Referral Push** is the second-highest ROI play. 30 high-ticket customers (avg $5,000+) in the satisfaction window. Even at 10% referral submission rate (3 referrals), we're looking at 1; 2 closed deals in the next 60 days = $10K+ revenue from a single email. And it costs nothing to send.\n**Why NOT the others:**\n- **RO replacement cycle** (21 customers): lower urgency, lower open rates on consumable-replacement emails, and we can batch this into a monthly \"filter reminder\" sequence rather than a standalone campaign.\n- **Concierge upsell** (100 customers): good audience size, but Concierge is a harder sell (recurring cost, behavioral change). I'd recommend this as a *secondary* send later in June, after we've captured the high-intent annual service + referral revenue first.\n- **Cold lead re-engagement** (1,000 subscribers): worth doing, but it's a longer play (nurture → assessment → quote → close). Given the Mailchimp health data (recent campaigns at 0.4; 0.5% open, 0.00; 0.01% click), we need to fix the CONTENT problem first. I'd propose a cold-lead campaign *next week* after we see how these two perform, using a water-news hook (e.g., the Maryland jet fuel leak angle) to reset the relationship.\n---\n**Recommendation:** Send both. Annual Service on Tuesday 6/10 at 9 AM, Referral Push on Thursday 6/12 at 11 AM. Two days apart, two totally different audiences, two different conversion paths. No overlap, no fatigue.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-06-23": {
+        "decision": "pending"
+      },
+      "email_2026-06-23_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-23_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-23T10:30:01.238Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
