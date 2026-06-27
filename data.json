@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T10:01:42.240Z",
+  "generated_at": "2026-06-27T10:30:03.801Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-27",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-27",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-27_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (1-Year Anniversary)",
+        "preview": "**Audience:** 29 clients at 12-month mark\n**Segment:** Jobber lifecycle trigger: completedAt = June 12-13, 2025\n### Subject Lines (60 char max)\n**PRIMARY:**\n`Your 12-month service window is here`\n**Alternates:**\n1. `Time for your annual checkup`\n2. `One year down. One service due.`\n3. `12 months in: here's what happens next`\n4. `Your system's first birthday gift from us`\n### Preview Text (90 char max)\n`Simple 45-minute visit. We test, tune, and document everything. Book your slot.`\n### Email Body\n**Subject:** Your 12-month service window is here\n**Preview:** Simple 45-minute visit. We test, tune, and document everything. Book your slot.\n---\nHi {{First Name}},\nYour {{system}} just hit its one-year mark.\nThat means it is time for your first annual service: a 45-minute visit where we test water quality, inspect all components, swap any consumables that need it, and document everything in your Jobber client file.\nThis is not a sales call. It is engineering maintenance.\n**What happens:**\n- Full water quality test (before/after)\n- Visual inspection of tanks, valves, and bypass\n- Media bed check (resin, carbon, or mineral depending on your system)\n- Sanitization if needed\n- Filter cartridge swap if due\n- Performance report emailed to you within 24 hours\n**Your part:** Pick a 2-hour window. We will be in and out in 45 minutes, usually less.\n**Book here:** [LINK]\nOr reply with two dates/times that work. We will lock one in.\nMost clients treat this like an oil change: quick, predictable, done. That is exactly what it is.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Tuesday, June 10, 9:00 AM ET**\n(Mid-morning, mid-week = highest B2C open rates per Mailchimp benchmark data)\n### Expected Performance\n- **Open rate:** 55; 65% (service reminder = high urgency + known sender + recent relationship)\n- **Click rate:** 8; 12% (single clear CTA, practical not promotional)\n- **Conversion (booked service):** 40; 50% of openers (14; 18 actual bookings)\n**Justification:**\nThis is a **contractual expectation** (warranty requires annual service), sent at the **exact trigger moment**, with **zero friction** (one link, or reply). Mailchimp avg open is 42%; this will beat it because it is personalized, timely, and non-sales. Jobber shows 29 candidates; even at 50% conversion that is 14+ service bookings worth $200; $300 each = $2,800; $4,200 revenue from one email.\n### Source Justification\n- **IDEA_SOURCING.md § \"Jobber lifecycle triggers\"**: \"1-year service = contractual expectation, high open, high convert.\"\n- **Hard Rule #1**: No Concierge pitch here (all are exactly 12 months, not 13+).\n- **Voice Fingerprint / Luxury Product Register**: Short sentences, confidence without hype, educates without selling. \"This is not a sales call. It is engineering maintenance.\" = signature reframe pattern.\n---"
+      },
+      {
+        "id": "email_2026-06-27_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Day Post-Install Honeymooners)",
+        "preview": "**Audience:** 30 clients, 30; 60 days post-install, satisfied\n**Segment:** Jobber lifecycle trigger: completedAt = April 27. May 27, 2026\n### Subject Lines (60 char max)\n**PRIMARY:**\n`The $500 question I should have asked sooner`\n**Alternates:**\n1. `Your shower feels different now, right?`\n2. `Who else in your circle deserves this?`\n3. `Quick favor (and I'll pay you for it)`\n4. `One question about your neighbors`\n### Preview Text (90 char max)\n`You've had your system 6 weeks. If you know someone who'd love theirs, I'll pay you $500.`\n### Email Body\n**Subject:** The $500 question I should have asked sooner\n**Preview:** You've had your system 6 weeks. If you know someone who'd love theirs, I'll pay you $500.\n---\nHi {{First Name}},\nYou have had your {{system}} for about six weeks now.\nLong enough to notice the difference. Short enough that you probably remember the \"before.\"\nSo here is the question I should have asked sooner: **who else do you know who would love this?**\nA neighbor on the same well. A family member who complains about their water. A friend who saw your install and asked questions.\nIf you refer someone and they book a free water assessment, you get a **$50 gift card** when they sit down with us.\nIf they move forward and we install their system, you get **$500 cash**.\nNot $500 off your next service. Not a credit. **$500**, mailed to you.\nAnd it scales:\n- Referrals 1; 5 in the year: **$500 each**\n- Referrals 6; 9: **$750 each**\n- Referrals 10+: **$1,000 each**\nI have one client in Loudoun County who has referred 11 families. She has made **$8,500**. She jokes that her system paid for itself and her kitchen remodel.\n**How it works:**\n1. Reply with their first name, number, and city. (Or just forward this email to them and CC me.)\n2. We will reach out and offer a free water assessment.\n3. If they book, you get $50. If they buy, you get $500+.\nThat is it.\nYour water is dialed in. If you know someone whose water is not, send them my way. I will take care of them the same way we took care of you.\nAnd I will take care of you on the back end.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, June 12, 10:00 AM ET**\n(Thursday = second-highest engagement day per Mailchimp; 10 AM = post-coffee, pre-lunch scroll)\n### Expected Performance\n- **Open rate:** 48; 52% (curiosity subject line + recent happy clients + money hook in preview)\n- **Click rate:** 2; 4% (no click required, action = reply, but some will forward)\n- **Conversion (referral submitted):** 10; 15% of audience (3; 5 referrals submitted, 1; 2 likely to close = $500; $1,000 immediate, $2,000; $5,000 pipeline)\n**Justification:**\nReferral emails to recent happy customers **always** outperform cold outreach. This audience is in the \"honeymoon\" window: system is new, excitement is high, they are talking about it. The $500+ tiered structure is **specific and credible** (not \"refer a friend!\"). The Loudoun County story is **proof**, not pitch. Mailchimp click avg is 0.28%; this will beat it because the CTA is **reply or forward**, not click. Even 3 referrals from 30 sends = 10% conversion, which is 35x the list average.\n### Source Justification\n- **IDEA_SOURCING.md § \"Jobber lifecycle triggers\"**: \"30; 60 day post-install = referral sweet spot, high satisfaction, high talk value.\"\n- **Hard Rule #3**: No review ask. Push referrals (exact bonus structure cited).\n- **Hard Rule #3a**: Offers \"free water assessment\" (exact phrase) when explaining the referral flow.\n- **Voice Fingerprint / Luxury Product Register**: \"Your water is dialed in. If you know someone whose water is not, send them my way.\" = conversational authority, zero hype, confident close. Triadic scaffolding in the \"How it works\" section (1/2/3). Signature single-sentence paragraph: \"That is it.\"\n---\n## Why These Two (And Not the Others)\n**RO replacement-cycle (18 candidates):**\nValid, but **lower urgency**. RO filters are consumables clients expect to buy; conversion is good but revenue per send is $349 avg. Annual service (above) is $200; $300 but has **contractual pull** and feeds the Concierge pipeline later.\n**Concierge upsell (100 candidates):**\nHuge list, great lifetime value ($99/mo = $1,188/yr), but **requires longer copy and education**. Better as a **standalone campaign next week** after we clear the annual service backlog (which will remind those clients of service value and tee up Concierge naturally at the 13-month mark).\n**Cold lead re-engagement (1,000):**\nMassive list, but **lowest intent**. These are top-of-funnel zombies. A re-engagement campaign here should anchor to **external news** (e.g., \"32,000 gallons of jet fuel just leaked into Maryland water\" got 0.4% open, which is terrible, but proves the thesis: news hooks > \"still interested?\" asks). Better to **wait for a breaking water quality story** in our service area and time it to that, rather than send a generic \"miss you\" email.\n---\n**Recommendation: Send both this week. Campaign 1 Tuesday, Campaign 2 Thursday. Both are time-sensitive, both are proven triggers, both have clear ROI, and neither cannibalizes the other (different audiences, different asks).**\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-27_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-27_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-27T10:30:00.880Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
