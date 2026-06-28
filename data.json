@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T10:01:41.052Z",
+  "generated_at": "2026-06-28T10:30:03.688Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-28",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-28",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-28_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Check-In (1-Year Anniversary)",
+        "preview": "**Audience:** 1-year annual service candidates\n**Size:** 29 contacts\n**Priority:** HIGH (lifecycle trigger, time-sensitive, high-trust moment)\n### Subject Lines\n**Primary:** Your first annual service is due (Re-Ionator Pro Ultra)\n**Alt 1:** Time for your annual check-in, Deneele\n**Alt 2:** One year with your ClearWave system\n**Alt 3:** Your Re-Ionator Pro Ultra turns 1 this week\n**Alt 4:** Annual service: here's what to expect\n### Preview Text\nQuick in-and-out. We check everything, swap what needs swapping, you're done in 45 minutes.\n### Email Body\nSubject: Your first annual service is due (Re-Ionator Pro Ultra)\nDeneele,\nYour Re-Ionator Pro Ultra just hit the one-year mark.\nTime for the first annual service.\nHere's what happens: we swing by, check pressures, test flow rates, inspect seals, swap the sediment pre-filter and carbon media if needed. Takes about 45 minutes. You walk away knowing everything is dialed in for another year.\nNo surprises. No upsells. Just the maintenance your system was engineered for.\n**Book your annual service here:** [LINK]\nOr reply to this email and tell me what day works. We'll make it happen.\nJustin\nCEO / ClearWave\n---\n**Dynamic Personalization Rules:**\n- If `system` = \"(not specified)\" → use \"your ClearWave system\" throughout\n- If `system` contains specific product name → use actual product name in subject + first mention, then \"your system\" thereafter\n- City merge tag optional for scheduling CTA: \"We're in {{city}} next Tuesday and Thursday.\"\n---\n### Send Timing\n**Tuesday, June 10, 9:00 AM ET**\n(Mid-morning, post-coffee, pre-lunch decision window. Avoids Monday chaos and Friday drop-off.)\n### Expected Performance\n- **Open rate:** 55; 65% (lifecycle trigger + personalized subject with actual product name beats list avg of 42%)\n- **Click rate:** 8; 12% (single clear CTA, time-sensitive need, existing trust relationship)\n- **Conversion (booked service):** 35; 50% (14+ appointments from 29 contacts)\n**Justification:**\nThis is a *needed* service at a *known* interval for a *satisfied* customer. It's transactional, not promotional. The customer already trusts us. Mailchimp avg open is 42%; lifecycle triggers with personalization typically lift 25; 40% above that. Our CTA is binary (book or ignore), and the value prop is maintenance they already expect.\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year annual service = natural check-in, low friction, high conversion\"\n- **Voice fingerprint / luxury product register:** Brief, confident, no hype. \"Engineered for\" language. Avoids \"due for service!\" panic tone.\n- **Hard Rule #2:** Uses actual product name from Jobber system field in subject + body where specified.\n---"
+      },
+      {
+        "id": "email_2026-06-28_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install)",
+        "preview": "**Audience:** Referral push candidates (satisfied, honeymoon period)\n**Size:** 30 contacts\n**Priority:** HIGH (revenue multiplier, highest lifetime value unlock)\n### Subject Lines\n**Primary:** You've earned $500 (here's how to claim it)\n**Alt 1:** The $500 question I get asked most\n**Alt 2:** Your friends are asking about your water\n**Alt 3:** Referral math: $500, $750, or $1,000\n**Alt 4:** Send us one name, we'll send you $500\n### Preview Text\nClosed referral = $500 cash. Here's the exact structure, no fine print, just math.\n### Email Body\nSubject: You've earned $500 (here's how to claim it)\nPablo,\nYour Infinity Protector system has been running for six weeks.\nBy now, someone has asked you about your water. (They always do.)\nHere's what happens when you send them our way:\n**If they book a consult and close:** $500 cash for referrals 1; 5 this year, $750 for 6; 9, $1,000 for referral 10+.\n**If they book but don't close:** $50 gift card. (You still win.)\nNo cap. No gotchas. Resets every January 1.\nThe ask is simple: text me their name and number. I'll take it from there. They get a free water assessment. You get paid when they say yes.\n**Reply with a name, or forward this to someone who's asked about your water.**\nWe built the referral program this way because word-of-mouth is how we grow. You trusted us with your home. When your friends do the same, we want to say thank you with actual money.\nJustin\nCEO / ClearWave\nP.S.. Prefer to send a video testimonial instead? (30 seconds, iPhone quality, totally casual.) Hit reply and I'll send you the simple prompt. Same $500 if we use it in marketing.\n---\n**Dynamic Personalization Rules:**\n- Use actual product name from Jobber `system` field in line 3 (\"Your [SYSTEM] has been running for six weeks\")\n- If `system` = \"(not specified)\" → \"Your ClearWave system has been running...\"\n- Calculate weeks since install dynamically: `completedAt` → today (June 9) = ~2; 6 weeks\n- High-ticket customers (total >$8k) get personalized P.S.: \"You invested in the Pinnacle. Your referrals carry serious weight. One name = $500.\"\n---\n### Send Timing\n**Thursday, June 12, 10:30 AM ET**\n(Late morning, allows time for \"I'll text my neighbor at lunch\" action. Thursday beats Friday for reply rates.)\n### Expected Performance\n- **Open rate:** 48; 58% (recent customer, curiosity + money hook in subject, personalized system name)\n- **Click rate:** 2; 4% (no traditional click CTA; success = reply or text with referral name)\n- **Conversion (referral submitted):** 10; 15% (3; 5 referrals submitted from 30 contacts)\n- **Secondary conversion (video testimonial):** 3; 5% (1; 2 customers send video)\n**Justification:**\n30; 60 day window = peak satisfaction + social proof moment. Customers are still excited, haven't yet normalized to \"this is just how water is now.\" The $500/$750/$1k structure is concrete and uncommon (most referral programs are vague or capped). Mailchimp click rate will be low because the CTA is \"reply,\" not \"click here\". But *reply rate* will be strong. Even 10% conversion (3 referrals) = potential $15k+ revenue if 1; 2 close.\n### Source Justification\n- **IDEA_SOURCING.md § Referral campaigns:** \"30; 60 day honeymoon = highest referral yield. Make the math crystal clear.\"\n- **Hard Rule #3 (referral bonus structure):** Exact $500/$750/$1k tiers + $50 gift card for non-close stated verbatim.\n- **Voice fingerprint / killing bad water sales:** \"Closed mouths don't get fed\" energy translated to luxury register: direct ask, no apologizing, clear value exchange.\n- **Hard Rule #3a:** Offer phrase is \"free water assessment\" (not \"free water test\").\n---\n## Why These Two (and Not the Others)\n**Concierge Upsell (100 candidates):** Strong list, but needs a **nurture sequence**, not a one-off blast. Upselling a $99/mo plan to someone 15 months post-install requires education (ROI math, \"what if I just call when I need you?\" objection handling). Better as a 3-email drip next week.\n**RO Replacement (19 candidates):** Solid, but small list + mixed timing (some at 6mo, some at 8mo). Bundle this into the annual service email as a P.S. for customers whose Jobber notes indicate RO install date, or save for a targeted \"your RO membranes are due\" mini-campaign in 2 weeks.\n**Cold Lead Re-Engagement (1,000 subscribers):** Highest volume, but needs a **content hook** (water news, seasonal angle, local incident) to avoid \"hey, remember us?\" fatigue. The DC boil alert + Maryland jet fuel emails got 0.4; 0.5% opens despite urgent topics, signaling list fatigue. A cold re-engagement play works better as a **monthly educational series** (one email/month, no hard CTA, pure value) to rebuild permission, *then* a soft assessment offer in email 3.\n**Lapsed Quotes (0 candidates):** No active trigger this week.\n---\n**Campaigns 1 + 2 combine for:**\n- 59 total recipients\n- ~30 expected opens\n- 5; 8 expected conversions (service bookings + referral submissions)\n- Est. revenue: $4,500; $7,000 (service calls) + $15,000; $30,000 (referred installs, assuming 1; 2 close within 60 days)\nLow send volume, high conversion quality, zero list burn.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-28_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-28_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-28T10:30:00.837Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
