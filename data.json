@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T10:01:22.725Z",
+  "generated_at": "2026-06-29T10:30:04.482Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-29",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-29",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-29_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : \"1-Year Annual Service\" (23 recipients)",
+        "preview": "**Audience:** Jobber lifecycle trigger, 1-year post-install\n**Size:** 23\n**Timing:** Tuesday 10:00 AM ET (mid-morning, high open window)\n### Subject Lines\n**PRIMARY:**\n`Your [PRODUCT] just hit 1 year. Here's what's next.`\n**Alternates:**\n1. `Time for your annual service (takes 45 min)`\n2. `1 year down. Let's keep your water perfect.`\n3. `Quick question about your [PRODUCT]`\n4. `Annual checkup: we come to you`\n### Preview Text\n`Quick service visit. We check everything, swap what's needed, you're done. Book below.`\n### Email Body\n**Subject:** Your Re-Ionator Pro + UV just hit 1 year. Here's what's next.\nHi Lee,\nYour system hit the 1-year mark last week.\nThat means it's time for the annual service visit. We come to you, check pressure and flow, inspect seals and valve cycles, swap filters and media as needed. Takes about 45 minutes. You walk away knowing everything is dialed in for another year.\n**What happens:**\nComplete system inspection. Filter and media replacement (included). Calibration check. Performance report.\n**What you do:**\nPick a day. We'll send a 2-hour arrival window the morning of.\nBook here: [BOOKING_LINK]\nQuestions? Hit reply.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- Open rate: **55-65%** (personalized subject with actual product name, transactional trigger, high trust segment)\n- Click rate: **8-12%** (single clear CTA, expected maintenance, low friction)\n- Conversion: **40-50% book within 7 days** (annual service is expected, not sold; we're the incumbent)\n**Source Justification:**\n- IDEA_SOURCING.md § Jobber lifecycle triggers (\"1-year annual service candidates\")\n- Voice: Killing Bad Water Sales register (\"Just Win\" brevity, imperative structure) + Luxury Product refinement (no hype, engineered confidence)\n- Hard Rule compliance: product name used (Re-Ionator Pro + UV for Lee Offen), no em dashes, no review ask, correct sign-off\n---"
+      },
+      {
+        "id": "email_2026-06-29_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : \"Referral Push\" (30 recipients)",
+        "preview": "**Audience:** Jobber 30-60 day post-install, satisfied clients\n**Size:** 30\n**Timing:** Thursday 2:00 PM ET (afternoon engagement window, end-of-week social mindset)\n### Subject Lines\n**PRIMARY:**\n`You've used your Pinnacle for 30 days. Quick favor?`\n**Alternates:**\n1. `$500 for every friend who goes ClearWave`\n2. `The referral program nobody told you about`\n3. `Know anyone still dealing with bad water?`\n4. `How's your water? (And who else needs this?)`\n### Preview Text\n`If you know someone fighting hard water, sediment, or chlorine taste, send them our way.`\n### Email Body\n**Subject:** You've used your Pinnacle for 30 days. Quick favor?\nHi Jena,\nYou're a month in with your ClearWave Pinnacle. If the water's everything we promised, I have one ask.\n**Send us your people.**\nAnyone in your circle dealing with hard water, rust stains, sulfur smell, sediment, or that chlorine taste. We'll give them the same free water assessment you got. If they move forward, you get paid.\n**Here's the structure:**\nReferrals 1-5 that close: **$500 cash** each.\nReferrals 6-9: **$750** each.\nReferral 10+: **$1,000** each.\nReferral books but doesn't close: **$50 gift card** (because you tried).\nResets every January. No cap.\nJust reply with their name and number, or forward this and have them mention you when they call.\nWe take care of the rest.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- Open rate: **48-56%** (personalized product name, recent install creates recency bias, \"quick favor\" curiosity hook)\n- Click rate: **2-4%** (referrals are behavioral, not click-driven; replies > clicks here)\n- Conversion: **10-15% send at least 1 referral within 14 days** (industry standard for incentivized referral is 8-12%; our bonus structure + recent satisfaction + high-ticket product pushes higher)\n**Source Justification:**\n- IDEA_SOURCING.md § Jobber lifecycle triggers (\"Referral push candidates, 30-60 days post-install, satisfied\")\n- Hard Rules: exact referral bonus structure used ($500/750/1000 + $50 gift card), \"free water assessment\" offer phrase, product name (Pinnacle) personalized, no em dashes\n- Voice: Killing Bad Water Sales directness (\"Send us your people,\" \"We take care of the rest\") + transactional clarity (bonus tiers as numbered list)\n- Mailchimp health context: avg click is 0.28%, so 2-4% would be **7-14x baseline**, justified by high-intent trigger + cash incentive + short copy\n---\n**Why These 2:**\n1. **Annual Service = highest-confidence conversion.** Transactional trigger, expected maintenance, we're the incumbent, zero competitive pressure. This prints money.\n2. **Referral Push = highest lifetime value per convert.** 30 sends, even at 10% yield = 3 referrals. If 1 closes at avg ticket $6k, ROI >> any other campaign. Plus it costs nothing (bonus paid post-close) and builds organic pipeline during slow months.\n**Campaigns NOT prioritized this week:**\n- RO replacement cycle (20 recipients, softer trigger, can wait 1 week)\n- Concierge upsell (100 recipients, but longer consideration cycle; better as a 2-week drip than one-shot)\n- Cold lead re-engagement (1000 recipients, requires a news hook + separate creative strategy; propose next week with a water-news anchor)\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-29_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-29_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-29T10:30:01.077Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
