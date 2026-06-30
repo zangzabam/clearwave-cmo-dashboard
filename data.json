@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T10:01:37.888Z",
+  "generated_at": "2026-06-30T10:30:03.682Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-06-30",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-06-30",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-06-30_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (23 candidates)",
+        "preview": "**Audience:** 23 clients whose install anniversaries fall 2025-06-16 through 2025-06-18 (targeting for delivery 7 days prior to anniversary)\n**Subject line (primary):**\n`Your annual service window opens next week`\n**Subject line alternates:**\n1. `Time for your system's 12-month checkup`\n2. `Leah, your annual service is due June 16`\n3. `One year down. One quick visit to go.`\n4. `We'll handle your annual service (here's why it matters)`\n**Preview text:**\n`Your [SYSTEM] has been working for a year. Let's keep it that way with one fast visit.`\n**Email body:**\n---\n**Subject:** Your annual service window opens next week\n**Preview:** Your [SYSTEM] has been working for a year. Let's keep it that way with one fast visit.\n---\nHi [FIRST_NAME],\nYour [SYSTEM] hits its one-year mark on [INSTALL_ANNIVERSARY_DATE].\nThat means it is time for your annual service: a 30-minute visit to inspect seals, test pressures, swap any wear components, and confirm everything is dialed in for year two.\nClearWave systems are engineered to run with minimal intervention. This visit is the intervention.\n**Book your annual service here:**\n[SCHEDULING_LINK]\nWe will reach out this week to coordinate timing. If you have questions before then, reply to this email or call the shop at [PHONE].\nOne year in. Many more ahead.\nJustin\nCEO / ClearWave\n---\n**Send timing:**\nTuesday, 2026-05-06, 9:00 AM ET (7 days before earliest anniversary in the cohort)\n**Expected performance:**\n- Open: 55; 65% (transactional trigger, high relevance, named product + date personalization)\n- Click: 12; 18% (single clear CTA, non-promotional tone)\n- Conversion (booked service): 60; 75% of openers (annual service is expected, low-friction, high-trust moment)\n**Source justification:**\n- **IDEA_SOURCING.md § Lifecycle trigger emails (Jobber):** \"1-year service reminders should be concise, use the customer's actual product name, explain *why* the service matters (not just 'book now'), and avoid upselling anything else in the same email.\"\n- **Hard Rule #2 (product naming):** Personalized merge tag `[SYSTEM]` ensures we say \"your Re-Ionator Pro + UV\" not \"your ClearWave.\"\n- **Hard Rule #1 (Concierge timing):** This email does NOT pitch Concierge; it is a pure service reminder at exactly 12 months.\n- **Voice fingerprint (luxury_product register):** \"Engineered to run with minimal intervention. This visit is the intervention.\" Parallel structure, understated confidence, educates without selling.\n---"
+      },
+      {
+        "id": "email_2026-06-30_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30 candidates, 30; 60 days post-install)",
+        "preview": "**Audience:** 30 clients who completed installs between 2026-03-27 and 2026-04-29 (satisfaction window + recency bias)\n**Subject line (primary):**\n`The referral question (and the real answer)`\n**Subject line alternates:**\n1. `Jordan, we built a referral program that actually pays`\n2. `$500 for every neighbor you send our way`\n3. `Your friends ask about your water. Here's what to say.`\n4. `Referrals that close = $500 cash (no catch)`\n**Preview text:**\n`You get asked about your water. We want to make it worth your time to answer honestly.`\n**Email body:**\n---\n**Subject:** The referral question (and the real answer)\n**Preview:** You get asked about your water. We want to make it worth your time to answer honestly.\n---\nHi [FIRST_NAME],\nYou have been living with your [SYSTEM] for [WEEKS_SINCE_INSTALL] weeks now.\nSomeone has probably asked you about it. Maybe a neighbor noticed the install, or a friend tasted the water at your house, or a family member heard you talk about it.\nWhen that happens again, here is what we want you to know:\n**We pay $500 cash for every referral that closes.**\nNot a gift card. Not a discount on a future service you may not need. Cash.\nHere is the structure:\n- Referrals 1 through 5 in a calendar year: **$500 each**\n- Referrals 6 through 9: **$750 each**\n- Referral 10 and beyond: **$1,000 each**\nEven if someone books a consult but does not move forward, you still get a **$50 gift card** for the introduction.\n**Send a referral here:**\n[REFERRAL_FORM_LINK]\nOr just reply to this email with a name and number. We will take it from there and let you know when the referral books their free water assessment.\nWe do not advertise. We do not cold-call. We grow because clients like you tell people the truth about their water.\nThis is us saying thank you in advance.\nJustin\nCEO / ClearWave\nP.S. If you are the kind of person who knows 10+ households who would benefit from this, reply and let's talk about a higher-tier partnership. We have done it before.\n---\n**Send timing:**\nWednesday, 2026-05-07, 10:30 AM ET (mid-week, mid-morning, after the service-reminder campaign has cleared)\n**Expected performance:**\n- Open: 38; 45% (strong subject curiosity + preview value prop, but lower urgency than transactional triggers)\n- Click: 2.5; 4.5% (referral asks historically underperform in email; action requires social capital + external coordination)\n- Conversion (submitted referral): 8; 12% of clickers (realistic given effort and relationship economics)\n- **Total expected referrals from campaign: 1; 2** (but each referral has high LTV; one closed referral = $500 payout + ~$6,000 avg system revenue)\n**Source justification:**\n- **IDEA_SOURCING.md § Referral requests:** \"30; 60 days post-install is the sweet spot: system is proven, excitement is still fresh, and the client has likely been asked at least once. Lead with the dollar amount (specificity builds trust). Avoid vague 'help us grow' language. This is a business transaction, not a favor.\"\n- **Hard Rule #3 (no review requests):** Email explicitly pushes referrals, not reviews. Mentions video testimonials as alternative in future campaigns but stays focused here.\n- **Hard Rule #3a (offer language):** Uses \"free water assessment\" exactly when describing what the referral will receive.\n- **Voice fingerprint (luxury_product + a hint of killing_bad_water):** \"We do not advertise. We do not cold-call. We grow because clients like you tell people the truth.\" (Reframe pattern: \"We do not do X. We do Y.\") + \"This is us saying thank you in advance.\" (Confident, transactional, no false humility.)\n- **Referral bonus structure:** Cited exact tiers from brief ($500 / $750 / $1,000 + $50 non-close gift card).\n---\n## Why These 2 (and Not the Others)\n**Annual service (23):** Highest conversion likelihood. Transactional, expected, low-friction. Clients already trust us. This is \"easy money\" in terms of rebook rate and goodwill.\n**Referral push (30):** Second-highest *lifetime value* per conversion. One referral can yield $6K+ in revenue and $500 cost. The 30; 60 day window is underutilized in most service businesses; we have warm clients and a compelling offer.\n**Why NOT Concierge upsell (100)?**\nLarger list, but Concierge is a *recurring* commitment (not a one-time service), requires more education, and historically converts at 8; 12% (per IDEA_SOURCING.md). Better suited for a **drip sequence** (3 emails over 10 days) than a single-shot campaign. Propose this as a **May week-3 mini-sequence** instead.\n**Why NOT RO replacement (18)?**\nList is small, and RO filter cycles vary by usage (not just time). Better handled as a **Jobber-automated service reminder** (tech notes \"due for RO swap\" at prior visit) than a blanket email. Many of these clients may have already swapped filters DIY or via service call.\n**Why NOT cold lead re-engagement (1000)?**\nThis is the **highest-volume** opportunity but requires a **different creative approach**: we need a value-first \"news hook\" (recent local water contamination story, new EPA regulation, etc.) to re-open the conversation without sounding desperate. This is a **standalone project** (propose for week of May 12 with a water-news catalyst, possibly tied to the Maryland jet fuel leak angle from recent Mailchimp campaigns).\n---\n**Recommendation:** Ship both campaigns this week. Service reminder Tuesday AM, referral ask Wednesday mid-morning. Reserve Thursday/Friday for ad-hoc quote follow-ups and customer service replies.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-06-30_c1": {
+        "decision": "pending"
+      },
+      "email_2026-06-30_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-06-30T10:30:01.106Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
