@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T10:01:26.669Z",
+  "generated_at": "2026-07-01T10:30:04.028Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-01",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-01",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-01_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (23 contacts)",
+        "preview": "**Audience:** 1-year post-install clients due for first annual service\n**Size:** 23\n**Priority:** HIGH (hard lifecycle trigger, high-intent, service revenue opportunity)\n### Subject Lines (60 char max)\n1. **Your [SYSTEM] turns one this week** *(primary. Personalized, specific)*\n2. One year in: time for your annual checkup\n3. We installed your system 12 months ago today\n4. Your ClearWave annual service is due\n5. Quick question about your [SYSTEM]\n### Preview Text (90 char max)\nTakes 45 minutes. We check media, valves, UV (if applicable), and verify your warranty.\n### Email Body\n**Subject:** Your {{system}} turns one this week\nHi {{firstName}},\nYour {{system}} hit the one-year mark this week.\nThat means it's time for your first annual service: a 45-minute appointment where we check media depth, inspect valves, verify your UV lamp (if you have one), and document everything for your lifetime warranty file.\nMost clients book within 30 days of the anniversary. Earlier is better (we're heading into summer volume), but the window is flexible.\n**[Book your annual service here]** → *[Link to Jobber booking]*\nIf you have questions about what we check or why, just reply. I'll walk you through it.\nJustin\nCEO / ClearWave\n---\n**Send Timing:** Tuesday, 9:00 AM ET\n*(Mid-morning, mid-week = highest open rates per Mailchimp data; gives clients time to check calendar and book before weekend)*\n### Expected Performance\n- **Open rate:** 48; 52% *(lifecycle trigger + personalized subject + established trust = above account avg of 42%)*\n- **Click rate:** 8; 12% *(single clear CTA, high intent, practical need)*\n- **Conversion:** 35; 45% book within 7 days *(annual service is expected, non-discretionary for warranty compliance, and framed as easy)*\n### Revenue Impact\n- 23 contacts × 40% conversion = ~9 service appointments\n- Avg annual service revenue: $175; $250 = **$1,575; $2,250 immediate**\n- Secondary: media replacement upsells, Concierge conversation at appointment = additional $800; $1,500\n### Source Justification\n- **IDEA_SOURCING.md § Jobber trigger workflows** (annual service reminder at 12mo)\n- **IDEA_SOURCING.md § Retention & LTV** (service reminders extend system life, protect warranty, build trust for future upsells)\n- Voice: *Luxury Product* register (refined, educational, non-pushy: \"we check,\" \"verify,\" \"document\")\n---"
+      },
+      {
+        "id": "email_2026-07-01_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. The $500 Question (27 contacts)",
+        "preview": "**Audience:** 30; 60 day post-install, satisfied clients (high NPS window)\n**Size:** 27\n**Priority:** HIGH (referrals = lowest CAC, highest LTV, and we're in prime word-of-mouth window)\n### Subject Lines (60 char max)\n1. **The $500 question** *(primary. Curiosity + specific number)*\n2. Know anyone still buying bottled water?\n3. Quick favor (and $500 if it works out)\n4. Your install is paid off. Want to make $500 back?\n5. Who else in {{city}} needs better water?\n### Preview Text (90 char max)\nYou've had your system 6 weeks. If you know anyone who'd benefit, I'll make it worth your time.\n### Email Body\n**Subject:** The $500 question\nHi {{firstName}},\nYou've had your {{system}} for about six weeks now.\nIf you know anyone in {{city}} (or beyond) who's dealing with hard water, chlorine taste, or just buying bottled water by the case, send them my way.\nHere's what happens:\n**If they book a free water assessment** and it doesn't close, you get a **$50 gift card** for the intro.\n**If they install a system,** you get **$500 cash** (referrals 1; 5 in the calendar year), **$750** for referrals 6; 9, and **$1,000** per referral once you hit 10+.\nNo limit. No fine print. Just reply with their name and number, or forward this email and CC me.\nWe'll take it from there.\nJustin\nCEO / ClearWave\n---\n**Send Timing:** Thursday, 11:00 AM ET\n*(Late morning Thursday = strong open rates, gives clients weekend to think of contacts, lower inbox competition than Monday/Tuesday)*\n### Expected Performance\n- **Open rate:** 44; 48% *(slightly below annual service because less urgent, but still strong due to recency + relationship)*\n- **Click rate:** 2; 4% *(no click required to reply with referral, so click rate understates engagement)*\n- **Conversion (referrals generated):** 15; 25% reply with 1+ referral name = **4; 7 referral leads**\n### Revenue Impact\n- 27 contacts × 20% avg = ~5 referrals generated\n- Referral close rate (industry avg + our trust factor): 35; 50%\n- 5 referrals × 40% close × $6,500 avg install = **$13,000 revenue** (minus $500 × 2 = $12,000 net)\n- CAC on referral leads: **$0** (vs. $800; $1,200 for cold paid lead)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber trigger workflows** (30; 60d satisfied client referral ask)\n- **IDEA_SOURCING.md § Referral-generation campaigns** (specific bonus structure, easy reply mechanism, localized angle)\n- **Hard Rules § Referral Bonus Structure** (exact numbers: $500/$750/$1k + $50 consultation gift card)\n- Voice: hybrid of *Luxury Product* (respectful, clear, professional) + *Killing Bad Water* confidence (\"No limit. No fine print. Just reply.\")\n---\n## Why These Two (and Not the Others)\n| Trigger | Size | Why NOT this week |\n|---------|------|-------------------|\n| **Annual service** | 23 | ✅ **RUNNING**. Hard deadline, warranty-critical, high intent |\n| **Referral push** | 27 | ✅ **RUNNING**. Prime NPS window, lowest CAC, compounding LTV |\n| **RO replacement** | 18 | ⏸ Wait 2 weeks. Most are 6; 8mo post-RO-install per dates; not urgent yet; better to batch with next cycle |\n| **Concierge upsell** | 100 | ⏸ Wait 1 week. Larger list, needs segmentation (high-ticket vs. entry-level installs); better as a standalone A/B test campaign with more prep |\n| **Cold lead re-engagement** | 1,000 | ⏸ Month 2 priority. Needs a *new news hook* (next local water contamination story or seasonal angle); also needs a landing page refresh to convert cold traffic |\n**Conclusion:** Annual service + referral push are both (1) time-sensitive, (2) warm audiences, (3) clear CTAs, and (4) immediately revenue-positive. The other three are strong but benefit from slightly more runway.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-01_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-01_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-01T10:30:01.123Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
