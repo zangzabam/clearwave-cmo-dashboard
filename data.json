@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T10:01:38.475Z",
+  "generated_at": "2026-07-02T10:30:03.672Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-02",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-02",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-02_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service Reminder",
+        "preview": "**Audience:** 22 clients (1-year post-install cohort)\n**Priority:** CRITICAL (time-sensitive maintenance window)\n---\n### Subject Lines (60 char max)\n**Primary:**\n`Your annual service window is open`\n**Alternates:**\n1. `Jeffrey, your system is due for annual service`\n2. `12-month checkup: book your slot this week`\n3. `Annual service keeps your warranty active`\n4. `One year down. One service call to go.`\n---\n### Preview Text (90 char max)\n`Schedule now while May slots are open. Takes 60 min, protects your investment.`\n---\n### Email Body\n**Subject:** Your annual service window is open\n**Preview:** Schedule now while May slots are open. Takes 60 min, protects your investment.\nJeffrey,\nYour Re-Ionator Pro + UV hit the one-year mark last month.\nThat means it's time for your annual service. Here's what we do:\n• Media inspection and backwash cycle verification\n• UV bulb intensity test (replace if needed)\n• Valve calibration and control head diagnostics\n• Full system water quality test\nTakes about 60 minutes. Keeps your lifetime warranty active. And catches small things before they become expensive things.\n**[Book your service here →]**\nWe have slots open the week of June 23rd in South Boston. If that doesn't work, reply and we'll find a time that does.\nJustin\nCEO / ClearWave\nP.S. If you know someone fighting iron stains, sulfur smell, or hard water, send them my way. Every closed referral puts $500-$1,000 cash in your pocket (depending on how many you send). Just have them mention your name when they book their free water assessment.\n---\n### Send Timing\n**Tuesday, June 10th, 9:00 AM ET**\n(Mid-week, mid-morning = highest open rate for service-based emails per Mailchimp benchmark data)\n---\n### Expected Performance\n| Metric | Forecast | Justification |\n|--------|----------|---------------|\n| **Open rate** | 55-60% | Service reminders outperform promotional emails. Avg campaign open is 42.1%; time-sensitive + personalized + product-specific should lift 13-18 points. |\n| **Click rate** | 8-12% | Clear CTA, single ask, high intent audience. Mailchimp avg is 0.28% but that's across cold/warm/promotional mix. Service-due clients are hot. |\n| **Conversion** | 40-50% (9-11 bookings) | Not all will book immediately, but 40%+ should schedule within 7 days. High-ticket customers ($5,500-$8,730 average in this cohort) tend to protect their investment. |\n---\n### Source Justification\n**Primary:** `IDEA_SOURCING.md` → **Transactional lifecycle triggers** (Jobber webhooks: 1-year service due)\n**Secondary:** `memory/voice/justin_voice_fingerprint.md` → **Luxury product register** (treating the system with respect, educating without selling)\n**Compliance anchor:** HARD RULE #1 satisfied (these clients are AT 12 months, not before). HARD RULE #2 satisfied (named actual product: \"Re-Ionator Pro + UV\" for Jeffrey, will dynamically merge for others).\n---"
+      },
+      {
+        "id": "email_2026-07-02_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Satisfied Clients)",
+        "preview": "**Audience:** 28 clients (recent installs, post-honeymoon phase)\n**Priority:** HIGH (highest lifetime value driver)\n---\n### Subject Lines (60 char max)\n**Primary:**\n`William, this is how you make $500 this month`\n**Alternates:**\n1. `Your neighbors are asking about your water`\n2. `I'll pay you $500 per referral (seriously)`\n3. `How's your Ferro + RO treating you?`\n4. `Quick question about your install`\n---\n### Preview Text (90 char max)\n`Every friend you send pays you $500 cash when they close. Here's how it works.`\n---\n### Email Body\n**Subject:** William, this is how you make $500 this month\n**Preview:** Every friend you send pays you $500 cash when they close. Here's how it works.\nWilliam,\nYour Terra + Ferro + RO has been in the ground for about 45 days now.\nWhich means you've had time to:\n• Taste the difference.\n• See your fixtures stay clean.\n• Stop buying bottled water.\n• Probably get a question or two from neighbors about what changed.\nSo here's the deal.\n**Every person you refer who closes = $500 cash for you.**\nReferrals 1 through 5: $500 each.\nReferrals 6 through 9: $750 each.\nReferral 10 and beyond: $1,000 each.\nIf they book a consult but don't close, you still get a $50 gift card.\nAll they have to do is mention your name when they book their free water assessment. We handle the rest.\n**[Send a referral here →]**\nYou've got the system. You know it works. Now put it to work for you.\nJustin\nCEO / ClearWave\nP.S. Resets every January, so the clock is ticking if you want to stack a few before year-end.\n---\n### Send Timing\n**Thursday, June 12th, 10:00 AM ET**\n(Thursday = second-highest engagement day per Mailchimp data; 10 AM catches mid-morning email check)\n---\n### Expected Performance\n| Metric | Forecast | Justification |\n|--------|----------|---------------|\n| **Open rate** | 48-52% | Personalized subject with dollar figure = curiosity + greed trigger. Should outperform baseline 42.1% by 6-10 points. |\n| **Click rate** | 4-6% | Referral emails historically underperform vs. service emails (lower urgency) but clear financial incentive + recent positive experience should drive 4-6%. |\n| **Conversion** | 10-15% (3-4 referrals submitted) | Not all will refer immediately, but 10-15% should forward/share within 7 days. Each referral = potential $9,350 sale (William's ticket) + $500 payout. ROI is massive even at 10%. |\n---\n### Source Justification\n**Primary:** `IDEA_SOURCING.md` → **Referral harvesting post-install** (Jobber 30-60 day satisfied trigger)\n**Secondary:** `memory/voice/justin_voice_fingerprint.md` → **Killing Bad Water Sales register** (\"Here's the deal\", \"Put it to work for you\", numbered structure, dollar-forward language)\n**Compliance anchor:** HARD RULE #3 satisfied (pushing REFERRALS, not reviews). HARD RULE #2 satisfied (named actual system: \"Terra + Ferro + RO\"). HARD RULE #3a satisfied (using \"free water assessment\" for prospect offer).\n---\n## Why These Two?\n1. **Annual service = immediate revenue + retention.** These 22 clients are contractually due. High open, high conversion, protects lifetime warranty compliance.\n2. **Referral push = highest LTV multiplier.** 28 satisfied clients in the \"honeymoon glow\" window. Each referral = $9,000+ average sale. Even 3-4 referrals = $27K-$36K pipeline.\nThe other triggers (RO replacement, Concierge upsell, cold re-engagement) are important but less time-sensitive. Annual service has a 30-day window before clients fall overdue. Referral enthusiasm peaks at 30-60 days post-install. Strike while hot.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-02_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-02_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-02T10:30:01.195Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
