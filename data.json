@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T10:01:25.886Z",
+  "generated_at": "2026-07-03T10:30:03.072Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-03",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-03",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-03_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (1-Year Post-Install)",
+        "preview": "**Audience:** 20 clients at 12-month mark\n**Mailchimar segment:** Jobber trigger: `completedAt` ~365 days ago\n**Send:** Wednesday, 9:00 AM ET\n### Subject Lines\n**Primary:**\n`Your annual checkup is due (takes 45 min)`\n**Alternates:**\n1. `Quick question about your [PRODUCT] service`\n2. `12 months down. Here's what happens next.`\n3. `Annual service: why we built it into year 1`\n4. `Lee, your Ferro needs its yearly once-over`\n**Preview text:**\n`We come to you. Test everything. Swap what needs swapping. Usually done in under an hour.`\n---\n### Email Body\n**Subject:** Your annual checkup is due (takes 45 min)\nLee,\nYour ClearWave Ferro + UV hit the one-year mark last week.\nThat means it's time for the annual service we built into every install: a full system diagnostic, media check, UV lamp swap if needed, and a 22-point water test to confirm everything is running clean.\nMost appointments take 45 minutes. We come to you. You don't lift a finger.\n**Book your annual service here:**\n[LINK: Schedule Annual Service]\nIf you'd rather handle it yourself, no problem. Just reply and I'll send the DIY checklist and part numbers.\nEither way, don't skip it. The service interval exists because well water changes, and so do system components. Twelve months is the sweet spot to catch small things before they become expensive things.\nJustin\nCEO / ClearWave\nP.S. If a neighbor asks about your water, send them my way. We pay $500 cash for every closed referral (and $50 even if they just book a consult). Details here: [LINK]\n---\n### Performance Forecast\n- **Expected open rate:** 55; 65% (high-value transactional trigger, named product, personal sender)\n- **Expected click rate:** 12; 18% (single clear CTA, time-sensitive maintenance need)\n- **Expected conversion:** 60; 70% book within 7 days (this is a service they already expect and budgeted for at install)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year annual service reminder\"\n- **Voice fingerprint (luxury_product register):** educates without selling, matter-of-fact tone, no hype\n- **Hard Rule #1 enforcement:** This is the FIRST time Concierge is mentioned (P.S. soft-plants seed via referral bonus structure, does NOT pitch Concierge directly. Saves that for 13+ months)\n---"
+      },
+      {
+        "id": "email_2026-07-03_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Days Post-Install, High Satisfaction",
+        "preview": "**Audience:** 30 clients, 30; 60 days post-install, high satisfaction signal (system operational, no service tickets, total > $3K suggests they value quality)\n**Mailchimp segment:** Jobber trigger: `completedAt` between 30; 60 days ago, no open service requests\n**Send:** Thursday, 11:00 AM ET\n### Subject Lines\n**Primary:**\n`Katie, quick favor (and $500 if it works out)`\n**Alternates:**\n1. `I'll pay you $500 to introduce us`\n2. `Your neighbor asked about your water`\n3. `Referral = $500. Here's how it works.`\n4. `Most profitable email you'll read this week`\n**Preview text:**\n`If someone you know needs clean water, send them our way. We pay $500 cash per closed referral.`\n---\n### Email Body\n**Subject:** Katie, quick favor (and $500 if it works out)\nKatie,\nYou've had your ClearWave Crest + RO system for about six weeks now.\nIf you're happy with it (and if your neighbors have asked \"wait, why does YOUR water taste like that?\"), I have a simple request:\n**Send them my way.**\nHere's what we pay:\n- Referral closes → **$500 cash** (referrals 1; 5 in the year)\n- Referral closes → **$750** (referrals 6; 9)\n- Referral closes → **$1,000** (referral 10+)\n- Referral books a consult but doesn't close → **$50 gift card**\nNo catch. No fine print. We'd rather pay you than pay Google.\n**Here's the link to share:**\n[LINK: Free Water Assessment]\nOr just reply with their name and number. I'll take it from there.\nJustin\nCEO / ClearWave\nP.S. If you'd rather record a 60-second video testimonial instead (phone camera is fine), we'll send you a $100 Visa gift card within 48 hours. Just hit reply and I'll send you the 3-question script.\n---\n### Performance Forecast\n- **Expected open rate:** 48; 58% (personalized subject with dollar figure, sent from CEO, high-trust window post-install)\n- **Expected click rate:** 8; 14% (two CTAs: referral link + video testimonial reply)\n- **Expected conversion:** 15; 25% either refer someone OR reply with video interest within 14 days (referral programs perform best 30; 90 days post-purchase when satisfaction is peak and product is top-of-mind)\n### Source Justification\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"Referral push candidates (30; 60 days post-install, satisfied)\"\n- **Hard Rule #3:** Pushes referrals with exact bonus structure ($500/$750/$1K tier), offers video testimonial alternative, does NOT ask for review\n- **Voice fingerprint (luxury_product + killing_bad_water_sales hybrid):** Direct, transactional, no fluff. \"We'd rather pay you than pay Google\" is classic Justin reframe.\n- **Hard Rule #3a:** Uses \"free water assessment\" (not \"free water test\")\n---\n## Why These Two?\n1. **Annual service** is the highest-intent, highest-conversion trigger in the entire lifecycle. These clients expect it, budgeted for it, and need it. It's revenue + retention + sets up Concierge pitch at 18 months.\n2. **Referral push** is the second-highest ROI play: 30 high-satisfaction clients who just spent $5; 10K, in the honeymoon window, before the \"new water system\" wears off as a conversation topic. Referral programs live or die in the 30; 90 day window.\n**Why NOT the others this week:**\n- **Concierge upsell (100 candidates, 13; 24 mo):** Strong list, but requires more educational setup (comparison table, ROI calculator). Better as a 2-email sequence next week.\n- **RO replacement (18 candidates):** Solid, but tactically better to bundle with annual service reminder for clients who have BOTH triggers hitting.\n- **Cold lead re-engagement (1,000):** Highest volume, but lowest intent. Needs a compelling news hook (current water crisis, EPA rule change, etc.). Better to wait for a timely news peg than send generic \"still interested?\" spam.\nThese two campaigns target **high-intent, high-trust, time-sensitive moments**. They'll move the needle this week.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-03_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-03_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-03T10:30:00.792Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
