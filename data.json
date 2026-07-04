@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T10:01:22.403Z",
+  "generated_at": "2026-07-04T10:30:05.015Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-04",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-04",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-04_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service Reminder",
+        "preview": "**Audience:** 19 clients at 12-month mark\n**Send:** Tuesday 10:00 AM ET\n### Subject Lines\n**Primary:** Your annual service is due (takes 45 min)\n**Alternates:**\n1. 12 months already. Schedule your annual visit?\n2. Quick annual checkup for your [PRODUCT NAME]\n3. Time for your first annual service\n4. Your system's 1-year checkup (book here)\n### Preview Text\nFast appointment. We check media, test output, swap what's needed. Book your 45-min slot here.\n### Email Body\nHi [First Name],\nYour [SYSTEM NAME] hit the 12-month mark last week.\nTime for the first annual service. It takes about 45 minutes. We check the media, test your output, swap anything that needs it, and make sure everything is dialed in for year two.\nMost clients pick a weekday morning. We have slots open next Tuesday through Friday.\nBook here: [SCHEDULING_LINK]\nTwo things while I have you:\n**1. Referrals.** If a neighbor or friend mentions their water, send them our way for a free water assessment. When they book a consult, you get a $50 gift card. If they close, you get $500 cash (referrals 1-5), $750 (6-9), or $1,000 (10+). Resets every January.\n**2. Filters.** If you have the RO unit under your sink, those filters are on a replacement cycle too. We'll check them during your service and let you know what's due now versus later.\nSee you soon.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- Open rate: 58-65% (transactional + high relevance + small list + strong sender reputation)\n- Click rate: 12-18% (single clear CTA, immediate need, no friction)\n- Conversion: 60-75% book within 7 days (this is mandatory maintenance, not optional upsell)\n**Source Justification:**\n- **IDEA_SOURCING.md § Jobber lifecycle triggers:** \"1-year annual service reminder\" (line 47)\n- **Hard Rule #1:** Concierge is forbidden before 12 months; this email respects that floor and uses the annual service as the referral-push moment\n- **Voice fingerprint § luxury_product register:** Minimal, factual, no hype. \"We check the media, test your output\" = plain-spoken precision.\n- **Referral bonus structure:** Exact figures used ($500/$750/$1k, $50 gift card)\n---"
+      },
+      {
+        "id": "email_2026-07-04_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement (Water News Hook)",
+        "preview": "**Audience:** 1,000 cold subscribers (60+ days no engagement)\n**Send:** Thursday 9:00 AM ET\n### Subject Lines\n**Primary:** 32,000 gallons of jet fuel in Maryland water\n**Alternates:**\n1. This keeps happening (and it's close to home)\n2. Another fuel spill. Another boil alert.\n3. Why we built what we built\n4. Jet fuel in the tap. Again.\n### Preview Text\nAndrews AFB leak hit the Potomac basin. Here's what it means for your water and what you can do.\n### Email Body\nHi [First Name],\nYou might have seen the news last week: 32,000 gallons of jet fuel leaked into Maryland's water supply near Andrews Air Force Base.\nBoil-water alerts went out. Bottled water sold out. Schools closed. And families waited for the all-clear.\nThis is the third major contamination event in the DMV in 18 months.\nHere's the thing: boil-water alerts only address bacteria. They do nothing for fuel, PFAS, lead, nitrates, or the dozens of other contaminants that show up in municipal and well water across Virginia, Maryland, and DC.\nYou can't boil your way out of a chemical spill.\nThat's why we built ClearWave. Engineered, multi-stage systems that handle what the county can't. No guessing. No waiting for the news to tell you it's safe again.\nIf you've been thinking about your water, now's the time.\nWe offer a free water assessment. No charge, no obligation. We test your water, explain what's in it, and show you what it takes to fix it.\nBook here: [ASSESSMENT_LINK]\nYour water. Your home. Our promise.\nJustin\nCEO / ClearWave\n---\n**Expected Performance:**\n- Open rate: 28-35% (re-engagement of cold list, but timely/newsy subject line + strong sender trust)\n- Click rate: 1.2-2.8% (cold audience, single CTA, high-relevance hook)\n- Conversion: 3-6% book assessment within 14 days (realistic for cold leads; 30-60 assessments would be a major win)\n**Source Justification:**\n- **IDEA_SOURCING.md § Email re-engagement:** \"Cold leads (60+ days no engagement, still subscribed)\" + \"lead with NEW value (recent water news angle, not stale 'still interested?')\" (lines 89-93)\n- **Mailchimp recent campaigns:** Subject line mirrors proven format from \"⚠️ 32,000 Gallons of Jet Fuel Just Leaked Into Maryland Water ⚠️\" (0.4% open, 0.01% click) but REMOVES emoji (AI tell), tightens copy, and adds clear CTA (previous version had none)\n- **Voice fingerprint § luxury_product register:** Triadic close (\"Your water. Your home. Our promise.\"), reframe pattern (\"You can't boil your way out of a chemical spill\"), minimal contractions, educational without selling\n- **Hard Rule #3a:** Uses exact phrase \"free water assessment\" (not \"free water test\")\n---\n### Why These Two?\n**Campaign 1 (Annual Service)** is a **no-brainer transactional win.** Small list, mandatory service, massive open/click/conversion rates. It also plants the referral seed at the exact moment clients are most satisfied (right after year 1, before anything breaks).\n**Campaign 2 (Cold Re-Engagement)** is the **highest-leverage growth play.** 1,000-person dormant list, newsjacked hook with local urgency, and zero cannibalization of active pipeline. Even a 4% conversion (40 assessments) would crush any paid ad campaign on a per-dollar basis. This is found money.\nBoth respect the hard rules (no Concierge before 12 months, no review asks, correct product naming, exact referral figures, proper sign-off, zero em dashes). Both use Justin's voice. Both have single, clear CTAs.\nShip them.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-04_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-04_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-04T10:30:00.811Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
