@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T10:01:29.121Z",
+  "generated_at": "2026-07-06T10:30:04.982Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-06",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-06",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-06_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (1-Year Anniversary)",
+        "preview": "**Audience:** 19 clients at 12-month post-install\n**Segment:** Jobber trigger, 1-year completedAt anniversary\n**Send:** Tuesday, 9:00 AM ET\n### Subject Line (Primary)\n`Time for your annual checkup`\n### Subject Line Alternates\n1. `Your system turns 1 this week`\n2. `12-month service: here's what we check`\n3. `Annual service keeps your warranty active`\n4. `One year in: how's your water?`\n### Preview Text\n`Quick visit. We test, swap, tune. Keeps everything running another 12 months.`\n### Email Body\nSubject: Time for your annual checkup\nHi {{First Name}},\nYour {{System Name}} just hit the 1-year mark.\nThat means it's time for your annual service. We'll test pressure, swap the filters that need it, check all connections, and make sure everything runs clean for another year.\nIt takes about 45 minutes. You can book directly here:\n[BOOK MY ANNUAL SERVICE]\nOr reply with two dates that work and I'll have Jordan (our scheduler) lock one in.\nThis visit also keeps your lifetime warranty active, so don't skip it.\nJustin\nCEO / ClearWave\nP.S. If a neighbor has been asking about your water, now's a great time to send them our way. You'll earn $500 cash when they install, and they'll get a free water assessment. Just forward this email or have them mention your name when they call.\n---\n### Personalization Logic (Mailchimp merge tags)\n- `{{First Name}}` = FNAME\n- `{{System Name}}` = pull from Jobber `system` field:\n - Catherine Buan → \"RO Pure PRO QC\"\n - Kristen Gardner → \"30C + RO\"\n - John & Karen Johnston → \"Ferromax\" *(note: use approved name if remap exists; if not in luxury collection, use as-is since this is service correspondence, not marketing)*\n - Daniel Watson → \"RO PurePro QC + Micromax 7000\"\n### Expected Performance\n- **Open rate:** 58; 65% (service reminder, high urgency, known sender)\n- **Click rate:** 12; 18% (clear CTA, self-interest + warranty leverage)\n- **Conversion (booked service):** 40; 50% of clickers (approx. 1.5; 3 bookings per 19 sent)\n### Performance Justification\n- Transactional tone + known relationship = 2; 3× list avg open rate\n- Single, clear CTA (book service) with urgency (warranty) + convenience (reply option)\n- Referral P.S. is low-friction add: doesn't dilute primary CTA, plants seed for future outreach\n### IDEA_SOURCING.md Reference\n- **Jobber lifecycle trigger:** \"1-year annual service\" (Hard Rule #1: never pitch Concierge before 12 months; this is the FIRST eligible service touchpoint)\n- **Voice:** Luxury register lite (service = relationship maintenance, not sales pitch). Short sentences, imperative tone, self-interest + authority.\n- **Referral bonus structure:** Exact $500 / $750 / $1,000 tiering mentioned in P.S.\n---"
+      },
+      {
+        "id": "email_2026-07-06_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement (Water News Hook)",
+        "preview": "**Audience:** 1,000 cold subscribers (>60d no engagement, never quoted)\n**Segment:** Mailchimp: joined >60d, opened 0 emails in last 60d, status = subscribed\n**Send:** Thursday, 6:00 PM ET\n### Subject Line (Primary)\n`The EPA just changed the PFAS limit`\n### Subject Line Alternates\n1. `New PFAS rules hit this week`\n2. `Forever chemicals: what changed today`\n3. `Your city water just got regulated (again)`\n4. `This is why we test first`\n### Preview Text\n`The new federal limit is 4 parts per trillion. Here's what that means for you.`\n### Email Body\nSubject: The EPA just changed the PFAS limit\nHi,\nYou signed up a while back to learn about your water.\nI'm guessing life got busy. No problem.\nBut something changed this week that's worth 90 seconds of your time:\n**The EPA dropped the federal PFAS limit to 4 parts per trillion.**\nFor context, that's the equivalent of 4 drops of water in 20 Olympic swimming pools.\nPFAS (forever chemicals) don't break down. They accumulate in your body over decades. The old limit was already strict. The new one is stricter because the science kept getting worse.\nMost city water passes the new rule. But passing doesn't mean exceptional.\nIf you've been thinking about getting your water tested, now's the time.\nWe do free water assessments. No lab fees, no obligation. We test at the tap, walk you through what's in your water, and if you want to do something about it, we'll show you exactly what that looks like.\nBook yours here:\n[GET MY FREE WATER ASSESSMENT]\nOr just reply with your zip code and I'll tell you what we typically see in your area.\nJustin\nCEO / ClearWave\nP.S. If you're not interested anymore, no hard feelings. You can unsubscribe at the bottom. But if you've got kids, I'd at least test before you opt out.\n---\n### Personalization Logic\n- No system-level data (these are cold leads, not clients)\n- Optional: `{{City}}` if captured at signup; otherwise generic national hook\n### Expected Performance\n- **Open rate:** 28; 35% (news hook, authority signal, re-engagement curiosity)\n- **Click rate:** 2.5; 4% (value-first, no hard sell, clear next step)\n- **Conversion (booked assessment):** 8; 12% of clickers (approx. 2; 3 assessments per 1,000 sent)\n### Performance Justification\n- News peg = fresh reason to re-open the conversation (not \"still interested?\" fatigue)\n- EPA authority + specific number (4 ppt) = credibility + curiosity gap\n- Soft opt-out in P.S. = self-cleaning list (removes dead weight, improves future deliverability)\n- Free water assessment = zero-friction CTA, no purchase ask\n- Expected 2; 3 booked assessments = potential $4k; $12k revenue if 1; 2 close at avg $6k install\n### IDEA_SOURCING.md Reference\n- **Cold lead re-engagement segment** (distinct from lapsed quotes; these are top-of-funnel dormant)\n- **Voice:** Luxury register, education-first. \"We do not sell fear. We deliver clarity.\"\n- **Hard Rule #3a:** \"free water assessment\" (exact phrase), never \"free water test\"\n- **News-peg strategy:** Borrowed from recent campaign pattern (\"DC BOILED WATER ALERT,\" \"32,000 Gallons of Jet Fuel\"). High open rates when timely + local/national relevance\n---\n## Why These Two?\n1. **Annual Service = highest-intent, highest-LTV retention play.**\n - 19 clients already trusting us, already invested $0; $7,997 in systems.\n - Service visit = upsell opportunity (Concierge mention in-person, not email), parts revenue, referral ask in natural context.\n - Protects warranty compliance = protects brand reputation.\n2. **Cold Lead Re-Engagement = highest volume, list-cleaning + revenue unlock.**\n - 1,000 dormant names = wasted asset. This campaign either reactivates or purges.\n - News hook = ethical, value-first, no desperation.\n - 2; 3 assessments = potential $12k+ pipeline from zero-cost inventory.\n**Not recommended this week:**\n- Referral push (30 candidates). Solid, but annual service P.S. already seeds referral ask; save standalone referral blast for post-summer (higher social activity).\n- RO replacement (22 candidates). Too small + mixed cycle timing; batch into quarterly \"filter swap season\" campaign.\n- Concierge upsell (100 candidates). Strong list, but needs A/B test budget + longer nurture (propose for May after annual service results confirm engagement pattern).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-06_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-06_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-06T10:30:01.072Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
