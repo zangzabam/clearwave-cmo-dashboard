@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T10:01:38.113Z",
+  "generated_at": "2026-07-07T10:30:03.900Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-07",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,39 @@
   },
   "approvals": {
     "date": "2026-07-07",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-07-07",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Why your pasta tastes different at restaurants",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-07-07.email.md",
+        "preview": "Words I like;\n\"The secret ingredient is always the one you can't see.\"\nYour tap water changes how your food tastes. Not a little. A lot.\nChlorine in city water makes coffee bitter and kills the brightness in tea. It flattens the flavor of pasta water and dulls homemade bread. Iron from well water turns white rice gray and gives soups a metallic finish.\nProfessional kitchens know this. They filter their cooking water the same way they sharpen their knives. It's not optional if taste matters.\nHere's what happens: minerals and treatment chemicals don't just sit in the water. They bind to proteins, react with starches, and alter pH. A soup recipe your grandmother perfected 40 years ago tastes different today because municipal treatment standards changed.\nIf you already own a ClearWave system, you've likely noticed this. Pasta holds its color. Coffee doesn't need extra sugar to cover bitterness. Your ice cubes don't taste like the freezer.\nIf you're still cooking with untreated tap water, you're working twice as hard to get half the flavor.\nReply for a free water assessment and I'll show you what's in your kitchen water.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-07-07_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Highest Priority)",
+        "preview": "**Audience:** 1-year annual service candidates\n**Size:** 20 clients\n**Source:** IDEA_SOURCING.md → Lifecycle Milestone (1-year service reminder)\n### Subject Lines (60 char max)\n**Primary:**\n`Your annual service is due (takes 45 min)`\n**Alternates:**\n1. `Time for your 12-month checkup`\n2. `Catherine, your RO Pure PRO QC turns 1 this week`\n3. `We'll swap your filters + test everything (June)`\n4. `45 minutes = another year of pure water`\n### Preview Text (90 char max)\n`Quick visit. We swap filters, test pressure, verify performance. Book your June slot.`\n### Email Body\n**Subject:** Your annual service is due (takes 45 min)\n**Preview:** Quick visit. We swap filters, test pressure, verify performance. Book your June slot.\n---\nCatherine,\nYour RO Pure PRO QC hit the 12-month mark last week.\nThat means it is time for your first annual service. We swap the filters, test inlet and outlet pressure, verify flow rate, inspect fittings, and confirm everything is dialed in for another year.\nThe visit takes about 45 minutes. No upsell, no diagnosis theater. Just maintenance.\n**[Book your annual service here →](#)**\nIf June does not work, reply with two dates that do. We will make it happen.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Wednesday, 10:00 AM ET**\n(Mid-week, mid-morning = highest open rate per Mailchimp avg 42.1%; service booking is a task-oriented action, not weekend browsing)\n### Expected Performance\n- **Open rate:** 50-55% (lifecycle trigger + personalized system name + task-urgent subject)\n- **Click rate:** 12-18% (single clear CTA, no friction, known relationship)\n- **Conversion (booked service):** 40-50% of clickers (8 clients minimum)\n**Justification:**\nThis is a **transactional lifecycle email**, not promotional. The customer expects it (they were told \"annual service at 12 months\" during install). Personalized system names (RO Pure PRO QC, Ferromax, etc.) trigger recognition. The 42.1% average open rate in the Mailchimp health data is pulled UP by these high-intent sends. This will perform 10+ points above average because it is time-sensitive, expected, and frictionless.\n---"
+      },
+      {
+        "id": "email_2026-07-07_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Days Post-Install)",
+        "preview": "**Audience:** Referral push candidates (satisfied, 30-60 days post-install)\n**Size:** 30 clients\n**Source:** IDEA_SOURCING.md → Referral Request (peak satisfaction window)\n### Subject Lines (60 char max)\n**Primary:**\n`Quick Q: who else hates their water?`\n**Alternates:**\n1. `Patricia, know anyone still buying bottled water?`\n2. `$500 cash if they close (seriously)`\n3. `You fixed your water. Who's next?`\n4. `Easiest $500 you'll make this year`\n### Preview Text (90 char max)\n`Refer a friend → we do a free water assessment → they buy → you get $500 cash. Simple.`\n### Email Body\n**Subject:** Quick Q: who else hates their water?\n**Preview:** Refer a friend → we do a free water assessment → they buy → you get $500 cash. Simple.\n---\nPatricia,\nYour Ferromax + Ironmax has been running for about six weeks now. You are past the honeymoon phase. You know if it works.\nIf it does, I have a simple ask.\n**Who else do you know who hates their water?**\nA neighbor still buying bottled water by the case. A family member in Chesapeake or Norfolk with rust stains. A friend who complains about the smell every time you visit.\nSend them my way. We will do a free water assessment. If they buy, you get **$500 cash** (referrals 1 through 5 this year). If they just book the consult but do not close, you still get a **$50 gift card**.\nNo catch. No fine print. Just reply with their name and number, or forward this email and CC me.\nThe people you care about deserve the same water you have now.\nJustin\nCEO / ClearWave\n---\n### Send Timing\n**Thursday, 6:00 PM ET**\n(Evening send = higher engagement for \"favor ask\" emails; people are home, relaxed, thinking about weekend plans and social circles)\n### Expected Performance\n- **Open rate:** 38-42% (slightly below average because it is a favor ask, not a value-add; but subject line curiosity + recent positive experience offsets)\n- **Click rate:** 2-4% (low, because the CTA is \"reply\" not \"click\"; we are measuring *replies* as conversion here)\n- **Conversion (referral submitted):** 6-10% of opens (2-4 referrals minimum, realistic 15-20% close rate on referred leads = 1-2 booked systems from this single send)\n**Justification:**\nIDEA_SOURCING.md explicitly identifies 30-60 days post-install as the **\"peak satisfaction and advocacy window.\"** The Mailchimp health data shows ClearWave's audience has above-average loyalty (42.1% open vs. 21% industry avg), which correlates with referral willingness. The referral bonus structure ($500/$750/$1,000 tiered, $50 consolation) is concrete and compelling. This is the highest-ROI ask: zero acquisition cost, pre-qualified leads, trusted introduction. Even a 10% submission rate (3 referrals) at 20% close (0.6 systems) at $5,000 avg deal = $3,000 revenue from a 5-minute email send.\n---\n## Why These Two (and Not the Others)\n**RO replacement cycle (25 candidates):** Too soon. The email would say \"your filters are due\" but without individual RO service history (last swap date), we risk annoying people who just did it themselves or had us out last month. Need CRM data enrichment first.\n**Concierge upsell (100 candidates):** Strong volume, but needs a **nurture series**, not a one-off blast. Concierge is a $99/mo commitment; cold-pitching it in a single email to 100 people (many of whom may not even remember what Concierge is) will get <1% conversion. Better play: build a 3-email sequence (1. \"Here's what Concierge members get\" value-only, 2. \"The math: DIY vs. Concierge\" logic, 3. \"Join now, first month free\" offer). Launch next week.\n**Cold lead re-engagement (1,000 subscribers):** High volume, but this is a **win-back campaign** and should lead with a **news hook** (recent local water issue, EPA report, etc.) + a reset offer (\"It's been a while. Here's what's new. Want that free water assessment?\"). Needs a separate content brief and a segmented A/B test (curiosity vs. fear subject lines). Not a quick-turn this week.\n**Annual service + referral push = plug-and-play, high-intent, immediate revenue.**\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-07-07": {
+        "decision": "pending"
+      },
+      "email_2026-07-07_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-07_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-07T10:30:01.159Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
