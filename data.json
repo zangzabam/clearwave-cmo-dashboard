@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T10:01:30.183Z",
+  "generated_at": "2026-07-08T10:30:04.319Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-08",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-08",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-08_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (20 customers)",
+        "preview": "**Audience:** 20 customers who completed install ~52 weeks ago\n**Send:** Thursday 10:00 AM ET\n### Subject Lines\n**Primary:** Your [SYSTEM] turns 1 this week. Here's what happens next.\n**Alternates:**\n1. Time for your annual service (takes 45 min, we come to you)\n2. 12 months in: your system's first check-up is due\n3. Catherine, your RO Pure PRO QC is due for year-1 service\n4. What happens at the 1-year mark? (It's simple.)\n### Preview Text\nAnnual service keeps your warranty active. We'll schedule around you. Takes under an hour.\n### Email Body\nSubject: Your [SYSTEM] turns 1 this week. Here's what happens next.\nHi [First Name],\nYour [SYSTEM] hit the 12-month mark this week.\nThat means it's time for your first annual service. Takes about 45 minutes. We check every stage, swap consumables, verify flow rates, and document everything for your warranty file.\nYou're already on the calendar. We'll call in the next 48 hours to lock a time that works for you.\nIf you'd rather text to schedule, reply to this email with \"text me\" and your best number.\nThree things to know before we arrive:\n1. **Clear a path.** If your system is in a utility room or crawl space, make sure we can get to it without moving boxes.\n2. **No charge for standard annual service components.** Pre-filters, post-carbon, and membrane inspection are included. If we find something unusual (rare), we'll tell you before we touch it.\n3. **This keeps your warranty active.** Annual service is required under your original install agreement. Miss it, and coverage lapses.\nWe'll see you soon.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 55-60% (time-sensitive + mentions their actual system + not a cold pitch)\n- **Click rate:** 2-4% (low because primary CTA is \"we'll call you\", not a link)\n- **Conversion:** 85%+ will book (they're contractually required + high satisfaction at 1-year mark)\n### Source Justification\n- **Jobber lifecycle trigger:** 1-year candidates list\n- **IDEA_SOURCING.md § Lifecycle automation:** Annual service at 12mo is a core retention + warranty compliance touchpoint\n- **Voice library (luxury_product register):** Calm, procedural, no hype. \"Takes about 45 minutes\" mirrors the \"says less, means more\" principle.\n---"
+      },
+      {
+        "id": "email_2026-07-08_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (27 customers, 30-60 days post-install)",
+        "preview": "**Audience:** 27 customers who completed install 30-60 days ago (satisfied, honeymoon phase)\n**Send:** Tuesday 6:00 PM ET\n### Subject Lines\n**Primary:** Patricia, quick question about your Ferromax + Ironmax\n**Alternates:**\n1. Who else do you know with bad water?\n2. $500 for every friend who goes ClearWave (real question inside)\n3. Your neighbors are asking. Here's what to tell them.\n4. I'll pay you $500 cash. Seriously.\n### Preview Text\nYou've had your new system for a month. If you love it, I have a specific ask (and a check).\n### Email Body\nSubject: Patricia, quick question about your Ferromax + Ironmax\nHi Patricia,\nYou've had your Ferromax + Ironmax for about a month now.\nShowers feel different. Coffee tastes better. The orange stains are gone.\nHere's my question: **who else do you know with bad water?**\nI'm not asking you to sell for me. I'm asking you to send me their name and number. I'll take it from there.\nIf they book a free water assessment and close, I'll send you **$500 cash** (referrals 1-5 in the calendar year). Referrals 6-9 pay $750. Referral 10+ pays $1,000 each.\nEven if they book but don't buy, you still get a $50 gift card for the introduction.\nReal money. Real program. We've written over $40,000 in referral checks in the past 18 months.\n**To submit a referral:**\nReply to this email with their first name, phone number, and city. I'll call them within 48 hours and mention you sent them.\nThree types of people to think about:\n1. **Your neighbors.** If you're on well water, they probably are too. Same iron, same sulfur, same problems you just solved.\n2. **Family.** Parents, siblings, cousins. If they own a home and complain about their water, send them my way.\n3. **Co-workers who commute from outside the city.** Loudon, Fauquier, Stafford, Hanover. Well water is everywhere out there.\nYou solved your water problem. Help someone else solve theirs (and get paid for it).\nJustin\nCEO / ClearWave\nP.S. No limit. If you know 10 people with bad water, send me all 10. I'll write 10 checks.\n---\n### Expected Performance\n- **Open rate:** 48-52% (personalized subject + mentions their actual system + recent positive experience)\n- **Click rate:** 1.5-2.5% (no click required; reply-based CTA, but some will click if we hyperlink the referral terms)\n- **Conversion:** 15-20% will submit at least one referral (30-60 day window is peak satisfaction + social proof is fresh)\n### Source Justification\n- **Jobber lifecycle trigger:** Referral push candidates (30-60 days post-install, satisfied)\n- **IDEA_SOURCING.md § Customer referrals:** \"Train customers to refer. Make it stupid-simple... cash bonuses, tiered structure\"\n- **Voice library (killing_bad_water_sales register):** \"Closed mouths don't get fed\" energy, but dialed to 60% for customer-facing. Imperative mood (\"send me their name\"), specific numbers ($500/$750/$1,000), triadic list (neighbors/family/co-workers).\n- **Hard Rule #3:** Push REFERRALS with exact bonus structure ($500/1-5, $750/6-9, $1,000/10+, $50 gift card for booked-but-not-closed).\n---\n## Why These 2 (And Not the Others)\n**Annual service (20):** Contractually required, high trust, near-100% conversion. Easy money + protects warranty compliance + tees up future Concierge upsell at 18 months.\n**Referral push (27):** Highest lifetime value per convert. One $500 referral pays for 5 months of a Concierge plan. Customers are in the honeymoon phase (30-60 days), so they're talking about their water already. Low effort, high yield.\n**Why NOT the others:**\n- **RO replacement (24):** Less urgent. Can wait 1-2 weeks. Annual service has a contractual deadline.\n- **Concierge upsell (100):** Solid list, but slower burn. Better as a drip sequence or a standalone campaign next week after we clear the annual service backlog.\n- **Cold lead re-engagement (1,000):** Requires a news hook (e.g., local water advisory, new EPA regulation). No fresh triggering event this week. Save for when we have a timely angle.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-08_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-08_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-08T10:30:01.225Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
