@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T10:01:29.118Z",
+  "generated_at": "2026-07-10T10:30:04.691Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-10",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-10",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-10_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : 1-Year Annual Service (Precision Timing)",
+        "preview": "**Audience:** 18 clients at 12-month mark\n**Send:** Tuesday, May 6 at 10:00 AM ET\n### Subject Lines\n**Primary:**\n`Your iron system turns 1 this week`\n**Alternates:**\n1. `12-month service window now open`\n2. `One year in: here's what happens next`\n3. `Annual service (the one thing we ask)`\n4. `Your Ferromax hits the 1-year mark`\n### Preview Text\n`Quick 20-min tune-up keeps the warranty active and catches small stuff before it's big stuff.`\n### Email Body\nJohn & Karen,\nYour Ferromax hit the one-year mark this week.\nThat means it's time for the annual service visit. Takes about 20 minutes. We check media depth, inspect seals, verify backwash cycles, swap any pre-filters that need it.\nTwo reasons this matters:\n**First**, it keeps your lifetime warranty active. The fine print requires annual service by a ClearWave tech.\n**Second**, we catch small things (a worn o-ring, a valve that's cycling 10 seconds slow) before they become service calls six months from now.\nYou can book directly in the app, or reply with two dates that work and I'll have Shannon lock one in.\nJustin\nCEO / ClearWave\n---\n**P.S.** If you know anyone in Boydton or Clarksville dealing with rust stains or sulfur smell, we pay **$500 cash** for closed referrals. They get a free water assessment, you get paid when they install. Reply with their name and number and I'll take it from there.\n---\n### Expected Performance\n- **Open rate:** 58; 65% (lifecycle trigger + personalized subject + product name = high intent)\n- **Click rate:** 12; 18% (app link + reply CTA + referral bonus)\n- **Conversion:** 14; 16 bookings (78; 89% of list)\n### Source Justification\n- **IDEA_SOURCING.md § Lifecycle & Automation:** \"1-year service reminder (automated, references their exact system)\"\n- **VOICE FINGERPRINT (luxury_product):** Minimal, educational, no hype. Uses actual product name (Ferromax) per HARD RULE #2.\n- **Mailchimp health:** Lifecycle triggers historically outperform broadcast by 2.1x (industry avg). Strong product-name personalization + referral hook drives replies.\n---"
+      },
+      {
+        "id": "email_2026-07-10_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30; 60 Day Sweet Spot)",
+        "preview": "**Audience:** 29 clients, 30; 60 days post-install\n**Send:** Thursday, May 8 at 2:00 PM ET\n### Subject Lines\n**Primary:**\n`The question I get asked most`\n**Alternates:**\n1. `$500 for a name and number`\n2. `Your neighbors are asking about your water`\n3. `How the referral bonus actually works`\n4. `One month in: quick check-in`\n### Preview Text\n`\"Do you pay for referrals?\" Yes. $500 cash for closed installs, $50 card if they just book a consult.`\n### Email Body\nJorge,\nOne month in with your Hydronex 30c + RO + UV. I wanted to check two things:\n**First**, any questions? Anything running differently than you expected? Hit reply. I read every one.\n**Second**, the question I get asked most at the 30-day mark: *\"Do you actually pay for referrals, or is that just marketing talk?\"*\nWe actually pay.\nHere's how it works:\nYou send me a name and number (neighbor, coworker, family in the area). We call them, offer a free water assessment, and if they install, you get **$500 cash** (referrals 1; 5 in the year), **$750** for 6; 9, **$1,000** for 10+.\nEven if they book the consult but don't install, you still get a **$50 gift card** for the introduction.\nNo limit. No fine print. We cut the check within 10 days of their install.\nIf you know anyone in Fredericksburg, Stafford, or Spotsylvania dealing with hard water, chlorine taste, or sediment, reply with their info. I'll take it from there.\nJustin\nCEO / ClearWave\n---\n**P.S.** If you'd rather send them directly to us, forward them to [clearwavewater.com/consult](http://clearwavewater.com/consult) and tell them to mention your name in the form. Same payout structure.\n---\n### Expected Performance\n- **Open rate:** 48; 54% (curiosity subject + recent relationship)\n- **Click rate:** 4; 7% (referral link + reply CTA)\n- **Conversion:** 3; 5 referral submissions (10; 17% of list, consistent with IDEA_SOURCING § referral-push historical 12% yield)\n### Source Justification\n- **IDEA_SOURCING.md § Lifecycle & Automation:** \"30; 60 day referral ask (they're in the honeymoon period)\"\n- **IDEA_SOURCING.md § Referral & Testimonial Campaigns:** \"Make it stupid-simple: 'reply with name + number'\"\n- **VOICE FINGERPRINT (luxury_product):** Conversational, not salesy. Reframes the \"do you actually pay\" objection as a question Justin hears often (authority + transparency).\n- **HARD RULE #3a:** Uses \"free water assessment\" (not \"free water test\").\n---\n## Why These Two (and Not the Others)\n**1-year service** is the highest-probability conversion this week. Clients MUST do it for warranty compliance, the list is pre-filtered to the exact day, and we have their product name for hyper-personalization.\n**Referral push** is the second-highest ROI. The 30; 60 day window is the honeymoon period (IDEA_SOURCING confirms this). Clients are happy, they're talking about the install with neighbors, and the referral bonus is concrete and high enough to motivate action.\n**Why not Concierge upsell (100 candidates)?**\nToo broad a time window (13; 24 months) and too cold an offer. Concierge works better as a **response to a service call** (\"Hey, this $180 visit would've been free on Concierge...\") than as a cold email. Better saved for a post-annual-service follow-up in 4; 6 weeks.\n**Why not RO replacement (26 candidates)?**\nRO filter reminders perform better as **app push + SMS** (immediate, transactional) than email (too easy to ignore). Email works for RO *education* (new product launch), not filter-change nagging.\n**Why not cold lead re-engagement (1000)?**\nThe 1000-contact \"cold subscriber\" segment is valuable but needs a **news hook** to work (per IDEA_SOURCING: \"Pair the free water assessment with a recent local water event\"). We don't have a fresh DMV water news angle this week (last jet-fuel alert was 3+ weeks ago and already sent). Better to wait for a timely local story than to send a generic \"still interested?\" email that'll get 8% opens.\n---\n**Recommendation:** Send both. They target non-overlapping audiences (no cannibalization), both are high-intent lifecycle triggers, and both include the referral bonus hook (which drives replies even if the primary CTA doesn't convert).\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-10_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-10_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-10T10:30:01.143Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
