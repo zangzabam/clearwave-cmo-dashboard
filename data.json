@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T10:01:17.425Z",
+  "generated_at": "2026-07-12T10:30:11.305Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-12",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-12",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-12_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Annual Service Reminder (High Priority)",
+        "preview": "**Campaign name:** Year-1 Service Check-In\n**Audience:** 18 customers (1-year post-install trigger list)\n**Send timing:** Tuesday 9:00 AM ET\n---\n### Subject Lines\n**Primary:**\n`Your system's 1-year service window is open`\n**Alternates:**\n1. `Time for your annual service (takes 45 minutes)`\n2. `Kamran, your RO is due for its checkup`\n3. `12-month service keeps your warranty active`\n4. `We're booking June annual services now`\n**Preview text:**\n`Quick appointment to test, clean, and validate everything. Keeps your warranty intact.`\n---\n### Email Body\n**Subject:** Your system's 1-year service window is open\nKamran,\nYour RO hit the 12-month mark last week.\nWe recommend annual service at this point. Takes about 45 minutes. We test pressure, swap any consumables that need it, validate flow rates, and document everything for your warranty file.\nIt also gives you a chance to ask questions. Most clients have at least one after living with the system for a year.\n**Book your service:**\n[LINK: Schedule Annual Service]\nOr reply with a few dates that work and we'll lock one in.\nJustin\nCEO / ClearWave\n---\n### Expected Performance\n- **Open rate:** 55-65% (transactional + named product + specific timing = high relevance)\n- **Click rate:** 12-18% (clear single CTA, immediate value)\n- **Conversion:** 60-70% book within 7 days (this is expected maintenance, not a cold pitch)\n**Justification:**\nSmall, warm audience. Transactional trigger (they know this is coming). References their actual product. Single clear action. Uses luxury register's minimal tone but stays service-focused.\n---\n### Source Attribution\n- **IDEA_SOURCING.md § Jobber lifecycle triggers** (annual service reminder)\n- **Voice fingerprint § luxury_product register** (tone: short sentences, no hype, educated confidence)\n- **Hard Rule #2** (product naming: \"your RO\" not \"your ClearWave\")\n---"
+      },
+      {
+        "id": "email_2026-07-12_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Days Post-Install)",
+        "preview": "**Campaign name:** Referral Bonus Reset\n**Audience:** 30 customers (30-60 day satisfied install cohort)\n**Send timing:** Thursday 11:00 AM ET\n---\n### Subject Lines\n**Primary:**\n`Robert, quick question about referrals`\n**Primary:**\n`Your neighbors keep asking about our trucks`\n**Alternates:**\n1. `$500 for every friend who installs (no cap)`\n2. `Referral bonus structure (we just updated it)`\n3. `We're in Vienna a lot lately`\n4. `How's the water treating you?`\n**Preview text:**\n`If anyone asks about the install, here's what you earn when they move forward.`\n---\n### Email Body\n**Subject:** Your neighbors keep asking about our trucks\nRobert,\nWe've been in Vienna four times in the past two weeks.\nEvery time, someone flags us down or leaves a note asking about water systems.\nIf it happens to you (or if you know someone who'd benefit from a free water assessment), here's the structure:\n**When your referral closes:**\nReferrals 1-5 in the year: **$500 cash**\nReferrals 6-9: **$750**\nReferrals 10+: **$1,000**\n**If they book a consult but don't move forward:**\n**$50 gift card** (you still get paid for the introduction)\nNo cap. No fine print. Resets every January.\nReply with a name and number, or forward this email. We'll take it from there.\nJustin\nCEO / ClearWave\nP.S. How's the 30W + Acid Neut + IronMax + BigBlue treating you? Any questions on operation or maintenance, just ask.\n---\n### Expected Performance\n- **Open rate:** 48-55% (first-name subject, local relevance hook, recent happy customers)\n- **Click rate:** 2-4% (no link required, reply-based CTA lowers friction)\n- **Conversion:** 8-12% send at least one referral within 30 days (realistic given timing + bonus clarity)\n**Justification:**\nThis cohort is in the \"honeymoon window\" (system is new, they're excited, they're talking about it). Referral bonus structure is concrete and compelling. Personalized P.S. reinforces we know their specific system. Low-friction CTA (reply vs. form).\n---\n### Source Attribution\n- **IDEA_SOURCING.md § Jobber lifecycle triggers** (30-60 day referral push)\n- **Hard Rule #3 & Referral Bonus Structure** (exact dollar tiers, gift card for non-close)\n- **Voice fingerprint § luxury_product register** (short paragraphs, no hype, confidence without overselling)\n- **Hard Rule #2** (named their actual system in P.S.)\n---\n## Why These Two?\n1. **Annual Service (18):** Smallest list, highest intent, expected action, maintains warranty compliance. This is table stakes and will convert at 60%+.\n2. **Referral Push (30):** Timing is optimal (recent install, high satisfaction window). Referral revenue is exponential. Even 3 referrals from this cohort = 1-2 installs = $10K+ revenue. Much higher ROI than cold re-engagement or RO replacement reminders (which are lower urgency).\n**Campaigns NOT prioritized this week:**\n- **RO replacement (26):** Lower urgency (filters last 6-12 months, these are in that window but not critical yet). Better as a follow-up in 2-4 weeks.\n- **Concierge upsell (100):** Largest list, but lower intent. Better as a standalone campaign next week when we can A/B test messaging and give it room to breathe.\n- **Cold lead re-engagement (1000):** Needs a news hook (jet fuel leak is stale now). Wait for next local water event or create an educational asset first.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-12_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-12_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-12T10:30:01.062Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
