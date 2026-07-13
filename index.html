@@ -335,7 +335,7 @@
 async function checkPin() {
   const pin = (document.getElementById('pin').value || '').trim();
   // SHA-256 of the PIN — the plaintext never appears in this public repo's source.
-  const HASH = 'c558b6e96eba83469a7541e1db2bbb17127316fc0a7e75043ce2c6d8584de016';
+  const HASH = '826aaa9db20b9fae1e6f9a1e79607e0f119d0908edefe7210981749507d82c0b';
   let hex = '';
   try {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pin));
