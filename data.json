@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T10:01:24.356Z",
+  "generated_at": "2026-07-13T10:30:06.019Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-13",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -928,8 +928,29 @@
   },
   "approvals": {
     "date": "2026-07-13",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-13_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Days Post-Install)",
+        "preview": "**Audience:** 30 satisfied clients, 30-60 days post-install\n**Segment:** Referral push candidates (Jobber trigger)\n---\n### Subject Line Options (60 char max)\n**Primary:**\n`Quick favor (+ $500 if you know someone)`\n**Alternates:**\n1. `Who else needs better water?`\n2. `Your neighbors are asking about your water`\n3. `$500 for a name. Seriously.`\n4. `One question about your system`\n---\n### Preview Text (90 char max)\n`If you know one person dealing with bad water, I'll make it worth your time.`\n---\n### Email Body\n**Subject:** Quick favor (+ $500 if you know someone)\nHi {{First Name}},\nYour {{System Name}} has been running for about six weeks now.\nI have one question: do you know anyone else dealing with hard water, iron stains, or sulfur smell?\nHere's why I'm asking.\nMost of our clients come from referrals. Word of mouth beats every ad we've ever run. And when someone you trust says \"call Justin,\" that person actually picks up the phone.\nSo here's the deal.\nIf you send someone my way and they book a free water assessment, you get a **$50 gift card** whether they buy or not.\nIf they close? **$500 cash** for referrals 1 through 5 this year. **$750** for referrals 6 through 9. **$1,000** for referral 10 and beyond.\nI'm not asking you to sell anything. Just pass along my number to someone who needs help.\nIf that's you, reply with their name and number. I'll take it from there.\nJustin\nCEO / ClearWave\n(804) 893-9919\n---\n### Send Timing\n**Tuesday, 10:00 AM ET**\n(Mid-morning on a low-inbox-volume day; avoids Monday chaos and Friday checkout)\n---\n### Expected Performance\n- **Open rate:** 48-52%\n *Rationale:* Post-install satisfaction is high; subject line uses curiosity + monetary hook; well above our 42.1% avg.\n- **Click rate:** 2.5-4.0%\n *Rationale:* Single, clear CTA (reply); financial incentive; dramatically higher than our 0.28% avg because this is a **reply-based ask**, not a link-click campaign.\n- **Conversion (referrals submitted):** 10-15% (3-5 referrals)\n *Rationale:* Timing (recent install, high satisfaction), clear incentive structure, low friction (just reply with a name).\n---\n### Source Justification\n- **IDEA_SOURCING.md #2 (Jobber lifecycle triggers):** \"30-60 days post-install, satisfied\". The Goldilocks window for referral asks.\n- **IDEA_SOURCING.md #10 (Referral bonus campaigns):** Explicitly calls out the $500/$750/$1K structure and the $50 gift card for non-closed bookings.\n- **Voice Fingerprint (luxury_product register):** Short sentences, periodic single-line paragraphs, conversational tone, triadic structure in the close logic (\"name and number... I'll take it from there\").\n---"
+      },
+      {
+        "id": "email_2026-07-13_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge Upsell (13-24 Months Post-Install)",
+        "preview": "**Audience:** 100 clients, 13-24 months post-install, NOT on Concierge\n**Segment:** Concierge upsell candidates (Jobber trigger)\n---\n### Subject Line Options (60 char max)\n**Primary:**\n`Is Concierge worth it? (the math)`\n**Alternates:**\n1. `The question we get at 18 months`\n2. `You've been running your system for over a year`\n3. `DIY or done-for-you? Here's the math.`\n4. `$99/mo. What you actually get.`\n---\n### Preview Text (90 char max)\n`Annual service + filters + priority support + parts coverage. Here's what it costs DIY.`\n---\n### Email Body\n**Subject:** Is Concierge worth it? (the math)\nHi {{First Name}},\nYour {{System Name}} has been running for over a year now.\nAround this point, most clients ask the same question: \"Is the Concierge plan worth it for me?\"\nHere's the math.\n**DIY (pay as you go):**\nAnnual service: $349\nFilter swaps (2-4x/year depending on system): $120-$280\nParts (if something breaks): $150-$600\n**Total:** $619 to $1,229/year\n**Concierge ($99/mo = $1,188/year):**\nAnnual service: included\nFilter swaps: included\nPriority phone support: included\nParts coverage on standard install components: included\nIf you use two or more of those services, Concierge pays for itself. If you value the \"one less thing to think about\" factor, it's a no-brainer.\nIf you want in, reply and I'll get you set up. If you'd rather stay DIY, no problem. I just wanted you to have the numbers.\nJustin\nCEO / ClearWave\n(804) 893-9919\n---\n### Send Timing\n**Thursday, 2:00 PM ET**\n(Afternoon send; decision-makers often review \"household business\" items mid-to-late week; avoids competing with Tuesday referral campaign)\n---\n### Expected Performance\n- **Open rate:** 44-48%\n *Rationale:* Subject line signals utility (\"the math\"); audience is already engaged (13-24 months post-install); slightly above our 42.1% avg.\n- **Click rate:** 0.8-1.2%\n *Rationale:* Reply-based CTA (no link required), but Concierge is a \"nice to have\" not urgent, so lower engagement than referral push; still 3-4x our 0.28% avg.\n- **Conversion (Concierge sign-ups):** 8-12% (8-12 clients)\n *Rationale:* Audience has passed the 12-month trust threshold; framing is consultative, not pushy; conversion = email reply expressing interest.\n---\n### Source Justification\n- **IDEA_SOURCING.md #2 (Jobber lifecycle triggers):** \"Concierge upsell candidates (13-24 months post-install, NOT currently on Concierge)\". The exact trigger list.\n- **IDEA_SOURCING.md #14 (Concierge / service-plan upsell):** Explicitly calls out the \"question we get asked at year 1.5\" framing and the math comparison.\n- **HARD RULE #1:** Never pitch Concierge before 12 months. This audience is 13-24 months, so we're clear.\n- **Voice Fingerprint (luxury_product register):** Minimal, confident, periodic single-line paragraphs (\"Here's the math.\"), triadic structure (service/filters/support/parts), no contractions, consultative close (\"I just wanted you to have the numbers\").\n---\n## Why These Two?\n1. **Referral push:** Highest expected ROI. Small audience (30), high conversion potential (10-15%), each conversion worth $500+ in future revenue. Low effort, high trust window.\n2. **Concierge upsell:** Large audience (100), strong lifetime-value play ($1,188/year recurring), framed as education not sales. Converts 8-12 clients = $9,504-$14,256 annual recurring revenue.\nBoth campaigns leverage **Jobber lifecycle triggers** (the #1 highest-conversion idea source per IDEA_SOURCING.md), require **zero creative lift** (no graphics, no links, reply-based CTAs), and hit audiences at peak receptivity windows.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-13_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-13_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-13T10:30:01.265Z"
   },
   "approval_worker_url": null,
   "approval_worker_token": null,
