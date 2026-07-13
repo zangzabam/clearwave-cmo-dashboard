@@ -498,8 +498,10 @@ async function init() {
       document.getElementById('ex-thisyear-card').style.display = 'block';
       document.getElementById('ex-ty-year').textContent = ty.year;
       const pct1m = Math.min(100, ty.milestone_1m_pct || 0);
-      const yoyStr = ty.prior_year_same_period
-        ? `${((ty.ytd_invoiced / ty.prior_year_same_period - 1) * 100).toFixed(0)}% vs same period ${+ty.year - 1}${ty.prior_year_same_period_note ? '*' : ''}`
+      // Only compare vs last year when we actually have the full same-period data —
+      // partial prior-year coverage (Jobber history starts 2025-04) produces absurd %s.
+      const yoyStr = ty.prior_year_same_period && !ty.prior_year_same_period_note
+        ? `${((ty.ytd_invoiced / ty.prior_year_same_period - 1) * 100).toFixed(0)}% vs same period ${+ty.year - 1}`
         : '';
       const monthBars = (ty.months || []).map(m => {
         const maxInv = Math.max(...ty.months.map(x => x.invoiced || 0), 1);
