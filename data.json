@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:45:46.033Z",
+  "generated_at": "2026-07-13T15:46:05.665Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -657,6 +657,13 @@
         "units": 7,
         "quotes_listed": 109,
         "attach_pct": 6.422018348623854
+      },
+      {
+        "name": "ClearWave Pinnacle",
+        "revenue": 15899,
+        "units": 1,
+        "quotes_listed": 21,
+        "attach_pct": 4.761904761904762
       }
     ],
     "geo_mix": [
