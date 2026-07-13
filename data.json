@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:45:11.141Z",
+  "generated_at": "2026-07-13T15:45:46.033Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -563,7 +563,7 @@
       {
         "name": "H20 Protector Dual Carbon",
         "revenue": 118841.4,
-        "units": 16.060000000000002,
+        "units": 16,
         "quotes_listed": 133,
         "attach_pct": 9.774436090225564
       },
@@ -624,18 +624,39 @@
         "attach_pct": 11.11111111111111
       },
       {
-        "name": "Annual Maintenance Call",
-        "revenue": 29568,
-        "units": 88,
-        "quotes_listed": 3,
-        "attach_pct": 33.33333333333333
+        "name": "ClearWave Crest",
+        "revenue": 28500,
+        "units": 5,
+        "quotes_listed": 54,
+        "attach_pct": 9.25925925925926
       },
       {
-        "name": "Tank / Install Components",
-        "revenue": 29136.51,
-        "units": 8,
-        "quotes_listed": 6,
-        "attach_pct": 66.66666666666666
+        "name": "ClearWave Meridian Diamond",
+        "revenue": 27798,
+        "units": 2,
+        "quotes_listed": 23,
+        "attach_pct": 8.695652173913043
+      },
+      {
+        "name": "RO Pure PRO QC",
+        "revenue": 24381.99,
+        "units": 75,
+        "quotes_listed": 380,
+        "attach_pct": 17.63157894736842
+      },
+      {
+        "name": "NeuMAX",
+        "revenue": 21550,
+        "units": 6,
+        "quotes_listed": 25,
+        "attach_pct": 20
+      },
+      {
+        "name": "H20 RO PRO (Leak Detection)",
+        "revenue": 17197,
+        "units": 7,
+        "quotes_listed": 109,
+        "attach_pct": 6.422018348623854
       }
     ],
     "geo_mix": [
