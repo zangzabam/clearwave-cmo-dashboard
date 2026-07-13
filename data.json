@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T12:57:27.520Z",
+  "generated_at": "2026-07-13T13:07:25.077Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -236,20 +236,20 @@
     ],
     "ttm": {
       "period": {
-        "start": "2025-04-27",
-        "end": "2026-04-27"
+        "start": "2025-07-13",
+        "end": "2026-07-13"
       },
-      "total_income": 1029004.87,
-      "total_cogs": 494585.83,
-      "gross_profit": 534419.04,
-      "gross_margin_pct": 51.935520965998926,
-      "total_opex": 371584.39,
-      "net_income": 152567.4,
-      "net_margin_pct": 14.826693677358396,
-      "marketing_total": 99823.51,
-      "marketing_pct_rev": 9.700975467686563,
-      "sales_labor_total": 68827.36,
-      "overhead_total": 89356.19
+      "total_income": 1122771.33,
+      "total_cogs": 503462.62,
+      "gross_profit": 619308.71,
+      "gross_margin_pct": 55.15893516803639,
+      "total_opex": 446373.76,
+      "net_income": 165964.26,
+      "net_margin_pct": 14.78166172981991,
+      "marketing_total": 121377.03,
+      "marketing_pct_rev": 10.810485337205751,
+      "sales_labor_total": 98528.35,
+      "overhead_total": 104867.52999999998
     },
     "yoy": {
       "thisYear": {
@@ -278,28 +278,10 @@
     },
     "monthly_revenue": [
       {
-        "month": "2025-04",
-        "invoiced": 10596.83,
-        "paid": 10408.369999999999,
-        "invoices": 9
-      },
-      {
-        "month": "2025-05",
-        "invoiced": 78036.64,
-        "paid": 61059.64000000001,
-        "invoices": 36
-      },
-      {
-        "month": "2025-06",
-        "invoiced": 70751.5,
-        "paid": 56492,
-        "invoices": 24
-      },
-      {
         "month": "2025-07",
-        "invoiced": 74431.6,
-        "paid": 58248.6,
-        "invoices": 40
+        "invoiced": 44894,
+        "paid": 33357.5,
+        "invoices": 20
       },
       {
         "month": "2025-08",
@@ -333,13 +315,13 @@
       },
       {
         "month": "2026-01",
-        "invoiced": 91313.55,
+        "invoiced": 90964.55,
         "paid": 72117.66,
         "invoices": 19
       },
       {
         "month": "2026-02",
-        "invoiced": 93221,
+        "invoiced": 93271,
         "paid": 74113,
         "invoices": 17
       },
@@ -351,9 +333,27 @@
       },
       {
         "month": "2026-04",
-        "invoiced": 75698.18999999999,
-        "paid": 40679.64,
-        "invoices": 24
+        "invoiced": 127462.10999999999,
+        "paid": 96943.56,
+        "invoices": 33
+      },
+      {
+        "month": "2026-05",
+        "invoiced": 99364.56999999999,
+        "paid": 64955.88,
+        "invoices": 25
+      },
+      {
+        "month": "2026-06",
+        "invoiced": 94301.8,
+        "paid": 73688.88,
+        "invoices": 17
+      },
+      {
+        "month": "2026-07",
+        "invoiced": 28348.940000000002,
+        "paid": 22512.940000000002,
+        "invoices": 7
       }
     ],
     "customers_by_month": [
@@ -731,15 +731,15 @@
       }
     ],
     "fortune500": {
-      "ttm_revenue": 1029004.87,
+      "ttm_revenue": 1122771.33,
       "next_milestone": 2500000,
-      "next_milestone_progress_pct": 41.1601948,
+      "next_milestone_progress_pct": 44.9108532,
       "f500_floor": 7400000000,
       "yoy_growth_pct": 248.82666028329692,
-      "years_to_f500_at_current_growth": 7.107898187043873,
-      "cagr_needed_10yr_pct": 143.0420551794179,
-      "cagr_needed_15yr_pct": 80.7677500857603,
-      "cagr_needed_20yr_pct": 55.89806130270443,
+      "years_to_f500_at_current_growth": 7.03809868601895,
+      "cagr_needed_10yr_pct": 140.93175300311006,
+      "cagr_needed_15yr_pct": 79.7198415491291,
+      "cagr_needed_20yr_pct": 55.219764528590254,
       "milestones": [
         1000000,
         2500000,
@@ -756,8 +756,8 @@
     },
     "data_through": {
       "investor_metrics": "2026-07",
-      "ttm_pnl": "2026-04-27",
-      "monthly_revenue": "2026-04-24",
+      "ttm_pnl": "2026-07-13",
+      "monthly_revenue": "2026-07-13",
       "funnel": "2026-07-13",
       "product_mix": "2026-04-24",
       "geo_mix": "2026-04-24"
