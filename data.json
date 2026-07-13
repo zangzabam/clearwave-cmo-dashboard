@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T17:46:44.970Z",
+  "generated_at": "2026-07-13T17:46:54.257Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -2612,7 +2612,10 @@
       },
       "email_2026-07-13_c2": {
         "decision": "approved",
-        "decided_at": "2026-07-13T17:46:36.756328+00:00"
+        "decided_at": "2026-07-13T17:46:36.756328+00:00",
+        "sent_at": "2026-07-13T17:46:51.406Z",
+        "send_status": "drafted",
+        "mailchimp_campaign_id": "763722fc34"
       }
     },
     "last_brief_sent": "2026-07-13T10:30:01.265Z"
