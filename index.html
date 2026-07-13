@@ -14,7 +14,9 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--water-dark); color: var(--cream); min-height: 100vh; }
-  body { background: linear-gradient(180deg, #0a2540 0%, #0d3b66 8%, #145374 18%, #1a6b8a 30%, #1b7a9e 45%, #1a8fb4 60%, #2098b8 75%, #1a6b8a 88%, #0d3b66 100%); background-attachment: fixed; }
+  /* Gradient lives on a fixed backdrop layer instead of background-attachment:fixed,
+     which forces a full-page repaint on every scroll (blank frames on iOS Safari). */
+  body::before { content: ''; position: fixed; inset: 0; z-index: -1; background: linear-gradient(180deg, #0a2540 0%, #0d3b66 8%, #145374 18%, #1a6b8a 30%, #1b7a9e 45%, #1a8fb4 60%, #2098b8 75%, #1a6b8a 88%, #0d3b66 100%); }
 
   /* Login gate */
   #login { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(10,48,88,0.96); z-index: 9999; backdrop-filter: blur(8px); }
