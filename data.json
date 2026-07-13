@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T17:46:54.257Z",
+  "generated_at": "2026-07-13T17:49:16.703Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -275,6 +275,60 @@
         "invoicedRev": 248.82666028329692,
         "uniqueClients": 288.268156424581
       }
+    },
+    "this_year": {
+      "year": "2026",
+      "ytd_invoiced": 641450.6499999999,
+      "ytd_paid": 478768.85000000003,
+      "months": [
+        {
+          "month": "2026-01",
+          "invoiced": 90964.55,
+          "paid": 72117.66,
+          "invoices": 19
+        },
+        {
+          "month": "2026-02",
+          "invoiced": 93271,
+          "paid": 74113,
+          "invoices": 17
+        },
+        {
+          "month": "2026-03",
+          "invoiced": 107737.68,
+          "paid": 74436.93,
+          "invoices": 26
+        },
+        {
+          "month": "2026-04",
+          "invoiced": 127462.10999999999,
+          "paid": 96943.56,
+          "invoices": 33
+        },
+        {
+          "month": "2026-05",
+          "invoiced": 99364.56999999999,
+          "paid": 64955.88,
+          "invoices": 25
+        },
+        {
+          "month": "2026-06",
+          "invoiced": 94301.8,
+          "paid": 73688.88,
+          "invoices": 17
+        },
+        {
+          "month": "2026-07",
+          "invoiced": 28348.940000000002,
+          "paid": 22512.940000000002,
+          "invoices": 7
+        }
+      ],
+      "through": "2026-07-13",
+      "projected_full_year": 1206853.0270618554,
+      "prior_year_same_period": 44894,
+      "prior_year_same_period_note": "prior-year data starts 2025-07",
+      "milestone_1m_pct": 64.14506499999999
     },
     "monthly_revenue": [
       {

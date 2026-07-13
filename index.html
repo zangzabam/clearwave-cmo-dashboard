@@ -131,6 +131,11 @@
       <div id="ex-f500"></div>
     </div>
 
+    <div class="card" id="ex-thisyear-card" style="background:linear-gradient(135deg,#052e2b 0%,#065f46 60%,#047857 100%);color:#fff;display:none;">
+      <h4 style="color:#a7f3d0;">📅 This Year · <span id="ex-ty-year"></span></h4>
+      <div id="ex-thisyear"></div>
+    </div>
+
     <h3>Growth Engine</h3>
     <div class="chart-wrap"><canvas id="exRevChart"></canvas></div>
     <div class="chart-wrap" style="height:300px;"><canvas id="exCustChart"></canvas></div>
@@ -481,9 +486,41 @@ async function init() {
         <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;">Next milestone: <strong style="color:#fbbf24;">${fmtMoney(f5.next_milestone)}</strong> · ${prog.toFixed(1)}% there</div>
         <div style="background:rgba(255,255,255,0.15);border-radius:100px;height:14px;overflow:hidden;margin-bottom:14px;"><div style="width:${prog}%;height:100%;background:linear-gradient(90deg,#d97706,#fbbf24);border-radius:100px;"></div></div>
         <div>${ladder}</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:12px;">CAGR required to reach the $7.4B Fortune 500 floor: <strong>${fmtPct(f5.cagr_needed_10yr_pct, 0)}</strong>/yr over 10 yrs · <strong>${fmtPct(f5.cagr_needed_15yr_pct, 0)}</strong>/yr over 15 · <strong>${fmtPct(f5.cagr_needed_20yr_pct, 0)}</strong>/yr over 20</div>`;
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:12px;">CAGR required to reach the $7.4B Fortune 500 floor: <strong>${fmtPct(f5.cagr_needed_10yr_pct, 0)}</strong>/yr over 10 yrs · <strong>${fmtPct(f5.cagr_needed_15yr_pct, 0)}</strong>/yr over 15 · <strong>${fmtPct(f5.cagr_needed_20yr_pct, 0)}</strong>/yr over 20</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-top:8px;">TTM = trailing twelve months${t.period ? ` (${t.period.start} → ${t.period.end})` : ''} — the last 365 days rolling, not the calendar year. Calendar-year numbers are in the This Year card below.</div>`;
     } else {
       document.getElementById('ex-f500').innerHTML = '<p style="color:rgba(255,255,255,0.7);">Revenue data not yet ingested.</p>';
+    }
+
+    // This Year tracker — calendar YTD with $1M milestone + pace projection
+    const ty = ex.this_year;
+    if (ty) {
+      document.getElementById('ex-thisyear-card').style.display = 'block';
+      document.getElementById('ex-ty-year').textContent = ty.year;
+      const pct1m = Math.min(100, ty.milestone_1m_pct || 0);
+      const yoyStr = ty.prior_year_same_period
+        ? `${((ty.ytd_invoiced / ty.prior_year_same_period - 1) * 100).toFixed(0)}% vs same period ${+ty.year - 1}${ty.prior_year_same_period_note ? '*' : ''}`
+        : '';
+      const monthBars = (ty.months || []).map(m => {
+        const maxInv = Math.max(...ty.months.map(x => x.invoiced || 0), 1);
+        const h = Math.max(6, (m.invoiced / maxInv) * 56);
+        return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+          <div style="font-size:9px;color:#a7f3d0;">${fmtMoney(m.invoiced)}</div>
+          <div style="width:34px;height:${h}px;background:linear-gradient(180deg,#34d399,#059669);border-radius:5px 5px 0 0;"></div>
+          <div style="font-size:9px;letter-spacing:1px;color:rgba(255,255,255,0.75);">${monthLabel(m.month).split(' ')[0].toUpperCase()}</div>
+        </div>`;
+      }).join('');
+      document.getElementById('ex-thisyear').innerHTML = `
+        <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin:8px 0 14px;">
+          <div><div style="font-size:34px;font-weight:800;color:#a7f3d0;">${fmtMoney(ty.ytd_invoiced)}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Invoiced Jan 1 → today</div></div>
+          <div><div style="font-size:34px;font-weight:800;color:#e0f2fe;">${fmtMoney(ty.ytd_paid)}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Collected</div></div>
+          <div><div style="font-size:34px;font-weight:800;color:#fbbf24;">${fmtMoney(ty.projected_full_year)}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Full-year pace</div></div>
+          ${yoyStr ? `<div><div style="font-size:34px;font-weight:800;color:#34d399;">+${yoyStr.split('%')[0]}%</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">vs same period last yr</div></div>` : ''}
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;">$1M calendar-year milestone: <strong style="color:#a7f3d0;">${pct1m.toFixed(1)}%</strong> there${ty.projected_full_year >= 1e6 ? ' · on pace to clear it' : ''}</div>
+        <div style="background:rgba(255,255,255,0.15);border-radius:100px;height:14px;overflow:hidden;margin-bottom:16px;"><div style="width:${pct1m}%;height:100%;background:linear-gradient(90deg,#34d399,#a7f3d0);border-radius:100px;"></div></div>
+        <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">${monthBars}</div>
+        ${ty.prior_year_same_period_note ? `<div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:10px;">* ${ty.prior_year_same_period_note}, so the comparison covers the overlapping months only.</div>` : ''}`;
     }
 
     // Monthly revenue chart
@@ -979,7 +1016,9 @@ async function init() {
     if (lastErr) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
       const diag = await runConnectionDiagnostics(lastErr).catch(e => `diagnostic itself failed: ${e.message}`);
-      alert(`Couldn't save after 8 retries: ${lastErr.message}\n\n=== DIAGNOSTIC ===\n${diag}`);
+      if (confirm(`Couldn't save after 8 retries: ${lastErr.message}\n\n=== DIAGNOSTIC ===\n${diag}\n\nTap OK to ${action} by EMAIL instead — opens a pre-filled email, just hit Send. The agent picks it up within 15 minutes.`)) {
+        window.location.href = mailto(`${action.toUpperCase()} ${itemId}`, `${action} via dashboard email fallback`);
+      }
       return;
     }
     btnEl.textContent = action === 'approve' ? '✅ Approved' : action === 'skip' ? '⏭ Skipped' : '✏️ Saved';
@@ -1019,7 +1058,10 @@ async function init() {
     }
     if (lastErr) {
       btnEl.style.opacity = '1'; btnEl.textContent = orig;
-      alert(`Couldn't approve all after 8 retries: ${lastErr.message}`);
+      const diag = await runConnectionDiagnostics(lastErr).catch(e => `diagnostic itself failed: ${e.message}`);
+      if (confirm(`Couldn't approve all after 8 retries: ${lastErr.message}\n\n=== DIAGNOSTIC ===\n${diag}\n\nTap OK to approve by EMAIL instead — opens a pre-filled email, just hit Send. The agent picks it up within 15 minutes.`)) {
+        window.location.href = mailto(`APPROVE ALL ${ap.date || ''}`, 'Approving everything for today (dashboard fallback).');
+      }
       return;
     }
     btnEl.textContent = count > 0 ? `✅ Approved ${count}` : `✅ All already approved`;
