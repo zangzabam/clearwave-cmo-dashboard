@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:48:08.661Z",
+  "generated_at": "2026-07-13T16:02:45.405Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -905,7 +905,17 @@
   },
   "registry_md": "# ClearWave CMO — Sub-Agent Registry\n\n**Single source of truth for every agent that runs.** Every sub-agent must register here before it ships. Each entry: what it does · when it runs · what it produces · what it costs.\n\nLast updated: 2026-05-01\n\n---\n\n## LIVE — running on schedule\n\n| ID | Sub-agent | Cadence | Produces | Status |\n|---|---|---|---|---|\n| 00 | **Orchestrator** (`agents/00-orchestrator/`) | Daily 6:00 AM ET | `daily_report_<date>.md` + Hi-Fi 2 email to Justin | ✅ live |\n| 01 | **Voice Library** (`agents/01-voice-library/`) | On every output (sync) | Voice fingerprint scoring, signature-phrase enforcement | ✅ live |\n| 02 | **Paid Ads — Budget Optimizer** (`agents/02-paid-ads/`) | Daily, in orchestrator | Pause/scale proposals (Meta CSV mode active; Google Ads pending creds) | 🟡 partial |\n| 04 | **Email Sub-Agent** (`agents/04-email/`) | Daily, in orchestrator | 1-2 campaign proposals/day in Justin's voice | ✅ live |\n| 04a | **Daily Water Minute** (`scripts/daily_value_email.ts`) | Daily, in orchestrator | 1 educational email draft (~250 words, 60-day no-repeat) | ✅ live |\n| 06 | **Competitor Intel** (`agents/06-competitor-intel/`) | Weekly Tue @ 7:00 AM ET | 8-competitor brief — homepage scrape + Claude synthesis | ✅ live |\n| 07 | **Trend Watch** (`agents/07-trend-watch/`) | Tue + Fri @ 6:30 AM ET | Trending patterns + 5 experimental hook ideas | ✅ live |\n| 08 | **Creative Studio** (`agents/08-creative-studio/`) | Mon @ 7:00 AM ET | 6 ad concepts (3 Meta + 3 Google) for Matyx hand-off | ✅ live |\n| 10 | **Funnel Diagnostics** (`agents/10-funnel-diagnostics/`) | Mon @ 8:00 AM ET | Jobber Request → Quote → Job leakage + 3 ranked fixes | ✅ live |\n| 11 | **Opportunity Scout** (`agents/11-opportunity-scout/`) | Thu @ 9:00 AM ET | 3 ranked plays (geo / partnership / service / M&A) | ✅ live |\n| 12 | **Investor Metrics** (`scripts/investor_metrics_report.ts`) | Monthly 1st @ 7:00 AM ET (+ quarterly auto-PDF) | LTGP:CAC, Lead-to-Sale, New-GP-vs-Plan in Hi-Fi 2 PDF | ✅ live |\n| 13 | **Brand Health / Reviews** (`agents/13-brand-health/`) | Tue @ 8:00 AM ET | 4-location Google Maps snapshot via Places API | ✅ live |\n| 14 | **Board Comms** (`agents/14-board-comms/`) | Monthly 1st @ 9:00 AM ET | Board-ready monthly update + quarterly investor PDF | ✅ live |\n| 15 | **Agency Scorecard** (`agents/15-agency-scorecard/`) | Monthly 1st @ 11:00 AM ET | Matyx scored on 6 dimensions; renew/replace recommendation | ✅ live |\n| 16 | **Content Director** (`agents/16-content-director/`) | Sun 7pm + Wed 7pm + Fri 5pm + daily 8am | Waterboy Content Machine — shoot briefs, drive watcher, multi-platform packages, hook tracker, 70-20-10 enforcement, scorecard | ✅ live |\n| -- | **GitHub Backup** (`scripts/git_autopush.ts`) | After every meaningful change | Auto-commit + push to `zangzabam/clearwave-growth-agent` | ✅ live |\n| -- | **Cloud Dashboard** (`scripts/build_dashboard.ts` → `clearwave-cmo-dashboard` GitHub Pages) | After every agent run | https://zangzabam.github.io/clearwave-cmo-dashboard/ (PIN `cww2026`) | ✅ live |\n\n---\n\n## PENDING — needs creds or workflow change before activation\n\n| ID | Sub-agent | Blocker |\n|---|---|---|\n| 03 | **SEO Local** (`agents/03-seo-local/`) | Awaits Google Search Console OAuth |\n| 05 | **Organic Social** | Folded into Content Director (#16) |\n| 09 | **Content Engine** | Folded into Content Director (#16) |\n\n---\n\n## Content Director (#16) — sub-runners\n\nThe Content Director has 4 schedule entry points, all writing to `data/processed/content_director/`:\n\n| Runner | Cadence | What it does |\n|---|---|---|\n| `agent_content_director_shoot_brief.ts monday` | Sundays 7:00 PM ET | Tomorrow's shoot brief — applies 70-20-10 to pick 9 hooks from `hooks_library.json`, generates word-for-word scripts + props + time budget. Emails Hi-Fi 2. |\n| `agent_content_director_shoot_brief.ts thursday` | Wednesdays 7:00 PM ET | Tomorrow's B-roll brief — 5 voiceover scripts + shot list + screenshot capture list. |\n| `agent_content_director_drive_watch.ts` | Daily 8:00 AM ET | Scans `01_RAW_DROP_HERE` Google Drive folder. For each new file, generates a multi-platform package (TikTok / IG / YT / X captions + hashtags + post times + Manus AI handoff prompt). Emails approval queue. |\n| `agent_content_director_scorecard.ts` | Fridays 5:00 PM ET | Auto-fills the playbook's Weekly Check-In Scorecard. Picks next week's 70/20/10 mix from real performance data. |\n\n### How posting works (v1)\n- Direct posting requires per-platform OAuth + app review (Meta + TikTok especially).\n- v1 generates a **Manus AI handoff prompt** in each package — Justin pastes it into Manus and Manus posts autonomously.\n- v2 (when OAuth is set up): YouTube Data API + LinkedIn API direct, Manus for the rest.\n\n---\n\n## Agent design rules\n\n1. **Each sub-agent owns one job.** If a job grows multi-step, split into a parent + sub-sub-agents.\n2. **Each AGENT.md must declare:** Inputs · Tasks · Constraints · Output schema · Cadence · Cost.\n3. **Browser-first.** Use `mcp__Claude_in_Chrome__*` for external-web tasks (competitor scrape, Google Maps reviews, ad-library look-ups). Fall back to nimble web tools only if Chrome MCP fails.\n4. **Output discipline.** Every run writes ONE primary artifact to `data/processed/`. Email-able output goes through `scripts/email_template.ts` (Hi-Fi 2).\n5. **GitHub backup.** Every sub-agent ends with `await gitAutoPush(commit_msg)`.\n6. **Dashboard refresh.** Every sub-agent ends with `await buildDashboard()` to refresh `data.json`.\n7. **Cost discipline.** `claude-haiku` for classification/parsing; `claude-sonnet` for creative/strategic; `claude-opus` only when heaviest synthesis demands it.\n8. **Sale-ready.** Naming, structure, configurability per the CMO mandate.\n\n---\n\n## Cost guardrails (CMO-level, hard limits)\n\n- **Per daily run:** ≤ $1.50 of Claude API tokens\n- **Per weekly sub-agent run:** ≤ $5\n- **Per monthly synthesis:** ≤ $10\n- **Total monthly burn target:** ≤ $300 across all agents\n\nIf approaching cap, the orchestrator throttles. Voice Library scoring is the only call never skipped.\n\n---\n\n## Cron schedule at a glance\n\n```\nSun 7:00 PM ET  cd_shoot_mon       (Monday shoot brief)\nMon 7:00 AM ET  creative_studio    (6 ad concepts)\nMon 8:00 AM ET  funnel             (Jobber funnel diagnostics)\nTue 6:30 AM ET  trend_watch        (Trending patterns + 5 hooks)\nTue 7:00 AM ET  competitor_intel   (8-competitor brief)\nTue 8:00 AM ET  brand_health       (4-location Google review snapshot)\nWed 7:00 PM ET  cd_shoot_thu       (Thursday B-roll brief)\nThu 9:00 AM ET  opportunity        (3 ranked plays)\nFri 6:30 AM ET  trend_watch        (2nd weekly run)\nFri 5:00 PM ET  cd_scorecard       (Friday weekly scorecard)\nDaily 6:00 AM   daily              (Orchestrator: report + email + DWM)\nDaily 8:00 AM   cd_drive           (Drive watcher + approval queue)\n1st 7:00 AM     metrics.monthly    (Investor metrics)\n1st 9:00 AM     board_comms        (Monthly board update)\n1st 11:00 AM    agency             (Matyx scorecard)\nJan 1 7:30 AM   metrics.annual     (12-month review)\n```\n\n15 active cron entries across 14 sub-agents. All push to GitHub after every run.\n",
   "content_director": {
-    "current_week": null,
+    "current_week": {
+      "week": 13,
+      "start_date": "2026-08-31",
+      "dates": "Aug 31-Sep 6",
+      "theme": "Quarter Review",
+      "youtube": "Q1 of building the brand. Recap.",
+      "cta_keyword": "Q1",
+      "phase": "scale",
+      "notes": "Reshoot top 5 hooks. Test 3 new ones. Audit data. Set Phase 2 targets.",
+      "posts": []
+    },
     "shoot_brief_monday_md": "# MONDAY SHOOT BRIEF — Week 4 (Apr 27-May 3)\n**Anchor Theme:** Filter Debunks  \n**Shoot Date:** Monday  \n**Total Time Available:** 2.5 hours (150 minutes)\n\n---\n\n## ⚠️ NON-NEGOTIABLES — READ FIRST\n\n- **Every video has a CTA — no exceptions**\n- **Say the hook word-for-word in the first 3 seconds**\n- **Greenscreen with screenshot/article behind for water hooks**\n- **Save raw files to a folder labeled with today's date** (2025-04-28)\n\n---\n\n## ⏱️ TIME BUDGET\n\n- **YouTube long-form:** 60 minutes\n- **9 greenscreen hooks @ 10 min each:** 90 minutes\n- **Total:** 150 minutes (on target)\n\n---\n\n## 📹 YOUTUBE LONG-FORM (60 MIN)\n\n**Title:** \"$500 Amazon Filter vs $8K Whole-Home System — I Tested Both\"\n\n### 5-Point Outline:\n\n1. **Cold Open (0:00-1:30):** Show both systems side-by-side. \"I spent $500 on Amazon's bestselling water filter. Then I tested it against the $8,000 systems we install every day. The results shocked even me.\" Set up the test: same water source, same TDS meter, same microscope, same timeline.\n\n2. **The Amazon Filter (1:30-6:00):** Unbox it. Install it (time-lapse if possible). Explain what it claims to do. Run the water. Test TDS before and after. Show what it actually removes (and what it doesn't). \"Here's the thing most people don't know about these countertop units...\"\n\n3. **The Whole-Home System (6:00-11:00):** Walk through what's actually in an $8K system. Why it costs what it costs. Installation process (B-roll if you have it). Test the same water. Compare results side-by-side with charts/graphics. \"This is why we don't sell cheap filters.\"\n\n4. **The Real Cost Breakdown (11:00-16:00):** Amazon filter: replacement cartridges, lifespan, cost-per-gallon over 5 years. Whole-home: warranty, maintenance, cost-per-gallon over 10 years. Show the math on screen. \"When you break it down, the 'expensive' system is actually cheaper — and that's before we talk about what it does for your skin, your appliances, your pipes.\"\n\n5. **Who Needs What (16:00-20:00):** Be honest. \"If you're in an apartment and you're gone in a year, get the Amazon filter. But if you own your home, have kids, or you're tired of buying bottled water? Here's what I'd do.\" CTA: \"Comment BREAKDOWN below and I'll send you the full test results and a breakdown of what a system like this would cost in your area. I'm Justin, the Waterboy.\"\n\n---\n\n## 🎬 GREENSCREEN HOOKS (9 HOOKS)\n\n---\n\n### **HOOK 1** — W03 Reshoot (PROVEN VIRAL)\n**Hook ID:** W04-01  \n**Opening Line (first 3 seconds):**  \n*\"Your Brita filter is a $30 lie. Here's what it actually removes.\"*\n\n**60-90 Second Outline:**\n- Your Brita removes chlorine taste. That's basically it.\n- It does NOT remove fluoride, lead, PFAS, pharmaceuticals, or most heavy metals.\n- I've tested hundreds of Brita-filtered water samples. TDS barely moves.\n- The filter cartridge lasts about 40 gallons — that's 2-3 weeks for most families.\n- You're spending $120/year on cartridges that make your water *taste* better, not *be* safer.\n- Compare that to a reverse osmosis system that removes 99% of contaminants and costs less per gallon over time.\n- If you want the truth about what's in your water, keep watching.\n\n**Closing CTA:**  \n*\"Comment 'TRUTH' below and I'll send you the lab report that shows exactly what Brita misses.\"*\n\n**Props/Visuals:**\n- Brita pitcher (physical prop in hand)\n- Screenshot of Brita's own filtration chart (greenscreen background)\n\n**Why This Hook:**  \n**PROVEN** — Original viral hit (7.2M views). Reshooting with proper CTA to recapture momentum and drive engagement with proven winner.\n\n---\n\n### **HOOK 2** — W10 (PROVEN)\n**Hook ID:** W04-02  \n**Opening Line (first 3 seconds):**  \n*\"I put a Brita, a fridge filter, and our system under the microscope. Watch.\"*\n\n**60-90 Second Outline:**\n- I took the same tap water and ran it through three systems.\n- Brita: removed chlorine taste. TDS dropped 8%. That's it.\n- Fridge filter: slightly better. TDS dropped 22%. Still left most contaminants.\n- Our whole-home reverse osmosis system: TDS dropped 97%. Nearly pure water.\n- Under the microscope, the difference was insane. I'll show you the footage.\n- This is why we don't sell Brita knock-offs. The science doesn't lie.\n- Your family drinks 60+ gallons a month. You deserve to know what's in it.\n\n**Closing CTA:**  \n*\"Comment 'COMPARE' and I'll send you the side-by-side test results and what a real system costs.\"*\n\n**Props/Visuals:**\n- TDS meter (hold it up)\n- Split-screen graphic of test results (greenscreen)\n\n**Why This Hook:**  \n**PROVEN** — High-performing comparison format. Visual proof builds trust and demonstrates expertise. Safe anchor content.\n\n---\n\n### **HOOK 3** — W11 (PROVEN)\n**Hook ID:** W04-03  \n**Opening Line (first 3 seconds):**  \n*\"The water filter you bought on Amazon is probably doing less than you think.\"*\n\n**60-90 Second Outline:**\n- Amazon's full of \"5-star\" water filters that sound amazing.\n- Most of them remove chlorine and maybe some sediment. That's it.\n- They don't touch PFAS, lead, pharmaceuticals, or heavy metals.\n- I've tested dozens of them. The results are depressing.\n- The problem? Amazon reviews can't measure what's invisible.\n- People say \"tastes great!\" — but taste has nothing to do with safety.\n- If you bought one of these, you're not wrong. You just didn't have the full story.\n\n**Closing CTA:**  \n*\"Watch to the end and I'll show you what to look for if you're buying any filter online.\"*\n\n**Props/Visuals:**\n- Phone showing Amazon filter page (hold it up)\n- Contaminant chart (greenscreen background)\n\n**Why This Hook:**  \n**PROVEN** — Taps into buyer's remorse without shaming. Positions Justin as educator, not salesman. Builds goodwill.\n\n---\n\n### **HOOK 4** — W13 (PROVEN)\n**Hook ID:** W04-04  \n**Opening Line (first 3 seconds):**  \n*\"This little box under my sink replaced thousands of plastic water bottles.\"*\n\n**60-90 Second Outline:**\n- My family was spending $60/month on bottled water. $720 a year.\n- We installed a reverse osmosis system under the sink for about $1,200.\n- It paid for itself in under two years. That was six years ago.\n- We've saved over $4,000. And we're not filling landfills with plastic.\n- The water tastes better than any bottled brand we tried.\n- My kids refill their bottles from the tap now. No second-guessing.\n- If you're still buying cases of water at Costco, do the math.\n\n**Closing CTA:**  \n*\"Comment 'RO' and I'll send you a breakdown of what a system like this costs installed in Virginia.\"*\n\n**Props/Visuals:**\n- Empty plastic water bottles (stack of 5-6)\n- Calculator or cost comparison graphic (greenscreen)\n\n**Why This Hook:**  \n**PROVEN** — Cost savings + environmental angle + family safety. Triple win. Aspirational without being preachy.\n\n---\n\n### **HOOK 5** — W23 (PROVEN)\n**Hook ID:** W04-05  \n**Opening Line (first 3 seconds):**  \n*\"This is the difference between a $500 filter and the systems we install.\"*\n\n**60-90 Second Outline:**\n- A $500 filter usually sits on your counter or screws onto your faucet.\n- It filters one tap. Maybe 2-3 gallons a day. Cartridges last weeks.\n- The systems we install cost $8,000-$12,000. They filter your whole house.\n- Every shower. Every sink. Every load of laundry. Every ice cube.\n- You're not just drinking clean water — your skin, your hair, your appliances all benefit.\n- Over 10 years, the cost per gallon is actually *lower* than the countertop unit.\n- One protects one faucet. The other protects your entire home.\n\n**Closing CTA:**  \n*\"Comment 'BREAKDOWN' below and I'll send you the cost comparison and what your home would need.\"*\n\n**Props/Visuals:**\n- Countertop filter unit (physical prop)\n- Whole-home system diagram (greenscreen)\n\n**Why This Hook:**  \n**PROVEN** — Directly tied to this week's anchor theme. Matches YouTube long-form content. Use \"BREAKDOWN\" CTA to unify the week.\n\n---\n\n### **HOOK 6** — W01 Variation (VARIATION)\n**Hook ID:** W04-06  \n**Opening Line (first 3 seconds):**  \n*\"If you live in Virginia and your kid has eczema, this might be why.\"*\n\n**60-90 Second Outline:**\n- Chlorine and chloramines in tap water dry out skin. Especially kids' skin.\n- Virginia uses chloramines in most cities. It's harsher than chlorine and doesn't evaporate.\n- I've had dozens of parents tell me their kids' eczema improved after we installed a whole-home filter.\n- It's not a cure. But when you stop bathing in chemicals every day, skin heals faster.\n- Dermatologists won't tell you this — they'll prescribe creams.\n- But if the water's the problem, the cream's just a band-aid.\n- We've seen it enough times that I can't ignore it.\n\n**Closing CTA:**  \n*\"Comment 'TEST' and I'll send you info on how to test your water for chloramines and what to do about it.\"*\n\n**Props/Visuals:**\n- Lotion bottle or eczema cream (hold it up)\n- Map of Virginia water treatment (greenscreen)\n\n**Why This Hook:**  \n**VARIATION** — Geographic + emotional (kids' health). Same pillar (filter truth) but adds urgency through localized pain point.\n\n---\n\n### **HOOK 7** — W02 Variation (VARIATION)\n**Hook ID:** W04-07  \n**Opening Line (first 3 seconds):**  \n*\"I test people's water for a living. Here are the 3 most disturbing results I've ever seen.\"*\n\n**60-90 Second Outline:**\n- Number 3: A family in Fairfax with lead levels 4X the EPA limit. From their pipes, not the city.\n- Number 2: A well in Loudoun County with arsenic so high I told them to stop drinking immediately.\n- Number 1: A brand-new subdivision where every home had PFAS. The builder used contaminated fill dirt.\n- These people had no idea. The water looked clear. Tasted fine.\n- This is why I do free water tests. You can't see what's killing you.\n- I've done over 1,000 tests. These are the ones that keep me up at night.\n\n**Closing CTA:**  \n*\"Comment 'REVIEW' and I'll send you the checklist I use when I test water — so you know what to look for.\"*\n\n**Props/Visuals:**\n- TDS meter or test strip (hold it)\n- Headline screenshot about local water contamination (greenscreen)\n\n**Why This Hook:**  \n**VARIATION** — Credibility + fear + storytelling. Same filter-debunk pillar but delivered through case studies. Builds authority.\n\n---\n\n### **HOOK 8** — W04 Experimental (EXPERIMENTAL)\n**Hook ID:** W04-08  \n**Opening Line (first 3 seconds):**  \n*\"Most homeowners don't realize their 'city-approved' water is wrecking their pipes AND their skin.\"*\n\n**60-90 Second Outline:**\n- City water is treated to be \"safe to drink\" — but that doesn't mean it's safe for your home.\n- Chlorine and chloramines corrode copper pipes over time. That's where lead comes from.\n- Hard water leaves mineral buildup in your water heater, cutting its lifespan in half.\n- The same chemicals that keep bacteria out of the water dry out your skin and hair.\n- Your city isn't lying to you. They're just not responsible for what happens after the meter.\n- I've replaced water heaters that failed at 6 years instead of 12 — all because of untreated water.\n- Whole-home filtration protects your plumbing AND your family.\n\n**Closing CTA:**  \n*\"Comment 'REPORT' and I'll send you what to look for in your city's water quality report — the stuff they don't explain.\"*\n\n**Props/Visuals:**\n- Corroded pipe segment (if available) or photo of one\n- City water quality report screenshot (greenscreen)\n\n**Why This Hook:**  \n**EXPERIMENTAL** — Combines municipal distrust (trending: infrastructure failure) with tangible home damage. Tests whether \"pipe + skin\" dual benefit resonates.\n\n---\n\n### **HOOK 9** — PFAS Baby Formula React (EXPERIMENTAL)\n**Hook ID:** W04-09  \n**Opening Line (first 3 seconds):**  \n*\"If you're mixing baby formula with tap water, you need to watch this.\"*\n\n**60-90 Second Outline:**\n- The FDA just released results showing PFAS contamination in baby formula samples.\n- But here's what they didn't say: most of that PFAS comes from the *water* you mix it with.\n- Tap water in Virginia has measurable PFAS. It's legal — but it's there.\n- Babies are the most vulnerable. Their bodies can't filter toxins like ours can.\n- Boiling water does NOT remove PFAS. It actually concentrates it.\n- If you're a new parent, this is one of those things nobody tells you.\n- A reverse osmosis system removes 99% of PFAS. That's what we installed when our kids were born.\n\n**Closing CTA:**  \n*\"Comment 'BABY' and I'll send you the EPA map showing PFAS levels in Virginia — and what to do about it.\"*\n\n**Props/Visuals:**\n- Baby bottle (hold it up)\n- FDA or news headline about PFAS in formula (greenscreen)\n\n**Why This Hook:**  \n**EXPERIMENTAL** — Trending topic (PFAS in baby formula, per Trend Watch). High emotion. Tests whether parent-focused fear content drives action.\n\n---\n\n## 📦 THIS WEEK'S PROP CHECKLIST\n\nGrab these BEFORE you start shooting:\n\n- [ ] Brita pitcher (physical)\n- [ ] Countertop filter unit (Amazon-style)\n- [ ] TDS meter\n- [ ] Stack of 5-6 empty plastic water bottles\n- [ ] Phone (to show Amazon page)\n- [ ] Lotion bottle or eczema cream\n- [ ] Test strip or water testing kit\n- [ ] Baby bottle\n- [ ] Corroded pipe segment (optional but powerful for Hook 8)\n- [ ] Calculator (optional, for cost breakdown visuals)\n\n### Greenscreen Backgrounds (screenshots/graphics ready):\n- Brita filtration chart\n- TDS test result comparison (split-screen)\n- Amazon filter product page\n- Contaminant removal chart\n- Cost comparison graphic ($500 vs $8K over 10 years)\n- Whole-home system diagram\n- Virginia water treatment map\n- Local water contamination headline\n- City water quality report sample\n- FDA/PFAS baby formula headline\n\n---\n\n## ✅ DO NOT SKIP — FINAL REMINDERS\n\n1. **CTAs on every single video** — No exceptions. Say them out loud, word-for-word.\n2. **Lighting check before you hit record** — Greenscreen needs even lighting or it'll key poorly.\n3. **Captions ON for greenscreen shots** — Viewers scroll with sound off. Captions = watch time.\n4. **Say the hook in the first 3 seconds** — Word-for-word. No preamble. No \"hey guys.\" Just the hook.\n5. **Save raw files in folder: 2025-04-28** — You'll thank yourself during edit.\n\n---\n\n## 🎯 THIS WEEK'S STRATEGY SUMMARY\n\n**Anchor:** Filter Debunks  \n**Split:** 70% proven winners (Hooks 1-5), 20% variations on water truth (Hooks 6-7), 10% experimental trending topics (Hooks 8-9)  \n**CTA Focus:** \"BREAKDOWN\" is the keyword for the week — use it in the YT long-form and Hook 5 to create cross-platform consistency.  \n**Trending Tie-Ins:** Hooks 8 (municipal distrust) and 9 (PFAS baby formula panic) directly respond to this week's trend data.\n\n---\n\n**Let's go. You've got 150 minutes. Make every second count.**\n\n— Your Content Director",
     "shoot_brief_thursday_md": "# THURSDAY B-ROLL BRIEF — Week 5, Day 2\n**Date:** May 8, 2025  \n**Theme:** Shower & Skin Health (Chlorine exposure)  \n**Time Budget:** 2 hours  \n**CTA:** \"SHOWER\"\n\n---\n\n## 🎬 B-ROLL SHOT LIST (12 shots, ~75 min)\n\n### Job Site Shots (6 shots, ~40 min)\n\n1. **Showerhead chlorine test reaction**  \n   - Location: Active install bathroom  \n   - What: Test strip in shower water turning dark purple/orange  \n   - Angle: Tight on hand holding strip, showerhead blurred in background  \n   - Length: 8-10 sec  \n   - Why: Visual proof of chlorine — core hook\n\n2. **Customer touching their hair/skin pre-install**  \n   - Location: Bathroom before system install  \n   - What: Homeowner showing dry skin on arms or brittle hair  \n   - Angle: Medium shot, natural light from bathroom window  \n   - Length: 6-8 sec  \n   - Why: Relatable \"before\" problem state\n\n3. **Showerhead mineral buildup close-up**  \n   - Location: Removing old showerhead  \n   - What: Crusty white/green buildup on old fixture  \n   - Angle: Macro shot, rotate fixture to show clogged holes  \n   - Length: 5-7 sec  \n   - Why: Visceral \"what's touching your body\" moment\n\n4. **Installing shower filter/whole-home unit**  \n   - Location: Job site — shower arm or main line  \n   - What: Your hands installing filtration hardware  \n   - Angle: Over-shoulder, show wrench turning/connecting  \n   - Length: 10-12 sec  \n   - Why: B-roll for install process, builds authority\n\n5. **Side-by-side shower water pour test**  \n   - Location: Bathroom counter or tub edge  \n   - What: Two clear glasses — untreated vs. filtered shower water with test drops  \n   - Angle: Overhead or eye-level, both glasses in frame  \n   - Length: 8-10 sec  \n   - Why: Before/after visual contrast\n\n6. **Customer smiling/nodding during walkthrough**  \n   - Location: End of install  \n   - What: Homeowner reacting positively as you explain system  \n   - Angle: Medium two-shot or singles  \n   - Length: 5-7 sec  \n   - Why: Social proof, trust-building\n\n---\n\n### Equipment & Lab Shots (4 shots, ~25 min)\n\n7. **Chlorine test kit close-up**  \n   - Location: Truck bed or work table  \n   - What: Test kit open, strips/reagents visible, your hand picking one up  \n   - Angle: Flat lay or 45° angle, clean background  \n   - Length: 6-8 sec  \n   - Why: Product credibility, \"science in action\"\n\n8. **Lab report printout — chlorine levels highlighted**  \n   - Location: Truck cab or office  \n   - What: Your hand holding lab sheet, pen circling high chlorine number  \n   - Angle: Close-up on paper, slight tilt  \n   - Length: 5-7 sec  \n   - Why: Authority, pairs with screenshot content\n\n9. **Water flowing from showerhead (post-filter)**  \n   - Location: Completed install  \n   - What: Clean water flowing, steam rising, soft lighting  \n   - Angle: Low angle looking up, or side profile of water stream  \n   - Length: 8-10 sec  \n   - Why: Aspirational \"after\" shot, soothing visual\n\n10. **ClearWave equipment badge/branding close-up**  \n    - Location: Installed unit  \n    - What: Slow pan across logo, certification stickers  \n    - Angle: Macro, shallow depth of field  \n    - Length: 5-6 sec  \n    - Why: Brand reinforcement\n\n---\n\n### Driving/Transition Shots (2 shots, ~10 min)\n\n11. **Driving to job — dashboard POV**  \n    - Location: Truck cab  \n    - What: Hands on wheel, road ahead, morning/afternoon light  \n    - Angle: Mount phone on dash or hold at chest level  \n    - Length: 10-12 sec  \n    - Why: Transition shot, \"day in the life\" authenticity\n\n12. **Loading/unloading gear from truck**  \n    - Location: Driveway/job site  \n    - What: Pulling toolbox, filtration unit, test kit from truck bed  \n    - Angle: Wide shot from side of truck  \n    - Length: 6-8 sec  \n    - Why: Blue-collar credibility, keeps energy up\n\n---\n\n## 🎙️ 5 VOICEOVER HOOKS (~25 min total)\n\n### Hook 1: Chlorine Shock\n**Opening Line:**  \n*\"Your ten-minute shower gives you more chlorine exposure than drinking eight glasses of tap water.\"*\n\n**Talking Points:**\n- Chlorine evaporates when heated — you breathe it in\n- Your skin absorbs it — largest organ\n- Most people filter drinking water but ignore the shower\n- We test shower water on every job — results shock people\n- CTA: \"Text SHOWER to [number] — I'll test yours for free\"\n\n---\n\n### Hook 2: Skin & Hair Connection\n**Opening Line:**  \n*\"If your skin is dry and your hair feels like straw, your water heater might be the problem.\"*\n\n**Talking Points:**\n- Hot water opens pores — chlorine and minerals go deeper\n- Strips natural oils your body needs\n- Expensive shampoos can't fix chemical damage\n- Customers tell me their eczema improves in two weeks\n- CTA: \"Let me test your shower water — text SHOWER\"\n\n---\n\n### Hook 3: The Showerhead Reveal\n**Opening Line:**  \n*\"I removed this showerhead today — look what's been spraying on you.\"*\n\n**Talking Points:**\n- White crust = calcium and magnesium buildup\n- Green tint = copper corrosion from pipes\n- This is touching your face, your kids' skin, every day\n- Filtration stops this at the source\n- CTA: \"Text SHOWER — I'll show you what's in yours\"\n\n---\n\n### Hook 4: Baby Skin Test\n**Opening Line:**  \n*\"Parents pay $30 for baby-safe bath products, then bathe their kids in chlorinated water.\"*\n\n**Talking Points:**\n- Baby skin is thinner — absorbs chemicals faster\n- Chlorine linked to infant eczema and rashes\n- You can't out-lotion bad water\n- Whole-home filtration = every faucet protected\n- CTA: \"Protect your family — text SHOWER for a free test\"\n\n---\n\n### Hook 5: The Pool Smell Myth\n**Opening Line:**  \n*\"If your bathroom smells like a pool after a hot shower, that's chlorine gas.\"*\n\n**Talking Points:**\n- That \"clean\" smell = chlorine evaporating into the air\n- You're inhaling it — kids and elderly most at risk\n- Municipal water is treated with chlorine for safety, but it doesn't need to stay in after delivery\n- Simple filters remove 95%+ before it reaches your shower\n- CTA: \"Text SHOWER — I'll explain your options in 5 minutes\"\n\n---\n\n## 📸 SCREENSHOT CAPTURE LIST (grab while on-site)\n\n1. **ss_2025-05-08_chlorine-lab-result.png**  \n   - Lab report showing chlorine levels above 2.0 ppm\n\n2. **ss_2025-05-08_customer-dm-skin.png**  \n   - DM or text from customer: \"My eczema cleared up!\" or similar testimonial\n\n3. **ss_2025-05-08_epa-chlorine-article.png**  \n   - EPA or news article headline about chlorine in drinking water / shower exposure\n\n4. **ss_2025-05-08_before-after-test-strips.png**  \n   - Photo of test strips side-by-side (tap vs. filtered)\n\n5. **ss_2025-05-08_showerhead-buildup.png**  \n   - Close-up of crusty old showerhead (from Shot #3)\n\n---\n\n## 🎒 PROP CHECKLIST\n\n**Gear:**\n- [ ] Phone gimbal (smooth pans/movement)\n- [ ] Lapel mic (for voiceovers in truck)\n- [ ] Phone fully charged + backup battery\n\n**Testing/Demo:**\n- [ ] Chlorine test kit (strips + reagents)\n- [ ] Two clear glasses (for pour comparison)\n- [ ] Lab report printouts (recent results)\n- [ ] Pen (for circling lab numbers on camera)\n\n**Branding:**\n- [ ] ClearWave-branded shirt or hat\n- [ ] Business cards (if customer reference shots)\n\n**Install Tools (for B-roll authenticity):**\n- [ ] Wrench set\n- [ ] Filtration unit or shower filter (if install day)\n\n---\n\n## ⏱️ TIME BUDGET BREAKDOWN\n\n| Task | Time |\n|------|------|\n| B-roll shots (12 × 6 min avg) | 72 min |\n| Voiceover hooks (5 × 5 min) | 25 min |\n| Screenshot captures | 5 min |\n| Travel between shots | 15 min |\n| Buffer | 3 min |\n| **TOTAL** | **120 min (2 hrs)** |\n\n---\n\n## 📁 FILE DROP REMINDER\n\nSave all raw footage to:  \n`/Users/jwts3/.../ClearWave Content Studio/01_RAW_DROP_HERE`\n\nAgent will auto-process within 24 hours. Name files clearly:\n- `2025-05-08_broll_showerhead-test.mov`\n- `2025-05-08_vo_hook1_chlorine-shock.mov`\n\n---\n\n## 🎯 PRIORITY NOTES\n\n- **Non-negotiable shots:** #1 (test strip reaction), #3 (showerhead buildup), #5 (side-by-side pour)\n- **Best voiceover:** Hook #1 or Hook #3 — highest scroll-stop potential\n- **If short on time:** Skip driving shots (#11, #12) — focus on install/test content\n\n---\n\n**Let's make people rethink their shower.**\n\n— Justin",
     "scorecard_md": "# Week 4 Scorecard — Apr 27-May 3\n\n## Auto-tracked (from your data)\n| Metric | Target | This Week | Status |\n| --- | --- | --- | --- |\n| Shoot days completed | 2 | 0 | 🔴 |\n| Short-form videos posted | 40-60+ | 0 | 🔴 |\n| YouTube long-form uploaded | 1 | No | 🔴 |\n| Packages built (Drive ingestion) | 8-12 | 0 | 🔴 |\n| Viral candidates flagged | — | 0 | — |\n\n## Manual entry (paste your numbers)\n- Stories posted (IG + TikTok): ____ (target 15-25)\n- Best video views this week: ____\n- New followers gained (all platforms): ____\n- Comment CTAs received: ____\n- DMs sent back to commenters: ____% (target 100%)\n- Inbound leads this week: ____\n\n## What worked this week\n- No packages shipped = no data to analyze\n- Zero testing happened on Filter Debunks theme\n- The algorithm got nothing to work with\n\n## What to double down on next week (your 70% bucket for Wk 5)\n\n**Top 5 hooks for WATER: Shower & Skin Health:**\n\n1. **\"Your shower is drying out your skin (here's why)\"** — Fear-based, personal care angle\n2. **\"Dermatologists don't want you to know this about shower water\"** — Authority + conspiracy lite\n3. **\"I tested my shower water and found THIS on my skin\"** — First-person discovery, visual proof\n4. **\"Why your expensive moisturizer isn't working\"** — Blame shift to water quality\n5. **\"The one thing destroying your skin barrier every morning\"** — Mystery + daily habit disruption\n\n**Reasoning:** Skin health hits vanity + health fear. Women 25-45 are high buyers. Shower content is visual, relatable, and ties directly to product need.\n\n## Experiments for Wk 5 (your 10% bucket — fresh tests)\n\n1. **\"Boil your tap water and look what's left behind\"** — Trending water quality panic content\n2. **\"I showered with bottled water for 7 days\"** — Extreme experiment format (high curiosity)\n3. **\"What plumbers install in their own homes\"** — Behind-the-scenes authority play\n\n## Pivot trigger checks\n- Did any video break 10K views? **No — nothing posted**\n- Did follower growth stop? **Check your analytics**\n- Did Justin miss any shoot days? **Yes — zero shoot days logged**\n- Did any video go MEGA-viral 500K+? **No**\n\n## Friday non-negotiables checklist\n- [ ] Hook tracker updated for this week\n- [ ] Top 5 hooks picked for next week ✅ (done above)\n- [ ] Schedule Saturday + Sunday posts\n- [ ] Reply to all DMs from this week's CTAs\n\n---\n\n**You can't steer a parked car — get two packages shot this weekend or Week 5 starts in the red before it even begins.**",
@@ -1314,9 +1324,814 @@
         "status": "untested"
       }
     ],
-    "packages_recent": [],
-    "packages_count_total": 0,
-    "packages_awaiting_approval": 0,
+    "packages_recent": [
+      {
+        "filename": "IMG_20260628_195509.jpg",
+        "media_type": "photo",
+        "inferred_topic": "Evening shot (7:55pm timestamp) likely of Justin, a job site, or a milestone marker used as the visual anchor for the Q1 quarter-review recap of building ClearWave Water Solutions",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of building ClearWave is done.\n4 employees. $138K peak month. Real numbers, no fluff. Drop \"Q1\" if you want the full recap.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#veteranowned",
+            "#ceolife",
+            "#startupjourney",
+            "#businessgrowth",
+            "#waterfiltration",
+            "#firstquarter"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "B01",
+          "cta_type": "Comment",
+          "cta_text": "Drop \"Q1\" and I'll send the full recap"
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building the brand is in the books.\n\nWhen I started ClearWave I didn't know if it would work. Now? 4 employees, $11K average ticket, and a $138K peak month.\n\nNavy taught me to build systems. This quarter I built one that works.\n\nComment \"Q1\" for the full breakdown.\n\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#waterboy",
+            "#veteranowned",
+            "#dmvbusiness",
+            "#entrepreneurlife",
+            "#ceomindset",
+            "#smallbusinessowner",
+            "#waterfiltration",
+            "#buildinpublic",
+            "#quarterlyreview",
+            "#startupstory"
+          ],
+          "best_post_time_et": "9:00pm",
+          "first_comment": "true - Hashtags in first comment to keep caption clean: #waterquality #virginiabusiness #waterboy #veteranowned #dmvbusiness #entrepreneurlife #ceomindset #smallbusinessowner #waterfiltration #buildinpublic #quarterlyreview #startupstory"
+        },
+        "youtube_shorts": {
+          "title": "Q1 Building a Water Company: 4 Employees, $138K Peak Month",
+          "description": "Here's the honest recap of my first quarter building ClearWave Water Solutions. Real numbers, real lessons, no hype. Subscribe for water truth. Full breakdown at clearwavewater.com/q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business",
+            "entrepreneur journey",
+            "veteran owned business",
+            "quarterly review",
+            "water quality",
+            "startup recap",
+            "business growth",
+            "ClearWave Water"
+          ],
+          "best_post_time_et": "12:00pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water is done.\n\nHere's the honest recap. Real numbers. No fluff.",
+            "The scoreboard:\n\n- 4 employees\n- $11K average ticket\n- $138K peak month\n- 50%+ net margins\n\nBuilt clean from day one. The Navy taught me systems beat hustle.",
+            "The truth nobody says: your water is worse than you think, and most people don't find out until it costs them.\n\nQ1 was about fixing that for VA/DC/MD one home at a time.\n\nMore next quarter.\n\n— Justin"
+          ],
+          "best_post_time_et": "12:00pm"
+        },
+        "manus_prompt": "Post the photo file 'IMG_20260628_195509.jpg' (located in the content inbox) across all 4 platforms for Justin Shoemaker's ClearWave Water Solutions brand. Use the exact captions, hashtags, and post times below. Sign-off is always '— Justin' only.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of building ClearWave is done.\n4 employees. $138K peak month. Real numbers, no fluff. Drop \"Q1\" if you want the full recap.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #veteranowned #ceolife #startupjourney #businessgrowth #waterfiltration #firstquarter\n\n=== INSTAGRAM REELS (@js_shoez_ / @clearwave_water) ===\nPost time: 9:00pm ET\nCaption:\nQ1 of building the brand is in the books.\n\nWhen I started ClearWave I didn't know if it would work. Now? 4 employees, $11K average ticket, and a $138K peak month.\n\nNavy taught me to build systems. This quarter I built one that works.\n\nComment \"Q1\" for the full breakdown.\n\n— Justin\nPut hashtags in FIRST COMMENT (not caption): #waterquality #virginiabusiness #waterboy #veteranowned #dmvbusiness #entrepreneurlife #ceomindset #smallbusinessowner #waterfiltration #buildinpublic #quarterlyreview #startupstory\n\n=== YOUTUBE SHORTS ===\nPost time: 12:00pm ET\nTitle: Q1 Building a Water Company: 4 Employees, $138K Peak Month\nDescription:\nHere's the honest recap of my first quarter building ClearWave Water Solutions. Real numbers, real lessons, no hype. Subscribe for water truth. Full breakdown at clearwavewater.com/q1\nTags: water filtration, water test, small business, entrepreneur journey, veteran owned business, quarterly review, water quality, startup recap, business growth, ClearWave Water\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 12:00pm ET\nFormat: THREAD (3 posts)\nPost 1: Q1 of building ClearWave Water is done.\n\nHere's the honest recap. Real numbers. No fluff.\nPost 2: The scoreboard:\n\n- 4 employees\n- $11K average ticket\n- $138K peak month\n- 50%+ net margins\n\nBuilt clean from day one. The Navy taught me systems beat hustle.\nPost 3: The truth nobody says: your water is worse than you think, and most people don't find out until it costs them.\n\nQ1 was about fixing that for VA/DC/MD one home at a time.\n\nMore next quarter.\n\n— Justin\n\nConfirm each post is scheduled at its correct ET time and report back with the 4 scheduled post confirmations.",
+        "estimated_reach_band": "medium",
+        "reasoning": "This is a milestone recap tied to the Week 13 Quarter Review anchor, so the business_money pillar and hard ClearWave numbers ($138K peak, 4 employees, 50%+ margins) do the heavy lifting for credibility. I used the 'Q1' comment CTA everywhere to match the week keyword and drive a lead magnet, and picked evening slots for TikTok/IG since recap/story content performs best when people are winding down and scrolling.",
+        "viral_followup_hooks": [
+          "The $138K month broken down: exactly where every dollar came from",
+          "Why I only have 4 employees at 50%+ margins (and won't hire more yet)",
+          "The biggest mistake I made in Q1 building ClearWave",
+          "Navy discipline vs. business chaos: what actually carried over",
+          "What an $11K water ticket actually pays for (nobody shows you this)"
+        ],
+        "package_id": "pkg_2026-07-13_IMG_20260628_195509_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/IMG_20260628_195509.jpg",
+        "created_at": "2026-07-13T16:02:42.400Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "Copy of justin_wedding_solo.jpg",
+        "media_type": "photo",
+        "inferred_topic": "A solo shot of Justin dressed up at a wedding, used as a personal-brand anchor for the Q1 quarter review — tying his personal discipline/appearance to the story of building ClearWave from scratch this quarter.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Wore this suit to a wedding. Same guy who built a water company from $0 this quarter.\nQ1 done. Wanna see the real numbers? Comment \"Q1\"",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#ceomindset",
+            "#veteranowned",
+            "#startupstory",
+            "#businessgrowth",
+            "#quarterreview",
+            "#hustle"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Comment \"Q1\" and I'll send you the full recap"
+        },
+        "instagram_reels": {
+          "caption": "This photo is from a wedding. But it hit me different this week.\n\nSame guy standing here just closed out Q1 of building ClearWave Water. From zero to a real company. 4 employees. Real jobs. Real numbers.\n\nI'm doing a full Q1 recap — what worked, what didn't, and the numbers I don't usually show.\n\nComment \"Q1\" and I'll send it.\n\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#smallbusinessowner",
+            "#ceolife",
+            "#watertreatment",
+            "#dmvbusiness",
+            "#entrepreneurmindset",
+            "#startupjourney",
+            "#quarterreview",
+            "#buildinpublic",
+            "#navyveteran"
+          ],
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Hashtags moved to first comment to keep caption clean: #waterquality #virginiabusiness #veteranowned #smallbusinessowner #ceolife #watertreatment #dmvbusiness #entrepreneurmindset #startupjourney #quarterreview #buildinpublic #navyveteran"
+        },
+        "youtube_shorts": {
+          "title": "I Built a Water Company From Zero This Quarter — Q1 Recap",
+          "description": "Same guy in the wedding photo, same guy who spent Q1 building ClearWave Water from scratch. Here's the honest recap — what worked, what didn't, and where we're headed. Subscribe for water truth. Full recap: clearwavewater.com/q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "water quality",
+            "small business owner",
+            "veteran owned business",
+            "entrepreneur",
+            "startup recap",
+            "quarter review",
+            "clearwave water",
+            "building a business",
+            "ceo journey"
+          ],
+          "best_post_time_et": "12:00pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "This is me at a wedding.\n\nSame guy who spent Q1 building a water company from $0.\n\nHere's the honest recap. 🧵",
+            "I scaled a solar company from $600K to $25M at a previous company and sold it.\n\nSo I know what building looks like.\n\nClearWave is Q1. Brand new. 4 employees. And already running 50%+ net margins.",
+            "The lesson from Q1: your water is worse than you think, and most people won't act until someone shows them the truth.\n\nThat's the whole business.\n\nQ2 we scale it. Reply \"Q1\" for the full recap. — Justin"
+          ],
+          "best_post_time_et": "12pm"
+        },
+        "manus_prompt": "You are posting a single photo across 4 social platforms for Justin Shoemaker (ClearWave Water Solutions). Use the image file at: ./content_inbox/Copy of justin_wedding_solo.jpg\n\nPost each platform at the specified Eastern Time. All CTAs use the keyword \"Q1\". Sign-off is always \"— Justin\" only.\n\n=== TIKTOK (@js_shoez_) — Post at 7:30pm ET ===\nCaption:\nWore this suit to a wedding. Same guy who built a water company from $0 this quarter.\nQ1 done. Wanna see the real numbers? Comment \"Q1\"\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceomindset #veteranowned #startupstory #businessgrowth #quarterreview #hustle\n\n=== INSTAGRAM REELS (@js_shoez_ / @clearwave_water) — Post at 7:30pm ET ===\nCaption:\nThis photo is from a wedding. But it hit me different this week.\n\nSame guy standing here just closed out Q1 of building ClearWave Water. From zero to a real company. 4 employees. Real jobs. Real numbers.\n\nI'm doing a full Q1 recap — what worked, what didn't, and the numbers I don't usually show.\n\nComment \"Q1\" and I'll send it.\n\n— Justin\nFIRST COMMENT (post separately after publishing): #waterquality #virginiabusiness #veteranowned #smallbusinessowner #ceolife #watertreatment #dmvbusiness #entrepreneurmindset #startupjourney #quarterreview #buildinpublic #navyveteran\n\n=== YOUTUBE SHORTS — Post at 12:00pm ET ===\nTitle: I Built a Water Company From Zero This Quarter — Q1 Recap\nDescription:\nSame guy in the wedding photo, same guy who spent Q1 building ClearWave Water from scratch. Here's the honest recap — what worked, what didn't, and where we're headed. Subscribe for water truth. Full recap: clearwavewater.com/q1\nTags: water filtration, water test, water quality, small business owner, veteran owned business, entrepreneur, startup recap, quarter review, clearwave water, building a business, ceo journey\n\n=== X / TWITTER (@Shoeprenuer) — Post as THREAD at 12pm ET ===\nPost 1:\nThis is me at a wedding.\n\nSame guy who spent Q1 building a water company from $0.\n\nHere's the honest recap. 🧵\nPost 2:\nI scaled a solar company from $600K to $25M at a previous company and sold it.\n\nSo I know what building looks like.\n\nClearWave is Q1. Brand new. 4 employees. And already running 50%+ net margins.\nPost 3:\nThe lesson from Q1: your water is worse than you think, and most people won't act until someone shows them the truth.\n\nThat's the whole business.\n\nQ2 we scale it. Reply \"Q1\" for the full recap. — Justin\n\nConfirm each post published successfully and report back the live links.",
+        "estimated_reach_band": "medium",
+        "reasoning": "A solo wedding photo is a personal-brand asset, not a water-demo, so I anchored it to the Week 13 Q1 recap as a 'same guy, two worlds' contrast hook — high relatability without needing new footage. The 'Q1' comment CTA drives DM captures and feeds the algorithm on saves/comments, and the solar win is safely framed as a past company to build authority for the brand-new ClearWave numbers.",
+        "viral_followup_hooks": [],
+        "package_id": "pkg_2026-07-13_Copy_of_justin_wedding_solo_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Copy of justin_wedding_solo.jpg",
+        "created_at": "2026-07-13T16:02:10.863Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "Copy of justin_brandon_wedding.jpg",
+        "media_type": "photo",
+        "inferred_topic": "A photo of Justin at his friend/brother Brandon's wedding, likely used as a personal 'behind the man' post tied into the Q1 brand recap — connecting the human side (relationships, showing up for people) to the story of building ClearWave in its first quarter.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Went to Brandon's wedding this weekend. 1 year ago I was terrified to leave my job and start this.\nBest Q1 of my life. Recap coming.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#startup",
+            "#navyveteran",
+            "#foundersjourney",
+            "#quarterreview",
+            "#businessgrowth",
+            "#vabusiness"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Want the full Q1 numbers? Comment \"Q1\" and I'll break it down."
+        },
+        "instagram_reels": {
+          "caption": "Photo from Brandon's wedding this weekend.\n\nA year ago I was a Navy vet with a steady paycheck and a scary idea: your water is worse than you think, and somebody should fix it.\n\nQ1 of building ClearWave is in the books. 4 employees. Real jobs. Real margins. Real people trusting us in their homes.\n\nFull recap dropping this week.",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#waterboy",
+            "#veteranowned",
+            "#entrepreneurlife",
+            "#buildinabusiness",
+            "#dmvsmallbusiness",
+            "#waterfiltration",
+            "#foundersjourney",
+            "#startupstory",
+            "#navyveteran",
+            "#q1recap"
+          ],
+          "best_post_time_et": "12:00pm",
+          "first_comment": "true — Comment 'Q1' below and I'll send you the full first-quarter recap. #waterquality #virginiabusiness #veteranowned #dmvsmallbusiness #entrepreneur #waterfiltration #startupstory #foundersjourney #navyveteran #vabusiness"
+        },
+        "youtube_shorts": {
+          "title": "1 Year Ago I Quit for This. Q1 of Building a Water Company.",
+          "description": "This weekend I was at Brandon's wedding thinking about how a year ago I was too scared to start ClearWave. Now Q1 is done and the numbers are real. Subscribe for water truth. Full recap at clearwavewater.com/Q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "water quality",
+            "small business startup",
+            "veteran owned business",
+            "founder journey",
+            "quarter recap",
+            "entrepreneur",
+            "virginia business",
+            "how to start a business"
+          ],
+          "best_post_time_et": "5:30pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Was at Brandon's wedding this weekend.\n\nA year ago I couldn't have gone — too broke, too scared, too tied to a job I hated.\n\nThen I bet everything on one idea: your water is worse than you think.\n\nQ1 of ClearWave is done. Here's the recap 🧵",
+            "The numbers nobody tells you when you start:\n\n$11K average ticket.\n4 employees.\n50%+ net margins.\n$138K in our peak month.\n\nNot hype. Not a course. Just water, done right, in VA/DC/MD homes.",
+            "I scaled a solar company 600K to 25M and sold it. People think that made this easy.\n\nIt didn't. Q1 of anything new is terror and grind.\n\nBut showing up at that wedding, free and building something of my own? Worth it.\n\nFull Q1 recap: reply \"Q1\".\n\n— Justin"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "manus_prompt": "You are my social media posting assistant. Post the following single photo across 4 platforms exactly as specified. The image file is: 'Copy of justin_brandon_wedding.jpg' (located in the content inbox folder). Use the same image on all platforms. Execute each post at its specified Eastern Time.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\n\"Went to Brandon's wedding this weekend. 1 year ago I was terrified to leave my job and start this.\nBest Q1 of my life. Recap coming.\"\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #startup #navyveteran #foundersjourney #quarterreview #businessgrowth #vabusiness\nCTA: Pin a comment saying: Want the full Q1 numbers? Comment \"Q1\" and I'll break it down.\n\n=== INSTAGRAM REELS/POST (@clearwave_water) ===\nPost time: 12:00pm ET\nCaption:\n\"Photo from Brandon's wedding this weekend.\n\nA year ago I was a Navy vet with a steady paycheck and a scary idea: your water is worse than you think, and somebody should fix it.\n\nQ1 of building ClearWave is in the books. 4 employees. Real jobs. Real margins. Real people trusting us in their homes.\n\nFull recap dropping this week.\"\nPut hashtags in FIRST COMMENT (not caption):\n\"Comment 'Q1' below and I'll send you the full first-quarter recap. #waterquality #virginiabusiness #veteranowned #dmvsmallbusiness #entrepreneur #waterfiltration #startupstory #foundersjourney #navyveteran #vabusiness\"\n\n=== YOUTUBE SHORTS ===\nPost time: 5:30pm ET\nTitle: 1 Year Ago I Quit for This. Q1 of Building a Water Company.\nDescription:\n\"This weekend I was at Brandon's wedding thinking about how a year ago I was too scared to start ClearWave. Now Q1 is done and the numbers are real. Subscribe for water truth. Full recap at clearwavewater.com/Q1\"\nTags: water filtration, water test, water quality, small business startup, veteran owned business, founder journey, quarter recap, entrepreneur, virginia business, how to start a business\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 9:00pm ET\nFormat: THREAD (3 posts, attach photo to post 1)\nPost 1: \"Was at Brandon's wedding this weekend.\n\nA year ago I couldn't have gone — too broke, too scared, too tied to a job I hated.\n\nThen I bet everything on one idea: your water is worse than you think.\n\nQ1 of ClearWave is done. Here's the recap 🧵\"\nPost 2: \"The numbers nobody tells you when you start:\n\n$11K average ticket.\n4 employees.\n50%+ net margins.\n$138K in our peak month.\n\nNot hype. Not a course. Just water, done right, in VA/DC/MD homes.\"\nPost 3: \"I scaled a solar company 600K to 25M and sold it. People think that made this easy.\n\nIt didn't. Q1 of anything new is terror and grind.\n\nBut showing up at that wedding, free and building something of my own? Worth it.\n\nFull Q1 recap: reply \"Q1\".\n\n— Justin\"\n\nConfirm each post is scheduled at its correct ET time before publishing. Do not alter captions, sign-offs, or hashtags.",
+        "estimated_reach_band": "high",
+        "reasoning": "A wedding photo is a rare human/relatable asset, so I anchored it to the Week 13 Q1 recap by using the personal 'a year ago I was scared to start' angle — this makes the founder story emotional instead of just numbers, which drives shares and comments. The 'Q1' CTA matches the week keyword and the comment-gate builds a list of interested leads while positioning ClearWave's real numbers as proof. Business_money pillar fits because the photo is being used as the emotional entry point into the financial recap.",
+        "viral_followup_hooks": [
+          "The exact $138K month broken down — where every dollar came from (VIDEO with whiteboard).",
+          "Why I left a company I helped scale to $25M to sell water instead — the real reason.",
+          "I tested the water at the wedding venue. You won't believe what was in it.",
+          "4 employees, 50% margins: the boring math nobody posts about small business.",
+          "The 3 mistakes I made in Q1 that almost killed ClearWave — and how I fixed them."
+        ],
+        "package_id": "pkg_2026-07-13_Copy_of_justin_brandon_wedding_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Copy of justin_brandon_wedding.jpg",
+        "created_at": "2026-07-13T16:01:40.788Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "Copy of 20260628_195205.jpg",
+        "media_type": "photo",
+        "inferred_topic": "An evening 'in-the-field' or workshop photo (7:52 PM timestamp) of Justin reflecting on the first quarter of building ClearWave — likely a candid shot of him at a job site, with a filtration install, or a whiteboard/numbers moment used to anchor the Q1 recap.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "3 months ago ClearWave was just an idea.\nNow I'm looking back at Q1 like… we actually did this. Real numbers next.\n\nComment Q1 for the full recap.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#startuplife",
+            "#veteranowned",
+            "#buildinpublic",
+            "#firstquarter",
+            "#ceolife",
+            "#waterfiltration"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Comment Q1 for the full recap"
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building ClearWave Water Solutions is in the books.\n\nStarted with 4 employees and a promise: show people their water is worse than they think.\n\nAvg ticket $11K. Best month cleared six figures. Margins better than I hoped.\n\nThis photo? Just me at the end of a long day, realizing we're actually building something.\n\nComment Q1 and I'll break down the whole quarter.",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#waterfiltration",
+            "#veteranowned",
+            "#smallbusinessowner",
+            "#dmvbusiness",
+            "#entrepreneurlife",
+            "#buildinpublic",
+            "#cleanwater",
+            "#waterboy",
+            "#marylandbusiness",
+            "#startupjourney"
+          ],
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Hashtags posted in first comment to keep caption clean: #waterquality #virginiabusiness #waterfiltration #veteranowned #dmvbusiness #cleanwater #waterboy #buildinpublic #entrepreneurlife #startupjourney"
+        },
+        "youtube_shorts": {
+          "title": "Q1 of Building a Water Company: The Honest Recap",
+          "description": "Three months in on ClearWave Water Solutions and here's what the first quarter actually looked like — the wins, the numbers, and the reality of building a filtration company in VA/DC/MD. Subscribe for water truth. Full recap + free water test: clearwavewater.com",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business recap",
+            "veteran owned business",
+            "quarterly review",
+            "entrepreneur story",
+            "hard water",
+            "water quality virginia",
+            "build in public",
+            "startup journey"
+          ],
+          "best_post_time_et": "5:30pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water Solutions is done.\n\n4 employees. A truck. A promise: your water is worse than you think.\n\nHere's the honest recap 🧵",
+            "The numbers I can share:\n\n- Avg ticket: $11K\n- Best month: cleared six figures\n- Net margins: 50%+\n\nI've scaled a company before (took a prior business 600K → 25M and sold it). This time it's water. Same playbook, better mission.",
+            "The real lesson from Q1: people don't buy filtration. They buy peace of mind about what their kids are drinking.\n\nMore recaps coming. Reply Q1 if you want the full breakdown.\n\n— Justin"
+          ],
+          "best_post_time_et": "12pm"
+        },
+        "manus_prompt": "You are my social media posting agent. Post the following photo across 4 platforms exactly as specified. The image file is: 'Copy of 20260628_195205.jpg' (located in the content inbox). Use each platform's native scheduler for the listed Eastern Time slots. Do not alter captions, sign-offs, or CTAs.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\n3 months ago ClearWave was just an idea.\nNow I'm looking back at Q1 like… we actually did this. Real numbers next.\n\nComment Q1 for the full recap.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #startuplife #veteranowned #buildinpublic #firstquarter #ceolife #waterfiltration\n\n=== INSTAGRAM REELS (@clearwave_water) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of building ClearWave Water Solutions is in the books.\n\nStarted with 4 employees and a promise: show people their water is worse than they think.\n\nAvg ticket $11K. Best month cleared six figures. Margins better than I hoped.\n\nThis photo? Just me at the end of a long day, realizing we're actually building something.\n\nComment Q1 and I'll break down the whole quarter.\nPut hashtags in the FIRST COMMENT (not the caption):\n#waterquality #virginiabusiness #waterfiltration #veteranowned #dmvbusiness #cleanwater #waterboy #buildinpublic #entrepreneurlife #startupjourney\n\n=== YOUTUBE SHORTS ===\nPost time: 5:30pm ET\nTitle: Q1 of Building a Water Company: The Honest Recap\nDescription:\nThree months in on ClearWave Water Solutions and here's what the first quarter actually looked like — the wins, the numbers, and the reality of building a filtration company in VA/DC/MD. Subscribe for water truth. Full recap + free water test: clearwavewater.com\nTags: water filtration, water test, small business recap, veteran owned business, quarterly review, entrepreneur story, hard water, water quality virginia, build in public, startup journey\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 12pm ET\nPost as a 3-tweet THREAD:\n1/ Q1 of building ClearWave Water Solutions is done.\n\n4 employees. A truck. A promise: your water is worse than you think.\n\nHere's the honest recap 🧵\n2/ The numbers I can share:\n\n- Avg ticket: $11K\n- Best month: cleared six figures\n- Net margins: 50%+\n\nI've scaled a company before (took a prior business 600K → 25M and sold it). This time it's water. Same playbook, better mission.\n3/ The real lesson from Q1: people don't buy filtration. They buy peace of mind about what their kids are drinking.\n\nMore recaps coming. Reply Q1 if you want the full breakdown.\n\n— Justin\n\nConfirm each post is scheduled with the correct image, caption, and time before finalizing.",
+        "estimated_reach_band": "medium",
+        "reasoning": "The filename timestamp (evening candid) paired with the Week 13 Quarter Review anchor makes this a reflective business_money post, so I leaned into the 'build in public' recap angle with real ClearWave numbers to earn credibility. The 'Comment Q1' CTA matches the week keyword and drives comment volume, which the algorithm rewards; evening slots fit the introspective end-of-day tone while X runs midday for its business audience.",
+        "viral_followup_hooks": [
+          "The one Q1 mistake that almost cost me a $11K job (and how I fixed it)",
+          "I tested the water in 3 'nice' VA homes this quarter — here's what I found",
+          "How ClearWave hit a six-figure month with only 4 employees",
+          "Why I left solar (600K → 25M) to sell water instead — the real reason",
+          "The exact script my team uses to book a $11K water job (Q1 breakdown)"
+        ],
+        "package_id": "pkg_2026-07-13_Copy_of_20260628_195205_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Copy of 20260628_195205.jpg",
+        "created_at": "2026-07-13T16:01:02.553Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "2026-06-25-082830770.mp4",
+        "media_type": "video",
+        "inferred_topic": "Justin recapping ClearWave's first quarter of building the brand — sharing the raw numbers, wins, and lessons from Q1 as a solo-founder-turned-CEO story, framed against the water business grind.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of building this water company from scratch.\nHere's the real numbers nobody shows you. Comment Q1 and I'll send the full breakdown. — Justin",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#ceo",
+            "#businessgrowth",
+            "#veteranowned",
+            "#tradelife",
+            "#startupstory",
+            "#buildinpublic"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Comment Q1 and I'll send the full breakdown."
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building the brand is in the books.\n\nWhen I started this water company I had 4 employees and a lot of doubt.\n\nAvg ticket $11K. Peak months hit $138K. 50%+ net margins.\n\nI scaled a company before (took a solar business 600K to 25M and sold it) — but building THIS one, in water, has been a whole different game.\n\nComment Q1 and I'll break down what actually worked. — Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#entrepreneur",
+            "#smallbusinessowner",
+            "#ceolife",
+            "#waterfiltration",
+            "#dmvbusiness",
+            "#buildinpublic",
+            "#businessmilestone",
+            "#startupjourney",
+            "#tradebusiness"
+          ],
+          "best_post_time_et": "9:00pm",
+          "first_comment": "true — Hashtags in first comment to keep caption clean: #waterquality #virginiabusiness #veteranowned #entrepreneur #smallbusinessowner #ceolife #waterfiltration #dmvbusiness #buildinpublic #businessmilestone #startupjourney #tradebusiness"
+        },
+        "youtube_shorts": {
+          "title": "Q1 Building A Water Company: The Real Numbers ($11K Avg Ticket)",
+          "description": "My first quarter building ClearWave Water Solutions — the wins, the numbers, and what I learned going from Navy vet to CEO. Subscribe for water truth. Full breakdown: clearwavewater.com/q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business",
+            "entrepreneur",
+            "veteran owned business",
+            "water company",
+            "business growth",
+            "startup",
+            "ceo journey",
+            "water treatment"
+          ],
+          "best_post_time_et": "12:00pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building my water company is done.\n\nEveryone wants the highlight reel. Here's the actual scoreboard. 🧵",
+            "The numbers:\n\n- 4 employees\n- $11K average ticket\n- Peak month: $138K\n- 50%+ net margins\n\nWater isn't sexy. But the math is beautiful.",
+            "I've scaled before — took a solar company from $600K to $25M and sold it.\n\nBut building THIS one from zero taught me more than that whole ride.\n\nQ2 we go harder. — Justin"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "manus_prompt": "You are posting one video across 4 social platforms for Justin Shoemaker (ClearWave Water Solutions). The video file is located at: ./content/2026-06-25-082830770.mp4 (28.1 MB). Post to all platforms at the specified Eastern Time slots today. Do NOT alter captions or sign-offs.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of building this water company from scratch.\nHere's the real numbers nobody shows you. Comment Q1 and I'll send the full breakdown. — Justin\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceo #businessgrowth #veteranowned #tradelife #startupstory #buildinpublic\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nPost time: 9:00pm ET\nCaption:\nQ1 of building the brand is in the books.\n\nWhen I started this water company I had 4 employees and a lot of doubt.\n\nAvg ticket $11K. Peak months hit $138K. 50%+ net margins.\n\nI scaled a company before (took a solar business 600K to 25M and sold it) — but building THIS one, in water, has been a whole different game.\n\nComment Q1 and I'll break down what actually worked. — Justin\nFIRST COMMENT (post hashtags here, not in caption):\n#waterquality #virginiabusiness #veteranowned #entrepreneur #smallbusinessowner #ceolife #waterfiltration #dmvbusiness #buildinpublic #businessmilestone #startupjourney #tradebusiness\n\n=== YOUTUBE SHORTS ===\nPost time: 12:00pm ET\nTitle: Q1 Building A Water Company: The Real Numbers ($11K Avg Ticket)\nDescription:\nMy first quarter building ClearWave Water Solutions — the wins, the numbers, and what I learned going from Navy vet to CEO. Subscribe for water truth. Full breakdown: clearwavewater.com/q1\nTags: water filtration, water test, small business, entrepreneur, veteran owned business, water company, business growth, startup, ceo journey, water treatment\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 9:00pm ET — Post as a 3-tweet thread with the video attached to tweet 1:\nTweet 1: Q1 of building my water company is done.\n\nEveryone wants the highlight reel. Here's the actual scoreboard. 🧵\nTweet 2: The numbers:\n\n- 4 employees\n- $11K average ticket\n- Peak month: $138K\n- 50%+ net margins\n\nWater isn't sexy. But the math is beautiful.\nTweet 3: I've scaled before — took a solar company from $600K to $25M and sold it.\n\nBut building THIS one from zero taught me more than that whole ride.\n\nQ2 we go harder. — Justin\n\nConfirm each post is live and report back the 4 post URLs.",
+        "estimated_reach_band": "high",
+        "reasoning": "Business-money recap content with real revenue numbers ($11K ticket, $138K peak, 50%+ margins) is Justin's strongest engagement driver and matches the Week 13 Q1 Review anchor perfectly. The 'Comment Q1' CTA turns curiosity into a lead-gen loop while keeping the week's keyword consistent, and pairing a humble vet-founder story with hard numbers gives it both credibility and shareability.",
+        "viral_followup_hooks": [
+          "The ONE mistake in Q1 that almost sank the water business (and the $11K fix)",
+          "How we hit a $138K month with only 4 employees — the exact daily routine",
+          "50%+ net margins in water? Here's why plumbers hate this business model",
+          "Navy taught me the discipline that built this company (Q1 mindset breakdown)",
+          "I scaled a company to $25M before — here's the Q1 lesson I applied this time"
+        ],
+        "package_id": "pkg_2026-07-13_2026_06_25_082830770_mp4",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/2026-06-25-082830770.mp4",
+        "created_at": "2026-07-13T15:56:48.386Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "2026-06-23-114851695.mp4",
+        "media_type": "video",
+        "inferred_topic": "Justin recapping his first quarter (Q1) of building ClearWave Water Solutions from the ground up — the wins, the numbers, the lessons learned, and what it really took to launch a water filtration company in the VA/DC/MD area.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of building ClearWave is in the books. 4 employees, $11K avg ticket, and margins most companies dream about.\n\nHere's what actually worked. Comment \"Q1\" for the full breakdown.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#ceomindset",
+            "#veteranowned",
+            "#startupstory",
+            "#buildinpublic",
+            "#businessgrowth",
+            "#dmvbusiness"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "B01",
+          "cta_type": "Comment",
+          "cta_text": "Comment \"Q1\" for the full breakdown"
+        },
+        "instagram_reels": {
+          "caption": "One quarter ago ClearWave was just an idea and a truck.\n\nToday: 4 employees, $11K average ticket, and net margins over 50%.\n\nI've built and sold a company before (took a previous business from $600K to $25M), but starting clean with ClearWave taught me things all over again.\n\nThis is Q1. The real recap — good and hard.\n\nComment \"Q1\" and I'll send you the full story.\n\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#smallbusinessowner",
+            "#entrepreneurlife",
+            "#waterfiltration",
+            "#buildinpublic",
+            "#ceolife",
+            "#dmvbusiness",
+            "#startupjourney",
+            "#businessmindset",
+            "#cleanwater"
+          ],
+          "best_post_time_et": "12:00pm",
+          "first_comment": "true — Hashtags placed in first comment to keep caption clean: #waterquality #virginiabusiness #veteranowned #smallbusinessowner #entrepreneurlife #waterfiltration #buildinpublic #ceolife #dmvbusiness #startupjourney #businessmindset #cleanwater"
+        },
+        "youtube_shorts": {
+          "title": "Q1 of Building a Water Company: The Real Numbers",
+          "description": "My first quarter building ClearWave Water Solutions — 4 employees, an $11K average ticket, and what it actually took to get here. No fluff, just the honest recap. Subscribe for water truth. Full story: clearwavewater.com/Q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business startup",
+            "veteran owned business",
+            "entrepreneur",
+            "business quarter review",
+            "water quality",
+            "ceo journey",
+            "building a business",
+            "clearwave water"
+          ],
+          "best_post_time_et": "5:30pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water is done.\n\n4 employees. $11K average ticket. Net margins north of 50%.\n\nHere's what the first quarter of building a water company actually looked like 🧵",
+            "I've done the founder thing before. At a previous company I helped scale a business from $600K to $25M and we sold it.\n\nStarting ClearWave from zero was a different animal. New product, new team, new lessons. Humbling in the best way.",
+            "The truth? Your water is worse than you think, and most people in VA/DC/MD have no idea what's in theirs.\n\nQ1 was about proving we could show up, test honest, and fix it right.\n\nQ2 we go bigger. Want the full recap? Reply \"Q1\".\n\n— Justin"
+          ],
+          "best_post_time_et": "12pm"
+        },
+        "manus_prompt": "You are my social media posting assistant. Post the following video across 4 platforms using the exact captions, hashtags, and scheduled times below. The video file is located at: ./content/2026-06-23-114851695.mp4 (198.3 MB, video).\n\nThis content is a Q1 quarter review for ClearWave Water Solutions. Sign-off is always '— Justin' only.\n\n=== TIKTOK (@js_shoez_) ===\nPost time (ET): 7:30pm\nCaption:\nQ1 of building ClearWave is in the books. 4 employees, $11K avg ticket, and margins most companies dream about.\n\nHere's what actually worked. Comment \"Q1\" for the full breakdown.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceomindset #veteranowned #startupstory #buildinpublic #businessgrowth #dmvbusiness\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nPost time (ET): 12:00pm\nCaption:\nOne quarter ago ClearWave was just an idea and a truck.\n\nToday: 4 employees, $11K average ticket, and net margins over 50%.\n\nI've built and sold a company before (took a previous business from $600K to $25M), but starting clean with ClearWave taught me things all over again.\n\nThis is Q1. The real recap — good and hard.\n\nComment \"Q1\" and I'll send you the full story.\n\n— Justin\nPlace hashtags in the FIRST COMMENT (not the caption):\n#waterquality #virginiabusiness #veteranowned #smallbusinessowner #entrepreneurlife #waterfiltration #buildinpublic #ceolife #dmvbusiness #startupjourney #businessmindset #cleanwater\n\n=== YOUTUBE SHORTS ===\nPost time (ET): 5:30pm\nTitle: Q1 of Building a Water Company: The Real Numbers\nDescription:\nMy first quarter building ClearWave Water Solutions — 4 employees, an $11K average ticket, and what it actually took to get here. No fluff, just the honest recap. Subscribe for water truth. Full story: clearwavewater.com/Q1\nTags: water filtration, water test, small business startup, veteran owned business, entrepreneur, business quarter review, water quality, ceo journey, building a business, clearwave water\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time (ET): 12pm\nFormat: THREAD (3 posts)\nPost 1:\nQ1 of building ClearWave Water is done.\n\n4 employees. $11K average ticket. Net margins north of 50%.\n\nHere's what the first quarter of building a water company actually looked like 🧵\nPost 2:\nI've done the founder thing before. At a previous company I helped scale a business from $600K to $25M and we sold it.\n\nStarting ClearWave from zero was a different animal. New product, new team, new lessons. Humbling in the best way.\nPost 3:\nThe truth? Your water is worse than you think, and most people in VA/DC/MD have no idea what's in theirs.\n\nQ1 was about proving we could show up, test honest, and fix it right.\n\nQ2 we go bigger. Want the full recap? Reply \"Q1\".\n\n— Justin\n\nConfirm each post is scheduled at its correct ET time and report back with links once published.",
+        "estimated_reach_band": "medium",
+        "reasoning": "Quarter-review content is high-value for the business_money pillar and builds founder credibility, but recap videos convert on engagement rather than broad discovery, so I anchored every CTA to the week's 'Q1' keyword to drive comments and DMs. The $11K ticket and 50%+ margins are strong hooks that stop the scroll while staying on-brand, and the prior solar exit is referenced correctly as a past win at a previous company. Comment-based CTAs on TikTok/IG maximize algorithmic lift for a topic that rewards conversation over saves.",
+        "viral_followup_hooks": [],
+        "package_id": "pkg_2026-07-13_2026_06_23_114851695_mp4",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/2026-06-23-114851695.mp4",
+        "created_at": "2026-07-13T15:56:16.503Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "20260628_195205.jpg",
+        "media_type": "photo",
+        "inferred_topic": "An evening (7:52pm timestamp) photo — likely Justin on a completed install job or with the crew wrapping up, used as a visual anchor for the Q1 brand-building recap. Frames the human/behind-the-scenes side of ClearWave's first quarter.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of ClearWave in the books.\n4 employees, real installs, real clean water. Building this brick by brick — comment Q1 for the full recap.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#ceolife",
+            "#veteranowned",
+            "#buildinabusiness",
+            "#waterfiltration",
+            "#dmvbusiness",
+            "#firstquarter"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Comment Q1 and I'll send you the full first-quarter recap."
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building ClearWave Water Solutions is done.\n\nStarted with a truck, a mission, and one truth: your water is worse than you think.\n\n4 employees now. Real homes. Real installs. Real clean water across VA/DC/MD.\n\nThis is what quarter one of a real brand looks like — not perfect, just built.\n\nComment Q1 for the full recap.\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#waterfiltration",
+            "#veteranowned",
+            "#smallbusinessowner",
+            "#entrepreneurlife",
+            "#dmvsmallbusiness",
+            "#cleanwater",
+            "#buildingabrand",
+            "#ceomindset",
+            "#watertreatment",
+            "#marylandbusiness"
+          ],
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Q1 recap coming to everyone who comments 'Q1' 👇 #waterquality #virginiabusiness #veteranowned #cleanwater #dmvbusiness"
+        },
+        "youtube_shorts": {
+          "title": "Q1 of Building a Water Business From Scratch (Honest Recap)",
+          "description": "The first quarter of ClearWave Water Solutions — 4 employees, real installs, and clean water across VA/DC/MD. Here's what building a brand actually looks like in the first 90 days. Subscribe for water truth. https://clearwavewater.com",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business first quarter",
+            "veteran owned business",
+            "water treatment",
+            "clean water",
+            "entrepreneur recap",
+            "building a business",
+            "hard water fix",
+            "dmv water"
+          ],
+          "best_post_time_et": "5:30pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water Solutions is done.\n\nHere's the honest recap of the first 90 days building a water business from scratch. 🧵",
+            "The numbers:\n\n- 4 employees\n- Real installs in real homes\n- Clean water across VA/DC/MD\n\nNo shortcuts. Just showing up every day and doing the work.",
+            "I scaled and sold a company before (600K → 25M at a previous business). But building ClearWave from the ground up hits different.\n\nThis one's mine, brick by brick. Q1 in the books. Onto the next.\n\n— Justin"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "manus_prompt": "You are my social media posting assistant. Post the following photo across 4 platforms using the exact captions, hashtags, and post times below. The media file is located at: ./content_inbox/20260628_195205.jpg\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of ClearWave in the books.\n4 employees, real installs, real clean water. Building this brick by brick — comment Q1 for the full recap.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceolife #veteranowned #buildinabusiness #waterfiltration #dmvbusiness #firstquarter\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of building ClearWave Water Solutions is done.\n\nStarted with a truck, a mission, and one truth: your water is worse than you think.\n\n4 employees now. Real homes. Real installs. Real clean water across VA/DC/MD.\n\nThis is what quarter one of a real brand looks like — not perfect, just built.\n\nComment Q1 for the full recap.\n— Justin\nPut hashtags in FIRST COMMENT:\nQ1 recap coming to everyone who comments 'Q1' 👇 #waterquality #virginiabusiness #veteranowned #cleanwater #dmvbusiness\n\n=== YOUTUBE SHORTS ===\nPost time: 5:30pm ET\nTitle: Q1 of Building a Water Business From Scratch (Honest Recap)\nDescription:\nThe first quarter of ClearWave Water Solutions — 4 employees, real installs, and clean water across VA/DC/MD. Here's what building a brand actually looks like in the first 90 days. Subscribe for water truth. https://clearwavewater.com\nTags: water filtration, water test, small business first quarter, veteran owned business, water treatment, clean water, entrepreneur recap, building a business, hard water fix, dmv water\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 9:00pm ET\nFormat: THREAD (3 posts)\nPost 1: Q1 of building ClearWave Water Solutions is done.\n\nHere's the honest recap of the first 90 days building a water business from scratch. 🧵\nPost 2: The numbers:\n\n- 4 employees\n- Real installs in real homes\n- Clean water across VA/DC/MD\n\nNo shortcuts. Just showing up every day and doing the work.\nPost 3: I scaled and sold a company before (600K → 25M at a previous business). But building ClearWave from the ground up hits different.\n\nThis one's mine, brick by brick. Q1 in the books. Onto the next.\n\n— Justin\n\nConfirm each post is scheduled at the correct ET time and report back with post URLs once live.",
+        "estimated_reach_band": "medium",
+        "reasoning": "The filename timestamp (evening) plus the Week 13 Quarter Review theme points to a reflective behind-the-scenes recap rather than a product demo, so I leaned into the business_money pillar with an authentic 'brick by brick' angle. The 'Comment Q1' CTA directly matches the week's keyword and drives DM-able list-building, while evening post times (7:30-9pm) fit reflective/story content that people engage with after work. X gets a thread to leverage the founder-journey narrative where that format outperforms.",
+        "viral_followup_hooks": [],
+        "package_id": "pkg_2026-07-13_20260628_195205_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/20260628_195205.jpg",
+        "created_at": "2026-07-13T16:00:28.194Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "20260628_194153.jpg",
+        "media_type": "photo",
+        "inferred_topic": "A late-evening (7:41pm) photo from Q1 of building ClearWave — likely a milestone shot: Justin on a job site, at a customer install, or with the small crew. Framed as a Q1 recap moment showing the first quarter of building the brand from scratch.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of building this water company from nothing.\nHere's what 90 days actually looked like. Type Q1 for the full breakdown.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#ceo",
+            "#buildinpublic",
+            "#firstquarter",
+            "#veteranowned",
+            "#waterfiltration",
+            "#businessgrowth"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "NEW",
+          "cta_type": "Comment",
+          "cta_text": "Type Q1 for the full breakdown"
+        },
+        "instagram_reels": {
+          "caption": "First quarter of building ClearWave is in the books.\n\nNo shortcuts. Just $11K average jobs, a 4-person crew, and margins most people don't believe are real.\n\nI scaled a company 6,500% at my last shop before I sold it. Now I'm doing it again — from zero.\n\nComment Q1 and I'll send you the full recap.\n\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#waterfiltration",
+            "#smallbusinessowner",
+            "#entrepreneurlife",
+            "#dmvbusiness",
+            "#buildinpublic",
+            "#ceolife",
+            "#waterboy",
+            "#hardwork",
+            "#firstquarter"
+          ],
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Comment Q1 for the recap 👇 #waterquality #veteranowned #dmvbusiness #smallbusiness #waterfiltration #entrepreneur #virginia #buildinpublic"
+        },
+        "youtube_shorts": {
+          "title": "Q1 of Building a Water Company From Zero — The Honest Recap",
+          "description": "This is what the first 90 days of building ClearWave Water Solutions really looked like — the wins, the grind, and the numbers behind it. Navy vet, 4-person crew, $11K average jobs. Subscribe for water truth. → clearwavewater.com",
+          "tags": [
+            "water filtration",
+            "water test",
+            "building a business",
+            "small business recap",
+            "veteran owned business",
+            "water quality",
+            "entrepreneur",
+            "quarterly review",
+            "startup story",
+            "clearwave water"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water is done.\n\n90 days from zero. Here's the honest recap most founders won't post. 🧵",
+            "The numbers:\n\n- $11K average job\n- $138K peak month\n- 4 employees\n- 50%+ net margins\n\nWater is a better business than people think. Your water is worse than you think.",
+            "I scaled a company 6,500% at my last shop before I sold it. Everyone said that was luck.\n\nSo I started over. From nothing. Same playbook, new industry.\n\nQ1 says the playbook still works.\n\n— Justin"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "manus_prompt": "You are my social media posting agent. Post the following single photo across 4 platforms using the exact captions, hashtags, and times below. The media file is located at: /content/inbox/20260628_194153.jpg (photo, 2.7MB). Post all in Eastern Time.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nQ1 of building this water company from nothing.\nHere's what 90 days actually looked like. Type Q1 for the full breakdown.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceo #buildinpublic #firstquarter #veteranowned #waterfiltration #businessgrowth\n\n=== INSTAGRAM REELS (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nFirst quarter of building ClearWave is in the books.\n\nNo shortcuts. Just $11K average jobs, a 4-person crew, and margins most people don't believe are real.\n\nI scaled a company 6,500% at my last shop before I sold it. Now I'm doing it again — from zero.\n\nComment Q1 and I'll send you the full recap.\n\n— Justin\nPut hashtags in the FIRST COMMENT (not caption):\nComment Q1 for the recap 👇 #waterquality #veteranowned #dmvbusiness #smallbusiness #waterfiltration #entrepreneur #virginia #buildinpublic\n\n=== YOUTUBE SHORTS ===\nPost time: 9:00pm ET\nTitle: Q1 of Building a Water Company From Zero — The Honest Recap\nDescription:\nThis is what the first 90 days of building ClearWave Water Solutions really looked like — the wins, the grind, and the numbers behind it. Navy vet, 4-person crew, $11K average jobs. Subscribe for water truth. → clearwavewater.com\nTags: water filtration, water test, building a business, small business recap, veteran owned business, water quality, entrepreneur, quarterly review, startup story, clearwave water\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 9:00pm ET\nFormat: THREAD (3 posts)\nPost 1: Q1 of building ClearWave Water is done.\n\n90 days from zero. Here's the honest recap most founders won't post. 🧵\nPost 2: The numbers:\n\n- $11K average job\n- $138K peak month\n- 4 employees\n- 50%+ net margins\n\nWater is a better business than people think. Your water is worse than you think.\nPost 3: I scaled a company 6,500% at my last shop before I sold it. Everyone said that was luck.\n\nSo I started over. From nothing. Same playbook, new industry.\n\nQ1 says the playbook still works.\n\n— Justin\n\nConfirm each post after it publishes and report back any failures.",
+        "estimated_reach_band": "medium",
+        "reasoning": "Quarter-recap content is strong for existing audience trust and lead capture but rarely explodes cold because it's reflective rather than hooky. I leaned on the real ClearWave numbers ($11K, $138K, 50% margins) plus the clean 'started over from zero' framing to make it credible and shareable. The 'Q1' comment CTA matches the week keyword and doubles as a lead magnet for the full recap DM.",
+        "package_id": "pkg_2026-07-13_20260628_194153_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/20260628_194153.jpg",
+        "created_at": "2026-07-13T15:59:58.300Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "20260628_194139.jpg",
+        "media_type": "photo",
+        "inferred_topic": "An evening (7:41pm timestamp) photo of Justin at a completed install or job site, used as a Q1 quarter-review anchor — showing the reality behind the numbers of building ClearWave from the ground up over the first quarter.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "Q1 of building ClearWave from nothing.\n$11K avg tickets, 4 employees, 50%+ margins. Here's the real recap. Comment Q1 for the full breakdown. — Justin",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#veteranowned",
+            "#ceolife",
+            "#businessgrowth",
+            "#waterfiltration",
+            "#startup",
+            "#realtalk"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "B01",
+          "cta_type": "Comment",
+          "cta_text": "Comment Q1 for the full breakdown."
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building the brand is in the books.\n\nNo investors. No shortcuts. Just $11K avg tickets, 4 employees, and 50%+ net margins.\n\nI scaled a company 6,500% at my last stop — but this? This is built different from day one.\n\nComment Q1 and I'll send you the real recap. — Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#waterfiltration",
+            "#smallbusinessowner",
+            "#entrepreneurlife",
+            "#ceomindset",
+            "#dmvbusiness",
+            "#waterboy",
+            "#businessrecap",
+            "#quarterreview",
+            "#buildinthepublic"
+          ],
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Hashtags moved to first comment to keep caption clean: #waterquality #virginiabusiness #veteranowned #waterfiltration #smallbusinessowner #entrepreneurlife #ceomindset #dmvbusiness #waterboy #businessrecap #quarterreview #buildinthepublic"
+        },
+        "youtube_shorts": {
+          "title": "Q1 Building a Water Company From Scratch — The Real Numbers",
+          "description": "First quarter of building ClearWave Water Solutions is done. $11K average tickets, 4 employees, and 50%+ net margins — here's the honest recap of what it took. Subscribe for water truth. Learn more: clearwavewater.com/q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "small business",
+            "entrepreneur recap",
+            "veteran owned business",
+            "water quality",
+            "business growth",
+            "ceo daily",
+            "startup story",
+            "clearwave water"
+          ],
+          "best_post_time_et": "9:00pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water Solutions is done.\n\nNo hype. Just the real numbers a lot of people won't show you. 🧵",
+            "The scoreboard:\n\n- $11K average ticket\n- Peak months at $138K\n- 4 employees\n- 50%+ net margins\n\nBuilt from scratch. No investors.",
+            "I've scaled a company 6,500% before (at a previous company, solar, $600K to $25M — and sold it).\n\nBut ClearWave is different. This one I'm building slow and clean from day one.\n\nQ2 loading. — Justin"
+          ],
+          "best_post_time_et": "12:00pm"
+        },
+        "manus_prompt": "You are posting one photo across 4 social platforms for Justin Shoemaker (ClearWave Water Solutions). Use file: /content_inbox/20260628_194139.jpg. Post each platform at its specified ET time on the same day. Do NOT alter captions. Sign-off is always '— Justin'.\n\n=== TIKTOK (@js_shoez_) — Post 7:30pm ET ===\nCaption:\nQ1 of building ClearWave from nothing.\n$11K avg tickets, 4 employees, 50%+ margins. Here's the real recap. Comment Q1 for the full breakdown. — Justin\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #veteranowned #ceolife #businessgrowth #waterfiltration #startup #realtalk\n\n=== INSTAGRAM REELS (@js_shoez_ / cross-post @clearwave_water) — Post 7:30pm ET ===\nCaption:\nQ1 of building the brand is in the books.\n\nNo investors. No shortcuts. Just $11K avg tickets, 4 employees, and 50%+ net margins.\n\nI scaled a company 6,500% at my last stop — but this? This is built different from day one.\n\nComment Q1 and I'll send you the real recap. — Justin\nFirst comment (put hashtags here, NOT in caption): #waterquality #virginiabusiness #veteranowned #waterfiltration #smallbusinessowner #entrepreneurlife #ceomindset #dmvbusiness #waterboy #businessrecap #quarterreview #buildinthepublic\n\n=== YOUTUBE SHORTS — Post 9:00pm ET ===\nTitle: Q1 Building a Water Company From Scratch — The Real Numbers\nDescription:\nFirst quarter of building ClearWave Water Solutions is done. $11K average tickets, 4 employees, and 50%+ net margins — here's the honest recap of what it took. Subscribe for water truth. Learn more: clearwavewater.com/q1\nTags: water filtration, water test, small business, entrepreneur recap, veteran owned business, water quality, business growth, ceo daily, startup story, clearwave water\n\n=== X / TWITTER (@Shoeprenuer) — Post 12:00pm ET, as a THREAD ===\nPost 1: Q1 of building ClearWave Water Solutions is done.\n\nNo hype. Just the real numbers a lot of people won't show you. 🧵\nPost 2: The scoreboard:\n\n- $11K average ticket\n- Peak months at $138K\n- 4 employees\n- 50%+ net margins\n\nBuilt from scratch. No investors.\nPost 3: I've scaled a company 6,500% before (at a previous company, solar, $600K to $25M — and sold it).\n\nBut ClearWave is different. This one I'm building slow and clean from day one.\n\nQ2 loading. — Justin\n\nConfirm each post is scheduled at the correct ET time before publishing.",
+        "estimated_reach_band": "medium",
+        "reasoning": "Quarter-review content is transparency-driven, which builds trust but rarely goes viral like a shock-value water test would — hence a medium band. I anchored every platform to the Week 13 'Q1' CTA and leaned into the business_money pillar because the filename's evening timestamp reads more like an end-of-day reflection/job-site photo than a lab demo. I kept the prior-company 6,500% win clearly framed as a past achievement, never as ClearWave's numbers.",
+        "viral_followup_hooks": [],
+        "package_id": "pkg_2026-07-13_20260628_194139_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/20260628_194139.jpg",
+        "created_at": "2026-07-13T15:59:28.622Z",
+        "status": "awaiting_approval"
+      },
+      {
+        "filename": "20260628_194129.jpg",
+        "media_type": "photo",
+        "inferred_topic": "Late-evening (7:41pm timestamp) photo likely of Justin at a job site or in front of a ClearWave install/truck, used as a hero image for the Q1 quarter review recap — reflecting on the first quarter of building ClearWave Water Solutions.",
+        "content_pillar": "business_money",
+        "tiktok": {
+          "caption": "3 months ago I bet on myself again.\nQ1 of ClearWave is in the books and the numbers don't lie. Comment Q1 for the full recap.",
+          "hashtags": [
+            "#waterboy",
+            "#waterquality",
+            "#smallbusiness",
+            "#entrepreneur",
+            "#veteranowned",
+            "#startup",
+            "#firstquarter",
+            "#buildinpublic",
+            "#ceolife",
+            "#waterfiltration"
+          ],
+          "best_post_time_et": "7:30pm",
+          "hook_id_used": "B01",
+          "cta_type": "Comment",
+          "cta_text": "Comment Q1 for the full recap."
+        },
+        "instagram_reels": {
+          "caption": "Q1 of building ClearWave is done. ✅\n\nNo investors. No safety net. Just a Navy vet who knows your water is worse than you think.\n\n4 employees. Real installs. Real families getting clean water across VA/DC/MD.\n\nWant the honest numbers and lessons? Comment Q1 and I'll break it down.\n\n— Justin",
+          "hashtags": [
+            "#waterquality",
+            "#virginiabusiness",
+            "#veteranowned",
+            "#smallbusinessowner",
+            "#entrepreneurlife",
+            "#waterfiltration",
+            "#dmvbusiness",
+            "#buildinpublic",
+            "#cleanwater",
+            "#startupjourney",
+            "#ceomindset",
+            "#marylandbusiness"
+          ],
+          "best_post_time_et": "12:00pm",
+          "first_comment": "true — Comment Q1 for the full quarter recap 👇 #waterquality #virginiabusiness #veteranowned #dmvbusiness #waterfiltration #entrepreneur #smallbusiness #buildinpublic #cleanwater #startup"
+        },
+        "youtube_shorts": {
+          "title": "Q1 Building a Water Company From Scratch — Honest Recap",
+          "description": "Three months into building ClearWave Water Solutions, here's the honest recap of Q1 — what worked, what I learned, and where we're headed. Navy vet turned water CEO serving VA/DC/MD. Subscribe for water truth. https://clearwavewater.com/q1",
+          "tags": [
+            "water filtration",
+            "water test",
+            "quarter review",
+            "small business",
+            "veteran owned business",
+            "clean water",
+            "entrepreneur journey",
+            "build in public",
+            "water quality",
+            "startup recap"
+          ],
+          "best_post_time_et": "5:30pm"
+        },
+        "x_twitter": {
+          "format": "thread",
+          "posts": [
+            "Q1 of building ClearWave Water is done.\n\nNo investors. No safety net. Just a Navy vet who knows your water is worse than you think.\n\nHere's the honest recap 🧵",
+            "The setup:\n\n4 employees. Serving VA/DC/MD.\n\nAvg ticket sits around $11K because we don't sell cheap filters — we solve the actual problem in your home's water.\n\nMargins over 50%. That's not luck, that's positioning.",
+            "The lesson from Q1:\n\nI scaled a company 6,500% before ($600K to $25M) and sold it. Different industry, same rule.\n\nPeople don't buy products. They buy trust. Show them the truth about their water and the sale makes itself.\n\nOnto Q2.\n\n— Justin"
+          ],
+          "best_post_time_et": "12pm"
+        },
+        "manus_prompt": "You are my social media posting assistant. Post the following content across 4 platforms using the image file located at ./content_inbox/20260628_194129.jpg. Post each at the specified Eastern Time. Do not alter captions or hashtags.\n\n=== TIKTOK (@js_shoez_) ===\nPOST TIME: 7:30pm ET\nMEDIA: 20260628_194129.jpg\nCAPTION:\n3 months ago I bet on myself again.\nQ1 of ClearWave is in the books and the numbers don't lie. Comment Q1 for the full recap.\nHASHTAGS: #waterboy #waterquality #smallbusiness #entrepreneur #veteranowned #startup #firstquarter #buildinpublic #ceolife #waterfiltration\n\n=== INSTAGRAM REELS (@js_shoez_ / cross-post @clearwave_water) ===\nPOST TIME: 12:00pm ET\nMEDIA: 20260628_194129.jpg\nCAPTION:\nQ1 of building ClearWave is done. ✅\n\nNo investors. No safety net. Just a Navy vet who knows your water is worse than you think.\n\n4 employees. Real installs. Real families getting clean water across VA/DC/MD.\n\nWant the honest numbers and lessons? Comment Q1 and I'll break it down.\n\n— Justin\nFIRST COMMENT (post immediately after publishing):\nComment Q1 for the full quarter recap 👇 #waterquality #virginiabusiness #veteranowned #dmvbusiness #waterfiltration #entrepreneur #smallbusiness #buildinpublic #cleanwater #startup\n\n=== YOUTUBE SHORTS ===\nPOST TIME: 5:30pm ET\nMEDIA: 20260628_194129.jpg\nTITLE: Q1 Building a Water Company From Scratch — Honest Recap\nDESCRIPTION:\nThree months into building ClearWave Water Solutions, here's the honest recap of Q1 — what worked, what I learned, and where we're headed. Navy vet turned water CEO serving VA/DC/MD. Subscribe for water truth. https://clearwavewater.com/q1\nTAGS: water filtration, water test, quarter review, small business, veteran owned business, clean water, entrepreneur journey, build in public, water quality, startup recap\n\n=== X / TWITTER (@Shoeprenuer) ===\nPOST TIME: 12:00pm ET\nFORMAT: Thread (3 posts). Attach 20260628_194129.jpg to post 1 only.\nPOST 1:\nQ1 of building ClearWave Water is done.\n\nNo investors. No safety net. Just a Navy vet who knows your water is worse than you think.\n\nHere's the honest recap 🧵\nPOST 2:\nThe setup:\n\n4 employees. Serving VA/DC/MD.\n\nAvg ticket sits around $11K because we don't sell cheap filters — we solve the actual problem in your home's water.\n\nMargins over 50%. That's not luck, that's positioning.\nPOST 3:\nThe lesson from Q1:\n\nI scaled a company 6,500% before ($600K to $25M) and sold it. Different industry, same rule.\n\nPeople don't buy products. They buy trust. Show them the truth about their water and the sale makes itself.\n\nOnto Q2.\n\n— Justin\n\nConfirm each post is published and report back the live links.",
+        "estimated_reach_band": "medium",
+        "reasoning": "The Q1 recap is a milestone/reflection post that performs well with existing followers but is less broadly shareable than a shocking water-truth demo, so I set reach to medium. The 'Comment Q1' CTA drives the algorithm-friendly engagement the week's anchor calls for, while the X thread leans into business_money credibility (real ClearWave numbers plus the prior-company win framed correctly as a past exit). Angle centers on 'bet on myself' vulnerability to make the numbers feel earned rather than braggy.",
+        "viral_followup_hooks": [],
+        "package_id": "pkg_2026-07-13_20260628_194129_jpg",
+        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/20260628_194129.jpg",
+        "created_at": "2026-07-13T15:58:59.619Z",
+        "status": "awaiting_approval"
+      }
+    ],
+    "packages_count_total": 13,
+    "packages_awaiting_approval": 13,
     "packages_viral_candidates": 0,
     "goal": 500000,
     "starting": 7900,
@@ -1407,11 +2222,27 @@
     "drive_edited_url": "https://drive.google.com/drive/folders/1CbMrfhq7oh7s9Ufwvl7iT_j1eJ5YB7vH",
     "drive_approved_url": "https://drive.google.com/drive/folders/1Mcqdv28DKxfgMCxXHszsK3l4vvFtxPqM",
     "drive_archive_url": "https://drive.google.com/drive/folders/1_Y_4ZY9kUxtV23hN9Phfi2dreuif4bpf",
-    "inbox_files": [
+    "inbox_files": [],
+    "edited_files": [
+      {
+        "filename": "2026-06-23-114851695.manus.txt",
+        "mtime": 1783958176512.6477,
+        "size_mb": 0
+      },
       {
         "filename": "2026-06-23-114851695.mp4",
         "mtime": 1782690903197,
         "size_mb": 198.34
+      },
+      {
+        "filename": "2026-06-23-114851695.package.json",
+        "mtime": 1783958176512.0906,
+        "size_mb": 0.01
+      },
+      {
+        "filename": "2026-06-25-082830770.manus.txt",
+        "mtime": 1783958208389.0762,
+        "size_mb": 0
       },
       {
         "filename": "2026-06-25-082830770.mp4",
@@ -1419,9 +2250,24 @@
         "size_mb": 28.06
       },
       {
+        "filename": "2026-06-25-082830770.package.json",
+        "mtime": 1783958208388.5117,
+        "size_mb": 0.01
+      },
+      {
+        "filename": "20260614_170500.manus.txt",
+        "mtime": 1783958238319.58,
+        "size_mb": 0
+      },
+      {
         "filename": "20260614_170500.mp4",
         "mtime": 1782690903868,
         "size_mb": 33.69
+      },
+      {
+        "filename": "20260614_170500.package.json",
+        "mtime": 1783958238319.1208,
+        "size_mb": 0.01
       },
       {
         "filename": "20260625_110649.jpg",
@@ -1429,9 +2275,29 @@
         "size_mb": 1.43
       },
       {
+        "filename": "20260625_110649.manus.txt",
+        "mtime": 1783958271119.807,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260625_110649.package.json",
+        "mtime": 1783958271119.3728,
+        "size_mb": 0.01
+      },
+      {
         "filename": "20260628_190854.jpg",
         "mtime": 1782690899551,
         "size_mb": 2.2
+      },
+      {
+        "filename": "20260628_190854.manus.txt",
+        "mtime": 1783958307526.0044,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260628_190854.package.json",
+        "mtime": 1783958307525.4797,
+        "size_mb": 0.01
       },
       {
         "filename": "20260628_194129.jpg",
@@ -1439,9 +2305,29 @@
         "size_mb": 2.72
       },
       {
+        "filename": "20260628_194129.manus.txt",
+        "mtime": 1783958339621.1848,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260628_194129.package.json",
+        "mtime": 1783958339620.7646,
+        "size_mb": 0.01
+      },
+      {
         "filename": "20260628_194139.jpg",
         "mtime": 1782690899004,
         "size_mb": 3.66
+      },
+      {
+        "filename": "20260628_194139.manus.txt",
+        "mtime": 1783958368624.167,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260628_194139.package.json",
+        "mtime": 1783958368623.7307,
+        "size_mb": 0.01
       },
       {
         "filename": "20260628_194153.jpg",
@@ -1449,17 +2335,91 @@
         "size_mb": 2.74
       },
       {
+        "filename": "20260628_194153.manus.txt",
+        "mtime": 1783958398302.4348,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260628_194153.package.json",
+        "mtime": 1783958398301.1821,
+        "size_mb": 0.01
+      },
+      {
         "filename": "20260628_195205.jpg",
         "mtime": 1782690860643,
         "size_mb": 2.21
       },
       {
+        "filename": "20260628_195205.manus.txt",
+        "mtime": 1783958428202.664,
+        "size_mb": 0
+      },
+      {
+        "filename": "20260628_195205.package.json",
+        "mtime": 1783958428199.471,
+        "size_mb": 0.01
+      },
+      {
+        "filename": "Copy of 20260628_195205.jpg",
+        "mtime": 1783956801482,
+        "size_mb": 2.21
+      },
+      {
+        "filename": "Copy of 20260628_195205.manus.txt",
+        "mtime": 1783958462560.4812,
+        "size_mb": 0
+      },
+      {
+        "filename": "Copy of 20260628_195205.package.json",
+        "mtime": 1783958462559.5256,
+        "size_mb": 0.01
+      },
+      {
+        "filename": "Copy of justin_brandon_wedding.jpg",
+        "mtime": 1783956801482,
+        "size_mb": 0.56
+      },
+      {
+        "filename": "Copy of justin_brandon_wedding.manus.txt",
+        "mtime": 1783958500792.7026,
+        "size_mb": 0
+      },
+      {
+        "filename": "Copy of justin_brandon_wedding.package.json",
+        "mtime": 1783958500792.1707,
+        "size_mb": 0.01
+      },
+      {
+        "filename": "Copy of justin_wedding_solo.jpg",
+        "mtime": 1783956801482,
+        "size_mb": 0.39
+      },
+      {
+        "filename": "Copy of justin_wedding_solo.manus.txt",
+        "mtime": 1783958530865.223,
+        "size_mb": 0
+      },
+      {
+        "filename": "Copy of justin_wedding_solo.package.json",
+        "mtime": 1783958530864.8152,
+        "size_mb": 0.01
+      },
+      {
         "filename": "IMG_20260628_195509.jpg",
         "mtime": 1782690921187,
         "size_mb": 2.91
+      },
+      {
+        "filename": "IMG_20260628_195509.manus.txt",
+        "mtime": 1783958562402.5686,
+        "size_mb": 0
+      },
+      {
+        "filename": "IMG_20260628_195509.package.json",
+        "mtime": 1783958562402.0962,
+        "size_mb": 0.01
       }
     ],
-    "edited_files": [],
     "approved_files": []
   },
   "trend_watch": {
