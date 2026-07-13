@@ -435,6 +435,14 @@ function md2html(md) {
 // ============================================================================
 // Init — fetch data.json (consolidated agent outputs) and render every tab
 // ============================================================================
+// If the Chart.js CDN failed to load, skip charts instead of crashing init()
+// (a thrown error mid-init would blank every tab, not just the charts).
+function mkChart(el, cfg) {
+  try { if (typeof Chart !== 'undefined' && el) return mkChart(el, cfg); }
+  catch (e) { console.warn('chart skipped:', e.message); }
+  return null;
+}
+
 async function init() {
   let data;
   try {
@@ -519,6 +527,10 @@ async function init() {
           <div><div style="font-size:34px;font-weight:800;color:#fbbf24;">${fmtMoney(ty.projected_full_year)}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">Full-year pace</div></div>
           ${yoyStr ? `<div><div style="font-size:34px;font-weight:800;color:#34d399;">+${yoyStr.split('%')[0]}%</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">vs same period last yr</div></div>` : ''}
         </div>
+        <div style="display:flex;gap:22px;flex-wrap:wrap;margin-bottom:12px;font-size:12px;color:rgba(255,255,255,0.85);">
+          <div>Collection rate: <strong style="color:#a7f3d0;">${ty.ytd_invoiced ? ((ty.ytd_paid / ty.ytd_invoiced) * 100).toFixed(1) : '—'}%</strong></div>
+          <div>Avg invoice: <strong style="color:#a7f3d0;">${(() => { const n = (ty.months || []).reduce((a, m) => a + (m.invoices || 0), 0); return n ? fmtMoney(ty.ytd_invoiced / n) : '—'; })()}</strong> across ${(ty.months || []).reduce((a, m) => a + (m.invoices || 0), 0)} invoices</div>
+        </div>
         <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;">$1M calendar-year milestone: <strong style="color:#a7f3d0;">${pct1m.toFixed(1)}%</strong> there${ty.projected_full_year >= 1e6 ? ' · on pace to clear it' : ''}</div>
         <div style="background:rgba(255,255,255,0.15);border-radius:100px;height:14px;overflow:hidden;margin-bottom:16px;"><div style="width:${pct1m}%;height:100%;background:linear-gradient(90deg,#34d399,#a7f3d0);border-radius:100px;"></div></div>
         <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">${monthBars}</div>
@@ -527,7 +539,7 @@ async function init() {
 
     // Monthly revenue chart
     if ((ex.monthly_revenue || []).length > 0) {
-      new Chart(document.getElementById('exRevChart'), {
+      mkChart(document.getElementById('exRevChart'), {
         data: {
           labels: ex.monthly_revenue.map(r => monthLabel(r.month)),
           datasets: [
@@ -543,7 +555,7 @@ async function init() {
 
     // Leads vs new buying customers
     if ((ex.customers_by_month || []).length > 0) {
-      new Chart(document.getElementById('exCustChart'), {
+      mkChart(document.getElementById('exCustChart'), {
         data: {
           labels: ex.customers_by_month.map(r => monthLabel(r.month)),
           datasets: [
@@ -565,11 +577,12 @@ async function init() {
       { emoji: '💎', value: fmtMoney(ue.avg_rev_per_new_customer), label: 'Avg revenue / new customer', cls: 'gold', sub: 'last 3 months' },
       { emoji: '🎯', value: fmtPct(ue.lead_to_quote_approve_pct), label: 'Quote → approval', cls: 'cyan', sub: ue.leads_created_3mo ? ue.leads_created_3mo.toLocaleString() + ' leads in 3mo' : '' },
       { emoji: '💰', value: fmtMoney(ue.new_gp_3mo), label: 'New gross profit (3mo)', cls: 'green', sub: ue.new_customers_3mo ? ue.new_customers_3mo + ' new buyers' : '' },
+      { emoji: '🧑‍🔧', value: t.total_income ? fmtMoney(t.total_income / 4) : '—', label: 'Revenue per employee (TTM)', cls: 'cyan', sub: '4 employees · PE benchmark $250-400k' },
     ].map(x => `<div class="stat"><div class="emoji">${x.emoji}</div><div class="value ${x.cls}">${x.value}</div><div class="label">${x.label}</div><div class="sub">${x.sub || ''}</div></div>`).join('');
 
     // Metrics history chart
     if ((ex.metrics_history || []).length > 1) {
-      new Chart(document.getElementById('exUnitChart'), {
+      mkChart(document.getElementById('exUnitChart'), {
         type: 'line',
         data: {
           labels: ex.metrics_history.map(h => h.period),
@@ -617,7 +630,7 @@ async function init() {
 
     // Weekly funnel dollars chart
     if ((ex.funnel_series || []).length > 1) {
-      new Chart(document.getElementById('exFunnelChart'), {
+      mkChart(document.getElementById('exFunnelChart'), {
         type: 'line',
         data: {
           labels: ex.funnel_series.map(w => w.week.slice(5)),
@@ -634,7 +647,7 @@ async function init() {
 
     // Product mix
     if ((ex.product_mix || []).length > 0) {
-      new Chart(document.getElementById('exProductChart'), {
+      mkChart(document.getElementById('exProductChart'), {
         type: 'bar',
         data: { labels: ex.product_mix.map(x => x.name), datasets: [{ label: 'Invoiced revenue (TTM)', data: ex.product_mix.map(x => x.revenue), backgroundColor: 'rgba(217,119,6,0.8)', borderRadius: 5 }] },
         options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
@@ -645,7 +658,7 @@ async function init() {
 
     // Geo mix
     if ((ex.geo_mix || []).length > 0) {
-      new Chart(document.getElementById('exGeoChart'), {
+      mkChart(document.getElementById('exGeoChart'), {
         type: 'bar',
         data: { labels: ex.geo_mix.map(x => x.region), datasets: [{ label: 'Revenue (TTM)', data: ex.geo_mix.map(x => x.revenue), backgroundColor: 'rgba(8,145,178,0.8)', borderRadius: 5 }] },
         options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
@@ -710,7 +723,7 @@ async function init() {
   ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
 
   if (m.history && m.history.length > 0) {
-    new Chart(document.getElementById('metricsChart'), {
+    mkChart(document.getElementById('metricsChart'), {
       type: 'line',
       data: {
         labels: m.history.map(h => h.period),
@@ -737,7 +750,9 @@ async function init() {
     { emoji: '📋', value: e.proposals_count || '—', label: 'Proposals today', cls: 'indigo' },
   ].map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
   document.getElementById('email-content').innerHTML = md2html(e.proposals_md);
-  document.getElementById('dwm-content').innerHTML = '<h4>Today\'s Daily Water Minute</h4>' + md2html(data.daily_water_minute?.markdown);
+  const dwmDate = data.daily_water_minute?.date;
+  const dwmIsToday = dwmDate && data.generated_at && dwmDate === data.generated_at.slice(0, 10);
+  document.getElementById('dwm-content').innerHTML = `<h4>Daily Water Minute · ${dwmDate || 'no draft yet'}${dwmIsToday ? '' : dwmDate ? ' <span style="color:#dc2626;font-size:11px;">(not today\'s — daily agent may need attention)</span>' : ''}</h4>` + md2html(data.daily_water_minute?.markdown);
 
   // ---------- Competitor ----------
   document.getElementById('competitor-content').innerHTML = md2html(data.competitor?.brief_md);
@@ -752,8 +767,9 @@ async function init() {
     sub: l.total_reviews ? `${l.total_reviews} reviews` : 'awaiting Places API'
   })).map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div><div class="sub">${s.sub}</div></div>`).join('') || '<div class="empty">Awaiting Google Places API key.</div>';
 
+  if (!(bh.history && bh.history.length > 0)) document.getElementById('ratingsChart').closest('.chart-wrap').style.display = 'none';
   if (bh.history && bh.history.length > 0) {
-    new Chart(document.getElementById('ratingsChart'), {
+    mkChart(document.getElementById('ratingsChart'), {
       type: 'line',
       data: { labels: bh.history.map(h => h.date), datasets: (bh.location_series || []).map((s,i) => ({ label: s.name, data: s.ratings, borderColor: ['#d97706','#0891b2','#059669','#4f46e5'][i%4], tension: 0.3 })) },
       options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 4.5, suggestedMax: 5 } } }
@@ -1247,6 +1263,9 @@ async function init() {
   // ---------- SEO / Backlinks ----------
   const seo = data.matyx_seo;
   if (seo?.summary) {
+    const seoDate = (seo.parsed_at || '').slice(0, 10);
+    document.querySelector('.page[data-page="seo"] h2').insertAdjacentHTML('afterend',
+      `<p style="color:rgba(255,255,255,0.75);font-size:12px;margin:-14px 0 18px;">Data as of <strong style="color:#fbbf24;">${seoDate || 'unknown'}</strong> · refreshes when a new Matyx CSV export lands in data/raw/matyx_seo/</p>`);
     document.getElementById('seo-stats').innerHTML = [
       { emoji: '🔗', value: seo.row_count, label: 'Total Backlinks', cls: 'cyan' },
       { emoji: '📊', value: seo.summary.avg_domain_rating, label: 'Avg Domain Rating', cls: 'gold' },
@@ -1323,7 +1342,7 @@ async function init() {
   // Follower goal trajectory chart
   const fcEl = document.getElementById('followerChart');
   if (fcEl && (cd.milestone_targets || []).length > 0) {
-    new Chart(fcEl, {
+    mkChart(fcEl, {
       type: 'line',
       data: {
         labels: cd.milestone_targets.map(t => t.checkpoint),
@@ -1387,8 +1406,13 @@ async function init() {
     </div>`).join('');
 
   // Briefs + scorecard
-  document.getElementById('cd-monday-brief').innerHTML = '<h4>Latest Monday shoot brief</h4>' + md2html(cd.shoot_brief_monday_md);
-  document.getElementById('cd-thursday-brief').innerHTML = '<h4>Latest Thursday B-roll brief</h4>' + md2html(cd.shoot_brief_thursday_md);
+  if (cd.weekly_brief_md) {
+    document.getElementById('cd-monday-brief').innerHTML = `<h4>Latest weekly shoot brief · ${cd.weekly_brief_date || ''}</h4>` + md2html(cd.weekly_brief_md);
+    document.getElementById('cd-thursday-brief').style.display = 'none';
+  } else {
+    document.getElementById('cd-monday-brief').innerHTML = '<h4>Latest Monday shoot brief</h4>' + md2html(cd.shoot_brief_monday_md);
+    document.getElementById('cd-thursday-brief').innerHTML = '<h4>Latest Thursday B-roll brief</h4>' + md2html(cd.shoot_brief_thursday_md);
+  }
   document.getElementById('cd-scorecard').innerHTML = '<h4>Latest Friday scorecard</h4>' + md2html(cd.scorecard_md);
 
   // ---------- Trend Watch ----------
@@ -1399,10 +1423,15 @@ async function init() {
 
   // ---------- Funnel Diagnostics ----------
   const fd = data.funnel_diagnostics || {};
-  if (fd.funnel?.stages) {
-    document.getElementById('funnel-stats').innerHTML = fd.funnel.stages.slice(0, 4).map(s => ({
-      emoji: '🔻', value: s.count.toLocaleString(), label: s.stage, cls: 'cyan'
-    })).map(s => `<div class="stat"><div class="emoji">${s.emoji}</div><div class="value ${s.cls}">${s.value}</div><div class="label">${s.label}</div></div>`).join('');
+  if (fd.funnel?.current) {
+    const cur = fd.funnel.current, pri = fd.funnel.prior || {};
+    const delta = (a, b) => b ? `<div class="sub" style="color:${a >= b ? '#059669' : '#dc2626'};">${a >= b ? '▲' : '▼'} ${(((a - b) / b) * 100).toFixed(0)}% vs prior 28d</div>` : '';
+    document.getElementById('funnel-stats').innerHTML = [
+      { emoji: '📥', value: (cur.requests_total ?? 0).toLocaleString(), label: 'Requests (28d)', cls: 'cyan', d: delta(cur.requests_total, pri.requests_total) },
+      { emoji: '📄', value: (cur.quotes_sent ?? 0).toLocaleString(), label: 'Quotes sent', cls: 'gold', d: delta(cur.quotes_sent, pri.quotes_sent) },
+      { emoji: '✅', value: (cur.quotes_approved ?? 0).toLocaleString(), label: 'Quotes approved', cls: 'green', d: delta(cur.quotes_approved, pri.quotes_approved) },
+      { emoji: '🛠️', value: (cur.jobs_created ?? 0).toLocaleString(), label: 'Jobs created', cls: 'indigo', d: delta(cur.jobs_created, pri.jobs_created) },
+    ].map(x => `<div class="stat"><div class="emoji">${x.emoji}</div><div class="value ${x.cls}">${x.value}</div><div class="label">${x.label}</div>${x.d || ''}</div>`).join('');
   } else {
     document.getElementById('funnel-stats').innerHTML = '';
   }
