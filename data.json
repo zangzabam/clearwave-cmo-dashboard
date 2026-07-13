@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:47:50.753Z",
+  "generated_at": "2026-07-13T15:48:08.661Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -1407,7 +1407,58 @@
     "drive_edited_url": "https://drive.google.com/drive/folders/1CbMrfhq7oh7s9Ufwvl7iT_j1eJ5YB7vH",
     "drive_approved_url": "https://drive.google.com/drive/folders/1Mcqdv28DKxfgMCxXHszsK3l4vvFtxPqM",
     "drive_archive_url": "https://drive.google.com/drive/folders/1_Y_4ZY9kUxtV23hN9Phfi2dreuif4bpf",
-    "inbox_files": [],
+    "inbox_files": [
+      {
+        "filename": "2026-06-23-114851695.mp4",
+        "mtime": 1782690903197,
+        "size_mb": 198.34
+      },
+      {
+        "filename": "2026-06-25-082830770.mp4",
+        "mtime": 1782690900029,
+        "size_mb": 28.06
+      },
+      {
+        "filename": "20260614_170500.mp4",
+        "mtime": 1782690903868,
+        "size_mb": 33.69
+      },
+      {
+        "filename": "20260625_110649.jpg",
+        "mtime": 1782690900373,
+        "size_mb": 1.43
+      },
+      {
+        "filename": "20260628_190854.jpg",
+        "mtime": 1782690899551,
+        "size_mb": 2.2
+      },
+      {
+        "filename": "20260628_194129.jpg",
+        "mtime": 1782690899273,
+        "size_mb": 2.72
+      },
+      {
+        "filename": "20260628_194139.jpg",
+        "mtime": 1782690899004,
+        "size_mb": 3.66
+      },
+      {
+        "filename": "20260628_194153.jpg",
+        "mtime": 1782690898630,
+        "size_mb": 2.74
+      },
+      {
+        "filename": "20260628_195205.jpg",
+        "mtime": 1782690860643,
+        "size_mb": 2.21
+      },
+      {
+        "filename": "IMG_20260628_195509.jpg",
+        "mtime": 1782690921187,
+        "size_mb": 2.91
+      }
+    ],
     "edited_files": [],
     "approved_files": []
   },
@@ -1594,7 +1645,10 @@
     "decisions": {
       "email_2026-07-13_c1": {
         "decision": "approved",
-        "decided_at": "2026-07-13T15:47:41.324546+00:00"
+        "decided_at": "2026-07-13T15:47:41.324546+00:00",
+        "sent_at": "2026-07-13T15:48:05.635Z",
+        "send_status": "drafted",
+        "mailchimp_campaign_id": "6a84bf63c8"
       },
       "email_2026-07-13_c2": {
         "decision": "pending"
