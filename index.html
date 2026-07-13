@@ -120,7 +120,43 @@
 <nav class="tabs" id="tabs"></nav>
 
 <main>
-  <div class="page active" data-page="overview">
+  <div class="page active" data-page="executive">
+    <h2>Executive Command Center</h2>
+    <div id="ex-north-stats" class="stat-grid"></div>
+
+    <div class="card" style="background:linear-gradient(135deg,#051e3e 0%,#0a3058 55%,#145374 100%);color:#fff;">
+      <h4 style="color:#fbbf24;">🏁 Road to Fortune 500</h4>
+      <div id="ex-f500"></div>
+    </div>
+
+    <h3>Growth Engine</h3>
+    <div class="chart-wrap"><canvas id="exRevChart"></canvas></div>
+    <div class="chart-wrap" style="height:300px;"><canvas id="exCustChart"></canvas></div>
+
+    <h3>Unit Economics</h3>
+    <div id="ex-unit-stats" class="stat-grid"></div>
+    <div class="chart-wrap" style="height:320px;"><canvas id="exUnitChart"></canvas></div>
+
+    <h3>Year over Year</h3>
+    <div class="card"><table id="ex-yoy"></table></div>
+
+    <h3>Sales Funnel · last 28 days vs prior 28</h3>
+    <div class="card"><table id="ex-funnel-table"></table></div>
+    <div class="chart-wrap" style="height:300px;"><canvas id="exFunnelChart"></canvas></div>
+
+    <h3>Revenue Mix</h3>
+    <div class="ex-2col" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;">
+      <div class="chart-wrap" style="height:380px;margin-bottom:0;"><canvas id="exProductChart"></canvas></div>
+      <div class="chart-wrap" style="height:380px;margin-bottom:0;"><canvas id="exGeoChart"></canvas></div>
+    </div>
+    <div class="card" style="margin-top:22px;"><h4>New vs returning customer revenue (TTM)</h4><div id="ex-nvr"></div></div>
+
+    <div class="card" style="background:#f1f5f9;">
+      <p id="ex-freshness" style="font-size:12px;color:#475569;line-height:1.7;margin:0;"></p>
+    </div>
+  </div>
+
+  <div class="page" data-page="overview">
     <h2>Overview</h2>
     <div id="overview-stats" class="stat-grid"></div>
     <div class="card">
@@ -294,12 +330,16 @@
 // ============================================================================
 // Login gate (cosmetic — repo is public, but keeps casual eyes out)
 // ============================================================================
-function checkPin() {
+async function checkPin() {
   const pin = (document.getElementById('pin').value || '').trim();
-  // PIN hash (SHA-256 of 'clearwave2026'). Stored as hash so the source code doesn't leak it directly.
-  const HASH = 'a4d2c9b78c8e8146d12c54d8e6e8b86d23ff4f6f1be6e9d0f3a01a3a9ae89e72';
-  // Actually we'll do a simpler comparison since browsers can compute SHA-256 async. For first-pass cosmetic security:
-  if (pin === 'cww2026' || sessionStorage.getItem('authed') === '1') {
+  // SHA-256 of the PIN — the plaintext never appears in this public repo's source.
+  const HASH = 'c558b6e96eba83469a7541e1db2bbb17127316fc0a7e75043ce2c6d8584de016';
+  let hex = '';
+  try {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pin));
+    hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  } catch (e) { /* non-secure context: hex stays empty, login fails closed */ }
+  if (hex === HASH || sessionStorage.getItem('authed') === '1') {
     sessionStorage.setItem('authed', '1');
     document.getElementById('login').classList.add('hidden');
     init();
@@ -314,6 +354,7 @@ if (sessionStorage.getItem('authed') === '1') document.getElementById('login').c
 // Tabs
 // ============================================================================
 const TABS = [
+  { id: 'executive',       name: '📊 Executive' },
   { id: 'overview',        name: 'Overview' },
   { id: 'morning-brief',   name: '☀️ Morning Brief' },
   { id: 'content-studio',  name: '🎬 Content Studio' },
@@ -336,7 +377,7 @@ for (const t of TABS) {
   const b = document.createElement('button');
   b.textContent = t.name;
   b.dataset.target = t.id;
-  if (t.id === 'overview') b.classList.add('active');
+  if (t.id === 'executive') b.classList.add('active');
   b.onclick = () => {
     document.querySelectorAll('nav.tabs button').forEach(x => x.classList.remove('active'));
     document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
@@ -399,6 +440,204 @@ async function init() {
 
   const lastUpdate = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—';
   document.getElementById('last-update').textContent = lastUpdate;
+
+  // ---------- Executive Command Center ----------
+  const ex = data.executive || null;
+  const fmtMoney = n => n == null ? '—'
+    : Math.abs(n) >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M'
+    : Math.abs(n) >= 1e3 ? '$' + (n / 1e3).toFixed(0) + 'k'
+    : '$' + Math.round(n).toLocaleString();
+  const fmtPct = (n, d = 1) => n == null ? '—' : n.toFixed(d) + '%';
+  const monthLabel = m => { const [y, mo] = m.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+mo - 1] + ' ' + y.slice(2); };
+  if (ex) {
+    const t = ex.ttm || {}, ue = ex.unit_economics || {}, f5 = ex.fortune500 || null;
+    const buyingTotal = (ex.customers_by_month || []).reduce((a, c) => a + (c.buying || 0), 0);
+
+    document.getElementById('ex-north-stats').innerHTML = [
+      { emoji: '💵', value: fmtMoney(t.total_income), label: 'Revenue (TTM)', cls: 'gold', sub: t.period ? 'through ' + t.period.end : '' },
+      { emoji: '🚀', value: ex.yoy?.changePct?.invoicedRev != null ? '+' + fmtPct(ex.yoy.changePct.invoicedRev, 0) : '—', label: 'Revenue YoY', cls: 'green', sub: 'invoiced, yr vs prior yr' },
+      { emoji: '🏷️', value: fmtPct(t.gross_margin_pct), label: 'Gross margin (TTM)', cls: 'cyan', sub: fmtMoney(t.gross_profit) + ' gross profit' },
+      { emoji: '🏦', value: fmtMoney(t.net_income), label: 'Net income (TTM)', cls: 'green', sub: fmtPct(t.net_margin_pct) + ' net margin' },
+      { emoji: '👥', value: buyingTotal || '—', label: 'New buying customers (12mo)', cls: 'indigo', sub: ex.new_vs_returning ? fmtMoney(ex.new_vs_returning.newCustomers?.avgRev) + ' avg ticket' : '' },
+      { emoji: '📣', value: fmtPct(t.marketing_pct_rev), label: 'Marketing % of revenue', cls: '', sub: fmtMoney(t.marketing_total) + ' spent (TTM)' },
+    ].map(x => `<div class="stat"><div class="emoji">${x.emoji}</div><div class="value ${x.cls}">${x.value}</div><div class="label">${x.label}</div><div class="sub">${x.sub || ''}</div></div>`).join('');
+
+    // Fortune 500 road
+    if (f5) {
+      const prog = Math.min(100, f5.next_milestone_progress_pct || 0);
+      const ladder = (f5.milestones || []).map(m => {
+        const hit = f5.ttm_revenue >= m;
+        const lbl = m >= 1e9 ? '$' + (m / 1e9).toFixed(m === 7.4e9 ? 1 : 0) + 'B' : '$' + (m / 1e6) + 'M';
+        return `<span style="display:inline-block;padding:5px 11px;border-radius:100px;margin:3px 4px 3px 0;font-size:11px;font-weight:700;letter-spacing:0.5px;${hit ? 'background:#059669;color:#fff;' : 'background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);'}">${hit ? '✓ ' : ''}${lbl}</span>`;
+      }).join('');
+      document.getElementById('ex-f500').innerHTML = `
+        <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin:8px 0 14px;">
+          <div><div style="font-size:34px;font-weight:800;color:#fbbf24;">${fmtMoney(f5.ttm_revenue)}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">TTM revenue</div></div>
+          <div><div style="font-size:34px;font-weight:800;color:#34d399;">${f5.yoy_growth_pct != null ? '+' + f5.yoy_growth_pct.toFixed(0) + '%' : '—'}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">YoY growth</div></div>
+          <div><div style="font-size:34px;font-weight:800;color:#e0f2fe;">${f5.years_to_f500_at_current_growth ? f5.years_to_f500_at_current_growth.toFixed(1) + ' yrs' : '—'}</div><div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);">To $7.4B at current growth</div></div>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;">Next milestone: <strong style="color:#fbbf24;">${fmtMoney(f5.next_milestone)}</strong> · ${prog.toFixed(1)}% there</div>
+        <div style="background:rgba(255,255,255,0.15);border-radius:100px;height:14px;overflow:hidden;margin-bottom:14px;"><div style="width:${prog}%;height:100%;background:linear-gradient(90deg,#d97706,#fbbf24);border-radius:100px;"></div></div>
+        <div>${ladder}</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.65);margin-top:12px;">CAGR required to reach the $7.4B Fortune 500 floor: <strong>${fmtPct(f5.cagr_needed_10yr_pct, 0)}</strong>/yr over 10 yrs · <strong>${fmtPct(f5.cagr_needed_15yr_pct, 0)}</strong>/yr over 15 · <strong>${fmtPct(f5.cagr_needed_20yr_pct, 0)}</strong>/yr over 20</div>`;
+    } else {
+      document.getElementById('ex-f500').innerHTML = '<p style="color:rgba(255,255,255,0.7);">Revenue data not yet ingested.</p>';
+    }
+
+    // Monthly revenue chart
+    if ((ex.monthly_revenue || []).length > 0) {
+      new Chart(document.getElementById('exRevChart'), {
+        data: {
+          labels: ex.monthly_revenue.map(r => monthLabel(r.month)),
+          datasets: [
+            { type: 'bar', label: 'Invoiced', data: ex.monthly_revenue.map(r => r.invoiced), backgroundColor: 'rgba(217,119,6,0.75)', borderRadius: 5 },
+            { type: 'line', label: 'Collected', data: ex.monthly_revenue.map(r => r.paid), borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.12)', tension: 0.3, fill: true },
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'Monthly Revenue · invoiced vs collected', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + (v / 1000) + 'k' } } } }
+      });
+    }
+
+    // Leads vs new buying customers
+    if ((ex.customers_by_month || []).length > 0) {
+      new Chart(document.getElementById('exCustChart'), {
+        data: {
+          labels: ex.customers_by_month.map(r => monthLabel(r.month)),
+          datasets: [
+            { type: 'bar', label: 'New client records (leads)', data: ex.customers_by_month.map(r => r.leads), backgroundColor: 'rgba(8,145,178,0.45)', borderRadius: 4, yAxisID: 'y' },
+            { type: 'line', label: 'New buying customers', data: ex.customers_by_month.map(r => r.buying), borderColor: '#059669', backgroundColor: 'rgba(5,150,105,0.15)', tension: 0.3, yAxisID: 'y1' },
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'Lead Volume vs Buying Customers', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true, title: { display: true, text: 'Leads' } }, y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: 'Buyers' } } } }
+      });
+    }
+
+    // Unit economics stats
+    document.getElementById('ex-unit-stats').innerHTML = [
+      { emoji: '🧮', value: ue.cac ? '$' + Math.round(ue.cac).toLocaleString() : '—', label: 'CAC', cls: 'indigo', sub: 'fully loaded, 3mo' },
+      { emoji: '📈', value: ue.ltgp_ratio ? ue.ltgp_ratio.toFixed(2) + 'x' : '—', label: 'LTGP : CAC', cls: (ue.ltgp_band || '').toLowerCase() === 'good' ? 'green' : 'gold', sub: 'target ≥ 3x, elite ≥ 5x' },
+      { emoji: '⏱️', value: ue.cac_payback_months ? ue.cac_payback_months.toFixed(1) + ' mo' : '—', label: 'CAC payback', cls: 'green', sub: 'via year-1 gross profit' },
+      { emoji: '💎', value: fmtMoney(ue.avg_rev_per_new_customer), label: 'Avg revenue / new customer', cls: 'gold', sub: 'last 3 months' },
+      { emoji: '🎯', value: fmtPct(ue.lead_to_quote_approve_pct), label: 'Quote → approval', cls: 'cyan', sub: ue.leads_created_3mo ? ue.leads_created_3mo.toLocaleString() + ' leads in 3mo' : '' },
+      { emoji: '💰', value: fmtMoney(ue.new_gp_3mo), label: 'New gross profit (3mo)', cls: 'green', sub: ue.new_customers_3mo ? ue.new_customers_3mo + ' new buyers' : '' },
+    ].map(x => `<div class="stat"><div class="emoji">${x.emoji}</div><div class="value ${x.cls}">${x.value}</div><div class="label">${x.label}</div><div class="sub">${x.sub || ''}</div></div>`).join('');
+
+    // Metrics history chart
+    if ((ex.metrics_history || []).length > 1) {
+      new Chart(document.getElementById('exUnitChart'), {
+        type: 'line',
+        data: {
+          labels: ex.metrics_history.map(h => h.period),
+          datasets: [
+            { label: 'LTGP:CAC (x)', data: ex.metrics_history.map(h => h.ltgp_ratio), borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.1)', tension: 0.3, fill: true },
+            { label: 'CAC ($)', data: ex.metrics_history.map(h => h.cac), borderColor: '#4f46e5', tension: 0.3, yAxisID: 'y1' },
+            { label: 'Gross margin (%)', data: ex.metrics_history.map(h => h.gross_margin_pct), borderColor: '#059669', tension: 0.3 },
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'Unit Economics Trend · monthly investor snapshots', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true }, y1: { position: 'right', beginAtZero: true, grid: { display: false }, ticks: { callback: v => '$' + v } } } }
+      });
+    }
+
+    // YoY table
+    if (ex.yoy) {
+      const rows = [
+        ['Invoiced revenue', fmtMoney(ex.yoy.thisYear.invoicedRev), fmtMoney(ex.yoy.priorYear.invoicedRev), ex.yoy.changePct.invoicedRev],
+        ['Quotes sent', ex.yoy.thisYear.quotes.toLocaleString(), ex.yoy.priorYear.quotes.toLocaleString(), ex.yoy.changePct.quotes],
+        ['Quotes approved', ex.yoy.thisYear.approvedQuotes.toLocaleString(), ex.yoy.priorYear.approvedQuotes.toLocaleString(), ex.yoy.changePct.approvedQuotes],
+        ['Invoices issued', ex.yoy.thisYear.invoices.toLocaleString(), ex.yoy.priorYear.invoices.toLocaleString(), ex.yoy.changePct.invoices],
+        ['Unique clients', ex.yoy.thisYear.uniqueClients.toLocaleString(), ex.yoy.priorYear.uniqueClients.toLocaleString(), ex.yoy.changePct.uniqueClients],
+      ];
+      document.getElementById('ex-yoy').innerHTML = `<thead><tr><th>Metric</th><th>${ex.yoy.thisYear.label}</th><th>${ex.yoy.priorYear.label}</th><th>Change</th></tr></thead><tbody>` +
+        rows.map(r => `<tr><td><strong>${r[0]}</strong></td><td class="num">${r[1]}</td><td class="num">${r[2]}</td><td class="num" style="color:${r[3] >= 0 ? '#059669' : '#dc2626'};font-weight:700;">${r[3] >= 0 ? '+' : ''}${r[3].toFixed(0)}%</td></tr>`).join('') + '</tbody>';
+    }
+
+    // Funnel table current vs prior
+    const fl = ex.funnel_latest;
+    if (fl?.current && fl?.prior) {
+      const stages = [
+        ['Requests (raw inbound)', 'requests_total'], ['Requests scheduled', 'requests_scheduled'], ['Assessments completed', 'requests_completed'],
+        ['Quotes sent', 'quotes_sent'], ['Quotes approved', 'quotes_approved'], ['Jobs created', 'jobs_created'],
+        ['Invoiced $', 'invoiced_dollars'], ['Collected $', 'paid_dollars'],
+      ];
+      document.getElementById('ex-funnel-table').innerHTML = `<thead><tr><th>Stage</th><th>Current (${fl.current.start} → ${fl.current.end})</th><th>Prior 28d</th><th>Δ</th></tr></thead><tbody>` +
+        stages.map(([label, k]) => {
+          const cur = fl.current[k] ?? 0, pri = fl.prior[k] ?? 0;
+          const isMoney = k.endsWith('dollars');
+          const delta = pri ? ((cur - pri) / pri) * 100 : null;
+          return `<tr><td><strong>${label}</strong></td><td class="num">${isMoney ? fmtMoney(cur) : cur.toLocaleString()}</td><td class="num">${isMoney ? fmtMoney(pri) : pri.toLocaleString()}</td><td class="num" style="color:${delta == null ? '#64748b' : delta >= 0 ? '#059669' : '#dc2626'};font-weight:700;">${delta == null ? '—' : (delta >= 0 ? '+' : '') + delta.toFixed(0) + '%'}</td></tr>`;
+        }).join('') + '</tbody>';
+    }
+
+    // Weekly funnel dollars chart
+    if ((ex.funnel_series || []).length > 1) {
+      new Chart(document.getElementById('exFunnelChart'), {
+        type: 'line',
+        data: {
+          labels: ex.funnel_series.map(w => w.week.slice(5)),
+          datasets: [
+            { label: 'Invoiced $ (rolling 28d)', data: ex.funnel_series.map(w => w.invoiced_dollars), borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.1)', tension: 0.3, fill: true },
+            { label: 'Collected $ (rolling 28d)', data: ex.funnel_series.map(w => w.paid_dollars), borderColor: '#059669', tension: 0.3 },
+          ]
+        },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'Weekly Funnel Pulse · fresh every Monday', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + (v / 1000) + 'k' } } } }
+      });
+    }
+
+    // Product mix
+    if ((ex.product_mix || []).length > 0) {
+      new Chart(document.getElementById('exProductChart'), {
+        type: 'bar',
+        data: { labels: ex.product_mix.map(x => x.name), datasets: [{ label: 'Invoiced revenue (TTM)', data: ex.product_mix.map(x => x.revenue), backgroundColor: 'rgba(217,119,6,0.8)', borderRadius: 5 }] },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, title: { display: true, text: 'Top Products by Revenue', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { x: { ticks: { callback: v => '$' + (v / 1000) + 'k' } } } }
+      });
+    }
+
+    // Geo mix
+    if ((ex.geo_mix || []).length > 0) {
+      new Chart(document.getElementById('exGeoChart'), {
+        type: 'bar',
+        data: { labels: ex.geo_mix.map(x => x.region), datasets: [{ label: 'Revenue (TTM)', data: ex.geo_mix.map(x => x.revenue), backgroundColor: 'rgba(8,145,178,0.8)', borderRadius: 5 }] },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, title: { display: true, text: 'Revenue by Region', color: '#0b1d3a', font: { size: 14, weight: 'bold' } } },
+          scales: { x: { ticks: { callback: v => '$' + (v / 1000) + 'k' } } } }
+      });
+    }
+
+    // New vs returning
+    const nv = ex.new_vs_returning;
+    if (nv) {
+      const newPct = nv.totalInvoicedRev ? (nv.newCustomers.revenue / nv.totalInvoicedRev) * 100 : 0;
+      document.getElementById('ex-nvr').innerHTML = `
+        <div style="background:#f1f5f9;border-radius:100px;height:22px;overflow:hidden;display:flex;margin:10px 0 12px;">
+          <div style="width:${newPct}%;background:#d97706;"></div><div style="flex:1;background:#0891b2;"></div>
+        </div>
+        <div style="display:flex;gap:30px;flex-wrap:wrap;font-size:13px;color:#334155;">
+          <div><span style="display:inline-block;width:10px;height:10px;background:#d97706;border-radius:2px;margin-right:6px;"></span><strong>New:</strong> ${fmtMoney(nv.newCustomers.revenue)} · ${nv.newCustomers.count} customers · ${fmtMoney(nv.newCustomers.avgRev)} avg</div>
+          <div><span style="display:inline-block;width:10px;height:10px;background:#0891b2;border-radius:2px;margin-right:6px;"></span><strong>Returning:</strong> ${fmtMoney(nv.returningCustomers.revenue)} · ${nv.returningCustomers.count} customers · ${fmtMoney(nv.returningCustomers.avgRev)} avg</div>
+        </div>
+        <p style="font-size:12px;color:#64748b;margin-top:10px;">${newPct.toFixed(0)}% of revenue is first-purchase. The service-plan + referral engine exists to grow the returning share.</p>`;
+    }
+
+    // Freshness footnote
+    const dt = ex.data_through || {};
+    document.getElementById('ex-freshness').innerHTML = '<strong style="color:#0b1d3a;">Data freshness:</strong> ' + [
+      dt.funnel ? `funnel through <strong>${dt.funnel}</strong> (weekly)` : null,
+      dt.investor_metrics ? `investor metrics through <strong>${dt.investor_metrics}</strong> (monthly)` : null,
+      dt.ttm_pnl ? `TTM P&amp;L through <strong>${dt.ttm_pnl}</strong>` : null,
+      dt.monthly_revenue ? `monthly revenue snapshot <strong>${dt.monthly_revenue}</strong>` : null,
+      dt.product_mix ? `product/geo mix snapshot <strong>${dt.product_mix}</strong>` : null,
+    ].filter(Boolean).join(' · ') + '. Snapshot sources refresh when their deep-dive scripts rerun.';
+  }
 
   // ---------- Overview ----------
   const overviewStats = [
@@ -545,6 +784,19 @@ async function init() {
     return t;
   }
 
+  function b64encUtf8(str) {
+    const bytes = new TextEncoder().encode(str);
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+  function b64decUtf8(b64) {
+    const bin = atob(b64);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
   async function ghGetState() {
     const token = ensureToken();
     if (!token) throw new Error('No PAT. Cancel will fall back to email.');
@@ -569,7 +821,7 @@ async function init() {
     }
     if (!r.ok) throw new Error(`GET state HTTP ${r.status}`);
     const j = await r.json();
-    return { state: JSON.parse(atob(j.content.replace(/\n/g, ''))), sha: j.sha };
+    return { state: JSON.parse(b64decUtf8(j.content.replace(/\n/g, ''))), sha: j.sha };
   }
   async function ghPutState(state, sha, message) {
     const token = ensureToken();
@@ -579,7 +831,7 @@ async function init() {
       headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
         message: message || 'Approval state update',
-        content: btoa(JSON.stringify(state, null, 2)),
+        content: b64encUtf8(JSON.stringify(state, null, 2)),
         sha, branch: GH.branch,
       }),
     });

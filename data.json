@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T12:00:50.356Z",
+  "generated_at": "2026-07-13T12:57:27.520Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -27,27 +27,27 @@
       },
       {
         "name": "Investor Metrics",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-01",
         "status": "Good"
       },
       {
         "name": "Competitor Intel",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-07",
         "status": "Good"
       },
       {
         "name": "Brand Health",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-07",
         "status": "Good"
       },
       {
         "name": "Content Director",
-        "last_run": "2026-07-13",
+        "last_run": "2026-05-03",
         "status": "Good"
       },
       {
         "name": "Trend Watch",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-10",
         "status": "Good"
       },
       {
@@ -62,17 +62,17 @@
       },
       {
         "name": "Opportunity Scout",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-09",
         "status": "Good"
       },
       {
         "name": "Board Comms",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-01",
         "status": "Good"
       },
       {
         "name": "Agency Scorecard",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-01",
         "status": "Good"
       },
       {
@@ -187,6 +187,582 @@
       "Google Ads dev token + OAuth + customer ID — activates Paid Ads autonomous proposals"
     ]
   },
+  "executive": {
+    "metrics_history": [
+      {
+        "period": "2026-04",
+        "ltgp_ratio": 3.61874004388325,
+        "lead_to_sale_pct": 23.204419889502763,
+        "new_gp": 128789.36591618556,
+        "cac": 1227.2262068965517,
+        "gross_margin_pct": 52.26597000934963,
+        "new_customers": 29,
+        "leads_created": 610,
+        "avg_rev_per_new_customer": 8496.948620689656
+      },
+      {
+        "period": "2026-05",
+        "ltgp_ratio": 4.6409593274663505,
+        "lead_to_sale_pct": 24.731182795698924,
+        "new_gp": 158667.76283423626,
+        "cac": 1068.3928125,
+        "gross_margin_pct": 58.16042894910326,
+        "new_customers": 32,
+        "leads_created": 588,
+        "avg_rev_per_new_customer": 8525.3284375
+      },
+      {
+        "period": "2026-06",
+        "ltgp_ratio": 3.4191866044862804,
+        "lead_to_sale_pct": 23.118279569892472,
+        "new_gp": 126693.34372732308,
+        "cac": 1277.7120689655173,
+        "gross_margin_pct": 59.101836147165365,
+        "new_customers": 29,
+        "leads_created": 679,
+        "avg_rev_per_new_customer": 7391.878620689656
+      },
+      {
+        "period": "2026-07",
+        "ltgp_ratio": 3.3543441590664558,
+        "lead_to_sale_pct": 24.431818181818183,
+        "new_gp": 134365.33295758255,
+        "cac": 1292.1648387096775,
+        "gross_margin_pct": 56.68751213783621,
+        "new_customers": 31,
+        "leads_created": 779,
+        "avg_rev_per_new_customer": 7646.067741935484
+      }
+    ],
+    "ttm": {
+      "period": {
+        "start": "2025-04-27",
+        "end": "2026-04-27"
+      },
+      "total_income": 1029004.87,
+      "total_cogs": 494585.83,
+      "gross_profit": 534419.04,
+      "gross_margin_pct": 51.935520965998926,
+      "total_opex": 371584.39,
+      "net_income": 152567.4,
+      "net_margin_pct": 14.826693677358396,
+      "marketing_total": 99823.51,
+      "marketing_pct_rev": 9.700975467686563,
+      "sales_labor_total": 68827.36,
+      "overhead_total": 89356.19
+    },
+    "yoy": {
+      "thisYear": {
+        "label": "This year (May 2025 – Apr 2026)",
+        "quotes": 596,
+        "approvedQuotes": 157,
+        "invoices": 323,
+        "invoicedRev": 1089280.1400000001,
+        "uniqueClients": 695
+      },
+      "priorYear": {
+        "label": "Prior year (May 2024 – Apr 2025)",
+        "quotes": 149,
+        "approvedQuotes": 51,
+        "invoices": 83,
+        "invoicedRev": 312269.7499999999,
+        "uniqueClients": 179
+      },
+      "changePct": {
+        "quotes": 300,
+        "approvedQuotes": 207.843137254902,
+        "invoices": 289.1566265060241,
+        "invoicedRev": 248.82666028329692,
+        "uniqueClients": 288.268156424581
+      }
+    },
+    "monthly_revenue": [
+      {
+        "month": "2025-04",
+        "invoiced": 10596.83,
+        "paid": 10408.369999999999,
+        "invoices": 9
+      },
+      {
+        "month": "2025-05",
+        "invoiced": 78036.64,
+        "paid": 61059.64000000001,
+        "invoices": 36
+      },
+      {
+        "month": "2025-06",
+        "invoiced": 70751.5,
+        "paid": 56492,
+        "invoices": 24
+      },
+      {
+        "month": "2025-07",
+        "invoiced": 74431.6,
+        "paid": 58248.6,
+        "invoices": 40
+      },
+      {
+        "month": "2025-08",
+        "invoiced": 48243,
+        "paid": 38460.75,
+        "invoices": 37
+      },
+      {
+        "month": "2025-09",
+        "invoiced": 74593.5,
+        "paid": 47990.62,
+        "invoices": 23
+      },
+      {
+        "month": "2025-10",
+        "invoiced": 80596.99,
+        "paid": 59781.99,
+        "invoices": 24
+      },
+      {
+        "month": "2025-11",
+        "invoiced": 60093.090000000004,
+        "paid": 45602.86,
+        "invoices": 18
+      },
+      {
+        "month": "2025-12",
+        "invoiced": 132430.2,
+        "paid": 94159.9,
+        "invoices": 26
+      },
+      {
+        "month": "2026-01",
+        "invoiced": 91313.55,
+        "paid": 72117.66,
+        "invoices": 19
+      },
+      {
+        "month": "2026-02",
+        "invoiced": 93221,
+        "paid": 74113,
+        "invoices": 17
+      },
+      {
+        "month": "2026-03",
+        "invoiced": 107737.68,
+        "paid": 74436.93,
+        "invoices": 26
+      },
+      {
+        "month": "2026-04",
+        "invoiced": 75698.18999999999,
+        "paid": 40679.64,
+        "invoices": 24
+      }
+    ],
+    "customers_by_month": [
+      {
+        "month": "2025-04",
+        "leads": 8,
+        "buying": 0
+      },
+      {
+        "month": "2025-05",
+        "leads": 79,
+        "buying": 9
+      },
+      {
+        "month": "2025-06",
+        "leads": 70,
+        "buying": 6
+      },
+      {
+        "month": "2025-07",
+        "leads": 123,
+        "buying": 10
+      },
+      {
+        "month": "2025-08",
+        "leads": 119,
+        "buying": 12
+      },
+      {
+        "month": "2025-09",
+        "leads": 164,
+        "buying": 9
+      },
+      {
+        "month": "2025-10",
+        "leads": 148,
+        "buying": 16
+      },
+      {
+        "month": "2025-11",
+        "leads": 114,
+        "buying": 15
+      },
+      {
+        "month": "2025-12",
+        "leads": 108,
+        "buying": 11
+      },
+      {
+        "month": "2026-01",
+        "leads": 155,
+        "buying": 10
+      },
+      {
+        "month": "2026-02",
+        "leads": 181,
+        "buying": 16
+      },
+      {
+        "month": "2026-03",
+        "leads": 241,
+        "buying": 8
+      },
+      {
+        "month": "2026-04",
+        "leads": 207,
+        "buying": 5
+      }
+    ],
+    "new_vs_returning": {
+      "totalInvoicedRev": 1089280.1400000001,
+      "newCustomers": {
+        "count": 225,
+        "revenue": 1063161.58,
+        "avgRev": 4725.162577777778
+      },
+      "returningCustomers": {
+        "count": 33,
+        "revenue": 26118.56,
+        "avgRev": 791.4715151515152
+      }
+    },
+    "unit_economics": {
+      "cac": 1292.1648387096775,
+      "avg_rev_per_new_customer": 7646.067741935484,
+      "year1_gp_per_customer": 4334.365579276856,
+      "ltgp_ratio": 3.3543441590664558,
+      "ltgp_band": "Watch",
+      "cac_payback_months": 3.5774504436478898,
+      "lead_to_quote_approve_pct": 24.431818181818183,
+      "leads_created_3mo": 779,
+      "new_customers_3mo": 31,
+      "new_gp_3mo": 134365.33295758255
+    },
+    "funnel_series": [
+      {
+        "week": "2026-05-11",
+        "requests": 525,
+        "quotes_sent": 63,
+        "quotes_approved": 13,
+        "jobs_created": 32,
+        "invoiced_dollars": 133832.87,
+        "paid_dollars": 96733.5
+      },
+      {
+        "week": "2026-05-18",
+        "requests": 525,
+        "quotes_sent": 56,
+        "quotes_approved": 10,
+        "jobs_created": 33,
+        "invoiced_dollars": 146935.71000000002,
+        "paid_dollars": 93556.34
+      },
+      {
+        "week": "2026-06-08",
+        "requests": 525,
+        "quotes_sent": 56,
+        "quotes_approved": 14,
+        "jobs_created": 36,
+        "invoiced_dollars": 77587.34999999999,
+        "paid_dollars": 48223.42999999999
+      },
+      {
+        "week": "2026-06-15",
+        "requests": 472,
+        "quotes_sent": 49,
+        "quotes_approved": 12,
+        "jobs_created": 32,
+        "invoiced_dollars": 73092.45,
+        "paid_dollars": 48908.78
+      },
+      {
+        "week": "2026-06-22",
+        "requests": 403,
+        "quotes_sent": 50,
+        "quotes_approved": 8,
+        "jobs_created": 27,
+        "invoiced_dollars": 83731.17,
+        "paid_dollars": 63155.94
+      },
+      {
+        "week": "2026-06-29",
+        "requests": 384,
+        "quotes_sent": 45,
+        "quotes_approved": 9,
+        "jobs_created": 26,
+        "invoiced_dollars": 94002.3,
+        "paid_dollars": 73389.38
+      },
+      {
+        "week": "2026-07-06",
+        "requests": 298,
+        "quotes_sent": 41,
+        "quotes_approved": 8,
+        "jobs_created": 21,
+        "invoiced_dollars": 103937.5,
+        "paid_dollars": 81023.5
+      },
+      {
+        "week": "2026-07-13",
+        "requests": 280,
+        "quotes_sent": 45,
+        "quotes_approved": 6,
+        "jobs_created": 21,
+        "invoiced_dollars": 88777.44,
+        "paid_dollars": 69046.69
+      }
+    ],
+    "funnel_latest": {
+      "current": {
+        "start": "2026-06-15",
+        "end": "2026-07-13",
+        "requests_total": 280,
+        "requests_scheduled": 13,
+        "requests_completed": 33,
+        "quotes_sent": 45,
+        "quotes_approved": 6,
+        "jobs_created": 21,
+        "jobs_invoiced": 4,
+        "invoices_paid": 14,
+        "invoiced_dollars": 88777.44,
+        "paid_dollars": 69046.69
+      },
+      "prior": {
+        "start": "2026-05-18",
+        "end": "2026-06-15",
+        "requests_total": 468,
+        "requests_scheduled": 4,
+        "requests_completed": 28,
+        "quotes_sent": 49,
+        "quotes_approved": 12,
+        "jobs_created": 32,
+        "jobs_invoiced": 20,
+        "invoices_paid": 17,
+        "invoiced_dollars": 72669.51000000001,
+        "paid_dollars": 53230.72
+      }
+    },
+    "product_mix": [
+      {
+        "name": "Re-Ionator Pro Ultra",
+        "revenue": 278491.5,
+        "units": 27,
+        "quotes_listed": 187,
+        "attach_pct": 11.229946524064172
+      },
+      {
+        "name": "FerroMax / ClearWave Ferro",
+        "revenue": 129685,
+        "units": 20,
+        "quotes_listed": 65,
+        "attach_pct": 26.153846153846157
+      },
+      {
+        "name": "H20 Protector Dual Carbon",
+        "revenue": 109925.7,
+        "units": 15,
+        "quotes_listed": 133,
+        "attach_pct": 9.774436090225564
+      },
+      {
+        "name": "H20 Protector (base)",
+        "revenue": 103550,
+        "units": 17,
+        "quotes_listed": 110,
+        "attach_pct": 12.727272727272727
+      },
+      {
+        "name": "SorbMax Air",
+        "revenue": 73010,
+        "units": 12,
+        "quotes_listed": 49,
+        "attach_pct": 22.448979591836736
+      },
+      {
+        "name": "Annual Maintenance Call",
+        "revenue": 42781,
+        "units": 126,
+        "quotes_listed": 2,
+        "attach_pct": 50
+      },
+      {
+        "name": "H20 Shield / Single Carbon",
+        "revenue": 41872,
+        "units": 7,
+        "quotes_listed": 128,
+        "attach_pct": 5.46875
+      },
+      {
+        "name": "H20 Sidekick",
+        "revenue": 32450,
+        "units": 8,
+        "quotes_listed": 183,
+        "attach_pct": 4.371584699453552
+      },
+      {
+        "name": "SUPER PROTECTOR",
+        "revenue": 30749,
+        "units": 2,
+        "quotes_listed": 19,
+        "attach_pct": 10.526315789473683
+      },
+      {
+        "name": "NeuMAX",
+        "revenue": 29550,
+        "units": 9,
+        "quotes_listed": 32,
+        "attach_pct": 21.875
+      },
+      {
+        "name": "RO Pure PRO QC",
+        "revenue": 27732.99,
+        "units": 64,
+        "quotes_listed": 314,
+        "attach_pct": 16.878980891719745
+      },
+      {
+        "name": "Tank / Install Components",
+        "revenue": 24136.51,
+        "units": 8,
+        "quotes_listed": 5,
+        "attach_pct": 60
+      }
+    ],
+    "geo_mix": [
+      {
+        "region": "Other",
+        "revenue": 538114.4,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "VA Beach / Hampton Rds",
+        "revenue": 147784,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "NoVA — Arlington",
+        "revenue": 72810,
+        "dominant": "H20 Protector (base)"
+      },
+      {
+        "region": "Richmond metro",
+        "revenue": 52088,
+        "dominant": "ClearWave Sovereign"
+      },
+      {
+        "region": "Charlottesville",
+        "revenue": 46995,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "NoVA — McLean",
+        "revenue": 42646,
+        "dominant": "H20 Protector (base)"
+      },
+      {
+        "region": "MD — Bowie",
+        "revenue": 30120,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "NoVA — Alexandria",
+        "revenue": 26740,
+        "dominant": "ClearWave Meridian"
+      },
+      {
+        "region": "Fredericksburg",
+        "revenue": 20850,
+        "dominant": "FerroMax / ClearWave Ferro"
+      },
+      {
+        "region": "Rural — Moseley/Midlothian",
+        "revenue": 20649,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "MD — Bethesda",
+        "revenue": 14630,
+        "dominant": "H20 Protector (base)"
+      },
+      {
+        "region": "NoVA — Vienna",
+        "revenue": 11500,
+        "dominant": "H20 Protector (base)"
+      },
+      {
+        "region": "NoVA — Leesburg",
+        "revenue": 11350,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "MD — Derwood",
+        "revenue": 10645.7,
+        "dominant": "H20 Protector Dual Carbon"
+      },
+      {
+        "region": "Rural — Stafford",
+        "revenue": 9500,
+        "dominant": "FerroMax / ClearWave Ferro"
+      },
+      {
+        "region": "NoVA — Great Falls",
+        "revenue": 8698,
+        "dominant": "SorbMax Pro"
+      },
+      {
+        "region": "Rural — Ashland",
+        "revenue": 8600,
+        "dominant": "SorbMax Air"
+      },
+      {
+        "region": "MD — Silver Spring",
+        "revenue": 5990,
+        "dominant": "H20 Shield / Single Carbon"
+      }
+    ],
+    "fortune500": {
+      "ttm_revenue": 1029004.87,
+      "next_milestone": 2500000,
+      "next_milestone_progress_pct": 41.1601948,
+      "f500_floor": 7400000000,
+      "yoy_growth_pct": 248.82666028329692,
+      "years_to_f500_at_current_growth": 7.107898187043873,
+      "cagr_needed_10yr_pct": 143.0420551794179,
+      "cagr_needed_15yr_pct": 80.7677500857603,
+      "cagr_needed_20yr_pct": 55.89806130270443,
+      "milestones": [
+        1000000,
+        2500000,
+        5000000,
+        10000000,
+        25000000,
+        50000000,
+        100000000,
+        250000000,
+        500000000,
+        1000000000,
+        7400000000
+      ]
+    },
+    "data_through": {
+      "investor_metrics": "2026-07",
+      "ttm_pnl": "2026-04-27",
+      "monthly_revenue": "2026-04-24",
+      "funnel": "2026-07-13",
+      "product_mix": "2026-04-24",
+      "geo_mix": "2026-04-24"
+    }
+  },
   "metrics": {
     "ltgp_ratio": 3.3543441590664558,
     "ltgp_band": "Watch",
@@ -197,7 +773,52 @@
     "new_buying_customers": 31,
     "cac": 1292.1648387096775,
     "markdown": "# ClearWave M&A Investor Metrics — Trailing 3 months\n\n**Period:** 2026-04-01 → 2026-07-01\n**Generated:** 2026-07-01\n\n## Source-of-truth numbers (from QBO + Jobber, no estimates)\n\n| Metric | Value | Source |\n|---|---:|---|\n| Total income | $350660 | QBO P&L |\n| COGS | $151879 | QBO P&L |\n| **Gross profit** | **$198780** | derived |\n| **Gross margin** | **56.7%** | **derived** |\n| **Marketing spend (period)** | **$40057** | QBO Advertising & Marketing — full CAC pool |\n| New buying customers | 31 | Jobber clients createdAt in window w/ paid invoice |\n| Lead records created | 779 | Jobber clients with isLead=true |\n| Avg revenue per new customer | $7646 | derived |\n| Quotes sent | 176 | Jobber quotes createdAt in window |\n| Quotes approved | 43 | Jobber quoteStatus=approved/converted |\n| Qualified appointments | 6 | Jobber Requests scheduled+qualifying status |\n| ...with home value ≥ $500k | 0 | client custom field \"Home Value\" parsed |\n| Closed-won installs from qualified | 0 | Request.requestStatus=converted + linked Job |\n\n## Metric 1 — LTGP:CAC\n\n**Target:** Good ≥ 5:1 · Watch 3-5:1 · Bad < 3:1\n\n**Formula (M&A locked):** CAC = marketing spend ÷ new buying customers · LTGP = Year-1 GP per new customer\n\n| Component | Value |\n|---|---:|\n| Avg revenue per new customer | $7646 |\n| Gross margin | 56.7% |\n| **Year-1 GP per new customer** | **$4334** |\n| Marketing spend | $40057 |\n| New buying customers | 31 |\n| **CAC per customer** | **$1292** |\n| **LTGP:CAC ratio** | **3.4x — Watch** |\n\n## Metric 2 — Lead-to-Sale Conversion on Qualified Appointments\n\n**Target:** Good ≥ 30% · Watch 22-30% · Bad < 22%\n\n**Definition (M&A locked):** A \"qualified appointment\" is a prospect who BOTH (a) has booked a Zoom or phone call (Jobber Request with isScheduled=true and status passed \"new\") AND (b) meets the inside-metrics criteria: home value ≥ $500k, homeowner, has water issues, inside service area.\n\n**Source:** Jobber Request entity. Home value parsed from Client custom field \"Home Value\". Service area + homeowner + water-issues currently inferred from Request.\n\n| Bucket | Count |\n|---|---:|\n| Total Requests in window | 1702 |\n| Scheduled Requests (booked) | 17 |\n| Scheduled + qualifying status | 6 |\n| Home-value coverage | 0/6 (0%) |\n| Qualified incl. home value ≥ $500k | 0 |\n| Converted to closed-won install | 0 |\n\n### Conversion rates\n\n| Definition | Value | Band |\n|---|---:|---|\n| **Quote-sent → approved (current best proxy)** | **24.4%** | **Watch** |\n| Strict (Request scheduled + status passed \"new\" + home value ≥ $500k) | 0.0% | unreliable today |\n| Loose (Request scheduled + status passed \"new\", any home value) | 0.0% | unreliable today |\n\n## Metric 3 — New Gross Profit from New Customers vs Plan\n\n**Target:** Good ≥ 90% of plan · Watch 70-90% · Bad < 70%\n\nNew GP from new customers (trailing 3mo): **$134365**\n(31 new customers × $7646 avg rev × 56.7% margin)\n\n> **vs Plan: pending baseline.** Pro forma monthly target will be set after the 2026-04-27 meeting. This number ($134365) is the current-state baseline that M&A team can use to set the target.\n\n## Outstanding\n\n- **Pro forma monthly target** for Metric 3 — pending after meeting today.\n- **Qualified-appointment data capture** — requires HighLevel booking integration + home-value enrichment. Build planned post-meeting.\n",
-    "history": []
+    "history": [
+      {
+        "period": "2026-04",
+        "ltgp_ratio": 3.61874004388325,
+        "lead_to_sale_pct": 23.204419889502763,
+        "new_gp": 128789.36591618556,
+        "cac": 1227.2262068965517,
+        "gross_margin_pct": 52.26597000934963,
+        "new_customers": 29,
+        "leads_created": 610,
+        "avg_rev_per_new_customer": 8496.948620689656
+      },
+      {
+        "period": "2026-05",
+        "ltgp_ratio": 4.6409593274663505,
+        "lead_to_sale_pct": 24.731182795698924,
+        "new_gp": 158667.76283423626,
+        "cac": 1068.3928125,
+        "gross_margin_pct": 58.16042894910326,
+        "new_customers": 32,
+        "leads_created": 588,
+        "avg_rev_per_new_customer": 8525.3284375
+      },
+      {
+        "period": "2026-06",
+        "ltgp_ratio": 3.4191866044862804,
+        "lead_to_sale_pct": 23.118279569892472,
+        "new_gp": 126693.34372732308,
+        "cac": 1277.7120689655173,
+        "gross_margin_pct": 59.101836147165365,
+        "new_customers": 29,
+        "leads_created": 679,
+        "avg_rev_per_new_customer": 7391.878620689656
+      },
+      {
+        "period": "2026-07",
+        "ltgp_ratio": 3.3543441590664558,
+        "lead_to_sale_pct": 24.431818181818183,
+        "new_gp": 134365.33295758255,
+        "cac": 1292.1648387096775,
+        "gross_margin_pct": 56.68751213783621,
+        "new_customers": 31,
+        "leads_created": 779,
+        "avg_rev_per_new_customer": 7646.067741935484
+      }
+    ]
   },
   "daily": {
     "markdown": "# ClearWave Growth — Daily Report 2026-07-13\n\n_Generated at 2026-07-13T10:01:22.005Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **1**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3467** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **19**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **26**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\n# Weekly Email Campaign Proposal\n## Campaign 1: Referral Push (30-60 Days Post-Install)\n**Audience:** 30 satisfied clients, 30-60 days post-install\n**Segment:** Referral push candidates (Jobber trigger)\n---\n### Subject Line Options (60 char max)\n**Primary:**\n`Quick favor (+ $500 if you know someone)`\n**Alternates:**\n1. `Who else needs better water?`\n2. `Your neighbors are asking about your water`\n3. `$500 for a name. Seriously.`\n4. `One question about your system`\n---\n### Preview Text (90 char max)\n`If you know one person dealing with bad water, I'll make it worth your time.`\n---\n### Email Body\n**Subject:** Quick favor (+ $500 if you know someone)\nHi {{First Name}},\nYour {{System Name}} has been running for about six weeks now.\nI have one question: do you know anyone else dealing with hard water, iron stains, or sulfur smell?\nHere's why I'm asking.\nMost of our clients come from referrals. Word of mouth beats every ad we've ever run. And when someone you trust says \"call Justin,\" that person actually picks up the phone.\nSo here's the deal.\nIf you send someone my way and they book a free water assessment, you get a **$50 gift card** whether they buy or not.\nIf they close? **$500 cash** for referrals 1 through 5 this year. **$750** for referrals 6 through 9. **$1,000** for referral 10 and beyond.\nI'm not asking you to sell anything. Just pass along my number to someone who needs help.\nIf that's you, reply with their name and number. I'll take it from there.\nJustin\nCEO / ClearWave\n(804) 893-9919\n---\n### Send Timing\n**Tuesday, 10:00 AM ET**\n(Mid-morning on a low-inbox-volume day; avoids Monday chaos and Friday checkout)\n---\n### Expected Performance\n- **Open rate:** 48-52%\n *Rationale:* Post-install satisfaction is high; subject line uses curiosity + monetary hook; well above our 42.1% avg.\n- **Click rate:** 2.5-4.0%\n *Rationale:* Single, clear CTA (reply); financial incentive; dramatically higher than our 0.28% avg because this is a **reply-based ask**, not a link-click campaign.\n- **Conversion (referrals submitted):** 10-15% (3-5 referrals)\n *Rationale:* Timing (recent install, high satisfaction), clear incentive structure, low friction (just reply with a name).\n---\n### Source Justification\n- **IDEA_SOURCING.md #2 (Jobber lifecycle triggers):** \"30-60 days post-install, satisfied\". The Goldilocks window for referral asks.\n- **IDEA_SOURCING.md #10 (Referral bonus campaigns):** Explicitly calls out the $500/$750/$1K structure and the $50 gift card for non-closed bookings.\n- **Voice Fingerprint (luxury_product register):** Short sentences, periodic single-line paragraphs, conversational tone, triadic structure in the close logic (\"name and number... I'll take it from there\").\n---\n## Campaign 2: Concierge Upsell (13-24 Months Post-Install)\n**Audience:** 100 clients, 13-24 months post-install, NOT on Concierge\n**Segment:** Concierge upsell candidates (Jobber trigger)\n---\n### Subject Line Options (60 char max)\n**Primary:**\n`Is Concierge worth it? (the math)`\n**Alternates:**\n1. `The question we get at 18 months`\n2. `You've been running your system for over a year`\n3. `DIY or done-for-you? Here's the math.`\n4. `$99/mo. What you actually get.`\n---\n### Preview Text (90 char max)\n`Annual service + filters + priority support + parts coverage. Here's what it costs DIY.`\n---\n### Email Body\n**Subject:** Is Concierge worth it? (the math)\nHi {{First Name}},\nYour {{System Name}} has been running for over a year now.\nAround this point, most clients ask the same question: \"Is the Concierge plan worth it for me?\"\nHere's the math.\n**DIY (pay as you go):**\nAnnual service: $349\nFilter swaps (2-4x/year depending on system): $120-$280\nParts (if something breaks): $150-$600\n**Total:** $619 to $1,229/year\n**Concierge ($99/mo = $1,188/year):**\nAnnual service: included\nFilter swaps: included\nPriority phone support: included\nParts coverage on standard install components: included\nIf you use two or more of those services, Concierge pays for itself. If you value the \"one less thing to think about\" factor, it's a no-brainer.\nIf you want in, reply and I'll get you set up. If you'd rather stay DIY, no problem. I just wanted you to have the numbers.\nJustin\nCEO / ClearWave\n(804) 893-9919\n---\n### Send Timing\n**Thursday, 2:00 PM ET**\n(Afternoon send; decision-makers often review \"household business\" items mid-to-late week; avoids competing with Tuesday referral campaign)\n---\n### Expected Performance\n- **Open rate:** 44-48%\n *Rationale:* Subject line signals utility (\"the math\"); audience is already engaged (13-24 months post-install); slightly above our 42.1% avg.\n- **Click rate:** 0.8-1.2%\n *Rationale:* Reply-based CTA (no link required), but Concierge is a \"nice to have\" not urgent, so lower engagement than referral push; still 3-4x our 0.28% avg.\n- **Conversion (Concierge sign-ups):** 8-12% (8-12 clients)\n *Rationale:* Audience has passed the 12-month trust threshold; framing is consultative, not pushy; conversion = email reply expressing interest.\n---\n### Source Justification\n- **IDEA_SOURCING.md #2 (Jobber lifecycle triggers):** \"Concierge upsell candidates (13-24 months post-install, NOT currently on Concierge)\". The exact trigger list.\n- **IDEA_SOURCING.md #14 (Concierge / service-plan upsell):** Explicitly calls out the \"question we get asked at year 1.5\" framing and the math comparison.\n- **HARD RULE #1:** Never pitch Concierge before 12 months. This audience is 13-24 months, so we're clear.\n- **Voice Fingerprint (luxury_product register):** Minimal, confident, periodic single-line paragraphs (\"Here's the math.\"), triadic structure (service/filters/support/parts), no contractions, consultative close (\"I just wanted you to have the numbers\").\n---\n## Why These Two?\n1. **Referral push:** Highest expected ROI. Small audience (30), high conversion potential (10-15%), each conversion worth $500+ in future revenue. Low effort, high trust window.\n2. **Concierge upsell:** Large audience (100), strong lifetime-value play ($1,188/year recurring), framed as education not sales. Converts 8-12 clients = $9,504-$14,256 annual recurring revenue.\nBoth campaigns leverage **Jobber lifecycle triggers** (the #1 highest-conversion idea source per IDEA_SOURCING.md), require **zero creative lift** (no graphics, no links, reply-based CTAs), and hit audiences at peak receptivity windows.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
@@ -758,7 +1379,58 @@
     "drive_edited_url": "https://drive.google.com/drive/folders/1CbMrfhq7oh7s9Ufwvl7iT_j1eJ5YB7vH",
     "drive_approved_url": "https://drive.google.com/drive/folders/1Mcqdv28DKxfgMCxXHszsK3l4vvFtxPqM",
     "drive_archive_url": "https://drive.google.com/drive/folders/1_Y_4ZY9kUxtV23hN9Phfi2dreuif4bpf",
-    "inbox_files": [],
+    "inbox_files": [
+      {
+        "filename": "2026-06-23-114851695.mp4",
+        "mtime": 1782690903197,
+        "size_mb": 198.34
+      },
+      {
+        "filename": "2026-06-25-082830770.mp4",
+        "mtime": 1782690900029,
+        "size_mb": 28.06
+      },
+      {
+        "filename": "20260614_170500.mp4",
+        "mtime": 1782690903868,
+        "size_mb": 33.69
+      },
+      {
+        "filename": "20260625_110649.jpg",
+        "mtime": 1782690900373,
+        "size_mb": 1.43
+      },
+      {
+        "filename": "20260628_190854.jpg",
+        "mtime": 1782690899551,
+        "size_mb": 2.2
+      },
+      {
+        "filename": "20260628_194129.jpg",
+        "mtime": 1782690899273,
+        "size_mb": 2.72
+      },
+      {
+        "filename": "20260628_194139.jpg",
+        "mtime": 1782690899004,
+        "size_mb": 3.66
+      },
+      {
+        "filename": "20260628_194153.jpg",
+        "mtime": 1782690898630,
+        "size_mb": 2.74
+      },
+      {
+        "filename": "20260628_195205.jpg",
+        "mtime": 1782690860643,
+        "size_mb": 2.21
+      },
+      {
+        "filename": "IMG_20260628_195509.jpg",
+        "mtime": 1782690921187,
+        "size_mb": 2.91
+      }
+    ],
     "edited_files": [],
     "approved_files": []
   },
@@ -952,8 +1624,6 @@
     },
     "last_brief_sent": "2026-07-13T10:30:01.265Z"
   },
-  "approval_worker_url": null,
-  "approval_worker_token": null,
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
     "branch": "main",
