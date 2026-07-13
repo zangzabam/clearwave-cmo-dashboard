@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:07:25.077Z",
+  "generated_at": "2026-07-13T15:45:11.141Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -555,45 +555,52 @@
     "product_mix": [
       {
         "name": "Re-Ionator Pro Ultra",
-        "revenue": 278491.5,
-        "units": 27,
-        "quotes_listed": 187,
-        "attach_pct": 11.229946524064172
-      },
-      {
-        "name": "FerroMax / ClearWave Ferro",
-        "revenue": 129685,
-        "units": 20,
-        "quotes_listed": 65,
-        "attach_pct": 26.153846153846157
+        "revenue": 195024,
+        "units": 18,
+        "quotes_listed": 137,
+        "attach_pct": 12.408759124087592
       },
       {
         "name": "H20 Protector Dual Carbon",
-        "revenue": 109925.7,
-        "units": 15,
+        "revenue": 118841.4,
+        "units": 16.060000000000002,
         "quotes_listed": 133,
         "attach_pct": 9.774436090225564
       },
       {
+        "name": "FerroMax / ClearWave Ferro",
+        "revenue": 115455,
+        "units": 19,
+        "quotes_listed": 67,
+        "attach_pct": 28.35820895522388
+      },
+      {
         "name": "H20 Protector (base)",
-        "revenue": 103550,
-        "units": 17,
-        "quotes_listed": 110,
-        "attach_pct": 12.727272727272727
+        "revenue": 88750,
+        "units": 13,
+        "quotes_listed": 56,
+        "attach_pct": 12.5
       },
       {
         "name": "SorbMax Air",
-        "revenue": 73010,
+        "revenue": 75470,
         "units": 12,
-        "quotes_listed": 49,
-        "attach_pct": 22.448979591836736
+        "quotes_listed": 42,
+        "attach_pct": 28.57142857142857
       },
       {
-        "name": "Annual Maintenance Call",
-        "revenue": 42781,
-        "units": 126,
-        "quotes_listed": 2,
-        "attach_pct": 50
+        "name": "ClearWave Sovereign",
+        "revenue": 74750,
+        "units": 7,
+        "quotes_listed": 53,
+        "attach_pct": 13.20754716981132
+      },
+      {
+        "name": "ClearWave Meridian",
+        "revenue": 45900,
+        "units": 5,
+        "quotes_listed": 61,
+        "attach_pct": 8.19672131147541
       },
       {
         "name": "H20 Shield / Single Carbon",
@@ -606,113 +613,101 @@
         "name": "H20 Sidekick",
         "revenue": 32450,
         "units": 8,
-        "quotes_listed": 183,
-        "attach_pct": 4.371584699453552
+        "quotes_listed": 129,
+        "attach_pct": 6.2015503875969
       },
       {
         "name": "SUPER PROTECTOR",
         "revenue": 30749,
         "units": 2,
-        "quotes_listed": 19,
-        "attach_pct": 10.526315789473683
+        "quotes_listed": 18,
+        "attach_pct": 11.11111111111111
       },
       {
-        "name": "NeuMAX",
-        "revenue": 29550,
-        "units": 9,
-        "quotes_listed": 32,
-        "attach_pct": 21.875
-      },
-      {
-        "name": "RO Pure PRO QC",
-        "revenue": 27732.99,
-        "units": 64,
-        "quotes_listed": 314,
-        "attach_pct": 16.878980891719745
+        "name": "Annual Maintenance Call",
+        "revenue": 29568,
+        "units": 88,
+        "quotes_listed": 3,
+        "attach_pct": 33.33333333333333
       },
       {
         "name": "Tank / Install Components",
-        "revenue": 24136.51,
+        "revenue": 29136.51,
         "units": 8,
-        "quotes_listed": 5,
-        "attach_pct": 60
+        "quotes_listed": 6,
+        "attach_pct": 66.66666666666666
       }
     ],
     "geo_mix": [
       {
         "region": "Other",
-        "revenue": 538114.4,
+        "revenue": 573850.9,
         "dominant": "Re-Ionator Pro Ultra"
       },
       {
         "region": "VA Beach / Hampton Rds",
-        "revenue": 147784,
+        "revenue": 134403,
         "dominant": "Re-Ionator Pro Ultra"
       },
       {
         "region": "NoVA — Arlington",
-        "revenue": 72810,
+        "revenue": 81790,
         "dominant": "H20 Protector (base)"
       },
       {
         "region": "Richmond metro",
-        "revenue": 52088,
-        "dominant": "ClearWave Sovereign"
-      },
-      {
-        "region": "Charlottesville",
-        "revenue": 46995,
-        "dominant": "Re-Ionator Pro Ultra"
+        "revenue": 51359,
+        "dominant": "H20 Protector Dual Carbon"
       },
       {
         "region": "NoVA — McLean",
-        "revenue": 42646,
-        "dominant": "H20 Protector (base)"
-      },
-      {
-        "region": "MD — Bowie",
-        "revenue": 30120,
+        "revenue": 39497,
         "dominant": "Re-Ionator Pro Ultra"
       },
       {
         "region": "NoVA — Alexandria",
-        "revenue": 26740,
-        "dominant": "ClearWave Meridian"
-      },
-      {
-        "region": "Fredericksburg",
-        "revenue": 20850,
-        "dominant": "FerroMax / ClearWave Ferro"
-      },
-      {
-        "region": "Rural — Moseley/Midlothian",
-        "revenue": 20649,
-        "dominant": "Re-Ionator Pro Ultra"
+        "revenue": 38090,
+        "dominant": "ClearWave Sovereign"
       },
       {
         "region": "MD — Bethesda",
-        "revenue": 14630,
-        "dominant": "H20 Protector (base)"
+        "revenue": 36509,
+        "dominant": "ClearWave Meridian Diamond"
       },
       {
-        "region": "NoVA — Vienna",
-        "revenue": 11500,
-        "dominant": "H20 Protector (base)"
-      },
-      {
-        "region": "NoVA — Leesburg",
-        "revenue": 11350,
+        "region": "Charlottesville",
+        "revenue": 33795,
         "dominant": "Re-Ionator Pro Ultra"
       },
       {
-        "region": "MD — Derwood",
-        "revenue": 10645.7,
-        "dominant": "H20 Protector Dual Carbon"
+        "region": "Rural — Moseley/Midlothian",
+        "revenue": 22249,
+        "dominant": "ClearWave Sovereign"
       },
       {
-        "region": "Rural — Stafford",
-        "revenue": 9500,
+        "region": "MD — Bowie",
+        "revenue": 20640,
+        "dominant": "OxiMAX Air"
+      },
+      {
+        "region": "NoVA — Leesburg",
+        "revenue": 17350,
+        "dominant": "Re-Ionator Pro Ultra"
+      },
+      {
+        "region": "Fredericksburg",
+        "revenue": 15350,
         "dominant": "FerroMax / ClearWave Ferro"
+      },
+      {
+        "region": "NoVA — Vienna",
+        "revenue": 12499,
+        "dominant": "H20 Protector (base)"
+      },
+      {
+        "region": "MD — Derwood",
+        "revenue": 11311.4,
+        "dominant": "H20 Protector Dual Carbon"
       },
       {
         "region": "NoVA — Great Falls",
@@ -728,6 +723,11 @@
         "region": "MD — Silver Spring",
         "revenue": 5990,
         "dominant": "H20 Shield / Single Carbon"
+      },
+      {
+        "region": "NoVA — Fairfax",
+        "revenue": 2250,
+        "dominant": "RO Pure PRO QC"
       }
     ],
     "fortune500": {
@@ -759,8 +759,8 @@
       "ttm_pnl": "2026-07-13",
       "monthly_revenue": "2026-07-13",
       "funnel": "2026-07-13",
-      "product_mix": "2026-04-24",
-      "geo_mix": "2026-04-24"
+      "product_mix": "2026-07-13",
+      "geo_mix": "2026-07-13"
     }
   },
   "metrics": {
