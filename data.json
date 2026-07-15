@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T23:00:00.543Z",
+  "generated_at": "2026-07-15T10:01:29.327Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -8,22 +8,22 @@
       "lead_band": "Watch",
       "new_gp": "$134k"
     },
-    "audience_members": 3468,
+    "audience_members": 3477,
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-07-14",
+        "last_run": "2026-07-15",
         "status": "Good"
       },
       {
         "name": "Email Sub-Agent",
-        "last_run": "2026-07-14",
+        "last_run": "2026-07-15",
         "status": "Good"
       },
       {
         "name": "Daily Water Minute",
         "last_run": "2026-07-13",
-        "status": "Good"
+        "status": "Watch"
       },
       {
         "name": "Investor Metrics",
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-07-14",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-07-14",
+        "last_run": "2026-07-15",
         "status": "Good"
       },
       {
@@ -324,8 +324,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-07-14",
-      "projected_full_year": 1200664.037179487,
+      "through": "2026-07-15",
+      "projected_full_year": 1194538.2002551018,
       "prior_year_same_period": 44894,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -903,14 +903,14 @@
     ]
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-07-14\n\n_Generated at 2026-07-14T10:01:23.001Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **35**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3468** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **20**\n- Referral push candidates (30-60d post-install): **28**\n- RO replacement-cycle candidates: **28**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instructions conflict. Rule 4 says the sign-off is **two lines exactly with NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but the Job description asks for \". Justin / CEO / ClearWave\". Since Rule 4 is a HARD RULE and Rule 5 bans em/en dashes everywhere, I'm following Rule 4. All drafts below sign off:\n```\nJustin\nCEO / ClearWave\n```\n---\n# Proposal 1: Referral Push (30-60 Days Post-Install)\n**Audience:** Referral push candidates, 28 members (satisfied, ~30-60 days post-install)\n**Why this is the top pick:** This is the highest-intent, lowest-risk segment. These clients just had a clean install, the water quality difference is fresh and noticeable, and there is a real cash incentive to share. No rule conflicts, no timing floors, and it directly serves the \"push referrals\" mandate (Rule 3).\n### Subject line + alternates (60 char max)\n- **Primary (specific):** `$500 for every neighbor who tastes the difference`\n- (curiosity): `The question your neighbors keep asking you`\n- (pain): `They keep borrowing your water, don't they?`\n- (authority): `How ClearWave clients earn $500 to $1,000 a year`\n- (specific): `Your water changed. Here is $500 to pass it on.`\n### Preview text (90 char max)\n`Send a neighbor our way. $500 cash when they join. More when you send more.`\n### Email body\nSubject: $500 for every neighbor who tastes the difference\nHi [First Name],\nA few weeks in with your [system], and the change tends to speak for itself: cleaner water at every tap, and no more second-guessing what is in the glass.\nHere is the part most people do not know. When you send a neighbor our way, you get paid for it.\n- $500 cash for each referral who becomes a client (referrals 1 through 5 this year)\n- $750 each for referrals 6 through 9\n- $1,000 each for 10 or more\n- $50 gift card if someone you send books a free water assessment, even if they do not move forward\nNo cap on the good ones. Just reply with a name and the best way to reach them, and we will take it from there.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET.** Tuesday mid-morning is the reliable B2C open window, and this list is small enough that inbox timing matters more than volume.\n### Expected performance\n- **Open: 48-55%.** Above your 42.1% baseline. Small, warm, recently-serviced list with a fresh positive experience; personalized subject with a concrete number.\n- **Click: N/A / reply-driven.** The CTA is a reply, not a link, which sidesteps your near-zero click history (0.28% avg, 0.00% on recent sends). Measure by replies.\n- **Conversion: 2-4 referral names (7-14% of list).** Even one closed referral is a strong ROI week.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS → Referral push candidates (30-60 days post-install, satisfied)** and the **REFERRAL BONUS STRUCTURE** (exact tiers). Aligns with Rule 3 (push referrals, never reviews) and Rule 3a (uses \"free water assessment\" exactly).\n---\n# Proposal 2: Cold Lead Re-Engagement\n**Audience:** Cold subscribers segment, 1,000 members (joined >60d, no engagement >60d, never quoted)\n**Why this is second:** Biggest volume opportunity, but colder intent. The mandate here is specific: lead with new value, reset the relationship, offer a free water assessment as the single next step. This is separate from the existing quote follow-up sequence.\n### Subject line + alternates (60 char max)\n- **Primary (curiosity):** `We never finished the conversation`\n- (pain): `Still not sure what is in your tap water?`\n- (authority): `A quick reset from ClearWave (no pitch)`\n- (specific): `One free water assessment. That is the whole offer.`\n- (curiosity): `We went quiet. Here is where things stand.`\n### Preview text (90 char max)\n`No sales script. Just an honest look at your water and one simple next step.`\n### Email body\nSubject: We never finished the conversation\nHi [First Name],\nYou reached out to us a while back, and then things went quiet on our end. That is on us.\nSo here is a clean reset, no pressure.\nWater in our region keeps making headlines: fuel leaks, boil alerts, treatment plant issues. Most people never find out what is actually reaching their own tap. That is the gap worth closing.\nIf you are curious, the one next step is a free water assessment. We come out, test what is coming through your pipes, and tell you plainly what we find. No obligation, no script.\nWant to see your numbers? Just reply here and we will set it up.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET.** Separating it from the Tuesday referral send avoids overlap. Late-morning midweek gives a re-engagement email its best shot with a dormant list.\n### Expected performance\n- **Open: 8-14%.** Deliberately below your 42.1% baseline. This list is dormant by definition, and the recent \"boiled water alert\" style campaigns cratered at 0.4-0.7%. The honest, non-alarmist subject (\"no pitch,\" \"reset\") should meaningfully outperform those alert blasts because it does not trigger fatigue.\n- **Click: near zero / reply-driven.** CTA is a reply, again avoiding your dead click rate.\n- **Conversion: 5-15 assessment bookings (0.5-1.5% of list).** Modest by rate, but a real pipeline win on a list currently producing nothing.\n### Source justification\nDraws from **COLD LEAD RE-ENGAGEMENT (Mailchimp segment)** and its three required moves: new value angle (water news), relationship reset, single next step. The water-news hook responsibly reframes the **Recent campaigns** alert content without the alarmist punctuation that underperformed. Uses \"free water assessment\" exactly (Rule 3a) and offers no product name because none is specified for cold leads.\n---\n**Recommendation:** If you run only one this week, run **Proposal 1**. It is the cleanest, highest-ROI send with the warmest audience. Add Proposal 2 if you want to reactivate dead pipeline in parallel, since the two audiences do not overlap and the send days are staggered.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-07-15\n\n_Generated at 2026-07-15T10:01:27.352Z_\n\n## Executive summary\n- Jobs created yesterday: **4** ($1,998 in pipeline)\n- Inbound calls yesterday: **38**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3477** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **20**\n- Referral push candidates (30-60d post-install): **26**\n- RO replacement-cycle candidates: **25**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instruction in point 4 conflicts with **HARD RULE 4** (which forbids the em dash prefix and specifies exactly two lines: `Justin` / `CEO / ClearWave`). I'm following the HARD RULE. No em dashes anywhere.\n---\n# Proposal 1: Concierge \"Year 1.5 Math\" Campaign\n**Audience:** Concierge upsell candidates, 100 members (13-24 months post-install, not on Concierge). Every recipient is past the 12-month floor, so Rule 1 is satisfied.\n### Subject lines (60 char max)\n- **Primary (specific):** The year 1.5 question we get asked most\n- Alt 1 (curiosity): Is Concierge actually worth it for you?\n- Alt 2 (pain): Tired of tracking your own filter swaps?\n- Alt 3 (authority): Here is the honest math on Concierge\n- Alt 4 (specific): $99/mo, annual service, filter swaps, parts\n### Preview text (90 char max)\nNo pressure. Just the numbers, so you can decide if Concierge makes sense for your home.\n### Email body\nHi [First Name],\nYou are about a year and a half into life with your [system], and this is right around when we get the same question:\n\"Is this Concierge thing actually worth it for me?\"\nSo here is the honest math. Concierge is $99/mo and it covers:\n- Your annual service\n- Filter swaps\n- Priority phone support\n- Parts coverage on your standard install components\nIf you like handling maintenance yourself, pay-as-you-go is completely fine and we will keep servicing you either way. But if you would rather never think about swap dates or scheduling again, this is what it costs to hand that off.\nReply to this email and I will tell you exactly what your year looks like on Concierge. No pressure.\nJustin\nCEO / ClearWave\n> **Note on personalization:** For \"Gabriel Rivera\" type records where system is \"(not specified),\" the merge logic must output \"your ClearWave system\" (Rule 2). Confirm your merge field has a fallback before send.\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is the standard B2C open peak, and this is a considered-decision email (not a news blast), so it wants a calm weekday slot.\n### Expected performance\n- **Open: 40-46%.** Your list-wide average is 42.1%. This is a warm, high-trust segment (they already completed a year-1 service), so expect at or slightly above average.\n- **Click/reply: 3-6%.** Your click average (0.28%) is depressed by \"Access Your Client App\" blasts that got near-zero engagement. This is a reply-driven CTA to a highly-qualified 100-person list with a concrete dollar figure, so response should dramatically outperform the historical click number.\n- **Conversion: 4-8 enrollments.** At $99/mo that is roughly $4,700 to $9,500 in annual recurring revenue from one send.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS (Concierge upsell candidates)** and the **CONCIERGE UPSELL CONTEXT** block. Uses the prescribed \"year 1.5 / here's the math\" framing and the exact plan details and price. Respects Rule 1 (all recipients 13-24 months) and Rule 3 (no review ask).\n---\n# Proposal 2: Referral Push (30-60 Day Post-Install)\n**Audience:** Referral push candidates, 26 members (30-60 days post-install, satisfied). Freshly delighted, highest referral intent window.\n### Subject lines (60 char max)\n- **Primary (specific):** Know someone with bad water? $500 for you\n- Alt 1 (curiosity): A quick favor (worth $500 to you)\n- Alt 2 (authority): The referral your neighbors keep asking about\n- Alt 3 (pain): Your neighbor's water is probably worse than yours was\n- Alt 4 (specific): $500 per referral, $50 even if they just book\n### Preview text (90 char max)\nOne intro, one free water assessment for them, and a check for you when they sign on.\n### Email body\nHi [First Name],\nNow that your [system] has been running for a month or so, you have probably noticed the difference. Here is how that difference can pay you back.\nIf you refer someone and they become a client, you get **$500 cash**. Refer more and it grows: **$750** for referrals 6 through 9, and **$1,000** each at 10 or more in a calendar year.\nAnd if someone you send just books a consult but does not sign on, we still send you a **$50 gift card** for the intro.\nAll they get is a **free water assessment**. No hard sell, same straightforward process you went through.\nJust reply with a name and the best way to reach them, and I will handle the rest.\nJustin\nCEO / ClearWave\n> **Note:** Robert & Meryl Paskow and Kim & Greg Hamilton are couples. Confirm greeting merge handles two-name records gracefully, or hard-code \"Hi both.\"\n### Send timing\n**Thursday, 11:00 AM ET.** Late-week late-morning keeps it clear of the Tuesday Concierge send (avoid fatiguing any overlap) and lands while the recent-install goodwill is fresh.\n### Expected performance\n- **Open: 44-50%.** Small, very recent, satisfied segment. Recency plus a benefit-loaded subject line should beat your 42.1% average.\n- **Click/reply: 4-8%.** Concrete cash figure with a one-step reply CTA. Small list, high intent.\n- **Conversion: 1-3 referred consults booked.** Even one closed referral returns $500+ in acquisition value at near-zero cost, plus the $50-gift-card tier lowers the friction to participate.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS (Referral push candidates)** and the **REFERRAL BONUS STRUCTURE** (exact tiers used verbatim). Uses \"free water assessment\" exactly (Rule 3a), pushes referrals instead of reviews (Rule 3), and names the actual product (Rule 2).\n---\n## Why these two over the alternatives\n- **Cold lead re-engagement (1,000)** is tempting on volume, but your recent \"water alert\" news-angle blasts pulled 0.4-0.5% opens, suggesting deliverability or list-hygiene trouble on cold contacts. Sending to 1,000 disengaged addresses now risks your sender reputation right when the two warm campaigns above need clean inboxing. I'd recommend running that separately after a re-warm and list scrub.\n- **Concierge (100)** and **Referral (26)** are the highest-trust, highest-intent, cleanest-deliverability segments this week, and both map directly to revenue.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
-    "audience_size": 3468,
+    "audience_size": 3477,
     "open_rate": 42.1,
     "click_rate": 0.28,
     "proposals_count": 0,
-    "proposals_md": "# Email Agent Proposals · 2026-07-14\n\n## Mailchimp health\n- Audience: **3468** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **20**\n- Referral push candidates (30-60d post-install): **28**\n- RO replacement-cycle candidates: **28**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instructions conflict. Rule 4 says the sign-off is **two lines exactly with NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but the Job description asks for \". Justin / CEO / ClearWave\". Since Rule 4 is a HARD RULE and Rule 5 bans em/en dashes everywhere, I'm following Rule 4. All drafts below sign off:\n```\nJustin\nCEO / ClearWave\n```\n---\n# Proposal 1: Referral Push (30-60 Days Post-Install)\n**Audience:** Referral push candidates, 28 members (satisfied, ~30-60 days post-install)\n**Why this is the top pick:** This is the highest-intent, lowest-risk segment. These clients just had a clean install, the water quality difference is fresh and noticeable, and there is a real cash incentive to share. No rule conflicts, no timing floors, and it directly serves the \"push referrals\" mandate (Rule 3).\n### Subject line + alternates (60 char max)\n- **Primary (specific):** `$500 for every neighbor who tastes the difference`\n- (curiosity): `The question your neighbors keep asking you`\n- (pain): `They keep borrowing your water, don't they?`\n- (authority): `How ClearWave clients earn $500 to $1,000 a year`\n- (specific): `Your water changed. Here is $500 to pass it on.`\n### Preview text (90 char max)\n`Send a neighbor our way. $500 cash when they join. More when you send more.`\n### Email body\nSubject: $500 for every neighbor who tastes the difference\nHi [First Name],\nA few weeks in with your [system], and the change tends to speak for itself: cleaner water at every tap, and no more second-guessing what is in the glass.\nHere is the part most people do not know. When you send a neighbor our way, you get paid for it.\n- $500 cash for each referral who becomes a client (referrals 1 through 5 this year)\n- $750 each for referrals 6 through 9\n- $1,000 each for 10 or more\n- $50 gift card if someone you send books a free water assessment, even if they do not move forward\nNo cap on the good ones. Just reply with a name and the best way to reach them, and we will take it from there.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET.** Tuesday mid-morning is the reliable B2C open window, and this list is small enough that inbox timing matters more than volume.\n### Expected performance\n- **Open: 48-55%.** Above your 42.1% baseline. Small, warm, recently-serviced list with a fresh positive experience; personalized subject with a concrete number.\n- **Click: N/A / reply-driven.** The CTA is a reply, not a link, which sidesteps your near-zero click history (0.28% avg, 0.00% on recent sends). Measure by replies.\n- **Conversion: 2-4 referral names (7-14% of list).** Even one closed referral is a strong ROI week.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS → Referral push candidates (30-60 days post-install, satisfied)** and the **REFERRAL BONUS STRUCTURE** (exact tiers). Aligns with Rule 3 (push referrals, never reviews) and Rule 3a (uses \"free water assessment\" exactly).\n---\n# Proposal 2: Cold Lead Re-Engagement\n**Audience:** Cold subscribers segment, 1,000 members (joined >60d, no engagement >60d, never quoted)\n**Why this is second:** Biggest volume opportunity, but colder intent. The mandate here is specific: lead with new value, reset the relationship, offer a free water assessment as the single next step. This is separate from the existing quote follow-up sequence.\n### Subject line + alternates (60 char max)\n- **Primary (curiosity):** `We never finished the conversation`\n- (pain): `Still not sure what is in your tap water?`\n- (authority): `A quick reset from ClearWave (no pitch)`\n- (specific): `One free water assessment. That is the whole offer.`\n- (curiosity): `We went quiet. Here is where things stand.`\n### Preview text (90 char max)\n`No sales script. Just an honest look at your water and one simple next step.`\n### Email body\nSubject: We never finished the conversation\nHi [First Name],\nYou reached out to us a while back, and then things went quiet on our end. That is on us.\nSo here is a clean reset, no pressure.\nWater in our region keeps making headlines: fuel leaks, boil alerts, treatment plant issues. Most people never find out what is actually reaching their own tap. That is the gap worth closing.\nIf you are curious, the one next step is a free water assessment. We come out, test what is coming through your pipes, and tell you plainly what we find. No obligation, no script.\nWant to see your numbers? Just reply here and we will set it up.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET.** Separating it from the Tuesday referral send avoids overlap. Late-morning midweek gives a re-engagement email its best shot with a dormant list.\n### Expected performance\n- **Open: 8-14%.** Deliberately below your 42.1% baseline. This list is dormant by definition, and the recent \"boiled water alert\" style campaigns cratered at 0.4-0.7%. The honest, non-alarmist subject (\"no pitch,\" \"reset\") should meaningfully outperform those alert blasts because it does not trigger fatigue.\n- **Click: near zero / reply-driven.** CTA is a reply, again avoiding your dead click rate.\n- **Conversion: 5-15 assessment bookings (0.5-1.5% of list).** Modest by rate, but a real pipeline win on a list currently producing nothing.\n### Source justification\nDraws from **COLD LEAD RE-ENGAGEMENT (Mailchimp segment)** and its three required moves: new value angle (water news), relationship reset, single next step. The water-news hook responsibly reframes the **Recent campaigns** alert content without the alarmist punctuation that underperformed. Uses \"free water assessment\" exactly (Rule 3a) and offers no product name because none is specified for cold leads.\n---\n**Recommendation:** If you run only one this week, run **Proposal 1**. It is the cleanest, highest-ROI send with the warmest audience. Add Proposal 2 if you want to reactivate dead pipeline in parallel, since the two audiences do not overlap and the send days are staggered.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n"
+    "proposals_md": "# Email Agent Proposals · 2026-07-15\n\n## Mailchimp health\n- Audience: **3477** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **20**\n- Referral push candidates (30-60d post-install): **26**\n- RO replacement-cycle candidates: **25**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instruction in point 4 conflicts with **HARD RULE 4** (which forbids the em dash prefix and specifies exactly two lines: `Justin` / `CEO / ClearWave`). I'm following the HARD RULE. No em dashes anywhere.\n---\n# Proposal 1: Concierge \"Year 1.5 Math\" Campaign\n**Audience:** Concierge upsell candidates, 100 members (13-24 months post-install, not on Concierge). Every recipient is past the 12-month floor, so Rule 1 is satisfied.\n### Subject lines (60 char max)\n- **Primary (specific):** The year 1.5 question we get asked most\n- Alt 1 (curiosity): Is Concierge actually worth it for you?\n- Alt 2 (pain): Tired of tracking your own filter swaps?\n- Alt 3 (authority): Here is the honest math on Concierge\n- Alt 4 (specific): $99/mo, annual service, filter swaps, parts\n### Preview text (90 char max)\nNo pressure. Just the numbers, so you can decide if Concierge makes sense for your home.\n### Email body\nHi [First Name],\nYou are about a year and a half into life with your [system], and this is right around when we get the same question:\n\"Is this Concierge thing actually worth it for me?\"\nSo here is the honest math. Concierge is $99/mo and it covers:\n- Your annual service\n- Filter swaps\n- Priority phone support\n- Parts coverage on your standard install components\nIf you like handling maintenance yourself, pay-as-you-go is completely fine and we will keep servicing you either way. But if you would rather never think about swap dates or scheduling again, this is what it costs to hand that off.\nReply to this email and I will tell you exactly what your year looks like on Concierge. No pressure.\nJustin\nCEO / ClearWave\n> **Note on personalization:** For \"Gabriel Rivera\" type records where system is \"(not specified),\" the merge logic must output \"your ClearWave system\" (Rule 2). Confirm your merge field has a fallback before send.\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is the standard B2C open peak, and this is a considered-decision email (not a news blast), so it wants a calm weekday slot.\n### Expected performance\n- **Open: 40-46%.** Your list-wide average is 42.1%. This is a warm, high-trust segment (they already completed a year-1 service), so expect at or slightly above average.\n- **Click/reply: 3-6%.** Your click average (0.28%) is depressed by \"Access Your Client App\" blasts that got near-zero engagement. This is a reply-driven CTA to a highly-qualified 100-person list with a concrete dollar figure, so response should dramatically outperform the historical click number.\n- **Conversion: 4-8 enrollments.** At $99/mo that is roughly $4,700 to $9,500 in annual recurring revenue from one send.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS (Concierge upsell candidates)** and the **CONCIERGE UPSELL CONTEXT** block. Uses the prescribed \"year 1.5 / here's the math\" framing and the exact plan details and price. Respects Rule 1 (all recipients 13-24 months) and Rule 3 (no review ask).\n---\n# Proposal 2: Referral Push (30-60 Day Post-Install)\n**Audience:** Referral push candidates, 26 members (30-60 days post-install, satisfied). Freshly delighted, highest referral intent window.\n### Subject lines (60 char max)\n- **Primary (specific):** Know someone with bad water? $500 for you\n- Alt 1 (curiosity): A quick favor (worth $500 to you)\n- Alt 2 (authority): The referral your neighbors keep asking about\n- Alt 3 (pain): Your neighbor's water is probably worse than yours was\n- Alt 4 (specific): $500 per referral, $50 even if they just book\n### Preview text (90 char max)\nOne intro, one free water assessment for them, and a check for you when they sign on.\n### Email body\nHi [First Name],\nNow that your [system] has been running for a month or so, you have probably noticed the difference. Here is how that difference can pay you back.\nIf you refer someone and they become a client, you get **$500 cash**. Refer more and it grows: **$750** for referrals 6 through 9, and **$1,000** each at 10 or more in a calendar year.\nAnd if someone you send just books a consult but does not sign on, we still send you a **$50 gift card** for the intro.\nAll they get is a **free water assessment**. No hard sell, same straightforward process you went through.\nJust reply with a name and the best way to reach them, and I will handle the rest.\nJustin\nCEO / ClearWave\n> **Note:** Robert & Meryl Paskow and Kim & Greg Hamilton are couples. Confirm greeting merge handles two-name records gracefully, or hard-code \"Hi both.\"\n### Send timing\n**Thursday, 11:00 AM ET.** Late-week late-morning keeps it clear of the Tuesday Concierge send (avoid fatiguing any overlap) and lands while the recent-install goodwill is fresh.\n### Expected performance\n- **Open: 44-50%.** Small, very recent, satisfied segment. Recency plus a benefit-loaded subject line should beat your 42.1% average.\n- **Click/reply: 4-8%.** Concrete cash figure with a one-step reply CTA. Small list, high intent.\n- **Conversion: 1-3 referred consults booked.** Even one closed referral returns $500+ in acquisition value at near-zero cost, plus the $50-gift-card tier lowers the friction to participate.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS (Referral push candidates)** and the **REFERRAL BONUS STRUCTURE** (exact tiers used verbatim). Uses \"free water assessment\" exactly (Rule 3a), pushes referrals instead of reviews (Rule 3), and names the actual product (Rule 2).\n---\n## Why these two over the alternatives\n- **Cold lead re-engagement (1,000)** is tempting on volume, but your recent \"water alert\" news-angle blasts pulled 0.4-0.5% opens, suggesting deliverability or list-hygiene trouble on cold contacts. Sending to 1,000 disengaged addresses now risks your sender reputation right when the two warm campaigns above need clean inboxing. I'd recommend running that separately after a re-warm and list scrub.\n- **Concierge (100)** and **Referral (26)** are the highest-trust, highest-intent, cleanest-deliverability segments this week, and both map directly to revenue.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n"
   },
   "daily_water_minute": {
     "markdown": "# Water Minute — 2026-07-13\n\nTopic: How long a real water system should actually last (system_lifespan)\nAngle: system_lifespan\nStatus: DRAFT (awaiting approval)\nAudience: full Mailchimp list (leads + current clients)\n\n---\n\nSubject: How long should a water system last?\nPreview: Buy right once, and you shouldn't be shopping again in five years.\n\n---\n\nWords I like;\nBuy it nice, or buy it twice.\nHere's a question I get asked a lot at the kitchen table: how long should a water system actually last?\nThe honest answer is decades, not years. A properly built system is mostly a tank, a control valve, and the right media inside. The tanks themselves routinely go 20 to 30 years. The valve is the part that does the work, and a quality valve should give you 10 to 15 years before it needs attention. The media (the stuff inside that actually treats your water) gets refreshed on its own schedule depending on what's in your water.\nSo if someone is selling you a system they expect to replace in five years, that tells you something about what they built.\nIf you already own one of ours, this is your reminder that you bought once and bought right. That was a smart call. Keep an eye on the valve down the road, stay on your media schedule, and it will quietly do its job for a very long time.\nLongevity isn't luck. It's what you buy up front.\nNot sure what you've got? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave\n\n---\n\nGenerated by daily_value_email.ts. After approval the sender script pushes this to Mailchimp.\n",
@@ -2643,142 +2643,9 @@
     }
   },
   "approvals": {
-    "date": "2026-07-14",
-    "items": [
-      {
-        "id": "pkg_2026-07-13_IMG_20260628_195509_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · Evening shot (7:55pm timestamp) likely of Justin, a job site, or a milestone marker used as the visual anchor for the Q1 quarter-review recap of building ClearWave Water Solutions",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave is done.\n4 employees. $138K peak month. Real numbers, n…\""
-      },
-      {
-        "id": "pkg_2026-07-13_Copy_of_justin_wedding_solo_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · A solo shot of Justin dressed up at a wedding, used as a personal-brand anchor for the Q1 quarter review — tying his personal discipline/appearance to the story of building ClearWave from scratch this quarter.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"Wore this suit to a wedding. Same guy who built a water company from $0 this qua…\""
-      },
-      {
-        "id": "pkg_2026-07-13_Copy_of_justin_brandon_wedding_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · A photo of Justin at his friend/brother Brandon's wedding, likely used as a personal 'behind the man' post tied into the Q1 brand recap — connecting the human side (relationships, showing up for people) to the story of building ClearWave in its first quarter.",
-        "meta": {
-          "reach": "high",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: high\nTikTok: \"Went to Brandon's wedding this weekend. 1 year ago I was terrified to leave my j…\""
-      },
-      {
-        "id": "pkg_2026-07-13_Copy_of_20260628_195205_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · An evening 'in-the-field' or workshop photo (7:52 PM timestamp) of Justin reflecting on the first quarter of building ClearWave — likely a candid shot of him at a job site, with a filtration install, or a whiteboard/numbers moment used to anchor the Q1 recap.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"3 months ago ClearWave was just an idea.\nNow I'm looking back at Q1 like… we act…\""
-      },
-      {
-        "id": "pkg_2026-07-13_2026_06_25_082830770_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin recapping ClearWave's first quarter of building the brand — sharing the raw numbers, wins, and lessons from Q1 as a solo-founder-turned-CEO story, framed against the water business grind.",
-        "meta": {
-          "reach": "high",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: high\nTikTok: \"Q1 of building this water company from scratch.\nHere's the real numbers nobody s…\""
-      },
-      {
-        "id": "pkg_2026-07-13_2026_06_23_114851695_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin recapping his first quarter (Q1) of building ClearWave Water Solutions from the ground up — the wins, the numbers, the lessons learned, and what it really took to launch a water filtration company in the VA/DC/MD area.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave is in the books. 4 employees, $11K avg ticket, and marg…\""
-      },
-      {
-        "id": "pkg_2026-07-13_20260628_195205_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · An evening (7:52pm timestamp) photo — likely Justin on a completed install job or with the crew wrapping up, used as a visual anchor for the Q1 brand-building recap. Frames the human/behind-the-scenes side of ClearWave's first quarter.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of ClearWave in the books.\n4 employees, real installs, real clean water. Buil…\""
-      },
-      {
-        "id": "pkg_2026-07-13_20260628_194153_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · A late-evening (7:41pm) photo from Q1 of building ClearWave — likely a milestone shot: Justin on a job site, at a customer install, or with the small crew. Framed as a Q1 recap moment showing the first quarter of building the brand from scratch.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building this water company from nothing.\nHere's what 90 days actually loo…\""
-      },
-      {
-        "id": "pkg_2026-07-13_20260628_194139_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · An evening (7:41pm timestamp) photo of Justin at a completed install or job site, used as a Q1 quarter-review anchor — showing the reality behind the numbers of building ClearWave from the ground up over the first quarter.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave from nothing.\n$11K avg tickets, 4 employees, 50%+ margi…\""
-      },
-      {
-        "id": "pkg_2026-07-13_20260628_194129_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · Late-evening (7:41pm timestamp) photo likely of Justin at a job site or in front of a ClearWave install/truck, used as a hero image for the Q1 quarter review recap — reflecting on the first quarter of building ClearWave Water Solutions.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"3 months ago I bet on myself again.\nQ1 of ClearWave is in the books and the numb…\""
-      }
-    ],
-    "decisions": {
-      "pkg_2026-07-13_IMG_20260628_195509_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_Copy_of_justin_wedding_solo_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_Copy_of_justin_brandon_wedding_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_Copy_of_20260628_195205_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_2026_06_25_082830770_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_2026_06_23_114851695_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_20260628_195205_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_20260628_194153_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_20260628_194139_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-07-13_20260628_194129_jpg": {
-        "decision": "pending"
-      }
-    },
-    "last_brief_sent": "2026-07-14T10:30:00.749Z"
+    "date": "2026-07-15",
+    "items": [],
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
