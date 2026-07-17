@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T10:01:23.339Z",
+  "generated_at": "2026-07-17T10:30:05.581Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-17",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2644,8 +2644,141 @@
   },
   "approvals": {
     "date": "2026-07-17",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "pkg_2026-07-13_IMG_20260628_195509_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · Evening shot (7:55pm timestamp) likely of Justin, a job site, or a milestone marker used as the visual anchor for the Q1 quarter-review recap of building ClearWave Water Solutions",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave is done.\n4 employees. $138K peak month. Real numbers, n…\""
+      },
+      {
+        "id": "pkg_2026-07-13_Copy_of_justin_wedding_solo_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A solo shot of Justin dressed up at a wedding, used as a personal-brand anchor for the Q1 quarter review — tying his personal discipline/appearance to the story of building ClearWave from scratch this quarter.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"Wore this suit to a wedding. Same guy who built a water company from $0 this qua…\""
+      },
+      {
+        "id": "pkg_2026-07-13_Copy_of_justin_brandon_wedding_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A photo of Justin at his friend/brother Brandon's wedding, likely used as a personal 'behind the man' post tied into the Q1 brand recap — connecting the human side (relationships, showing up for people) to the story of building ClearWave in its first quarter.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: high\nTikTok: \"Went to Brandon's wedding this weekend. 1 year ago I was terrified to leave my j…\""
+      },
+      {
+        "id": "pkg_2026-07-13_Copy_of_20260628_195205_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · An evening 'in-the-field' or workshop photo (7:52 PM timestamp) of Justin reflecting on the first quarter of building ClearWave — likely a candid shot of him at a job site, with a filtration install, or a whiteboard/numbers moment used to anchor the Q1 recap.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"3 months ago ClearWave was just an idea.\nNow I'm looking back at Q1 like… we act…\""
+      },
+      {
+        "id": "pkg_2026-07-13_2026_06_25_082830770_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin recapping ClearWave's first quarter of building the brand — sharing the raw numbers, wins, and lessons from Q1 as a solo-founder-turned-CEO story, framed against the water business grind.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"Q1 of building this water company from scratch.\nHere's the real numbers nobody s…\""
+      },
+      {
+        "id": "pkg_2026-07-13_2026_06_23_114851695_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin recapping his first quarter (Q1) of building ClearWave Water Solutions from the ground up — the wins, the numbers, the lessons learned, and what it really took to launch a water filtration company in the VA/DC/MD area.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave is in the books. 4 employees, $11K avg ticket, and marg…\""
+      },
+      {
+        "id": "pkg_2026-07-13_20260628_195205_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · An evening (7:52pm timestamp) photo — likely Justin on a completed install job or with the crew wrapping up, used as a visual anchor for the Q1 brand-building recap. Frames the human/behind-the-scenes side of ClearWave's first quarter.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of ClearWave in the books.\n4 employees, real installs, real clean water. Buil…\""
+      },
+      {
+        "id": "pkg_2026-07-13_20260628_194153_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A late-evening (7:41pm) photo from Q1 of building ClearWave — likely a milestone shot: Justin on a job site, at a customer install, or with the small crew. Framed as a Q1 recap moment showing the first quarter of building the brand from scratch.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building this water company from nothing.\nHere's what 90 days actually loo…\""
+      },
+      {
+        "id": "pkg_2026-07-13_20260628_194139_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · An evening (7:41pm timestamp) photo of Justin at a completed install or job site, used as a Q1 quarter-review anchor — showing the reality behind the numbers of building ClearWave from the ground up over the first quarter.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"Q1 of building ClearWave from nothing.\n$11K avg tickets, 4 employees, 50%+ margi…\""
+      },
+      {
+        "id": "pkg_2026-07-13_20260628_194129_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · Late-evening (7:41pm timestamp) photo likely of Justin at a job site or in front of a ClearWave install/truck, used as a hero image for the Q1 quarter review recap — reflecting on the first quarter of building ClearWave Water Solutions.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"3 months ago I bet on myself again.\nQ1 of ClearWave is in the books and the numb…\""
+      }
+    ],
+    "decisions": {
+      "pkg_2026-07-13_IMG_20260628_195509_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_Copy_of_justin_wedding_solo_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_Copy_of_justin_brandon_wedding_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_Copy_of_20260628_195205_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_2026_06_25_082830770_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_2026_06_23_114851695_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_20260628_195205_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_20260628_194153_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_20260628_194139_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-07-13_20260628_194129_jpg": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-17T10:30:01.310Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
