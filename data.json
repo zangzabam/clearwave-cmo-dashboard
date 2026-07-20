@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T11:00:55.606Z",
+  "generated_at": "2026-07-20T12:00:39.504Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -57,7 +57,7 @@
       },
       {
         "name": "Funnel Diagnostics",
-        "last_run": "2026-07-13",
+        "last_run": "2026-07-20",
         "status": "Good"
       },
       {
@@ -574,36 +574,45 @@
         "jobs_created": 21,
         "invoiced_dollars": 88777.44,
         "paid_dollars": 69046.69
+      },
+      {
+        "week": "2026-07-20",
+        "requests": 248,
+        "quotes_sent": 44,
+        "quotes_approved": 11,
+        "jobs_created": 26,
+        "invoiced_dollars": 76459.31,
+        "paid_dollars": 60466.84
       }
     ],
     "funnel_latest": {
       "current": {
-        "start": "2026-06-15",
-        "end": "2026-07-13",
-        "requests_total": 280,
-        "requests_scheduled": 13,
-        "requests_completed": 33,
-        "quotes_sent": 45,
-        "quotes_approved": 6,
-        "jobs_created": 21,
-        "jobs_invoiced": 4,
-        "invoices_paid": 14,
-        "invoiced_dollars": 88777.44,
-        "paid_dollars": 69046.69
+        "start": "2026-06-22",
+        "end": "2026-07-20",
+        "requests_total": 248,
+        "requests_scheduled": 15,
+        "requests_completed": 31,
+        "quotes_sent": 44,
+        "quotes_approved": 11,
+        "jobs_created": 26,
+        "jobs_invoiced": 8,
+        "invoices_paid": 18,
+        "invoiced_dollars": 76459.31,
+        "paid_dollars": 60466.84
       },
       "prior": {
-        "start": "2026-05-18",
-        "end": "2026-06-15",
-        "requests_total": 468,
-        "requests_scheduled": 4,
-        "requests_completed": 28,
-        "quotes_sent": 49,
-        "quotes_approved": 12,
-        "jobs_created": 32,
-        "jobs_invoiced": 20,
-        "invoices_paid": 17,
-        "invoiced_dollars": 72669.51000000001,
-        "paid_dollars": 53230.72
+        "start": "2026-05-25",
+        "end": "2026-06-22",
+        "requests_total": 382,
+        "requests_scheduled": 3,
+        "requests_completed": 33,
+        "quotes_sent": 50,
+        "quotes_approved": 8,
+        "jobs_created": 27,
+        "jobs_invoiced": 14,
+        "invoices_paid": 14,
+        "invoiced_dollars": 83731.17,
+        "paid_dollars": 63578.880000000005
       }
     },
     "product_mix": [
@@ -840,7 +849,7 @@
       "investor_metrics": "2026-07",
       "ttm_pnl": "2026-07-13",
       "monthly_revenue": "2026-07-13",
-      "funnel": "2026-07-13",
+      "funnel": "2026-07-20",
       "product_mix": "2026-07-13",
       "geo_mix": "2026-07-13"
     }
@@ -2485,35 +2494,35 @@
     "concepts_md": "# Creative Studio Brief · 2026-07-20\n\n## Meta Ads (Reels + Stories)\n\n### Concept M1 · \"Your State Is Suing\" (React-now / PFAS)\n- **Hook (first 3 sec):** \"New York is suing over a chemical that's probably in your glass right now — and nobody's testing your tap.\"\n- **Body:** States are taking chemical makers to court over forever chemicals. But those lawsuits don't clean the water coming out of YOUR faucet. A free in-home water test shows you exactly what's in it — no guessing.\n- **Visual direction:** Justin greenscreen talking-head over a headline chyron (blurred \"state sues over PFAS\"), cut to a clear glass being poured, then to a real in-home test kit on a homeowner's kitchen counter. Fast captions, no music bed under the talking part.\n- **CTA:** \"Book your free water test →\" (landing: /free-water-test)\n- **Audience:** Homeowners, 32-58, VA/DC/MD, owns home, hh income $100K+, interest: home improvement, water filtration, news/current events\n- **Suggested daily budget:** $35\n- **KPI:** CPL (cost per booked test)\n- **Why this beats Mermaid:** Mermaid gates everything behind a vague \"free water test\" — we attach that same test to a live news fear they haven't reacted to.\n\n### Concept M2 · \"The Award Means Nothing\" (Municipal myth)\n- **Hook (first 3 sec):** \"Your city just won an award for clean water. Let me show you why that award means nothing at your sink.\"\n- **Body:** Cities spend millions on treatment plants, then hand you a trophy. But the water still travels through old pipes before it hits your glass. The plant's job ends at the street — yours starts at the tap.\n- **Visual direction:** Tradesman-teacher register. Justin at a real install, holding a section of corroded pipe. Cut to before/after water pour (cloudy vs clear). B-roll of a \"clean water award\" news screenshot. Hand-drawn diagram overlay: plant → street → YOUR pipe.\n- **CTA:** \"See what's really in your water →\" (landing: /free-water-test)\n- **Audience:** Homeowners, 30-55, VA/DC/MD, owns home, hh income $90K+, interest: home improvement, DIY, local news\n- **Suggested daily budget:** $30\n- **KPI:** View-thru rate (3-sec + thruplay), secondary CPL\n- **Why this beats Hampton Roads:** They lean on \"peace of mind\" trust signals; we turn the same trust story into a myth-buster that earns the click.\n\n### Concept M3 · \"Engineered for Purity\" (Premium product / Pinnacle)\n- **Hook (first 3 sec):** \"Most people never see the difference. Your family drinks it every day.\"\n- **Body:** The Pinnacle collection is engineered for purity — multi-stage advanced filtration, crafted for the homes that expect more. Precision water, quietly delivered. Your family deserves exceptional water.\n- **Visual direction:** Luxury register. Slow, cinematic. Water ribboning into a crystal glass in soft light. Clean shots of the installed system (brushed metal, tidy lines). Minimal text, generous negative space. No hype, no music spikes.\n- **CTA:** \"Explore the collection →\" (landing: /city-water-collection)\n- **Audience:** Homeowners, 40-65, VA/DC/MD, owns home, hh income $150K+, interest: luxury home, interior design, wellness, high-end appliances\n- **Suggested daily budget:** $25\n- **KPI:** CTR, secondary CPL on consult request\n- **Why this beats EcoWater:** EcoWater sells \"global leader\" scale; we sell curated, quiet luxury they can't match on a dealer template.\n\n## Google Ads (Responsive Search + Display)\n\n### Concept G1 · \"Free Water Test — NoVA\" (Responsive Search / high intent)\n- **15 headlines (30 char max each):**\n  1. Free In-Home Water Test\n  2. Water Test in VA DC MD\n  3. Know What's In Your Water\n  4. Test Your Tap for Free\n  5. Water Softener Experts\n  6. Owner-Operator, Navy Vet\n  7. We Test First, Then Explain\n  8. Clean Water Starts at Home\n  9. Book Your Water Test Today\n  10. Northern Virginia Water Pros\n  11. Well & City Water Solutions\n  12. Straight Answers, No Pressure\n  13. Water Treatment Done Right\n  14. See Your Water Report Free\n  15. Local Water Team You Trust\n- **4 descriptions (90 char max each):**\n  1. Free in-home water test across VA, DC & MD. See exactly what's in your tap. Book today.\n  2. Navy vet, owner-operator. We test first and explain it plain. No pressure, no jargon.\n  3. Well or city water — we find the problem and fix it right the first time. Get tested free.\n  4. Clean water starts at your tap, not the city plant. Book a free in-home water test now.\n- **Sitelink suggestions (4):** Free Water Assessment | Service Plans | Financing | Well vs City Water\n- **Audience / keyword theme:** \"water test near me\", \"water softener Northern Virginia\", \"well water treatment VA\", \"water filtration DC MD\"\n- **Suggested daily budget:** $40\n- **KPI:** CPL (booked test), Quality Score\n\n### Concept G2 · \"PFAS / Forever Chemicals\" (Responsive Search / react-now intent)\n- **15 headlines (30 char max each):**\n  1. Worried About PFAS?\n  2. Test for Forever Chemicals\n  3. Is PFAS in Your Water?\n  4. Free PFAS Water Test VA\n  5. Don't Wait for a Lawsuit\n  6. Your City Won't Test This\n  7. Know Your Water Today\n  8. Forever Chemicals, Explained\n  9. Test Your Tap for Free\n  10. VA DC MD Water Experts\n  11. Clean Water at Your Faucet\n  12. Navy Vet, Owner-Operated\n  13. Straight Talk on Your Water\n  14. Book a Free Water Test\n  15. We Find It, We Fix It\n- **4 descriptions (90 char max each):**\n  1. States are suing over forever chemicals. Find out what's in your tap with a free test.\n  2. The city plant stops at the street. We test the water at your sink. Book free today.\n  3. Navy vet, owner-operator. Clear answers on PFAS and your water. No pressure. Book now.\n  4. Free in-home water test in VA, DC & MD. Know your water before you worry. Book today.\n- **Sitelink suggestions (4):** Free Water Assessment | What Is PFAS | Service Plans | Financing\n- **Audience / keyword theme:** \"PFAS water test\", \"forever chemicals in water\", \"is my tap water safe\", \"PFAS Virginia\"\n- **Suggested daily budget:** $35\n- **KPI:** CPL, CPC\n\n### Concept G3 · \"The Collection\" (Display / premium retargeting)\n- **15 headlines (30 char max each):**\n  1. Engineered for Purity\n  2. Water, Refined\n  3. The Pinnacle Collection\n  4. Precision Water for Home\n  5. Curated Water Systems\n  6. Exceptional Water, Daily\n  7. Crafted for Your Family\n  8. Quiet, Uncompromising Purity\n  9. Multi-Stage Filtration\n  10. Water Your Home Deserves\n  11. A Distinguished Collection\n  12. Elevated Home Water\n  13. Purity, Precisely Delivered\n  14. Explore the Collection\n  15. Engineered Water Systems\n- **4 descriptions (90 char max each):**\n  1. Engineered for purity. Multi-stage advanced filtration, crafted for the modern home.\n  2. A deliberately small collection. Precision water, quietly delivered to your family.\n  3. Exceptional water your family deserves. Explore the ClearWave collection today.\n  4. Refined water systems for VA, DC & MD homes. Curated, engineered, uncompromising.\n- **Sitelink suggestions (4):** Explore the Collection | Service Plans | Financing | Free Water Assessment\n- **Audience / keyword theme:** Retargeting site visitors + in-market \"luxury home appliances\", \"whole house filtration\", \"high-end water system\"\n- **Suggested daily budget:** $20\n- **KPI:** CTR, view-thru conversions, CPL on consult\n\n## Creative testing plan\n- Test M1 vs M2 first 7 days (both react-now hooks, different registers), kill loser, scale winner\n- M3 runs as a slow-burn premium play alongside — don't judge on CPL until day 10+\n- G1-G3 run simultaneously, low daily budgets, evaluate at day 14\n- Total weekly creative budget recommendation: **$1,295/wk** ($90/day Meta + $95/day Google)\n\n## Hand-off note for the agency (Matyx)\nPush **M1 (\"Your State Is Suing\")** live first — it rides the freshest news cycle (NY PFAS suit) and pairs directly with G2 for a search-catch on the same intent, so run M1 + G2 as a matched pair day one. Bring **M2** live within 48 hours as the tradesman-teacher counterweight, and let **M3 + G3** run quietly as the premium/retargeting layer. Assets needed from Justin: (1) one greenscreen talking-head take reading the M1 hook + body, (2) one on-site install clip holding a corroded pipe section for M2 with a clean before/after water pour, (3) one cinematic slow-pour + installed-system b-roll set for M3. No review CTAs anywhere — ReviewHarvest owns that. Keep referral cash tiers out of these first six; these are top-of-funnel test creatives, not referral pushes.\n\n**Strongest concept: M1 — a live, state-level lawsuit gives Justin a fear-backed reason-to-act no competitor is reacting to this week, and it plugs straight into a free-test CTA they all already compete on.**"
   },
   "funnel_diagnostics": {
-    "brief_md": "# Funnel Diagnostics · 2026-07-13\n\n## TL;DR\nRequest-to-Quote conversion cratered to 16% (should be 35%+), leaving ~$30K in gross margin on the table this period — the leakiest stage by far.\n\n## Stage-by-stage breakdown\n| Stage | Count | % of top | % of prev | vs prior 28d | Status |\n|---|---:|---:|---:|---:|---|\n| Requests created | 280 | 100% | — | -40% | ⚠️ Volume drop |\n| Quotes sent | 45 | 16.1% | — | -8% | 🚨 **LEAK** |\n| Quotes approved | 6 | 2.1% | 13.3% | n/a | Poor (new tiers) |\n| Jobs created | 21 | 7.5% | 46.7% | -34% | Acceptable |\n| Jobs invoiced | 4 | 1.4% | 19.0% | n/a | Low (lag?) |\n| Invoices paid | 14 | 5.0% | 350% | n/a | Catching up |\n\n## 🚨 Leakiest stage\n**Stage:** Request → Quote (lead intake to quote sent)  \n**Drop:** 16.1% conversion (industry standard 35–45% for qualified appointments)  \n**Estimated GP left on table this period:** ~$31,000\n\n**Math:** 280 requests × 35% target = 98 quotes (vs 45 actual = 53 gap). 53 × 13.3% quote-approval × $11K × 51.9% margin = $40K conservative; using 46.7% quote-to-job rate = 25 jobs × $11K × 51.9% = $142K potential, $31K net gap accounting for current flow-through.\n\nThis is a **trend**, not a one-off. Prior period likely had similar issue (468 requests → 49 quotes = 10.5% — even worse). We're bleeding leads post-qualified-appointment.\n\n## 🔧 Top 3 fixes (ranked by ROI)\n\n1. **Implement 24-hour quote SLA + automated nudge in Jobber for requests >48hrs old without quote** — Owner: **Matyx** (ops/Jobber admin) — Expected lift: **12–18%** (to 28–34% conversion) — Time: **4 hours**  \n   Most requests are dying in limbo. Automate the nag, surface stale requests daily. This is table stakes.\n\n2. **Audit last 50 requests that didn't convert to quotes: tag reason codes (unqualified, no-show, pricing shock, competitor, ghosted)** — Owner: **Michelle** (pulls data) + **Justin** (tags & analyzes) — Expected lift: **Diagnostic, then 8–12%** — Time: **3 hours**  \n   We don't know *why* 84% aren't converting. If it's lead quality, tighten CallRail/HL forms. If it's no-shows, add SMS confirm sequence. If it's pricing shock, revisit intro tier messaging.\n\n3. **Create templatized quote packets for each product tier (Meridian–Legacy) with financing CTAs** — Owner: **Devon** (design/content) + **Justin** (reviews) — Expected lift: **5–8%** — Time: **2 days**  \n   New tiers launched but quote presentation likely inconsistent. Standardize, add social proof, make financing prominent. Reduces friction from \"I'll think about it\" to \"Let's move forward.\"\n\n## 🔍 Next week — pull this data\n- **Request disposition breakdown:** How many requests are unqualified junk vs. legitimate no-shows vs. quoted but not logged in Jobber?\n- **Time-to-quote median:** Are quotes going out same-day or 5 days later?\n- **Quote approval rate by tier:** Is Sovereign converting at 30% while Flow is at 5%? That changes the fix.\n\n## Trend vs prior 4 weeks\nRequest volume down 40% (280 vs 468) but revenue up 22% — we're closing bigger deals or catching up on aged invoices. The core issue isn't demand, it's conversion: we're not turning qualified appointments into quotes fast enough or consistently enough. If we'd maintained even a mediocre 30% request-to-quote rate, we'd have sent 84 quotes instead of 45, netting an extra ~$68K in invoiced revenue this period at current close rates.\n\n**Single most important action this week:** Matyx builds the 48-hour stale-request alert in Jobber and Justin audits 50 dead requests to tag why they died — everything else is guessing until we know if it's speed, quality, or process.",
+    "brief_md": "# Funnel Diagnostics · 2026-07-20\n\n## TL;DR\nRequest → Quote is the leak — 82% of 248 leads never get a quote, and it's costing you roughly six figures in gross profit this period alone.\n\n## Stage-by-stage breakdown\n| Stage | Count | % of top | % of prev | vs prior 28d | Status |\n|---|---:|---:|---:|---:|---|\n| Requests created | 248 | 100% | — | -35% | ⚠️ Volume down |\n| Quotes sent | 44 | 17.7% | 17.7% | -12% | 🚨 Critical leak |\n| Quotes approved | 11 | 4.4% | 25.0% | — | 🚨 Weak close |\n| Jobs created | 26 | 10.5% | 59.1% (of quotes) | -4% | ⚠️ Watch |\n| Jobs invoiced | 8 | 3.2% | 30.8% (of jobs) | — | 🚨 Billing lag |\n| Invoices paid | 18 | — | — | — | ✅ Collections OK |\n\n*Note: Jobs (26) > Approved quotes (11) and Invoices paid (18) > Invoiced (8) — these entities are out of sync within a single 28-day window. Data is spanning cohorts (jobs/invoices closing from prior-period quotes). Flagged below.*\n\n## 🚨 Leakiest stage\n**Stage:** Request → Quote\n**Drop:** 100% → 17.7% (only 44 of 248 qualified requests received a quote)\n**Estimated GP left on table this period:**\n\nIf Request→Quote hit even a conservative 40% (industry-reasonable for qualified appts), that's ~99 quotes vs. 44 actual = **55 additional quotes**. At current 25% approval → ~14 extra jobs × $11K × 51.9% margin = **~$79,900 in lost GP this period.**\n\nEven closing half that gap is ~$40K GP/month walking out the door.\n\n## 🔧 Top 3 fixes (ranked by ROI)\n\n1. **Audit the 204 un-quoted Requests — build a same-day quoting SLA (quote within 24hrs of appt).** Every CallRail/HighLevel form lands as a Request, so many of these 248 are unqualified noise or never got worked. Segment: real appts vs. junk leads. Kill the junk from the denominator, then enforce a \"quote within 24 hours\" rule for qualified appts. — **Owner: Michelle** — Expected lift: +15–20 quotes/period (~$45K GP) — Time: 3–5 days to audit + SOP\n\n2. **Fix the entity sync / attribution problem before optimizing anything else.** Jobs (26) exceed approved quotes (11), and paid invoices (18) exceed invoiced (8). Your funnel counts are crossing cohorts — you can't trust the 17.7% until requests are properly tagged (lead source, qualified y/n, tier). Right now the \"leak\" could be partly a measurement artifact. — **Owner: Devon** — Expected lift: data integrity (unlocks every other fix) — Time: 2–3 days\n\n3. **Quote → Approved is 25% — build tier-specific quote templates for the 6 new product lines.** New tiers launched April; close rates \"firming up\" is expected but 25% is low. Standardize quote presentation + follow-up cadence per tier (Meridian → Sovereign). — **Owner: Matyx** — Expected lift: +5–8pts approval (~$25K GP) — Time: 1 week\n\n## 🔍 Next week — pull this data\n- **Requests segmented by: qualified vs. junk, and lead source (CallRail vs. HighLevel).** We can't diagnose the top-of-funnel leak until we know how many of the 248 were real appointments vs. form spam.\n- Quote-to-job cycle time and cohort dates (to fix the cross-period contamination).\n\n## Trend vs prior 4 weeks\nRequest volume is down 35% (382→248) while quotes only dropped 12% — so quoting *effort* held up even as intake fell, meaning the real story may be a lead-gen problem at the top, not just a quoting problem. Invoiced dollars are down only 9%, and paid collections look healthy, so the back half of the funnel is intact. The concern is a shrinking, poorly-worked top of funnel.\n\n**Single most important action this week: Have Devon fix the entity/cohort tagging so we know how many of the 248 Requests were real appointments — everything else is guesswork until that's clean.**",
     "funnel": {
       "current": {
-        "start": "2026-06-15",
-        "end": "2026-07-13",
-        "requests_total": 280,
-        "requests_scheduled": 13,
-        "requests_completed": 33,
-        "quotes_sent": 45,
-        "quotes_approved": 6,
-        "jobs_created": 21,
-        "jobs_invoiced": 4,
-        "invoices_paid": 14,
-        "invoiced_dollars": 88777.44,
-        "paid_dollars": 69046.69
+        "start": "2026-06-22",
+        "end": "2026-07-20",
+        "requests_total": 248,
+        "requests_scheduled": 15,
+        "requests_completed": 31,
+        "quotes_sent": 44,
+        "quotes_approved": 11,
+        "jobs_created": 26,
+        "jobs_invoiced": 8,
+        "invoices_paid": 18,
+        "invoiced_dollars": 76459.31,
+        "paid_dollars": 60466.84
       },
       "prior": {
-        "start": "2026-05-18",
-        "end": "2026-06-15",
-        "requests_total": 468,
-        "requests_scheduled": 4,
-        "requests_completed": 28,
-        "quotes_sent": 49,
-        "quotes_approved": 12,
-        "jobs_created": 32,
-        "jobs_invoiced": 20,
-        "invoices_paid": 17,
-        "invoiced_dollars": 72669.51000000001,
-        "paid_dollars": 53230.72
+        "start": "2026-05-25",
+        "end": "2026-06-22",
+        "requests_total": 382,
+        "requests_scheduled": 3,
+        "requests_completed": 33,
+        "quotes_sent": 50,
+        "quotes_approved": 8,
+        "jobs_created": 27,
+        "jobs_invoiced": 14,
+        "invoices_paid": 14,
+        "invoiced_dollars": 83731.17,
+        "paid_dollars": 63578.880000000005
       }
     }
   },
