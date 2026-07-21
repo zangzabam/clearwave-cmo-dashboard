@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T10:01:17.386Z",
+  "generated_at": "2026-07-21T10:30:04.880Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-21",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2653,8 +2653,21 @@
   },
   "approvals": {
     "date": "2026-07-21",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-07-21",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Why spring is the worst time to skip a well test",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-07-21.email.md",
+        "preview": "Words I like;\n\"The ground remembers everything you put on it, and spring hands you the bill.\"\nHere's something most folks never think about. All winter long, the ground up top stays frozen and locked down. Road salt, fertilizer runoff, animal waste, whatever washed off the fields last fall, it all just sits there waiting.\nThen spring hits. The frost line thaws, the snow melts, and the rain comes. All that surface water starts moving down through the soil, and a good chunk of it finds its way into the aquifer your well pulls from. That's why a well that tested clean in October can come back with high nitrates, bacteria, or turned-up iron by April.\nThe water table also rises this time of year. When it climbs, it can pull in shallow contamination that sat above your normal draw line all winter. Your water can literally change month to month.\nSo if you tested last summer and figured you were set, spring is exactly when that number goes stale. If you're already running a FerroMax or a Re-Ionator Pro Ultra, this is the season it earns its keep, quietly handling what the thaw sends down while your neighbors are guessing.\nReply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-07-21": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-21T10:30:00.564Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
