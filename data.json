@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T10:01:08.302Z",
+  "generated_at": "2026-07-22T10:30:13.673Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-22",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2653,8 +2653,29 @@
   },
   "approvals": {
     "date": "2026-07-22",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-22_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Year 1.5 Math\" Campaign",
+        "preview": "**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge). 100 members. All past their year-1 service, so Rule 1 is satisfied.\n**Subject line (primary):**\n`The question we get at month 18`\n**Alternates:**\n- (curiosity) `Is Concierge actually worth it for you?`\n- (pain) `Who's swapping your RO filters this year?`\n- (authority) `Here's the honest math on Concierge`\n- (specific) `$99/mo: what it covers, what it doesn't`\n**Preview text:**\n`No pressure. Just the numbers, so you can decide for yourself.`\n**Body:**\nHi Albert,\nAround the 18-month mark, we get one question a lot: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is $99/mo. It covers your annual service, filter swaps, priority phone support, and parts coverage on the standard install components of your Re-Ionator Pro system. If you are currently handling service pay-as-you-go, add up a year of filter swaps plus a service visit and compare. For some folks it pays for itself. For others it does not, and we will tell you that.\nIf you want, reply here and I will run your specific numbers. No pressure either way.\nJustin\nCEO / ClearWave\n**Send timing:** Tuesday, 10 AM ET.\n**Expected performance:**\n- Open: 30-38%. Your list average is 42%, but the recent \"Access Your Client App\" sends cratered to 0.2-0.7% (likely deliverability/subject fatigue). A plain, non-salesy subject to a warm, small segment should recover most of the historic average.\n- Click/reply: 2-4%. This asks for a reply, not a click, which suits a warm segment.\n- Conversion to Concierge: 3-6 sign-ups realistic from 100 warm, trust-established clients.\n**Source justification:** CONCIERGE UPSELL CONTEXT (the \"$99/mo,\" the \"is this worth it for me? Here's the math\" framing, and the 13-24 month filtered list). Respects HARD RULE 1 and 2 (named the actual product).\n---"
+      },
+      {
+        "id": "email_2026-07-22_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. 30-60 Day Post-Install",
+        "preview": "**Audience:** Referral push candidates (satisfied, 30-60 days post-install). 29 members. Newly installed, high satisfaction, best window for referrals.\n**Subject line (primary):**\n`Know someone with bad water? Read this.`\n**Alternates:**\n- (curiosity) `You've had your system a month. One ask.`\n- (specific) `$500 when your referral installs`\n- (authority) `The referrals we actually want`\n- (pain) `Your neighbor's water is probably worse than yours was`\n**Preview text:**\n`A quick thank-you and one thing that helps us more than a review ever could.`\n**Body:**\nHi Janine,\nYou have had your ClearWave Sovereign running for about a month now. Hopefully the water speaks for itself.\nOne ask. If a friend, neighbor, or family member has been complaining about their water, send them our way. If they book, they get a free water assessment. If they close, you get $500 cash. That climbs to $750 for your 6th through 9th referral in a year, and $1,000 once you hit 10.\nEven if they just take the consult and do not move forward, we send you a $50 gift card for the introduction.\nJust reply with a name and the best way to reach them, and we will handle the rest.\nJustin\nCEO / ClearWave\n**Send timing:** Thursday, 11 AM ET.\n**Expected performance:**\n- Open: 38-45%. This is your freshest, warmest segment (installed weeks ago), likely to exceed list average.\n- Click/reply: 4-6%. Direct reply-with-a-name ask outperforms link clicks for this group.\n- Conversion: 1-3 referral introductions realistic from 29; even 1 closed referral returns $500 for roughly zero acquisition cost.\n**Source justification:** REFERRAL BONUS STRUCTURE (exact $500/$750/$1,000 tiers and $50 gift card), HARD RULE 3 (referrals, not reviews) and 3a (exact \"free water assessment\" phrase), and HARD RULE 2 (named \"ClearWave Sovereign\").\n---\n**Why these two:** The Concierge segment (100) and referral segment (29) are the highest-intent, lowest-cost conversions available this week, and both dodge the deliverability collapse hurting your broadcast sends. I'd hold the 1,000 cold-lead re-engagement for a dedicated week. It needs a warm-up plan given your recent sub-1% opens, or it'll hurt domain reputation further.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-22_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-22_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-22T10:30:01.184Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
