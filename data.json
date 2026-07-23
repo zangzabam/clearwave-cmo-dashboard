@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T10:01:20.167Z",
+  "generated_at": "2026-07-23T10:30:04.245Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-23",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2653,8 +2653,29 @@
   },
   "approvals": {
     "date": "2026-07-23",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-23_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30 to 60 Day Post-Install Cohort)",
+        "preview": "**Why this one first:** Highest-intent, warmest audience. These 30 clients just spent (in several cases) five figures on a system and are in the honeymoon window. No hard rule conflicts: all are past install, none get a Concierge pitch (they are under 12 months), and we push referrals with the exact bonus structure.\n### 1. Campaign name + audience size\n**\"Who's your water person?\". Referral Activation** · Audience: **30 members** (30 to 60 day post-install, satisfied)\n### 2. Subject line (60 char max) + alternates\n**Primary:** `Your neighbor's water is worse than yours` (curiosity/pain)\nAlternates:\n- `A quick question about your new water` (curiosity)\n- `We pay $500 when you send someone our way` (specific)\n- `The referral math, laid out plainly` (authority)\n- `You noticed the difference. They haven't yet.` (pain)\n### 3. Preview text (90 char max)\n`The people you'd recommend us to already have hard water. Here's how referrals work.`\n### 4. Email body draft\n> Hi Jason,\n>\n> It's been about a month since we installed your Ironmax and Ferroluxe setup out in Disputanta. By now the difference should be settling in: softer water, cleaner glassware, better showers.\n>\n> Quick ask. The people you'd send our way (family, a neighbor, the coworker who complains about their water) almost certainly have the same issues you had before we showed up. They just haven't done anything about it yet.\n>\n> Here's how our referral program works, plainly:\n>\n> - You send someone our way and they become a client: **$500 cash** (for your first five referrals in a year).\n> - Referrals six through nine: **$750 each.**\n> - Ten or more: **$1,000 each.**\n> - If they book a consult but don't move forward: **$50 gift card**, no strings.\n>\n> All they need is a free water assessment to get started. You send the name, we handle the rest.\n>\n> Just reply to this email with who you have in mind, and we'll take it from there.\n>\n> Justin\n> CEO / ClearWave\n*(Merge tags: first name, `{{system}}` referenced by actual product, city. Where system field is odd formatting, we clean it to the product name only.)*\n### 5. Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is the reliable open window for this list; not Monday (inbox backlog), not Friday (referral asks lose momentum over the weekend).\n### 6. Expected performance\n- **Open: 40 to 46%.** Matches the 42.1% lifecycle baseline; small, warm, recently-engaged segment.\n- **Click: n/a (reply-based).** No link to click intentionally, this is a reply-driven ask, which raises engagement signal to Mailchimp.\n- **Conversion (a named referral back): 8 to 12%**, so roughly 3 to 4 warm names. Historically referral cohorts at this window respond because the product experience is fresh.\n### 7. Source justification\nDraws from **Jobber Lifecycle Triggers → Referral push candidates (30 to 60 days post-install, satisfied)** and the **Referral Bonus Structure** (exact $500/$750/$1,000/$50 tiers). Uses \"free water assessment\" per Rule 3a. No review ask per Rule 3.\n---"
+      },
+      {
+        "id": "email_2026-07-23_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Year 1.5\" Upsell (13 to 24 Month Cohort)",
+        "preview": "**Why this one:** Largest qualified segment (100), already past their year-1 service so they trust us, and the math-based framing converts without being pushy. All candidates are confirmed 13+ months post-install, so Rule 1 is satisfied.\n### 1. Campaign name + audience size\n**\"Is Concierge worth it for me?\". Year 1.5 Upsell** · Audience: **100 members** (13 to 24 months, not on Concierge)\n### 2. Subject line (60 char max) + alternates\n**Primary:** `The question we get at year 1.5` (curiosity)\nAlternates:\n- `Is Concierge actually worth it for you? The math` (specific)\n- `You've had your first service. Now what?` (pain/curiosity)\n- `$99/mo vs. paying as you go: honest breakdown` (specific)\n- `We only recommend this to about half our clients` (authority)\n### 3. Preview text (90 char max)\n`No pressure. Just the honest math on whether Concierge makes sense for your setup.`\n### 4. Email body draft\n> Hi Albert,\n>\n> You've had your Re-Ionator Pro and RO system running for over a year now, and you've been through your first annual service. So you know how we work.\n>\n> Here's a question we get asked a lot right around this point: \"Is this Concierge thing actually worth it for me?\"\n>\n> Fair question. Here's the honest math.\n>\n> Concierge is $99/mo. For that you get your annual service, all filter swaps, priority phone support, and parts coverage on your standard install components. If you're the kind of person who'd rather never think about filter timing or track down a part when you need one, it usually pencils out in your favor.\n>\n> If you're comfortable handling swaps yourself and calling us as needed, pay-as-you-go might suit you fine. We're genuinely good either way.\n>\n> Want me to run the numbers against your specific setup? Reply and I'll break it down for your Re-Ionator Pro and RO, no pressure.\n>\n> Justin\n> CEO / ClearWave\n*(Merge tags: first name, actual product name from `{{system}}`, install age. Where system is \"(not specified)\" the copy falls back to \"your ClearWave system\" per Rule 2.)*\n### 5. Send timing\n**Thursday, 11:00 AM ET.** A day of separation from Proposal 1 protects list fatigue. Thursday late-morning suits a considered, math-based read better than a Monday.\n### 6. Expected performance\n- **Open: 35 to 42%.** Slightly below the referral cohort (larger, slightly older list) but well above broadcast rates; subject line leads with curiosity, not a \"sale\" trigger word.\n- **Click: n/a (reply-based).** Reply-driven again to sidestep the ~0% historical click issue and lift engagement signal.\n- **Conversion (Concierge sign-up or \"run my numbers\" reply): 4 to 7%**, so 4 to 7 subscriptions at $99/mo is $396 to $693 MRR, plus a warm-reply pipeline. Trust is pre-established via completed year-1 service.\n### 7. Source justification\nDraws from **Concierge Upsell Candidates (13 to 24 months, not on Concierge)** and **Concierge Upsell Context** (the $99/mo scope and the \"year 1.5, is it worth it, here's the math\" framing). Respects Rule 1 (12-month floor already filtered), Rule 2 (names actual product), and Rule 3 (no review ask).\n---\n### Sequencing note\nRun Proposal 1 Tuesday, Proposal 2 Thursday. These are two entirely separate segments (30 vs. 100 members) with no overlap risk to the same inbox in one week. I deliberately excluded a full-list or cold-lead blast this week: the 1,000 cold subscribers need a value-led news angle built out properly, and firing it alongside two lifecycle sends would spike volume and risk the deliverability we're currently protecting. Recommend we tee up the cold re-engagement as next week's standalone.\nJustin\nCEO / ClearWave\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-23_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-23_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-23T10:30:00.526Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
