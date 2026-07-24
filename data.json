@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T11:00:00.532Z",
+  "generated_at": "2026-07-24T17:00:01.227Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -2291,7 +2291,7 @@
     "edited_files": [
       {
         "filename": "2026-06-23-114851695.manus.txt",
-        "mtime": 1783958176512.6477,
+        "mtime": 1783958176512,
         "size_mb": 0
       },
       {
@@ -2301,12 +2301,12 @@
       },
       {
         "filename": "2026-06-23-114851695.package.json",
-        "mtime": 1783958176512.0906,
+        "mtime": 1783958176512,
         "size_mb": 0.01
       },
       {
         "filename": "2026-06-25-082830770.manus.txt",
-        "mtime": 1783958208389.0762,
+        "mtime": 1783958208389,
         "size_mb": 0
       },
       {
@@ -2316,12 +2316,12 @@
       },
       {
         "filename": "2026-06-25-082830770.package.json",
-        "mtime": 1783958208388.5117,
+        "mtime": 1783958208388,
         "size_mb": 0.01
       },
       {
         "filename": "20260614_170500.manus.txt",
-        "mtime": 1783958238319.58,
+        "mtime": 1783958238319,
         "size_mb": 0
       },
       {
@@ -2331,7 +2331,7 @@
       },
       {
         "filename": "20260614_170500.package.json",
-        "mtime": 1783958238319.1208,
+        "mtime": 1783958238319,
         "size_mb": 0.01
       },
       {
@@ -2341,12 +2341,12 @@
       },
       {
         "filename": "20260625_110649.manus.txt",
-        "mtime": 1783958271119.807,
+        "mtime": 1783958271119,
         "size_mb": 0
       },
       {
         "filename": "20260625_110649.package.json",
-        "mtime": 1783958271119.3728,
+        "mtime": 1783958271119,
         "size_mb": 0.01
       },
       {
@@ -2356,12 +2356,12 @@
       },
       {
         "filename": "20260628_190854.manus.txt",
-        "mtime": 1783958307526.0044,
+        "mtime": 1783958307526,
         "size_mb": 0
       },
       {
         "filename": "20260628_190854.package.json",
-        "mtime": 1783958307525.4797,
+        "mtime": 1783958307525,
         "size_mb": 0.01
       },
       {
@@ -2371,12 +2371,12 @@
       },
       {
         "filename": "20260628_194129.manus.txt",
-        "mtime": 1783958339621.1848,
+        "mtime": 1783958339621,
         "size_mb": 0
       },
       {
         "filename": "20260628_194129.package.json",
-        "mtime": 1783958339620.7646,
+        "mtime": 1783958339620,
         "size_mb": 0.01
       },
       {
@@ -2386,12 +2386,12 @@
       },
       {
         "filename": "20260628_194139.manus.txt",
-        "mtime": 1783958368624.167,
+        "mtime": 1783958368624,
         "size_mb": 0
       },
       {
         "filename": "20260628_194139.package.json",
-        "mtime": 1783958368623.7307,
+        "mtime": 1783958368623,
         "size_mb": 0.01
       },
       {
@@ -2401,12 +2401,12 @@
       },
       {
         "filename": "20260628_194153.manus.txt",
-        "mtime": 1783958398302.4348,
+        "mtime": 1783958398302,
         "size_mb": 0
       },
       {
         "filename": "20260628_194153.package.json",
-        "mtime": 1783958398301.1821,
+        "mtime": 1783958398301,
         "size_mb": 0.01
       },
       {
@@ -2416,12 +2416,12 @@
       },
       {
         "filename": "20260628_195205.manus.txt",
-        "mtime": 1783958428202.664,
+        "mtime": 1783958428202,
         "size_mb": 0
       },
       {
         "filename": "20260628_195205.package.json",
-        "mtime": 1783958428199.471,
+        "mtime": 1783958428199,
         "size_mb": 0.01
       },
       {
@@ -2431,12 +2431,12 @@
       },
       {
         "filename": "Copy of 20260628_195205.manus.txt",
-        "mtime": 1783958462560.4812,
+        "mtime": 1783958462560,
         "size_mb": 0
       },
       {
         "filename": "Copy of 20260628_195205.package.json",
-        "mtime": 1783958462559.5256,
+        "mtime": 1783958462559,
         "size_mb": 0.01
       },
       {
@@ -2446,12 +2446,12 @@
       },
       {
         "filename": "Copy of justin_brandon_wedding.manus.txt",
-        "mtime": 1783958500792.7026,
+        "mtime": 1783958500792,
         "size_mb": 0
       },
       {
         "filename": "Copy of justin_brandon_wedding.package.json",
-        "mtime": 1783958500792.1707,
+        "mtime": 1783958500792,
         "size_mb": 0.01
       },
       {
@@ -2461,12 +2461,12 @@
       },
       {
         "filename": "Copy of justin_wedding_solo.manus.txt",
-        "mtime": 1783958530865.223,
+        "mtime": 1783958530865,
         "size_mb": 0
       },
       {
         "filename": "Copy of justin_wedding_solo.package.json",
-        "mtime": 1783958530864.8152,
+        "mtime": 1783958530864,
         "size_mb": 0.01
       },
       {
@@ -2476,12 +2476,12 @@
       },
       {
         "filename": "IMG_20260628_195509.manus.txt",
-        "mtime": 1783958562402.5686,
+        "mtime": 1783958562402,
         "size_mb": 0
       },
       {
         "filename": "IMG_20260628_195509.package.json",
-        "mtime": 1783958562402.0962,
+        "mtime": 1783958562402,
         "size_mb": 0.01
       }
     ],
