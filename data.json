@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T10:01:19.246Z",
+  "generated_at": "2026-07-24T10:30:04.877Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-07-24",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2653,8 +2653,29 @@
   },
   "approvals": {
     "date": "2026-07-24",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-07-24_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It\" Campaign",
+        "preview": "**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge). **100 members**\nWhy this one first: it's the highest-intent, highest-dollar list. These clients already had their year-1 service, so they trust the service relationship. This is the single clearest revenue lever this week ($99/mo recurring). All candidates are past the 12-month hard floor.\n### Subject line + alternates (60 char max)\n- **Primary (specific):** The question we get at year 1.5: is Concierge worth it?\n- (curiosity): Should you be on Concierge? Here's the actual math.\n- (pain): Tired of tracking your own filter swaps?\n- (authority): What year-2 clients ask us most\n- (specific): $99/mo, annual service included. The full breakdown.\n### Preview text (90 char max)\nNo pressure. Just the honest math on whether Concierge pays off for your setup.\n### Email body\nHi [First Name],\nYou're about a year and a half into life with your [SYSTEM], and there's one question we hear a lot right around now: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here's the honest math.\nConcierge is $99/mo. It covers your annual service, filter swaps, priority phone support, and parts coverage on your standard install components. If you're currently handling swaps yourself or paying as you go, it usually comes out even or ahead once you count the annual service alone. The rest (priority support, parts coverage) is what makes it quiet and easy.\nIf you'd rather stay pay-as-you-go, that's completely fine. Your [SYSTEM] is built to run clean either way.\nWant me to run the numbers for your specific setup? Just reply and I'll send them over.\nJustin\nCEO / ClearWave\n> Note: `[SYSTEM]` merge field maps to the actual product per contact (Rule 2). Where the record is \"(not specified),\" it renders \"your ClearWave system.\"\n### Send timing\n**Tuesday, 10:00 AM ET**. Midweek morning, best open window for a considered, dollar-based decision email.\n### Expected performance\n- **Open: 34-40%.** Below your 42.1% list average because these are 13-24 month contacts (cooler than fresh triggers), but well above industry ~21%. Subject is specific and non-alarmist, unlike the \"Access Your Client App\" repeats that tanked to 0.2-0.7%.\n- **Click/reply: 4-7%.** Reply-driven CTA (not a link), so measure by replies, not Mailchimp click. High-intent list + soft ask lifts this far above your 0.28% link-click baseline.\n- **Conversion: 3-6 enrollments** (3-6% of 100). At $99/mo that's ~$3,564-$7,128/yr recurring from one send.\n### Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"is this worth it at year 1.5, here's the math\" framing, $99/mo feature list, and the trust-after-year-1 targeting) and the **JOBBER LIFECYCLE TRIGGERS** conciergeUpsellCandidates list (pre-filtered to 13-24 months, honoring Rule 1's 12-month floor).\n---"
+      },
+      {
+        "id": "email_2026-07-24_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement",
+        "preview": "**Audience:** Cold subscribers (joined >60d ago, no engagement >60d, still subscribed). **1,000 members**\nWhy this one second: it's your largest untapped pool. These people entered the funnel but never got a quote and haven't heard from you in 60+ days. Even a low re-engagement rate here produces real assessment bookings, and it's distinct from Justin's existing 30-day quote sequence, so no overlap.\n### Subject line + alternates (60 char max)\n- **Primary (curiosity):** What's actually in your tap water right now?\n- (news angle): New water report for the DMV. Worth a look.\n- (pain): Hard water quietly wears down your home\n- (authority): You reached out once. Here's what changed.\n- (specific): One free water assessment. Zero pressure.\n### Preview text (90 char max)\nNo sales pitch. Just what we're seeing in local water lately, and one easy next step.\n### Email body\nHi [First Name],\nIt's been a while, so I'll keep this short and useful.\nYou reached out to us a while back about your water, and we never want to be the company that just pesters you. So instead, here's something worth knowing: water quality across the region shifts more than most people realize, and what was fine a year ago isn't always fine today. Sediment, hardness, and treatment changes all move over time.\nThat's the whole reason we offer a **free water assessment**. We come out, look at what's actually happening at your tap, and tell you straight whether you need anything. No pressure, no obligation.\nIf you're curious what's in your water today, reply \"assessment\" and we'll get you on the calendar.\nJustin\nCEO / ClearWave\n> Note: uses the exact offer phrase \"free water assessment\" (Rule 3a), leads with new value / news angle, resets the relationship, and offers the assessment as the one next step, per the Cold Lead brief.\n### Send timing\n**Thursday, 11:00 AM ET**. Separates it from the Tuesday Concierge send so the two don't compete, and lands on a mid-late-week open window.\n### Expected performance\n- **Open: 12-20%.** These are cold, 60+ day-disengaged contacts, so expect well below your list average. A curiosity/value subject (not a stale \"still interested?\") should beat a bare re-engagement attempt. Even 15% = ~150 opens.\n- **Click/reply: 1-3%.** Reply-based CTA on a 1,000-list. Realistically 10-30 replies.\n- **Conversion: 5-15 booked assessments.** Each booked assessment is a top-of-funnel quote opportunity that was otherwise dead. This is found revenue.\n- **Deliverability note:** since this list is cold, I'd send in 2 batches (500/500, a day apart) and suppress hard non-openers after the first send to protect your strong 42.1% sender reputation.\n### Source justification\nDraws from **COLD LEAD RE-ENGAGEMENT** (the three-part brief: lead with new value / water news angle, reset the relationship, offer a free water assessment as the ONE next step; and the explicit note that this is distinct from the 30-day quote sequence) and **MAILCHIMP HEALTH** (baselines used to set realistic cold-audience expectations and the batching recommendation to protect sender reputation).\n---\n### Why not the others this week\n- **1-year annual service (21):** operational/scheduling, not a conversion campaign, and pitching Concierge to them would violate Rule 1 (they're just hitting 12 months now).\n- **Referral push (30):** strong candidate, but I capped at 2 per your instruction. This is my #3 for next week (specific $500/$750/$1,000 tiers + $50 gift-card hook).\n- **RO replacement (27):** viable, but lower dollar value and less time-sensitive than the Concierge recurring revenue.\nWant me to build the referral email as a queued #3, or swap it in for either above?\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-07-24_c1": {
+        "decision": "pending"
+      },
+      "email_2026-07-24_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-07-24T10:30:00.735Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
