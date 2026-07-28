@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T23:00:00.488Z",
+  "generated_at": "2026-07-28T11:00:00.560Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -12,7 +12,7 @@
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-07-27",
+        "last_run": "2026-07-28",
         "status": "Good"
       },
       {
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-07-27",
+        "last_run": "2026-07-28",
         "status": "Good"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-07-27",
+        "last_run": "2026-07-28",
         "status": "Good"
       },
       {
@@ -324,8 +324,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-07-27",
-      "projected_full_year": 1125622.534855769,
+      "through": "2026-07-28",
+      "projected_full_year": 1120236.7811004783,
       "prior_year_same_period": 44894,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -921,7 +921,7 @@
     ]
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-07-27\n\n_Generated at 2026-07-27T10:01:15.166Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **0**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3506** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **22**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **29**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instructions contain a contradiction. Rule 4 says the sign-off is **two lines exactly with NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but the \"Your Job\" section asks for \". Justin / CEO / ClearWave\" with an em dash. Rule 5 bans em dashes entirely.\n**I'm following the HARD RULES** (Rule 4 + Rule 5 win): no em dash, two clean lines. Flagging so you can correct the brief.\n---\n# Proposal 1: Concierge \"Is it worth it?\" Campaign\n### 1. Campaign name + audience\n**\"The Year 1.5 Question\"**. Concierge upsell candidates, **100 members**\n### 2. Subject line + alternates (60 char max)\n**Primary:** `The question everyone asks at 18 months` (curiosity)\nAlternates:\n- `Is the Concierge plan actually worth it? The math.` (specific)\n- `You made it a year. Here's what most people miss.` (pain)\n- `We get asked this every week. Here's the honest answer.` (authority)\n- `$99/mo or pay as you go? Let's do the math.` (specific)\n### 3. Preview text (90 char max)\n`No pressure. Just the numbers so you can decide for yourself.`\n### 4. Email body\nHi Albert,\nNow that your Re-Ionator Pro and WT RO have a year-plus behind them, you've probably hit the question we get asked most around this stage:\n\"Is the Concierge plan actually worth it for me?\"\nFair question. Here's the honest math, no spin.\nConcierge is $99/mo. It covers your annual service, filter swaps, priority phone support, and parts coverage on your standard install components. If you're currently paying as you go, add up a year of service visits plus filters and compare. For a lot of homes it's close to a wash, and the priority support plus parts coverage is the part people end up valuing most.\nIf the pay-as-you-go route makes more sense for your setup, that's a completely valid answer too. I'd rather you know the numbers than sign up blind.\nWant me to run your specific system's math? Reply and I'll send it over.\nJustin\nCEO / ClearWave\n### 5. Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is your strongest B2C read window, and this is a considered decision (not impulse), so a weekday work-break slot beats evening.\n### 6. Expected performance\n- **Open: 30-38%.** Below your stated 42% historical average because that number looks inflated against the recent campaign reality (recent opens are 0.2-0.7%, suggesting a deliverability/tracking problem, see caveat below). Against realistic engaged-segment behavior, a curiosity subject to a warm, year-plus-tenured audience should land here.\n- **Click: 4-8%.** Dramatically above your 0.28% average because this is a tightly filtered 100-person warm list with a single reply-based CTA, not a broadcast.\n- **Conversion (reply or signup): 5-10 replies.** Concierge at $99/mo = ~$1,188/yr per conversion. Even 3-4 conversions is $3,500-$4,750 in recurring annual revenue from one email.\n### 7. Source justification\nDraws from **Jobber Lifecycle Triggers → Concierge upsell candidates** (100, pre-filtered to 13-24 months, clears the 12-month hard floor in Rule 1) and **Concierge Upsell Context** (exact $99/mo framing, the \"worth it for me / here's the math\" non-pushy voice, year-1-service-trust targeting).\n---\n# Proposal 2: Cold Lead Re-Engagement\n### 1. Campaign name + audience\n**\"Reset + Water News Angle\"**. Cold subscribers, **1000 members**\n### 2. Subject line + alternates (60 char max)\n**Primary:** `What's actually in your water this year` (curiosity)\nAlternates:\n- `We went quiet. Here's why that changes now.` (curiosity/reset)\n- `New water data for the DMV (worth 2 minutes)` (specific)\n- `The one thing most homes never check` (pain)\n- `You reached out once. Let's pick it back up.` (reset)\n### 3. Preview text (90 char max)\n`No sales pitch. Just where your water stands, and one simple next step.`\n### 4. Email body\nHi there,\nIt's been a while, and that's on us. You reached out to ClearWave at some point, we talked (or almost did), and then things went quiet.\nLet's reset.\nWater quality across our region has shifted more than most people realize over the past year, and the vast majority of homes have never actually looked at what's coming out of their tap. Not the softness, not the sediment, not the things you can't taste.\nThat's the whole reason we exist, and it's why we make the next step simple:\nA free water assessment. One visit, no obligation, and you'll know exactly where your water stands.\nIf now's the time, just reply and we'll get you scheduled. If not, no pressure at all.\nJustin\nCEO / ClearWave\n### 5. Send timing\n**Thursday, 11:00 AM ET.** Separating it from the Tuesday Concierge send avoids fatigue, and cold-list re-engagement performs best mid-to-late week when inbox competition from Monday/Tuesday marketing blasts has thinned.\n### 6. Expected performance\n- **Open: 8-15%.** Cold, unengaged 60+ day list. A reset-toned subject helps, but these are by definition low-engagement contacts. Do not expect anywhere near 42%.\n- **Click/reply: 0.5-1.5%.** 5-15 replies off 1000. The single-CTA \"free water assessment\" (exact offer phrase per Rule 3a) keeps friction minimal.\n- **Conversion: 3-8 assessments booked.** Even a handful re-entering the funnel from a dead list is found revenue at essentially zero acquisition cost.\n- **Deliverability caveat (important):** If your recent 0.2-0.7% opens reflect a real inbox-placement problem rather than tracking, sending to 1000 cold contacts risks spam complaints that damage domain reputation. **I recommend sending to a 200-person test batch first**, confirming placement, then rolling to the rest.\n### 7. Source justification\nDraws directly from **Cold Lead Re-Engagement** brief: leads with new value (water news angle, not \"still interested?\"), resets the relationship, and offers a **free water assessment** as the ONE next step. Distinct from the existing 30-day quote sequence per the brief's note.\n---\n## Why these two\nThe Concierge campaign is the highest **dollar-per-send** play this week (warm, pre-qualified, recurring revenue). The cold re-engagement is the highest **volume-of-recovery** play (1000 dead contacts at zero acquisition cost). I skipped the referral and annual-service triggers this week because the audiences are smaller (30 / 22) and I'd rather not send four campaigns and fatigue a list already showing engagement anomalies.\n**One data flag worth your attention:** your recent campaign opens (0.2-0.7%) are wildly out of line with your stated 42.1% average. That's almost certainly a deliverability or tracking issue, not audience apathy. I'd get that diagnosed before any large send, because it directly caps every projection above.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-07-28\n\n_Generated at 2026-07-28T10:00:05.930Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **0**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
     "audience_size": 3506,
@@ -2661,10 +2661,10 @@
     }
   },
   "approvals": {
-    "date": "2026-07-27",
+    "date": "2026-07-28",
     "items": [],
     "decisions": {},
-    "last_brief_sent": "2026-07-27T10:30:00.829Z"
+    "last_brief_sent": "2026-07-28T10:30:00.532Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
