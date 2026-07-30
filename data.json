@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:00:00.507Z",
+  "generated_at": "2026-07-30T11:00:00.532Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -12,7 +12,7 @@
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-07-29",
+        "last_run": "2026-07-30",
         "status": "Good"
       },
       {
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-07-29",
+        "last_run": "2026-07-30",
         "status": "Good"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-07-29",
+        "last_run": "2026-07-30",
         "status": "Good"
       },
       {
@@ -324,8 +324,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-07-29",
-      "projected_full_year": 1114902.3202380952,
+      "through": "2026-07-30",
+      "projected_full_year": 1109618.422985782,
       "prior_year_same_period": 44894,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -921,7 +921,7 @@
     ]
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-07-29\n\n_Generated at 2026-07-29T10:01:28.365Z_\n\n## Executive summary\n- Jobs created yesterday: **1** ($12,847 in pipeline)\n- Inbound calls yesterday: **4**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3515** members · open 42.1% · click 0.28%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **30**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **30**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one issue before proposing: your sign-off instructions conflict. Rule 4 says the sign-off is two lines with **NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but the Your Job section asks for \". Justin\". Rule 4 and Rule 5 (no dashes anywhere) both override this. I'm using the compliant version:\n```\nJustin\nCEO / ClearWave\n```\nHere are my top 2 picks for this week.\n---\n## PROPOSAL 1: Concierge Upsell. \"The Year 1.5 Question\"\n**Why this is #1:** 100 candidates, all past the 12-month floor, all have already experienced one annual service (so trust is established). This is the highest-intent, best-qualified list you have. Recurring revenue ($99/mo) beats one-off conversions. The \"here's the math\" framing matches the provided Concierge voice guidance exactly.\n**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge). **100 members**\n**Subject line (primary):**\n`Is Concierge actually worth it for you?`\n**Alternates:**\n1. (curiosity) `The question we get most at 18 months`\n2. (pain) `Tired of tracking your own filter swaps?`\n3. (authority) `What your annual service does not cover`\n4. (specific) `$99/mo: here is the exact math`\n**Preview text:**\n`No pressure. Just the honest math on whether Concierge pays off for your setup.`\n**Body:**\nHi Albert,\nYou are about a year and a half out from your install now, which means you have been through one annual service with us. So you have seen how the Re-Ionator Pro and WT RO runs day to day: quiet, low fuss, doing its job.\nAround this point we get one question a lot: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is $99/mo. It covers your annual service, your filter swaps, priority phone support, and parts coverage on the standard install components. If you are currently handling swaps yourself or paying as you go, the plan usually comes out even or ahead once you factor in a single parts issue or a service visit.\nIf you like doing it yourself, no problem at all. Your system is built to be low maintenance. This is only for folks who would rather never think about it again.\nWant me to run the numbers for your exact setup? Reply to this email and I will send them over.\nJustin\nCEO / ClearWave\n**Send timing:** Tuesday, 10:00 AM ET (strong B2C open window; midweek avoids Monday inbox pileup).\n**Expected performance:**\n- Open: **38-45%.** Your audience-wide average is 42.1%, and this is a highly qualified sub-segment with a personal, non-promotional subject. Note: your recent campaigns show a data anomaly (0.2-0.7% opens on \"Access Your Client App\" etc.) that contradicts the 42.1% average. That suggests either a deliverability/tracking break or aggressive Apple MPP under-reporting on those specific sends. **Recommend a deliverability check before launch.** Estimate assumes the 42.1% baseline is real.\n- Click: **3-6%** (well above your 0.28% avg, because CTA is \"reply\" not \"click,\" and the offer is concrete/personal).\n- Conversion: **4-8 plans** (4-8% of 100). At $99/mo that is roughly $475-$950/mo recurring, or **$5.7K-$11.4K ARR** from one send.\n**Source justification:** Draws from the CONCIERGE UPSELL CONTEXT block (exact \"is this Concierge thing worth it\" framing, $99/mo feature list, \"here's the math\" tone, 13-24 month filter) and JOBBER LIFECYCLE TRIGGERS (Concierge upsell candidate list). Complies with Hard Rule 1 (all candidates are 12+ months post-install) and Rule 2 (names actual product \"Re-Ionator Pro and WT RO\").\n---\n## PROPOSAL 2: Referral Push. 30-60 Day Post-Install\n**Why this is #2:** 30 fresh, satisfied customers still in the honeymoon window. Referrals are the compliant growth lever (Rule 3 forbids review asks). The bonus structure gives a concrete, high-value hook. Jason Vallee and Ian Markley are ideal (real installs, engaged).\n**Audience:** Referral push candidates (30-60 days post-install, satisfied). **30 members**\n**Subject line (primary):**\n`Know someone with bad water? Read this.`\n**Alternates:**\n1. (specific) `$500 for the first friend you send us`\n2. (curiosity) `A quick favor (there is $500 in it)`\n3. (authority) `Your neighbors keep asking about your water`\n4. (pain) `Tired of buying bottled water? Your friends are too.`\n**Preview text:**\n`If your Ironmax and Ferroluxe setup has been treating you right, here is how to pass it on.`\n**Body:**\nHi Jason,\nYou are about a month into life with your Ironmax and Ferroluxe setup (plus the RO, spindown, and the two Big Blues). Hopefully the water has been exactly what you hoped for.\nIf it has, I have a favor and a thank you attached to it.\nIf you know someone fighting bad water, send them our way. Here is how we say thanks:\n- If they book a free water assessment but do not move forward: $50 gift card, on us.\n- If they become a customer: $500 cash for your first five referrals in a year, $750 for six through nine, and $1,000 each once you hit ten.\nThat resets every calendar year, so there is no cap on the good you can do (or the checks we cut).\nJust reply with a name and the best way to reach them, or forward them this email. I will take it from there.\nJustin\nCEO / ClearWave\n**Send timing:** Thursday, 11:00 AM ET (late-week, low-pressure \"favor\" tone lands better away from Monday/Tuesday transactional inboxes).\n**Expected performance:**\n- Open: **40-48%** (small, warm, recently-delighted list; personal subject).\n- Click/reply: **5-10%** (reply-driven; concrete dollar amounts drive action).\n- Conversion: **2-4 referral names**, with maybe **1-2 booked assessments** over the following weeks. Even one closed referral = $500 payout against effectively zero acquisition cost.\n**Source justification:** Draws from JOBBER LIFECYCLE TRIGGERS (referral push candidates, 30-60 days post-install) and the REFERRAL BONUS STRUCTURE block (exact $500/$750/$1,000 tiers and $50 gift card). Complies with Rule 3 (referrals not reviews), Rule 3a (\"free water assessment\" used exactly), and Rule 2 (names actual products).\n---\n**One flag on data hygiene:** Several candidates appear with $0 totals or duplicate entries (Albert Romano twice, Nir Sela across multiple lists). Before merge-tagging names into a live send, dedupe and confirm these are valid, opted-in contacts. And I'd resolve the open-rate anomaly first. If deliverability is genuinely broken, both campaigns underperform regardless of copy quality.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-07-30\n\n_Generated at 2026-07-30T10:01:08.438Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **0**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
     "audience_size": 3515,
@@ -2661,30 +2661,30 @@
     }
   },
   "approvals": {
-    "date": "2026-07-29",
+    "date": "2026-07-30",
     "items": [
       {
-        "id": "email_2026-07-29_c1",
+        "id": "email_2026-07-30_c1",
         "type": "email_proposal",
         "title": "Email Campaign · : Concierge Upsell. \"The Year 1.5 Question\"",
         "preview": "**Why this is #1:** 100 candidates, all past the 12-month floor, all have already experienced one annual service (so trust is established). This is the highest-intent, best-qualified list you have. Recurring revenue ($99/mo) beats one-off conversions. The \"here's the math\" framing matches the provided Concierge voice guidance exactly.\n**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge). **100 members**\n**Subject line (primary):**\n`Is Concierge actually worth it for you?`\n**Alternates:**\n1. (curiosity) `The question we get most at 18 months`\n2. (pain) `Tired of tracking your own filter swaps?`\n3. (authority) `What your annual service does not cover`\n4. (specific) `$99/mo: here is the exact math`\n**Preview text:**\n`No pressure. Just the honest math on whether Concierge pays off for your setup.`\n**Body:**\nHi Albert,\nYou are about a year and a half out from your install now, which means you have been through one annual service with us. So you have seen how the Re-Ionator Pro and WT RO runs day to day: quiet, low fuss, doing its job.\nAround this point we get one question a lot: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is $99/mo. It covers your annual service, your filter swaps, priority phone support, and parts coverage on the standard install components. If you are currently handling swaps yourself or paying as you go, the plan usually comes out even or ahead once you factor in a single parts issue or a service visit.\nIf you like doing it yourself, no problem at all. Your system is built to be low maintenance. This is only for folks who would rather never think about it again.\nWant me to run the numbers for your exact setup? Reply to this email and I will send them over.\nJustin\nCEO / ClearWave\n**Send timing:** Tuesday, 10:00 AM ET (strong B2C open window; midweek avoids Monday inbox pileup).\n**Expected performance:**\n- Open: **38-45%.** Your audience-wide average is 42.1%, and this is a highly qualified sub-segment with a personal, non-promotional subject. Note: your recent campaigns show a data anomaly (0.2-0.7% opens on \"Access Your Client App\" etc.) that contradicts the 42.1% average. That suggests either a deliverability/tracking break or aggressive Apple MPP under-reporting on those specific sends. **Recommend a deliverability check before launch.** Estimate assumes the 42.1% baseline is real.\n- Click: **3-6%** (well above your 0.28% avg, because CTA is \"reply\" not \"click,\" and the offer is concrete/personal).\n- Conversion: **4-8 plans** (4-8% of 100). At $99/mo that is roughly $475-$950/mo recurring, or **$5.7K-$11.4K ARR** from one send.\n**Source justification:** Draws from the CONCIERGE UPSELL CONTEXT block (exact \"is this Concierge thing worth it\" framing, $99/mo feature list, \"here's the math\" tone, 13-24 month filter) and JOBBER LIFECYCLE TRIGGERS (Concierge upsell candidate list). Complies with Hard Rule 1 (all candidates are 12+ months post-install) and Rule 2 (names actual product \"Re-Ionator Pro and WT RO\").\n---"
       },
       {
-        "id": "email_2026-07-29_c2",
+        "id": "email_2026-07-30_c2",
         "type": "email_proposal",
         "title": "Email Campaign · : Referral Push. 30-60 Day Post-Install",
         "preview": "**Why this is #2:** 30 fresh, satisfied customers still in the honeymoon window. Referrals are the compliant growth lever (Rule 3 forbids review asks). The bonus structure gives a concrete, high-value hook. Jason Vallee and Ian Markley are ideal (real installs, engaged).\n**Audience:** Referral push candidates (30-60 days post-install, satisfied). **30 members**\n**Subject line (primary):**\n`Know someone with bad water? Read this.`\n**Alternates:**\n1. (specific) `$500 for the first friend you send us`\n2. (curiosity) `A quick favor (there is $500 in it)`\n3. (authority) `Your neighbors keep asking about your water`\n4. (pain) `Tired of buying bottled water? Your friends are too.`\n**Preview text:**\n`If your Ironmax and Ferroluxe setup has been treating you right, here is how to pass it on.`\n**Body:**\nHi Jason,\nYou are about a month into life with your Ironmax and Ferroluxe setup (plus the RO, spindown, and the two Big Blues). Hopefully the water has been exactly what you hoped for.\nIf it has, I have a favor and a thank you attached to it.\nIf you know someone fighting bad water, send them our way. Here is how we say thanks:\n- If they book a free water assessment but do not move forward: $50 gift card, on us.\n- If they become a customer: $500 cash for your first five referrals in a year, $750 for six through nine, and $1,000 each once you hit ten.\nThat resets every calendar year, so there is no cap on the good you can do (or the checks we cut).\nJust reply with a name and the best way to reach them, or forward them this email. I will take it from there.\nJustin\nCEO / ClearWave\n**Send timing:** Thursday, 11:00 AM ET (late-week, low-pressure \"favor\" tone lands better away from Monday/Tuesday transactional inboxes).\n**Expected performance:**\n- Open: **40-48%** (small, warm, recently-delighted list; personal subject).\n- Click/reply: **5-10%** (reply-driven; concrete dollar amounts drive action).\n- Conversion: **2-4 referral names**, with maybe **1-2 booked assessments** over the following weeks. Even one closed referral = $500 payout against effectively zero acquisition cost.\n**Source justification:** Draws from JOBBER LIFECYCLE TRIGGERS (referral push candidates, 30-60 days post-install) and the REFERRAL BONUS STRUCTURE block (exact $500/$750/$1,000 tiers and $50 gift card). Complies with Rule 3 (referrals not reviews), Rule 3a (\"free water assessment\" used exactly), and Rule 2 (names actual products).\n---\n**One flag on data hygiene:** Several candidates appear with $0 totals or duplicate entries (Albert Romano twice, Nir Sela across multiple lists). Before merge-tagging names into a live send, dedupe and confirm these are valid, opted-in contacts. And I'd resolve the open-rate anomaly first. If deliverability is genuinely broken, both campaigns underperform regardless of copy quality.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
       }
     ],
     "decisions": {
-      "email_2026-07-29_c1": {
+      "email_2026-07-30_c1": {
         "decision": "pending"
       },
-      "email_2026-07-29_c2": {
+      "email_2026-07-30_c2": {
         "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-07-29T10:30:00.832Z"
+    "last_brief_sent": "2026-07-30T10:30:00.452Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
