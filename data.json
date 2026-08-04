@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T12:01:32.765Z",
+  "generated_at": "2026-08-04T17:00:00.566Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -2305,7 +2305,38 @@
     "drive_edited_url": "https://drive.google.com/drive/folders/1CbMrfhq7oh7s9Ufwvl7iT_j1eJ5YB7vH",
     "drive_approved_url": "https://drive.google.com/drive/folders/1Mcqdv28DKxfgMCxXHszsK3l4vvFtxPqM",
     "drive_archive_url": "https://drive.google.com/drive/folders/1_Y_4ZY9kUxtV23hN9Phfi2dreuif4bpf",
-    "inbox_files": [],
+    "inbox_files": [
+      {
+        "filename": "2026-06-25-082830770.mp4",
+        "mtime": 1785847762476,
+        "size_mb": 28.06
+      },
+      {
+        "filename": "2026-07-15-131723085.mp4",
+        "mtime": 1785846170317,
+        "size_mb": 38.79
+      },
+      {
+        "filename": "20260804_081859.mp4",
+        "mtime": 1785846169349,
+        "size_mb": 16.33
+      },
+      {
+        "filename": "20260804_081906.mp4",
+        "mtime": 1785846168837,
+        "size_mb": 7.72
+      },
+      {
+        "filename": "20260804_081914.jpg",
+        "mtime": 1785846023772,
+        "size_mb": 2.42
+      },
+      {
+        "filename": "Pro Qc -Reverse Osmosis.mp4",
+        "mtime": 1785846169791,
+        "size_mb": 26.08
+      }
+    ],
     "edited_files": [
       {
         "filename": "2026-06-23-114851695.manus.txt",
