@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T11:00:00.418Z",
+  "generated_at": "2026-08-04T11:02:54.627Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -32,7 +32,7 @@
       },
       {
         "name": "Competitor Intel",
-        "last_run": "2026-07-28",
+        "last_run": "2026-08-04",
         "status": "Good"
       },
       {
@@ -944,7 +944,7 @@
     "date": "2026-08-04"
   },
   "competitor": {
-    "brief_md": "# Competitor Intel Brief — 2026-07-28\n\n## Synthesis failed\n\nConnection error.\n\nRaw snapshots saved in `data/processed/competitor_intel/raw/`\n\n---\n_Sources stored in `data/processed/competitor_intel/raw/` for diff next week. Edit `agents/06-competitor-intel/config.json` to add/remove competitors._\n"
+    "brief_md": "# Competitor Intel Brief — 2026-08-04\n\n# Section 1 — Executive Summary\n\nOnly three competitor snapshots were populated this week (Mermaid, EcoWater, Hampton Roads); the remaining five in the brief were empty, so this read is partial. The sharpest local threat remains Mermaid, which is aggressively stacking promo offers ($200 off heaters, $100 first-service, free Kinetico install, free heater flush) and bundling plumbing + water treatment under one roof in NoVA. Hampton Roads is leaning hard on a \"Lifetime Warranty\" + free water test angle and covers both Tidewater and Richmond. No competitor showed meaningful week-over-week change (prior snapshots were identical), so this is a positioning/promo-intensity story, not a shift story.\n\n# Section 2 — Per-competitor table\n\n| Competitor | Hero positioning (one phrase) | Distinct services | Pricing visible? | Notable shift this week |\n|---|---|---|---|---|\n| Mermaid Water | \"Test first, install right, stand behind the work\" (water + plumbing) | Kinetico systems, full plumbing, pumps/pressure, commercial (DI/RO), well & septic | Yes — discounts, not prices ($200, $100, free install/flush) | None vs. prior; heavy rotating promo carousel is the standout |\n| EcoWater | \"Better water starts here\" — global leader, free water test | Softeners, filtration, smart-home leak/conservation tech, third-party certified | No prices; free water test offer | None vs. prior; symptom-based (\"if you have…\") diagnostic funnel |\n| Hampton Roads Water Services | \"Full service water quality experts\" — peace of mind | Water testing, hard water, bacteria/virus, contaminant treatment; USA-made systems | No prices; free water test | None vs. prior; pushes Lifetime Warranty + annual test booking |\n| (5 others) | — no snapshot data provided — | — | — | Snapshots empty this week |\n\n# Section 3 — Implications for ClearWave\n\n- **Counter Mermaid's promo stack:** they're winning the \"reason to act now\" battle with 4 concrete offers. Test a comparable limited-time bundle (e.g., free install or first-service credit) rather than competing on vague \"quality.\"\n- **Borrow the diagnostic funnel + free test:** all three lead with symptom-based, low-friction \"free water test.\" If ClearWave isn't leading with this on the hero, add it — it's table stakes in this market.\n- **Own the warranty/trust axis:** Hampton Roads leans on \"Lifetime Warranty\" and Mermaid on \"test first, licensed techs, stand behind the work.\" ClearWave should sharpen one ownable trust claim (warranty terms, guarantee, or VA-local credibility) and put it above the fold.\n\n# Section 4 — Watch items\n\n- **Re-pull the 5 missing competitors** — this week's snapshots were empty; get real data before drawing conclusions on the full set.\n- **Mermaid promo rotation** — track whether the $200/$100/free-install offers persist, expire, or escalate (signals seasonal push into fall).\n- **Hampton Roads geographic creep** — they advertise both Hampton Roads and Richmond numbers; watch for any NoVA expansion language.\n- **EcoWater smart-home/leak-detection push** — if they elevate conservation/leak tech, that's a potential new competitive service line to evaluate.\n\n*Note: analysis limited by incomplete data — 5 of 8 competitor snapshots contained no content this week.*\n\n---\n_Sources stored in `data/processed/competitor_intel/raw/` for diff next week. Edit `agents/06-competitor-intel/config.json` to add/remove competitors._\n"
   },
   "brand_health": {
     "locations": [
