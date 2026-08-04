@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T10:01:39.998Z",
+  "generated_at": "2026-08-04T10:30:04.795Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-04",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2671,8 +2671,39 @@
   },
   "approvals": {
     "date": "2026-08-04",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-08-04",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Why \"free water tests\" aren't really free",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-08-04.email.md",
+        "preview": "Words I like;\nFree isn't free when the guy holding the test kit also holds a commission check.\nLet me save you a headache. When a company knocks on your door offering a free in-home water test, understand what's happening. Most of those tests are theater. They drop a chemical in your glass, it turns purple or foamy, and suddenly you're staring at \"proof\" you need to buy something today.\nHere's the truth. Real water testing gives you numbers. Hardness in grains per gallon. Iron in parts per million. pH. Chlorine. Nitrates if you're on a well. A drop that changes color tells you almost nothing except that a reaction happened. Any water does that. Even good water does that.\nA trustworthy test tells you what's in your water and how much. Then it lets YOU decide, on your own time, with no pressure to sign before the guy leaves your kitchen.\nIf you already own a Re-Ionator Pro Ultra or an RO Pure PRO QC, this is exactly why you're set. You bought based on real numbers, not a color trick. That was a smart call, and your water proves it every single day.\nOn a well and unsure what's actually in your water? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-08-04_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (Recent Installs)",
+        "preview": "**Why this one:** Highest-trust window (30-60 days post-install, satisfied), concrete cash incentive, and it sidesteps the deliverability problem. Your recent \"discount/quote\" blasts died at 0.4% open because they read as spam. A personal, low-ask note from the CEO to happy new clients is a different animal.\n**1. Campaign name + audience:** \"The Favor\" Referral Push. **30 recipients** (30-60 day satisfied installs)\n**2. Subject line + alternates (60 char max):**\n- Primary: `A quick favor, Jason` *(personalization token)*\n- Alt 1 (curiosity): `The thing most of our clients don't know`\n- Alt 2 (specific): `$500 for a name (here's how it works)`\n- Alt 3 (authority): `How most of our best clients find us`\n- Alt 4 (pain): `Know someone stuck with bad water?`\n**3. Preview text (90 char max):** `No review needed. Just a name. There is real money in it for you if it works out.`\n**4. Body:**\n> Hi Jason,\n>\n> It's been about a month since we installed your Ironmax and RO setup out in Disputanta. I wanted to check in personally: how is the water treating you?\n>\n> If it's doing what we promised, I have one small ask.\n>\n> Most of our best clients come from someone they trust pointing them our way. So if you know a friend, neighbor, or family member fighting bad water, send them our way for a free water assessment. No pressure on them, and real thanks to you:\n>\n> - If they book a consult but don't move forward: a **$50 gift card**.\n> - If they become a client: **$500 cash** (and it climbs to $750, then $1,000 as you refer more this year).\n>\n> Just reply with a name and the best way to reach them, or forward them this email. That's it.\n>\n> Thanks for trusting us with your home.\n>\n> Justin\n> CEO / ClearWave\n**5. Send timing:** **Tuesday, 10:00 AM ET.** Mid-morning midweek is peak B2C open behavior; avoids Monday inbox clearing.\n**6. Expected performance:**\n- Open: **45-55%** (above your 42% baseline: tiny warm list, first-name subject, no promo trigger words that tanked recent sends to 0.4%)\n- Click/reply: **6-10%** (these are people who just spent $1,300-$10,950 and are in the honeymoon window; the ask is a reply, not a click)\n- Conversion: **2-4 referred names**, ~1 likely close. Even one $500 referral pays for the campaign many times over.\n**7. Source justification:** Draws from **Referral Push candidates (30-60 days post-install, satisfied)** Jobber trigger. Applies Rule 3 (referrals, never reviews), Rule 3a (\"free water assessment\"), and exact bonus structure. Product named per Rule 2 (Ironmax/RO from the system field).\n---"
+      },
+      {
+        "id": "email_2026-08-04_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It?\" (Year 1.5 Clients)",
+        "preview": "**Why this one:** Largest qualified list (100), all past their year-1 service so trust is established, and the ask is honest math instead of a hard sell. This is recurring revenue ($99/mo) versus one-time referral cash. It fully respects the 12-month floor since the list is pre-filtered to 13-24 months.\n**1. Campaign name + audience:** \"The Year 1.5 Question\" Concierge. **100 recipients** (13-24 mo, not on Concierge)\n**2. Subject line + alternates (60 char max):**\n- Primary: `The question we get at year 1.5`\n- Alt 1 (curiosity): `Is Concierge actually worth it for you?`\n- Alt 2 (specific): `$99/mo: here's the honest math`\n- Alt 3 (authority): `What your annual service actually covers`\n- Alt 4 (pain): `Don't want to think about filter swaps?`\n**3. Preview text (90 char max):** `Not a pitch. Just the math on whether Concierge makes sense for your home.`\n**4. Body:**\n> Hi Albert,\n>\n> Your Re-Ionator Pro and WT RO system has been running for over a year now, which means you've been through your first annual service. So you know how we work.\n>\n> There's a question we get around this point: \"Is this Concierge thing actually worth it for me?\" Fair question. Here's the honest math.\n>\n> Concierge is $99/mo and covers:\n>\n> - Your annual service\n> - Filter swaps\n> - Priority phone support\n> - Parts coverage on your standard install components\n>\n> If you like handling things yourself and paying as you go, you may not need it. But if you'd rather never think about filter timing again, and want your water taken care of without a second thought, it usually pays for itself in convenience alone.\n>\n> Want me to run the numbers for your specific setup? Just reply and I'll send you a straight answer.\n>\n> Justin\n> CEO / ClearWave\n**5. Send timing:** **Thursday, 11:00 AM ET.** Later in the week for a considered-decision offer; gives it a clean weekday runway for replies.\n**6. Expected performance:**\n- Open: **40-48%** (at/above baseline; these are engaged clients who already paid for year-1 service, subject is curiosity-led, no promo trigger words)\n- Click/reply: **3-6%** (reply-driven, low-friction \"run the numbers for me\" ask)\n- Conversion: **3-6 Concierge sign-ups** at $99/mo = **$3,564-$7,128/yr recurring** from one send. Highest lifetime-value play on the board.\n**7. Source justification:** Draws from **Concierge upsell candidates (13-24 months, not on Concierge)** Jobber trigger and the **Concierge Upsell Context** block (exact $99/mo scope, \"year 1.5 question\" framing, non-pushy tone). Respects Rule 1 (list pre-filtered past 12 months). Product named per Rule 2.\n---\n### Two quick notes for you, Justin\n1. **Deliverability is your real problem.** Your last five campaigns opened at 0.2-0.7% (versus your 42% average), which almost always signals a spam-folder / domain-reputation issue, not bad copy. Before either of these sends, I'd recommend a deliverability check (SPF/DKIM/DMARC, spam-word audit on those \"Discount/Quote dropped\" subjects). Both proposals above deliberately avoid promo trigger words, but if the domain is flagged, even great copy won't land.\n2. I skipped the **cold lead re-engagement (1,000)** this week on purpose. It's the biggest list, but cold + likely-compromised deliverability = the riskiest send for your sender reputation. Warm it up after the domain check, then I'll build the water-news-angle version.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-08-04": {
+        "decision": "pending"
+      },
+      "email_2026-08-04_c1": {
+        "decision": "pending"
+      },
+      "email_2026-08-04_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-04T10:30:00.618Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
