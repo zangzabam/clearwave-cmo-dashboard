@@ -867,8 +867,6 @@ async function init() {
         Authorization: `Bearer ${token}`,
         Accept: 'application/vnd.github+json',
         'If-None-Match': '',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        Pragma: 'no-cache',
       },
     });
     if (r.status === 401 || r.status === 403) {
