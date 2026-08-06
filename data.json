@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T10:01:21.677Z",
+  "generated_at": "2026-08-06T10:30:04.336Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-06",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -2892,8 +2892,133 @@
   },
   "approvals": {
     "date": "2026-08-06",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-08-06_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install Cohort)",
+        "preview": "**Why this first:** Highest-intent, most-recently-satisfied audience. They just paid, the water is noticeably better, and they haven't been over-emailed. Small warm send helps repair domain reputation.\n**1. Campaign name + audience size**\n`Referral - Fresh Install Cohort (Jul 2026)`. **30 recipients**\n**2. Subject line + alternates** (all under 60 char)\n- Primary (specific): `Your water changed. Here's $500 for a name.`\n- Alt (curiosity): `The thing our best clients do around week 6`\n- Alt (pain): `Know someone still living with their water?`\n- Alt (authority): `A quiet offer for ClearWave clients`\n- Alt (specific): `$500 per neighbor. Here's how it works.`\n**3. Preview text** (under 90 char)\n`No review needed. Just a name, a free water assessment, and a thank you that pays.`\n**4. Email body**\nHi [First Name],\nIt's been about six weeks since we installed your ClearWave system, and by now the difference has probably stopped feeling new and started feeling normal. That is exactly the goal.\nHere is the one favor I ask of clients around this point: if someone you know is still putting up with hard, cloudy, or off-tasting water, send them our way. We will give them a free water assessment, no pressure attached.\nIf they become a client, you get $500 cash. If they book a consult but decide it is not the right time, you still get a $50 gift card just for the introduction.\nThe cash scales too. Referrals six through nine in a calendar year are $750 each, and ten or more are $1,000 each.\nJust reply with a name and the best way to reach them, and I will take it from there.\nJustin\nCEO / ClearWave\n*(Note: sign-off per Rule 4 is two clean lines, no dash prefix. Your spec header showed \". Justin\" but Rule 4 explicitly says NO em dash prefix, so I've followed Rule 4.)*\n**5. Send timing**\nTuesday, 10:00 AM ET (mid-morning weekday, highest B2C open window; avoids Monday inbox flood).\n**6. Expected performance**\n- Open: **48-55%** (small warm list, recent install, personal-feeling subject; above the 42% account avg because this cohort is freshly engaged and not fatigued).\n- Click: N/A primary. This is a **reply-driven** CTA, not a click CTA. Expect **15-25% reply/response** given cash incentive.\n- Conversion: **2-4 booked consults** from 30 sends is realistic; even one closed referral returns $500 cost against multi-thousand-dollar install revenue.\n**7. Source justification**\nDraws from **Jobber Lifecycle Triggers → Referral push candidates (30-60 days post-install, satisfied)** and the **Referral Bonus Structure** block. Uses tenure line per Rule 2 (legacy names like \"neumax + nitramax\" and \"Liquid Luxe Pure\" suppressed). Referrals-not-reviews per Rule 3; \"free water assessment\" exact phrase per Rule 3a.\n---"
+      },
+      {
+        "id": "email_2026-08-06_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It\" (13-24 Month Cohort)",
+        "preview": "**Why this second:** 100 candidates, all past their year-1 service, so Rule 1's 12-month floor is cleared. These clients already trust the service experience. Highest recurring-revenue upside ($99/mo). Educational, non-pushy framing fits the luxury register.\n**1. Campaign name + audience size**\n`Concierge - 13-24mo Math (Batch 1)`. **100 recipients** (de-dupe the double Albert Romano entry to ~99)\n**2. Subject line + alternates** (all under 60 char)\n- Primary (curiosity): `The question we get asked at 18 months`\n- Alt (specific): `Is Concierge worth it for you? The math.`\n- Alt (pain): `When your first filter swap is due`\n- Alt (authority): `How our long-term clients handle service`\n- Alt (specific): `$99/mo, and here's exactly what it covers`\n**3. Preview text** (under 90 char)\n`Not a pitch. Just the honest breakdown so you can decide for yourself.`\n**4. Email body**\nHi [First Name],\nIt's been over a year since we installed your water system, which means you have been through your first annual service and know how we work.\nAround this point clients tend to ask the same question: \"Is this Concierge thing actually worth it for me?\" Fair question. Here is the honest math.\nConcierge is $99 a month. It covers your annual service, filter swaps, priority phone support, and parts coverage on the standard install components. If you are currently handling service pay-as-you-go, add up what a year of that runs you, then compare. For a lot of clients it comes out even or ahead, and the priority support line is the part they end up valuing most.\nIf the numbers do not favor you, I will tell you straight. Just reply \"math\" and I will run yours.\nJustin\nCEO / ClearWave\n**5. Send timing**\nThursday, 11:00 AM ET (later in week for a considered-decision offer; recipients have had Tue/Wed to clear inbox backlog).\n**6. Expected performance**\n- Open: **40-46%** (warm but slightly older cohort; curiosity subject supports account-avg-level opens).\n- Click: N/A primary. Reply-driven (\"reply math\"). Expect **5-8% reply**.\n- Conversion: **3-6 enrollments** from ~99 is a conservative target; at $99/mo that is $3,600-$7,100 annual recurring per batch. Run in batches of ~100 to protect deliverability rather than blasting all 100+ at once alongside other sends.\n**7. Source justification**\nDraws from **Concierge upsell candidates (13-24 months, not on Concierge)** and the **Concierge Upsell Context** block (uses the exact \"$99/mo,\" \"worth it for me / here's the math\" framing). Respects Rule 1 (all candidates are past 12 months). Legacy names (\"Re-Ionator Pro,\" \"30C,\" \"Reionator Pro + RO\") suppressed via tenure line per Rule 2.\n---\n### Sequencing note\nSend Proposal 1 (Tue) and Proposal 2 (Thu) in the same week. Both are small, warm segments that will lift your engagement signal. **Do not** send anything to the 1,000 cold subscribers or the full 3,431 list until these smaller sends post healthy open rates and confirm the deliverability issue is improving. I'd hold the cold re-engagement campaign for next week pending that read.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      },
+      {
+        "id": "pkg_2026-08-05_VID_20260625_052757_081_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how ClearWave scaled its install capacity and systems to handle more jobs per month without dropping quality — a 'Scale' week story tying operations to the $138K peak month numbers.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"We hit $138K in one month with just 4 guys.\nMost owners think you need 40. You d…\""
+      },
+      {
+        "id": "pkg_2026-08-05_Pro_Qc__Reverse_Osmosis_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · A quality-control walkthrough of a professionally installed reverse osmosis (RO) system — showing how ClearWave verifies the drinking water output is clean, likely with a live TDS/PPM test comparing tap vs RO water. Ties to Week 9 'Scale' theme by demonstrating how RO strips out dissolved solids and scale-causing minerals.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This is what your tap water leaves behind.\nReverse osmosis pulls out the junk yo…\""
+      },
+      {
+        "id": "pkg_2026-08-05_2026_07_15_131723085_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how he scaled ClearWave with a lean 4-person team and 50%+ net margins — a business/scale lesson on building a high-ticket water company that runs efficiently, tied to Week 9 'Scale' theme",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"Everybody thinks you need 50 employees to scale.\n\nWe do $138K months with 4 peop…\""
+      },
+      {
+        "id": "pkg_2026-08-05_2026_06_25_082830770_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin walking through how he scaled ClearWave Water to premium ticket sizes and 50%+ net margins — a Scale-week business breakdown on building a lean, high-margin water treatment company with only 4 employees",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"4 employees. 50%+ net margins. $11K average ticket.\nMost water companies scale h…\""
+      },
+      {
+        "id": "pkg_2026-08-05_20260804_081914_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · An early-morning (8:19am timestamp) job-site or shop photo showing Justin gearing up to scale operations — likely a truck load-out, a wall of installed systems, or a fleet/team shot tied to Week 9's 'Scale' theme about growing ClearWave's install volume.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"8am and the truck is already loaded. This is what scaling water treatment actual…\""
+      },
+      {
+        "id": "pkg_2026-08-05_20260804_081906_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how he scaled ClearWave Water Solutions with 50%+ net margins and $11K average tickets — a behind-the-scenes look at building a high-margin water business, tied to Week 9 'Scale' theme.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants revenue. Smart owners want margin.\nHow I built a water business …\""
+      },
+      {
+        "id": "pkg_2026-08-05_20260804_081859_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how ClearWave scaled to premium ticket sizes and healthy margins with only a 4-person team — a 'Scale' week breakdown of how a small water business grows without bloating headcount.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"4 employees. $138K peak months. Here's how a small team scales bigger than most …\""
+      },
+      {
+        "id": "pkg_2026-08-05_20260625_082602_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how he scaled ClearWave's operations and revenue systems — using the Week 9 'Scale' theme to break down how a 4-person water treatment company hits $138K peak months with 50%+ net margins.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"4 employees. $138K peak months. 50%+ net margins.\nMost people think you need a h…\""
+      }
+    ],
+    "decisions": {
+      "email_2026-08-06_c1": {
+        "decision": "pending"
+      },
+      "email_2026-08-06_c2": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_VID_20260625_052757_081_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_Pro_Qc__Reverse_Osmosis_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_2026_07_15_131723085_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_2026_06_25_082830770_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_20260804_081914_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_20260804_081906_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_20260804_081859_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-05_20260625_082602_mp4": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-06T10:30:00.507Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
