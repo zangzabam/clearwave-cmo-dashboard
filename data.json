@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T17:00:00.730Z",
+  "generated_at": "2026-08-11T23:00:02.304Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -2326,7 +2326,28 @@
     "drive_edited_url": "https://drive.google.com/drive/folders/1CbMrfhq7oh7s9Ufwvl7iT_j1eJ5YB7vH",
     "drive_approved_url": "https://drive.google.com/drive/folders/1Mcqdv28DKxfgMCxXHszsK3l4vvFtxPqM",
     "drive_archive_url": "https://drive.google.com/drive/folders/1_Y_4ZY9kUxtV23hN9Phfi2dreuif4bpf",
-    "inbox_files": [],
+    "inbox_files": [
+      {
+        "filename": "Compass 1.mp4",
+        "mtime": 1786446637027,
+        "size_mb": 19.77
+      },
+      {
+        "filename": "Compass 2.mp4",
+        "mtime": 1786446637182,
+        "size_mb": 29.88
+      },
+      {
+        "filename": "Compass 3.jpg",
+        "mtime": 1786446637235,
+        "size_mb": 1.86
+      },
+      {
+        "filename": "Compass 4.mp4",
+        "mtime": 1786446637415,
+        "size_mb": 28.9
+      }
+    ],
     "edited_files": [
       {
         "filename": "2026-06-23-114851695.manus.txt",
