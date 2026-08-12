@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T10:01:17.200Z",
+  "generated_at": "2026-08-12T10:30:04.317Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-12",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3163,8 +3163,141 @@
   },
   "approvals": {
     "date": "2026-08-12",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "pkg_2026-08-06_install_pov_wideview__2_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · First-person wide-angle POV of a ClearWave whole-home water filtration system being installed — showing the scale of the equipment, plumbing tie-ins, and the finished premium setup, used to demonstrate the professional install process homeowners get.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: this is what protecting your whole home actually looks like.\nMost people ha…\""
+      },
+      {
+        "id": "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · First-person POV of a whole-home copper water line install / softener-conditioner hookup, showing the craftsmanship and scale of ClearWave's install work — tying to Week 9 'Scale' theme about growing install volume and doing premium jobs right.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: you finally see what clean water actually costs to install right.\nMost 'plu…\""
+      },
+      {
+        "id": "pkg_2026-08-06_install_dc_pov_install_conmection_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · POV-style install footage from a DC-area job showing a ClearWave whole-home water filtration system connection being made — a behind-the-scenes look at the actual install process and craftsmanship that justifies the premium ticket.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: your DC water finally gets the truth treatment.\nThis connection is why your…\""
+      },
+      {
+        "id": "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin talking through how ClearWave scaled operations — likely a behind-the-scenes clip filmed early morning (8:44am) about growing the business, systems, or hitting revenue milestones, tied to Week 9 'Scale' theme",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants to scale. Almost nobody wants to fix the boring stuff first.\nTha…\""
+      },
+      {
+        "id": "pkg_2026-08-06_RO_install_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · A reverse osmosis (RO) drinking water system installation in a customer's home — showing the multi-stage filtration unit going under the sink, positioned as a premium whole-solution upgrade and tying into the Week 9 'Scale' theme of standardizing high-ticket installs across the VA/DC/MD service area.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This little system under the sink strips out what your tap won't tell you about.…\""
+      },
+      {
+        "id": "pkg_2026-08-06_2026_06_23_114851695_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how he scaled ClearWave to 50%+ net margins with only 4 employees — a 'scale' angle showing that lean operations beat bloated headcount in the water treatment business.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"Everybody thinks you need 50 employees to scale.\nI run 50%+ margins with 4. Smal…\""
+      },
+      {
+        "id": "pkg_2026-08-06_20260804_170223_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explaining how he scaled ClearWave's operations and margins during a growth push — likely a behind-the-scenes look at what it takes to scale a water treatment business (systems, hiring, high-ticket sales) tied to Week 9's 'Scale' theme.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants to scale but nobody wants the boring systems that make it possib…\""
+      },
+      {
+        "id": "pkg_2026-08-06_20260804_141227_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A behind-the-scenes shot of Justin on a job site or at the office during a scaling milestone — likely showcasing ClearWave's growth (team, install, or booked jobs board) tied to Week 9's 'Scale' theme. Filename timestamp (2:12pm) suggests a workday capture, probably him at a customer home post-install or reviewing numbers.",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: high\nTikTok: \"4 employees. 50%+ net margins. $11K average ticket.\nMost people think you need 1…\""
+      },
+      {
+        "id": "pkg_2026-08-06_20260804_125757_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A midday job-site photo (12:57 PM timestamp) showing Justin or a tech mid-install of a whole-home ClearWave system, tied to Week 9 'Scale' theme — likely used to show how the business is growing (more trucks, more jobs, more homes fixed) as proof of scaling.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "photo · business_money · reach band: medium\nTikTok: \"This is job #3 today and it's not even 1PM.\nScaling a water company means more t…\""
+      },
+      {
+        "id": "pkg_2026-08-06_20260804_123316_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin explains how ClearWave scaled its route density and crew efficiency to hit $138K peak months with only 4 employees — a 'Scale' week lesson on growing revenue without bloating headcount",
+        "meta": {
+          "reach": "high",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: high\nTikTok: \"We hit $138K in a month with 4 guys.\nMost 'water companies' add bodies. We added…\""
+      }
+    ],
+    "decisions": {
+      "pkg_2026-08-06_install_pov_wideview__2_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_install_dc_pov_install_conmection_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_RO_install_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_2026_06_23_114851695_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_20260804_170223_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_20260804_141227_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_20260804_125757_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_20260804_123316_mp4": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-12T10:30:00.508Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
