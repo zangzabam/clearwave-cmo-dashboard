@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T12:02:12.150Z",
+  "generated_at": "2026-08-12T14:59:38.179Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -1418,315 +1418,437 @@
     ],
     "packages_recent": [
       {
+        "reel_concept": "A short behind-the-scenes reel showing a commercial water-treatment install go from tools-on-the-floor to a finished tank-and-brine setup, aimed at small business owners (coffee shops, food service) who depend on clean water.",
+        "edit_order": [
+          {
+            "clip": "Compass 2.mp4",
+            "seconds": "0-4",
+            "purpose": "hook",
+            "note": "Open on the coffee shop back-of-house — espresso gear, cups, menu screens. Establishes a real business that runs on water. Trim the blurry frame 4."
+          },
+          {
+            "clip": "Compass 1.mp4",
+            "seconds": "4-11",
+            "purpose": "build",
+            "note": "Show the tech crouched working, tools in the yellow tray, copper and valves going in. Use the clearer frames; keep motion-blur shots brief."
+          },
+          {
+            "clip": "Compass 4.mp4",
+            "seconds": "11-17",
+            "purpose": "proof",
+            "note": "Show the media tank and brine tank standing beside each other, plumbing connected. Trim the shoe and debris from frame 1 if possible."
+          },
+          {
+            "clip": "Compass 3.jpg",
+            "seconds": "17-22",
+            "purpose": "payoff",
+            "note": "Hold on the finished install — tank, brine tank, control head, wall gauge. Cleanest documentation frame; end here."
+          }
+        ],
+        "hook_first_3_seconds": "This coffee shop runs on water. Here's what's behind the counter.",
+        "on_screen_text_beats": [
+          "Every cup starts with the water.",
+          "New softener and filter going in.",
+          "Set, connected, and running."
+        ],
+        "voiceover_script": "A coffee shop lives and dies by its water. Hard water scales up the equipment and changes the taste in the cup. So we went into the back room and put in a softener and a filter tank, tied into the existing copper and valves. It's tight quarters, but that's the job. Once it's set and connected, the owner stops thinking about it. That's the point.",
+        "tiktok": {
+          "caption": "Behind the counter at a coffee shop: new water treatment going in so every cup tastes right. Follow for more from the mechanical room.",
+          "hashtags": [
+            "#watertreatment",
+            "#coffeeshop",
+            "#watersoftener",
+            "#trades",
+            "#smallbusiness"
+          ],
+          "best_post_time_et": "7:30 AM"
+        },
+        "instagram_reels": {
+          "caption": "From tools on the floor to a finished install. Softener and filter for a coffee shop that runs on its water. Follow along.",
+          "hashtags": [
+            "#watertreatment",
+            "#watersoftener",
+            "#coffee",
+            "#trades",
+            "#plumbing"
+          ],
+          "best_post_time_et": "12:00 PM"
+        },
+        "youtube_shorts": {
+          "title": "Water Treatment Install Behind a Coffee Shop Counter",
+          "description": "A quick look at putting a softener and filter tank into a coffee shop's back room. Hard water scales equipment and hurts the taste in the cup, so we tied a new system into the existing copper."
+        },
+        "x_twitter": {
+          "format": "single",
+          "posts": [
+            "A coffee shop runs on its water. We put a softener and filter in the back room so it stops scaling their equipment and changing the taste. Tight space, standard job. Follow for more from the mechanical room."
+          ]
+        },
+        "missing_shots": [
+          "A clean, well-lit wide shot of the finished install for the payoff frame",
+          "A close-up of water pouring / a fresh cup being pulled to connect water to the product",
+          "Before shot of the old setup or bare wall for a clear before/after",
+          "A brief clip of the owner or tech talking on camera",
+          "Steady (non-blurry) footage of the copper and valve work"
+        ],
+        "permission_flags": [
+          "Coffee shop wall signage 'REAL FOOD COFFEE' visible in Compass 2 — get written permission before posting",
+          "Worker in dark apron behind counter in Compass 2 — get consent to appear",
+          "'STEELSTRONG' labeled cabinet in Compass 1 — third-party brand, confirm before public use",
+          "Worker in teal cap with partial '...NG WATER' lettering in Compass 1 — confirm consent/branding",
+          "'GET WATER' / 'RO WATER' yellow labeling on wall unit in Compass 3 — confirm it's own branding or get permission"
+        ],
+        "reasoning": "The two finished-install clips (3 and 4) only make sense to a viewer if paired with a real business that needs the water, so the coffee shop footage becomes the hook and gives the reel a clear 'why.' The plain build-to-payoff order matches the tradesman-teacher voice and stays entirely within what's actually visible, avoiding any claims about the client or the water results.",
+        "package_id": "reel_2026-08-12_compass",
+        "set_name": "compass",
+        "member_files": [
+          "Compass 1.mp4",
+          "Compass 2.mp4",
+          "Compass 3.jpg",
+          "Compass 4.mp4"
+        ],
+        "created_at": "2026-08-12T14:59:32.827Z",
+        "status": "awaiting_approval",
+        "package_type": "compiled_reel"
+      },
+      {
         "filename": "Compass 4.mp4",
         "media_type": "video",
-        "inferred_topic": "Part 4 of a series on the mindset and systems Justin uses to scale ClearWave — 'Compass' framing suggests direction/decision-making for growth, tying into Week 10's 'Scale' theme (likely how he keeps a small 4-person team producing $138K peak months at 50%+ margins).",
-        "content_pillar": "business_money",
+        "inferred_topic": "A finished commercial water treatment install in a mechanical/back-of-house room: a black brine tank beside a tall media/resin tank with a control valve, plus copper plumbing, shutoff valves, a wall control panel, and a blue tank. POV walkthrough of a completed system.",
+        "content_pillar": "water_truth",
         "tiktok": {
-          "caption": "4 employees. $138K in one month. 50%+ margins.\nMost people scale by adding chaos. I scaled by picking a direction and cutting the rest. Follow for the rest of the playbook.",
+          "caption": "This is what clean water actually costs behind the wall.\nBrine tank, resin tank, control valve — all doing the work you never see. Follow for water truth.",
           "hashtags": [
             "#waterboy",
             "#waterquality",
+            "#hardwater",
+            "#watertreatment",
+            "#watersoftener",
+            "#commercialplumbing",
+            "#cleanwater",
+            "#trades",
             "#smallbusiness",
-            "#entrepreneur",
-            "#businessgrowth",
-            "#veteranowned",
-            "#ceomindset",
-            "#scaling",
-            "#homeservices",
-            "#bluecollarmillionaire"
+            "#virginia"
           ],
-          "best_post_time_et": "7:30pm",
-          "hook_id_used": "B##",
+          "best_post_time_et": "12:00pm",
+          "hook_id_used": "NEW",
           "cta_type": "Follow",
-          "cta_text": "Follow for the rest of the playbook."
+          "cta_text": "Follow for water truth."
         },
         "instagram_reels": {
-          "caption": "Everybody thinks scaling means more people, more trucks, more noise.\n\nWrong.\n\nWe do $138K peak months with 4 employees and 50%+ net margins. The secret ain't hustle — it's a compass. Pick your direction and cut everything that don't point there.\n\nFollow @clearwave_water for the full breakdown.\n\n— Justin",
+          "caption": "Most people never see this room.\n\nBehind every glass of clean water at a commercial spot is a system like this — brine tank, resin tank, control valve, and enough copper to make it all run right.\n\nThis one's done and dialed in. Your water is worse than you think.\n\nFollow along and I'll show you what's really in it. — Justin",
           "hashtags": [
             "#waterquality",
             "#virginiabusiness",
-            "#veteranowned",
-            "#smallbusinessowner",
-            "#entrepreneurmindset",
-            "#homeservices",
-            "#businessscaling",
+            "#hardwater",
+            "#watertreatment",
+            "#watersoftener",
+            "#commercialwater",
+            "#cleanwater",
+            "#mechanicalroom",
+            "#trades",
             "#dmvbusiness",
             "#waterfiltration",
-            "#ceolife",
-            "#bluecollarwealth",
-            "#leanbusiness"
+            "#navyvet"
           ],
-          "best_post_time_et": "9:00pm",
-          "first_comment": "false — hashtags kept in caption for this business-mindset post to keep the caption looking clean but discoverable"
+          "best_post_time_et": "5:30pm",
+          "first_comment": "true — #waterquality #hardwater #watertreatment #watersoftener #commercialwater #cleanwater #virginiabusiness #dmvbusiness #waterfiltration #trades #navyvet #clearwave"
         },
         "youtube_shorts": {
-          "title": "How We Hit $138K Months With Only 4 Employees (The Compass Rule)",
-          "description": "Scaling isn't about adding more — it's about pointing everything one direction. Here's how ClearWave Water runs 50%+ margins with a 4-person team. Subscribe for water truth. https://clearwavewater.com",
+          "title": "The Room Behind Your Clean Water (Commercial Install Walkthrough)",
+          "description": "A quick walkthrough of a finished commercial water treatment system — brine tank, resin tank, control valve, and full plumbing setup. This is what actually cleans your water before it hits the tap. Subscribe for water truth. Learn more: clearwavewater.com",
           "tags": [
             "water filtration",
             "water test",
-            "small business scaling",
-            "veteran owned business",
-            "high margin business",
-            "home service business",
-            "entrepreneur mindset",
-            "business systems",
-            "lean team",
-            "water quality VA DC MD"
+            "water softener",
+            "commercial water treatment",
+            "hard water",
+            "resin tank",
+            "brine tank",
+            "water quality",
+            "mechanical room",
+            "clean water"
           ],
           "best_post_time_et": "12:00pm"
         },
         "x_twitter": {
           "format": "thread",
           "posts": [
-            "Everybody wants to scale by adding people.\n\nWe hit $138K in a single month with 4 employees and 50%+ net margins.\n\nThe difference? A compass. Here's the rule 👇",
-            "Most owners chase every opportunity. New service. New market. New shiny thing.\n\nThat's not growth. That's drift.\n\nA compass means you pick ONE direction and cut everything that doesn't point there. Boring beats busy.",
-            "I learned this the hard way at a previous company — scaled it $600K to $25M before we sold.\n\nSame rule built ClearWave. Fewer moves, done deeper, wins.\n\nFollow @Shoeprenuer for the rest of the playbook.\n\n— Justin"
+            "Most people never see the room that makes their water clean.\n\nHere's a finished commercial install we just wrapped. Let me walk you through it. 🧵",
+            "Two tanks doing the heavy lifting:\n\n- Black brine tank (holds the salt)\n- Tall resin tank with the control valve on top (does the actual softening/filtering)\n\nEverything else — copper, shutoffs, the blue tank, the wall gauge — supports those two.",
+            "This is why commercial water work isn't cheap or simple.\n\nYour water is worse than you think, and fixing it right takes a system, not a gadget under the sink.\n\nFollow for more water truth. — Justin"
           ],
           "best_post_time_et": "12pm"
         },
-        "manus_prompt": "You are my social media posting assistant. Post the video file 'Compass 4.mp4' (located in the content inbox) natively to all 4 platforms below using the exact captions, hashtags, and scheduled times. Do NOT alter copy. Sign-off is '— Justin' only where noted.\n\n=== TIKTOK (@js_shoez_) ===\nSchedule: 7:30pm ET\nCaption:\n4 employees. $138K in one month. 50%+ margins.\nMost people scale by adding chaos. I scaled by picking a direction and cutting the rest. Follow for the rest of the playbook.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #businessgrowth #veteranowned #ceomindset #scaling #homeservices #bluecollarmillionaire\n\n=== INSTAGRAM REELS (@clearwave_water) ===\nSchedule: 9:00pm ET\nCaption:\nEverybody thinks scaling means more people, more trucks, more noise.\n\nWrong.\n\nWe do $138K peak months with 4 employees and 50%+ net margins. The secret ain't hustle — it's a compass. Pick your direction and cut everything that don't point there.\n\nFollow @clearwave_water for the full breakdown.\n\n— Justin\nHashtags (in caption): #waterquality #virginiabusiness #veteranowned #smallbusinessowner #entrepreneurmindset #homeservices #businessscaling #dmvbusiness #waterfiltration #ceolife #bluecollarwealth #leanbusiness\n\n=== YOUTUBE SHORTS ===\nSchedule: 12:00pm ET\nTitle: How We Hit $138K Months With Only 4 Employees (The Compass Rule)\nDescription:\nScaling isn't about adding more — it's about pointing everything one direction. Here's how ClearWave Water runs 50%+ margins with a 4-person team. Subscribe for water truth. https://clearwavewater.com\nTags: water filtration, water test, small business scaling, veteran owned business, high margin business, home service business, entrepreneur mindset, business systems, lean team, water quality VA DC MD\n\n=== X / TWITTER (@Shoeprenuer) — POST AS THREAD ===\nSchedule: 12:00pm ET\nPost 1:\nEverybody wants to scale by adding people.\n\nWe hit $138K in a single month with 4 employees and 50%+ net margins.\n\nThe difference? A compass. Here's the rule 👇\nPost 2:\nMost owners chase every opportunity. New service. New market. New shiny thing.\n\nThat's not growth. That's drift.\n\nA compass means you pick ONE direction and cut everything that doesn't point there. Boring beats busy.\nPost 3:\nI learned this the hard way at a previous company — scaled it $600K to $25M before we sold.\n\nSame rule built ClearWave. Fewer moves, done deeper, wins.\n\nFollow @Shoeprenuer for the rest of the playbook.\n\n— Justin\n\nConfirm each platform posted successfully and report back timestamps.",
+        "manus_prompt": "You are posting one compiled short-form video across 4 platforms for Justin Shoemaker (ClearWave Water Solutions). The video file is at ./Compass 4.mp4 (compiled cut from Compass 1.mp4, Compass 2.mp4, Compass 3.jpg, Compass 4.mp4). Post it as-is to each platform below using the exact captions, hashtags, and times.\n\n=== TIKTOK (@js_shoez_) ===\nCaption: \"This is what clean water actually costs behind the wall.\\nBrine tank, resin tank, control valve — all doing the work you never see. Follow for water truth.\"\nHashtags: #waterboy #waterquality #hardwater #watertreatment #watersoftener #commercialplumbing #cleanwater #trades #smallbusiness #virginia\nPost time: 12:00pm ET\n\n=== INSTAGRAM REELS (@js_shoez_ / cross-post to @clearwave_water) ===\nCaption: \"Most people never see this room.\\n\\nBehind every glass of clean water at a commercial spot is a system like this — brine tank, resin tank, control valve, and enough copper to make it all run right.\\n\\nThis one's done and dialed in. Your water is worse than you think.\\n\\nFollow along and I'll show you what's really in it. — Justin\"\nPut hashtags in the FIRST COMMENT: #waterquality #hardwater #watertreatment #watersoftener #commercialwater #cleanwater #virginiabusiness #dmvbusiness #waterfiltration #trades #navyvet #clearwave\nPost time: 5:30pm ET\n\n=== YOUTUBE SHORTS ===\nTitle: \"The Room Behind Your Clean Water (Commercial Install Walkthrough)\"\nDescription: \"A quick walkthrough of a finished commercial water treatment system — brine tank, resin tank, control valve, and full plumbing setup. This is what actually cleans your water before it hits the tap. Subscribe for water truth. Learn more: clearwavewater.com\"\nTags: water filtration, water test, water softener, commercial water treatment, hard water, resin tank, brine tank, water quality, mechanical room, clean water\nPost time: 12:00pm ET\n\n=== X / TWITTER (@Shoeprenuer) ===\nFormat: THREAD (3 posts)\n1) \"Most people never see the room that makes their water clean.\\n\\nHere's a finished commercial install we just wrapped. Let me walk you through it. 🧵\" (attach video)\n2) \"Two tanks doing the heavy lifting:\\n\\n- Black brine tank (holds the salt)\\n- Tall resin tank with the control valve on top (does the actual softening/filtering)\\n\\nEverything else — copper, shutoffs, the blue tank, the wall gauge — supports those two.\"\n3) \"This is why commercial water work isn't cheap or simple.\\n\\nYour water is worse than you think, and fixing it right takes a system, not a gadget under the sink.\\n\\nFollow for more water truth. — Justin\"\nPost time: 12pm ET\n\nConfirm each post is published and report back with links.",
         "estimated_reach_band": "medium",
-        "reasoning": "The 'Compass' series framing plus Week 10's 'Scale' theme points to a business-mindset piece, so I leaned into the verifiable ClearWave numbers ($138K, 4 employees, 50%+ margins) which are the brand's strongest hooks. I kept CTAs on 'Follow' to match the week's keyword and posted business content at evening/midday slots where entrepreneur audiences engage. Reach is medium rather than viral because business-systems content builds a loyal core but rarely explodes like a shock water-quality reveal.",
+        "reasoning": "The footage is a finished commercial system with no people or polish, so the strongest angle is the 'behind the wall' reveal — showing the machinery most people never see, which fits the water_truth pillar and the tagline. FOLLOW is the anchor CTA for Week 10, and it fits well since this is educational/curiosity content that rewards ongoing viewing rather than a single conversion. Recommended edit order: open with Compass 1 or 2 (the wide room/tank reveal for the hook), cut to Compass 4 (this POV walkthrough of the full system) as the meat, use Compass 3.jpg as a held detail/beauty frame of the plumbing panel, and close on the tightest tank/valve shot; the still gives a clean pause point and the two extra video clips supply the intro reveal and B-roll variety.",
         "viral_followup_hooks": [],
+        "vision_description": "**Setting:** Commercial back-of-house/mechanical room with white tile flooring and off-white walls; a doorway is visible on the right.\n\n**Equipment:** A black rectangular brine tank (with lid) sits beside a tall black media/resin tank fitted with a control valve on top. In frame 3, additional plumbing is visible: copper piping, shutoff valves, a wall-mounted control panel/gauge, a blue tank (RO or bladder tank) at top, and connected tubing/hoses.\n\n**Status:** Appears to be a finished or near-finished install; no active work shown.\n\n**People/Branding:** No people visible. A shoe appears at bottom of frame 1. A cardboard box (partial text) sits on the floor left. No clear readable logos.\n\n**Shot quality:** POV/handheld, uneven lighting, cluttered floor with debris. Casual documentation, not a polished hero shot.",
+        "set_members": [
+          "Compass 1.mp4",
+          "Compass 2.mp4",
+          "Compass 3.jpg",
+          "Compass 4.mp4"
+        ],
         "package_id": "pkg_2026-08-12_Compass_4_mp4",
         "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Compass 4.mp4",
-        "created_at": "2026-08-12T12:02:08.255Z",
+        "created_at": "2026-08-12T14:59:08.301Z",
         "status": "awaiting_approval"
       },
       {
         "filename": "Compass 3.jpg",
         "media_type": "photo",
-        "inferred_topic": "A branded 'Compass' image tied to the Week 10 Scale theme — likely Justin using a compass/direction metaphor to talk about scaling ClearWave with a clear plan, staying on course toward growth, and helping customers navigate the right direction on clean water.",
-        "content_pillar": "business_money",
+        "inferred_topic": "A finished whole-home water treatment install in a tight mechanical closet: a tall black media/filter tank with digital control valve, a black brine tank, a blue pressurized RO tank near the ceiling, and a wall-mounted RO unit with pressure gauge and 'GET WATER / RO WATER' labeling, connected by copper, PVC, and braided flex lines.",
+        "content_pillar": "water_truth",
         "tiktok": {
-          "caption": "Everybody wants to scale. Nobody wants a compass.\nYou don't grow by guessing — you grow by knowing which way is up. Follow for the real playbook. — Justin",
+          "caption": "This little closet is now cleaning EVERY drop of water in the house.\nSoftener + filter + RO drinking water = no more scale, no more junk. Follow for more.",
           "hashtags": [
             "#waterboy",
             "#waterquality",
-            "#smallbusiness",
-            "#entrepreneur",
-            "#scaling",
-            "#businessgrowth",
-            "#veteranowned",
-            "#ceomindset",
-            "#homeservices",
-            "#hustle"
+            "#hardwater",
+            "#watersoftener",
+            "#reverseosmosis",
+            "#cleanwater",
+            "#homeimprovement",
+            "#plumbing",
+            "#watertreatment",
+            "#novadmv"
           ],
-          "best_post_time_et": "7:30am",
+          "best_post_time_et": "5:30pm",
           "hook_id_used": "NEW",
           "cta_type": "Follow",
-          "cta_text": "Follow for the real playbook."
+          "cta_text": "Follow for more water truth."
         },
         "instagram_reels": {
-          "caption": "Everybody wants to scale.\nNobody wants to hold the compass.\n\nI scaled a company 6,500% at my last shop ($600K to $25M and sold it). Now at ClearWave we run 50%+ net margins with 4 people. The difference was never luck — it was direction.\n\nPick a bearing. Walk it every day. Follow for how we do it. — Justin",
+          "caption": "You don't see this closet. But it decides what comes out of every faucet you touch.\n\nSoftener to kill the scale. Filter to clean the water. RO for your drinking water. All packed into one tight space.\n\nYour water is worse than you think.\nFollow @clearwave_water — Justin",
           "hashtags": [
             "#waterquality",
             "#virginiabusiness",
-            "#veteranowned",
-            "#smallbusinessowner",
-            "#entrepreneurship",
-            "#businessscaling",
-            "#homeservicebusiness",
-            "#ceolife",
-            "#dmvbusiness",
-            "#waterfiltration",
-            "#growthmindset",
-            "#foundersjourney"
+            "#hardwater",
+            "#watersoftener",
+            "#reverseosmosis",
+            "#cleanwater",
+            "#watertreatment",
+            "#dmvhomes",
+            "#homemaintenance",
+            "#novabusiness",
+            "#plumbinglife",
+            "#scalebuildup"
           ],
-          "best_post_time_et": "12:00pm",
-          "first_comment": "true — Hashtags dropped here to keep the caption clean: #waterquality #virginiabusiness #veteranowned #smallbusinessowner #entrepreneurship #businessscaling #homeservicebusiness #ceolife #dmvbusiness #waterfiltration #growthmindset #foundersjourney"
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — Hashtags in first comment to keep caption clean: #waterquality #hardwater #watersoftener #reverseosmosis #cleanwater #watertreatment #dmvhomes #novabusiness #homemaintenance #virginiabusiness"
         },
         "youtube_shorts": {
-          "title": "You Can't Scale a Business Without a Compass",
-          "description": "Scaling isn't about moving faster — it's about knowing your direction before you hit the gas. I've grown a company 6,500% before and now run 50%+ margins at ClearWave. Subscribe for water truth. Learn more: clearwavewater.com",
+          "title": "The Closet That Cleans Every Drop In Your House",
+          "description": "A finished whole-home water system: softener to stop scale, a filter tank to clean the water, and reverse osmosis for drinking water — all fit into one tight mechanical closet. Subscribe for water truth. https://clearwavewater.com",
           "tags": [
             "water filtration",
             "water test",
-            "business scaling",
-            "small business growth",
-            "veteran entrepreneur",
-            "home service business",
-            "ceo advice",
-            "clearwave water",
-            "business strategy",
-            "entrepreneur motivation"
+            "water softener",
+            "reverse osmosis",
+            "hard water",
+            "scale buildup",
+            "whole home water",
+            "water treatment",
+            "clean water",
+            "dmv water"
           ],
-          "best_post_time_et": "5:30pm"
+          "best_post_time_et": "12:00pm"
         },
         "x_twitter": {
           "format": "thread",
           "posts": [
-            "Everybody wants to scale a business.\n\nNobody wants to pick up the compass first.\n\nHere's what direction actually beats speed: 🧵",
-            "At a previous company I scaled revenue from $600K to $25M — 6,500% growth — then sold it.\n\nSpeed didn't do that. A clear bearing did. We knew exactly which way we were walking every single quarter.",
-            "Now at ClearWave Water we run 50%+ net margins with 4 employees and $11K average tickets.\n\nSmall team. Clear direction. That's the whole trick.\n\nIf you don't know your bearing, more speed just means you get lost faster. Follow along. — Justin"
+            "Most people never look inside the closet that controls their whole home's water.\n\nHere's what a finished ClearWave install actually looks like 👇",
+            "3 jobs, one tight space:\n\n1. The tall black tank = kills the scale that eats your pipes and water heater.\n2. The filter = cleans what the city leaves in.\n3. The blue tank up top = reverse osmosis for your drinking water.",
+            "Scale is the silent killer. It builds up where you can't see it and quietly wrecks your appliances.\n\nStop it at the source and everything downstream lasts longer.\n\nYour water is worse than you think. VA/DC/MD.\n— Justin"
           ],
-          "best_post_time_et": "7am"
+          "best_post_time_et": "12:00pm"
         },
-        "manus_prompt": "TASK: Autonomously post the single photo 'Compass 3.jpg' (path: ./content_inbox/Compass 3.jpg) across all 4 platforms for Justin Shoemaker (ClearWave Water Solutions). Use the exact captions, hashtags, and post times below. All times are Eastern Time — schedule accordingly.\n\n=== TIKTOK (handle: @js_shoez_) ===\nPost time: 7:30am ET\nCaption:\nEverybody wants to scale. Nobody wants a compass.\nYou don't grow by guessing — you grow by knowing which way is up. Follow for the real playbook. — Justin\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #scaling #businessgrowth #veteranowned #ceomindset #homeservices #hustle\n\n=== INSTAGRAM REELS (personal: @js_shoez_ / biz: @clearwave_water) ===\nPost time: 12:00pm ET\nCaption:\nEverybody wants to scale.\nNobody wants to hold the compass.\n\nI scaled a company 6,500% at my last shop ($600K to $25M and sold it). Now at ClearWave we run 50%+ net margins with 4 people. The difference was never luck — it was direction.\n\nPick a bearing. Walk it every day. Follow for how we do it. — Justin\nPUT HASHTAGS IN FIRST COMMENT (not caption):\n#waterquality #virginiabusiness #veteranowned #smallbusinessowner #entrepreneurship #businessscaling #homeservicebusiness #ceolife #dmvbusiness #waterfiltration #growthmindset #foundersjourney\n\n=== YOUTUBE SHORTS ===\nPost time: 5:30pm ET\nTitle: You Can't Scale a Business Without a Compass\nDescription:\nScaling isn't about moving faster — it's about knowing your direction before you hit the gas. I've grown a company 6,500% before and now run 50%+ margins at ClearWave. Subscribe for water truth. Learn more: clearwavewater.com\nTags: water filtration, water test, business scaling, small business growth, veteran entrepreneur, home service business, ceo advice, clearwave water, business strategy, entrepreneur motivation\n\n=== X / TWITTER (handle: @Shoeprenuer) ===\nPost time: 7:00am ET\nFormat: THREAD (3 posts)\nPost 1: Everybody wants to scale a business.\n\nNobody wants to pick up the compass first.\n\nHere's what direction actually beats speed: 🧵\nPost 2: At a previous company I scaled revenue from $600K to $25M — 6,500% growth — then sold it.\n\nSpeed didn't do that. A clear bearing did. We knew exactly which way we were walking every single quarter.\nPost 3: Now at ClearWave Water we run 50%+ net margins with 4 employees and $11K average tickets.\n\nSmall team. Clear direction. That's the whole trick.\n\nIf you don't know your bearing, more speed just means you get lost faster. Follow along. — Justin\n\nRULES: Attach 'Compass 3.jpg' to every post. Do NOT alter caption wording. Confirm each post succeeded and report back with links.",
+        "manus_prompt": "You are posting a compiled short-form video for ClearWave Water Solutions across 4 platforms. Use the media file at ./content/Compass 3.jpg as the thumbnail/cover and the compiled reel built from Compass 1.mp4, Compass 2.mp4, Compass 3.jpg, and Compass 4.mp4 (edit order: Compass 1 wide reveal → Compass 3 hero still → Compass 2 detail → Compass 4 payoff). Post each version at the specified ET time on Aug 10-16 (Week 10 theme: Scale). Sign every human-facing text '— Justin' only.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 5:30pm ET\nCaption: This little closet is now cleaning EVERY drop of water in the house.\\nSoftener + filter + RO drinking water = no more scale, no more junk. Follow for more.\nHashtags: #waterboy #waterquality #hardwater #watersoftener #reverseosmosis #cleanwater #homeimprovement #plumbing #watertreatment #novadmv\nCTA: Follow for more water truth.\n\n=== INSTAGRAM REELS (@clearwave_water) ===\nPost time: 7:30pm ET\nCaption: You don't see this closet. But it decides what comes out of every faucet you touch.\\n\\nSoftener to kill the scale. Filter to clean the water. RO for your drinking water. All packed into one tight space.\\n\\nYour water is worse than you think.\\nFollow @clearwave_water — Justin\nPut hashtags in FIRST COMMENT: #waterquality #hardwater #watersoftener #reverseosmosis #cleanwater #watertreatment #dmvhomes #novabusiness #homemaintenance #virginiabusiness\n\n=== YOUTUBE SHORTS ===\nPost time: 12:00pm ET\nTitle: The Closet That Cleans Every Drop In Your House\nDescription: A finished whole-home water system: softener to stop scale, a filter tank to clean the water, and reverse osmosis for drinking water — all fit into one tight mechanical closet. Subscribe for water truth. https://clearwavewater.com\nTags: water filtration, water test, water softener, reverse osmosis, hard water, scale buildup, whole home water, water treatment, clean water, dmv water\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 12:00pm ET\nFormat: thread (3 posts)\nPost 1: Most people never look inside the closet that controls their whole home's water.\\n\\nHere's what a finished ClearWave install actually looks like 👇\nPost 2: 3 jobs, one tight space:\\n\\n1. The tall black tank = kills the scale that eats your pipes and water heater.\\n2. The filter = cleans what the city leaves in.\\n3. The blue tank up top = reverse osmosis for your drinking water.\nPost 3: Scale is the silent killer. It builds up where you can't see it and quietly wrecks your appliances.\\n\\nStop it at the source and everything downstream lasts longer.\\n\\nYour water is worse than you think. VA/DC/MD.\\n— Justin\n\nConfirm each post is published and report back with links.",
         "estimated_reach_band": "medium",
-        "reasoning": "The 'Compass' filename plus the Week 10 Scale theme points to a direction-over-speed business metaphor, so I anchored it in the business_money pillar and used FOLLOW as the week-matched CTA on TikTok/IG. The prior solar win is referenced only as a past-company achievement while all margin/ticket numbers stay ClearWave-accurate. Business-metaphor photos convert best on X and IG with a founder story, so those platforms carry the heavier proof, keeping this a solid medium performer rather than a viral spike.",
+        "reasoning": "The photo shows a clean finished install, so the angle centers on the invisible 'closet' that controls the whole home's water — a natural fit for Week 10's Scale theme since the softener's job is stopping scale. FOLLOW is the anchored CTA and works best on a documentation-style reveal that builds curiosity rather than asking for a sale. The tradesman-teacher voice breaks the three components into plain language to educate without overwhelming.",
         "viral_followup_hooks": [],
+        "vision_description": "**Setting:** A cramped commercial/utility mechanical closet with tile floor and white walls.\n\n**Equipment visible:** A tall black media/filter tank with a black digital control valve head on top. A black rectangular brine tank sits beside it. Above are copper piping, braided flex hoses, a blue pressurized tank near the ceiling, and a wall-mounted control unit with a pressure gauge and yellow labeling reading \"GET WATER\" / \"RO WATER.\" White PVC and red/black valves connect the components.\n\n**Status:** Appears to be a FINISHED install; no tools mid-use.\n\n**People/branding:** No people. A green tag hangs from piping; small readable text on the wall unit labels only.\n\n**Shot quality:** POV/documentation shot, adequate lighting, slightly cluttered framing. A gray cabinet and yellow items intrude at edges. No customer info visible.",
+        "set_members": [
+          "Compass 1.mp4",
+          "Compass 2.mp4",
+          "Compass 3.jpg",
+          "Compass 4.mp4"
+        ],
         "package_id": "pkg_2026-08-12_Compass_3_jpg",
         "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Compass 3.jpg",
-        "created_at": "2026-08-12T12:01:36.936Z",
+        "created_at": "2026-08-12T14:58:26.261Z",
         "status": "awaiting_approval"
       },
       {
         "filename": "Compass 2.mp4",
         "media_type": "video",
-        "inferred_topic": "Justin using a 'compass' metaphor to explain how he scaled ClearWave and how business owners can find direction/systems to scale their own operations — the second installment in a scaling-focused series tied to Week 10's 'Scale' theme.",
+        "inferred_topic": "Behind-the-counter install/service walkthrough at a 'REAL FOOD COFFEE' shop — gas cylinders, espresso and rapid-cook equipment, and staged PEX tubing showing a commercial water job in progress.",
         "content_pillar": "business_money",
         "tiktok": {
-          "caption": "Most owners have NO compass. They just guess.\nHere's the 1 number that told me exactly when to scale ClearWave. FOLLOW for part 3.",
+          "caption": "This coffee shop makes 'real food' but their water? Worse than you think.\nSee why every cup depends on what's behind the counter. FOLLOW for the truth.",
           "hashtags": [
             "#waterboy",
             "#waterquality",
-            "#smallbusinesstips",
-            "#entrepreneur",
-            "#businessgrowth",
-            "#tradesman",
-            "#cleaningbusiness",
-            "#ceomindset",
-            "#scaleup",
-            "#homeservices"
+            "#coffeeshop",
+            "#commercialwater",
+            "#smallbusiness",
+            "#watertreatment",
+            "#behindthescenes",
+            "#trades",
+            "#coffeetok",
+            "#waterfiltration"
           ],
-          "best_post_time_et": "7:30pm",
+          "best_post_time_et": "7:30am",
           "hook_id_used": "NEW",
           "cta_type": "Follow",
-          "cta_text": "FOLLOW for part 3"
+          "cta_text": "FOLLOW for the truth"
         },
         "instagram_reels": {
-          "caption": "Most owners run their business with no compass. They just react and hope.\n\nWhen I built ClearWave, I locked onto ONE number — and it told me exactly when to hire, when to spend, and when to scale.\n\nWe hit $138K in a peak month with 4 employees because I stopped guessing.\n\nWhat's YOUR compass number? FOLLOW for the next breakdown.",
+          "caption": "Every great coffee shop runs on one thing nobody sees: water.\n\nBad water kills espresso, scales your equipment, and shortens the life of every machine on this counter.\n\nWe scale clean water for shops like this across VA/DC/MD.\n\nFOLLOW to see how we do it. — Justin",
           "hashtags": [
             "#waterquality",
             "#virginiabusiness",
-            "#smallbusinessowner",
-            "#entrepreneurmindset",
-            "#homeservicebusiness",
-            "#businessscaling",
-            "#veteranowned",
-            "#dmvbusiness",
-            "#tradesbusiness",
-            "#ceolife",
+            "#coffeeshop",
+            "#commercialwater",
             "#watertreatment",
-            "#growthmindset"
+            "#espresso",
+            "#smallbusinessowner",
+            "#scale",
+            "#waterfiltration",
+            "#dmvbusiness",
+            "#trades",
+            "#behindthecounter"
           ],
           "best_post_time_et": "12:00pm",
-          "first_comment": "true — Hashtags moved to first comment for cleaner caption: #waterquality #virginiabusiness #smallbusinessowner #entrepreneurmindset #homeservicebusiness #businessscaling #veteranowned #dmvbusiness #tradesbusiness #ceolife #watertreatment #growthmindset"
+          "first_comment": "true — #waterboy #clearwave #waterquality #virginiabusiness #coffeeshop #commercialwater #watertreatment #dmv #vabusiness #scale"
         },
         "youtube_shorts": {
-          "title": "The 1 Number That Tells You When To Scale Your Business",
-          "description": "Most owners scale on a hunch and go broke. I'll show you the single metric I used to grow ClearWave to $138K peak months with just 4 people. Subscribe for water truth. Book your water test: clearwavewater.com",
+          "title": "The Hidden Reason Your Coffee Shop's Equipment Keeps Breaking",
+          "description": "Behind every 'real food' coffee shop is water you can't see — and it's scaling your espresso machines and shortening their life. ClearWave scales clean water for businesses across VA/DC/MD. Subscribe for water truth. Landing page: clearwavewater.com",
           "tags": [
             "water filtration",
             "water test",
-            "scale a business",
-            "small business tips",
-            "home service business",
-            "entrepreneur",
-            "business metrics",
-            "veteran owned business",
-            "cleanwater",
-            "how to scale"
+            "commercial water",
+            "coffee shop water",
+            "espresso scale",
+            "water treatment",
+            "hard water",
+            "water softener",
+            "small business water",
+            "VA DC MD water"
           ],
           "best_post_time_et": "5:30pm"
         },
         "x_twitter": {
           "format": "thread",
           "posts": [
-            "Most business owners have no compass.\n\nThey scale on a gut feeling and wonder why they run out of cash.\n\nHere's the ONE number I used to scale ClearWave the right way 🧵",
-            "Your compass number = net margin per job.\n\nAt ClearWave our avg ticket is $11K and we hold 50%+ net margins.\n\nThat number tells me: can I afford another truck? Another hire? Or am I about to blow up my cash flow?",
-            "I learned this the hard way years ago scaling a solar company at a previous stop — grew it 6,500% and sold it.\n\nSpeed without a compass is just a faster way to crash.\n\nFollow @Shoeprenuer — I post what actually works, not motivational fluff.\n\n— Justin"
+            "Walked into a coffee shop that advertises 'REAL FOOD COFFEE.'\n\nReal food. Great espresso machines. Rapid-cook oven. Clean counter.\n\nAnd water that's quietly wrecking all of it. 🧵",
+            "Bad water is the silent killer in every food-service business.\n\nIt scales your espresso boilers. It clogs your ice machine. It shortens the life of every stainless machine on that counter.\n\nYou taste it too — even if you can't name it.",
+            "Scaling a water business isn't about selling more filters.\n\nIt's about fixing the problem nobody sees before it costs an owner their equipment.\n\nWe do this across VA/DC/MD.\n\nFollow for the water truth. — Justin"
           ],
-          "best_post_time_et": "12pm"
+          "best_post_time_et": "12:00pm"
         },
-        "manus_prompt": "You are my social media posting agent. Post the video file 'Compass 2.mp4' (located in the content inbox folder) across 4 platforms exactly as specified below. Post each at its designated Eastern Time slot today. Do not alter the copy.\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nMost owners have NO compass. They just guess.\nHere's the 1 number that told me exactly when to scale ClearWave. FOLLOW for part 3.\nHashtags: #waterboy #waterquality #smallbusinesstips #entrepreneur #businessgrowth #tradesman #cleaningbusiness #ceomindset #scaleup #homeservices\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nPost time: 12:00pm ET\nCaption:\nMost owners run their business with no compass. They just react and hope.\n\nWhen I built ClearWave, I locked onto ONE number — and it told me exactly when to hire, when to spend, and when to scale.\n\nWe hit $138K in a peak month with 4 employees because I stopped guessing.\n\nWhat's YOUR compass number? FOLLOW for the next breakdown.\nPut hashtags in the FIRST COMMENT (not the caption):\n#waterquality #virginiabusiness #smallbusinessowner #entrepreneurmindset #homeservicebusiness #businessscaling #veteranowned #dmvbusiness #tradesbusiness #ceolife #watertreatment #growthmindset\n\n=== YOUTUBE SHORTS ===\nPost time: 5:30pm ET\nTitle: The 1 Number That Tells You When To Scale Your Business\nDescription:\nMost owners scale on a hunch and go broke. I'll show you the single metric I used to grow ClearWave to $138K peak months with just 4 people. Subscribe for water truth. Book your water test: clearwavewater.com\nTags: water filtration, water test, scale a business, small business tips, home service business, entrepreneur, business metrics, veteran owned business, cleanwater, how to scale\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 12pm ET\nFormat: Thread (3 posts)\nPost 1:\nMost business owners have no compass.\n\nThey scale on a gut feeling and wonder why they run out of cash.\n\nHere's the ONE number I used to scale ClearWave the right way 🧵\nPost 2:\nYour compass number = net margin per job.\n\nAt ClearWave our avg ticket is $11K and we hold 50%+ net margins.\n\nThat number tells me: can I afford another truck? Another hire? Or am I about to blow up my cash flow?\nPost 3:\nI learned this the hard way years ago scaling a solar company at a previous stop — grew it 6,500% and sold it.\n\nSpeed without a compass is just a faster way to crash.\n\nFollow @Shoeprenuer — I post what actually works, not motivational fluff.\n\n— Justin\n\nConfirm all 4 posts scheduled and report back with links.",
+        "manus_prompt": "Autonomously post ONE compiled short-form video across 4 platforms for Justin Shoemaker (ClearWave Water Solutions). Use the video file at ./content/Compass_2.mp4 (part of a compiled reel — edit order: open with Compass 1, cut to Compass 2 counter/equipment walkthrough, insert Compass 3.jpg as a mid-roll still, close on Compass 4).\n\n=== TIKTOK (@js_shoez_) ===\nCaption:\nThis coffee shop makes 'real food' but their water? Worse than you think.\nSee why every cup depends on what's behind the counter. FOLLOW for the truth.\nHashtags: #waterboy #waterquality #coffeeshop #commercialwater #smallbusiness #watertreatment #behindthescenes #trades #coffeetok #waterfiltration\nPost time: 7:30am ET\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nCaption:\nEvery great coffee shop runs on one thing nobody sees: water.\n\nBad water kills espresso, scales your equipment, and shortens the life of every machine on this counter.\n\nWe scale clean water for shops like this across VA/DC/MD.\n\nFOLLOW to see how we do it. — Justin\nFirst comment (put hashtags here): #waterboy #clearwave #waterquality #virginiabusiness #coffeeshop #commercialwater #watertreatment #dmv #vabusiness #scale\nPost time: 12:00pm ET\n\n=== YOUTUBE SHORTS ===\nTitle: The Hidden Reason Your Coffee Shop's Equipment Keeps Breaking\nDescription: Behind every 'real food' coffee shop is water you can't see — and it's scaling your espresso machines and shortening their life. ClearWave scales clean water for businesses across VA/DC/MD. Subscribe for water truth. Landing page: clearwavewater.com\nTags: water filtration, water test, commercial water, coffee shop water, espresso scale, water treatment, hard water, water softener, small business water, VA DC MD water\nPost time: 5:30pm ET\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost as a 3-tweet thread:\n1) Walked into a coffee shop that advertises 'REAL FOOD COFFEE.'\n\nReal food. Great espresso machines. Rapid-cook oven. Clean counter.\n\nAnd water that's quietly wrecking all of it. 🧵\n2) Bad water is the silent killer in every food-service business.\n\nIt scales your espresso boilers. It clogs your ice machine. It shortens the life of every stainless machine on that counter.\n\nYou taste it too — even if you can't name it.\n3) Scaling a water business isn't about selling more filters.\n\nIt's about fixing the problem nobody sees before it costs an owner their equipment.\n\nWe do this across VA/DC/MD.\n\nFollow for the water truth. — Justin\nPost time: 12:00pm ET\n\nConfirm each post published successfully and report back links.",
         "estimated_reach_band": "medium",
-        "reasoning": "The 'compass' metaphor and 'Scale' week theme point squarely at a business-money teaching clip, so I anchored every platform to one gripping metric ('your compass number') and matched the week's FOLLOW CTA on TikTok/IG to grow the audience. X gets a thread to expose the deeper margin logic and drop the credibility-building solar exit as a past win. It's medium (not viral) because business-scaling advice converts loyal followers but rarely explodes like a shock 'your water is worse than you think' water-truth clip.",
+        "reasoning": "The footage shows a real commercial job site, not a residential water problem, so I leaned into the business_money pillar with a 'water is the invisible thing running your whole shop' angle that connects to Week 10's 'Scale' theme — scaling both a business and the water problems that damage equipment. FOLLOW is the correct CTA per the week anchor and fits an audience-building B2B awareness piece rather than a hard sell. Reach is medium because the coffee-shop crossover appeal is strong but the footage quality (handheld, blurry frame 4) caps polish.",
         "viral_followup_hooks": [],
+        "vision_description": "**Setting:** Retail/food-service back-of-house — a coffee shop, viewed from behind the counter and into a storage/mechanical area.\n\n**Equipment visible:** Frame 1 shows tall gas cylinders (likely CO₂ or nitrogen), stacked paper cups, and lined trash bins. Frames 2–3 show espresso/coffee brewing equipment, a rapid-cook oven (TurboChef-type), stainless counters, and menu screens. No water-treatment tanks, filter housings, softeners, RO, or UV are clearly visible.\n\n**Work status:** Not clearly shown; frame 4 shows scattered tools (hand truck, backpack, PEX/white tubing on floor) suggesting work in progress or staging.\n\n**People/branding:** One worker in dark apron behind counter. Wall text reads \"REAL FOOD COFFEE.\"\n\n**Shot quality:** Handheld POV, uneven lighting, frame 4 is blurry and cluttered. No customer info visible.",
+        "set_members": [
+          "Compass 1.mp4",
+          "Compass 2.mp4",
+          "Compass 3.jpg",
+          "Compass 4.mp4"
+        ],
         "package_id": "pkg_2026-08-12_Compass_2_mp4",
         "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Compass 2.mp4",
-        "created_at": "2026-08-12T12:01:05.899Z",
+        "created_at": "2026-08-12T14:57:47.847Z",
         "status": "awaiting_approval"
       },
       {
         "filename": "Compass 1.mp4",
         "media_type": "video",
-        "inferred_topic": "Using a 'compass' metaphor to explain how Justin scaled ClearWave and how he navigates business growth — pointing owners toward the right direction to scale (Week 10 'Scale' theme), likely tying his sense of direction/mission to the water business and knowing your numbers.",
-        "content_pillar": "business_money",
+        "inferred_topic": "Whole-house water treatment install in a cramped commercial mechanical room: blue cartridge filter housing, stainless metering/control panel with digital display, copper piping with shutoff valves and pressure gauges, braided supply line, and a black composite media tank with control valve head. Technician working in progress in dim, cluttered conditions.",
+        "content_pillar": "water_truth",
         "tiktok": {
-          "caption": "Most owners scale in the wrong direction and wonder why they're broke.\nYour compass is your numbers — mine said 50%+ net margins. Follow for the map. 🧭",
+          "caption": "This whole system fits in a closet the size of your pantry.\nMost people have NO idea what's cleaning their water. Follow for water truth.",
           "hashtags": [
             "#waterboy",
             "#waterquality",
-            "#smallbusinesstips",
-            "#entrepreneur",
-            "#scaleyourbusiness",
-            "#businessowner",
-            "#tradesman",
-            "#homeservices",
-            "#veteranowned",
-            "#ceomindset"
+            "#waterfiltration",
+            "#hardwater",
+            "#plumbing",
+            "#watertreatment",
+            "#homeimprovement",
+            "#cleanwater",
+            "#DMV",
+            "#trades"
           ],
           "best_post_time_et": "7:30pm",
           "hook_id_used": "NEW",
           "cta_type": "Follow",
-          "cta_text": "Follow for the map to scale."
+          "cta_text": "Follow for water truth."
         },
         "instagram_reels": {
-          "caption": "Scaling without a compass is just guessing with extra steps.\n\nWhen I grew ClearWave I locked onto 3 numbers: $11K avg ticket, 50%+ net margins, and 4 people doing the work of 40.\n\nThat's the direction. Most owners chase revenue and drown.\n\nFollow @js_shoez_ for the real map. — Justin 🧭",
+          "caption": "This whole setup lives in a back closet the size of a pantry.\n\nCartridge filter, metering panel, media tank — this is what actually cleans the water in a commercial building.\n\nMost people never see it. Your water is worse than you think.\n\nFollow @clearwave_water for water truth. — Justin",
           "hashtags": [
             "#waterquality",
             "#virginiabusiness",
             "#waterfiltration",
-            "#smallbusiness",
-            "#entrepreneurmindset",
-            "#homeservicebusiness",
-            "#veteranowned",
-            "#scaleup",
-            "#businessgrowth",
-            "#tradesbusiness",
-            "#ceolife",
-            "#dmvbusiness"
+            "#watertreatment",
+            "#hardwater",
+            "#cleanwater",
+            "#plumbinglife",
+            "#DMVsmallbusiness",
+            "#homeservices",
+            "#trades",
+            "#waterboy",
+            "#nova"
           ],
-          "best_post_time_et": "9:00pm",
-          "first_comment": "true — Hashtags dropped in first comment to keep the caption clean: #waterquality #virginiabusiness #waterfiltration #smallbusiness #entrepreneurmindset #homeservicebusiness #veteranowned #scaleup #businessgrowth #tradesbusiness #ceolife #dmvbusiness"
+          "best_post_time_et": "7:30pm",
+          "first_comment": "true — #waterquality #waterfiltration #watertreatment #hardwater #cleanwater #DMV #virginiabusiness #plumbinglife #trades #waterboy #nova #homeservices"
         },
         "youtube_shorts": {
-          "title": "The Business Compass That Took ClearWave to 50%+ Margins",
-          "description": "Scaling isn't about running faster — it's about running the right direction. Here's the 3-number compass I use to grow ClearWave Water. Subscribe for water truth. 👉 clearwavewater.com",
+          "title": "This Fits In A Closet And Cleans A Whole Building's Water",
+          "description": "Inside a cramped mechanical room: cartridge filter, stainless metering panel, and a media tank doing the heavy lifting on a commercial water system. This is what actually cleans your water. Subscribe for water truth. https://clearwavewater.com",
           "tags": [
             "water filtration",
             "water test",
-            "scale a business",
-            "small business tips",
-            "home service business",
-            "entrepreneur mindset",
-            "net profit margin",
-            "veteran owned business",
-            "business growth",
-            "water quality"
+            "water treatment",
+            "hard water",
+            "whole house filter",
+            "commercial water system",
+            "media tank",
+            "cartridge filter",
+            "clean water",
+            "plumbing install"
           ],
           "best_post_time_et": "12:00pm"
         },
         "x_twitter": {
           "format": "thread",
           "posts": [
-            "Most business owners don't need to work harder. They need a compass. 🧭\n\nHere's the 3-number direction that took ClearWave to 50%+ net margins with 4 employees:",
-            "1. Avg ticket: $11K.\nRevenue is a vanity number. Ticket size is a direction. Raise it and everything downstream gets easier.\n\n2. Net margin: 50%+.\nMost 'big' companies are broke at scale. I'd rather bank half of $138K than 5% of a million.",
-            "3. Headcount discipline: 4 people.\nI scaled a solar company 6,500% ($600K→$25M) at a past company and learned the hard way — more bodies isn't more scale.\n\nPoint your compass at margin, not noise.\n\n— Justin"
+            "This entire water system fits in a closet the size of a pantry.\n\nCartridge filter. Stainless metering panel. Media tank. Copper valves.\n\nMost people never see what actually cleans their water. 🧵",
+            "The blue housing catches sediment. The panel meters and controls. The black tank does the real filtering.\n\nDim closet, cramped corner, tech on the floor — this is the unglamorous work that makes water safe.",
+            "Your water is worse than you think.\n\nWe run these installs across VA/DC/MD. Follow for more water truth. — Justin"
           ],
           "best_post_time_et": "12:00pm"
         },
-        "manus_prompt": "You are my social media publishing assistant. Post the video file 'Compass 1.mp4' (located in the content inbox path: ./content-inbox/Compass 1.mp4) natively to all 4 platforms below using MY handles. Do NOT sign anything as 'Shoe' or 'Clearwave Team' — sign only as '— Justin'. Schedule each at the time listed (Eastern Time).\n\n=== TIKTOK (@js_shoez_) ===\nPost time: 7:30pm ET\nCaption:\nMost owners scale in the wrong direction and wonder why they're broke.\nYour compass is your numbers — mine said 50%+ net margins. Follow for the map. 🧭\nHashtags: #waterboy #waterquality #smallbusinesstips #entrepreneur #scaleyourbusiness #businessowner #tradesman #homeservices #veteranowned #ceomindset\n\n=== INSTAGRAM REELS (@js_shoez_) ===\nPost time: 9:00pm ET\nCaption:\nScaling without a compass is just guessing with extra steps.\n\nWhen I grew ClearWave I locked onto 3 numbers: $11K avg ticket, 50%+ net margins, and 4 people doing the work of 40.\n\nThat's the direction. Most owners chase revenue and drown.\n\nFollow @js_shoez_ for the real map. — Justin 🧭\nPUT HASHTAGS IN THE FIRST COMMENT (not the caption): #waterquality #virginiabusiness #waterfiltration #smallbusiness #entrepreneurmindset #homeservicebusiness #veteranowned #scaleup #businessgrowth #tradesbusiness #ceolife #dmvbusiness\n\n=== YOUTUBE SHORTS ===\nPost time: 12:00pm ET\nTitle: The Business Compass That Took ClearWave to 50%+ Margins\nDescription:\nScaling isn't about running faster — it's about running the right direction. Here's the 3-number compass I use to grow ClearWave Water. Subscribe for water truth. 👉 clearwavewater.com\nTags: water filtration, water test, scale a business, small business tips, home service business, entrepreneur mindset, net profit margin, veteran owned business, business growth, water quality\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost time: 12:00pm ET\nPost as a THREAD (3 tweets), attach the video to tweet 1:\nTweet 1: Most business owners don't need to work harder. They need a compass. 🧭\n\nHere's the 3-number direction that took ClearWave to 50%+ net margins with 4 employees:\nTweet 2: 1. Avg ticket: $11K.\nRevenue is a vanity number. Ticket size is a direction. Raise it and everything downstream gets easier.\n\n2. Net margin: 50%+.\nMost 'big' companies are broke at scale. I'd rather bank half of $138K than 5% of a million.\nTweet 3: 3. Headcount discipline: 4 people.\nI scaled a solar company 6,500% ($600K→$25M) at a past company and learned the hard way — more bodies isn't more scale.\n\nPoint your compass at margin, not noise.\n\n— Justin\n\nConfirm each post is scheduled and report back any that fail.",
+        "manus_prompt": "Post one compiled water-install video across 4 platforms for Justin Shoemaker (ClearWave Water Solutions). Media file: Compass 1.mp4 (use the compiled reel cut assembled from Compass 1.mp4, Compass 2.mp4, Compass 3.jpg, Compass 4.mp4 in that order). Content is a POV commercial water-treatment install in a cramped mechanical room.\n\n=== TIKTOK (@js_shoez_) ===\nPost at 7:30pm ET.\nCaption:\nThis whole system fits in a closet the size of your pantry.\nMost people have NO idea what's cleaning their water. Follow for water truth.\nHashtags: #waterboy #waterquality #waterfiltration #hardwater #plumbing #watertreatment #homeimprovement #cleanwater #DMV #trades\n\n=== INSTAGRAM REELS (@clearwave_water) ===\nPost at 7:30pm ET.\nCaption:\nThis whole setup lives in a back closet the size of a pantry.\n\nCartridge filter, metering panel, media tank — this is what actually cleans the water in a commercial building.\n\nMost people never see it. Your water is worse than you think.\n\nFollow @clearwave_water for water truth. — Justin\nPut hashtags in FIRST COMMENT: #waterquality #waterfiltration #watertreatment #hardwater #cleanwater #DMV #virginiabusiness #plumbinglife #trades #waterboy #nova #homeservices\n\n=== YOUTUBE SHORTS ===\nPost at 12:00pm ET.\nTitle: This Fits In A Closet And Cleans A Whole Building's Water\nDescription: Inside a cramped mechanical room: cartridge filter, stainless metering panel, and a media tank doing the heavy lifting on a commercial water system. This is what actually cleans your water. Subscribe for water truth. https://clearwavewater.com\nTags: water filtration, water test, water treatment, hard water, whole house filter, commercial water system, media tank, cartridge filter, clean water, plumbing install\n\n=== X / TWITTER (@Shoeprenuer) ===\nPost as a thread at 12:00pm ET.\nPost 1: This entire water system fits in a closet the size of a pantry.\n\nCartridge filter. Stainless metering panel. Media tank. Copper valves.\n\nMost people never see what actually cleans their water. 🧵\nPost 2: The blue housing catches sediment. The panel meters and controls. The black tank does the real filtering.\n\nDim closet, cramped corner, tech on the floor — this is the unglamorous work that makes water safe.\nPost 3: Your water is worse than you think.\n\nWe run these installs across VA/DC/MD. Follow for more water truth. — Justin\n\nExecute all four posts autonomously at the specified times.",
         "estimated_reach_band": "medium",
-        "reasoning": "The 'Compass' filename maps cleanly to Week 10's 'Scale' theme, so I framed it as a business-money direction/navigation piece rather than water_truth. FOLLOW is the anchor CTA this week, so TikTok and IG both drive follows while X leans into thread depth for the business audience. Reach is medium because business-mindset content converts loyal followers but rarely breaks out like shocking water-test visuals do.",
+        "reasoning": "The verified footage is a real behind-the-scenes commercial water install, so I anchored the angle on the 'this whole system fits in a closet' scale hook — which ties to Week 10's Scale theme while staying honest to what's visible. Water_truth pillar and a FOLLOW CTA fit the week anchor and the 'nobody sees what cleans their water' curiosity gap. Kept language 5th-grade tradesman-teacher and named components plainly since the footage is process, not product hero shots.",
         "viral_followup_hooks": [],
+        "vision_description": "**Setting:** Cramped commercial mechanical room / back-of-house closet with tiled floor and painted walls.\n\n**Equipment:** Copper piping with shutoff valves, pressure gauges, a large blue cartridge filter housing (whole-house style), a stainless steel control/metering panel with digital display, a flexible braided supply line, and a black composite media tank with a control valve head (final frame). A grey electrical/equipment cabinet labeled \"STEELSTRONG.\"\n\n**Work status:** Work IN PROGRESS — a technician is crouched working in the corner across frames 1–3; tools (yellow tray with fittings, cutters) are on the floor.\n\n**People/branding:** One worker in teal cap and dark hooded sweatshirt with partial yellow lettering (\"...NG WATER\").\n\n**Shot quality:** Dim lighting, several frames blurry/motion-affected. POV working footage, not polished hero shots. Cluttered, dark.",
+        "set_members": [
+          "Compass 1.mp4",
+          "Compass 2.mp4",
+          "Compass 3.jpg",
+          "Compass 4.mp4"
+        ],
         "package_id": "pkg_2026-08-12_Compass_1_mp4",
         "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/Compass 1.mp4",
-        "created_at": "2026-08-12T12:00:34.568Z",
+        "created_at": "2026-08-12T14:56:58.050Z",
         "status": "awaiting_approval"
       },
       {
@@ -2135,90 +2257,6 @@
         "package_id": "pkg_2026-08-06_RO_install_mp4",
         "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/RO install.mp4",
         "created_at": "2026-08-06T12:11:09.542Z",
-        "status": "awaiting_approval"
-      },
-      {
-        "filename": "2026-06-23-114851695.mp4",
-        "media_type": "video",
-        "inferred_topic": "Justin explaining how he scaled ClearWave to 50%+ net margins with only 4 employees — a 'scale' angle showing that lean operations beat bloated headcount in the water treatment business.",
-        "content_pillar": "business_money",
-        "tiktok": {
-          "caption": "Everybody thinks you need 50 employees to scale.\nI run 50%+ margins with 4. Small team, big water. FOLLOW for the playbook.",
-          "hashtags": [
-            "#waterboy",
-            "#waterquality",
-            "#smallbusiness",
-            "#entrepreneur",
-            "#ceomindset",
-            "#scaling",
-            "#businesstips",
-            "#leanbusiness",
-            "#watertreatment",
-            "#foundersjourney"
-          ],
-          "best_post_time_et": "7:30pm",
-          "hook_id_used": "NEW",
-          "cta_type": "Follow",
-          "cta_text": "FOLLOW for the playbook"
-        },
-        "instagram_reels": {
-          "caption": "Everybody thinks scaling means hiring an army.\n\nWe do 50%+ net margins with 4 people. $11K average ticket. Peak months over $138K.\n\nScale isn't more bodies. It's a better system.\n\nFOLLOW for how we built it.\n— Justin",
-          "hashtags": [
-            "#waterquality",
-            "#virginiabusiness",
-            "#watertreatment",
-            "#smallbusinessowner",
-            "#entrepreneurmindset",
-            "#leanteam",
-            "#scalingup",
-            "#ceolife",
-            "#dmvbusiness",
-            "#waterfiltration",
-            "#foundertips",
-            "#profitmargins"
-          ],
-          "best_post_time_et": "12:00pm",
-          "first_comment": "true — #waterquality #virginiabusiness #watertreatment #smallbusinessowner #entrepreneurmindset #leanteam #scalingup #ceolife #dmvbusiness #waterfiltration #foundertips #profitmargins"
-        },
-        "youtube_shorts": {
-          "title": "How I Run 50%+ Margins With Only 4 Employees (Water Business)",
-          "description": "Scaling a business isn't about hiring more people — it's about building a system that prints. Here's how ClearWave hits 50%+ net margins with a 4-person team. Subscribe for water truth. → clearwavewater.com",
-          "tags": [
-            "water filtration",
-            "water test",
-            "small business scaling",
-            "lean business",
-            "profit margins",
-            "water treatment business",
-            "entrepreneur tips",
-            "ceo advice",
-            "virginia business",
-            "founder story"
-          ],
-          "best_post_time_et": "5:30pm"
-        },
-        "x_twitter": {
-          "format": "thread",
-          "posts": [
-            "Everybody thinks scaling a business means hiring an army.\n\nWe run 50%+ net margins with 4 employees.\n\nHere's what scale actually looks like 🧵",
-            "$11K average ticket.\nPeak months over $138K.\n4 people.\n\nMore bodies doesn't mean more money. Most of the time it means less.\n\nScale the system, not the payroll.",
-            "I learned this the hard way at a previous company — scaled it 600K to 25M (6,500% growth) and sold it.\n\nThe lesson carried straight into water: lean team, tight system, fat margins.\n\nFollow @Shoeprenuer for the playbook.\n— Justin"
-          ],
-          "best_post_time_et": "12pm"
-        },
-        "manus_prompt": "You are my social media posting assistant. Post the following video across 4 platforms using the exact captions, hashtags, and schedule below. The video file is: 2026-06-23-114851695.mp4 (local content inbox).\n\n=== TIKTOK (@js_shoez_) ===\nSchedule: 7:30pm ET\nCaption:\nEverybody thinks you need 50 employees to scale.\nI run 50%+ margins with 4. Small team, big water. FOLLOW for the playbook.\nHashtags: #waterboy #waterquality #smallbusiness #entrepreneur #ceomindset #scaling #businesstips #leanbusiness #watertreatment #foundersjourney\n\n=== INSTAGRAM REELS (@js_shoez_ / biz @clearwave_water) ===\nSchedule: 12:00pm ET\nCaption:\nEverybody thinks scaling means hiring an army.\n\nWe do 50%+ net margins with 4 people. $11K average ticket. Peak months over $138K.\n\nScale isn't more bodies. It's a better system.\n\nFOLLOW for how we built it.\n— Justin\nPut hashtags in the FIRST COMMENT (not the caption):\n#waterquality #virginiabusiness #watertreatment #smallbusinessowner #entrepreneurmindset #leanteam #scalingup #ceolife #dmvbusiness #waterfiltration #foundertips #profitmargins\n\n=== YOUTUBE SHORTS ===\nSchedule: 5:30pm ET\nTitle: How I Run 50%+ Margins With Only 4 Employees (Water Business)\nDescription:\nScaling a business isn't about hiring more people — it's about building a system that prints. Here's how ClearWave hits 50%+ net margins with a 4-person team. Subscribe for water truth. → clearwavewater.com\nTags: water filtration, water test, small business scaling, lean business, profit margins, water treatment business, entrepreneur tips, ceo advice, virginia business, founder story\n\n=== X / TWITTER (@Shoeprenuer) ===\nSchedule: 12:00pm ET\nFormat: THREAD (3 posts)\nPost 1:\nEverybody thinks scaling a business means hiring an army.\n\nWe run 50%+ net margins with 4 employees.\n\nHere's what scale actually looks like 🧵\nPost 2:\n$11K average ticket.\nPeak months over $138K.\n4 people.\n\nMore bodies doesn't mean more money. Most of the time it means less.\n\nScale the system, not the payroll.\nPost 3:\nI learned this the hard way at a previous company — scaled it 600K to 25M (6,500% growth) and sold it.\n\nThe lesson carried straight into water: lean team, tight system, fat margins.\n\nFollow @Shoeprenuer for the playbook.\n— Justin\n\nAttach the video to Post 1 of the thread. Confirm each post is scheduled at its ET time before finishing.",
-        "estimated_reach_band": "high",
-        "reasoning": "The 'scale' week theme pairs perfectly with Justin's most credible flex — 50%+ margins on a 4-person team — which is a pattern-interrupt against 'hire to grow' advice and reads as high-value business content. I chose FOLLOW as the CTA per the week anchor and leaned business_money because the filename-week combo points to a founder/operations story rather than a water-test demo. The lean-team hook is broadly shareable across entrepreneur audiences, pushing this above baseline water-niche reach.",
-        "viral_followup_hooks": [
-          "The 3 systems that let 4 people run a 50%+ margin business (show the actual dashboard/workflow).",
-          "Why I FIRED the 'hire more people' advice — and what I did instead.",
-          "$11K average ticket breakdown: where every dollar actually goes.",
-          "The one hire I'll never make (and why it kills margins).",
-          "From 600K to 25M at my last company — the 3 scale lessons I carried into water."
-        ],
-        "package_id": "pkg_2026-08-06_2026_06_23_114851695_mp4",
-        "source_path": "/Users/jwts3/Library/CloudStorage/GoogleDrive-clearwavewatersolutions@gmail.com/My Drive/ClearWave Content Studio/01_RAW_DROP_HERE/2026-06-23-114851695.mp4",
-        "created_at": "2026-08-06T12:00:32.800Z",
         "status": "awaiting_approval"
       }
     ],
@@ -2798,62 +2836,62 @@
       },
       {
         "filename": "Compass 1.manus.txt",
-        "mtime": 1786536034572.9011,
+        "mtime": 1786546618056.2927,
         "size_mb": 0
       },
       {
         "filename": "Compass 1.mp4",
-        "mtime": 1786446637027,
+        "mtime": 1786546559150.0103,
         "size_mb": 19.77
       },
       {
         "filename": "Compass 1.package.json",
-        "mtime": 1786536034572.5298,
+        "mtime": 1786546618055.7676,
         "size_mb": 0.01
       },
       {
         "filename": "Compass 2.manus.txt",
-        "mtime": 1786536065901.7593,
+        "mtime": 1786546667850.2817,
         "size_mb": 0
       },
       {
         "filename": "Compass 2.mp4",
-        "mtime": 1786446637182,
+        "mtime": 1786546559280.597,
         "size_mb": 29.88
       },
       {
         "filename": "Compass 2.package.json",
-        "mtime": 1786536065901.3335,
+        "mtime": 1786546667849.8906,
         "size_mb": 0.01
       },
       {
         "filename": "Compass 3.jpg",
-        "mtime": 1786446637235,
+        "mtime": 1786546559382.2405,
         "size_mb": 1.86
       },
       {
         "filename": "Compass 3.manus.txt",
-        "mtime": 1786536096938.6804,
+        "mtime": 1786546706264.871,
         "size_mb": 0
       },
       {
         "filename": "Compass 3.package.json",
-        "mtime": 1786536096938.268,
+        "mtime": 1786546706264.2957,
         "size_mb": 0.01
       },
       {
         "filename": "Compass 4.manus.txt",
-        "mtime": 1786536128258.8586,
+        "mtime": 1786546748307.2961,
         "size_mb": 0
       },
       {
         "filename": "Compass 4.mp4",
-        "mtime": 1786446637415,
+        "mtime": 1786546559369.7898,
         "size_mb": 28.9
       },
       {
         "filename": "Compass 4.package.json",
-        "mtime": 1786536128258.4766,
+        "mtime": 1786546748306.696,
         "size_mb": 0.01
       },
       {
