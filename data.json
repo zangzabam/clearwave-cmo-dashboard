@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T10:01:27.351Z",
+  "generated_at": "2026-08-13T10:30:04.522Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-13",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3228,8 +3228,138 @@
   },
   "approvals": {
     "date": "2026-08-13",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "reel_2026-08-12_compass",
+        "type": "content_package",
+        "title": "🎬 Content · undefined",
+        "meta": {},
+        "preview": "undefined · undefined · reach band: undefined\nTikTok: \"Behind the counter at a coffee shop: new water treatment going in so every cup t…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_4_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · A finished commercial water treatment install in a mechanical/back-of-house room: a black brine tank beside a tall media/resin tank with a control valve, plus copper plumbing, shutoff valves, a wall control panel, and a blue tank. POV walkthrough of a completed system.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This is what clean water actually costs behind the wall.\nBrine tank, resin tank,…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_3_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A finished whole-home water treatment install in a tight mechanical closet: a tall black media/filter tank with digital control valve, a black brine tank, a blue pressurized RO tank near the ceiling, and a wall-mounted RO unit with pressure gauge and 'GET WATER / RO WATER' labeling, connected by copper, PVC, and braided flex lines.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "photo · water_truth · reach band: medium\nTikTok: \"This little closet is now cleaning EVERY drop of water in the house.\nSoftener + …\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_2_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Behind-the-counter install/service walkthrough at a 'REAL FOOD COFFEE' shop — gas cylinders, espresso and rapid-cook equipment, and staged PEX tubing showing a commercial water job in progress.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"This coffee shop makes 'real food' but their water? Worse than you think.\nSee wh…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_1_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Whole-house water treatment install in a cramped commercial mechanical room: blue cartridge filter housing, stainless metering/control panel with digital display, copper piping with shutoff valves and pressure gauges, braided supply line, and a black composite media tank with control valve head. Technician working in progress in dim, cluttered conditions.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This whole system fits in a closet the size of your pantry.\nMost people have NO …\""
+      },
+      {
+        "id": "pkg_2026-08-06_install_pov_wideview__2_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · First-person wide-angle POV of a ClearWave whole-home water filtration system being installed — showing the scale of the equipment, plumbing tie-ins, and the finished premium setup, used to demonstrate the professional install process homeowners get.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: this is what protecting your whole home actually looks like.\nMost people ha…\""
+      },
+      {
+        "id": "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · First-person POV of a whole-home copper water line install / softener-conditioner hookup, showing the craftsmanship and scale of ClearWave's install work — tying to Week 9 'Scale' theme about growing install volume and doing premium jobs right.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: you finally see what clean water actually costs to install right.\nMost 'plu…\""
+      },
+      {
+        "id": "pkg_2026-08-06_install_dc_pov_install_conmection_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · POV-style install footage from a DC-area job showing a ClearWave whole-home water filtration system connection being made — a behind-the-scenes look at the actual install process and craftsmanship that justifies the premium ticket.",
+        "meta": {
+          "reach": "high",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: your DC water finally gets the truth treatment.\nThis connection is why your…\""
+      },
+      {
+        "id": "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Justin talking through how ClearWave scaled operations — likely a behind-the-scenes clip filmed early morning (8:44am) about growing the business, systems, or hitting revenue milestones, tied to Week 9 'Scale' theme",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants to scale. Almost nobody wants to fix the boring stuff first.\nTha…\""
+      },
+      {
+        "id": "pkg_2026-08-06_RO_install_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · A reverse osmosis (RO) drinking water system installation in a customer's home — showing the multi-stage filtration unit going under the sink, positioned as a premium whole-solution upgrade and tying into the Week 9 'Scale' theme of standardizing high-ticket installs across the VA/DC/MD service area.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This little system under the sink strips out what your tap won't tell you about.…\""
+      }
+    ],
+    "decisions": {
+      "reel_2026-08-12_compass": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_4_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_3_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_2_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_1_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_install_pov_wideview__2_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_install_dc_pov_install_conmection_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-06_RO_install_mp4": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-13T10:30:00.421Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
