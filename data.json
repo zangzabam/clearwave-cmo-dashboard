@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T23:00:00.558Z",
+  "generated_at": "2026-08-13T10:01:27.351Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -8,16 +8,16 @@
       "lead_band": "Watch",
       "new_gp": "$134k"
     },
-    "audience_members": 3441,
+    "audience_members": 3443,
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-08-12",
+        "last_run": "2026-08-13",
         "status": "Good"
       },
       {
         "name": "Email Sub-Agent",
-        "last_run": "2026-08-12",
+        "last_run": "2026-08-13",
         "status": "Good"
       },
       {
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-08-12",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-08-12",
+        "last_run": "2026-08-13",
         "status": "Good"
       },
       {
@@ -324,8 +324,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-08-12",
-      "projected_full_year": 1045220.9252232141,
+      "through": "2026-08-13",
+      "projected_full_year": 1040575.4988888887,
       "prior_year_same_period": 93137,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -939,14 +939,14 @@
     ]
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-08-12\n\n_Generated at 2026-08-12T10:01:15.627Z_\n\n## Executive summary\n- Jobs created yesterday: **5** ($748 in pipeline)\n- Inbound calls yesterday: **31**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3441** members · open 42.3% · click 0.23%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **23**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **28**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instructions conflict. Rule 4 says **two lines exactly, NO em dash prefix** (`Justin` / `CEO / ClearWave`), but the Job section says sign off `. Justin / CEO / ClearWave`. Rule 4 is a HARD RULE and Rule 5 bans em dashes everywhere, so I'm following Rule 4. Flagging so you can confirm.\n---\n# Proposal 1: Concierge Year 1.5 Math\n## 1. Campaign + Audience\n**\"The Year 1.5 Question\"**. Concierge upsell candidates (13-24 mo post-install, not on Concierge). **100 members.** Highest-intent list this week: they've already had a year-1 service, so they trust the service relationship. Warm, no floor violations (list is pre-filtered to 13+ months).\n## 2. Subject line + alternates (all under 60 char)\n- **Primary (specific):** The math on Concierge, honestly\n- (curiosity): The question everyone asks at 18 months\n- (pain): Who is handling your filter swaps?\n- (authority): What your annual service actually covers\n- (specific): $99 a month. Here is what it does.\n## 3. Preview text (under 90 char)\nNo pressure. Just the honest math on whether Concierge is worth it for your home.\n## 4. Body\nHi [First Name],\nHere is a question we get around the year and a half mark: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nIt's been about [X months] since we installed your ClearWave system, so you have already been through your first annual service. You know the drill: the yearly visit, the filter swaps, the occasional part.\nConcierge is $99 a month, and it folds all of that into one plan:\n- Your annual service, included\n- Filter swaps, included\n- Priority phone support (you skip the line)\n- Parts coverage on your standard install components\nIf you like handling things as they come, pay-as-you-go is completely fine. But if you would rather never think about a filter date again, this is the plan that does the thinking for you.\nWant me to see if Concierge makes sense for your setup? Just reply and I'll run your numbers.\nJustin\nCEO / ClearWave\n*(Note: for anyone whose system field is a current ClearWave name, e.g. Janine Stenson's SOVEREIGN, swap the tenure line for \"your ClearWave Sovereign.\" All names in this list are legacy, so the tenure line applies to the full 100.)*\n## 5. Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning midweek, highest B2C open window; avoids Monday inbox flush.\n## 6. Expected performance\n- **Open: 40-45%.** Your true baseline is 42.3%; the recent 0.4% campaigns are almost certainly deliverability/tracking anomalies, not real. This is a warm, existing-client list.\n- **Click: 2-4%.** Well above your 0.23% avg because the CTA is a reply, not a link, and the offer is concrete money math to a trusting audience.\n- **Conversion: 3-6 plans.** At $99/mo that is roughly $3,500-$7,100 in annual recurring revenue from one send.\n## 7. Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"is this worth it at year 1.5\" framing, the $99 feature list, \"not pushy / here's the math\" voice) and the **Jobber conciergeUpsellCandidates** trigger (100 pre-filtered, 13-24 mo). Respects HARD RULE 1 (no Concierge before 12 mo) and HARD RULE 2 (tenure line for legacy names).\n---\n# Proposal 2: Referral Push (30-60 Day Cohort)\n## 1. Campaign + Audience\n**\"Who's Drinking Bad Water Near You?\"**. Referral push candidates (30-60 days post-install, satisfied). **30 members.** They are freshly delighted with clean water and haven't hit the 1-year mark, so referrals (not Concierge, not reviews) are the right ask.\n## 2. Subject line + alternates (all under 60 char)\n- **Primary (specific):** Your first referral is worth $500\n- (curiosity): A quick way to make $500 from your kitchen tap\n- (pain): Know someone stuck with bad water?\n- (authority): The best water in the neighborhood is yours\n- (specific): $500 per friend. Here is how it works.\n## 3. Preview text (under 90 char)\nRefer a neighbor, they get a free water assessment, you get $500 when they join.\n## 4. Body\nHi [First Name],\nIt's been about [X months] since we installed your water system, and by now the difference is probably part of daily life: the taste, the feel, the peace of mind.\nHere is the thing. You almost certainly know someone still living with water they do not trust. A neighbor, family, a friend across town.\nSo here is the offer, plainly:\n- You refer them, they get a **free water assessment.** No pressure, no obligation.\n- If they book a consult, you get a **$50 gift card.**\n- If they become a client, you get **$500 cash.**\nAnd it climbs. Referrals 6 through 9 in a calendar year are **$750** each. Ten or more is **$1,000** each.\nJust reply with a name and the best way to reach them, or send them straight to us. We will take great care of them.\nJustin\nCEO / ClearWave\n## 5. Send timing\n**Thursday, 11:00 AM ET.** Late-week momentum for a share-with-a-friend ask; gives them the weekend to think of names.\n## 6. Expected performance\n- **Open: 42-48%.** Recent, happy clients; strong sender relationship. Dollar amount in subject lifts curiosity opens.\n- **Click/reply: 3-5%.** Reply-based CTA plus concrete cash tiers. Small list means high individual attention.\n- **Conversion: 1-3 booked consults, 0-1 close near-term.** Even one close returns $500 cost against a multi-thousand-dollar install. Referred leads convert far higher than cold.\n## 7. Source justification\nDraws from **REFERRAL BONUS STRUCTURE** (exact $500/$750/$1,000 tiers and $50 gift card) and the **Jobber referralPushCandidates** trigger (30 satisfied, 30-60 day). Honors HARD RULE 1 (no Concierge, they're pre-year-1), HARD RULE 3 (referrals, not reviews), HARD RULE 3a (exact phrase \"free water assessment\"), and HARD RULE 2 (tenure line, since all 30 systems shown are legacy names).\n---\n**Why these two:** the Concierge list is the largest high-intent revenue opportunity (recurring ARR), and the referral cohort is the cheapest new-customer acquisition channel with people at peak satisfaction. I deprioritized the 1,000-person cold re-engagement this week because a big send to a stale, unengaged segment risks your deliverability further, and your open numbers already look like they may have a tracking/domain issue worth diagnosing before we blast cold contacts. Want me to draft the cold re-engagement for next week once we confirm the tracking anomaly?\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-08-13\n\n_Generated at 2026-08-13T10:01:25.309Z_\n\n## Executive summary\n- Jobs created yesterday: **1** ($0 in pipeline)\n- Inbound calls yesterday: **26**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3443** members · open 42.3% · click 0.23%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **23**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **27**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll note one issue with your instructions before drafting: rule #4 specifies the sign-off is **two lines with NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but your Job step #4 says to sign off \". Justin / CEO / ClearWave\" with a dash. Rule #4 is a HARD RULE and rule #5 bans all dashes, so I'm following the hard rules: no dash, two clean lines.\nHere are the two highest-conversion campaigns for this week.\n---\n# Proposal 1: Concierge \"Year 1.5 Math\" Campaign\n**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge) = **100 members**\n**Why this is #1:** Largest warm, trust-established segment. These clients already survived their year-1 service, so the 12-month floor is clear. Highest revenue-per-send ($99/mo recurring). Not a discount blast (which your data shows dies at 0.4% open).\n### Subject line (+ 4 alternates)\n- **Primary (specific):** The year 1.5 question we get asked most\n- **Curiosity:** Is this Concierge thing actually worth it?\n- **Pain:** Who remembers when your filters are due? (not you)\n- **Authority:** The math on Concierge, run honestly\n- **Specific:** $99/mo vs. pay as you go: the real numbers\n### Preview text\nRun the numbers with me. No pressure, just the honest breakdown.\n### Email body\nHi Albert,\nIt's been about 17 months since we installed your water system, and you've had your first annual service done. That means you've seen how we work.\nSo here's the question we get asked right around this point: \"Is the Concierge plan actually worth it for me?\" Fair question. Here's the honest math.\nConcierge is $99/mo. It covers your annual service, your filter swaps, priority phone support, and parts coverage on your standard install components. If you're currently doing this pay as you go, you're tracking service dates yourself, ordering filters yourself, and paying parts and labor as they come.\nFor most homes, the plan comes out even or ahead once you count a single service visit plus filters. The real value is not thinking about it. We track the dates. We show up. Your water stays the way it was on day one.\nWant me to check your specific setup and tell you honestly whether it pencils out for your home? Just reply and I'll take a look.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET** (post-morning-inbox-clear, pre-lunch; B2C service peak).\n### Expected performance\n- **Open: 44-48%** (above 42.3% baseline. Warm segment, curiosity subject, no discount-spam trigger words that tanked recent sends to 0.4%.)\n- **Click/reply: 3-5%** (this is a reply-driven CTA, not a link click, so the 0.23% click baseline doesn't apply. Warm trust + concrete offer.)\n- **Conversion: 6-12 enrollments** across the full 100 list if sequenced. At $99/mo that's $7,000-$14,000 ARR from one send.\n### Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"year 1.5 / here's the math\" framing, $99/mo feature list, \"not pushy\" voice, 13-24 month pre-filtered list). Honors HARD RULE #1 (12-month floor) and #2 (legacy name \"Re-Ionator Pro and WT RO\" suppressed, replaced with tenure line).\n---\n# Proposal 2: Referral Push (30-60 Days Post-Install)\n**Audience:** Referral push candidates (30-60 days post-install, satisfied) = **30 members**\n**Why this is #2:** Freshest enthusiasm window. New water is still noticeable to them daily. Referral (not review, per rule #3) with a concrete cash structure converts far better than vague \"tell a friend.\"\n### Subject line (+ 4 alternates)\n- **Primary (specific):** $500 for the first friend you send our way\n- **Curiosity:** A quick way to turn your new water into $500\n- **Authority:** Our clients send us their neighbors. Here's why.\n- **Pain:** Know someone stuck with bad water? Read this.\n- **Specific:** $500 per referral, $50 even if they just book\n### Preview text\nReal numbers, no fine print games. Here's how the referral program works.\n### Email body\nHi Regina,\nIt's been about a month since we installed your ClearWave system, and by now the difference in your water has probably become the new normal (that's the goal).\nQuick thing worth knowing: our best clients tend to have neighbors and family stuck with the exact water they used to have. So here's how we say thank you when you send someone our way.\nIf someone you refer becomes a client, you get $500 cash. Referrals 6 through 9 in a year are $750 each, and 10 or more are $1,000 each. Even if your referral just books a consult and doesn't move forward, you still get a $50 gift card.\nAll they need is a free water assessment. That's the one step. We handle everything from there.\nJust reply with a name and the best way to reach them, or send them straight to us. Thanks for trusting us with your home.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET** (mid-week, mid-morning; separated from Tuesday's Concierge send to avoid list fatigue).\n### Expected performance\n- **Open: 45-50%** (small, very warm, recently-installed segment; specific-dollar subject line beats vague hooks.)\n- **Reply/action: 4-8%** (concrete cash CTA, reply-driven. New-install enthusiasm is peak here.)\n- **Conversion: 1-3 referred consults** near-term, with higher lifetime value as the referral seed matures.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS: Referral push candidates** and the **REFERRAL BONUS STRUCTURE** (exact $500 / $750 / $1,000 / $50 figures). Honors HARD RULE #3 (referrals not reviews), #3a (\"free water assessment\" exact phrase), and #2 (Regina's legacy \"Acid Neut + Ironmax\" suppressed via tenure line; \"your ClearWave system\" used correctly).\n---\n**Note on excluded segments:** I skipped the 1-year annual service list (transactional, not a conversion campaign) and the 1,000 cold leads this week. The cold re-engagement is a strong campaign but needs a genuine \"new water news angle\" as the lead, which requires a current news hook I don't have in-context. Flag me the angle and I'll build it next.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
-    "audience_size": 3441,
+    "audience_size": 3443,
     "open_rate": 42.3,
     "click_rate": 0.23,
     "proposals_count": 0,
-    "proposals_md": "# Email Agent Proposals · 2026-08-12\n\n## Mailchimp health\n- Audience: **3441** members · open 42.3% · click 0.23%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **23**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **28**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll flag one thing before the proposals: your sign-off instructions conflict. Rule 4 says **two lines exactly, NO em dash prefix** (`Justin` / `CEO / ClearWave`), but the Job section says sign off `. Justin / CEO / ClearWave`. Rule 4 is a HARD RULE and Rule 5 bans em dashes everywhere, so I'm following Rule 4. Flagging so you can confirm.\n---\n# Proposal 1: Concierge Year 1.5 Math\n## 1. Campaign + Audience\n**\"The Year 1.5 Question\"**. Concierge upsell candidates (13-24 mo post-install, not on Concierge). **100 members.** Highest-intent list this week: they've already had a year-1 service, so they trust the service relationship. Warm, no floor violations (list is pre-filtered to 13+ months).\n## 2. Subject line + alternates (all under 60 char)\n- **Primary (specific):** The math on Concierge, honestly\n- (curiosity): The question everyone asks at 18 months\n- (pain): Who is handling your filter swaps?\n- (authority): What your annual service actually covers\n- (specific): $99 a month. Here is what it does.\n## 3. Preview text (under 90 char)\nNo pressure. Just the honest math on whether Concierge is worth it for your home.\n## 4. Body\nHi [First Name],\nHere is a question we get around the year and a half mark: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nIt's been about [X months] since we installed your ClearWave system, so you have already been through your first annual service. You know the drill: the yearly visit, the filter swaps, the occasional part.\nConcierge is $99 a month, and it folds all of that into one plan:\n- Your annual service, included\n- Filter swaps, included\n- Priority phone support (you skip the line)\n- Parts coverage on your standard install components\nIf you like handling things as they come, pay-as-you-go is completely fine. But if you would rather never think about a filter date again, this is the plan that does the thinking for you.\nWant me to see if Concierge makes sense for your setup? Just reply and I'll run your numbers.\nJustin\nCEO / ClearWave\n*(Note: for anyone whose system field is a current ClearWave name, e.g. Janine Stenson's SOVEREIGN, swap the tenure line for \"your ClearWave Sovereign.\" All names in this list are legacy, so the tenure line applies to the full 100.)*\n## 5. Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning midweek, highest B2C open window; avoids Monday inbox flush.\n## 6. Expected performance\n- **Open: 40-45%.** Your true baseline is 42.3%; the recent 0.4% campaigns are almost certainly deliverability/tracking anomalies, not real. This is a warm, existing-client list.\n- **Click: 2-4%.** Well above your 0.23% avg because the CTA is a reply, not a link, and the offer is concrete money math to a trusting audience.\n- **Conversion: 3-6 plans.** At $99/mo that is roughly $3,500-$7,100 in annual recurring revenue from one send.\n## 7. Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"is this worth it at year 1.5\" framing, the $99 feature list, \"not pushy / here's the math\" voice) and the **Jobber conciergeUpsellCandidates** trigger (100 pre-filtered, 13-24 mo). Respects HARD RULE 1 (no Concierge before 12 mo) and HARD RULE 2 (tenure line for legacy names).\n---\n# Proposal 2: Referral Push (30-60 Day Cohort)\n## 1. Campaign + Audience\n**\"Who's Drinking Bad Water Near You?\"**. Referral push candidates (30-60 days post-install, satisfied). **30 members.** They are freshly delighted with clean water and haven't hit the 1-year mark, so referrals (not Concierge, not reviews) are the right ask.\n## 2. Subject line + alternates (all under 60 char)\n- **Primary (specific):** Your first referral is worth $500\n- (curiosity): A quick way to make $500 from your kitchen tap\n- (pain): Know someone stuck with bad water?\n- (authority): The best water in the neighborhood is yours\n- (specific): $500 per friend. Here is how it works.\n## 3. Preview text (under 90 char)\nRefer a neighbor, they get a free water assessment, you get $500 when they join.\n## 4. Body\nHi [First Name],\nIt's been about [X months] since we installed your water system, and by now the difference is probably part of daily life: the taste, the feel, the peace of mind.\nHere is the thing. You almost certainly know someone still living with water they do not trust. A neighbor, family, a friend across town.\nSo here is the offer, plainly:\n- You refer them, they get a **free water assessment.** No pressure, no obligation.\n- If they book a consult, you get a **$50 gift card.**\n- If they become a client, you get **$500 cash.**\nAnd it climbs. Referrals 6 through 9 in a calendar year are **$750** each. Ten or more is **$1,000** each.\nJust reply with a name and the best way to reach them, or send them straight to us. We will take great care of them.\nJustin\nCEO / ClearWave\n## 5. Send timing\n**Thursday, 11:00 AM ET.** Late-week momentum for a share-with-a-friend ask; gives them the weekend to think of names.\n## 6. Expected performance\n- **Open: 42-48%.** Recent, happy clients; strong sender relationship. Dollar amount in subject lifts curiosity opens.\n- **Click/reply: 3-5%.** Reply-based CTA plus concrete cash tiers. Small list means high individual attention.\n- **Conversion: 1-3 booked consults, 0-1 close near-term.** Even one close returns $500 cost against a multi-thousand-dollar install. Referred leads convert far higher than cold.\n## 7. Source justification\nDraws from **REFERRAL BONUS STRUCTURE** (exact $500/$750/$1,000 tiers and $50 gift card) and the **Jobber referralPushCandidates** trigger (30 satisfied, 30-60 day). Honors HARD RULE 1 (no Concierge, they're pre-year-1), HARD RULE 3 (referrals, not reviews), HARD RULE 3a (exact phrase \"free water assessment\"), and HARD RULE 2 (tenure line, since all 30 systems shown are legacy names).\n---\n**Why these two:** the Concierge list is the largest high-intent revenue opportunity (recurring ARR), and the referral cohort is the cheapest new-customer acquisition channel with people at peak satisfaction. I deprioritized the 1,000-person cold re-engagement this week because a big send to a stale, unengaged segment risks your deliverability further, and your open numbers already look like they may have a tracking/domain issue worth diagnosing before we blast cold contacts. Want me to draft the cold re-engagement for next week once we confirm the tracking anomaly?\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n"
+    "proposals_md": "# Email Agent Proposals · 2026-08-13\n\n## Mailchimp health\n- Audience: **3443** members · open 42.3% · click 0.23%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **23**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **27**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nI'll note one issue with your instructions before drafting: rule #4 specifies the sign-off is **two lines with NO em dash prefix** (\"Justin\" / \"CEO / ClearWave\"), but your Job step #4 says to sign off \". Justin / CEO / ClearWave\" with a dash. Rule #4 is a HARD RULE and rule #5 bans all dashes, so I'm following the hard rules: no dash, two clean lines.\nHere are the two highest-conversion campaigns for this week.\n---\n# Proposal 1: Concierge \"Year 1.5 Math\" Campaign\n**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge) = **100 members**\n**Why this is #1:** Largest warm, trust-established segment. These clients already survived their year-1 service, so the 12-month floor is clear. Highest revenue-per-send ($99/mo recurring). Not a discount blast (which your data shows dies at 0.4% open).\n### Subject line (+ 4 alternates)\n- **Primary (specific):** The year 1.5 question we get asked most\n- **Curiosity:** Is this Concierge thing actually worth it?\n- **Pain:** Who remembers when your filters are due? (not you)\n- **Authority:** The math on Concierge, run honestly\n- **Specific:** $99/mo vs. pay as you go: the real numbers\n### Preview text\nRun the numbers with me. No pressure, just the honest breakdown.\n### Email body\nHi Albert,\nIt's been about 17 months since we installed your water system, and you've had your first annual service done. That means you've seen how we work.\nSo here's the question we get asked right around this point: \"Is the Concierge plan actually worth it for me?\" Fair question. Here's the honest math.\nConcierge is $99/mo. It covers your annual service, your filter swaps, priority phone support, and parts coverage on your standard install components. If you're currently doing this pay as you go, you're tracking service dates yourself, ordering filters yourself, and paying parts and labor as they come.\nFor most homes, the plan comes out even or ahead once you count a single service visit plus filters. The real value is not thinking about it. We track the dates. We show up. Your water stays the way it was on day one.\nWant me to check your specific setup and tell you honestly whether it pencils out for your home? Just reply and I'll take a look.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET** (post-morning-inbox-clear, pre-lunch; B2C service peak).\n### Expected performance\n- **Open: 44-48%** (above 42.3% baseline. Warm segment, curiosity subject, no discount-spam trigger words that tanked recent sends to 0.4%.)\n- **Click/reply: 3-5%** (this is a reply-driven CTA, not a link click, so the 0.23% click baseline doesn't apply. Warm trust + concrete offer.)\n- **Conversion: 6-12 enrollments** across the full 100 list if sequenced. At $99/mo that's $7,000-$14,000 ARR from one send.\n### Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"year 1.5 / here's the math\" framing, $99/mo feature list, \"not pushy\" voice, 13-24 month pre-filtered list). Honors HARD RULE #1 (12-month floor) and #2 (legacy name \"Re-Ionator Pro and WT RO\" suppressed, replaced with tenure line).\n---\n# Proposal 2: Referral Push (30-60 Days Post-Install)\n**Audience:** Referral push candidates (30-60 days post-install, satisfied) = **30 members**\n**Why this is #2:** Freshest enthusiasm window. New water is still noticeable to them daily. Referral (not review, per rule #3) with a concrete cash structure converts far better than vague \"tell a friend.\"\n### Subject line (+ 4 alternates)\n- **Primary (specific):** $500 for the first friend you send our way\n- **Curiosity:** A quick way to turn your new water into $500\n- **Authority:** Our clients send us their neighbors. Here's why.\n- **Pain:** Know someone stuck with bad water? Read this.\n- **Specific:** $500 per referral, $50 even if they just book\n### Preview text\nReal numbers, no fine print games. Here's how the referral program works.\n### Email body\nHi Regina,\nIt's been about a month since we installed your ClearWave system, and by now the difference in your water has probably become the new normal (that's the goal).\nQuick thing worth knowing: our best clients tend to have neighbors and family stuck with the exact water they used to have. So here's how we say thank you when you send someone our way.\nIf someone you refer becomes a client, you get $500 cash. Referrals 6 through 9 in a year are $750 each, and 10 or more are $1,000 each. Even if your referral just books a consult and doesn't move forward, you still get a $50 gift card.\nAll they need is a free water assessment. That's the one step. We handle everything from there.\nJust reply with a name and the best way to reach them, or send them straight to us. Thanks for trusting us with your home.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET** (mid-week, mid-morning; separated from Tuesday's Concierge send to avoid list fatigue).\n### Expected performance\n- **Open: 45-50%** (small, very warm, recently-installed segment; specific-dollar subject line beats vague hooks.)\n- **Reply/action: 4-8%** (concrete cash CTA, reply-driven. New-install enthusiasm is peak here.)\n- **Conversion: 1-3 referred consults** near-term, with higher lifetime value as the referral seed matures.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS: Referral push candidates** and the **REFERRAL BONUS STRUCTURE** (exact $500 / $750 / $1,000 / $50 figures). Honors HARD RULE #3 (referrals not reviews), #3a (\"free water assessment\" exact phrase), and #2 (Regina's legacy \"Acid Neut + Ironmax\" suppressed via tenure line; \"your ClearWave system\" used correctly).\n---\n**Note on excluded segments:** I skipped the 1-year annual service list (transactional, not a conversion campaign) and the 1,000 cold leads this week. The cold re-engagement is a strong campaign but needs a genuine \"new water news angle\" as the lead, which requires a current news hook I don't have in-context. Flag me the angle and I'll build it next.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n"
   },
   "daily_water_minute": {
     "markdown": "# Water Minute — 2026-08-04\n\nTopic: Why most \"free in-home water tests\" are a sales trap (free_test_warning)\nAngle: free_test_warning\nStatus: DRAFT (awaiting approval)\nAudience: full Mailchimp list (leads + current clients)\n\n---\n\nSubject: Why \"free water tests\" aren't really free\nPreview: The test is real. The motive behind it is where things get slippery.\n\n---\n\nWords I like;\nFree isn't free when the guy holding the test kit also holds a commission check.\nLet me save you a headache. When a company knocks on your door offering a free in-home water test, understand what's happening. Most of those tests are theater. They drop a chemical in your glass, it turns purple or foamy, and suddenly you're staring at \"proof\" you need to buy something today.\nHere's the truth. Real water testing gives you numbers. Hardness in grains per gallon. Iron in parts per million. pH. Chlorine. Nitrates if you're on a well. A drop that changes color tells you almost nothing except that a reaction happened. Any water does that. Even good water does that.\nA trustworthy test tells you what's in your water and how much. Then it lets YOU decide, on your own time, with no pressure to sign before the guy leaves your kitchen.\nIf you already own a Re-Ionator Pro Ultra or an RO Pure PRO QC, this is exactly why you're set. You bought based on real numbers, not a color trick. That was a smart call, and your water proves it every single day.\nOn a well and unsure what's actually in your water? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave\n\n---\n\nGenerated by daily_value_email.ts. After approval the sender script pushes this to Mailchimp.\n",
@@ -3227,142 +3227,9 @@
     }
   },
   "approvals": {
-    "date": "2026-08-12",
-    "items": [
-      {
-        "id": "pkg_2026-08-06_install_pov_wideview__2_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · First-person wide-angle POV of a ClearWave whole-home water filtration system being installed — showing the scale of the equipment, plumbing tie-ins, and the finished premium setup, used to demonstrate the professional install process homeowners get.",
-        "meta": {
-          "reach": "high",
-          "pillar": "water_truth"
-        },
-        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: this is what protecting your whole home actually looks like.\nMost people ha…\""
-      },
-      {
-        "id": "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · First-person POV of a whole-home copper water line install / softener-conditioner hookup, showing the craftsmanship and scale of ClearWave's install work — tying to Week 9 'Scale' theme about growing install volume and doing premium jobs right.",
-        "meta": {
-          "reach": "high",
-          "pillar": "water_truth"
-        },
-        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: you finally see what clean water actually costs to install right.\nMost 'plu…\""
-      },
-      {
-        "id": "pkg_2026-08-06_install_dc_pov_install_conmection_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · POV-style install footage from a DC-area job showing a ClearWave whole-home water filtration system connection being made — a behind-the-scenes look at the actual install process and craftsmanship that justifies the premium ticket.",
-        "meta": {
-          "reach": "high",
-          "pillar": "water_truth"
-        },
-        "preview": "video · water_truth · reach band: high\nTikTok: \"POV: your DC water finally gets the truth treatment.\nThis connection is why your…\""
-      },
-      {
-        "id": "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin talking through how ClearWave scaled operations — likely a behind-the-scenes clip filmed early morning (8:44am) about growing the business, systems, or hitting revenue milestones, tied to Week 9 'Scale' theme",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants to scale. Almost nobody wants to fix the boring stuff first.\nTha…\""
-      },
-      {
-        "id": "pkg_2026-08-06_RO_install_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · A reverse osmosis (RO) drinking water system installation in a customer's home — showing the multi-stage filtration unit going under the sink, positioned as a premium whole-solution upgrade and tying into the Week 9 'Scale' theme of standardizing high-ticket installs across the VA/DC/MD service area.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "water_truth"
-        },
-        "preview": "video · water_truth · reach band: medium\nTikTok: \"This little system under the sink strips out what your tap won't tell you about.…\""
-      },
-      {
-        "id": "pkg_2026-08-06_2026_06_23_114851695_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin explaining how he scaled ClearWave to 50%+ net margins with only 4 employees — a 'scale' angle showing that lean operations beat bloated headcount in the water treatment business.",
-        "meta": {
-          "reach": "high",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: high\nTikTok: \"Everybody thinks you need 50 employees to scale.\nI run 50%+ margins with 4. Smal…\""
-      },
-      {
-        "id": "pkg_2026-08-06_20260804_170223_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin explaining how he scaled ClearWave's operations and margins during a growth push — likely a behind-the-scenes look at what it takes to scale a water treatment business (systems, hiring, high-ticket sales) tied to Week 9's 'Scale' theme.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: medium\nTikTok: \"Everybody wants to scale but nobody wants the boring systems that make it possib…\""
-      },
-      {
-        "id": "pkg_2026-08-06_20260804_141227_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · A behind-the-scenes shot of Justin on a job site or at the office during a scaling milestone — likely showcasing ClearWave's growth (team, install, or booked jobs board) tied to Week 9's 'Scale' theme. Filename timestamp (2:12pm) suggests a workday capture, probably him at a customer home post-install or reviewing numbers.",
-        "meta": {
-          "reach": "high",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: high\nTikTok: \"4 employees. 50%+ net margins. $11K average ticket.\nMost people think you need 1…\""
-      },
-      {
-        "id": "pkg_2026-08-06_20260804_125757_jpg",
-        "type": "content_package",
-        "title": "🎬 Content · A midday job-site photo (12:57 PM timestamp) showing Justin or a tech mid-install of a whole-home ClearWave system, tied to Week 9 'Scale' theme — likely used to show how the business is growing (more trucks, more jobs, more homes fixed) as proof of scaling.",
-        "meta": {
-          "reach": "medium",
-          "pillar": "business_money"
-        },
-        "preview": "photo · business_money · reach band: medium\nTikTok: \"This is job #3 today and it's not even 1PM.\nScaling a water company means more t…\""
-      },
-      {
-        "id": "pkg_2026-08-06_20260804_123316_mp4",
-        "type": "content_package",
-        "title": "🎬 Content · Justin explains how ClearWave scaled its route density and crew efficiency to hit $138K peak months with only 4 employees — a 'Scale' week lesson on growing revenue without bloating headcount",
-        "meta": {
-          "reach": "high",
-          "pillar": "business_money"
-        },
-        "preview": "video · business_money · reach band: high\nTikTok: \"We hit $138K in a month with 4 guys.\nMost 'water companies' add bodies. We added…\""
-      }
-    ],
-    "decisions": {
-      "pkg_2026-08-06_install_pov_wideview__2_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_install_pov_copp3ler_cuy_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_install_dc_pov_install_conmection_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_VID_20260623_084443_277_bsl_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_RO_install_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_2026_06_23_114851695_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_20260804_170223_mp4": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_20260804_141227_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_20260804_125757_jpg": {
-        "decision": "pending"
-      },
-      "pkg_2026-08-06_20260804_123316_mp4": {
-        "decision": "pending"
-      }
-    },
-    "last_brief_sent": "2026-08-12T10:30:00.508Z"
+    "date": "2026-08-13",
+    "items": [],
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
