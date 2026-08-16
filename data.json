@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T23:00:00.446Z",
+  "generated_at": "2026-08-16T11:00:00.495Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -12,7 +12,7 @@
     "agents": [
       {
         "name": "Daily Orchestrator",
-        "last_run": "2026-08-15",
+        "last_run": "2026-08-16",
         "status": "Good"
       },
       {
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-08-15",
+        "last_run": "2026-08-16",
         "status": "Good"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-08-15",
+        "last_run": "2026-08-16",
         "status": "Good"
       },
       {
@@ -324,8 +324,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-08-15",
-      "projected_full_year": 1031407.4328193831,
+      "through": "2026-08-16",
+      "projected_full_year": 1026883.7160087718,
       "prior_year_same_period": 93137,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -939,7 +939,7 @@
     ]
   },
   "daily": {
-    "markdown": "# ClearWave Growth — Daily Report 2026-08-15\n\n_Generated at 2026-08-15T10:01:27.348Z_\n\n## Executive summary\n- Jobs created yesterday: **2** ($709 in pipeline)\n- Inbound calls yesterday: **29**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n\n## Email Agent — campaign proposals\n\n## Mailchimp health\n- Audience: **3451** members · open 42.3% · click 0.23%\n\n## Jobber lifecycle triggers hitting this week\n- 1-year annual service candidates: **21**\n- Referral push candidates (30-60d post-install): **30**\n- RO replacement-cycle candidates: **27**\n- Lapsed quotes (30-60d, awaiting_response): **0**\n\n---\n\nQuick note before the proposals: your sign-off instruction in the job section shows `. Justin` with an em dash prefix, but HARD RULE #4 and #5 explicitly forbid that. I'm following the hard rules: two lines, no dash prefix, no em dashes anywhere.\n---\n# Proposal 1: Concierge \"Year 1.5 Math\" Campaign\n**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge) = **100 members**\nThis is the highest-conversion play this week. These clients have already had their year-1 service, so they trust us. The list is pre-filtered past the 12-month floor, and the framing writes itself: answer the question they're already quietly asking.\n### Subject line + alternates (60 char max)\n- **Primary (specific):** The year 1.5 question: is Concierge worth it for you?\n- **Curiosity:** The math we get asked about at 18 months\n- **Pain:** Tired of tracking your own filter swaps?\n- **Authority:** What we cover so you never think about it\n- **Specific:** $99 a month, and here is exactly what it covers\n### Preview text (90 char max)\nNo pressure. Just the honest math on Concierge so you can decide for yourself.\n### Email body\nHi [First Name],\nIt's been about 16 months since we installed your water system, and you've already been through your first annual service. So you know how we work.\nHere's the question we get asked right around this point: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here's the honest math.\nConcierge is $99/mo. It covers:\n- Your annual service (the visit you already know)\n- Filter swaps, handled on schedule so you never track them\n- Priority phone support (front of the line)\n- Parts coverage on your standard install components\nIf you'd rather stay pay-as-you-go, that is completely fine. Your system is built to run clean either way. This is just the option that takes the thinking off your plate.\nWant the full breakdown for your specific setup? Reply \"math\" and we'll send it over.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is a reliable B2C open window, and this is a considered decision, not an impulse click, so a workday morning beats evening.\n### Expected performance\n- **Open: 40-46%.** Your audience-wide average is 42.3%. This goes to warm, trusting clients past year-1 service and uses a genuine-question subject (not a discount blast, which is what tanked your recent 0.4% sends).\n- **Click/reply: 6-10%.** Well above your 0.23% average because the CTA is a low-friction reply (\"math\") rather than an app login. The recent 0.00% clicks came from \"discount/app\" emails to the whole list; this is targeted and useful.\n- **Conversion: 8-15 sign-ups** ($99/mo = meaningful recurring revenue) plus warm re-contacts.\n### Source justification\nDraws from **CONCIERGE UPSELL CONTEXT** (the \"year 1.5 math\" framing, $99/mo feature list, \"not pushy\" voice) and the **JOBBER LIFECYCLE TRIGGERS** conciergeUpsellCandidates list (100 members, pre-filtered to 13-24 months). Respects HARD RULE #1 (all past 12 months). No legacy product names printed; uses the tenure line per HARD RULE #2.\n---\n# Proposal 2: Referral Push (30-60 Day Post-Install)\n**Audience:** Referral push candidates (30-60 days post-install, satisfied) = **30 members**\nFreshly installed and happy is the peak referral moment. Small list, but the payoff per conversion ($500+ closed referral value to us) is the highest-ROI action on the board, and it stays clear of the review rule.\n### Subject line + alternates (60 char max)\n- **Primary (specific):** Know someone with bad water? There's $500 in it\n- **Curiosity:** The thing our best clients do around month 2\n- **Authority:** Who we help next is usually someone you know\n- **Pain:** Your neighbor's water is probably worse than yours was\n- **Specific:** $500 for a referral, $50 just for the intro\n### Preview text (90 char max)\nIf you know someone fighting bad water, we'll take great care of them (and you).\n### Email body\nHi [First Name],\nIt's been about a month since we installed your ClearWave system, and hopefully the water speaks for itself by now.\nQuick ask. The people we help next are almost always someone a current client knows: a neighbor on the same well, a family member who complains about their water every holiday.\nIf someone comes to mind, here's how it works:\n- They book a free water assessment through you and it closes: **$500 cash** (that's referrals 1 through 5 this year; 6 through 9 pay $750, 10+ pay $1,000).\n- They book a consult but don't move forward: **$50 gift card**, just for the intro.\nNo cap on how many, and it resets each year. Just reply with a name and the best way to reach them, and we'll handle the rest with the same care we gave you.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET.** Late-week late-morning; recipients are recent, engaged installs, and referral asks land best when the install glow is still fresh.\n### Expected performance\n- **Open: 45-52%.** These are your most recently engaged, happiest contacts (30-60 days out), well above the 42.3% baseline.\n- **Click/reply: 8-12%.** Concrete dollar amounts plus a reply-with-a-name CTA. Referral emails to fresh installs convert far above list average.\n- **Conversion: 2-5 named referrals**, of which 1-2 typically book. Even one closed referral clears the bar for the week.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS** referralPushCandidates (30 members, 30-60 days, satisfied) and the **REFERRAL BONUS STRUCTURE** (exact $500/$750/$1,000 tiers and $50 gift card). Honors HARD RULE #3 (referrals, never reviews) and #3a (\"free water assessment\" used exactly). Anup, Aaron, and Jodi are \"(not specified)\" so copy uses the tenure line and \"your ClearWave system,\" never a legacy name, per HARD RULE #2.\n---\n**Why these two:** Both hit warm, pre-qualified Jobber segments (not the whole 3,451 list that's been earning 0.4% opens on discount/app blasts). Concierge is the biggest recurring-revenue lever legally available this week; the referral push is the highest per-conversion ROI. Both sidestep the review rule and the 12-month Concierge floor, and neither prints a forbidden legacy product name.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
+    "markdown": "# ClearWave Growth — Daily Report 2026-08-16\n\n_Generated at 2026-08-16T10:00:06.688Z_\n\n## Executive summary\n- Jobs created yesterday: **0** ($0 in pipeline)\n- Inbound calls yesterday: **0**\n- Meta ad CSV: **not provided this week** — pause/scale recommendations unavailable\n- Top channel (last 14d attributed revenue): **highlevel_form** — $56,319 across 7 jobs\n\n## Proposed actions (require your approval)\n_No actionable proposals this cycle. Nothing to approve._\n## Attribution snapshot (last 14 days)\n\n| Channel | Jobs matched | Paid jobs | Attributed revenue | Avg job value |\n|---|---:|---:|---:|---:|\n| highlevel_form | 7 | 1 | $56,319 | $8,046 |\n| homeadvisor | 1 | 1 | $399 | $399 |\n| google_ads | 5 | 0 | $31,850 | $6,370 |\n| referral | 2 | 0 | $8,250 | $4,125 |\n| callrail_unrefined | 2 | 0 | $5,250 | $2,625 |\n| directories | 1 | 0 | $0 | $0 |\n\n## Signals to watch\n- ⚠ No Meta CSV uploaded this cycle — weekly reminder email fires Mondays 8am\n\n---\n_Orchestrator v0.1 — see `agents/00-orchestrator/AGENT.md` for the full spec._"
   },
   "email": {
     "audience_size": 3451,
@@ -3233,7 +3233,7 @@
     }
   },
   "approvals": {
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "items": [
       {
         "id": "reel_2026-08-12_compass",
@@ -3300,7 +3300,7 @@
         "decision": "pending"
       }
     },
-    "last_brief_sent": "2026-08-15T10:30:00.491Z"
+    "last_brief_sent": "2026-08-16T10:30:00.395Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
