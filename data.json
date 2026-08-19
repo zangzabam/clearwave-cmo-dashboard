@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T10:01:34.361Z",
+  "generated_at": "2026-08-19T10:30:04.524Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-19",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3234,8 +3234,91 @@
   },
   "approvals": {
     "date": "2026-08-19",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-08-19_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install)",
+        "preview": "**Audience:** Referral push candidates, 30 recipients (satisfied, recently installed, honeymoon-window trust is highest here)\n### Subject Lines (curiosity / pain / authority / specific)\n- **Primary (specific):** `Your water is dialed in. Now the fun part.`\n- Alt 1 (curiosity): `The thing our best clients do at 60 days`\n- Alt 2 (specific/$): `$500 for the neighbor with the rusty water`\n- Alt 3 (authority): `Who do you know drinking bad water?`\n- Alt 4 (pain): `Still hear neighbors complain about their water?`\n### Preview Text\n`A quick thank you, and a way to put real cash in your pocket for it.`\n### Body\nHi [First Name],\nIt has been about six weeks since we installed your ClearWave system in [City], and I hope the water has been exactly what you hoped for.\nQuick note from me directly. Most of our new clients came from someone just like you telling a friend. So we make it worth your while.\nHere is how it works:\nIf you refer someone and they become a client, you get **$500 cash**. Refer more and it climbs: **$750** for referrals 6 through 9 in a year, and **$1,000** each once you hit 10.\nIf someone you send us books a consult but does not move forward, we still send you a **$50 gift card** for the introduction.\nAll they need is a **free water assessment**. We handle the rest.\nJust reply with a name and the best way to reach them, or send them straight to us. That is it.\nThank you for trusting us with your home.\nJustin\nCEO / ClearWave\n### Send Timing\n**Tuesday, 10:00 AM ET** (mid-morning weekday peak for high-trust personal notes)\n### Expected Performance\n- **Open: 55-65%.** This is a warm, recently-serviced micro-segment (30 people) with a personal-tone subject, well above your 42.3% baseline and dramatically above the fatigued broadcast sends.\n- **Click/reply: 8-12%.** Referral is a reply-based CTA, not a link click, so track replies. Concrete dollar figures drive action.\n- **Conversion: 2-4 booked consults, 1-2 likely closes.** Even one close at these ticket sizes ($8,980 systems in this list) dwarfs the $500 payout.\n### Source Justification\nDraws from **Jobber Lifecycle Triggers → Referral push candidates (30-60 days post-install, satisfied)** and the **Referral Bonus Structure** exact numbers. Honors Rule 3 (referrals, not reviews) and Rule 3a (exact phrase \"free water assessment\"). No legacy names printed; uses tenure line per Rule 2.\n---"
+      },
+      {
+        "id": "email_2026-08-19_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Year 1.5\" Math (13-24 Month Segment)",
+        "preview": "**Audience:** Concierge upsell candidates, 100 recipients (already past year-1 service, off Concierge). Recurring revenue is the highest-leverage play in the pipeline.\n### Subject Lines\n- **Primary (curiosity):** `The question we get at month 18`\n- Alt 1 (specific): `Is the $99 Concierge worth it for you? The math`\n- Alt 2 (pain): `Who is remembering your filter swaps?`\n- Alt 3 (authority): `What year-2 clients ask us most`\n- Alt 4 (specific): `$99/mo, and here is exactly what it covers`\n### Preview Text\n`No pressure. Just the honest breakdown so you can decide for yourself.`\n### Body\nHi [First Name],\nIt has been well over a year since we installed your ClearWave system in [City], and by now you have had your first annual service done. So you know how we work.\nHere is the question we get most around this point: \"Is the Concierge plan actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is **$99/mo** and covers:\n- Your annual service, done automatically\n- Filter swaps on schedule (no remembering, no guessing)\n- Priority phone support when you need us\n- Parts coverage on the standard install components\nIf you would rather stay pay-as-you-go, that is completely fine. This is not for everyone. But if you like the idea of never thinking about maintenance again and having your parts covered, the plan usually pays for the peace of mind on its own.\nWant the breakdown for your specific setup? Reply and I will have someone run your numbers.\nJustin\nCEO / ClearWave\n### Send Timing\n**Thursday, 11:00 AM ET** (later-week, considered-decision content performs better than Monday/Friday)\n### Expected Performance\n- **Open: 45-52%.** Larger segment (100) than Proposal 1, but still trust-warm and past year-1 service. Curiosity subject beats your discount-style losers by a wide margin.\n- **Click/reply: 3-5%.** Soft, reply-based CTA with a genuine \"not for everyone\" frame reduces resistance.\n- **Conversion: 3-6 Concierge signups.** At $99/mo, 4 signups = ~$4,750/yr recurring, compounding across future sends.\n### Source Justification\nDraws from **Jobber Triggers → Concierge upsell candidates (13-24 months, not on Concierge)** and the **Concierge Upsell Context** block ($99/mo, coverage details, \"the question we get asked at year 1.5\" framing, non-pushy voice). Respects Rule 1 hard floor (list is pre-filtered to 13-24 months, all past year-1 service). Uses tenure line per Rule 2 (no legacy names like \"Re-Ionator Pro\" printed).\n---\n### Why these two, and what I skipped\n- **Cold re-engagement (1,000):** high volume but your deliverability is already wounded. Blasting 1,000 unengaged contacts now risks further spam-folder damage. Better to rebuild sender reputation with the two small high-intent sends above first, then run cold re-engagement next week from a warmer standing.\n- **1-year annual service (15) & RO replacement (27):** solid operational sends, but lower revenue-per-send than referral cash and recurring Concierge. Queue these for next week.\n**One data caveat:** a 42.3% \"average open\" alongside five recent sub-0.5% campaigns suggests either a tracking/reporting break or that the average predates a deliverability collapse. Worth confirming your Mailchimp authentication (DKIM/DMARC) before the next broadcast-sized send.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      },
+      {
+        "id": "reel_2026-08-12_compass",
+        "type": "content_package",
+        "title": "🎬 Content · undefined",
+        "meta": {},
+        "preview": "undefined · undefined · reach band: undefined\nTikTok: \"Behind the counter at a coffee shop: new water treatment going in so every cup t…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_4_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · A finished commercial water treatment install in a mechanical/back-of-house room: a black brine tank beside a tall media/resin tank with a control valve, plus copper plumbing, shutoff valves, a wall control panel, and a blue tank. POV walkthrough of a completed system.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This is what clean water actually costs behind the wall.\nBrine tank, resin tank,…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_3_jpg",
+        "type": "content_package",
+        "title": "🎬 Content · A finished whole-home water treatment install in a tight mechanical closet: a tall black media/filter tank with digital control valve, a black brine tank, a blue pressurized RO tank near the ceiling, and a wall-mounted RO unit with pressure gauge and 'GET WATER / RO WATER' labeling, connected by copper, PVC, and braided flex lines.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "photo · water_truth · reach band: medium\nTikTok: \"This little closet is now cleaning EVERY drop of water in the house.\nSoftener + …\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_2_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Behind-the-counter install/service walkthrough at a 'REAL FOOD COFFEE' shop — gas cylinders, espresso and rapid-cook equipment, and staged PEX tubing showing a commercial water job in progress.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "business_money"
+        },
+        "preview": "video · business_money · reach band: medium\nTikTok: \"This coffee shop makes 'real food' but their water? Worse than you think.\nSee wh…\""
+      },
+      {
+        "id": "pkg_2026-08-12_Compass_1_mp4",
+        "type": "content_package",
+        "title": "🎬 Content · Whole-house water treatment install in a cramped commercial mechanical room: blue cartridge filter housing, stainless metering/control panel with digital display, copper piping with shutoff valves and pressure gauges, braided supply line, and a black composite media tank with control valve head. Technician working in progress in dim, cluttered conditions.",
+        "meta": {
+          "reach": "medium",
+          "pillar": "water_truth"
+        },
+        "preview": "video · water_truth · reach band: medium\nTikTok: \"This whole system fits in a closet the size of your pantry.\nMost people have NO …\""
+      }
+    ],
+    "decisions": {
+      "email_2026-08-19_c1": {
+        "decision": "pending"
+      },
+      "email_2026-08-19_c2": {
+        "decision": "pending"
+      },
+      "reel_2026-08-12_compass": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_4_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_3_jpg": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_2_mp4": {
+        "decision": "pending"
+      },
+      "pkg_2026-08-12_Compass_1_mp4": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-19T10:30:00.600Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
