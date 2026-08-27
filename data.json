@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T10:01:19.831Z",
+  "generated_at": "2026-08-27T10:30:05.635Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-27",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3234,8 +3234,29 @@
   },
   "approvals": {
     "date": "2026-08-27",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-08-27_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. 30-60 Day Post-Install Clients",
+        "preview": "**Why this is #1:** These 29 clients just got their systems (July 2026), water quality is top of mind, and they're in the honeymoon window. No hard rule conflicts (all under 1 year, so no Concierge, no annual service pitch). Referrals are the highest-ROI ask we have, and this is the ideal moment.\n### 1. Campaign\n**Name:** \"Know Someone With Bad Water?\" (Referral. Fresh Installs)\n**Audience:** Referral push candidates, 30-60 days post-install, satisfied. **29 members**\n### 2. Subject Line + Alternates (60 char max)\n- **Primary (specific):** `Your water's fixed. Your neighbor's isn't.`\n- (curiosity): `The $500 question we get asked most`\n- (pain): `Still smell iron at your neighbor's place?`\n- (authority): `How our best clients earn while we work`\n- (specific): `$500 per referral. Here's how it works.`\n### 3. Preview Text (90 char max)\n`A quick thank you, plus how referring a neighbor puts $500 in your pocket.`\n### 4. Email Body\nHi Janine,\nIt's been about a month since we installed your ClearWave Sovereign, and I hope the water has been everything we promised. Clean, crisp, and something you stop thinking about (which is the whole point).\nQuick reason I'm writing. The best clients we have almost always came from someone exactly like you. So here's our referral program, plain and simple:\n- Refer someone who becomes a client: **$500 cash.** (Referrals 6 through 9 in a year earn $750. Ten or more earns $1,000 each.)\n- Refer someone who books a consult but doesn't move forward: **$50 gift card**, just for the introduction.\nAll they need is a free water assessment. We handle the rest.\nKnow a neighbor, a family member, or a coworker still living with hard or smelly water? Just reply with their name, or send them our way.\nThanks for being part of ClearWave.\nJustin\nCEO / ClearWave\n*(Note: for the other 28 recipients whose system field holds a legacy name or \"(not specified)\", the opening line becomes the tenure line: \"It's been about a month since we installed your ClearWave system.\" Janine's Sovereign is a current brand name, so it's named directly.)*\n### 5. Send Timing\n**Tuesday, 10:00 AM ET**. Mid-morning weekday, strong open behavior for warm B2C lists.\n### 6. Expected Performance\n- **Open:** 55-65% (well above the 42.3% list avg. This is a small, freshly-engaged, recently-installed segment. They know us, and the name is real.)\n- **Click/reply:** 4-8% (vs. 0.23% list avg. Ask is a simple reply, cash incentive is concrete, and audience is warm.)\n- **Conversion:** 1-3 referral intros expected; even one closed referral = $500 payout against near-zero send cost. The recent broadcast failures (\"Discount Ends Today,\" \"Water Minute\") tanked at 0.2-0.5% open precisely because they were untargeted and salesy. This is the opposite: small, warm, specific.\n### 7. Source Justification\nDraws on **Jobber Lifecycle Triggers → Referral push candidates (30-60 days post-install, satisfied)** and the **Referral Bonus Structure** (exact tiers). Uses Rule 3 (referrals, never reviews), Rule 3a (\"free water assessment\"), Rule 2 (Sovereign named directly; tenure line for legacy/unspecified systems).\n---"
+      },
+      {
+        "id": "email_2026-08-27_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It?\". Year 1.5 Clients",
+        "preview": "**Why this is #2:** 100 candidates, all past the 12-month floor (13-24 months), all having already trusted us through year-1 service. This is a genuine recurring-revenue play at $99/mo, and the honest \"here's the math\" framing fits both the voice guide and a list that's been burned by pushy subject lines.\n### 1. Campaign\n**Name:** \"Is Concierge Worth It For Me?\" (Year 1.5 Upsell)\n**Audience:** Concierge upsell candidates, 13-24 months post-install, not on Concierge. **100 members** (note: dedupe Albert Romano's two entries before send)\n### 2. Subject Line + Alternates (60 char max)\n- **Primary (curiosity):** `The question we get at year 1.5`\n- (specific): `Is Concierge worth $99 for you? The math.`\n- (pain): `Tired of tracking your own filter swaps?`\n- (authority): `What your year-1 service taught us`\n- (curiosity): `Should you bother with Concierge? Honest answer.`\n### 3. Preview Text (90 char max)\n`No pressure. Just the real math on whether Concierge makes sense for your home.`\n### 4. Email Body\nHi Peggy,\nIt's been about a year and a half since we installed your ClearWave system, and by now you've been through your first annual service. So you know how we work.\nAround this point, we get one question a lot: \"Is this Concierge thing actually worth it for me?\" Fair question. Here's the honest math.\nConcierge is $99/month. It covers:\n- Your annual service, done for you\n- Filter swaps on schedule (no tracking, no forgetting)\n- Priority phone support when you need us\n- Parts coverage on your standard install components\nIf you like handling maintenance yourself, pay-as-you-go is completely fine and we'll keep taking care of you either way. But if you'd rather never think about it again, Concierge is built for exactly that.\nWant me to run the numbers for your specific setup? Just reply and I'll send them over.\nJustin\nCEO / ClearWave\n*(All 100 recipients get the tenure line, since the list is dominated by legacy system names. No system gets named unless the field holds a current ClearWave brand name.)*\n### 5. Send Timing\n**Thursday, 11:00 AM ET**. Separated from Tuesday's referral send so no client gets two asks in one week; late-morning midweek performs well for considered-decision content.\n### 6. Expected Performance\n- **Open:** 45-55% (above list avg. Warm, established clients; curiosity subject with no fake-discount language.)\n- **Click/reply:** 2-4% (the ask is a soft reply, not a hard buy. Recurring-revenue framing plus honest tone lowers resistance.)\n- **Conversion:** 3-8 new Concierge sign-ups plausible at 100 sends. At $99/mo, even 5 sign-ups = ~$5,940/year in recurring revenue. High value per conversion justifies the send even at modest response.\n### 7. Source Justification\nDraws on **Jobber Lifecycle Triggers → Concierge upsell candidates (13-24 months post-install)** and the **Concierge Upsell Context** block (exact plan details, the \"year 1.5\" framing, non-pushy \"here's the math\" voice). Respects Hard Rule 1 (list is pre-filtered past the 12-month floor). Uses Rule 2 tenure line, Rule 4 sign-off, Rule 5 (no dashes in copy).\n---\n## Recommendation\nRun **both**, staggered (Tue referral / Thu Concierge), since the two audiences barely overlap (fresh installs vs. year-1.5 clients). If forced to pick one, **lead with Proposal 1**. Smaller list, hottest intent, and each conversion is a $500+ new-client engine rather than a retention play.\n**One flag for you, Justin:** the list's recent 0.2-0.5% opens on broadcasts suggest deliverability may be degrading from sending cold/untargeted blasts to all 3,488. Both proposals here are small, warm segments, which should help rehabilitate sender reputation. I'd hold off on any full-list send until we've run a few of these clean, targeted campaigns.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-08-27_c1": {
+        "decision": "pending"
+      },
+      "email_2026-08-27_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-08-27T10:30:00.433Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
