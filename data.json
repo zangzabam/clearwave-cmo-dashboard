@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T10:01:22.635Z",
+  "generated_at": "2026-08-31T10:30:04.828Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-08-31",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3236,7 +3236,8 @@
   "approvals": {
     "date": "2026-08-31",
     "items": [],
-    "decisions": {}
+    "decisions": {},
+    "last_brief_sent": "2026-08-31T10:30:00.667Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
