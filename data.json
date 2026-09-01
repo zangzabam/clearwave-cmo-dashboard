@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-01T11:02:03.145Z",
+  "generated_at": "2026-09-01T11:03:13.443Z",
   "overview": {
     "metrics": {
-      "ltgp_cac": "3.4x",
-      "ltgp_band": "Watch",
-      "lead_to_sale_pct": "24.4%",
+      "ltgp_cac": "2.1x",
+      "ltgp_band": "Bad",
+      "lead_to_sale_pct": "25.0%",
       "lead_band": "Watch",
-      "new_gp": "$134k"
+      "new_gp": "$75k"
     },
     "audience_members": 3499,
     "agents": [
@@ -27,8 +27,8 @@
       },
       {
         "name": "Investor Metrics",
-        "last_run": "2026-07-01",
-        "status": "Watch"
+        "last_run": "2026-09-01",
+        "status": "Good"
       },
       {
         "name": "Competitor Intel",
@@ -232,6 +232,17 @@
         "new_customers": 31,
         "leads_created": 779,
         "avg_rev_per_new_customer": 7646.067741935484
+      },
+      {
+        "period": "2026-09",
+        "ltgp_ratio": 2.1182679356778906,
+        "lead_to_sale_pct": 25,
+        "new_gp": 74620.77531978834,
+        "cac": 2072.1917647058826,
+        "gross_margin_pct": 61.569312463727414,
+        "new_customers": 17,
+        "leads_created": 671,
+        "avg_rev_per_new_customer": 7129.294117647059
       }
     ],
     "ttm": {
@@ -491,16 +502,16 @@
       }
     },
     "unit_economics": {
-      "cac": 1292.1648387096775,
-      "avg_rev_per_new_customer": 7646.067741935484,
-      "year1_gp_per_customer": 4334.365579276856,
-      "ltgp_ratio": 3.3543441590664558,
-      "ltgp_band": "Watch",
-      "cac_payback_months": 3.5774504436478898,
-      "lead_to_quote_approve_pct": 24.431818181818183,
-      "leads_created_3mo": 779,
-      "new_customers_3mo": 31,
-      "new_gp_3mo": 134365.33295758255
+      "cac": 2072.1917647058826,
+      "avg_rev_per_new_customer": 7129.294117647059,
+      "year1_gp_per_customer": 4389.457371752255,
+      "ltgp_ratio": 2.1182679356778906,
+      "ltgp_band": "Bad",
+      "cac_payback_months": 5.665005733167436,
+      "lead_to_quote_approve_pct": 25,
+      "leads_created_3mo": 671,
+      "new_customers_3mo": 17,
+      "new_gp_3mo": 74620.77531978834
     },
     "funnel_series": [
       {
@@ -873,7 +884,7 @@
       ]
     },
     "data_through": {
-      "investor_metrics": "2026-07",
+      "investor_metrics": "2026-09",
       "ttm_pnl": "2026-07-13",
       "monthly_revenue": "2026-07-13",
       "funnel": "2026-08-31",
@@ -882,15 +893,15 @@
     }
   },
   "metrics": {
-    "ltgp_ratio": 3.3543441590664558,
-    "ltgp_band": "Watch",
-    "lead_to_sale_pct": 24.431818181818183,
+    "ltgp_ratio": 2.1182679356778906,
+    "ltgp_band": "Bad",
+    "lead_to_sale_pct": 25,
     "lead_band": "Watch",
-    "new_gp": 134365.33295758255,
-    "gross_margin_pct": 56.68751213783621,
-    "new_buying_customers": 31,
-    "cac": 1292.1648387096775,
-    "markdown": "# ClearWave M&A Investor Metrics — Trailing 3 months\n\n**Period:** 2026-04-01 → 2026-07-01\n**Generated:** 2026-07-01\n\n## Source-of-truth numbers (from QBO + Jobber, no estimates)\n\n| Metric | Value | Source |\n|---|---:|---|\n| Total income | $350660 | QBO P&L |\n| COGS | $151879 | QBO P&L |\n| **Gross profit** | **$198780** | derived |\n| **Gross margin** | **56.7%** | **derived** |\n| **Marketing spend (period)** | **$40057** | QBO Advertising & Marketing — full CAC pool |\n| New buying customers | 31 | Jobber clients createdAt in window w/ paid invoice |\n| Lead records created | 779 | Jobber clients with isLead=true |\n| Avg revenue per new customer | $7646 | derived |\n| Quotes sent | 176 | Jobber quotes createdAt in window |\n| Quotes approved | 43 | Jobber quoteStatus=approved/converted |\n| Qualified appointments | 6 | Jobber Requests scheduled+qualifying status |\n| ...with home value ≥ $500k | 0 | client custom field \"Home Value\" parsed |\n| Closed-won installs from qualified | 0 | Request.requestStatus=converted + linked Job |\n\n## Metric 1 — LTGP:CAC\n\n**Target:** Good ≥ 5:1 · Watch 3-5:1 · Bad < 3:1\n\n**Formula (M&A locked):** CAC = marketing spend ÷ new buying customers · LTGP = Year-1 GP per new customer\n\n| Component | Value |\n|---|---:|\n| Avg revenue per new customer | $7646 |\n| Gross margin | 56.7% |\n| **Year-1 GP per new customer** | **$4334** |\n| Marketing spend | $40057 |\n| New buying customers | 31 |\n| **CAC per customer** | **$1292** |\n| **LTGP:CAC ratio** | **3.4x — Watch** |\n\n## Metric 2 — Lead-to-Sale Conversion on Qualified Appointments\n\n**Target:** Good ≥ 30% · Watch 22-30% · Bad < 22%\n\n**Definition (M&A locked):** A \"qualified appointment\" is a prospect who BOTH (a) has booked a Zoom or phone call (Jobber Request with isScheduled=true and status passed \"new\") AND (b) meets the inside-metrics criteria: home value ≥ $500k, homeowner, has water issues, inside service area.\n\n**Source:** Jobber Request entity. Home value parsed from Client custom field \"Home Value\". Service area + homeowner + water-issues currently inferred from Request.\n\n| Bucket | Count |\n|---|---:|\n| Total Requests in window | 1702 |\n| Scheduled Requests (booked) | 17 |\n| Scheduled + qualifying status | 6 |\n| Home-value coverage | 0/6 (0%) |\n| Qualified incl. home value ≥ $500k | 0 |\n| Converted to closed-won install | 0 |\n\n### Conversion rates\n\n| Definition | Value | Band |\n|---|---:|---|\n| **Quote-sent → approved (current best proxy)** | **24.4%** | **Watch** |\n| Strict (Request scheduled + status passed \"new\" + home value ≥ $500k) | 0.0% | unreliable today |\n| Loose (Request scheduled + status passed \"new\", any home value) | 0.0% | unreliable today |\n\n## Metric 3 — New Gross Profit from New Customers vs Plan\n\n**Target:** Good ≥ 90% of plan · Watch 70-90% · Bad < 70%\n\nNew GP from new customers (trailing 3mo): **$134365**\n(31 new customers × $7646 avg rev × 56.7% margin)\n\n> **vs Plan: pending baseline.** Pro forma monthly target will be set after the 2026-04-27 meeting. This number ($134365) is the current-state baseline that M&A team can use to set the target.\n\n## Outstanding\n\n- **Pro forma monthly target** for Metric 3 — pending after meeting today.\n- **Qualified-appointment data capture** — requires HighLevel booking integration + home-value enrichment. Build planned post-meeting.\n",
+    "new_gp": 74620.77531978834,
+    "gross_margin_pct": 61.569312463727414,
+    "new_buying_customers": 17,
+    "cac": 2072.1917647058826,
+    "markdown": "# ClearWave M&A Investor Metrics — Trailing 3 months\n\n**Period:** 2026-06-01 → 2026-09-01\n**Generated:** 2026-09-01\n\n## Source-of-truth numbers (from QBO + Jobber, no estimates)\n\n| Metric | Value | Source |\n|---|---:|---|\n| Total income | $240419 | QBO P&L |\n| COGS | $92395 | QBO P&L |\n| **Gross profit** | **$148024** | derived |\n| **Gross margin** | **61.6%** | **derived** |\n| **Marketing spend (period)** | **$35227** | QBO Advertising & Marketing — full CAC pool |\n| New buying customers | 17 | Jobber clients createdAt in window w/ paid invoice |\n| Lead records created | 671 | Jobber clients with isLead=true |\n| Avg revenue per new customer | $7129 | derived |\n| Quotes sent | 152 | Jobber quotes createdAt in window |\n| Quotes approved | 38 | Jobber quoteStatus=approved/converted |\n| Qualified appointments | 1 | Jobber Requests scheduled+qualifying status |\n| ...with home value ≥ $500k | 0 | client custom field \"Home Value\" parsed |\n| Closed-won installs from qualified | 0 | Request.requestStatus=converted + linked Job |\n\n## Metric 1 — LTGP:CAC\n\n**Target:** Good ≥ 5:1 · Watch 3-5:1 · Bad < 3:1\n\n**Formula (M&A locked):** CAC = marketing spend ÷ new buying customers · LTGP = Year-1 GP per new customer\n\n| Component | Value |\n|---|---:|\n| Avg revenue per new customer | $7129 |\n| Gross margin | 61.6% |\n| **Year-1 GP per new customer** | **$4389** |\n| Marketing spend | $35227 |\n| New buying customers | 17 |\n| **CAC per customer** | **$2072** |\n| **LTGP:CAC ratio** | **2.1x — Bad** |\n\n## Metric 2 — Lead-to-Sale Conversion on Qualified Appointments\n\n**Target:** Good ≥ 30% · Watch 22-30% · Bad < 22%\n\n**Definition (M&A locked):** A \"qualified appointment\" is a prospect who BOTH (a) has booked a Zoom or phone call (Jobber Request with isScheduled=true and status passed \"new\") AND (b) meets the inside-metrics criteria: home value ≥ $500k, homeowner, has water issues, inside service area.\n\n**Source:** Jobber Request entity. Home value parsed from Client custom field \"Home Value\". Service area + homeowner + water-issues currently inferred from Request.\n\n| Bucket | Count |\n|---|---:|\n| Total Requests in window | 863 |\n| Scheduled Requests (booked) | 3 |\n| Scheduled + qualifying status | 1 |\n| Home-value coverage | 0/1 (0%) |\n| Qualified incl. home value ≥ $500k | 0 |\n| Converted to closed-won install | 0 |\n\n### Conversion rates\n\n| Definition | Value | Band |\n|---|---:|---|\n| **Quote-sent → approved (current best proxy)** | **25.0%** | **Watch** |\n| Strict (Request scheduled + status passed \"new\" + home value ≥ $500k) | 0.0% | unreliable today |\n| Loose (Request scheduled + status passed \"new\", any home value) | 0.0% | unreliable today |\n\n> ⚠ **Why we're using the proxy:** ClearWave's current workflow does NOT update `Request.requestStatus` past \"new\" or flag `isScheduled` consistently as appointments happen. Of 863 Requests in the window, only 3 have `isScheduled=true` and 1 reached a qualifying status — clearly under-counting reality (we sent 152 quotes during this period).\n\n**Fix to unlock the strict metric:** Train the team (Michelle / sales reps) to update Request status as appointments are booked, completed, and converted. Then this metric reads directly from Jobber with no proxy.\n\nUntil the workflow is updated, **quote-sent → quote-approved is the most defensible proxy** because every quote is rep-qualified before being sent.\n\n## Metric 3 — New Gross Profit from New Customers vs Plan\n\n**Target:** Good ≥ 90% of plan · Watch 70-90% · Bad < 70%\n\nNew GP from new customers (trailing 3mo): **$74621**\n(17 new customers × $7129 avg rev × 61.6% margin)\n\n> **vs Plan: pending baseline.** Pro forma monthly target will be set after the 2026-04-27 meeting. This number ($74621) is the current-state baseline that M&A team can use to set the target.\n\n## Outstanding\n\n- **Pro forma monthly target** for Metric 3 — pending after meeting today.\n- **Qualified-appointment data capture** — requires HighLevel booking integration + home-value enrichment. Build planned post-meeting.\n",
     "history": [
       {
         "period": "2026-04",
@@ -935,6 +946,17 @@
         "new_customers": 31,
         "leads_created": 779,
         "avg_rev_per_new_customer": 7646.067741935484
+      },
+      {
+        "period": "2026-09",
+        "ltgp_ratio": 2.1182679356778906,
+        "lead_to_sale_pct": 25,
+        "new_gp": 74620.77531978834,
+        "cac": 2072.1917647058826,
+        "gross_margin_pct": 61.569312463727414,
+        "new_customers": 17,
+        "leads_created": 671,
+        "avg_rev_per_new_customer": 7129.294117647059
       }
     ]
   },
