@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:01:44.057Z",
+  "generated_at": "2026-09-01T10:30:04.740Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.4x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-09-01",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3235,8 +3235,39 @@
   },
   "approvals": {
     "date": "2026-09-01",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-09-01",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Why big-box water systems die at year 3",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-09-01.email.md",
+        "preview": "Words I like;\nBuy nice or buy twice.\nHere is what nobody tells you about that shiny water system from the big-box store.\nThe tank looks fine. The label looks fine. The problem is inside, where you cannot see it. Two things kill those units around year three.\nFirst, the valve. The control valve is the brain of the whole system. It cycles every few days for years. Big-box units run a plastic-geared valve built to hit a price, not to last. Once those gears wear, the system stops regenerating, and your water quietly goes back to hard.\nSecond, the media. That is the actual working material inside the tank. Cheaper builds pack less of it, and lower grade, so it exhausts fast. Less media, more frequent failure. Simple math.\nNone of this shows up on the sticker. You find out when your soap stops lathering and your fixtures start crusting again.\nIf you own one of ours, this is exactly why your system is still humming along years in. You paid once for a valve and media built to go the distance, and it has been doing its job every single day since.\nCurious what is actually running your water? Reply and I will send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      },
+      {
+        "id": "email_2026-09-01_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (Satisfied 30-60 Day Clients)",
+        "preview": "**Audience:** Referral push candidates, 28 members (30-60 days post-install, satisfied)\nHighest-intent warm group. These folks just got their systems, the water quality \"wow\" is fresh, and they're the most likely to talk about it. Zero Concierge risk (all well under 12 months). Referral revenue >> any other action we can ask for this week.\n### Subject line (+ 4 alternates)\n- **Primary (specific):** `Your water is dialed in. Now the fun part.`\n- Curiosity: `The thing our clients forget to mention`\n- Pain: `Know someone stuck with bad water?`\n- Authority: `How our best clients earn $500 (or more)`\n- Specific: `$500 for the first name that comes to mind`\n### Preview text\n`A quick thank you, and a simple way to put real money in your pocket.`\n### Email body\nHi [First Name],\nIt's been a few weeks since we installed your ClearWave system, and by now the difference should speak for itself. Cleaner water. Better showers. One less thing to think about.\nHere's something most people do not realize: the best compliment you can give us is not a review. It's a name.\nIf you know someone fighting hard water, staining, or water that just tastes off, send them our way for a free water assessment. Here is how we say thank you:\n- A referral that closes: $500 cash. (It climbs to $750 after your fifth, and $1,000 once you hit ten in a year.)\n- A referral that books a consult but does not move forward: a $50 gift card, no strings.\nJust reply with a name and the best way to reach them, and we handle the rest.\nThanks for trusting us with your home's water.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is peak B2C open behavior; avoids Monday inbox pileup and Friday drop-off.\n### Expected performance\n- **Open: 48-55%.** Above the 42.3% baseline. Small, warm, recently-engaged list + personal non-salesy subject. These people opened install/onboarding emails days ago.\n- **Click/reply: 4-8%.** No link needed (reply-to-refer), which is why click rate here is a vanity metric. Track replies.\n- **Conversion: 2-4 named referrals, 1-2 likely to close.** At even one close, that's $500 for one email to 28 people. Best ROI on the board.\n### Source justification\nDraws from **Referral Bonus Structure** (exact $500/$750/$1,000 tiers + $50 gift card), **Rule 3** (referrals not reviews), **Rule 3a** (exact phrase \"free water assessment\"), and **Rule 2** (blanket tenure line \"your ClearWave system\" logic; no legacy names printed, several in this list are \"(not specified)\" or legacy like \"Re-Ionator Pro\").\n---"
+      },
+      {
+        "id": "email_2026-09-01_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge Upsell (13-24 Month Clients)",
+        "preview": "**Audience:** Concierge upsell candidates, 100 members (13-24 months post-install, not on Concierge)\nLargest qualified segment, all safely past the 12-month floor, and all have been through their year-1 service (so trust in our service exists). Framed as honest math, not a pitch, to fit the \"is this worth it for me?\" voice guidance and avoid the discount-fatigue that tanked recent sends.\n### Subject line (+ 4 alternates)\n- **Primary (curiosity):** `The question we get at 18 months`\n- Curiosity: `Is Concierge actually worth it? Real math.`\n- Pain: `Filter swaps, service, parts. Or not thinking about it.`\n- Authority: `What we tell clients who ask about Concierge`\n- Specific: `$99/mo, and here's exactly what it covers`\n### Preview text\n`No pressure, just an honest breakdown so you can decide for yourself.`\n### Email body\nHi [First Name],\nIt's been about [X months] since we installed your water system, which means you have already been through your first annual service. That puts you right at the point where a lot of our clients ask the same question:\n\"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is $99/mo and covers:\n- Your annual service, handled automatically\n- Filter swaps on schedule\n- Priority phone support (you skip the queue)\n- Parts coverage on your standard install components\nIf you like keeping up with service yourself, staying pay-as-you-go is a perfectly good call, and we will keep taking great care of you either way. But if you would rather never think about a filter swap or a service date again, Concierge exists to take it off your plate.\nWant the exact numbers for your setup? Reply \"Concierge\" and we will send your breakdown.\nJustin\nCEO / ClearWave\n*(Merge note: replace [X months] with the calculated tenure from completedAt per Rule 2. Do NOT print legacy system names for this list, most are \"Re-Ionator Pro / Reionator Pro Ultra / 30C\" which are all forbidden. Use the blanket tenure line only.)*\n### Send timing\n**Thursday, 11:00 AM ET.** Separated from Proposal 1's Tuesday send to avoid list fatigue. Late-week mid-morning performs for considered/financial-decision content.\n### Expected performance\n- **Open: 40-46%.** Around baseline. Curiosity subject with no discount language should clear the spam-trained apathy the recent campaigns hit. Larger, slightly colder list pulls this below Proposal 1.\n- **Click/reply: 1-3%.** Reply-driven CTA lowers friction vs. a link. Even 1.5% = ~1-2 real conversations.\n- **Conversion: 2-5 Concierge signups.** At $99/mo, 3 signups = ~$3,564/yr recurring from one email. Recurring revenue makes this the highest-lifetime-value play even at modest conversion.\n### Source justification\nDraws from **Concierge Upsell Context** ($99/mo, inclusions, \"is this worth it for me / here's the math\" framing, non-pushy tone, target = post year-1 service clients), **Rule 1** (list pre-filtered to 13-24 months, floor respected), **Rule 2** (tenure line, no legacy names), and **Rule 4/5** (sign-off + no dashes).\n---\n## Why not the others this week\n- **1-year annual service (19):** Operational/scheduling touch, not a revenue-conversion email; better handled by Jobber automation than a campaign slot.\n- **RO replacement-cycle (32):** Strong candidate, but overlaps with Concierge messaging (parts/filters). Running both same week muddies the offer. Hold for next week as a standalone.\n- **Cold lead re-engagement (1000):** Highest volume but lowest per-contact intent and highest deliverability risk to a rebuilding sender reputation. Warm up the list with the two high-open sends above first, then hit cold leads with the water-news angle next week.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-09-01": {
+        "decision": "pending"
+      },
+      "email_2026-09-01_c1": {
+        "decision": "pending"
+      },
+      "email_2026-09-01_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-09-01T10:30:00.455Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
