@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClearWave Estimator</title>
+<style>body{margin:0;background:#fff}.cwe{border:0 !important}</style>
+</head>
+<body>
+<div id="clearwave-estimator"></div>
+<script src="catalog.js"></script>
+<script src="estimator.js"></script>
+<script>
+  // Tell a parent page how tall we are, so an iframe can resize itself.
+  (function(){function post(){try{parent.postMessage({cw:"height",height:document.documentElement.scrollHeight},"*")}catch(e){}}
+  window.addEventListener("load",post);new MutationObserver(post).observe(document.body,{childList:true,subtree:true});window.addEventListener("resize",post);})();
+</script>
+</body>
+</html>
