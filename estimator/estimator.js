@@ -287,10 +287,7 @@
       else if (has("nitrate") && core.indexOf("FERRO") >= 0) { core.push("PURA"); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
-      if (!core.length) {
-        notes.push("You did not report a specific problem, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
-        core.push("FERRO");
-      }
+      if (!core.length && !addons.length) { notes.push("You did not check any problems. For a well, the next step is a free on-site water test. Call us and we will schedule it."); }
       causes.forEach(function (c) { if (cat.causes[c]) { diagnosis.push(cat.causes[c].plain); } });
       if (labHits.length) { diagnosis.push("From your lab numbers: " + labHits.join("; ") + "."); }
     }
@@ -643,7 +640,7 @@
     } else {
       h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
     }
-    if (!r.items.length) { h += '<div class="cwe-note warn">We could not match a system from your answers. Call us and we will sort it out in five minutes.</div>'; }
+    if (!r.items.length) { h += '<div class="cwe-note warn">No system to price yet. Call or text us at ' + esc(cat.company.phone) + " and we will set up your free water test.</div>"; }
     r.items.forEach(function (it) {
       var p = it.product, url = brochureUrl(cat, p);
       h += '<div class="cwe-card' + (it.role !== "core" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : (it.included ? '<span class="cwe-tag">Included free</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>')) + "</p>" +
