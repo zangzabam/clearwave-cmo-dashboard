@@ -694,7 +694,7 @@
     // Included with every system
     if (cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
 
-    h += "<h3>What could change the price</h3><ul class=\"cwe-diag\">" + cat.specialCircumstances.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul><p class=\"cwe-small\">" + esc(cat.copy.disclaimer) + "</p>";
+    h += '<div class="cwe-note good">' + esc(well ? cat.copy.priceNoteWell : cat.copy.priceNoteCity) + "</div>";
 
     h += "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
       '<a class="cwe-btn green" href="' + esc(cat.company.phoneHref) + '">Call ' + esc(cat.company.phone) + "</a>" +

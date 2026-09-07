@@ -389,16 +389,10 @@ window.CLEARWAVE_CATALOG = {
   // Shown on every city water estimate. The most common findings in our area.
   cityCommonFinding: "The most common things we find in city water across our area are high chromium-6, trihalomethanes (TTHMs), and haloacetic acids (HAA5). The last two form when chlorine reacts with organic matter in the water. A whole-home carbon system is built to reduce all three.",
 
-  specialCircumstances: [
-    "Long plumbing runs or a system that must sit far from the main line",
-    "Crawlspace, attic, or outdoor installs that need extra work",
-    "Well pump or pressure tank problems found on site",
-    "Lab results that show very high levels of a contaminant"
-  ],
-
   copy: {
     resultsTitle: "Your ClearWave Estimate",
-    disclaimer: "This is an estimate, not a quote. Final pricing comes from a free on-site water assessment. Prices only change for the special circumstances listed here.",
+    priceNoteCity: "This is your installed price. It includes everything listed under \"Included with every ClearWave system.\" No surprises at the door.",
+    priceNoteWell: "Your installed price depends only on tank size, shown in the table above. If your water test shows more iron than a 10-inch tank can handle, we size up to the next tank.",
     nextStep: "Ready to fix your water? Call or text us and we will get your system scheduled.",
     labUploadNote: "Have a lab report? Attach it and we will read it before we call."
   }
@@ -1102,7 +1096,7 @@ window.CLEARWAVE_CATALOG = {
     // Included with every system
     if (cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
 
-    h += "<h3>What could change the price</h3><ul class=\"cwe-diag\">" + cat.specialCircumstances.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul><p class=\"cwe-small\">" + esc(cat.copy.disclaimer) + "</p>";
+    h += '<div class="cwe-note good">' + esc(well ? cat.copy.priceNoteWell : cat.copy.priceNoteCity) + "</div>";
 
     h += "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
       '<a class="cwe-btn green" href="' + esc(cat.company.phoneHref) + '">Call ' + esc(cat.company.phone) + "</a>" +
