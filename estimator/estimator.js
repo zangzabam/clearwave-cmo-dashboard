@@ -227,7 +227,7 @@
 
   function recommend(cat, st) {
     var picked = pickSize(cat, st), sizeId = picked.id;
-    var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [];
+    var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [], optional = [];
     if (st.source === "well" && picked.bumped) { notes.push("Your " + picked.bumped + " level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". A bigger tank holds more media and removes more between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
@@ -271,7 +271,10 @@
       if (ferric && (iron || highIron)) { core.push("POSEIDON", "FERRO"); }
       else if (ferric) { core.push("POSEIDON"); notes.push("Rusty water with no staining is unusual. Most wells with rust also carry dissolved iron, so your free water test may add a Ferro."); }
       else if (iron) { core.push("FERRO"); }
-      if (has("sulfur") && core.indexOf("POSEIDON") < 0) { core.push("AERO"); }
+      if (has("sulfur") && core.indexOf("POSEIDON") < 0) {
+        core.push("AERO");
+        if (iron) { optional.push("POSEIDON"); notes.push("You have sulfur along with iron. Wells like this can be finicky, so after your on-site water test we may add a Poseidon as an enhancement tank. That would add about " + money(cat.wellPricing.additionalTank) + ". It is not in your price below."); }
+      }
       else if (has("taste") && !core.length) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); }
       // Ferro softens on its own. Otherwise hardness or nitrates need their own tank.
       if ((has("hardness") || has("nitrate")) && core.indexOf("FERRO") < 0) { core.push(soft); }
@@ -307,7 +310,7 @@
       max: flats + tankSystemPrice(cat, tanks, last),
       flats: flats, tanks: tanks, system: tankSystemPrice(cat, tanks, sizeId)
     };
-    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome };
+    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, optional: optional, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome };
   }
 
   // ------------------------------------------------------------------
@@ -650,6 +653,11 @@
       var a = cat.products[r.alt], au = brochureUrl(cat, a);
       h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Upgrade option for a home your size</p><p class="nm">' + esc(a.name) + '</p><p class="hl">' + esc(a.headline) + "</p>" + (a.specs ? '<p class="cwe-small">' + esc(a.specs) + "</p>" : "") + priceBlock(money(a.price.flat), "Installed price") + (au ? '<a class="cwe-btn ghost sm no-print" href="' + esc(au) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
     }
+
+    (r.optional || []).forEach(function (k) {
+      var o = cat.products[k], ou = brochureUrl(cat, o);
+      h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Possible enhancement tank, decided at your on-site test</p><p class="nm">' + esc(o.name) + '</p><p class="hl">' + esc(o.headline) + "</p>" + (o.specs ? '<p class="cwe-small">' + esc(o.specs) + "</p>" : "") + priceBlock("About +" + money(cat.wellPricing.additionalTank), "Only if your test calls for it. Not in your price below.") + (ou ? '<a class="cwe-btn ghost sm no-print" href="' + esc(ou) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
+    });
 
     // Totals
     var fin = "";

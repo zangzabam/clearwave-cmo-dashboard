@@ -366,7 +366,7 @@ window.CLEARWAVE_CATALOG = {
   copy: {
     resultsTitle: "Your ClearWave Estimate",
     priceNoteCity: "This is your installed price. It includes everything listed under \"Included with every ClearWave system.\" No surprises at the door.",
-    priceNoteWell: "Your installed price depends only on tank size, shown in the table above. If your water test shows more iron than a 10-inch tank can handle, we size up to the next tank.",
+    priceNoteWell: "Your installed price depends only on tank size, shown in the table above. Wells are finicky, so we always do a free on-site water test before final sizing. If it shows more iron than a 10-inch tank can handle, we size up to the next tank.",
     nextStep: "Ready to fix your water? Call or text us and we will get your system scheduled.",
     labUploadNote: "Have a lab report? Attach it and we will read it before we call."
   }
