@@ -122,6 +122,11 @@
 .cwe ul.cwe-diag{padding-left:18px;margin:0 0 12px}\
 .cwe ul.cwe-diag li{margin-bottom:4px}\
 .cwe-hidden{display:none !important}\
+.cwe-adj{border:1px solid var(--rule);background:var(--tint);padding:12px 14px;margin:8px 0 16px}\
+.cwe-adj .cwe-opts{margin-top:8px}\
+.cwe-adj .cwe-opt{padding:9px 12px}\
+.cwe-adj .cwe-opt b{font-size:14px}\
+.cwe-print .cwe-adj{display:none}\
 .cwe-spin{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:cwe-spin .7s linear infinite;vertical-align:-2px;margin-right:6px}\
 @keyframes cwe-spin{to{transform:rotate(360deg)}}\
 @media print{@page{size:letter;margin:0.45in 0.5in 0.6in}body>*{display:none !important}body>.cwe-print-root{display:block !important}\
@@ -228,7 +233,8 @@
     if (picked.ironBumped) { notes.push("Your iron level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". More media means more iron removed between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
-    var large = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
+    var largeHome = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
+    var large = largeHome && !(st.adjust && st.adjust.ignoreLarge);
 
     if (st.source === "city") {
       var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
@@ -238,13 +244,13 @@
         cat.cityConcerns.forEach(function (c) {
           if (c.id !== id) { return; }
           if (c.addon && !(c.unlessCore && tier > 0)) { add.push(c.addon); }
-          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; notes.push("We moved you up to the " + cat.products[byTier(cat, tier)].name + " because you checked \"" + c.label + ".\""); }
+          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; }
           if (c.minTier && tier === 0) { notes.push("\"" + c.label + "\" is a whole-home concern. Reverse osmosis handles it at the sink. A whole-home system handles every tap and shower."); }
         });
       });
       if (tier > 0 && large) {
-        if (tier === 2) { tier = 4; notes.push("Your home is on the larger side, so we sized you into the 13-inch Meridian Diamond Edition for higher flow."); alt = "PINNACLE"; }
-        else if (tier === 1) { alt = "DIAMOND"; notes.push("Your home is on the larger side. The Crest is rated for 10 GPM. For higher flow, see the 13-inch option below."); }
+        if (tier === 2) { tier = 4; alt = "PINNACLE"; }
+        else if (tier === 1) { alt = "DIAMOND"; }
         else if (tier < 5) { alt = "PINNACLE"; }
       }
       if (tier > 0) { core.push(byTier(cat, tier)); }
@@ -273,7 +279,6 @@
       else if (has("hardness") || has("nitrate")) { core.push(soft); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
-      if (st.well.drinking) { addons.push("ELARA"); }
       if (!core.length) {
         notes.push("You did not report a specific problem, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
         core.push("FERRO");
@@ -285,10 +290,14 @@
 
     core = uniq(core); addons = uniq(addons);
     if (!core.length && addons.length) { core = [addons.shift()]; }
-    var items = core.concat(addons).map(function (k) {
+    // Free with every whole-home system.
+    var freebies = [];
+    if (core.length) { (cat.includedWithSystem || []).forEach(function (k) { if (core.indexOf(k) < 0 && addons.indexOf(k) < 0) { freebies.push(k); } addons = addons.filter(function (a) { return a !== k; }); }); }
+    var items = core.concat(addons).concat(freebies).map(function (k) {
       var p = cat.products[k];
       var tank = st.source === "well" && !!p.price.tank;
-      return { code: k, product: p, role: core.indexOf(k) >= 0 ? "core" : "addon", tank: tank, price: tank ? null : (p.price.flat != null ? p.price.flat : null) };
+      var inc = freebies.indexOf(k) >= 0;
+      return { code: k, product: p, role: inc ? "included" : (core.indexOf(k) >= 0 ? "core" : "addon"), tank: tank, included: inc, price: (tank || inc) ? null : (p.price.flat != null ? p.price.flat : null) };
     });
     var tanks = items.filter(function (it) { return it.tank; }).length;
     var flats = 0; items.forEach(function (it) { if (it.price != null) { flats += it.price; } });
@@ -299,7 +308,7 @@
       max: flats + tankSystemPrice(cat, tanks, last),
       flats: flats, tanks: tanks, system: tankSystemPrice(cat, tanks, sizeId)
     };
-    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large };
+    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome };
   }
 
   // ------------------------------------------------------------------
@@ -326,6 +335,7 @@
       city: { goal: "", concerns: [] },
       well: { symptoms: [], tested: "", lab: {}, drinking: false, file: null },
       home: { baths: 2, people: 3, timeline: "", owner: "" },
+      adjust: { ignoreLarge: false },
       contact: { name: "", email: "", phone: "", notes: "" },
       result: null, sent: false
     };
@@ -379,7 +389,7 @@
     V.symptoms = function () {
       return head("Step 3", "What is your water doing?", "Check everything you have noticed. Each one points to a cause.") +
         checks("sym", cat.wellSymptoms.map(function (s) { return { v: s.id, b: s.label }; }), state.well.symptoms) +
-        '<div class="cwe-opts" style="margin-top:14px"><label class="cwe-opt ' + (state.well.drinking ? "on" : "") + '"><input type="checkbox" id="cwe-drink" ' + (state.well.drinking ? "checked" : "") + '><span><b>I also want reverse osmosis drinking water</b><small>Bottled-water quality at the kitchen sink.</small></span></label></div>';
+        '<div class="cwe-note good">Every whole-home system includes our Elara reverse osmosis drinking water system at the kitchen sink, free.</div>';
     };
     V.testing = function () {
       var h = head("Step 4", "Has your water been tested?", "A lab report lets us size the system right the first time.") +
@@ -502,7 +512,7 @@
       }
       if (s === "goal") { state.city.goal = checked("goal")[0] || ""; if (!state.city.goal) { return err("Pick the one that matters most."); } }
       if (s === "concerns") { state.city.concerns = checked("concern"); }
-      if (s === "symptoms") { state.well.symptoms = checked("sym"); state.well.drinking = !!body.querySelector("#cwe-drink").checked; }
+      if (s === "symptoms") { state.well.symptoms = checked("sym"); }
       if (s === "testing") {
         state.well.tested = checked("tested")[0] || "";
         if (!state.well.tested) { return err("Let us know if your water has been tested."); }
@@ -528,6 +538,21 @@
       var p = body.querySelector("#cwe-print"); if (p) { p.onclick = function () { printEstimate(); }; }
       var rs = body.querySelector("#cwe-restart"); if (rs) { rs.onclick = function () { stepIdx = 0; state.result = null; state.sent = false; state.id = estimateId(); root.querySelector(".cwe-foot span:last-child").textContent = "Estimate " + state.id; render(); }; }
       var m = body.querySelector("#cwe-mail"); if (m) { m.href = mailto(cat, state); }
+      var g = body.querySelector("#cwe-adj-goal"); if (g) { g.onchange = function () { state.city.goal = g.value; readjust(); }; }
+      body.querySelectorAll(".cwe-adj-box").forEach(function (box) {
+        box.addEventListener("change", function () {
+          var id = box.getAttribute("data-adj");
+          if (id === "large") { state.adjust.ignoreLarge = !box.checked; }
+          else if (id.indexOf("concern:") === 0) { var c = id.slice(8); state.city.concerns = state.city.concerns.filter(function (i) { return i !== c; }); if (box.checked) { state.city.concerns.push(c); } }
+          else if (id.indexOf("symptom:") === 0) { var y = id.slice(8); state.well.symptoms = state.well.symptoms.filter(function (i) { return i !== y; }); if (box.checked) { state.well.symptoms.push(y); } }
+          readjust();
+        });
+      });
+    }
+    function readjust() {
+      state.result = recommend(cat, state);
+      emit("adjust", summary(cat, state));
+      var y = window.scrollY; render(); try { window.scrollTo(0, y); } catch (e) {}
     }
 
     function printEstimate() {
@@ -561,6 +586,54 @@
   }
   function priceBlock(label, sub) { return '<p class="pr">' + label + "<small>" + esc(sub) + "</small></p>"; }
 
+  // A copy of the answers so we can ask "what if" without touching state.
+  function whatIf(st, change) {
+    var c = JSON.parse(JSON.stringify({ zip: st.zip, source: st.source, city: st.city, well: { symptoms: st.well.symptoms, tested: st.well.tested, lab: st.well.lab }, home: st.home, adjust: st.adjust }));
+    change(c);
+    return c;
+  }
+  function outcome(cat, r) {
+    var names = r.core.map(function (k) { return cat.products[k].name.replace("ClearWave ", ""); }).join(" + ");
+    var price = r.totals.min === r.totals.max ? money(r.totals.at) : range(r.totals.min, r.totals.max);
+    return { key: r.core.join("|") + "|" + r.totals.min + "|" + r.totals.max, text: names + ", " + price };
+  }
+  function adjustPanel(cat, st) {
+    var r = st.result, now = outcome(cat, r);
+    var h = "<h3>Why we picked this</h3><p class=\"cwe-small\">Change an answer below and the system and price update right away. Nothing is sent until you call us.</p><div class=\"cwe-adj\">";
+    function row(id, checked, label, other) {
+      var o = outcome(cat, other), diff = o.key !== now.key;
+      var eff = checked ? (diff ? "Uncheck to see: " + o.text : "No change to your price") : (diff ? "Check to see: " + o.text : "No change to your price");
+      return '<label class="cwe-opt ' + (checked ? "on" : "") + '"><input type="checkbox" class="cwe-adj-box" data-adj="' + esc(id) + '"' + (checked ? " checked" : "") + "><span><b>" + esc(label) + "</b><small>" + esc(eff) + "</small></span></label>";
+    }
+    if (st.source === "city") {
+      var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
+      var base = goal && goal.core ? cat.products[goal.core] : null;
+      h += '<label class="cwe-f" for="cwe-adj-goal">Your main goal</label><select id="cwe-adj-goal">' + cat.cityGoals.map(function (g) { return '<option value="' + esc(g.id) + '"' + (g.id === st.city.goal ? " selected" : "") + ">" + esc(g.label) + (g.core ? " (" + esc(cat.products[g.core].name.replace("ClearWave ", "")) + ", " + money(cat.products[g.core].price.flat) + ")" : " (" + esc(cat.products[g.addons[0]].name.replace("ClearWave ", "")) + ", " + money(cat.products[g.addons[0]].price.flat) + ")") + "</option>"; }).join("") + "</select>";
+      if (base) { h += '<p class="cwe-small">"' + esc(goal.label) + '" starts you at the ' + esc(base.name) + " (" + money(base.price.flat) + "). The boxes below can move you up.</p>"; }
+      h += '<div class="cwe-opts">';
+      cat.cityConcerns.forEach(function (c) {
+        var on = st.city.concerns.indexOf(c.id) >= 0;
+        var other = recommend(cat, whatIf(st, function (x) { x.city.concerns = on ? x.city.concerns.filter(function (i) { return i !== c.id; }) : x.city.concerns.concat([c.id]); }));
+        h += row("concern:" + c.id, on, c.label, other);
+      });
+      if (r.largeHome) {
+        var on2 = !st.adjust.ignoreLarge;
+        h += row("large", on2, "Size for a larger home (" + cat.largeHome.minBaths + "+ bathrooms or " + cat.largeHome.minPeople + "+ people)", recommend(cat, whatIf(st, function (x) { x.adjust.ignoreLarge = on2; })));
+      }
+      h += "</div>";
+    } else {
+      h += '<div class="cwe-opts">';
+      cat.wellSymptoms.forEach(function (sy) {
+        var on = st.well.symptoms.indexOf(sy.id) >= 0;
+        var other = recommend(cat, whatIf(st, function (x) { x.well.symptoms = on ? x.well.symptoms.filter(function (i) { return i !== sy.id; }) : x.well.symptoms.concat([sy.id]); }));
+        h += row("symptom:" + sy.id, on, sy.label, other);
+      });
+      h += "</div>";
+      if (Object.keys(st.well.lab || {}).length) { h += '<p class="cwe-small">Your lab numbers still count. They can keep a system in place even when a box is unchecked.</p>'; }
+    }
+    return h + "</div>";
+  }
+
   function resultsHtml(cat, st, cfg) {
     var r = st.result, sz = sizeLabel(cat, r.sizeId), well = st.source === "well";
     var h = '<p class="cwe-eyebrow">' + esc(cat.copy.resultsTitle) + "</p><h2>" + (st.contact.name ? esc(st.contact.name.split(" ")[0]) + ", here is your estimate." : "Here is your estimate.") + "</h2>" +
@@ -568,6 +641,7 @@
 
     h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("") + "</ul>";
     r.notes.forEach(function (n) { h += '<div class="cwe-note">' + esc(n) + "</div>"; });
+    h += adjustPanel(cat, st);
 
     h += "<h3>Recommended for your home</h3>";
     if (well && r.totals.tanks) {
@@ -578,12 +652,12 @@
     if (!r.items.length) { h += '<div class="cwe-note warn">We could not match a system from your answers. Call us and we will sort it out in five minutes.</div>'; }
     r.items.forEach(function (it) {
       var p = it.product, url = brochureUrl(cat, p);
-      h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + "</p>" +
+      h += '<div class="cwe-card' + (it.role !== "core" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : (it.included ? '<span class="cwe-tag">Included free</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>')) + "</p>" +
         (p.package ? '<p class="cwe-eyebrow" style="margin-top:4px">' + esc(p.package) + "</p>" : "") +
         (p.tagline ? '<p class="hl" style="font-style:italic;margin:2px 0 6px">' + esc(p.tagline) + "</p>" : "") +
         '<p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
         (p.specs ? '<p class="cwe-small">' + esc(p.specs) + "</p>" : "") +
-        (it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
+        (it.included ? priceBlock("Included", (p.price.flat != null ? money(p.price.flat) + " value. " : "") + "Free with your whole-home system") : it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
         (url ? '<a class="cwe-btn ghost sm no-print" href="' + esc(url) + '" target="_blank" rel="noopener">Download the ' + esc(p.name.replace("ClearWave ", "")) + " brochure</a>" : "") + "</div>";
     });
     if (r.alt) {
@@ -649,7 +723,7 @@
     return {
       estimateId: st.id, source: st.source, zip: st.zip, region: r.region ? r.region.name : null,
       size: sz.label, tanks: r.totals.tanks, core: r.core, addons: r.addons, alt: r.alt, causes: r.causes,
-      goal: st.city.goal, concerns: st.city.concerns, symptoms: st.well.symptoms,
+      goal: st.city.goal, concerns: st.city.concerns, symptoms: st.well.symptoms, ignoreLarge: !!(st.adjust && st.adjust.ignoreLarge),
       totalAtSize: r.totals.at, totalMin: r.totals.min, totalMax: r.totals.max
     };
   }

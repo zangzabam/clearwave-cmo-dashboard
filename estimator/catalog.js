@@ -32,6 +32,9 @@ window.CLEARWAVE_CATALOG = {
   bookingUrl: null,
   // Ask for name + email + phone before showing the estimate.
   requireContact: true,
+  // Products included free with every whole-home system. They are only
+  // charged when the customer wants that product by itself.
+  includedWithSystem: ["ELARA"],
   // Folder where the brochure PDFs live, relative to estimator.js.
   brochureBase: "brochures/",
   // Full URL to that folder once hosted (used by the one-file build, which
@@ -181,7 +184,7 @@ window.CLEARWAVE_CATALOG = {
       name: "ClearWave Elara",
       family: "both",
       kind: "addon",
-      headline: "3-stage reverse osmosis drinking water at the kitchen sink, with a 2-gallon tank and leak detection.",
+      headline: "3-stage reverse osmosis drinking water at the kitchen sink, with a 2-gallon tank and leak detection. Included free with every whole-home system.",
       solves: ["Drinking and cooking water", "Fluoride, nitrates, and dissolved solids", "Bottled-water taste from the tap"],
       specs: "Under-sink. 3-stage. 2-gallon tank.",
       price: { flat: 2499 },
@@ -270,7 +273,6 @@ window.CLEARWAVE_CATALOG = {
   // (unlessCore: skip it when a whole-home tier already covers it).
   cityConcerns: [
     { id: "scale", label: "Scale, spots on dishes, or soap scum", addon: "FLOW", unlessCore: true },
-    { id: "drinking", label: "I also want reverse osmosis drinking water", addon: "ELARA" },
     { id: "thm", label: "Trihalomethanes or disinfection byproducts", minTier: 2 },
     { id: "lead", label: "Lead or old pipes", minTier: 2 },
     { id: "pharma", label: "Pharmaceuticals", minTier: 2 },

@@ -103,7 +103,7 @@ full collection comparison table with the recommended column highlighted.
 | Itchy skin, spots, soap will not lather | Hardness | Flow |
 | Near farmland or septic | Nitrates | Pura (nitrate removal plus softening, replaces Flow) |
 | Bacteria, or never tested | Possible bacteria | UV Light (add-on) |
-| Wants drinking water | | Elara (add-on) |
+| Wants drinking water | | Elara (included free with any whole-home system) |
 
 Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
 7 gpg or more, nitrate above 10 mg/L, any coliform).
@@ -117,6 +117,16 @@ shows the total at every tank size.
 **Tank sizing.** Bathrooms and people pick 10, 12, or 13 inch. Lab iron above
 10 ppm forces a 12-inch, above 20 ppm a 13-inch (from the Ferro and Poseidon
 spec sheets).
+
+**Included free.** The Elara reverse osmosis unit is included at no charge
+with every whole-home system, city or well. It is only priced ($2,499) when
+"Better drinking water only" is the goal. Change the list in
+`includedWithSystem` to add or remove freebies.
+
+**Adjust panel.** The results page lists every answer that shaped the pick
+(goal, concerns, larger-home sizing, or well symptoms) with a checkbox and a
+line that says what changes if it is flipped. Unchecking one recomputes the
+system and price on the spot without sending a second lead.
 
 ## Changing prices and products
 
