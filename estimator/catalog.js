@@ -89,8 +89,8 @@ window.CLEARWAVE_CATALOG = {
     note: "Well systems are custom. A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
   },
 
-  // "Large home" for city water: bumps Meridian to the 13-inch Diamond Edition
-  // and offers the dual-tank Pinnacle as the upgrade.
+  // "Large home" for city water. Inside a package the larger system is
+  // picked (Signature: Sovereign, Estate: Pinnacle) for higher flow.
   largeHome: { minBaths: 4, minPeople: 6 },
 
   // ---------------------------------------------------------------------
@@ -262,17 +262,15 @@ window.CLEARWAVE_CATALOG = {
   // CITY WATER GOALS. The customer picks one. It maps to a core tier.
   // ---------------------------------------------------------------------
   cityGoals: [
-    { id: "drinking", label: "Better drinking water only", sub: "Clean water at the kitchen sink.", core: null, addons: ["ELARA"] },
-    { id: "skin_hair", label: "Fix my skin and hair", sub: "Chlorine and hard water are drying you out.", core: "CREST", addons: [] },
-    { id: "health", label: "Whole-home health", sub: "Chlorine, chloramine, VOCs, and trihalomethanes out of every tap and shower.", core: "MERIDIAN", addons: [] },
-    { id: "advanced", label: "Remove the hard stuff", sub: "PFAS, nitrates, lead, and pharmaceuticals from the whole home.", core: "SOVEREIGN", addons: [] },
-    { id: "complete", label: "The most complete purity available", sub: "Nothing left to chance.", core: "PINNACLE", addons: [] }
+    { id: "drinking", label: "Better drinking water only", sub: "Clean water at the kitchen sink. Nothing else.", core: null, addons: ["ELARA"] },
+    { id: "soft", label: "Soft water only", sub: "Stop scale, spots, and dry skin from hard water.", core: "FLOW", addons: [] },
+    { id: "essentials", label: "Essentials Protection", sub: "Hardness, chlorine, and the everyday stuff that ruins skin, hair, and fixtures.", core: "CREST", addons: [] },
+    { id: "signature", label: "Signature Protection", sub: "Higher-grade filtration. Chloramine, THMs, lead, pharmaceuticals, and more media for changing city water.", core: "MERIDIAN", largeCore: "SOVEREIGN", addons: [] },
+    { id: "estate", label: "Estate Protection", sub: "Large homes, heavy water use, or simply the best on the market.", core: "DIAMOND", largeCore: "PINNACLE", addons: [] }
   ],
 
-  // Extra city concerns. minTier moves the customer up. addon adds a system
-  // (unlessCore: skip it when a whole-home tier already covers it).
+  // Extra city concerns. minTier moves the customer up a tier.
   cityConcerns: [
-    { id: "scale", label: "Scale, spots on dishes, or soap scum", addon: "FLOW", unlessCore: true },
     { id: "thm", label: "Trihalomethanes or disinfection byproducts", minTier: 2 },
     { id: "lead", label: "Lead or old pipes", minTier: 2 },
     { id: "pharma", label: "Pharmaceuticals", minTier: 2 },

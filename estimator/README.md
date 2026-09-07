@@ -78,17 +78,17 @@ whole-home tier includes softening, so no separate softener is added.
 | Goal | System | Installed price |
 |---|---|---|
 | Better drinking water only | Elara (reverse osmosis) | $2,499 |
-| Fix my skin and hair | Crest | $8,487 |
-| Whole-home health (chlorine, chloramine, VOCs, THMs) | Meridian | $10,477 |
-| Remove the hard stuff (PFAS, nitrates, lead, pharmaceuticals) | Sovereign | $12,847 |
-| The most complete purity available | Pinnacle | $17,396 |
+| Soft water only | Flow | $5,477 |
+| Essentials Protection | Crest | $8,487 |
+| Signature Protection | Meridian, or Sovereign for a larger home | $10,477 or $12,847 |
+| Estate Protection | Meridian Diamond Edition, or Pinnacle for a larger home | $15,396 or $17,396 |
 
-Extra concerns move them up: lead, pharmaceuticals, THMs, or a sensitive
-household means at least Meridian; PFAS or nitrates means at least Sovereign;
-microplastics means the Meridian Diamond Edition ($15,396). A larger home
-(4+ bathrooms or 6+ people) turns Meridian into the 13-inch Diamond Edition
-and offers the dual-tank Pinnacle as the upgrade. The results page shows the
-full collection comparison table with the recommended column highlighted.
+The three package names match the sales deck. A larger home is 4+ bathrooms
+or 6+ people. Extra concerns can still move a customer up: lead,
+pharmaceuticals, THMs, or a sensitive household means at least Meridian; PFAS
+or nitrates means at least Sovereign; microplastics means at least the
+Diamond Edition. The results page shows the collection comparison table with
+the recommended column highlighted.
 
 **Well water.** Each symptom points to a cause. Causes map to systems:
 

@@ -122,7 +122,10 @@
 .cwe ul.cwe-diag{padding-left:18px;margin:0 0 12px}\
 .cwe ul.cwe-diag li{margin-bottom:4px}\
 .cwe-hidden{display:none !important}\
-.cwe-adj{border:1px solid var(--rule);background:var(--tint);padding:12px 14px;margin:8px 0 16px}\
+.cwe-adj{border:1px solid var(--rule);border-left:4px solid var(--green);background:var(--tint);padding:12px 14px;margin:8px 0 16px}\
+.cwe-adj-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}\
+.cwe-adj-head b{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px}\
+.cwe-adj-head .cwe-small{display:block}\
 .cwe-adj .cwe-opts{margin-top:8px}\
 .cwe-adj .cwe-opt{padding:9px 12px}\
 .cwe-adj .cwe-opt b{font-size:14px}\
@@ -238,22 +241,19 @@
 
     if (st.source === "city") {
       var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
-      var tier = goal && goal.core ? cat.products[goal.core].tier : 0;
+      var baseCode = goal ? (large && goal.largeCore ? goal.largeCore : goal.core) : null;
+      var tier = baseCode ? cat.products[baseCode].tier : 0;
       var add = goal ? goal.addons.slice() : [];
       st.city.concerns.forEach(function (id) {
         cat.cityConcerns.forEach(function (c) {
           if (c.id !== id) { return; }
-          if (c.addon && !(c.unlessCore && tier > 0)) { add.push(c.addon); }
+          if (c.addon) { add.push(c.addon); }
           if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; }
           if (c.minTier && tier === 0) { notes.push("\"" + c.label + "\" is a whole-home concern. Reverse osmosis handles it at the sink. A whole-home system handles every tap and shower."); }
         });
       });
-      if (tier > 0 && large) {
-        if (tier === 2) { tier = 4; alt = "PINNACLE"; }
-        else if (tier === 1) { alt = "DIAMOND"; }
-        else if (tier < 5) { alt = "PINNACLE"; }
-      }
       if (tier > 0) { core.push(byTier(cat, tier)); }
+      if (tier > 0 && tier < 5 && large && !goal.largeCore) { alt = tier < 3 ? "SOVEREIGN" : "PINNACLE"; }
       diagnosis.push(waterNote);
       if (goal) { diagnosis.push("Your main goal: " + goal.label.toLowerCase() + ". " + goal.sub); }
       addons = uniq(add);
@@ -335,7 +335,7 @@
       city: { goal: "", concerns: [] },
       well: { symptoms: [], tested: "", lab: {}, drinking: false, file: null },
       home: { baths: 2, people: 3, timeline: "", owner: "" },
-      adjust: { ignoreLarge: false },
+      adjust: { ignoreLarge: false, open: false },
       contact: { name: "", email: "", phone: "", notes: "" },
       result: null, sent: false
     };
@@ -536,9 +536,10 @@
 
     function wireResults() {
       var p = body.querySelector("#cwe-print"); if (p) { p.onclick = function () { printEstimate(); }; }
-      var rs = body.querySelector("#cwe-restart"); if (rs) { rs.onclick = function () { stepIdx = 0; state.result = null; state.sent = false; state.id = estimateId(); root.querySelector(".cwe-foot span:last-child").textContent = "Estimate " + state.id; render(); }; }
+      var rs = body.querySelector("#cwe-restart"); if (rs) { rs.onclick = function () { stepIdx = 0; state.result = null; state.sent = false; state.adjust = { ignoreLarge: false, open: false }; state.city.concerns = []; state.well.symptoms = []; state.id = estimateId(); root.querySelector(".cwe-foot span:last-child").textContent = "Estimate " + state.id; render(); }; }
       var m = body.querySelector("#cwe-mail"); if (m) { m.href = mailto(cat, state); }
       var g = body.querySelector("#cwe-adj-goal"); if (g) { g.onchange = function () { state.city.goal = g.value; readjust(); }; }
+      var t = body.querySelector("#cwe-adj-toggle"); if (t) { t.onclick = function () { state.adjust.open = !state.adjust.open; readjust(); }; }
       body.querySelectorAll(".cwe-adj-box").forEach(function (box) {
         box.addEventListener("change", function () {
           var id = box.getAttribute("data-adj");
@@ -598,39 +599,32 @@
     return { key: r.core.join("|") + "|" + r.totals.min + "|" + r.totals.max, text: names + ", " + price };
   }
   function adjustPanel(cat, st) {
-    var r = st.result, now = outcome(cat, r);
-    var h = "<h3>Why we picked this</h3><p class=\"cwe-small\">Change an answer below and the system and price update right away. Nothing is sent until you call us.</p><div class=\"cwe-adj\">";
-    function row(id, checked, label, other) {
+    var r = st.result, now = outcome(cat, r), open = !!(st.adjust && st.adjust.open);
+    var h = '<div class="cwe-adj no-print"><div class="cwe-adj-head"><div><b>Do you want to make changes?</b><span class="cwe-small">Uncheck an answer to see a different system and price.</span></div><button type="button" class="cwe-btn ghost sm" id="cwe-adj-toggle">' + (open ? "Hide" : "Yes, show my answers") + "</button></div>";
+    if (!open) { return h + "</div>"; }
+    function row(id, label, other) {
       var o = outcome(cat, other), diff = o.key !== now.key;
-      var eff = checked ? (diff ? "Uncheck to see: " + o.text : "No change to your price") : (diff ? "Check to see: " + o.text : "No change to your price");
-      return '<label class="cwe-opt ' + (checked ? "on" : "") + '"><input type="checkbox" class="cwe-adj-box" data-adj="' + esc(id) + '"' + (checked ? " checked" : "") + "><span><b>" + esc(label) + "</b><small>" + esc(eff) + "</small></span></label>";
+      var eff = diff ? "Uncheck to see: " + o.text : "Unchecking this does not change your price";
+      return '<label class="cwe-opt on"><input type="checkbox" class="cwe-adj-box" data-adj="' + esc(id) + '" checked><span><b>' + esc(label) + "</b><small>" + esc(eff) + "</small></span></label>";
     }
+    var rows = [];
+    if (st.source === "city") {
+      cat.cityConcerns.forEach(function (c) {
+        if (st.city.concerns.indexOf(c.id) < 0) { return; }
+        rows.push(row("concern:" + c.id, c.label, recommend(cat, whatIf(st, function (x) { x.city.concerns = x.city.concerns.filter(function (i) { return i !== c.id; }); }))));
+      });
+      if (r.largeHome && !st.adjust.ignoreLarge) { rows.push(row("large", "Sized for a larger home (" + cat.largeHome.minBaths + "+ bathrooms or " + cat.largeHome.minPeople + "+ people)", recommend(cat, whatIf(st, function (x) { x.adjust.ignoreLarge = true; })))); }
+    } else {
+      cat.wellSymptoms.forEach(function (sy) {
+        if (st.well.symptoms.indexOf(sy.id) < 0) { return; }
+        rows.push(row("symptom:" + sy.id, sy.label, recommend(cat, whatIf(st, function (x) { x.well.symptoms = x.well.symptoms.filter(function (i) { return i !== sy.id; }); }))));
+      });
+    }
+    h += '<div class="cwe-opts">' + (rows.length ? rows.join("") : '<p class="cwe-small">You did not add any extra answers, so there is nothing to uncheck here.</p>') + "</div>";
     if (st.source === "city") {
       var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
-      var base = goal && goal.core ? cat.products[goal.core] : null;
-      h += '<label class="cwe-f" for="cwe-adj-goal">Your main goal</label><select id="cwe-adj-goal">' + cat.cityGoals.map(function (g) { return '<option value="' + esc(g.id) + '"' + (g.id === st.city.goal ? " selected" : "") + ">" + esc(g.label) + (g.core ? " (" + esc(cat.products[g.core].name.replace("ClearWave ", "")) + ", " + money(cat.products[g.core].price.flat) + ")" : " (" + esc(cat.products[g.addons[0]].name.replace("ClearWave ", "")) + ", " + money(cat.products[g.addons[0]].price.flat) + ")") + "</option>"; }).join("") + "</select>";
-      if (base) { h += '<p class="cwe-small">"' + esc(goal.label) + '" starts you at the ' + esc(base.name) + " (" + money(base.price.flat) + "). The boxes below can move you up.</p>"; }
-      h += '<div class="cwe-opts">';
-      cat.cityConcerns.forEach(function (c) {
-        var on = st.city.concerns.indexOf(c.id) >= 0;
-        var other = recommend(cat, whatIf(st, function (x) { x.city.concerns = on ? x.city.concerns.filter(function (i) { return i !== c.id; }) : x.city.concerns.concat([c.id]); }));
-        h += row("concern:" + c.id, on, c.label, other);
-      });
-      if (r.largeHome) {
-        var on2 = !st.adjust.ignoreLarge;
-        h += row("large", on2, "Size for a larger home (" + cat.largeHome.minBaths + "+ bathrooms or " + cat.largeHome.minPeople + "+ people)", recommend(cat, whatIf(st, function (x) { x.adjust.ignoreLarge = on2; })));
-      }
-      h += "</div>";
-    } else {
-      h += '<div class="cwe-opts">';
-      cat.wellSymptoms.forEach(function (sy) {
-        var on = st.well.symptoms.indexOf(sy.id) >= 0;
-        var other = recommend(cat, whatIf(st, function (x) { x.well.symptoms = on ? x.well.symptoms.filter(function (i) { return i !== sy.id; }) : x.well.symptoms.concat([sy.id]); }));
-        h += row("symptom:" + sy.id, on, sy.label, other);
-      });
-      h += "</div>";
-      if (Object.keys(st.well.lab || {}).length) { h += '<p class="cwe-small">Your lab numbers still count. They can keep a system in place even when a box is unchecked.</p>'; }
-    }
+      h += '<label class="cwe-f" for="cwe-adj-goal">Or change what matters most</label><select id="cwe-adj-goal">' + cat.cityGoals.map(function (g) { return '<option value="' + esc(g.id) + '"' + (g.id === st.city.goal ? " selected" : "") + ">" + esc(g.label) + "</option>"; }).join("") + "</select>" + (goal ? '<p class="cwe-small" style="margin-top:6px">' + esc(goal.sub) + "</p>" : "");
+    } else if (Object.keys(st.well.lab || {}).length) { h += '<p class="cwe-small" style="margin-top:8px">Your lab numbers still count. They can keep a system in place even when a box is unchecked.</p>'; }
     return h + "</div>";
   }
 
@@ -641,7 +635,6 @@
 
     h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("") + "</ul>";
     r.notes.forEach(function (n) { h += '<div class="cwe-note">' + esc(n) + "</div>"; });
-    h += adjustPanel(cat, st);
 
     h += "<h3>Recommended for your home</h3>";
     if (well && r.totals.tanks) {
@@ -678,6 +671,7 @@
     }
 
     if (fin && cat.financing.note) { h += '<p class="cwe-small">' + esc(cat.financing.note) + "</p>"; }
+    h += adjustPanel(cat, st);
 
     // Well: price by tank size
     if (well && r.totals.tanks) {
