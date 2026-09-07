@@ -222,7 +222,8 @@
   function tankSystemPrice(cat, codes, sizeId) {
     if (!codes || !codes.length) { return 0; }
     var base = 0; codes.forEach(function (c) { base = Math.max(base, singleTankPrice(cat, c, sizeId)); });
-    return base + (codes.length - 1) * cat.wellPricing.additionalTank;
+    var big = cat.wellPricing.bigSetup;
+    return base + (codes.length - 1) * cat.wellPricing.additionalTank + (big && codes.length >= big.tanks ? big.extra : 0);
   }
   function region(cat, zip) {
     var pre = String(zip || "").slice(0, 3);
@@ -283,8 +284,9 @@
       }
       else if (has("taste") && !core.length) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); }
       // Ferro softens on its own. Otherwise hardness or nitrates need their own tank.
+      // Two softeners cannot go together, so nitrates next to a Ferro get a custom setup.
       if ((has("hardness") || has("nitrate")) && core.indexOf("FERRO") < 0) { core.push(soft); }
-      else if (has("nitrate") && core.indexOf("FERRO") >= 0) { core.push("PURA"); }
+      else if (has("nitrate") && core.indexOf("FERRO") >= 0) { notes.push("Nitrates need a different kind of filtration when a Ferro is already softening your water. We will design that part at your on-site test. It is not in your price below."); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
       if (!core.length && !addons.length) { notes.push("Nothing you checked calls for a system by itself. For a well, the next step is a free on-site water test. Call us and we will schedule it."); }
@@ -313,7 +315,7 @@
       max: flats + tankSystemPrice(cat, tankCodes, last),
       flats: flats, tanks: tankCodes.length, tankCodes: tankCodes, system: tankSystemPrice(cat, tankCodes, sizeId)
     };
-    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, optional: optional, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome };
+    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, optional: optional, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome, wholeHome: wholeHome };
   }
 
   // ------------------------------------------------------------------
@@ -639,7 +641,7 @@
     if (well && r.totals.tanks) {
       h += '<p class="cwe-small">Priced with a <b>' + esc(sz.label) + "</b>. " + esc(cat.sizeNote) + (r.totals.tanks > 1 ? " " + esc(cat.wellPricing.note) : "") + "</p>";
     } else {
-      h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
+      h += '<p class="cwe-small">' + (r.wholeHome ? 'Prices are installed and include everything listed under "Included with every ClearWave system."' : "Prices are installed.") + "</p>";
     }
     if (!r.items.length) { h += '<div class="cwe-note warn">No system to price yet. Call or text us at ' + esc(cat.company.phone) + " and we will set up your free water test.</div>"; }
     r.items.forEach(function (it) {
@@ -705,9 +707,9 @@
     }
 
     // Included with every system
-    if (cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
+    if (r.wholeHome && cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
 
-    h += '<div class="cwe-note good">' + esc(well ? cat.copy.priceNoteWell : cat.copy.priceNoteCity) + "</div>";
+    if (r.wholeHome) { h += '<div class="cwe-note good">' + esc(well ? cat.copy.priceNoteWell : cat.copy.priceNoteCity) + "</div>"; }
 
     return h + nextStepHtml(cat, st, cfg);
   }

@@ -102,7 +102,7 @@ the recommended column highlighted.
 | Rotten egg smell alone | Hydrogen sulfide | Aero |
 | Blue-green stains, pinhole leaks | Low pH | Terra (always first in line) |
 | Itchy skin, spots, soap will not lather | Hardness | Flow, unless a Ferro is already there (it softens too) |
-| Near farmland or septic | Nitrates | Pura (nitrate removal plus softening) |
+| Near farmland or septic | Nitrates | Pura (nitrate removal plus softening). With a Ferro already softening, a note says the nitrate setup is designed on site instead. |
 | Bacteria, or never tested | Possible bacteria | UV Light (add-on) |
 
 Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
@@ -113,7 +113,12 @@ Iron tanks (Ferro, Poseidon) run $8,000 (10-inch), $9,000 (12-inch), or
 $13,000 (13-inch). Lighter tanks (Aero, and for now Terra and Flow as
 placeholders) run $6,000, $8,000, or $10,000. With more than one tank the
 priciest tank sets the base and each extra tank adds $1,000, so Ferro plus
-Aero at 10-inch is $9,000. Flat add-ons (UV) are added on top.
+Aero at 10-inch is $9,000. Flat add-ons (UV) are added on top. A setup of
+four or more tanks quietly adds $2,500 at every size (`bigSetup`).
+
+**Bonuses.** The lifetime warranty, 3 years of service, soap package, and
+lab test list only appears on whole-home purchases (a city tier or a well
+tank system). A UV-only or Elara-only purchase does not show it.
 
 **Tank sizing.** Tank size is about how much the tank can remove, not house
 size. Every well system starts at 10-inch. Each product carries its own

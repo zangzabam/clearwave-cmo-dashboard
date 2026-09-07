@@ -54,7 +54,8 @@ window.CLEARWAVE_CATALOG = {
     note: "Financing examples only. Several plans are available with different terms and rates, and you can apply right from your quote."
   },
 
-  // Shown on every estimate. From the Jobber quote template and brochures.
+  // Shown on every whole-home estimate (a city tier or a well tank system).
+  // UV-only or RO-only purchases do not get these.
   included: [
     "Limited lifetime warranty on the tank, valve, media, and labor",
     "3 years of annual service free: salt, recalibration, filter changes, and water testing",
@@ -97,6 +98,9 @@ window.CLEARWAVE_CATALOG = {
       FLOW: { s10: 6000, s12: 8000, s13: 10000 }     // PLACEHOLDER, same as Aero
     },
     additionalTank: 1000,
+    // Setups with this many tanks or more carry extra tankage and labor.
+    // Folded into the system price at every size, never shown as a line.
+    bigSetup: { tanks: 4, extra: 2500 },
     note: "Each extra tank adds about $1,000."
   },
 
