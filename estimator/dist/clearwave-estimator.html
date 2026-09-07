@@ -706,7 +706,7 @@ window.CLEARWAVE_CATALOG = {
       else if (has("nitrate") && core.indexOf("FERRO") >= 0) { core.push("PURA"); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
-      if (!core.length && !addons.length) { notes.push("You did not check any problems. For a well, the next step is a free on-site water test. Call us and we will schedule it."); }
+      if (!core.length && !addons.length) { notes.push("Nothing you checked calls for a system by itself. For a well, the next step is a free on-site water test. Call us and we will schedule it."); }
       causes.forEach(function (c) { if (cat.causes[c]) { diagnosis.push(cat.causes[c].plain); } });
       if (labHits.length) { diagnosis.push("From your lab numbers: " + labHits.join("; ") + "."); }
     }
@@ -715,7 +715,8 @@ window.CLEARWAVE_CATALOG = {
     if (!core.length && addons.length) { core = [addons.shift()]; }
     // Free with every whole-home system.
     var freebies = [];
-    if (core.length) { (cat.includedWithSystem || []).forEach(function (k) { if (core.indexOf(k) < 0 && addons.indexOf(k) < 0) { freebies.push(k); } addons = addons.filter(function (a) { return a !== k; }); }); }
+    var wholeHome = core.some(function (k) { return cat.products[k].kind === "core"; });
+    if (wholeHome) { (cat.includedWithSystem || []).forEach(function (k) { if (core.indexOf(k) < 0 && addons.indexOf(k) < 0) { freebies.push(k); } addons = addons.filter(function (a) { return a !== k; }); }); }
     var items = core.concat(addons).concat(freebies).map(function (k) {
       var p = cat.products[k];
       var tank = st.source === "well" && !!p.price.tank;
@@ -1081,6 +1082,8 @@ window.CLEARWAVE_CATALOG = {
       h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Possible enhancement tank, decided at your on-site test</p><p class="nm">' + esc(o.name) + '</p><p class="hl">' + esc(o.headline) + "</p>" + (o.specs ? '<p class="cwe-small">' + esc(o.specs) + "</p>" : "") + priceBlock("About +" + money(cat.wellPricing.additionalTank), "Only if your test calls for it. Not in your price below.") + (ou ? '<a class="cwe-btn ghost sm no-print" href="' + esc(ou) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
     });
 
+    if (!r.items.length) { return h + nextStepHtml(cat, st, cfg); }
+
     // Totals
     var fin = "";
     if (cat.financing && cat.financing.enabled && cat.financing.options) {
@@ -1125,7 +1128,11 @@ window.CLEARWAVE_CATALOG = {
 
     h += '<div class="cwe-note good">' + esc(well ? cat.copy.priceNoteWell : cat.copy.priceNoteCity) + "</div>";
 
-    h += "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
+    return h + nextStepHtml(cat, st, cfg);
+  }
+
+  function nextStepHtml(cat, st, cfg) {
+    var h = "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
       '<a class="cwe-btn green" href="' + esc(cat.company.phoneHref) + '">Call ' + esc(cat.company.phone) + "</a>" +
       '<a class="cwe-btn" href="' + esc(cat.company.smsHref) + "?&body=" + encodeURIComponent("Hi ClearWave, my estimate is " + st.id + ". I would like to talk about my water.") + '">Text us</a>' +
       (cfg.booking ? '<a class="cwe-btn" href="' + esc(cfg.booking) + '" target="_blank" rel="noopener">Book a free assessment</a>' : "") +
