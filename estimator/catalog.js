@@ -66,27 +66,28 @@ window.CLEARWAVE_CATALOG = {
   ],
 
   // ---------------------------------------------------------------------
-  // TANK SIZES (well water). Picked from bathrooms, people, and lab numbers.
+  // TANK SIZES (well water). Size is about how much the tank can remove,
+  // not house size. A 10-inch tank can go on a large home. Levels below
+  // come from the Ferro and Poseidon spec sheets.
   // ---------------------------------------------------------------------
   sizes: [
-    { id: "s10", label: "10-inch tank", fits: "1 to 2 bathrooms, up to 3 people" },
-    { id: "s12", label: "12-inch tank", fits: "3 to 4 bathrooms, 4 to 6 people" },
-    { id: "s13", label: "13-inch tank", fits: "5 or more bathrooms, 7 or more people, or heavy iron" }
+    { id: "s10", label: "10-inch tank", fits: "Light levels. For example, iron up to 10 ppm." },
+    { id: "s12", label: "12-inch tank", fits: "Moderate levels. For example, iron up to 20 ppm." },
+    { id: "s13", label: "13-inch tank", fits: "Heavy levels. For example, iron of 30 ppm or more." }
   ],
-  sizingRules: [
-    { maxBaths: 2, maxPeople: 3, size: "s10" },
-    { maxBaths: 4, maxPeople: 6, size: "s12" },
-    { maxBaths: 99, maxPeople: 99, size: "s13" }
+  // Every well system starts at 10-inch. Lab numbers move it up. First match wins.
+  capacitySizing: [
+    { field: "iron", above: 20, size: "s13" }, { field: "iron", above: 10, size: "s12" },
+    { field: "manganese", above: 5, size: "s13" }, { field: "manganese", above: 3, size: "s12" },
+    { field: "hardness", above: 40, size: "s13" }, { field: "hardness", above: 30, size: "s12" }
   ],
-  // Lab iron above these levels forces a bigger tank (from the Ferro and
-  // Poseidon spec sheets: 10 ppm for a 10-inch, 20 ppm for a 12-inch).
-  ironSizing: [{ above: 20, size: "s13" }, { above: 10, size: "s12" }],
+  sizeNote: "Most homes start with a 10-inch tank. Tank size is set by how much your water needs removed, not by the size of your house. Your free water test sets the final size.",
 
   // Well water pricing rule.
   wellPricing: {
     singleTank: { s10: 8000, s12: 9000, s13: 13000 },
     additionalTank: 1000,
-    note: "Well systems are custom. A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
+    note: "A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
   },
 
   // "Large home" for city water. Inside a package the larger system is
@@ -307,7 +308,7 @@ window.CLEARWAVE_CATALOG = {
   // ---------------------------------------------------------------------
   wellSymptoms: [
     { id: "orange", label: "Orange or red stains in tubs, toilets, or laundry", cause: "iron" },
-    { id: "rusty", label: "Water looks orange, rusty, or has rust particles", cause: "ferric" },
+    { id: "rusty", label: "Water comes out of the tap orange or rusty, or has rust particles", cause: "ferric" },
     { id: "black", label: "Black or brown stains, or dark slime", cause: "manganese" },
     { id: "egg", label: "Rotten egg smell", cause: "sulfur" },
     { id: "bluegreen", label: "Blue-green stains on sinks or fixtures", cause: "acid" },
@@ -321,8 +322,8 @@ window.CLEARWAVE_CATALOG = {
 
   // Plain-language names for each cause, used in the diagnosis.
   causes: {
-    iron: { plain: "Dissolved (ferrous) iron. It leaves orange and red stains and a metallic taste." },
-    ferric: { plain: "Ferric iron. Iron that has already turned to rust particles. A softener cannot catch it. Air oxidation can." },
+    iron: { plain: "Dissolved (ferrous) iron. It is clear in the glass but leaves orange and red stains. This is the most common well problem we see." },
+    ferric: { plain: "Ferric iron. Iron that has already turned to rust particles in the water. It needs air oxidation, and it usually comes with dissolved iron too." },
     manganese: { plain: "Manganese. It leaves black or brown stains and can stain laundry." },
     sulfur: { plain: "Hydrogen sulfide gas. That is the rotten egg smell." },
     acid: { plain: "Acidic water (low pH). It slowly eats copper pipes, which causes blue-green stains and pinhole leaks." },

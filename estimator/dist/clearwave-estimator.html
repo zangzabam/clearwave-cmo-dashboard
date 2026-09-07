@@ -93,27 +93,28 @@ window.CLEARWAVE_CATALOG = {
   ],
 
   // ---------------------------------------------------------------------
-  // TANK SIZES (well water). Picked from bathrooms, people, and lab numbers.
+  // TANK SIZES (well water). Size is about how much the tank can remove,
+  // not house size. A 10-inch tank can go on a large home. Levels below
+  // come from the Ferro and Poseidon spec sheets.
   // ---------------------------------------------------------------------
   sizes: [
-    { id: "s10", label: "10-inch tank", fits: "1 to 2 bathrooms, up to 3 people" },
-    { id: "s12", label: "12-inch tank", fits: "3 to 4 bathrooms, 4 to 6 people" },
-    { id: "s13", label: "13-inch tank", fits: "5 or more bathrooms, 7 or more people, or heavy iron" }
+    { id: "s10", label: "10-inch tank", fits: "Light levels. For example, iron up to 10 ppm." },
+    { id: "s12", label: "12-inch tank", fits: "Moderate levels. For example, iron up to 20 ppm." },
+    { id: "s13", label: "13-inch tank", fits: "Heavy levels. For example, iron of 30 ppm or more." }
   ],
-  sizingRules: [
-    { maxBaths: 2, maxPeople: 3, size: "s10" },
-    { maxBaths: 4, maxPeople: 6, size: "s12" },
-    { maxBaths: 99, maxPeople: 99, size: "s13" }
+  // Every well system starts at 10-inch. Lab numbers move it up. First match wins.
+  capacitySizing: [
+    { field: "iron", above: 20, size: "s13" }, { field: "iron", above: 10, size: "s12" },
+    { field: "manganese", above: 5, size: "s13" }, { field: "manganese", above: 3, size: "s12" },
+    { field: "hardness", above: 40, size: "s13" }, { field: "hardness", above: 30, size: "s12" }
   ],
-  // Lab iron above these levels forces a bigger tank (from the Ferro and
-  // Poseidon spec sheets: 10 ppm for a 10-inch, 20 ppm for a 12-inch).
-  ironSizing: [{ above: 20, size: "s13" }, { above: 10, size: "s12" }],
+  sizeNote: "Most homes start with a 10-inch tank. Tank size is set by how much your water needs removed, not by the size of your house. Your free water test sets the final size.",
 
   // Well water pricing rule.
   wellPricing: {
     singleTank: { s10: 8000, s12: 9000, s13: 13000 },
     additionalTank: 1000,
-    note: "Well systems are custom. A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
+    note: "A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
   },
 
   // "Large home" for city water. Inside a package the larger system is
@@ -334,7 +335,7 @@ window.CLEARWAVE_CATALOG = {
   // ---------------------------------------------------------------------
   wellSymptoms: [
     { id: "orange", label: "Orange or red stains in tubs, toilets, or laundry", cause: "iron" },
-    { id: "rusty", label: "Water looks orange, rusty, or has rust particles", cause: "ferric" },
+    { id: "rusty", label: "Water comes out of the tap orange or rusty, or has rust particles", cause: "ferric" },
     { id: "black", label: "Black or brown stains, or dark slime", cause: "manganese" },
     { id: "egg", label: "Rotten egg smell", cause: "sulfur" },
     { id: "bluegreen", label: "Blue-green stains on sinks or fixtures", cause: "acid" },
@@ -348,8 +349,8 @@ window.CLEARWAVE_CATALOG = {
 
   // Plain-language names for each cause, used in the diagnosis.
   causes: {
-    iron: { plain: "Dissolved (ferrous) iron. It leaves orange and red stains and a metallic taste." },
-    ferric: { plain: "Ferric iron. Iron that has already turned to rust particles. A softener cannot catch it. Air oxidation can." },
+    iron: { plain: "Dissolved (ferrous) iron. It is clear in the glass but leaves orange and red stains. This is the most common well problem we see." },
+    ferric: { plain: "Ferric iron. Iron that has already turned to rust particles in the water. It needs air oxidation, and it usually comes with dissolved iron too." },
     manganese: { plain: "Manganese. It leaves black or brown stains and can stain laundry." },
     sulfur: { plain: "Hydrogen sulfide gas. That is the rotten egg smell." },
     acid: { plain: "Acidic water (low pH). It slowly eats copper pipes, which causes blue-green stains and pinhole leaks." },
@@ -610,19 +611,14 @@ window.CLEARWAVE_CATALOG = {
   // ------------------------------------------------------------------
   function sizeIndex(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return i; } } return 0; }
   function pickSize(cat, st) {
-    var size = cat.sizes[cat.sizes.length - 1].id;
-    for (var i = 0; i < cat.sizingRules.length; i++) {
-      var r = cat.sizingRules[i];
-      if (st.home.baths <= r.maxBaths && st.home.people <= r.maxPeople) { size = r.size; break; }
+    var size = cat.sizes[0].id, bumped = null;
+    var lab = (st.well && st.well.lab) || {};
+    var rules = cat.capacitySizing || [];
+    for (var j = 0; j < rules.length; j++) {
+      var v = Number(lab[rules[j].field]);
+      if (v && v > rules[j].above && sizeIndex(cat, rules[j].size) > sizeIndex(cat, size)) { size = rules[j].size; bumped = rules[j].field; }
     }
-    var iron = Number(st.well && st.well.lab && st.well.lab.iron);
-    var bumped = false;
-    if (iron && cat.ironSizing) {
-      for (var j = 0; j < cat.ironSizing.length; j++) {
-        if (iron > cat.ironSizing[j].above) { if (sizeIndex(cat, cat.ironSizing[j].size) > sizeIndex(cat, size)) { size = cat.ironSizing[j].size; bumped = true; } break; }
-      }
-    }
-    return { id: size, ironBumped: bumped };
+    return { id: size, bumped: bumped };
   }
   function tankSystemPrice(cat, n, sizeId) { if (!n) { return 0; } return cat.wellPricing.singleTank[sizeId] + (n - 1) * cat.wellPricing.additionalTank; }
   function region(cat, zip) {
@@ -635,7 +631,7 @@ window.CLEARWAVE_CATALOG = {
   function recommend(cat, st) {
     var picked = pickSize(cat, st), sizeId = picked.id;
     var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [];
-    if (picked.ironBumped) { notes.push("Your iron level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". More media means more iron removed between cleanings."); }
+    if (st.source === "well" && picked.bumped) { notes.push("Your " + picked.bumped + " level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". A bigger tank holds more media and removes more between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
     var largeHome = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
@@ -673,13 +669,16 @@ window.CLEARWAVE_CATALOG = {
       causes = Object.keys(cs);
       var has = function (c) { return cs[c] === 1; };
       var iron = has("iron") || has("manganese"), ferric = has("ferric"), soft = has("nitrate") ? "PURA" : "FLOW";
+      var highIron = Number(st.well.lab.iron) > 10;
 
-      if (has("sulfur") && (iron || ferric)) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (has("sulfur")) { core.push("AERO"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (ferric) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (iron) { if (has("nitrate")) { core.push("POSEIDON", "PURA"); } else { core.push("FERRO"); } }
-      else if (has("taste")) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); if (has("hardness")) { core.push(soft); } }
-      else if (has("hardness") || has("nitrate")) { core.push(soft); }
+      if (ferric && (iron || highIron)) { core.push("POSEIDON", "FERRO"); }
+      else if (ferric) { core.push("POSEIDON"); notes.push("Rusty water with no staining is unusual. Most wells with rust also carry dissolved iron, so your free water test may add a Ferro."); }
+      else if (iron) { core.push("FERRO"); }
+      if (has("sulfur") && core.indexOf("POSEIDON") < 0) { core.push("AERO"); }
+      else if (has("taste") && !core.length) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); }
+      // Ferro softens on its own. Otherwise hardness or nitrates need their own tank.
+      if ((has("hardness") || has("nitrate")) && core.indexOf("FERRO") < 0) { core.push(soft); }
+      else if (has("nitrate") && core.indexOf("FERRO") >= 0) { core.push("PURA"); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
       if (!core.length) {
@@ -810,7 +809,7 @@ window.CLEARWAVE_CATALOG = {
     };
     V.home = function () {
       var n = state.source === "well" ? 5 : 5;
-      return head("Step " + n, "Tell us about your home", "This sets the tank size. Bigger homes need more flow.") +
+      return head("Step " + n, "Tell us about your home", state.source === "well" ? "This helps us plan your install and follow-up." : "Larger homes get the higher-flow system in each package.") +
         '<div class="cwe-row"><div><label class="cwe-f" for="cwe-baths">Bathrooms</label><select id="cwe-baths">' + opts([1, 2, 3, 4, 5, 6], state.home.baths, function (v) { return v === 6 ? "6 or more" : v; }) + "</select></div>" +
         '<div><label class="cwe-f" for="cwe-people">People living there</label><select id="cwe-people">' + opts([1, 2, 3, 4, 5, 6, 7, 8], state.home.people, function (v) { return v === 8 ? "8 or more" : v; }) + "</select></div>" +
         '<div><label class="cwe-f" for="cwe-timeline">When do you want it fixed?</label><select id="cwe-timeline"><option value="">Choose one</option>' + opts(["asap", "soon", "research"], state.home.timeline, function (v) { return { asap: "As soon as possible", soon: "In the next 1 to 3 months", research: "Just researching for now" }[v]; }) + "</select></div>" +
@@ -1035,7 +1034,7 @@ window.CLEARWAVE_CATALOG = {
 
     h += "<h3>Recommended for your home</h3>";
     if (well && r.totals.tanks) {
-      h += '<p class="cwe-small">Sized for <b>' + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b>. " + esc(cat.wellPricing.note) + "</p>";
+      h += '<p class="cwe-small">Priced with a <b>' + esc(sz.label) + "</b>. " + esc(cat.sizeNote) + " " + esc(cat.wellPricing.note) + "</p>";
     } else {
       h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
     }
@@ -1072,7 +1071,7 @@ window.CLEARWAVE_CATALOG = {
 
     // Well: price by tank size
     if (well && r.totals.tanks) {
-      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
+      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">A bigger tank removes more. Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Built for</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
       cat.sizes.forEach(function (s) {
         var sys = tankSystemPrice(cat, r.totals.tanks, s.id);
         h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";

@@ -95,15 +95,15 @@ the recommended column highlighted.
 | What they see | Likely cause | System |
 |---|---|---|
 | Orange or red stains | Dissolved (ferrous) iron | Ferro (iron, manganese, and softening in one tank) |
-| Water looks rusty, rust particles | Ferric iron | Poseidon (air-injection, salt-free) |
-| Black or brown stains | Manganese | Ferro, or Poseidon if sulfur is also present |
-| Rotten egg smell | Hydrogen sulfide | Aero (air over carbon) |
-| Stains plus rotten egg smell | Iron and sulfur | Poseidon, plus Flow if the water is also hard |
+| Stains plus rotten egg smell | Ferrous iron and sulfur | Ferro plus Aero (two tanks) |
+| Rusty water from the tap plus stains, or very high iron | Ferric and ferrous iron | Poseidon plus Ferro (two tanks). Poseidon also handles the sulfur smell. |
+| Rusty water alone | Ferric iron | Poseidon (rare, with a note that a test may add a Ferro) |
+| Black or brown stains | Manganese | Ferro |
+| Rotten egg smell alone | Hydrogen sulfide | Aero |
 | Blue-green stains, pinhole leaks | Low pH | Terra (always first in line) |
-| Itchy skin, spots, soap will not lather | Hardness | Flow |
-| Near farmland or septic | Nitrates | Pura (nitrate removal plus softening, replaces Flow) |
+| Itchy skin, spots, soap will not lather | Hardness | Flow, unless a Ferro is already there (it softens too) |
+| Near farmland or septic | Nitrates | Pura (nitrate removal plus softening) |
 | Bacteria, or never tested | Possible bacteria | UV Light (add-on) |
-| Wants drinking water | | Elara (included free with any whole-home system) |
 
 Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
 7 gpg or more, nitrate above 10 mg/L, any coliform).
@@ -111,22 +111,14 @@ Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
 **Well pricing rule.** Every well system is priced by tank count, not per
 product. A single tank runs $8,000 (10-inch), $9,000 (12-inch), or $13,000
 (13-inch), so the customer sees "$8,000 to $13,000" for one tank. Each extra
-tank adds $1,000. Flat add-ons (Elara, UV) are added on top. The results page
-shows the total at every tank size.
+tank adds $1,000. Flat add-ons (UV) are added on top. The results page shows
+the total at every tank size.
 
-**Tank sizing.** Bathrooms and people pick 10, 12, or 13 inch. Lab iron above
-10 ppm forces a 12-inch, above 20 ppm a 13-inch (from the Ferro and Poseidon
-spec sheets).
-
-**Included free.** The Elara reverse osmosis unit is included at no charge
-with every whole-home system, city or well. It is only priced ($2,499) when
-"Better drinking water only" is the goal. Change the list in
-`includedWithSystem` to add or remove freebies.
-
-**Adjust panel.** The results page lists every answer that shaped the pick
-(goal, concerns, larger-home sizing, or well symptoms) with a checkbox and a
-line that says what changes if it is flipped. Unchecking one recomputes the
-system and price on the spot without sending a second lead.
+**Tank sizing.** Tank size is about how much the tank can remove, not house
+size. Every well system starts at 10-inch. Lab numbers move it up, from the
+Ferro and Poseidon spec sheets: iron above 10 ppm means 12-inch, above 20 ppm
+means 13-inch; manganese above 3 and 5 ppm; hardness above 30 and 40 gpg.
+Edit `capacitySizing` in the catalog to change the thresholds.
 
 ## Changing prices and products
 

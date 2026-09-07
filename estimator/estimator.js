@@ -208,19 +208,14 @@
   // ------------------------------------------------------------------
   function sizeIndex(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return i; } } return 0; }
   function pickSize(cat, st) {
-    var size = cat.sizes[cat.sizes.length - 1].id;
-    for (var i = 0; i < cat.sizingRules.length; i++) {
-      var r = cat.sizingRules[i];
-      if (st.home.baths <= r.maxBaths && st.home.people <= r.maxPeople) { size = r.size; break; }
+    var size = cat.sizes[0].id, bumped = null;
+    var lab = (st.well && st.well.lab) || {};
+    var rules = cat.capacitySizing || [];
+    for (var j = 0; j < rules.length; j++) {
+      var v = Number(lab[rules[j].field]);
+      if (v && v > rules[j].above && sizeIndex(cat, rules[j].size) > sizeIndex(cat, size)) { size = rules[j].size; bumped = rules[j].field; }
     }
-    var iron = Number(st.well && st.well.lab && st.well.lab.iron);
-    var bumped = false;
-    if (iron && cat.ironSizing) {
-      for (var j = 0; j < cat.ironSizing.length; j++) {
-        if (iron > cat.ironSizing[j].above) { if (sizeIndex(cat, cat.ironSizing[j].size) > sizeIndex(cat, size)) { size = cat.ironSizing[j].size; bumped = true; } break; }
-      }
-    }
-    return { id: size, ironBumped: bumped };
+    return { id: size, bumped: bumped };
   }
   function tankSystemPrice(cat, n, sizeId) { if (!n) { return 0; } return cat.wellPricing.singleTank[sizeId] + (n - 1) * cat.wellPricing.additionalTank; }
   function region(cat, zip) {
@@ -233,7 +228,7 @@
   function recommend(cat, st) {
     var picked = pickSize(cat, st), sizeId = picked.id;
     var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [];
-    if (picked.ironBumped) { notes.push("Your iron level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". More media means more iron removed between cleanings."); }
+    if (st.source === "well" && picked.bumped) { notes.push("Your " + picked.bumped + " level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". A bigger tank holds more media and removes more between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
     var largeHome = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
@@ -271,13 +266,16 @@
       causes = Object.keys(cs);
       var has = function (c) { return cs[c] === 1; };
       var iron = has("iron") || has("manganese"), ferric = has("ferric"), soft = has("nitrate") ? "PURA" : "FLOW";
+      var highIron = Number(st.well.lab.iron) > 10;
 
-      if (has("sulfur") && (iron || ferric)) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (has("sulfur")) { core.push("AERO"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (ferric) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
-      else if (iron) { if (has("nitrate")) { core.push("POSEIDON", "PURA"); } else { core.push("FERRO"); } }
-      else if (has("taste")) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); if (has("hardness")) { core.push(soft); } }
-      else if (has("hardness") || has("nitrate")) { core.push(soft); }
+      if (ferric && (iron || highIron)) { core.push("POSEIDON", "FERRO"); }
+      else if (ferric) { core.push("POSEIDON"); notes.push("Rusty water with no staining is unusual. Most wells with rust also carry dissolved iron, so your free water test may add a Ferro."); }
+      else if (iron) { core.push("FERRO"); }
+      if (has("sulfur") && core.indexOf("POSEIDON") < 0) { core.push("AERO"); }
+      else if (has("taste") && !core.length) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); }
+      // Ferro softens on its own. Otherwise hardness or nitrates need their own tank.
+      if ((has("hardness") || has("nitrate")) && core.indexOf("FERRO") < 0) { core.push(soft); }
+      else if (has("nitrate") && core.indexOf("FERRO") >= 0) { core.push("PURA"); }
       if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
       if (!core.length) {
@@ -408,7 +406,7 @@
     };
     V.home = function () {
       var n = state.source === "well" ? 5 : 5;
-      return head("Step " + n, "Tell us about your home", "This sets the tank size. Bigger homes need more flow.") +
+      return head("Step " + n, "Tell us about your home", state.source === "well" ? "This helps us plan your install and follow-up." : "Larger homes get the higher-flow system in each package.") +
         '<div class="cwe-row"><div><label class="cwe-f" for="cwe-baths">Bathrooms</label><select id="cwe-baths">' + opts([1, 2, 3, 4, 5, 6], state.home.baths, function (v) { return v === 6 ? "6 or more" : v; }) + "</select></div>" +
         '<div><label class="cwe-f" for="cwe-people">People living there</label><select id="cwe-people">' + opts([1, 2, 3, 4, 5, 6, 7, 8], state.home.people, function (v) { return v === 8 ? "8 or more" : v; }) + "</select></div>" +
         '<div><label class="cwe-f" for="cwe-timeline">When do you want it fixed?</label><select id="cwe-timeline"><option value="">Choose one</option>' + opts(["asap", "soon", "research"], state.home.timeline, function (v) { return { asap: "As soon as possible", soon: "In the next 1 to 3 months", research: "Just researching for now" }[v]; }) + "</select></div>" +
@@ -633,7 +631,7 @@
 
     h += "<h3>Recommended for your home</h3>";
     if (well && r.totals.tanks) {
-      h += '<p class="cwe-small">Sized for <b>' + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b>. " + esc(cat.wellPricing.note) + "</p>";
+      h += '<p class="cwe-small">Priced with a <b>' + esc(sz.label) + "</b>. " + esc(cat.sizeNote) + " " + esc(cat.wellPricing.note) + "</p>";
     } else {
       h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
     }
@@ -670,7 +668,7 @@
 
     // Well: price by tank size
     if (well && r.totals.tanks) {
-      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
+      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">A bigger tank removes more. Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Built for</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
       cat.sizes.forEach(function (s) {
         var sys = tankSystemPrice(cat, r.totals.tanks, s.id);
         h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";
