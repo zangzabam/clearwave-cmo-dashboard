@@ -184,9 +184,9 @@ window.CLEARWAVE_CATALOG = {
       name: "ClearWave Elara",
       family: "both",
       kind: "addon",
-      headline: "3-stage reverse osmosis drinking water at the kitchen sink, with a 2-gallon tank and leak detection. Included free with every whole-home system.",
-      solves: ["Drinking and cooking water", "Fluoride, nitrates, and dissolved solids", "Bottled-water taste from the tap"],
-      specs: "Under-sink. 3-stage. 2-gallon tank.",
+      headline: "3-stage reverse osmosis drinking water at the kitchen sink, with a 2-gallon tank and an alkaline remineralizer filter. Included free with every whole-home system.",
+      solves: ["Drinking and cooking water", "Fluoride, nitrates, and dissolved solids", "Alkaline remineralizer puts healthy minerals back", "Bottled-water taste from the tap"],
+      specs: "Under-sink. 3-stage reverse osmosis plus alkaline remineralizer. 2-gallon tank.",
       price: { flat: 2499 },
       brochure: null
     },
@@ -271,7 +271,9 @@ window.CLEARWAVE_CATALOG = {
 
   // Extra city concerns. minTier moves the customer up a tier.
   cityConcerns: [
-    { id: "thm", label: "Trihalomethanes or disinfection byproducts", minTier: 2 },
+    { id: "thm", label: "Trihalomethanes or haloacetic acids (disinfection byproducts)", minTier: 2 },
+    { id: "chromium", label: "Chromium-6", minTier: 2 },
+    { id: "voc", label: "VOCs (volatile organic compounds)", minTier: 2 },
     { id: "lead", label: "Lead or old pipes", minTier: 2 },
     { id: "pharma", label: "Pharmaceuticals", minTier: 2 },
     { id: "sensitive", label: "Someone at home has eczema, allergies, or a health condition", minTier: 2 },

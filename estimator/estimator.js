@@ -537,7 +537,6 @@
       var p = body.querySelector("#cwe-print"); if (p) { p.onclick = function () { printEstimate(); }; }
       var rs = body.querySelector("#cwe-restart"); if (rs) { rs.onclick = function () { stepIdx = 0; state.result = null; state.sent = false; state.adjust = { ignoreLarge: false, open: false }; state.city.concerns = []; state.well.symptoms = []; state.id = estimateId(); root.querySelector(".cwe-foot span:last-child").textContent = "Estimate " + state.id; render(); }; }
       var m = body.querySelector("#cwe-mail"); if (m) { m.href = mailto(cat, state); }
-      var g = body.querySelector("#cwe-adj-goal"); if (g) { g.onchange = function () { state.city.goal = g.value; readjust(); }; }
       var t = body.querySelector("#cwe-adj-toggle"); if (t) { t.onclick = function () { state.adjust.open = !state.adjust.open; readjust(); }; }
       body.querySelectorAll(".cwe-adj-box").forEach(function (box) {
         box.addEventListener("change", function () {
@@ -599,31 +598,28 @@
   }
   function adjustPanel(cat, st) {
     var r = st.result, now = outcome(cat, r), open = !!(st.adjust && st.adjust.open);
-    var h = '<div class="cwe-adj no-print"><div class="cwe-adj-head"><div><b>Do you want to make changes?</b><span class="cwe-small">Uncheck an answer to see a different system and price.</span></div><button type="button" class="cwe-btn ghost sm" id="cwe-adj-toggle">' + (open ? "Hide" : "Yes, show my answers") + "</button></div>";
+    var h = '<div class="cwe-adj no-print"><div class="cwe-adj-head"><div><b>Do you want to make changes?</b><span class="cwe-small">Check or uncheck a concern to see a different system and price.</span></div><button type="button" class="cwe-btn ghost sm" id="cwe-adj-toggle">' + (open ? "Hide" : "Yes, show my options") + "</button></div>";
     if (!open) { return h + "</div>"; }
-    function row(id, label, other) {
+    function row(id, on, label, other) {
       var o = outcome(cat, other), diff = o.key !== now.key;
-      var eff = diff ? "Uncheck to see: " + o.text : "Unchecking this does not change your price";
-      return '<label class="cwe-opt on"><input type="checkbox" class="cwe-adj-box" data-adj="' + esc(id) + '" checked><span><b>' + esc(label) + "</b><small>" + esc(eff) + "</small></span></label>";
+      var eff = diff ? (on ? "Uncheck to see: " : "Check to see: ") + o.text : (on ? "Unchecking this does not change your price" : "Adding this does not change your price");
+      return '<label class="cwe-opt ' + (on ? "on" : "") + '"><input type="checkbox" class="cwe-adj-box" data-adj="' + esc(id) + '"' + (on ? " checked" : "") + "><span><b>" + esc(label) + "</b><small>" + esc(eff) + "</small></span></label>";
     }
     var rows = [];
     if (st.source === "city") {
       cat.cityConcerns.forEach(function (c) {
-        if (st.city.concerns.indexOf(c.id) < 0) { return; }
-        rows.push(row("concern:" + c.id, c.label, recommend(cat, whatIf(st, function (x) { x.city.concerns = x.city.concerns.filter(function (i) { return i !== c.id; }); }))));
+        var on = st.city.concerns.indexOf(c.id) >= 0;
+        rows.push(row("concern:" + c.id, on, c.label, recommend(cat, whatIf(st, function (x) { x.city.concerns = on ? x.city.concerns.filter(function (i) { return i !== c.id; }) : x.city.concerns.concat([c.id]); }))));
       });
-      if (r.largeHome && !st.adjust.ignoreLarge) { rows.push(row("large", "Sized for a larger home (" + cat.largeHome.minBaths + "+ bathrooms or " + cat.largeHome.minPeople + "+ people)", recommend(cat, whatIf(st, function (x) { x.adjust.ignoreLarge = true; })))); }
+      if (r.largeHome) { var onL = !st.adjust.ignoreLarge; rows.push(row("large", onL, "Sized for a larger home (" + cat.largeHome.minBaths + "+ bathrooms or " + cat.largeHome.minPeople + "+ people)", recommend(cat, whatIf(st, function (x) { x.adjust.ignoreLarge = onL; })))); }
     } else {
       cat.wellSymptoms.forEach(function (sy) {
-        if (st.well.symptoms.indexOf(sy.id) < 0) { return; }
-        rows.push(row("symptom:" + sy.id, sy.label, recommend(cat, whatIf(st, function (x) { x.well.symptoms = x.well.symptoms.filter(function (i) { return i !== sy.id; }); }))));
+        var on = st.well.symptoms.indexOf(sy.id) >= 0;
+        rows.push(row("symptom:" + sy.id, on, sy.label, recommend(cat, whatIf(st, function (x) { x.well.symptoms = on ? x.well.symptoms.filter(function (i) { return i !== sy.id; }) : x.well.symptoms.concat([sy.id]); }))));
       });
     }
-    h += '<div class="cwe-opts">' + (rows.length ? rows.join("") : '<p class="cwe-small">You did not add any extra answers, so there is nothing to uncheck here.</p>') + "</div>";
-    if (st.source === "city") {
-      var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
-      h += '<label class="cwe-f" for="cwe-adj-goal">Or change what matters most</label><select id="cwe-adj-goal">' + cat.cityGoals.map(function (g) { return '<option value="' + esc(g.id) + '"' + (g.id === st.city.goal ? " selected" : "") + ">" + esc(g.label) + "</option>"; }).join("") + "</select>" + (goal ? '<p class="cwe-small" style="margin-top:6px">' + esc(goal.sub) + "</p>" : "");
-    } else if (Object.keys(st.well.lab || {}).length) { h += '<p class="cwe-small" style="margin-top:8px">Your lab numbers still count. They can keep a system in place even when a box is unchecked.</p>'; }
+    h += '<div class="cwe-opts">' + rows.join("") + "</div>";
+    if (st.source !== "city" && Object.keys(st.well.lab || {}).length) { h += '<p class="cwe-small" style="margin-top:8px">Your lab numbers still count. They can keep a system in place even when a box is unchecked.</p>'; }
     return h + "</div>";
   }
 
