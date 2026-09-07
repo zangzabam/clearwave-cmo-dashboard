@@ -62,70 +62,76 @@ Host `embed.html` and use:
 
 ## How it decides what to recommend
 
-**City water.** The customer picks one main goal. It maps to a tier:
+**City water.** The customer picks one main goal. It maps to a tier. Every
+whole-home tier includes softening, so no separate softener is added.
 
-| Goal | System |
-|---|---|
-| Better drinking water only | Pura (reverse osmosis) |
-| Fix my skin and hair | Crest |
-| Whole-home health (chlorine, chloramine, THMs) | Meridian |
-| Remove the hard stuff (PFAS, microplastics, lead, pharmaceuticals) | Sovereign |
-| The most complete purity available | Pinnacle |
+| Goal | System | Installed price |
+|---|---|---|
+| Better drinking water only | Elara (reverse osmosis) | $2,499 |
+| Fix my skin and hair | Crest | $8,487 |
+| Whole-home health (chlorine, chloramine, VOCs, THMs) | Meridian | $10,477 |
+| Remove the hard stuff (PFAS, nitrates, lead, pharmaceuticals) | Sovereign | $12,847 |
+| The most complete purity available | Pinnacle | $17,396 |
 
-Extra concerns can move them up a tier (checking PFAS moves Crest to Sovereign)
-or add Cascade (softening) and Pura (drinking water).
+Extra concerns move them up: lead, pharmaceuticals, THMs, or a sensitive
+household means at least Meridian; PFAS or nitrates means at least Sovereign;
+microplastics means the Meridian Diamond Edition ($15,396). A larger home
+(4+ bathrooms or 6+ people) turns Meridian into the 13-inch Diamond Edition
+and offers the dual-tank Pinnacle as the upgrade. The results page shows the
+full collection comparison table with the recommended column highlighted.
 
 **Well water.** Each symptom points to a cause. Causes map to systems:
 
-| Symptom | Likely cause | System |
+| What they see | Likely cause | System |
 |---|---|---|
-| Orange or red stains | Iron | Ferro |
-| Black or brown stains | Manganese | Ferro |
-| Rotten egg smell | Hydrogen sulfide | Aero |
-| Orange stains and rotten egg smell | Iron and hydrogen sulfide | Aero (plus Ferro when iron is heavy) |
-| Blue-green stains, pinhole leaks | Low pH | Elara |
-| Itchy skin, spots, soap will not lather | Hardness | Cascade (add-on) |
-| Cloudy, sand, grit | Sediment | Sediment pre-filter (add-on) |
-| Bacteria, or never tested | Possible bacteria | UV (add-on) |
+| Orange or red stains | Dissolved (ferrous) iron | Ferro (iron, manganese, and softening in one tank) |
+| Water looks rusty, rust particles | Ferric iron | Poseidon (air-injection, salt-free) |
+| Black or brown stains | Manganese | Ferro, or Poseidon if sulfur is also present |
+| Rotten egg smell | Hydrogen sulfide | Aero (air over carbon) |
+| Stains plus rotten egg smell | Iron and sulfur | Poseidon, plus Flow if the water is also hard |
+| Blue-green stains, pinhole leaks | Low pH | Terra (always first in line) |
+| Itchy skin, spots, soap will not lather | Hardness | Flow |
+| Near farmland or septic | Nitrates | Pura (nitrate removal plus softening, replaces Flow) |
+| Bacteria, or never tested | Possible bacteria | UV Light (add-on) |
+| Wants drinking water | | Elara (add-on) |
 
-If they have a lab report, the numbers override the symptoms (iron above
-0.3 mg/L, pH below 6.5, hardness at 7 gpg or more, and so on). Three or more
-well problems also shows Poseidon as a one-system alternative.
+Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
+7 gpg or more, nitrate above 10 mg/L, any coliform).
 
-**Sizing.** Bathrooms and people pick a tank size (1.0, 1.5, 2.0, or 2.5 cu ft).
-The results page shows the price at every size so the customer can see how the
-number moves. Flat-price add-ons (Pura, UV, sediment) do not change with size.
+**Well pricing rule.** Every well system is priced by tank count, not per
+product. A single tank is $8,000 (10-inch) or $9,000 (12-inch). Each extra
+tank adds $1,000. The 13-inch price is a placeholder. Flat add-ons (Elara,
+UV) are added on top. The results page shows the total at every tank size.
+
+**Tank sizing.** Bathrooms and people pick 10, 12, or 13 inch. Lab iron above
+10 ppm forces a 12-inch, above 20 ppm a 13-inch (from the Ferro and Poseidon
+spec sheets).
 
 ## Changing prices and products
 
-Open `catalog.js`. Each product has a `price` block:
+Open `catalog.js`.
 
 ```js
-price: { s10: 5300, s15: 5900, s20: 6400, s25: 6900 }   // by tank size
-price: { flat: 2300 }                                    // one price
+price: { flat: 8487 }            // fixed installed price (city tiers, add-ons)
+price: { tank: true }            // well tank, priced by the wellPricing rule
+price: { flat: 5477, tank: true } // Flow: fixed on city water, a tank on well water
+wellPricing: { singleTank: { s10: 8000, s12: 9000, s13: 13000 }, additionalTank: 1000 }
 ```
 
-The prices in there now are **placeholders seeded from average Jobber sale
-prices per product line**. Replace them with your real installed price book
-before going live. Also fill in `brochure` with a PDF link for each product
-and the "Download the brochure" button appears on its own.
+**Still placeholders, marked PLACEHOLDER in the file:**
+
+- `wellPricing.singleTank.s13` (13-inch single tank, set to $13,000)
+- UV Light price (set to $1,800)
+- Pura has no brochure yet
+- Financing terms (`financing.apr` and `financing.months`, set to 12.99% over 60 months as an example)
+
+Brochures live in `brochures/` and the download button appears on any product
+that has a `brochure` file name. The city brochures were compressed from about
+20 MB each to under 1 MB so they load fast on a phone. Set
+`brochureBaseAbsolute` to the hosted folder URL before using the one-file build.
 
 Old product names (FerroMax, SorbMax, H2O Protector, and so on) must not appear
-in the catalog. Customers can view the file. Mapping used to seed pricing:
-
-| Old Jobber line | Catalog product |
-|---|---|
-| H2O Shield / Single Carbon | Crest |
-| H2O Protector / Dual Carbon | Meridian |
-| Re-Ionator Pro Ultra | Sovereign |
-| Super Protector | Pinnacle |
-| FerroMax | Ferro |
-| SorbMax Air / OxiMax Air | Aero |
-| NeuMAX | Elara |
-| H2O Sidekick | Cascade |
-| H2O RO PRO (Leak Detection) | Pura |
-
-This mapping is a best guess. Please confirm it.
+in the catalog. Customers can view the file.
 
 ## Where leads go
 

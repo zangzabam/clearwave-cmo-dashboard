@@ -3,15 +3,16 @@
 /*
  * ClearWave Water Solutions — Estimator Catalog
  * ------------------------------------------------
- * This is the ONE file you edit to change products, prices, sizes, and words.
- * The widget (estimator.js) reads it and never needs to change.
+ * This is the ONE file you edit to change products, prices, questions,
+ * regions, and words. The widget (estimator.js) reads it.
  *
- * PRICING NOTE: every price below is an installed price PLACEHOLDER. They were
- * seeded from average Jobber sale prices per product line. Replace them with
- * your real price book before going live. Prices only change for special
- * circumstances (see `specialCircumstances` at the bottom).
+ * PRICING
+ *  - City water tiers use the installed prices from the Jobber quote template.
+ *  - Well water is priced by tank count: a single tank is about $8,000 to
+ *    $9,000, and each extra tank adds $1,000. Larger 13-inch tanks cost more.
+ *    See `wellPricing` below. Items marked PLACEHOLDER still need a real number.
  *
- * Product names shown to customers must be the new collection names only.
+ * Product names shown to customers must be the collection names only.
  */
 window.CLEARWAVE_CATALOG = {
   company: {
@@ -31,156 +32,213 @@ window.CLEARWAVE_CATALOG = {
   leadEndpoint: null,
   // Calendly (or any booking) link. Leave null to hide the "Book" button.
   bookingUrl: null,
-  // Ask for name + email/phone before showing the estimate.
+  // Ask for name + email + phone before showing the estimate.
   requireContact: true,
-  // Show an "about $X per month" line. Turn on once financing terms are set.
-  financing: { enabled: false, months: 120, apr: 9.99, label: "with approved financing" },
-  // Monthly service plan shown on every estimate. Set to null to hide.
-  servicePlan: {
-    name: "ClearWave Concierge",
-    price: 99,
-    blurb: "We track and swap your filters, service the system every year, and you get priority phone support. No ordering. No guessing."
+  // Folder where the brochure PDFs live, relative to estimator.js.
+  brochureBase: "brochures/",
+  // Full URL to that folder once hosted (used by the one-file build, which
+  // has no script location to resolve against). Example:
+  // "https://clearwavewater.com/estimator/brochures/"
+  brochureBaseAbsolute: null,
+
+  // "About $X per month" line. PLACEHOLDER terms: replace apr and months
+  // with the real numbers from your financing partner before going live.
+  financing: { enabled: true, months: 60, apr: 12.99, label: "with approved financing (example terms)" },
+
+  // Shown on every estimate. From the Jobber quote template and brochures.
+  included: [
+    "Limited lifetime warranty on the tank, valve, media, and labor",
+    "3 years of annual service free: salt, recalibration, filter changes, and water testing",
+    "5-year soap and cleaning package made for your system",
+    "Before-and-after drinking water lab test mailed to you",
+    "90-day price match guarantee",
+    "If our solution does not fix the problem, we work with you for free until it is fixed",
+    "Veteran-owned. All products made in the USA"
+  ],
+
+  // ---------------------------------------------------------------------
+  // TANK SIZES (well water). Picked from bathrooms, people, and lab numbers.
+  // ---------------------------------------------------------------------
+  sizes: [
+    { id: "s10", label: "10-inch tank", fits: "1 to 2 bathrooms, up to 3 people" },
+    { id: "s12", label: "12-inch tank", fits: "3 to 4 bathrooms, 4 to 6 people" },
+    { id: "s13", label: "13-inch tank", fits: "5 or more bathrooms, 7 or more people, or heavy iron" }
+  ],
+  sizingRules: [
+    { maxBaths: 2, maxPeople: 3, size: "s10" },
+    { maxBaths: 4, maxPeople: 6, size: "s12" },
+    { maxBaths: 99, maxPeople: 99, size: "s13" }
+  ],
+  // Lab iron above these levels forces a bigger tank (from the Ferro and
+  // Poseidon spec sheets: 10 ppm for a 10-inch, 20 ppm for a 12-inch).
+  ironSizing: [{ above: 20, size: "s13" }, { above: 10, size: "s12" }],
+
+  // Well water pricing rule.
+  wellPricing: {
+    singleTank: { s10: 8000, s12: 9000, s13: 13000 },   // s13 is a PLACEHOLDER
+    additionalTank: 1000,
+    note: "Well systems are custom. Most single-tank systems run $8,000 to $9,000 installed. Each extra tank adds about $1,000. Larger 13-inch tanks cost more."
   },
 
-  // Tank sizes. The estimator picks one from bathrooms + people, then shows
-  // every size so the customer can see how price moves with size.
-  sizes: [
-    { id: "s10", label: "1.0 cu ft", fits: "1 to 2 bathrooms, up to 2 people" },
-    { id: "s15", label: "1.5 cu ft", fits: "2 to 3 bathrooms, 3 to 4 people" },
-    { id: "s20", label: "2.0 cu ft", fits: "3 to 4 bathrooms, 4 to 6 people" },
-    { id: "s25", label: "2.5 cu ft", fits: "5 or more bathrooms, or 7 or more people" }
-  ],
-
-  // Sizing rule. First match wins.
-  sizingRules: [
-    { maxBaths: 2, maxPeople: 2, size: "s10" },
-    { maxBaths: 3, maxPeople: 4, size: "s15" },
-    { maxBaths: 4, maxPeople: 6, size: "s20" },
-    { maxBaths: 99, maxPeople: 99, size: "s25" }
-  ],
+  // "Large home" for city water: bumps Meridian to the 13-inch Diamond Edition
+  // and offers the dual-tank Pinnacle as the upgrade.
+  largeHome: { minBaths: 4, minPeople: 6 },
 
   // ---------------------------------------------------------------------
   // PRODUCTS
-  // kind: "core" systems are the main recommendation. "addon" systems are
-  // offered alongside. price is either { sizeId: price } or a flat number.
-  // brochure: a URL to the PDF brochure (null hides the button).
+  // family: city | well | both.  kind: core | addon.
+  // price: { flat: N } for a fixed installed price, { tank: true } for well
+  // tanks priced by the wellPricing rule.
   // ---------------------------------------------------------------------
   products: {
-    // ---------- CITY WATER COLLECTION (four tiers) ----------
+    // ---------- CITY WATER COLLECTION ----------
+    FLOW: {
+      name: "ClearWave Flow",
+      family: "both",
+      kind: "addon",
+      tier: 0,
+      tagline: "The foundation of a refined home begins with the water inside it.",
+      headline: "Whole-home water softening with high cross-link resin and a garnet filtration bed.",
+      solves: ["Hard water scale", "Spots on glass and dishes", "Dry skin and dull laundry", "Water heater and fixture protection"],
+      specs: "48,000 grains. 10 GPM. Single tank.",
+      // City: fixed price. Well: counts as one tank under the wellPricing rule.
+      price: { flat: 5477, tank: true },
+      brochure: "clearwave-flow.pdf"
+    },
     CREST: {
       name: "ClearWave Crest",
       family: "city",
       kind: "core",
       tier: 1,
-      headline: "Whole-home carbon filtration for softer skin, healthier hair, and better-tasting water.",
-      solves: ["Chlorine taste and smell", "Dry, itchy skin", "Dull, brittle hair", "Chlorine in shower steam"],
-      price: { s10: 5200, s15: 5700, s20: 6300, s25: 6900 },
-      brochure: null
+      tagline: "What most companies call their best, we call our starting point.",
+      headline: "Catalytic carbon filtration and softening in one intelligent tank. Chlorine and chloramine out, scale gone.",
+      solves: ["Chlorine and chloramine", "Dry skin and brittle hair", "Chemical taste and odor", "Hard water scale"],
+      specs: "48,000 grains. 10 GPM. 3-stage media. Single tank.",
+      price: { flat: 8487 },
+      brochure: "clearwave-crest.pdf"
     },
     MERIDIAN: {
       name: "ClearWave Meridian",
       family: "city",
       kind: "core",
       tier: 2,
-      headline: "Dual-stage catalytic filtration engineered for chloramine, trihalomethanes, and everyday health.",
-      solves: ["Chlorine and chloramine", "Trihalomethanes (THMs)", "Disinfection byproducts", "Taste, odor, skin, and hair"],
-      price: { s10: 8400, s15: 9200, s20: 10000, s25: 10900 },
-      brochure: null
+      tagline: "Where science meets sophistication.",
+      headline: "Four premium media in one system. Chlorine, chloramine, VOCs, heavy metals, and hardness handled together.",
+      solves: ["Chlorine, chloramine, and disinfection byproducts", "VOCs and trihalomethanes", "Lead and heavy metals", "Pharmaceuticals", "Hard water scale"],
+      specs: "48,000 grains. 10 GPM. 4 media plus anti-bacteria and garnet layers. Single 10-inch tank.",
+      price: { flat: 10477 },
+      brochure: "clearwave-meridian.pdf"
     },
     SOVEREIGN: {
       name: "ClearWave Sovereign",
       family: "city",
       kind: "core",
       tier: 3,
-      headline: "Multi-stage advanced filtration for the contaminants a carbon filter alone will not touch.",
-      solves: ["PFAS (forever chemicals)", "Microplastics", "Lead and heavy metals", "Pharmaceuticals", "Chlorine, chloramine, and THMs"],
-      price: { s10: 9800, s15: 10700, s20: 11600, s25: 12600 },
-      brochure: null
+      tagline: "Approaching distilled quality from every tap.",
+      headline: "Catalytic carbon, KDF, anion filtration, and a multi-media DI resin bed. Soft water without the slippery feel.",
+      solves: ["PFOA and PFOS (forever chemicals)", "Nitrates and sulfates", "Lead and mercury", "Pharmaceuticals and emerging contaminants", "Chlorine and chloramine", "Hardness, with no slippery feel"],
+      specs: "64,000 grains. 15+ GPM. 13-inch tank. Uses 33% less water.",
+      price: { flat: 12847 },
+      brochure: "clearwave-sovereign.pdf"
+    },
+    DIAMOND: {
+      name: "ClearWave Meridian Diamond Edition",
+      family: "city",
+      kind: "core",
+      tier: 4,
+      tagline: "Meridian performance in a larger 13-inch tank.",
+      headline: "The full Meridian media stack in a 13-inch single tank, with microplastic and PFAS reduction for larger homes.",
+      solves: ["Microplastics", "PFOA and PFOS", "Chlorine, chloramine, and VOCs", "Lead and heavy metals", "Pharmaceuticals", "Hard water scale at high flow"],
+      specs: "13-inch single tank. Higher flow for larger homes.",
+      price: { flat: 15396 },
+      brochure: "clearwave-meridian.pdf"
     },
     PINNACLE: {
       name: "ClearWave Pinnacle",
       family: "city",
       kind: "core",
-      tier: 4,
-      headline: "The most complete whole-home purity we offer. Every tap. Every shower. Uncompromising.",
-      solves: ["Everything Sovereign removes", "Broadest contaminant reduction available", "Highest flow for larger homes", "Full-home purity for sensitive households"],
-      price: { s10: 14500, s15: 15900, s20: 17300, s25: 18800 },
+      tier: 5,
+      tagline: "The summit of water purity.",
+      headline: "Dual-tank architecture, six premium media stages, and 80,000 grain capacity. Filtered water 24/7, even during regeneration.",
+      solves: ["Everything the Meridian Diamond removes", "Microplastics and PFOA/PFOS", "Free radicals", "24/7 protection with two tanks", "Commercial flow for large homes", "WiFi valve with remote diagnostics"],
+      specs: "80,000 grains. 15+ GPM. Two 10-inch tanks. WiFi-enabled valve.",
+      price: { flat: 17396 },
+      brochure: "clearwave-pinnacle.pdf"
+    },
+    ELARA: {
+      name: "ClearWave Elara",
+      family: "both",
+      kind: "addon",
+      headline: "3-stage reverse osmosis drinking water at the kitchen sink, with a 2-gallon tank and leak detection.",
+      solves: ["Drinking and cooking water", "Fluoride, nitrates, and dissolved solids", "Bottled-water taste from the tap"],
+      specs: "Under-sink. 3-stage. 2-gallon tank.",
+      price: { flat: 2499 },
       brochure: null
     },
 
-    // ---------- WELL WATER COLLECTION ----------
+    // ---------- WELL WATER COLLECTION (priced by tank) ----------
     FERRO: {
       name: "ClearWave Ferro",
       family: "well",
       kind: "core",
-      headline: "Engineered iron and manganese removal. Ends orange and black staining at the source.",
-      solves: ["Orange or red staining", "Black or brown staining", "Metallic taste", "Iron in laundry"],
-      price: { s10: 5300, s15: 5900, s20: 6400, s25: 6900 },
-      brochure: null
-    },
-    AERO: {
-      name: "ClearWave Aero",
-      family: "well",
-      kind: "core",
-      headline: "Air-injection oxidation that removes hydrogen sulfide and iron together. No chemicals.",
-      solves: ["Rotten egg smell", "Hydrogen sulfide", "Clear-water (ferrous) iron", "Sulfur taste"],
-      price: { s10: 5900, s15: 6300, s20: 6800, s25: 7300 },
-      brochure: null
+      tagline: "Where iron ends. Water begins.",
+      headline: "Removes dissolved iron and manganese and softens your water in the same pass. One tank. Two jobs.",
+      solves: ["Orange and rust staining", "Manganese (black staining)", "Hard water scale", "Metallic taste", "Dingy laundry"],
+      specs: "Iron and manganese up to 30 ppm. 10, 12, or 13-inch tank. Smart metered valve.",
+      price: { tank: true },
+      brochure: "clearwave-ferro.pdf"
     },
     POSEIDON: {
       name: "ClearWave Poseidon",
       family: "well",
       kind: "core",
-      headline: "Our complete well water system for water with several problems at once.",
-      solves: ["Iron and sulfur", "Hardness", "Sediment", "Low pH", "Taste and odor"],
-      price: { s10: 12500, s15: 13800, s20: 15200, s25: 16800 },
-      brochure: null
+      tagline: "Pure water, powered by air.",
+      headline: "Air-injection oxidation removes ferric and ferrous iron, manganese, and the rotten-egg smell of sulfur. No salt. No chemicals.",
+      solves: ["Rusty or orange-looking water (ferric iron)", "Dissolved iron (ferrous)", "Manganese", "Rotten egg smell", "Salt-free and chemical-free"],
+      specs: "Ferric iron up to 30+ ppm. 10, 12, or 13-inch tank. Self-cleaning air-recharge backwash.",
+      price: { tank: true },
+      brochure: "clearwave-poseidon.pdf"
     },
-    ELARA: {
-      name: "ClearWave Elara",
+    AERO: {
+      name: "ClearWave Aero",
       family: "well",
       kind: "core",
-      headline: "Acid neutralization that raises low pH and protects copper plumbing from pinhole leaks.",
-      solves: ["Blue-green stains on fixtures", "Pinhole leaks", "Low pH (acidic water)", "Copper in water"],
-      price: { s10: 3300, s15: 3600, s20: 3900, s25: 4300 },
-      brochure: null
+      tagline: "Air does the work.",
+      headline: "Air over catalytic carbon. Off-gasses hydrogen sulfide, then traps chlorine, chemicals, and bad taste.",
+      solves: ["Rotten egg smell", "Hydrogen sulfide", "Bad taste and odor", "Chlorine, chloramine, and THMs"],
+      specs: "10, 12, or 13-inch tank. Self-cleaning air-recharge backwash.",
+      price: { tank: true },
+      brochure: "clearwave-aero.pdf"
     },
-
-    // ---------- SHARED ADD-ONS ----------
-    CASCADE: {
-      name: "ClearWave Cascade",
-      family: "both",
-      kind: "addon",
-      headline: "Precision water softening. No more scale, spots, or dry skin from hard water.",
-      solves: ["Hard water scale", "Spots on dishes and glass", "Soap that will not lather", "Dry skin from hardness"],
-      price: { s10: 3600, s15: 4000, s20: 4500, s25: 5000 },
-      brochure: null
+    TERRA: {
+      name: "ClearWave Terra",
+      family: "well",
+      kind: "core",
+      tagline: "Earth's correction, engineered.",
+      headline: "Natural coral calcite raises low pH with no chemicals. Protects copper pipes from pinhole leaks and stops blue-green stains.",
+      solves: ["Low pH (acidic water)", "Pinhole leaks and copper corrosion", "Blue-green staining", "Sour or metallic taste"],
+      specs: "Coral calcite media. 10, 12, or 13-inch tank. Self-cleaning backwash.",
+      price: { tank: true },
+      brochure: "clearwave-terra.pdf"
     },
     PURA: {
       name: "ClearWave Pura",
-      family: "both",
-      kind: "addon",
-      headline: "Reverse osmosis drinking water at the kitchen sink, with leak detection.",
-      solves: ["Drinking and cooking water", "Fluoride, nitrates, and dissolved solids", "Bottled-water taste from the tap"],
-      price: { flat: 2300 },
+      family: "well",
+      kind: "core",
+      headline: "Nitrate removal and water softening in one system.",
+      solves: ["Nitrates from farms and septic", "Hard water scale", "Spots and dry skin"],
+      specs: "10, 12, or 13-inch tank.",
+      price: { tank: true },
       brochure: null
     },
     UV: {
-      name: "ClearWave UV Disinfection",
+      name: "ClearWave UV Light",
       family: "well",
       kind: "addon",
-      headline: "Ultraviolet disinfection for bacteria and viruses. Nothing added to the water.",
-      solves: ["Coliform or E. coli", "Untested or shallow wells", "Peace of mind after flooding"],
-      price: { flat: 1800 },
-      brochure: null
-    },
-    SEDIMENT: {
-      name: "Sediment Pre-Filter",
-      family: "well",
-      kind: "addon",
-      headline: "Catches sand, silt, and grit before it reaches your system or your fixtures.",
-      solves: ["Cloudy water", "Sand or grit", "Clogged aerators"],
-      price: { flat: 550 },
+      headline: "Whole-home biological purification. Bacteria, coliform, and viruses neutralized with light, not chemicals.",
+      solves: ["Bacteria and coliform", "Virus neutralization", "Untested or shallow wells", "Chemical-free"],
+      specs: "Inline UV chamber.",
+      price: { flat: 1800 },   // PLACEHOLDER
       brochure: null
     }
   },
@@ -189,66 +247,92 @@ window.CLEARWAVE_CATALOG = {
   // CITY WATER GOALS. The customer picks one. It maps to a core tier.
   // ---------------------------------------------------------------------
   cityGoals: [
-    { id: "drinking", label: "Better drinking water only", sub: "Clean water at the kitchen sink.", core: null, addons: ["PURA"] },
-    { id: "skin_hair", label: "Fix my skin and hair", sub: "Chlorine is drying you out.", core: "CREST", addons: [] },
-    { id: "health", label: "Whole-home health", sub: "Chlorine, chloramine, and trihalomethanes out of every tap and shower.", core: "MERIDIAN", addons: [] },
-    { id: "advanced", label: "Remove the hard stuff", sub: "PFAS, microplastics, lead, and pharmaceuticals from the whole home.", core: "SOVEREIGN", addons: [] },
+    { id: "drinking", label: "Better drinking water only", sub: "Clean water at the kitchen sink.", core: null, addons: ["ELARA"] },
+    { id: "skin_hair", label: "Fix my skin and hair", sub: "Chlorine and hard water are drying you out.", core: "CREST", addons: [] },
+    { id: "health", label: "Whole-home health", sub: "Chlorine, chloramine, VOCs, and trihalomethanes out of every tap and shower.", core: "MERIDIAN", addons: [] },
+    { id: "advanced", label: "Remove the hard stuff", sub: "PFAS, nitrates, lead, and pharmaceuticals from the whole home.", core: "SOVEREIGN", addons: [] },
     { id: "complete", label: "The most complete purity available", sub: "Nothing left to chance.", core: "PINNACLE", addons: [] }
   ],
 
-  // Extra city concerns (checkboxes). Each can bump the tier or add an add-on.
+  // Extra city concerns. minTier moves the customer up. addon adds a system
+  // (unlessCore: skip it when a whole-home tier already covers it).
   cityConcerns: [
-    { id: "scale", label: "Scale, spots on dishes, or soap scum", addon: "CASCADE" },
-    { id: "drinking", label: "I also want reverse osmosis drinking water", addon: "PURA" },
-    { id: "pfas", label: "PFAS or forever chemicals", minTier: 3 },
-    { id: "microplastics", label: "Microplastics", minTier: 3 },
+    { id: "scale", label: "Scale, spots on dishes, or soap scum", addon: "FLOW", unlessCore: true },
+    { id: "drinking", label: "I also want reverse osmosis drinking water", addon: "ELARA" },
     { id: "thm", label: "Trihalomethanes or disinfection byproducts", minTier: 2 },
-    { id: "lead", label: "Lead or old pipes", minTier: 3 },
-    { id: "sensitive", label: "Someone at home has eczema, allergies, or a health condition", minTier: 2 }
+    { id: "lead", label: "Lead or old pipes", minTier: 2 },
+    { id: "pharma", label: "Pharmaceuticals", minTier: 2 },
+    { id: "sensitive", label: "Someone at home has eczema, allergies, or a health condition", minTier: 2 },
+    { id: "pfas", label: "PFAS or forever chemicals", minTier: 3 },
+    { id: "nitrates", label: "Nitrates", minTier: 3 },
+    { id: "microplastics", label: "Microplastics", minTier: 4 }
   ],
+
+  // Feature rows for the city comparison table (from the system comparison
+  // chart). y = yes, n = no, p = partial (less effective).
+  cityCompare: {
+    columns: ["FLOW", "CREST", "MERIDIAN", "SOVEREIGN", "DIAMOND", "PINNACLE"],
+    rows: [
+      { label: "Softening (scale)", v: "yyyyyy" },
+      { label: "Chlorine and chloramine", v: "nyyyyy" },
+      { label: "VOCs and THMs", v: "nyyyyy" },
+      { label: "Heavy metals (lead)", v: "npyyyy" },
+      { label: "Pharmaceuticals", v: "npyyyy" },
+      { label: "Nitrates", v: "npyyyy" },
+      { label: "PFOA / PFOS", v: "nnpyyy" },
+      { label: "Microplastics", v: "nnnnyy" },
+      { label: "Free radicals", v: "nnnyyy" },
+      { label: "No slippery feel", v: "nnnynn" },
+      { label: "Dual tank, 24/7 filtration", v: "nnnnny" },
+      { label: "Installed price", v: "price" }
+    ]
+  },
 
   // ---------------------------------------------------------------------
   // WELL WATER SYMPTOMS. Each symptom points at a likely cause.
   // ---------------------------------------------------------------------
   wellSymptoms: [
-    { id: "orange", label: "Orange or red staining in tubs, toilets, or laundry", cause: "iron" },
-    { id: "black", label: "Black or brown staining, or dark slime", cause: "manganese" },
+    { id: "orange", label: "Orange or red stains in tubs, toilets, or laundry", cause: "iron" },
+    { id: "rusty", label: "Water looks orange, rusty, or has rust particles", cause: "ferric" },
+    { id: "black", label: "Black or brown stains, or dark slime", cause: "manganese" },
     { id: "egg", label: "Rotten egg smell", cause: "sulfur" },
     { id: "bluegreen", label: "Blue-green stains on sinks or fixtures", cause: "acid" },
     { id: "pinhole", label: "Pinhole leaks or corroded copper pipes", cause: "acid" },
     { id: "itchy", label: "Itchy or dry skin, soap will not lather, spots on dishes", cause: "hardness" },
     { id: "taste", label: "Metallic or bad taste", cause: "taste" },
     { id: "cloudy", label: "Cloudy water, sand, or grit", cause: "sediment" },
+    { id: "farm", label: "Near farmland or an old septic field (nitrate risk)", cause: "nitrate" },
     { id: "sick", label: "Tested positive for bacteria, or the well has never been tested", cause: "bacteria" }
   ],
 
   // Plain-language names for each cause, used in the diagnosis.
   causes: {
-    iron: { label: "ferrous or ferric iron", plain: "Iron. It leaves orange and red stains and a metallic taste." },
-    manganese: { label: "manganese", plain: "Manganese. It leaves black or brown stains and can stain laundry." },
-    sulfur: { label: "hydrogen sulfide", plain: "Hydrogen sulfide gas. That is the rotten egg smell." },
-    acid: { label: "low pH (acidic water)", plain: "Acidic water. It slowly eats copper pipes, which causes blue-green stains and pinhole leaks." },
-    hardness: { label: "hard water", plain: "Hard water. Calcium and magnesium cause scale, spots, and dry skin." },
-    taste: { label: "taste and odor", plain: "Taste and odor. Usually iron, manganese, or low pH is behind it." },
-    sediment: { label: "sediment", plain: "Sediment. Sand and silt from the well." },
-    bacteria: { label: "possible bacteria", plain: "Possible bacteria. A UV system protects you without chemicals." }
+    iron: { plain: "Dissolved (ferrous) iron. It leaves orange and red stains and a metallic taste." },
+    ferric: { plain: "Ferric iron. Iron that has already turned to rust particles. A softener cannot catch it. Air oxidation can." },
+    manganese: { plain: "Manganese. It leaves black or brown stains and can stain laundry." },
+    sulfur: { plain: "Hydrogen sulfide gas. That is the rotten egg smell." },
+    acid: { plain: "Acidic water (low pH). It slowly eats copper pipes, which causes blue-green stains and pinhole leaks." },
+    hardness: { plain: "Hard water. Calcium and magnesium cause scale, spots, and dry skin." },
+    taste: { plain: "Taste and odor. Usually iron, sulfur, or low pH is behind it." },
+    sediment: { plain: "Sediment. Sand and silt from the well. We handle this with a pre-filter at install." },
+    nitrate: { plain: "Possible nitrates. Common near farms and septic fields, and a health concern for infants." },
+    bacteria: { plain: "Possible bacteria. A UV system protects you without chemicals." }
   },
 
-  // Lab numbers a customer can type in if they have a report. Each rule
-  // adds a cause when the number crosses the limit.
+  // Lab numbers a customer can type in if they have a report.
   labFields: [
-    { id: "iron", label: "Iron (mg/L or ppm)", limit: 0.3, cause: "iron", note: "EPA secondary limit is 0.3 mg/L" },
-    { id: "manganese", label: "Manganese (mg/L)", limit: 0.05, cause: "manganese", note: "EPA secondary limit is 0.05 mg/L" },
-    { id: "h2s", label: "Hydrogen sulfide (mg/L)", limit: 0.05, cause: "sulfur", note: "Most people smell it above 0.05 mg/L" },
+    { id: "iron", label: "Iron (mg/L or ppm)", limit: 0.3, cause: "iron", note: "EPA limit is 0.3 mg/L" },
+    { id: "manganese", label: "Manganese (mg/L)", limit: 0.05, cause: "manganese", note: "EPA limit is 0.05 mg/L" },
+    { id: "h2s", label: "Hydrogen sulfide (mg/L)", limit: 0.05, cause: "sulfur", note: "Most people smell it above 0.05" },
     { id: "ph", label: "pH", limitLow: 6.5, cause: "acid", note: "Below 6.5 is acidic" },
     { id: "hardness", label: "Hardness (grains per gallon)", limit: 7, cause: "hardness", note: "7 gpg and up is hard" },
+    { id: "nitrate", label: "Nitrate (mg/L as N)", limit: 10, cause: "nitrate", note: "EPA limit is 10 mg/L" },
     { id: "coliform", label: "Coliform bacteria", type: "yesno", cause: "bacteria", note: "Any coliform is a fail" }
   ],
 
-  // Regions by ZIP prefix (first three digits). Used to confirm service
-  // area and to add a short local water note.
+  // Regions by ZIP prefix (first three digits).
   regions: [
-    { prefixes: ["200","202","203","204","205"], name: "Washington, DC", state: "DC", served: true, water: "DC Water uses chloramine (chlorine plus ammonia). It does not gas off like plain chlorine, so catalytic carbon is the better fit." },
+    { prefixes: ["200","202","203","204","205"], name: "Washington, DC", state: "DC", served: true, water: "DC Water uses chloramine (chlorine plus ammonia). It does not gas off like plain chlorine, so catalytic carbon is the right tool." },
     { prefixes: ["201","220","221","222","223"], name: "Northern Virginia", state: "VA", served: true, water: "Most Northern Virginia systems use chloramine and the water is moderately hard (about 6 grains per gallon, estimated)." },
     { prefixes: ["224","225"], name: "Fredericksburg", state: "VA", served: true, water: "A mix of city water and private wells. Wells here often show iron and low pH." },
     { prefixes: ["229"], name: "Charlottesville", state: "VA", served: true, water: "City water is chlorinated. Wells in the county often show hardness, iron, and low pH." },
@@ -259,10 +343,8 @@ window.CLEARWAVE_CATALOG = {
     { prefixes: ["226","227","228","239","240","241","242","243","244","245","246"], name: "Virginia", state: "VA", served: true, water: "" },
     { prefixes: ["270","271","272","273","274","275","276","277","278","279"], name: "Northern North Carolina", state: "NC", served: "maybe", water: "" }
   ],
-  // Fallback water assumptions when no local note exists (brand standard).
   defaultWaterNote: "Most city water in our area is disinfected with chlorine or chloramine (about 5 mg/L, estimated) and is moderately hard (about 6 grains per gallon, estimated).",
 
-  // Things that can move the price. Shown on every estimate.
   specialCircumstances: [
     "Long plumbing runs or a system that must sit far from the main line",
     "Crawlspace, attic, or outdoor installs that need extra work",
@@ -271,7 +353,6 @@ window.CLEARWAVE_CATALOG = {
     "Homes with more than 5 bathrooms or very high water use"
   ],
 
-  // Words on the results page.
   copy: {
     resultsTitle: "Your ClearWave Estimate",
     disclaimer: "This is an estimate, not a quote. Final pricing comes from a free on-site water assessment. Prices only change for the special circumstances listed here.",
@@ -386,6 +467,7 @@ window.CLEARWAVE_CATALOG = {
 .cwe tbody tr:nth-child(even) td{background:var(--tint)}\
 .cwe td.num,.cwe th.num{text-align:right;white-space:nowrap}\
 .cwe tr.pick td{background:#E4F7EE !important;font-weight:700}\
+.cwe th.pick{background:var(--blue-deep)}\
 .cwe-tag{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;background:var(--green);color:var(--navy);font-weight:700;margin-left:6px;vertical-align:middle}\
 .cwe-card{border:1px solid var(--rule);border-top:4px solid var(--blue-deep);padding:16px 18px;margin:12px 0}\
 .cwe-card.alt{border-top-color:var(--rule)}\
@@ -436,27 +518,37 @@ window.CLEARWAVE_CATALOG = {
   // ------------------------------------------------------------------
   // Recommendation engine
   // ------------------------------------------------------------------
-  function pickSize(cat, baths, people) {
+  function sizeIndex(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return i; } } return 0; }
+  function pickSize(cat, st) {
+    var size = cat.sizes[cat.sizes.length - 1].id;
     for (var i = 0; i < cat.sizingRules.length; i++) {
       var r = cat.sizingRules[i];
-      if (baths <= r.maxBaths && people <= r.maxPeople) { return r.size; }
+      if (st.home.baths <= r.maxBaths && st.home.people <= r.maxPeople) { size = r.size; break; }
     }
-    return cat.sizes[cat.sizes.length - 1].id;
+    var iron = Number(st.well && st.well.lab && st.well.lab.iron);
+    var bumped = false;
+    if (iron && cat.ironSizing) {
+      for (var j = 0; j < cat.ironSizing.length; j++) {
+        if (iron > cat.ironSizing[j].above) { if (sizeIndex(cat, cat.ironSizing[j].size) > sizeIndex(cat, size)) { size = cat.ironSizing[j].size; bumped = true; } break; }
+      }
+    }
+    return { id: size, ironBumped: bumped };
   }
-  function priceFor(p, sizeId) { return p.price.flat != null ? p.price.flat : p.price[sizeId]; }
-  function priceMin(p, cat) { return p.price.flat != null ? p.price.flat : p.price[cat.sizes[0].id]; }
-  function priceMax(p, cat) { return p.price.flat != null ? p.price.flat : p.price[cat.sizes[cat.sizes.length - 1].id]; }
+  function tankSystemPrice(cat, n, sizeId) { if (!n) { return 0; } return cat.wellPricing.singleTank[sizeId] + (n - 1) * cat.wellPricing.additionalTank; }
   function region(cat, zip) {
     var pre = String(zip || "").slice(0, 3);
     for (var i = 0; i < cat.regions.length; i++) { if (cat.regions[i].prefixes.indexOf(pre) >= 0) { return cat.regions[i]; } }
     return null;
   }
+  function byTier(cat, tier) { var k = null; Object.keys(cat.products).forEach(function (c) { var p = cat.products[c]; if (p.family === "city" && p.tier === tier) { k = c; } }); return k; }
 
   function recommend(cat, st) {
-    var sizeId = pickSize(cat, st.home.baths, st.home.people);
+    var picked = pickSize(cat, st), sizeId = picked.id;
     var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [];
+    if (picked.ironBumped) { notes.push("Your iron level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". More media means more iron removed between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
+    var large = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
 
     if (st.source === "city") {
       var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
@@ -465,14 +557,17 @@ window.CLEARWAVE_CATALOG = {
       st.city.concerns.forEach(function (id) {
         cat.cityConcerns.forEach(function (c) {
           if (c.id !== id) { return; }
-          if (c.addon) { add.push(c.addon); }
-          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; notes.push("We moved you up a tier because you checked \"" + c.label + ".\""); }
+          if (c.addon && !(c.unlessCore && tier > 0)) { add.push(c.addon); }
+          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; notes.push("We moved you up to the " + cat.products[byTier(cat, tier)].name + " because you checked \"" + c.label + ".\""); }
           if (c.minTier && tier === 0) { notes.push("\"" + c.label + "\" is a whole-home concern. Reverse osmosis handles it at the sink. A whole-home system handles every tap and shower."); }
         });
       });
-      if (tier > 0) {
-        Object.keys(cat.products).forEach(function (k) { var p = cat.products[k]; if (p.family === "city" && p.tier === tier) { core.push(k); } });
+      if (tier > 0 && large) {
+        if (tier === 2) { tier = 4; notes.push("Your home is on the larger side, so we sized you into the 13-inch Meridian Diamond Edition for higher flow."); alt = "PINNACLE"; }
+        else if (tier === 1) { alt = "DIAMOND"; notes.push("Your home is on the larger side. The Crest is rated for 10 GPM. For higher flow, see the 13-inch option below."); }
+        else if (tier < 5) { alt = "PINNACLE"; }
       }
+      if (tier > 0) { core.push(byTier(cat, tier)); }
       diagnosis.push(waterNote);
       if (goal) { diagnosis.push("Your main goal: " + goal.label.toLowerCase() + ". " + goal.sub); }
       addons = uniq(add);
@@ -483,32 +578,25 @@ window.CLEARWAVE_CATALOG = {
       cat.labFields.forEach(function (f) {
         var v = st.well.lab[f.id];
         if (v == null || v === "") { return; }
-        var hit = false;
-        if (f.type === "yesno") { hit = v === "yes"; }
-        else if (f.limitLow != null) { hit = Number(v) < f.limitLow; }
-        else { hit = Number(v) > f.limit; }
-        if (hit) { cs[f.cause] = 1; labHits.push(f.label + ": " + esc(v) + " (" + f.note + ")"); }
+        var hit = f.type === "yesno" ? v === "yes" : (f.limitLow != null ? Number(v) < f.limitLow : Number(v) > f.limit);
+        if (hit) { cs[f.cause] = 1; labHits.push(f.label + ": " + v + " (" + f.note + ")"); }
       });
       causes = Object.keys(cs);
       var has = function (c) { return cs[c] === 1; };
-      var heavyIron = (has("iron") && has("manganese")) || Number(st.well.lab.iron) > 3;
+      var iron = has("iron") || has("manganese"), ferric = has("ferric"), soft = has("nitrate") ? "PURA" : "FLOW";
 
-      if (has("iron") && has("sulfur")) { core.push("AERO"); if (heavyIron) { core.push("FERRO"); } }
-      else if (has("sulfur")) { core.push("AERO"); }
-      else if (has("iron") || has("manganese")) { core.push("FERRO"); }
-      else if (has("taste")) { core.push("FERRO"); notes.push("Bad taste alone is usually iron or manganese. We show the most common fix. A free water test will confirm it."); }
-      if (has("acid")) { core.push("ELARA"); }
-      if (has("hardness")) { addons.push("CASCADE"); }
-      if (has("sediment")) { addons.push("SEDIMENT"); }
+      if (has("sulfur") && (iron || ferric)) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (has("sulfur")) { core.push("AERO"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (ferric) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (iron) { if (has("nitrate")) { core.push("POSEIDON", "PURA"); } else { core.push("FERRO"); } }
+      else if (has("taste")) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); if (has("hardness")) { core.push(soft); } }
+      else if (has("hardness") || has("nitrate")) { core.push(soft); }
+      if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
-      if (st.well.drinking) { addons.push("PURA"); }
-
-      var problemCount = ["iron", "manganese", "sulfur", "acid", "hardness", "sediment"].filter(has).length;
-      if (problemCount >= 3 && cat.products.POSEIDON) { alt = "POSEIDON"; }
-
-      if (!causes.length) {
-        notes.push("You did not report any problems, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
-        core.push("AERO");
+      if (st.well.drinking) { addons.push("ELARA"); }
+      if (!core.length) {
+        notes.push("You did not report a specific problem, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
+        core.push("FERRO");
       }
       causes.forEach(function (c) { if (cat.causes[c]) { diagnosis.push(cat.causes[c].plain); } });
       if (labHits.length) { diagnosis.push("From your lab numbers: " + labHits.join("; ") + "."); }
@@ -516,16 +604,22 @@ window.CLEARWAVE_CATALOG = {
     }
 
     core = uniq(core); addons = uniq(addons);
-    // With no whole-home system, the first add-on is the recommendation.
     if (!core.length && addons.length) { core = [addons.shift()]; }
     var items = core.concat(addons).map(function (k) {
       var p = cat.products[k];
-      return { code: k, product: p, role: core.indexOf(k) >= 0 ? "core" : "addon", price: priceFor(p, sizeId), min: priceMin(p, cat), max: priceMax(p, cat) };
+      var tank = st.source === "well" && !!p.price.tank;
+      return { code: k, product: p, role: core.indexOf(k) >= 0 ? "core" : "addon", tank: tank, price: tank ? null : (p.price.flat != null ? p.price.flat : null) };
     });
-    var totals = { at: 0, min: 0, max: 0 };
-    items.forEach(function (it) { totals.at += it.price; totals.min += it.min; totals.max += it.max; });
-
-    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals };
+    var tanks = items.filter(function (it) { return it.tank; }).length;
+    var flats = 0; items.forEach(function (it) { if (it.price != null) { flats += it.price; } });
+    var first = cat.sizes[0].id, last = cat.sizes[cat.sizes.length - 1].id;
+    var totals = {
+      at: flats + tankSystemPrice(cat, tanks, sizeId),
+      min: flats + tankSystemPrice(cat, tanks, first),
+      max: flats + tankSystemPrice(cat, tanks, last),
+      flats: flats, tanks: tanks, system: tankSystemPrice(cat, tanks, sizeId)
+    };
+    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large };
   }
 
   // ------------------------------------------------------------------
@@ -771,52 +865,81 @@ window.CLEARWAVE_CATALOG = {
   // Results page
   // ------------------------------------------------------------------
   function sizeLabel(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return cat.sizes[i]; } } return { label: id, fits: "" }; }
+  function brochureUrl(cat, p) {
+    if (!p.brochure) { return null; }
+    if (/^https?:/i.test(p.brochure)) { return p.brochure; }
+    if (cat.brochureBaseAbsolute) { return cat.brochureBaseAbsolute.replace(/\/?$/, "/") + p.brochure; }
+    var base = (SCRIPT && SCRIPT.src) ? SCRIPT.src.replace(/[^\/]*$/, "") : "";
+    return base + (cat.brochureBase || "") + p.brochure;
+  }
+  function priceBlock(label, sub) { return '<p class="pr">' + label + "<small>" + esc(sub) + "</small></p>"; }
 
   function resultsHtml(cat, st, cfg) {
-    var r = st.result, sz = sizeLabel(cat, r.sizeId);
+    var r = st.result, sz = sizeLabel(cat, r.sizeId), well = st.source === "well";
     var h = '<p class="cwe-eyebrow">' + esc(cat.copy.resultsTitle) + "</p><h2>" + (st.contact.name ? esc(st.contact.name.split(" ")[0]) + ", here is your estimate." : "Here is your estimate.") + "</h2>" +
-      '<div class="cwe-meta"><span>Estimate ' + esc(st.id) + "</span><span>" + esc(today()) + "</span><span>" + esc(st.source === "well" ? "Well water" : "City water") + (r.region ? " &middot; " + esc(r.region.name) : "") + " " + esc(st.zip) + "</span></div>";
+      '<div class="cwe-meta"><span>Estimate ' + esc(st.id) + "</span><span>" + esc(today()) + "</span><span>" + (well ? "Well water" : "City water") + (r.region ? " &middot; " + esc(r.region.name) : "") + " " + esc(st.zip) + "</span></div>";
 
-    h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + d + "</li>"; }).join("") + "</ul>";
+    h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("") + "</ul>";
     r.notes.forEach(function (n) { h += '<div class="cwe-note">' + esc(n) + "</div>"; });
 
-    var anySized = r.items.some(function (it) { return it.product.price.flat == null; });
-    h += "<h3>Recommended for your home</h3>" + (anySized ? "<p class=\"cwe-small\">Sized for <b>" + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b> tank. Prices are installed.</p>" : "<p class=\"cwe-small\">Prices are installed.</p>");
+    h += "<h3>Recommended for your home</h3>";
+    if (well && r.totals.tanks) {
+      h += '<p class="cwe-small">Sized for <b>' + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b>. " + esc(cat.wellPricing.note) + "</p>";
+    } else {
+      h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
+    }
     if (!r.items.length) { h += '<div class="cwe-note warn">We could not match a system from your answers. Call us and we will sort it out in five minutes.</div>'; }
     r.items.forEach(function (it) {
-      var p = it.product;
-      h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + '</p><p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
-        '<p class="pr">' + (p.price.flat != null ? money(it.price) : money(it.price) + " <span style=\"font-size:14px;color:#5A6B78;font-weight:400\">at " + esc(sz.label) + " (" + range(it.min, it.max) + " across all sizes)</span>") + "<small>Installed price, estimated</small></p>" +
-        (p.brochure ? '<a class="cwe-btn ghost sm no-print" href="' + esc(p.brochure) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
+      var p = it.product, url = brochureUrl(cat, p);
+      h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + "</p>" +
+        (p.tagline ? '<p class="cwe-eyebrow" style="margin-top:4px">' + esc(p.tagline) + "</p>" : "") +
+        '<p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
+        (p.specs ? '<p class="cwe-small">' + esc(p.specs) + "</p>" : "") +
+        (it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
+        (url ? '<a class="cwe-btn ghost sm no-print" href="' + esc(url) + '" target="_blank" rel="noopener">Download the ' + esc(p.name.replace("ClearWave ", "")) + " brochure</a>" : "") + "</div>";
     });
     if (r.alt) {
-      var a = cat.products[r.alt];
-      h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Or, one complete system</p><p class="nm">' + esc(a.name) + '</p><p class="hl">' + esc(a.headline) + '</p><p class="pr">' + money(priceFor(a, r.sizeId)) + " <span style=\"font-size:14px;color:#5A6B78;font-weight:400\">at " + esc(sz.label) + " (" + range(priceMin(a, cat), priceMax(a, cat)) + " across all sizes)</span><small>Installed price, estimated</small></p></div>";
+      var a = cat.products[r.alt], au = brochureUrl(cat, a);
+      h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Upgrade option for a home your size</p><p class="nm">' + esc(a.name) + '</p><p class="hl">' + esc(a.headline) + "</p>" + (a.specs ? '<p class="cwe-small">' + esc(a.specs) + "</p>" : "") + priceBlock(money(a.price.flat), "Installed price") + (au ? '<a class="cwe-btn ghost sm no-print" href="' + esc(au) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
     }
 
     // Totals
-    h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>";
-    h += '<span class="fin">' + (anySized ? "About " + money(r.totals.at) + " at the " + esc(sz.label) + " size we recommend." : "Installed, estimated.") + (cat.financing && cat.financing.enabled ? " Or about " + money(monthly(r.totals.at, cat.financing.apr, cat.financing.months)) + " per month " + esc(cat.financing.label) + "." : "") + "</span></div>";
+    var fin = cat.financing && cat.financing.enabled ? " Or about " + money(monthly(r.totals.at, cat.financing.apr, cat.financing.months)) + " per month over " + cat.financing.months + " months " + esc(cat.financing.label) + "." : "";
+    if (well && r.totals.tanks) {
+      h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>" +
+        '<span class="fin">About ' + money(r.totals.at) + " with a " + esc(sz.label) + ": a " + r.totals.tanks + "-tank system at " + money(r.totals.system) + (r.totals.flats ? " plus " + money(r.totals.flats) + " in add-ons" : "") + "." + fin + "</span></div>";
+    } else {
+      h += '<div class="cwe-total"><span class="lbl">Your estimated installed price</span><span class="amt">' + money(r.totals.at) + "</span>" + (fin ? '<span class="fin">' + fin.trim() + "</span>" : "") + "</div>";
+    }
 
-    // Size table
-    var sized = r.items.filter(function (it) { return it.product.price.flat == null; });
-    if (sized.length) {
-      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Flat-price add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th>" + sized.map(function (it) { return '<th class="num">' + esc(it.product.name.replace("ClearWave ", "")) + "</th>"; }).join("") + '<th class="num">Total</th></tr></thead><tbody>';
+    // Well: price by tank size
+    if (well && r.totals.tanks) {
+      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
       cat.sizes.forEach(function (s) {
-        var tot = 0;
-        r.items.forEach(function (it) { tot += priceFor(it.product, s.id); });
-        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + "</td>" + sized.map(function (it) { return '<td class="num">' + money(priceFor(it.product, s.id)) + "</td>"; }).join("") + '<td class="num">' + money(tot) + "</td></tr>";
+        var sys = tankSystemPrice(cat, r.totals.tanks, s.id);
+        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";
       });
       h += "</tbody></table></div>";
     }
 
-    // Service plan
-    if (cat.servicePlan) { h += '<div class="cwe-note"><b>' + esc(cat.servicePlan.name) + ", " + money(cat.servicePlan.price) + " per month.</b> " + esc(cat.servicePlan.blurb) + "</div>"; }
+    // City: compare the tiers
+    if (!well && r.core.length && cat.cityCompare) {
+      var cols = cat.cityCompare.columns;
+      h += "<h3>How the collection compares</h3><p class=\"cwe-small\">Your system is highlighted. Every whole-home tier includes softening.</p><div style=\"overflow-x:auto\"><table><thead><tr><th></th>" + cols.map(function (c) { return '<th class="num' + (c === r.core[0] ? " pick" : "") + '">' + esc(cat.products[c].name.replace("ClearWave ", "").replace("Meridian Diamond Edition", "Diamond")) + "</th>"; }).join("") + "</tr></thead><tbody>";
+      cat.cityCompare.rows.forEach(function (row) {
+        h += "<tr><td>" + esc(row.label) + "</td>" + cols.map(function (c, i) {
+          var v = row.v === "price" ? money(cat.products[c].price.flat) : ({ y: '<span style="color:#22C776;font-weight:800">&#10003;</span>', p: '<span style="color:#C8871B" title="Less effective">partial</span>', n: '<span style="color:#B03A2E">&ndash;</span>' })[row.v.charAt(i)];
+          return '<td class="num"' + (c === r.core[0] ? ' style="background:#E4F7EE;font-weight:700"' : "") + ">" + v + "</td>";
+        }).join("") + "</tr>";
+      });
+      h += "</tbody></table></div>";
+    }
 
-    // Special circumstances + disclaimer
+    // Included with every system
+    if (cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
+
     h += "<h3>What could change the price</h3><ul class=\"cwe-diag\">" + cat.specialCircumstances.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul><p class=\"cwe-small\">" + esc(cat.copy.disclaimer) + "</p>";
 
-    // CTA
     h += "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
       '<a class="cwe-btn green" href="' + esc(cat.company.phoneHref) + '">Call ' + esc(cat.company.phone) + "</a>" +
       '<a class="cwe-btn" href="' + esc(cat.company.smsHref) + "?&body=" + encodeURIComponent("Hi ClearWave, my estimate is " + st.id + ". I would like to talk about my water.") + '">Text us</a>' +
@@ -832,7 +955,7 @@ window.CLEARWAVE_CATALOG = {
     var r = st.result, sz = sizeLabel(cat, r.sizeId);
     return {
       estimateId: st.id, source: st.source, zip: st.zip, region: r.region ? r.region.name : null,
-      size: sz.label, core: r.core, addons: r.addons, alt: r.alt, causes: r.causes,
+      size: sz.label, tanks: r.totals.tanks, core: r.core, addons: r.addons, alt: r.alt, causes: r.causes,
       goal: st.city.goal, concerns: st.city.concerns, symptoms: st.well.symptoms,
       totalAtSize: r.totals.at, totalMin: r.totals.min, totalMax: r.totals.max
     };
@@ -841,7 +964,7 @@ window.CLEARWAVE_CATALOG = {
   function mailto(cat, st) {
     var s = summary(cat, st), r = st.result;
     var lines = ["Estimate " + st.id + " (" + today() + ")", "", "Name: " + st.contact.name, "Email: " + st.contact.email, "Phone: " + st.contact.phone, "ZIP: " + st.zip + (s.region ? " (" + s.region + ")" : ""), "Water: " + (st.source === "well" ? "Well" : "City"), "Home: " + st.home.baths + " baths, " + st.home.people + " people, size " + s.size, "",
-      "Recommended: " + r.items.map(function (it) { return it.product.name + " " + money(it.price); }).join(", "), "Range: " + range(r.totals.min, r.totals.max), "", "Notes: " + st.contact.notes];
+      "Recommended: " + r.items.map(function (it) { return it.product.name + (it.price != null ? " " + money(it.price) : ""); }).join(", "), (r.totals.tanks ? r.totals.tanks + "-tank system " + money(r.totals.system) + " at " + s.size + ". " : "") + "Total: " + range(r.totals.min, r.totals.max), "", "Notes: " + st.contact.notes];
     return "mailto:" + cat.company.email + "?subject=" + encodeURIComponent("Water estimate " + st.id) + "&body=" + encodeURIComponent(lines.join("\n"));
   }
 
@@ -852,7 +975,8 @@ window.CLEARWAVE_CATALOG = {
       home: st.home, city: st.city, well: { symptoms: st.well.symptoms, tested: st.well.tested, lab: st.well.lab, drinking: st.well.drinking },
       labReport: st.well.file ? { name: st.well.file.name, type: st.well.file.type, size: st.well.file.size, dataUrl: st.well.file.data } : null,
       recommendation: summary(cat, st),
-      items: st.result.items.map(function (it) { return { code: it.code, name: it.product.name, role: it.role, price: it.price, min: it.min, max: it.max, brochure: it.product.brochure }; })
+      items: st.result.items.map(function (it) { return { code: it.code, name: it.product.name, role: it.role, tank: it.tank, price: it.price, brochure: brochureUrl(cat, it.product) }; }),
+      systemPrice: st.result.totals.system, tanks: st.result.totals.tanks
     };
     emit("lead", { estimateId: st.id, source: st.source, totalAtSize: st.result.totals.at });
     try { if (typeof window.fbq === "function") { window.fbq("track", "Lead", { content_name: "water_estimate", value: st.result.totals.at, currency: "USD" }); } } catch (e) {}

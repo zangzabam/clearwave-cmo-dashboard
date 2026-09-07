@@ -102,6 +102,7 @@
 .cwe tbody tr:nth-child(even) td{background:var(--tint)}\
 .cwe td.num,.cwe th.num{text-align:right;white-space:nowrap}\
 .cwe tr.pick td{background:#E4F7EE !important;font-weight:700}\
+.cwe th.pick{background:var(--blue-deep)}\
 .cwe-tag{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;background:var(--green);color:var(--navy);font-weight:700;margin-left:6px;vertical-align:middle}\
 .cwe-card{border:1px solid var(--rule);border-top:4px solid var(--blue-deep);padding:16px 18px;margin:12px 0}\
 .cwe-card.alt{border-top-color:var(--rule)}\
@@ -152,27 +153,37 @@
   // ------------------------------------------------------------------
   // Recommendation engine
   // ------------------------------------------------------------------
-  function pickSize(cat, baths, people) {
+  function sizeIndex(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return i; } } return 0; }
+  function pickSize(cat, st) {
+    var size = cat.sizes[cat.sizes.length - 1].id;
     for (var i = 0; i < cat.sizingRules.length; i++) {
       var r = cat.sizingRules[i];
-      if (baths <= r.maxBaths && people <= r.maxPeople) { return r.size; }
+      if (st.home.baths <= r.maxBaths && st.home.people <= r.maxPeople) { size = r.size; break; }
     }
-    return cat.sizes[cat.sizes.length - 1].id;
+    var iron = Number(st.well && st.well.lab && st.well.lab.iron);
+    var bumped = false;
+    if (iron && cat.ironSizing) {
+      for (var j = 0; j < cat.ironSizing.length; j++) {
+        if (iron > cat.ironSizing[j].above) { if (sizeIndex(cat, cat.ironSizing[j].size) > sizeIndex(cat, size)) { size = cat.ironSizing[j].size; bumped = true; } break; }
+      }
+    }
+    return { id: size, ironBumped: bumped };
   }
-  function priceFor(p, sizeId) { return p.price.flat != null ? p.price.flat : p.price[sizeId]; }
-  function priceMin(p, cat) { return p.price.flat != null ? p.price.flat : p.price[cat.sizes[0].id]; }
-  function priceMax(p, cat) { return p.price.flat != null ? p.price.flat : p.price[cat.sizes[cat.sizes.length - 1].id]; }
+  function tankSystemPrice(cat, n, sizeId) { if (!n) { return 0; } return cat.wellPricing.singleTank[sizeId] + (n - 1) * cat.wellPricing.additionalTank; }
   function region(cat, zip) {
     var pre = String(zip || "").slice(0, 3);
     for (var i = 0; i < cat.regions.length; i++) { if (cat.regions[i].prefixes.indexOf(pre) >= 0) { return cat.regions[i]; } }
     return null;
   }
+  function byTier(cat, tier) { var k = null; Object.keys(cat.products).forEach(function (c) { var p = cat.products[c]; if (p.family === "city" && p.tier === tier) { k = c; } }); return k; }
 
   function recommend(cat, st) {
-    var sizeId = pickSize(cat, st.home.baths, st.home.people);
+    var picked = pickSize(cat, st), sizeId = picked.id;
     var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [];
+    if (picked.ironBumped) { notes.push("Your iron level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". More media means more iron removed between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
+    var large = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
 
     if (st.source === "city") {
       var goal = null; cat.cityGoals.forEach(function (g) { if (g.id === st.city.goal) { goal = g; } });
@@ -181,14 +192,17 @@
       st.city.concerns.forEach(function (id) {
         cat.cityConcerns.forEach(function (c) {
           if (c.id !== id) { return; }
-          if (c.addon) { add.push(c.addon); }
-          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; notes.push("We moved you up a tier because you checked \"" + c.label + ".\""); }
+          if (c.addon && !(c.unlessCore && tier > 0)) { add.push(c.addon); }
+          if (c.minTier && tier > 0 && c.minTier > tier) { tier = c.minTier; notes.push("We moved you up to the " + cat.products[byTier(cat, tier)].name + " because you checked \"" + c.label + ".\""); }
           if (c.minTier && tier === 0) { notes.push("\"" + c.label + "\" is a whole-home concern. Reverse osmosis handles it at the sink. A whole-home system handles every tap and shower."); }
         });
       });
-      if (tier > 0) {
-        Object.keys(cat.products).forEach(function (k) { var p = cat.products[k]; if (p.family === "city" && p.tier === tier) { core.push(k); } });
+      if (tier > 0 && large) {
+        if (tier === 2) { tier = 4; notes.push("Your home is on the larger side, so we sized you into the 13-inch Meridian Diamond Edition for higher flow."); alt = "PINNACLE"; }
+        else if (tier === 1) { alt = "DIAMOND"; notes.push("Your home is on the larger side. The Crest is rated for 10 GPM. For higher flow, see the 13-inch option below."); }
+        else if (tier < 5) { alt = "PINNACLE"; }
       }
+      if (tier > 0) { core.push(byTier(cat, tier)); }
       diagnosis.push(waterNote);
       if (goal) { diagnosis.push("Your main goal: " + goal.label.toLowerCase() + ". " + goal.sub); }
       addons = uniq(add);
@@ -199,32 +213,25 @@
       cat.labFields.forEach(function (f) {
         var v = st.well.lab[f.id];
         if (v == null || v === "") { return; }
-        var hit = false;
-        if (f.type === "yesno") { hit = v === "yes"; }
-        else if (f.limitLow != null) { hit = Number(v) < f.limitLow; }
-        else { hit = Number(v) > f.limit; }
-        if (hit) { cs[f.cause] = 1; labHits.push(f.label + ": " + esc(v) + " (" + f.note + ")"); }
+        var hit = f.type === "yesno" ? v === "yes" : (f.limitLow != null ? Number(v) < f.limitLow : Number(v) > f.limit);
+        if (hit) { cs[f.cause] = 1; labHits.push(f.label + ": " + v + " (" + f.note + ")"); }
       });
       causes = Object.keys(cs);
       var has = function (c) { return cs[c] === 1; };
-      var heavyIron = (has("iron") && has("manganese")) || Number(st.well.lab.iron) > 3;
+      var iron = has("iron") || has("manganese"), ferric = has("ferric"), soft = has("nitrate") ? "PURA" : "FLOW";
 
-      if (has("iron") && has("sulfur")) { core.push("AERO"); if (heavyIron) { core.push("FERRO"); } }
-      else if (has("sulfur")) { core.push("AERO"); }
-      else if (has("iron") || has("manganese")) { core.push("FERRO"); }
-      else if (has("taste")) { core.push("FERRO"); notes.push("Bad taste alone is usually iron or manganese. We show the most common fix. A free water test will confirm it."); }
-      if (has("acid")) { core.push("ELARA"); }
-      if (has("hardness")) { addons.push("CASCADE"); }
-      if (has("sediment")) { addons.push("SEDIMENT"); }
+      if (has("sulfur") && (iron || ferric)) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (has("sulfur")) { core.push("AERO"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (ferric) { core.push("POSEIDON"); if (has("hardness") || has("nitrate")) { core.push(soft); } }
+      else if (iron) { if (has("nitrate")) { core.push("POSEIDON", "PURA"); } else { core.push("FERRO"); } }
+      else if (has("taste")) { core.push("AERO"); notes.push("Bad taste alone is usually sulfur, iron, or low pH. We show the most common fix. A free water test will confirm it."); if (has("hardness")) { core.push(soft); } }
+      else if (has("hardness") || has("nitrate")) { core.push(soft); }
+      if (has("acid")) { core.unshift("TERRA"); }
       if (has("bacteria")) { addons.push("UV"); }
-      if (st.well.drinking) { addons.push("PURA"); }
-
-      var problemCount = ["iron", "manganese", "sulfur", "acid", "hardness", "sediment"].filter(has).length;
-      if (problemCount >= 3 && cat.products.POSEIDON) { alt = "POSEIDON"; }
-
-      if (!causes.length) {
-        notes.push("You did not report any problems, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
-        core.push("AERO");
+      if (st.well.drinking) { addons.push("ELARA"); }
+      if (!core.length) {
+        notes.push("You did not report a specific problem, so we show the most common well water system in our area. A free water test tells us exactly what you need.");
+        core.push("FERRO");
       }
       causes.forEach(function (c) { if (cat.causes[c]) { diagnosis.push(cat.causes[c].plain); } });
       if (labHits.length) { diagnosis.push("From your lab numbers: " + labHits.join("; ") + "."); }
@@ -232,16 +239,22 @@
     }
 
     core = uniq(core); addons = uniq(addons);
-    // With no whole-home system, the first add-on is the recommendation.
     if (!core.length && addons.length) { core = [addons.shift()]; }
     var items = core.concat(addons).map(function (k) {
       var p = cat.products[k];
-      return { code: k, product: p, role: core.indexOf(k) >= 0 ? "core" : "addon", price: priceFor(p, sizeId), min: priceMin(p, cat), max: priceMax(p, cat) };
+      var tank = st.source === "well" && !!p.price.tank;
+      return { code: k, product: p, role: core.indexOf(k) >= 0 ? "core" : "addon", tank: tank, price: tank ? null : (p.price.flat != null ? p.price.flat : null) };
     });
-    var totals = { at: 0, min: 0, max: 0 };
-    items.forEach(function (it) { totals.at += it.price; totals.min += it.min; totals.max += it.max; });
-
-    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals };
+    var tanks = items.filter(function (it) { return it.tank; }).length;
+    var flats = 0; items.forEach(function (it) { if (it.price != null) { flats += it.price; } });
+    var first = cat.sizes[0].id, last = cat.sizes[cat.sizes.length - 1].id;
+    var totals = {
+      at: flats + tankSystemPrice(cat, tanks, sizeId),
+      min: flats + tankSystemPrice(cat, tanks, first),
+      max: flats + tankSystemPrice(cat, tanks, last),
+      flats: flats, tanks: tanks, system: tankSystemPrice(cat, tanks, sizeId)
+    };
+    return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large };
   }
 
   // ------------------------------------------------------------------
@@ -487,52 +500,81 @@
   // Results page
   // ------------------------------------------------------------------
   function sizeLabel(cat, id) { for (var i = 0; i < cat.sizes.length; i++) { if (cat.sizes[i].id === id) { return cat.sizes[i]; } } return { label: id, fits: "" }; }
+  function brochureUrl(cat, p) {
+    if (!p.brochure) { return null; }
+    if (/^https?:/i.test(p.brochure)) { return p.brochure; }
+    if (cat.brochureBaseAbsolute) { return cat.brochureBaseAbsolute.replace(/\/?$/, "/") + p.brochure; }
+    var base = (SCRIPT && SCRIPT.src) ? SCRIPT.src.replace(/[^\/]*$/, "") : "";
+    return base + (cat.brochureBase || "") + p.brochure;
+  }
+  function priceBlock(label, sub) { return '<p class="pr">' + label + "<small>" + esc(sub) + "</small></p>"; }
 
   function resultsHtml(cat, st, cfg) {
-    var r = st.result, sz = sizeLabel(cat, r.sizeId);
+    var r = st.result, sz = sizeLabel(cat, r.sizeId), well = st.source === "well";
     var h = '<p class="cwe-eyebrow">' + esc(cat.copy.resultsTitle) + "</p><h2>" + (st.contact.name ? esc(st.contact.name.split(" ")[0]) + ", here is your estimate." : "Here is your estimate.") + "</h2>" +
-      '<div class="cwe-meta"><span>Estimate ' + esc(st.id) + "</span><span>" + esc(today()) + "</span><span>" + esc(st.source === "well" ? "Well water" : "City water") + (r.region ? " &middot; " + esc(r.region.name) : "") + " " + esc(st.zip) + "</span></div>";
+      '<div class="cwe-meta"><span>Estimate ' + esc(st.id) + "</span><span>" + esc(today()) + "</span><span>" + (well ? "Well water" : "City water") + (r.region ? " &middot; " + esc(r.region.name) : "") + " " + esc(st.zip) + "</span></div>";
 
-    h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + d + "</li>"; }).join("") + "</ul>";
+    h += "<h3>What your water is telling us</h3><ul class=\"cwe-diag\">" + r.diagnosis.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("") + "</ul>";
     r.notes.forEach(function (n) { h += '<div class="cwe-note">' + esc(n) + "</div>"; });
 
-    var anySized = r.items.some(function (it) { return it.product.price.flat == null; });
-    h += "<h3>Recommended for your home</h3>" + (anySized ? "<p class=\"cwe-small\">Sized for <b>" + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b> tank. Prices are installed.</p>" : "<p class=\"cwe-small\">Prices are installed.</p>");
+    h += "<h3>Recommended for your home</h3>";
+    if (well && r.totals.tanks) {
+      h += '<p class="cwe-small">Sized for <b>' + esc(st.home.baths) + (st.home.baths >= 6 ? "+" : "") + " bathrooms</b> and <b>" + esc(st.home.people) + (st.home.people >= 8 ? "+" : "") + " people</b>: a <b>" + esc(sz.label) + "</b>. " + esc(cat.wellPricing.note) + "</p>";
+    } else {
+      h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
+    }
     if (!r.items.length) { h += '<div class="cwe-note warn">We could not match a system from your answers. Call us and we will sort it out in five minutes.</div>'; }
     r.items.forEach(function (it) {
-      var p = it.product;
-      h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + '</p><p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
-        '<p class="pr">' + (p.price.flat != null ? money(it.price) : money(it.price) + " <span style=\"font-size:14px;color:#5A6B78;font-weight:400\">at " + esc(sz.label) + " (" + range(it.min, it.max) + " across all sizes)</span>") + "<small>Installed price, estimated</small></p>" +
-        (p.brochure ? '<a class="cwe-btn ghost sm no-print" href="' + esc(p.brochure) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
+      var p = it.product, url = brochureUrl(cat, p);
+      h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + "</p>" +
+        (p.tagline ? '<p class="cwe-eyebrow" style="margin-top:4px">' + esc(p.tagline) + "</p>" : "") +
+        '<p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
+        (p.specs ? '<p class="cwe-small">' + esc(p.specs) + "</p>" : "") +
+        (it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
+        (url ? '<a class="cwe-btn ghost sm no-print" href="' + esc(url) + '" target="_blank" rel="noopener">Download the ' + esc(p.name.replace("ClearWave ", "")) + " brochure</a>" : "") + "</div>";
     });
     if (r.alt) {
-      var a = cat.products[r.alt];
-      h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Or, one complete system</p><p class="nm">' + esc(a.name) + '</p><p class="hl">' + esc(a.headline) + '</p><p class="pr">' + money(priceFor(a, r.sizeId)) + " <span style=\"font-size:14px;color:#5A6B78;font-weight:400\">at " + esc(sz.label) + " (" + range(priceMin(a, cat), priceMax(a, cat)) + " across all sizes)</span><small>Installed price, estimated</small></p></div>";
+      var a = cat.products[r.alt], au = brochureUrl(cat, a);
+      h += '<div class="cwe-card alt"><p class="cwe-eyebrow">Upgrade option for a home your size</p><p class="nm">' + esc(a.name) + '</p><p class="hl">' + esc(a.headline) + "</p>" + (a.specs ? '<p class="cwe-small">' + esc(a.specs) + "</p>" : "") + priceBlock(money(a.price.flat), "Installed price") + (au ? '<a class="cwe-btn ghost sm no-print" href="' + esc(au) + '" target="_blank" rel="noopener">Download the brochure</a>' : "") + "</div>";
     }
 
     // Totals
-    h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>";
-    h += '<span class="fin">' + (anySized ? "About " + money(r.totals.at) + " at the " + esc(sz.label) + " size we recommend." : "Installed, estimated.") + (cat.financing && cat.financing.enabled ? " Or about " + money(monthly(r.totals.at, cat.financing.apr, cat.financing.months)) + " per month " + esc(cat.financing.label) + "." : "") + "</span></div>";
+    var fin = cat.financing && cat.financing.enabled ? " Or about " + money(monthly(r.totals.at, cat.financing.apr, cat.financing.months)) + " per month over " + cat.financing.months + " months " + esc(cat.financing.label) + "." : "";
+    if (well && r.totals.tanks) {
+      h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>" +
+        '<span class="fin">About ' + money(r.totals.at) + " with a " + esc(sz.label) + ": a " + r.totals.tanks + "-tank system at " + money(r.totals.system) + (r.totals.flats ? " plus " + money(r.totals.flats) + " in add-ons" : "") + "." + fin + "</span></div>";
+    } else {
+      h += '<div class="cwe-total"><span class="lbl">Your estimated installed price</span><span class="amt">' + money(r.totals.at) + "</span>" + (fin ? '<span class="fin">' + fin.trim() + "</span>" : "") + "</div>";
+    }
 
-    // Size table
-    var sized = r.items.filter(function (it) { return it.product.price.flat == null; });
-    if (sized.length) {
-      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Flat-price add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th>" + sized.map(function (it) { return '<th class="num">' + esc(it.product.name.replace("ClearWave ", "")) + "</th>"; }).join("") + '<th class="num">Total</th></tr></thead><tbody>';
+    // Well: price by tank size
+    if (well && r.totals.tanks) {
+      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Fits</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
       cat.sizes.forEach(function (s) {
-        var tot = 0;
-        r.items.forEach(function (it) { tot += priceFor(it.product, s.id); });
-        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + "</td>" + sized.map(function (it) { return '<td class="num">' + money(priceFor(it.product, s.id)) + "</td>"; }).join("") + '<td class="num">' + money(tot) + "</td></tr>";
+        var sys = tankSystemPrice(cat, r.totals.tanks, s.id);
+        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";
       });
       h += "</tbody></table></div>";
     }
 
-    // Service plan
-    if (cat.servicePlan) { h += '<div class="cwe-note"><b>' + esc(cat.servicePlan.name) + ", " + money(cat.servicePlan.price) + " per month.</b> " + esc(cat.servicePlan.blurb) + "</div>"; }
+    // City: compare the tiers
+    if (!well && r.core.length && cat.cityCompare) {
+      var cols = cat.cityCompare.columns;
+      h += "<h3>How the collection compares</h3><p class=\"cwe-small\">Your system is highlighted. Every whole-home tier includes softening.</p><div style=\"overflow-x:auto\"><table><thead><tr><th></th>" + cols.map(function (c) { return '<th class="num' + (c === r.core[0] ? " pick" : "") + '">' + esc(cat.products[c].name.replace("ClearWave ", "").replace("Meridian Diamond Edition", "Diamond")) + "</th>"; }).join("") + "</tr></thead><tbody>";
+      cat.cityCompare.rows.forEach(function (row) {
+        h += "<tr><td>" + esc(row.label) + "</td>" + cols.map(function (c, i) {
+          var v = row.v === "price" ? money(cat.products[c].price.flat) : ({ y: '<span style="color:#22C776;font-weight:800">&#10003;</span>', p: '<span style="color:#C8871B" title="Less effective">partial</span>', n: '<span style="color:#B03A2E">&ndash;</span>' })[row.v.charAt(i)];
+          return '<td class="num"' + (c === r.core[0] ? ' style="background:#E4F7EE;font-weight:700"' : "") + ">" + v + "</td>";
+        }).join("") + "</tr>";
+      });
+      h += "</tbody></table></div>";
+    }
 
-    // Special circumstances + disclaimer
+    // Included with every system
+    if (cat.included && cat.included.length) { h += "<h3>Included with every ClearWave system</h3><ul class=\"cwe-diag\">" + cat.included.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
+
     h += "<h3>What could change the price</h3><ul class=\"cwe-diag\">" + cat.specialCircumstances.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul><p class=\"cwe-small\">" + esc(cat.copy.disclaimer) + "</p>";
 
-    // CTA
     h += "<h3>Next step</h3><p>" + esc(cat.copy.nextStep) + "</p><div class=\"cwe-cta no-print\">" +
       '<a class="cwe-btn green" href="' + esc(cat.company.phoneHref) + '">Call ' + esc(cat.company.phone) + "</a>" +
       '<a class="cwe-btn" href="' + esc(cat.company.smsHref) + "?&body=" + encodeURIComponent("Hi ClearWave, my estimate is " + st.id + ". I would like to talk about my water.") + '">Text us</a>' +
@@ -548,7 +590,7 @@
     var r = st.result, sz = sizeLabel(cat, r.sizeId);
     return {
       estimateId: st.id, source: st.source, zip: st.zip, region: r.region ? r.region.name : null,
-      size: sz.label, core: r.core, addons: r.addons, alt: r.alt, causes: r.causes,
+      size: sz.label, tanks: r.totals.tanks, core: r.core, addons: r.addons, alt: r.alt, causes: r.causes,
       goal: st.city.goal, concerns: st.city.concerns, symptoms: st.well.symptoms,
       totalAtSize: r.totals.at, totalMin: r.totals.min, totalMax: r.totals.max
     };
@@ -557,7 +599,7 @@
   function mailto(cat, st) {
     var s = summary(cat, st), r = st.result;
     var lines = ["Estimate " + st.id + " (" + today() + ")", "", "Name: " + st.contact.name, "Email: " + st.contact.email, "Phone: " + st.contact.phone, "ZIP: " + st.zip + (s.region ? " (" + s.region + ")" : ""), "Water: " + (st.source === "well" ? "Well" : "City"), "Home: " + st.home.baths + " baths, " + st.home.people + " people, size " + s.size, "",
-      "Recommended: " + r.items.map(function (it) { return it.product.name + " " + money(it.price); }).join(", "), "Range: " + range(r.totals.min, r.totals.max), "", "Notes: " + st.contact.notes];
+      "Recommended: " + r.items.map(function (it) { return it.product.name + (it.price != null ? " " + money(it.price) : ""); }).join(", "), (r.totals.tanks ? r.totals.tanks + "-tank system " + money(r.totals.system) + " at " + s.size + ". " : "") + "Total: " + range(r.totals.min, r.totals.max), "", "Notes: " + st.contact.notes];
     return "mailto:" + cat.company.email + "?subject=" + encodeURIComponent("Water estimate " + st.id) + "&body=" + encodeURIComponent(lines.join("\n"));
   }
 
@@ -568,7 +610,8 @@
       home: st.home, city: st.city, well: { symptoms: st.well.symptoms, tested: st.well.tested, lab: st.well.lab, drinking: st.well.drinking },
       labReport: st.well.file ? { name: st.well.file.name, type: st.well.file.type, size: st.well.file.size, dataUrl: st.well.file.data } : null,
       recommendation: summary(cat, st),
-      items: st.result.items.map(function (it) { return { code: it.code, name: it.product.name, role: it.role, price: it.price, min: it.min, max: it.max, brochure: it.product.brochure }; })
+      items: st.result.items.map(function (it) { return { code: it.code, name: it.product.name, role: it.role, tank: it.tank, price: it.price, brochure: brochureUrl(cat, it.product) }; }),
+      systemPrice: st.result.totals.system, tanks: st.result.totals.tanks
     };
     emit("lead", { estimateId: st.id, source: st.source, totalAtSize: st.result.totals.at });
     try { if (typeof window.fbq === "function") { window.fbq("track", "Lead", { content_name: "water_estimate", value: st.result.totals.at, currency: "USD" }); } } catch (e) {}
