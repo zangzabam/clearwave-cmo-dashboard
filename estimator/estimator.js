@@ -255,7 +255,8 @@
       if (tier > 0) { core.push(byTier(cat, tier)); }
       if (tier > 0 && tier < 5 && large && !goal.largeCore) { alt = tier < 3 ? "SOVEREIGN" : "PINNACLE"; }
       diagnosis.push(waterNote);
-      if (goal) { diagnosis.push("Your main goal: " + goal.label.toLowerCase() + ". " + goal.sub); }
+      if (cat.cityCommonFinding) { diagnosis.push(cat.cityCommonFinding); }
+      if (goal) { diagnosis.push("Your main goal: " + goal.label + ". " + goal.sub); }
       addons = uniq(add);
     } else {
       var cs = {};
@@ -363,7 +364,7 @@
     // ---------- views ----------
     var V = {};
     V.location = function () {
-      return head("Step 1", "Where is your home?", "We serve Virginia, Maryland, and Washington, DC. Your ZIP code also tells us about your local water.") +
+      return head("Step 1", "Where is your home?", "Your ZIP code tells us about your local water.") +
         '<div class="cwe-row"><div><label class="cwe-f" for="cwe-zip">ZIP code</label><input id="cwe-zip" type="text" inputmode="numeric" maxlength="5" placeholder="23451" value="' + esc(state.zip) + '"></div>' +
         '<div><label class="cwe-f" for="cwe-city">City or town (optional)</label><input id="cwe-city" type="text" placeholder="Virginia Beach" value="' + esc(state.cityName) + '"></div></div>' +
         '<div id="cwe-zipnote"></div>';
@@ -489,9 +490,7 @@
       var n = body.querySelector("#cwe-zipnote"); if (!n) { return; }
       if (state.zip.length < 5) { n.innerHTML = ""; return; }
       var r = region(cat, state.zip);
-      if (r && r.served === true) { n.innerHTML = '<div class="cwe-note good"><b>' + esc(r.name) + "</b>. Good news, we serve your area." + (r.water ? " " + esc(r.water) : "") + "</div>"; }
-      else if (r && r.served === "maybe") { n.innerHTML = '<div class="cwe-note warn"><b>' + esc(r.name) + "</b>. We may be able to serve your area. Finish the estimate and we will confirm.</div>"; }
-      else { n.innerHTML = '<div class="cwe-note warn">We do not serve that ZIP code yet. You can still get an estimate, and we will let you know if that changes.</div>'; }
+      n.innerHTML = r && r.water ? '<div class="cwe-note"><b>' + esc(r.name) + "</b>. " + esc(r.water) + "</div>" : "";
     }
 
     function err(msg) { var e = body.querySelector("#cwe-err"); if (e) { e.textContent = msg; } }

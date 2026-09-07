@@ -292,7 +292,7 @@ window.CLEARWAVE_CATALOG = {
     { id: "drinking", label: "Better drinking water only", sub: "Clean water at the kitchen sink. Nothing else.", core: null, addons: ["ELARA"] },
     { id: "soft", label: "Soft water only", sub: "Stop scale, spots, and dry skin from hard water.", core: "FLOW", addons: [] },
     { id: "essentials", label: "Essentials Protection", sub: "Hardness, chlorine, and the everyday stuff that ruins skin, hair, and fixtures.", core: "CREST", addons: [] },
-    { id: "signature", label: "Signature Protection", sub: "Higher-grade filtration. Chloramine, THMs, lead, pharmaceuticals, and more media for changing city water.", core: "MERIDIAN", largeCore: "SOVEREIGN", addons: [] },
+    { id: "signature", label: "Signature Protection", sub: "Deeper removal of chromium-6, trihalomethanes, haloacetic acids, arsenic, and lead. More media contact time as city water changes.", core: "MERIDIAN", largeCore: "SOVEREIGN", addons: [] },
     { id: "estate", label: "Estate Protection", sub: "Large homes, heavy water use, or simply the best on the market.", core: "DIAMOND", largeCore: "PINNACLE", addons: [] }
   ],
 
@@ -369,20 +369,23 @@ window.CLEARWAVE_CATALOG = {
     { id: "coliform", label: "Coliform bacteria", type: "yesno", cause: "bacteria", note: "Any coliform is a fail" }
   ],
 
-  // Regions by ZIP prefix (first three digits).
+  // Regions by ZIP prefix (first three digits). Used only for the local
+  // water note. A ZIP that is not listed still gets a full estimate.
   regions: [
-    { prefixes: ["200","202","203","204","205"], name: "Washington, DC", state: "DC", served: true, water: "DC Water uses chloramine (chlorine plus ammonia). It does not gas off like plain chlorine, so catalytic carbon is the right tool." },
-    { prefixes: ["201","220","221","222","223"], name: "Northern Virginia", state: "VA", served: true, water: "Most Northern Virginia systems use chloramine and the water is moderately hard (about 6 grains per gallon, estimated)." },
-    { prefixes: ["224","225"], name: "Fredericksburg", state: "VA", served: true, water: "A mix of city water and private wells. Wells here often show iron and low pH." },
-    { prefixes: ["229"], name: "Charlottesville", state: "VA", served: true, water: "City water is chlorinated. Wells in the county often show hardness, iron, and low pH." },
-    { prefixes: ["230","231","232","238"], name: "Richmond metro", state: "VA", served: true, water: "Richmond-area city water is chlorinated and moderately hard (estimated). Chesterfield and Hanover wells often show iron and sulfur." },
-    { prefixes: ["233","234","235","236","237"], name: "Virginia Beach / Hampton Roads", state: "VA", served: true, water: "Hampton Roads systems use chloramine. Shallow wells in the area often show iron, sulfur, and hardness." },
-    { prefixes: ["206","207","208","209"], name: "Maryland (Montgomery and Prince George's)", state: "MD", served: true, water: "WSSC water uses chloramine and is moderately hard (estimated)." },
-    { prefixes: ["210","211","212","214","217","218","219"], name: "Maryland", state: "MD", served: true, water: "" },
-    { prefixes: ["226","227","228","239","240","241","242","243","244","245","246"], name: "Virginia", state: "VA", served: true, water: "" },
-    { prefixes: ["270","271","272","273","274","275","276","277","278","279"], name: "Northern North Carolina", state: "NC", served: "maybe", water: "" }
+    { prefixes: ["200","202","203","204","205"], name: "Washington, DC", state: "DC", water: "DC Water uses chloramine (chlorine plus ammonia). It does not gas off like plain chlorine, so catalytic carbon is the right tool." },
+    { prefixes: ["201","220","221","222","223"], name: "Northern Virginia", state: "VA", water: "Most Northern Virginia systems use chloramine and the water is moderately hard (about 6 grains per gallon, estimated)." },
+    { prefixes: ["224","225"], name: "Fredericksburg", state: "VA", water: "A mix of city water and private wells. Wells here often show iron and low pH." },
+    { prefixes: ["229"], name: "Charlottesville", state: "VA", water: "City water is chlorinated. Wells in the county often show hardness, iron, and low pH." },
+    { prefixes: ["230","231","232","238"], name: "Richmond metro", state: "VA", water: "Richmond-area city water is chlorinated and moderately hard (estimated). Chesterfield and Hanover wells often show iron and sulfur." },
+    { prefixes: ["233","234","235","236","237"], name: "Virginia Beach / Hampton Roads", state: "VA", water: "Hampton Roads systems use chloramine. Shallow wells in the area often show iron, sulfur, and hardness." },
+    { prefixes: ["206","207","208","209"], name: "Maryland (Montgomery and Prince George's)", state: "MD", water: "WSSC water uses chloramine and is moderately hard (estimated)." },
+    { prefixes: ["210","211","212","214","217","218","219"], name: "Maryland", state: "MD", water: "" },
+    { prefixes: ["226","227","228","239","240","241","242","243","244","245","246"], name: "Virginia", state: "VA", water: "" },
+    { prefixes: ["270","271","272","273","274","275","276","277","278","279"], name: "Northern North Carolina", state: "NC", water: "" }
   ],
   defaultWaterNote: "Most city water in our area is disinfected with chlorine or chloramine (about 5 mg/L, estimated) and is moderately hard (about 6 grains per gallon, estimated).",
+  // Shown on every city water estimate. The most common findings in our area.
+  cityCommonFinding: "The most common things we find in city water across our area are high chromium-6, trihalomethanes (TTHMs), and haloacetic acids (HAA5). The last two form when chlorine reacts with organic matter in the water. A whole-home carbon system is built to reduce all three.",
 
   specialCircumstances: [
     "Long plumbing runs or a system that must sit far from the main line",
@@ -659,7 +662,8 @@ window.CLEARWAVE_CATALOG = {
       if (tier > 0) { core.push(byTier(cat, tier)); }
       if (tier > 0 && tier < 5 && large && !goal.largeCore) { alt = tier < 3 ? "SOVEREIGN" : "PINNACLE"; }
       diagnosis.push(waterNote);
-      if (goal) { diagnosis.push("Your main goal: " + goal.label.toLowerCase() + ". " + goal.sub); }
+      if (cat.cityCommonFinding) { diagnosis.push(cat.cityCommonFinding); }
+      if (goal) { diagnosis.push("Your main goal: " + goal.label + ". " + goal.sub); }
       addons = uniq(add);
     } else {
       var cs = {};
@@ -767,7 +771,7 @@ window.CLEARWAVE_CATALOG = {
     // ---------- views ----------
     var V = {};
     V.location = function () {
-      return head("Step 1", "Where is your home?", "We serve Virginia, Maryland, and Washington, DC. Your ZIP code also tells us about your local water.") +
+      return head("Step 1", "Where is your home?", "Your ZIP code tells us about your local water.") +
         '<div class="cwe-row"><div><label class="cwe-f" for="cwe-zip">ZIP code</label><input id="cwe-zip" type="text" inputmode="numeric" maxlength="5" placeholder="23451" value="' + esc(state.zip) + '"></div>' +
         '<div><label class="cwe-f" for="cwe-city">City or town (optional)</label><input id="cwe-city" type="text" placeholder="Virginia Beach" value="' + esc(state.cityName) + '"></div></div>' +
         '<div id="cwe-zipnote"></div>';
@@ -893,9 +897,7 @@ window.CLEARWAVE_CATALOG = {
       var n = body.querySelector("#cwe-zipnote"); if (!n) { return; }
       if (state.zip.length < 5) { n.innerHTML = ""; return; }
       var r = region(cat, state.zip);
-      if (r && r.served === true) { n.innerHTML = '<div class="cwe-note good"><b>' + esc(r.name) + "</b>. Good news, we serve your area." + (r.water ? " " + esc(r.water) : "") + "</div>"; }
-      else if (r && r.served === "maybe") { n.innerHTML = '<div class="cwe-note warn"><b>' + esc(r.name) + "</b>. We may be able to serve your area. Finish the estimate and we will confirm.</div>"; }
-      else { n.innerHTML = '<div class="cwe-note warn">We do not serve that ZIP code yet. You can still get an estimate, and we will let you know if that changes.</div>'; }
+      n.innerHTML = r && r.water ? '<div class="cwe-note"><b>' + esc(r.name) + "</b>. " + esc(r.water) + "</div>" : "";
     }
 
     function err(msg) { var e = body.querySelector("#cwe-err"); if (e) { e.textContent = msg; } }
