@@ -712,7 +712,6 @@ window.CLEARWAVE_CATALOG = {
       }
       causes.forEach(function (c) { if (cat.causes[c]) { diagnosis.push(cat.causes[c].plain); } });
       if (labHits.length) { diagnosis.push("From your lab numbers: " + labHits.join("; ") + "."); }
-      if (reg && reg.water) { diagnosis.push(reg.water); }
     }
 
     core = uniq(core); addons = uniq(addons);
