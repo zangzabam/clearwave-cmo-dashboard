@@ -213,11 +213,17 @@
     var rules = cat.capacitySizing || [];
     for (var j = 0; j < rules.length; j++) {
       var v = Number(lab[rules[j].field]);
-      if (v && v > rules[j].above && sizeIndex(cat, rules[j].size) > sizeIndex(cat, size)) { size = rules[j].size; bumped = rules[j].field; }
+      var hit = v && (rules[j].below != null ? v < rules[j].below : v > rules[j].above);
+      if (hit && sizeIndex(cat, rules[j].size) > sizeIndex(cat, size)) { size = rules[j].size; bumped = rules[j].field; }
     }
     return { id: size, bumped: bumped };
   }
-  function tankSystemPrice(cat, n, sizeId) { if (!n) { return 0; } return cat.wellPricing.singleTank[sizeId] + (n - 1) * cat.wellPricing.additionalTank; }
+  function singleTankPrice(cat, code, sizeId) { var t = cat.wellPricing.singleTank; return (t[code] || t.default)[sizeId]; }
+  function tankSystemPrice(cat, codes, sizeId) {
+    if (!codes || !codes.length) { return 0; }
+    var base = 0; codes.forEach(function (c) { base = Math.max(base, singleTankPrice(cat, c, sizeId)); });
+    return base + (codes.length - 1) * cat.wellPricing.additionalTank;
+  }
   function region(cat, zip) {
     var pre = String(zip || "").slice(0, 3);
     for (var i = 0; i < cat.regions.length; i++) { if (cat.regions[i].prefixes.indexOf(pre) >= 0) { return cat.regions[i]; } }
@@ -228,7 +234,7 @@
   function recommend(cat, st) {
     var picked = pickSize(cat, st), sizeId = picked.id;
     var core = [], addons = [], alt = null, diagnosis = [], causes = [], notes = [], optional = [];
-    if (st.source === "well" && picked.bumped) { notes.push("Your " + picked.bumped + " level is high, so we sized you into a " + sizeLabel(cat, sizeId).label + ". A bigger tank holds more media and removes more between cleanings."); }
+    if (st.source === "well" && picked.bumped) { notes.push("Your " + (picked.bumped === "ph" ? "pH" : picked.bumped) + " level " + (picked.bumped === "ph" ? "is low" : "is high") + ", so we sized you into a " + sizeLabel(cat, sizeId).label + ". A bigger tank holds more media and removes more between cleanings."); }
     var reg = region(cat, st.zip);
     var waterNote = (reg && reg.water) || cat.defaultWaterNote;
     var largeHome = st.home.baths >= cat.largeHome.minBaths || st.home.people >= cat.largeHome.minPeople;
@@ -301,14 +307,14 @@
       var inc = freebies.indexOf(k) >= 0;
       return { code: k, product: p, role: inc ? "included" : (core.indexOf(k) >= 0 ? "core" : "addon"), tank: tank, included: inc, price: (tank || inc) ? null : (p.price.flat != null ? p.price.flat : null) };
     });
-    var tanks = items.filter(function (it) { return it.tank; }).length;
+    var tankCodes = items.filter(function (it) { return it.tank; }).map(function (it) { return it.code; });
     var flats = 0; items.forEach(function (it) { if (it.price != null) { flats += it.price; } });
     var first = cat.sizes[0].id, last = cat.sizes[cat.sizes.length - 1].id;
     var totals = {
-      at: flats + tankSystemPrice(cat, tanks, sizeId),
-      min: flats + tankSystemPrice(cat, tanks, first),
-      max: flats + tankSystemPrice(cat, tanks, last),
-      flats: flats, tanks: tanks, system: tankSystemPrice(cat, tanks, sizeId)
+      at: flats + tankSystemPrice(cat, tankCodes, sizeId),
+      min: flats + tankSystemPrice(cat, tankCodes, first),
+      max: flats + tankSystemPrice(cat, tankCodes, last),
+      flats: flats, tanks: tankCodes.length, tankCodes: tankCodes, system: tankSystemPrice(cat, tankCodes, sizeId)
     };
     return { sizeId: sizeId, region: reg, items: items, core: core, addons: addons, alt: alt, optional: optional, causes: causes, diagnosis: diagnosis, notes: notes, totals: totals, large: large, largeHome: largeHome };
   }
@@ -634,7 +640,7 @@
 
     h += "<h3>Recommended for your home</h3>";
     if (well && r.totals.tanks) {
-      h += '<p class="cwe-small">Priced with a <b>' + esc(sz.label) + "</b>. " + esc(cat.sizeNote) + " " + esc(cat.wellPricing.note) + "</p>";
+      h += '<p class="cwe-small">Priced with a <b>' + esc(sz.label) + "</b>. " + esc(cat.sizeNote) + (r.totals.tanks > 1 ? " " + esc(cat.wellPricing.note) : "") + "</p>";
     } else {
       h += '<p class="cwe-small">Prices are installed and include everything listed under "Included with every system."</p>';
     }
@@ -646,7 +652,8 @@
         (p.tagline ? '<p class="hl" style="font-style:italic;margin:2px 0 6px">' + esc(p.tagline) + "</p>" : "") +
         '<p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
         (p.specs ? '<p class="cwe-small">' + esc(p.specs) + "</p>" : "") +
-        (it.included ? priceBlock("Included", (p.price.flat != null ? money(p.price.flat) + " value. " : "") + "Free with your whole-home system") : it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
+        (it.tank && p.sizing ? '<p class="cwe-small"><b>Tank size:</b> ' + cat.sizes.map(function (z) { return esc(z.label.replace(" tank", "")) + " for " + esc((p.sizing[z.id] || z.fits).toLowerCase()); }).join(". ") + ".</p>" : "") +
+        (it.included ? priceBlock("Included", (p.price.flat != null ? money(p.price.flat) + " value. " : "") + "Free with your whole-home system") : it.tank ? (r.totals.tanks > 1 ? priceBlock("Tank " + (r.totals.tankCodes.indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(range(singleTankPrice(cat, it.code, cat.sizes[0].id), singleTankPrice(cat, it.code, cat.sizes[cat.sizes.length - 1].id)), "Installed, by tank size")) : priceBlock(money(it.price), "Installed price")) +
         (url ? '<a class="cwe-btn ghost sm no-print" href="' + esc(url) + '" target="_blank" rel="noopener">Download the ' + esc(p.name.replace("ClearWave ", "")) + " brochure</a>" : "") + "</div>";
     });
     if (r.alt) {
@@ -666,7 +673,7 @@
     }
     if (well && r.totals.tanks) {
       h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>" +
-        '<span class="fin">About ' + money(r.totals.at) + " with a " + esc(sz.label) + ": a " + r.totals.tanks + "-tank system at " + money(r.totals.system) + (r.totals.flats ? " plus " + money(r.totals.flats) + " in add-ons" : "") + "." + fin + "</span></div>";
+        '<span class="fin">About ' + money(r.totals.at) + " with a " + esc(sz.label) + (r.totals.tanks > 1 ? ": a " + r.totals.tanks + "-tank system at " + money(r.totals.system) : "") + (r.totals.flats ? " plus " + money(r.totals.flats) + " in add-ons" : "") + "." + fin + "</span></div>";
     } else {
       h += '<div class="cwe-total"><span class="lbl">Your estimated installed price</span><span class="amt">' + money(r.totals.at) + "</span>" + (fin ? '<span class="fin">' + fin.trim() + "</span>" : "") + "</div>";
     }
@@ -676,10 +683,11 @@
 
     // Well: price by tank size
     if (well && r.totals.tanks) {
-      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">A bigger tank removes more. Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Built for</th><th class=\"num\">" + r.totals.tanks + "-tank system</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
+      h += "<h3>How price changes with tank size</h3><p class=\"cwe-small\">A bigger tank removes more. Your row is highlighted. Add-ons stay the same at every size.</p><div style=\"overflow-x:auto\"><table><thead><tr><th>Tank</th><th>Built for</th><th class=\"num\">" + (r.totals.tanks > 1 ? r.totals.tanks + "-tank system" : "System") + "</th>" + (r.totals.flats ? '<th class="num">Add-ons</th>' : "") + '<th class="num">Total</th></tr></thead><tbody>';
       cat.sizes.forEach(function (s) {
-        var sys = tankSystemPrice(cat, r.totals.tanks, s.id);
-        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + esc(s.fits) + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";
+        var sys = tankSystemPrice(cat, r.totals.tankCodes, s.id);
+        var built = r.totals.tankCodes.map(function (c) { var p = cat.products[c]; var txt = p.sizing && p.sizing[s.id] ? p.sizing[s.id] : s.fits; return r.totals.tankCodes.length > 1 ? "<b>" + esc(p.name.replace("ClearWave ", "")) + ":</b> " + esc(txt) : esc(txt); }).join("<br>");
+        h += '<tr class="' + (s.id === r.sizeId ? "pick" : "") + '"><td>' + esc(s.label) + "</td><td>" + built + '</td><td class="num">' + money(sys) + "</td>" + (r.totals.flats ? '<td class="num">' + money(r.totals.flats) + "</td>" : "") + '<td class="num">' + money(sys + r.totals.flats) + "</td></tr>";
       });
       h += "</tbody></table></div>";
     }

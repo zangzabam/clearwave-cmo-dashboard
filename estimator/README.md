@@ -108,17 +108,20 @@ the recommended column highlighted.
 Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
 7 gpg or more, nitrate above 10 mg/L, any coliform).
 
-**Well pricing rule.** Every well system is priced by tank count, not per
-product. A single tank runs $8,000 (10-inch), $9,000 (12-inch), or $13,000
-(13-inch), so the customer sees "$8,000 to $13,000" for one tank. Each extra
-tank adds $1,000. Flat add-ons (UV) are added on top. The results page shows
-the total at every tank size.
+**Well pricing rule.** Every well system is priced by tank, not per product.
+Iron tanks (Ferro, Poseidon) run $8,000 (10-inch), $9,000 (12-inch), or
+$13,000 (13-inch). Lighter tanks (Aero, and for now Terra and Flow as
+placeholders) run $6,000, $8,000, or $10,000. With more than one tank the
+priciest tank sets the base and each extra tank adds $1,000, so Ferro plus
+Aero at 10-inch is $9,000. Flat add-ons (UV) are added on top.
 
 **Tank sizing.** Tank size is about how much the tank can remove, not house
-size. Every well system starts at 10-inch. Lab numbers move it up, from the
-Ferro and Poseidon spec sheets: iron above 10 ppm means 12-inch, above 20 ppm
-means 13-inch; manganese above 3 and 5 ppm; hardness above 30 and 40 gpg.
-Edit `capacitySizing` in the catalog to change the thresholds.
+size. Every well system starts at 10-inch. Each product carries its own
+wording for what each size handles (iron ppm for Ferro, rust for Poseidon,
+hydrogen sulfide for Aero, pH for Terra, hardness for Flow). Lab numbers move
+the size up: iron above 10 and 20 ppm, manganese above 3 and 5 ppm, hardness
+above 30 and 40 gpg, pH below 6.0 and 5.5. Edit `capacitySizing` and each
+product's `sizing` in the catalog to change them.
 
 ## Changing prices and products
 

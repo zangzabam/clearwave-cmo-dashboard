@@ -71,23 +71,33 @@ window.CLEARWAVE_CATALOG = {
   // come from the Ferro and Poseidon spec sheets.
   // ---------------------------------------------------------------------
   sizes: [
-    { id: "s10", label: "10-inch tank", fits: "Light levels. For example, iron up to 10 ppm." },
-    { id: "s12", label: "12-inch tank", fits: "Moderate levels. For example, iron up to 20 ppm." },
-    { id: "s13", label: "13-inch tank", fits: "Heavy levels. For example, iron of 30 ppm or more." }
+    { id: "s10", label: "10-inch tank", fits: "Light levels" },
+    { id: "s12", label: "12-inch tank", fits: "Moderate levels" },
+    { id: "s13", label: "13-inch tank", fits: "Heavy levels" }
   ],
   // Every well system starts at 10-inch. Lab numbers move it up. First match wins.
+  // "below" is used for pH, where lower is worse.
   capacitySizing: [
     { field: "iron", above: 20, size: "s13" }, { field: "iron", above: 10, size: "s12" },
     { field: "manganese", above: 5, size: "s13" }, { field: "manganese", above: 3, size: "s12" },
-    { field: "hardness", above: 40, size: "s13" }, { field: "hardness", above: 30, size: "s12" }
+    { field: "hardness", above: 40, size: "s13" }, { field: "hardness", above: 30, size: "s12" },
+    { field: "ph", below: 5.5, size: "s13" }, { field: "ph", below: 6.0, size: "s12" }
   ],
   sizeNote: "Most homes start with a 10-inch tank. Tank size is set by how much your water needs removed, not by the size of your house. Your free water test sets the final size.",
 
   // Well water pricing rule.
+  // Single-tank price by tank size. Iron tanks (Ferro, Poseidon) use the
+  // default. Lighter tanks have their own line. With more than one tank the
+  // priciest tank sets the base and each extra tank adds additionalTank.
   wellPricing: {
-    singleTank: { s10: 8000, s12: 9000, s13: 13000 },
+    singleTank: {
+      default: { s10: 8000, s12: 9000, s13: 13000 },
+      AERO: { s10: 6000, s12: 8000, s13: 10000 },
+      TERRA: { s10: 6000, s12: 8000, s13: 10000 },   // PLACEHOLDER, same as Aero
+      FLOW: { s10: 6000, s12: 8000, s13: 10000 }     // PLACEHOLDER, same as Aero
+    },
     additionalTank: 1000,
-    note: "A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
+    note: "Each extra tank adds about $1,000."
   },
 
   // "Large home" for city water. Inside a package the larger system is
@@ -113,6 +123,7 @@ window.CLEARWAVE_CATALOG = {
       solves: ["Hard water scale", "Spots on glass and dishes", "Dry skin and dull laundry", "Water heater and fixture protection"],
       specs: "48,000 grains. 10 GPM. Single tank.",
       // City: fixed price. Well: counts as one tank under the wellPricing rule.
+      sizing: { s10: "Hardness up to 30 grains", s12: "Hardness up to 40 grains", s13: "Hardness of 50 grains or more" },
       price: { flat: 5477, tank: true },
       brochure: "clearwave-flow.pdf"
     },
@@ -201,6 +212,7 @@ window.CLEARWAVE_CATALOG = {
       headline: "Removes dissolved iron and manganese and softens your water in the same pass. One tank. Two jobs.",
       solves: ["Orange and rust staining", "Manganese (black staining)", "Hard water scale", "Metallic taste", "Dingy laundry"],
       specs: "Iron and manganese up to 30 ppm. 10, 12, or 13-inch tank. Smart metered valve.",
+      sizing: { s10: "Iron up to 10 ppm", s12: "Iron up to 20 ppm", s13: "Iron of 30 ppm or more" },
       price: { tank: true },
       brochure: "clearwave-ferro.pdf"
     },
@@ -212,6 +224,7 @@ window.CLEARWAVE_CATALOG = {
       headline: "Air-injection oxidation removes ferric and ferrous iron, manganese, and the rotten-egg smell of sulfur. No salt. No chemicals.",
       solves: ["Rusty or orange-looking water (ferric iron)", "Dissolved iron (ferrous)", "Manganese", "Rotten egg smell", "Salt-free and chemical-free"],
       specs: "Ferric iron up to 30+ ppm. 10, 12, or 13-inch tank. Self-cleaning air-recharge backwash.",
+      sizing: { s10: "Rust (ferric iron) up to 10 ppm", s12: "Rust up to 20 ppm", s13: "Rust of 30 ppm or more" },
       price: { tank: true },
       brochure: "clearwave-poseidon.pdf"
     },
@@ -223,6 +236,7 @@ window.CLEARWAVE_CATALOG = {
       headline: "Air over catalytic carbon. Off-gasses hydrogen sulfide, then traps chlorine, chemicals, and bad taste.",
       solves: ["Rotten egg smell", "Hydrogen sulfide", "Bad taste and odor", "Chlorine, chloramine, and THMs"],
       specs: "10, 12, or 13-inch tank. Self-cleaning air-recharge backwash.",
+      sizing: { s10: "Light hydrogen sulfide, a faint smell at hot taps", s12: "Moderate hydrogen sulfide, a smell at every tap", s13: "Heavy hydrogen sulfide, a strong smell through the whole home" },
       price: { tank: true },
       brochure: "clearwave-aero.pdf"
     },
@@ -234,6 +248,7 @@ window.CLEARWAVE_CATALOG = {
       headline: "Natural coral calcite raises low pH with no chemicals. Protects copper pipes from pinhole leaks and stops blue-green stains.",
       solves: ["Low pH (acidic water)", "Pinhole leaks and copper corrosion", "Blue-green staining", "Sour or metallic taste"],
       specs: "Coral calcite media. 10, 12, or 13-inch tank. Self-cleaning backwash.",
+      sizing: { s10: "Mildly acidic water, pH 6.0 to 6.9", s12: "Acidic water, pH 5.5 to 6.0", s13: "Very acidic water, pH below 5.5" },
       price: { tank: true },
       brochure: "clearwave-terra.pdf"
     },
@@ -244,6 +259,7 @@ window.CLEARWAVE_CATALOG = {
       headline: "Nitrate removal and water softening in one system.",
       solves: ["Nitrates from farms and septic", "Hard water scale", "Spots and dry skin"],
       specs: "10, 12, or 13-inch tank.",
+      sizing: { s10: "Light nitrates", s12: "Moderate nitrates", s13: "Heavy nitrates" },
       price: { tank: true },
       brochure: null
     },
