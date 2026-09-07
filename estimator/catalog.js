@@ -366,8 +366,7 @@ window.CLEARWAVE_CATALOG = {
     "Long plumbing runs or a system that must sit far from the main line",
     "Crawlspace, attic, or outdoor installs that need extra work",
     "Well pump or pressure tank problems found on site",
-    "Lab results that show very high levels of a contaminant",
-    "Homes with more than 5 bathrooms or very high water use"
+    "Lab results that show very high levels of a contaminant"
   ],
 
   copy: {
