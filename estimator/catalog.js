@@ -39,9 +39,17 @@ window.CLEARWAVE_CATALOG = {
   // "https://clearwavewater.com/estimator/brochures/"
   brochureBaseAbsolute: null,
 
-  // "About $X per month" line. PLACEHOLDER terms: replace apr and months
-  // with the real numbers from your financing partner before going live.
-  financing: { enabled: true, months: 60, apr: 12.99, label: "with approved financing (example terms)" },
+  // Financing lines on the estimate. From the 2026 sales deck: 10.9% APR
+  // over 144 months, and 0% for 24 months. These are examples; the note
+  // says other terms and rates exist.
+  financing: {
+    enabled: true,
+    options: [
+      { label: "10.9% APR over 144 months", apr: 10.9, months: 144 },
+      { label: "0% financing for 24 months", apr: 0, months: 24 }
+    ],
+    note: "Financing examples only. Several plans are available with different terms and rates, and you can apply right from your quote."
+  },
 
   // Shown on every estimate. From the Jobber quote template and brochures.
   included: [
@@ -73,9 +81,9 @@ window.CLEARWAVE_CATALOG = {
 
   // Well water pricing rule.
   wellPricing: {
-    singleTank: { s10: 8000, s12: 9000, s13: 13000 },   // s13 is a PLACEHOLDER
+    singleTank: { s10: 8000, s12: 9000, s13: 13000 },
     additionalTank: 1000,
-    note: "Well systems are custom. Most single-tank systems run $8,000 to $9,000 installed. Each extra tank adds about $1,000. Larger 13-inch tanks cost more."
+    note: "Well systems are custom. A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
   },
 
   // "Large home" for city water: bumps Meridian to the 13-inch Diamond Edition
@@ -91,6 +99,7 @@ window.CLEARWAVE_CATALOG = {
   products: {
     // ---------- CITY WATER COLLECTION ----------
     FLOW: {
+      package: "Tier 1 of 3: Essentials Protection",
       name: "ClearWave Flow",
       family: "both",
       kind: "addon",
@@ -104,6 +113,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-flow.pdf"
     },
     CREST: {
+      package: "Tier 1 of 3: Essentials Protection",
       name: "ClearWave Crest",
       family: "city",
       kind: "core",
@@ -116,6 +126,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-crest.pdf"
     },
     MERIDIAN: {
+      package: "Tier 2 of 3: Signature Protection",
       name: "ClearWave Meridian",
       family: "city",
       kind: "core",
@@ -128,6 +139,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-meridian.pdf"
     },
     SOVEREIGN: {
+      package: "Tier 2 of 3: Signature Protection",
       name: "ClearWave Sovereign",
       family: "city",
       kind: "core",
@@ -140,6 +152,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-sovereign.pdf"
     },
     DIAMOND: {
+      package: "Tier 3 of 3: Estate Protection",
       name: "ClearWave Meridian Diamond Edition",
       family: "city",
       kind: "core",
@@ -152,6 +165,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-meridian.pdf"
     },
     PINNACLE: {
+      package: "Tier 3 of 3: Estate Protection",
       name: "ClearWave Pinnacle",
       family: "city",
       kind: "core",

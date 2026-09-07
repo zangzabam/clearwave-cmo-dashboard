@@ -21,6 +21,16 @@ for the basic embed, no server. It works on any website or landing page.
 
 ## How to put it on a page
 
+**Your site.** clearwavewater.com runs WordPress with Elementor behind
+Cloudflare. That means:
+
+1. Upload the `estimator` folder to the site (for example with the file
+   manager in your host's control panel, or an FTP client) so that
+   `https://clearwavewater.com/estimator/estimator.js` loads in a browser.
+2. In Elementor, drag an **HTML** widget onto the page and paste the two
+   lines from Option 1 below. Publish. That is the whole install.
+3. For a landing page in a different builder, use Option 2 or 3.
+
 **Option 1. Script tag (best for clearwavewater.com).**
 Upload the `estimator` folder to your web host, then put this where you want it:
 
@@ -99,9 +109,10 @@ Lab numbers override symptoms (iron above 0.3 mg/L, pH below 6.5, hardness at
 7 gpg or more, nitrate above 10 mg/L, any coliform).
 
 **Well pricing rule.** Every well system is priced by tank count, not per
-product. A single tank is $8,000 (10-inch) or $9,000 (12-inch). Each extra
-tank adds $1,000. The 13-inch price is a placeholder. Flat add-ons (Elara,
-UV) are added on top. The results page shows the total at every tank size.
+product. A single tank runs $8,000 (10-inch), $9,000 (12-inch), or $13,000
+(13-inch), so the customer sees "$8,000 to $13,000" for one tank. Each extra
+tank adds $1,000. Flat add-ons (Elara, UV) are added on top. The results page
+shows the total at every tank size.
 
 **Tank sizing.** Bathrooms and people pick 10, 12, or 13 inch. Lab iron above
 10 ppm forces a 12-inch, above 20 ppm a 13-inch (from the Ferro and Poseidon
@@ -120,10 +131,12 @@ wellPricing: { singleTank: { s10: 8000, s12: 9000, s13: 13000 }, additionalTank:
 
 **Still placeholders, marked PLACEHOLDER in the file:**
 
-- `wellPricing.singleTank.s13` (13-inch single tank, set to $13,000)
 - UV Light price (set to $1,800)
 - Pura has no brochure yet
-- Financing terms (`financing.apr` and `financing.months`, set to 12.99% over 60 months as an example)
+
+Financing shows two example lines from the sales deck (10.9% APR over 144
+months, and 0% for 24 months) plus a note that other plans exist. Edit
+`financing.options` to change them or set `enabled: false` to hide them.
 
 Brochures live in `brochures/` and the download button appears on any product
 that has a `brochure` file name. The city brochures were compressed from about

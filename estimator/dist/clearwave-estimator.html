@@ -6,12 +6,12 @@
 <title>Water System Estimator | ClearWave Water Solutions</title>
 <meta name="description" content="Answer a few questions about your home and water. Get an installed price range for a ClearWave whole-home water system in about two minutes.">
 <style>
-  body{margin:0;background:#F3F7FA;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;color:#0F2E4C}
+  body{margin:0;background:#F1F7FB;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;color:#262626}
   .wrap{max-width:760px;margin:0 auto;padding:28px 16px 48px}
   .intro{margin:0 0 18px}
   .intro p.eyebrow{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5A6B78;margin:0 0 6px}
-  .intro h1{font-family:"Helvetica Neue","Arial Narrow",Arial,sans-serif;font-size:30px;line-height:1.1;margin:0 0 8px;font-weight:800;letter-spacing:-.01em}
-  .intro p{margin:0;font-size:17px;color:#0F2E4C}
+  .intro h1{font-family:"Helvetica Neue","Arial Narrow",Arial,sans-serif;font-size:30px;line-height:1.1;margin:0 0 8px;font-weight:800;letter-spacing:-.01em;color:#0B73BA}
+  .intro p{margin:0;font-size:17px;color:#262626}
   .cwe{background:#fff}
   footer{max-width:760px;margin:24px auto 0;padding:0 16px;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;color:#5A6B78}
 </style>
@@ -66,9 +66,17 @@ window.CLEARWAVE_CATALOG = {
   // "https://clearwavewater.com/estimator/brochures/"
   brochureBaseAbsolute: null,
 
-  // "About $X per month" line. PLACEHOLDER terms: replace apr and months
-  // with the real numbers from your financing partner before going live.
-  financing: { enabled: true, months: 60, apr: 12.99, label: "with approved financing (example terms)" },
+  // Financing lines on the estimate. From the 2026 sales deck: 10.9% APR
+  // over 144 months, and 0% for 24 months. These are examples; the note
+  // says other terms and rates exist.
+  financing: {
+    enabled: true,
+    options: [
+      { label: "10.9% APR over 144 months", apr: 10.9, months: 144 },
+      { label: "0% financing for 24 months", apr: 0, months: 24 }
+    ],
+    note: "Financing examples only. Several plans are available with different terms and rates, and you can apply right from your quote."
+  },
 
   // Shown on every estimate. From the Jobber quote template and brochures.
   included: [
@@ -100,9 +108,9 @@ window.CLEARWAVE_CATALOG = {
 
   // Well water pricing rule.
   wellPricing: {
-    singleTank: { s10: 8000, s12: 9000, s13: 13000 },   // s13 is a PLACEHOLDER
+    singleTank: { s10: 8000, s12: 9000, s13: 13000 },
     additionalTank: 1000,
-    note: "Well systems are custom. Most single-tank systems run $8,000 to $9,000 installed. Each extra tank adds about $1,000. Larger 13-inch tanks cost more."
+    note: "Well systems are custom. A single-tank system runs $8,000 to $13,000 installed depending on tank size. Each extra tank adds about $1,000."
   },
 
   // "Large home" for city water: bumps Meridian to the 13-inch Diamond Edition
@@ -118,6 +126,7 @@ window.CLEARWAVE_CATALOG = {
   products: {
     // ---------- CITY WATER COLLECTION ----------
     FLOW: {
+      package: "Tier 1 of 3: Essentials Protection",
       name: "ClearWave Flow",
       family: "both",
       kind: "addon",
@@ -131,6 +140,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-flow.pdf"
     },
     CREST: {
+      package: "Tier 1 of 3: Essentials Protection",
       name: "ClearWave Crest",
       family: "city",
       kind: "core",
@@ -143,6 +153,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-crest.pdf"
     },
     MERIDIAN: {
+      package: "Tier 2 of 3: Signature Protection",
       name: "ClearWave Meridian",
       family: "city",
       kind: "core",
@@ -155,6 +166,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-meridian.pdf"
     },
     SOVEREIGN: {
+      package: "Tier 2 of 3: Signature Protection",
       name: "ClearWave Sovereign",
       family: "city",
       kind: "core",
@@ -167,6 +179,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-sovereign.pdf"
     },
     DIAMOND: {
+      package: "Tier 3 of 3: Estate Protection",
       name: "ClearWave Meridian Diamond Edition",
       family: "city",
       kind: "core",
@@ -179,6 +192,7 @@ window.CLEARWAVE_CATALOG = {
       brochure: "clearwave-meridian.pdf"
     },
     PINNACLE: {
+      package: "Tier 3 of 3: Estate Protection",
       name: "ClearWave Pinnacle",
       family: "city",
       kind: "core",
@@ -442,11 +456,11 @@ window.CLEARWAVE_CATALOG = {
   // green, square corners, Helvetica headings, Georgia body.
   // ------------------------------------------------------------------
   var CSS = "\
-.cwe{--navy:#0F2E4C;--blue-deep:#1A5CA4;--blue:#1C74B8;--bright:#2597D8;--green:#22C776;--green-lt:#63E2A2;--amber:#C8871B;--red:#B03A2E;--paper:#fff;--tint:#F3F7FA;--rule:#D2DCE4;--muted:#5A6B78;\
+.cwe{--navy:#0B2A44;--blue-deep:#0B73BA;--blue:#1980C1;--bright:#1087B7;--green:#25E2A9;--green-lt:#65DFDA;--amber:#C8871B;--red:#B03A2E;--paper:#fff;--tint:#F1F7FB;--rule:#D2DCE4;--muted:#5A6B78;\
  font-family:Georgia,'Iowan Old Style','Times New Roman',serif;color:var(--navy);background:var(--paper);line-height:1.5;font-size:16px;max-width:760px;margin:0 auto;border:1px solid var(--rule);box-sizing:border-box}\
 .cwe *{box-sizing:border-box}\
 .cwe h1,.cwe h2,.cwe h3,.cwe h4,.cwe .cwe-sans,.cwe button,.cwe input,.cwe select,.cwe textarea,.cwe table{font-family:'Helvetica Neue','Arial Narrow',Arial,sans-serif}\
-.cwe-head{display:flex;align-items:center;gap:14px;padding:16px 22px;border-top:3px solid var(--blue-deep);border-bottom:1px solid var(--rule)}\
+.cwe-head{display:flex;align-items:center;gap:14px;padding:16px 22px;border-top:4px solid var(--blue-deep);border-bottom:1px solid var(--rule)}\
 .cwe-head svg{width:44px;height:44px;flex:none}\
 .cwe-wm{line-height:1.05;color:var(--navy);text-transform:uppercase}\
 .cwe-wm .l1{font-weight:500;letter-spacing:.14em;font-size:9px}\
@@ -476,13 +490,13 @@ window.CLEARWAVE_CATALOG = {
 .cwe input:focus,.cwe select:focus,.cwe textarea:focus{outline:2px solid var(--bright);outline-offset:0}\
 .cwe-note{background:var(--tint);border-left:4px solid var(--blue-deep);padding:10px 14px;margin:14px 0;font-size:14px}\
 .cwe-note.warn{border-left-color:var(--amber)}\
-.cwe-note.good{border-left-color:var(--green)}\
+.cwe-note.good{border-left-color:var(--green);background:#E3FBF3}\
 .cwe-err{color:var(--red);font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;margin:8px 0 0;min-height:1em}\
 .cwe-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}\
 .cwe-btn{appearance:none;border:1px solid var(--blue-deep);background:var(--blue-deep);color:#fff;padding:12px 22px;font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;text-align:center}\
 .cwe-btn:hover{background:var(--blue)}\
 .cwe-btn.ghost{background:#fff;color:var(--blue-deep)}\
-.cwe-btn.green{background:var(--green);border-color:var(--green);color:var(--navy)}\
+.cwe-btn.green{background:var(--green);border-color:var(--green);color:#0B2A44}\
 .cwe-btn.sm{padding:8px 14px;font-size:13px}\
 .cwe-btn[disabled]{opacity:.5;cursor:default}\
 .cwe-step{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}\
@@ -491,7 +505,7 @@ window.CLEARWAVE_CATALOG = {
 .cwe th{background:var(--navy);color:#fff;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}\
 .cwe tbody tr:nth-child(even) td{background:var(--tint)}\
 .cwe td.num,.cwe th.num{text-align:right;white-space:nowrap}\
-.cwe tr.pick td{background:#E4F7EE !important;font-weight:700}\
+.cwe tr.pick td{background:#E3FBF3 !important;font-weight:700}\
 .cwe th.pick{background:var(--blue-deep)}\
 .cwe-tag{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;background:var(--green);color:var(--navy);font-weight:700;margin-left:6px;vertical-align:middle}\
 .cwe-card{border:1px solid var(--rule);border-top:4px solid var(--blue-deep);padding:16px 18px;margin:12px 0}\
@@ -501,7 +515,7 @@ window.CLEARWAVE_CATALOG = {
 .cwe-card ul{margin:0 0 8px;padding-left:18px;font-size:14px}\
 .cwe-card .pr{font-family:'Helvetica Neue',Arial,sans-serif;font-size:22px;font-weight:800;color:var(--blue-deep);font-variant-numeric:tabular-nums}\
 .cwe-card .pr small{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.06em;text-transform:uppercase;display:block}\
-.cwe-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;background:var(--navy);color:#fff;padding:16px 18px;margin:16px 0}\
+.cwe-total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;background:linear-gradient(90deg,#0B2A44,#0B73BA);color:#fff;padding:16px 18px;margin:16px 0}\
 .cwe-total .lbl{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase}\
 .cwe-total .amt{font-family:'Helvetica Neue',Arial,sans-serif;font-size:28px;font-weight:800;font-variant-numeric:tabular-nums}\
 .cwe-total .fin{font-size:13px;color:var(--green-lt);width:100%}\
@@ -514,7 +528,52 @@ window.CLEARWAVE_CATALOG = {
 .cwe-hidden{display:none !important}\
 .cwe-spin{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-right-color:transparent;border-radius:50%;animation:cwe-spin .7s linear infinite;vertical-align:-2px;margin-right:6px}\
 @keyframes cwe-spin{to{transform:rotate(360deg)}}\
-@media print{body>*{display:none !important}body>.cwe-print-root{display:block !important}.cwe{border:0;max-width:none;font-size:12px}.cwe-nav,.cwe-cta,.cwe-prog,.cwe .no-print{display:none !important}.cwe-head{border-top-width:3px}.cwe-body{padding:0 0.2in}@page{size:letter;margin:0.6in 0.7in}}";
+@media print{@page{size:letter;margin:0.45in 0.5in 0.6in}body>*{display:none !important}body>.cwe-print-root{display:block !important}\
+.cwe-print{font-family:Georgia,'Iowan Old Style','Times New Roman',serif;color:#262626;font-size:10.5pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}\
+.cwe-print *{box-sizing:border-box}\
+.cwe-print h1,.cwe-print h2,.cwe-print h3,.cwe-print table,.cwe-print .cwe-sans,.cwe-print .cwe-eyebrow,.cwe-print .cwe-meta,.cwe-print .cwe-small,.cwe-print .pr,.cwe-print .nm,.cwe-print .cwe-tag,.cwe-print .cwe-total{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}\
+.cwe-pv-head{display:flex;align-items:center;gap:16pt;background:linear-gradient(90deg,#0B73BA 0%,#1980C1 60%,#1087B7 100%);color:#fff;padding:16pt 20pt;border-bottom:5pt solid #25E2A9;border-radius:0}\
+.cwe-pv-head svg{width:54pt;height:54pt;flex:none}\
+.cwe-pv-head .cwe-wm{color:#fff;line-height:1.05;text-transform:uppercase}\
+.cwe-pv-head .cwe-wm .l1{font-size:8pt;font-weight:500;letter-spacing:.14em}\
+.cwe-pv-head .cwe-wm .l2{font-size:19pt;font-weight:800;letter-spacing:.02em}\
+.cwe-pv-head .cwe-wm .l3{font-size:7pt;font-weight:700;letter-spacing:.16em;color:#65DFDA}\
+.cwe-pv-meta{margin-left:auto;text-align:right;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;line-height:1.7}\
+.cwe-pv-meta b{display:block;font-size:11pt;letter-spacing:.06em}\
+.cwe-print .cwe-body{padding:14pt 0 0}\
+.cwe-print .cwe-eyebrow{font-size:7.5pt;letter-spacing:.18em;text-transform:uppercase;color:#5A6B78;margin:0 0 3pt}\
+.cwe-print h2{font-size:20pt;font-weight:800;color:#0B73BA;margin:0 0 4pt;letter-spacing:-.01em}\
+.cwe-print h3{font-size:10.5pt;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0B73BA;border-left:4pt solid #0B73BA;padding-left:8pt;margin:16pt 0 6pt;page-break-after:avoid}\
+.cwe-print p{margin:0 0 6pt}\
+.cwe-print .cwe-meta{display:flex;gap:14pt;font-size:8.5pt;color:#5A6B78;margin-bottom:8pt}\
+.cwe-print ul.cwe-diag{margin:0 0 6pt;padding-left:14pt}\
+.cwe-print ul.cwe-diag li{margin-bottom:2pt}\
+.cwe-print .cwe-note{background:#EAF6FF;border-left:4pt solid #0B73BA;padding:6pt 10pt;margin:8pt 0;font-size:9.5pt}\
+.cwe-print .cwe-card{border:1pt solid #D2DCE4;border-top:4pt solid #0B73BA;padding:10pt 12pt;margin:8pt 0;page-break-inside:avoid;background:#fff}\
+.cwe-print .cwe-card.alt{border-top-color:#25E2A9}\
+.cwe-print .cwe-card .nm{font-size:14pt;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin:0;color:#262626}\
+.cwe-print .cwe-card .hl{margin:3pt 0 5pt}\
+.cwe-print .cwe-card ul{margin:0 0 5pt;padding-left:14pt;font-size:9.5pt;columns:2;column-gap:14pt}\
+.cwe-print .cwe-card .pr{font-size:16pt;font-weight:800;color:#0B73BA;margin:4pt 0 0;font-variant-numeric:tabular-nums}\
+.cwe-print .cwe-card .pr small{display:block;font-size:7.5pt;color:#5A6B78;font-weight:400;letter-spacing:.08em;text-transform:uppercase}\
+.cwe-print .cwe-tag{display:inline-block;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;padding:2pt 6pt;background:#25E2A9;color:#0B2A44;font-weight:800;margin-left:6pt;vertical-align:middle}\
+.cwe-print .cwe-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8pt;background:linear-gradient(90deg,#0B2A44,#0B73BA);color:#fff;padding:12pt 14pt;margin:12pt 0;page-break-inside:avoid}\
+.cwe-print .cwe-total .lbl{font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase}\
+.cwe-print .cwe-total .amt{font-size:24pt;font-weight:800;font-variant-numeric:tabular-nums}\
+.cwe-print .cwe-total .fin{width:100%;font-size:9pt;color:#65DFDA;font-family:Georgia,serif}\
+.cwe-print table{width:100%;border-collapse:collapse;font-size:9pt;font-variant-numeric:tabular-nums;margin:4pt 0 8pt;page-break-inside:avoid}\
+.cwe-print th,.cwe-print td{border:1pt solid #D2DCE4;padding:5pt 7pt;text-align:left;vertical-align:top}\
+.cwe-print th{background:#0B73BA;color:#fff;font-size:8pt;letter-spacing:.06em;text-transform:uppercase}\
+.cwe-print th.pick{background:#0B2A44}\
+.cwe-print tbody tr:nth-child(even) td{background:#F3F7FA}\
+.cwe-print td.num,.cwe-print th.num{text-align:right;white-space:nowrap}\
+.cwe-print tr.pick td{background:#E3FBF3 !important;font-weight:700}\
+.cwe-print .cwe-small{font-size:8.5pt;color:#5A6B78}\
+.cwe-print .cwe-nav,.cwe-print .cwe-cta,.cwe-print .no-print,.cwe-print .cwe-prog{display:none !important}\
+.cwe-pv-next{display:flex;gap:14pt;align-items:center;background:#F3F7FA;border-left:4pt solid #25E2A9;padding:10pt 12pt;margin:10pt 0;page-break-inside:avoid}\
+.cwe-pv-next b{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15pt;color:#0B73BA;white-space:nowrap}\
+.cwe-pv-foot{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:7.5pt;color:#5A6B78;border-top:1pt solid #D2DCE4;padding-top:4pt;background:#fff}\
+.cwe-pv-foot span:last-child{color:#0B73BA;font-weight:700;letter-spacing:.06em}}";
 
   var LOGO = '<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ClearWave Water Solutions"><defs><clipPath id="cweClip"><circle cx="200" cy="200" r="196"/></clipPath><linearGradient id="cweBase" x1="0" y1="0" x2="1" y2="0.55"><stop offset="0" stop-color="#1F93CE"/><stop offset="1" stop-color="#1B5AA2"/></linearGradient><linearGradient id="cweLite" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0" stop-color="#2AA1DE"/><stop offset="1" stop-color="#1E7CC0"/></linearGradient><linearGradient id="cweDark" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0" stop-color="#1E6FB4"/><stop offset="1" stop-color="#164E92"/></linearGradient><linearGradient id="cweGrn" x1="0" y1="0.1" x2="1" y2="1"><stop offset="0" stop-color="#1FC470"/><stop offset="1" stop-color="#3ADA8E"/></linearGradient><linearGradient id="cweGrnLite" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5CE09F"/><stop offset="1" stop-color="#86EDBC"/></linearGradient></defs><g clip-path="url(#cweClip)"><circle cx="200" cy="200" r="196" fill="url(#cweBase)"/><path d="M-10,120 C50,72 120,80 190,122 C250,158 325,166 410,148 L410,410 L-10,410 Z" fill="url(#cweLite)"/><path d="M-10,176 C50,126 120,134 190,176 C250,212 325,220 410,202 L410,410 L-10,410 Z" fill="url(#cweDark)"/><path d="M-10,205 C45,150 110,168 175,225 C235,277 320,300 410,285 L410,410 L-10,410 Z" fill="url(#cweGrn)"/><path d="M-10,292 C55,247 120,264 185,307 C245,346 330,354 410,337 L410,410 L-10,410 Z" fill="url(#cweGrnLite)"/></g></svg>';
 
@@ -876,11 +935,18 @@ window.CLEARWAVE_CATALOG = {
     }
 
     function printEstimate() {
-      var clone = root.querySelector(".cwe").cloneNode(true);
-      var wrap = document.createElement("div"); wrap.className = "cwe-print-root"; wrap.appendChild(clone);
+      var wrap = document.createElement("div"); wrap.className = "cwe-print-root";
+      wrap.innerHTML = '<div class="cwe-print">' +
+        '<div class="cwe-pv-head">' + LOGO.replace(/cwe(Clip|Base|Lite|Dark|Grn|GrnLite)/g, "cweP$1") +
+        '<div class="cwe-wm"><div class="l1">ClearWave Water</div><div class="l2">Solutions</div><div class="l3">Pure Water, Pure Life</div></div>' +
+        '<div class="cwe-pv-meta"><b>Estimate ' + esc(state.id) + "</b>" + esc(today()) + "<br>" + esc(cat.company.phone) + " &middot; " + esc(cat.company.website) + "</div></div>" +
+        '<div class="cwe-body">' + body.innerHTML + "</div>" +
+        '<div class="cwe-pv-next"><span>' + esc(cat.copy.nextStep) + " Call or text <b>" + esc(cat.company.phone) + "</b> or email " + esc(cat.company.email) + ". Mention estimate " + esc(state.id) + ".</span></div>" +
+        '<div class="cwe-pv-foot"><span>' + esc(cat.company.name) + " &middot; " + esc(cat.company.phone) + " &middot; " + esc(cat.company.email) + " &middot; Veteran-owned. Made in the USA.</span><span>Estimate " + esc(state.id) + " &middot; " + esc(today()) + "</span></div></div>";
       document.body.appendChild(wrap);
+      var done = function () { if (wrap.parentNode) { wrap.parentNode.removeChild(wrap); } window.removeEventListener("afterprint", done); };
+      window.addEventListener("afterprint", done);
       window.print();
-      setTimeout(function () { document.body.removeChild(wrap); }, 500);
     }
 
     render();
@@ -917,7 +983,8 @@ window.CLEARWAVE_CATALOG = {
     r.items.forEach(function (it) {
       var p = it.product, url = brochureUrl(cat, p);
       h += '<div class="cwe-card' + (it.role === "addon" ? " alt" : "") + '"><p class="nm">' + esc(p.name) + (it.role === "core" ? '<span class="cwe-tag">Recommended</span>' : '<span class="cwe-tag" style="background:#D2DCE4">Add-on</span>') + "</p>" +
-        (p.tagline ? '<p class="cwe-eyebrow" style="margin-top:4px">' + esc(p.tagline) + "</p>" : "") +
+        (p.package ? '<p class="cwe-eyebrow" style="margin-top:4px">' + esc(p.package) + "</p>" : "") +
+        (p.tagline ? '<p class="hl" style="font-style:italic;margin:2px 0 6px">' + esc(p.tagline) + "</p>" : "") +
         '<p class="hl">' + esc(p.headline) + "</p><ul>" + p.solves.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
         (p.specs ? '<p class="cwe-small">' + esc(p.specs) + "</p>" : "") +
         (it.tank ? priceBlock("Tank " + (r.core.filter(function (c) { return cat.products[c].price.tank; }).indexOf(it.code) + 1) + " of " + r.totals.tanks, "Priced as part of your system below") : priceBlock(money(it.price), "Installed price")) +
@@ -929,13 +996,18 @@ window.CLEARWAVE_CATALOG = {
     }
 
     // Totals
-    var fin = cat.financing && cat.financing.enabled ? " Or about " + money(monthly(r.totals.at, cat.financing.apr, cat.financing.months)) + " per month over " + cat.financing.months + " months " + esc(cat.financing.label) + "." : "";
+    var fin = "";
+    if (cat.financing && cat.financing.enabled && cat.financing.options) {
+      fin = " " + cat.financing.options.map(function (o) { return "About " + money(monthly(r.totals.at, o.apr, o.months)) + " per month at " + esc(o.label) + "."; }).join(" ");
+    }
     if (well && r.totals.tanks) {
       h += '<div class="cwe-total"><span class="lbl">Your estimated range</span><span class="amt">' + range(r.totals.min, r.totals.max) + "</span>" +
         '<span class="fin">About ' + money(r.totals.at) + " with a " + esc(sz.label) + ": a " + r.totals.tanks + "-tank system at " + money(r.totals.system) + (r.totals.flats ? " plus " + money(r.totals.flats) + " in add-ons" : "") + "." + fin + "</span></div>";
     } else {
       h += '<div class="cwe-total"><span class="lbl">Your estimated installed price</span><span class="amt">' + money(r.totals.at) + "</span>" + (fin ? '<span class="fin">' + fin.trim() + "</span>" : "") + "</div>";
     }
+
+    if (fin && cat.financing.note) { h += '<p class="cwe-small">' + esc(cat.financing.note) + "</p>"; }
 
     // Well: price by tank size
     if (well && r.totals.tanks) {
@@ -953,8 +1025,8 @@ window.CLEARWAVE_CATALOG = {
       h += "<h3>How the collection compares</h3><p class=\"cwe-small\">Your system is highlighted. Every whole-home tier includes softening.</p><div style=\"overflow-x:auto\"><table><thead><tr><th></th>" + cols.map(function (c) { return '<th class="num' + (c === r.core[0] ? " pick" : "") + '">' + esc(cat.products[c].name.replace("ClearWave ", "").replace("Meridian Diamond Edition", "Diamond")) + "</th>"; }).join("") + "</tr></thead><tbody>";
       cat.cityCompare.rows.forEach(function (row) {
         h += "<tr><td>" + esc(row.label) + "</td>" + cols.map(function (c, i) {
-          var v = row.v === "price" ? money(cat.products[c].price.flat) : ({ y: '<span style="color:#22C776;font-weight:800">&#10003;</span>', p: '<span style="color:#C8871B" title="Less effective">partial</span>', n: '<span style="color:#B03A2E">&ndash;</span>' })[row.v.charAt(i)];
-          return '<td class="num"' + (c === r.core[0] ? ' style="background:#E4F7EE;font-weight:700"' : "") + ">" + v + "</td>";
+          var v = row.v === "price" ? money(cat.products[c].price.flat) : ({ y: '<span style="color:#0B73BA;font-weight:800">&#10003;</span>', p: '<span style="color:#C8871B" title="Less effective">partial</span>', n: '<span style="color:#B03A2E">&ndash;</span>' })[row.v.charAt(i)];
+          return '<td class="num"' + (c === r.core[0] ? ' style="background:#E3FBF3;font-weight:700"' : "") + ">" + v + "</td>";
         }).join("") + "</tr>";
       });
       h += "</tbody></table></div>";
