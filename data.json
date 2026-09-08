@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T10:01:22.249Z",
+  "generated_at": "2026-09-08T10:30:05.273Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.1x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-09-08",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3257,8 +3257,29 @@
   },
   "approvals": {
     "date": "2026-09-08",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-09-08_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · . Referral Push (highest-conversion, real cash on the table)",
+        "preview": "**1. Campaign name + audience**\n\"The best water in the neighborhood\". Referral activation\nAudience: 30 referral-push candidates (30; 60 days post-install, satisfied). Highly warm, recently thrilled, and past the buyer's-remorse window.\n**2. Subject line + 4 alternates**\n- Primary (curiosity): `Your neighbors keep asking about your water`\n- Pain: `Tired of explaining your water to guests? Send them here`\n- Authority: `The people we install for send us their friends. Here's why`\n- Specific: `Refer a neighbor, earn $500`\n- Curiosity 2: `A quick question about your street`\n**3. Preview text**\n`Two months in. If the water feels right, there's something worth knowing.`\n**4. Email body**\nHi [First Name],\nIt's been about two months since we installed your water system, and by now the difference has probably become the new normal (the way clean water should feel: unremarkable, until you visit somewhere without it).\nHere's why I'm writing. Most of our best clients come from people exactly like you. A neighbor tastes the water, asks who did it, and that's the whole conversation.\nSo here's how we say thank you when you send someone our way:\n- They book a free water assessment and it closes: you get $500 cash. Refer more than five in a year and it climbs to $750, then $1,000 at ten.\n- They book the assessment but decide the timing isn't right: you still get a $50 gift card.\nNo pressure and no catch. If someone on your street has been complaining about their water, just reply with their name or send them straight to us for a free water assessment.\nThanks for being a ClearWave customer.\nJustin\nCEO / ClearWave\n**5. Send timing**\nTuesday, 10:00 AM ET. Mid-morning Tuesday clears the Monday inbox pileup and catches homeowners at their desks. Referral asks convert best when the reader has a second to think of a name.\n**6. Expected performance**\n- Open: 48; 55% (small, warm, recently-serviced list well above the 42.3% audience average; personal subject line lifts further)\n- Click/reply: 4; 8% (this is a reply-driven ask, not a link ask, so measure replies + forwards, not just Mailchimp clicks; your historical 0.28% click is irrelevant here because those were broadcast blasts)\n- Conversion: realistically 1; 3 booked assessments from 30 contacts, 1 likely close. One close pays for the whole quarter's email effort at $500.\n**7. Source justification**\nDraws from **Jobber Lifecycle Triggers → Referral push candidates (30; 60 days, satisfied)** and the **Referral Bonus Structure** (exact $500/$750/$1,000 + $50 gift card). Complies with Hard Rule #3 (referral, not review), #3a (\"free water assessment\" exact phrase), and #2 (blanket tenure line \"It's been about two months since we installed your water system\". No legacy names printed for Lee Offen's \"Re-Ionator Pro,\" Joey Collins's \"neumax + nitramax,\" Dana Shields's \"SorbMax Air,\" Seth Allen's \"Re-Ionator Pro Ultra,\" and Anup Myneni's \"(not specified)\").\n---"
+      },
+      {
+        "id": "email_2026-09-08_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · . Cold Lead Re-Engagement (largest untapped list, 1,000 cont",
+        "preview": "**1. Campaign name + audience**\n\"Reset\". Cold lead re-engagement\nAudience: 1,000 cold subscribers (joined >60d ago, no engagement >60d, still subscribed). Distinct from the 30-day quote sequence. These people raised a hand once and went quiet.\n**2. Subject line + 4 alternates**\n- Primary (value/news): `What's actually in Virginia tap water right now`\n- Curiosity: `We went quiet. That was on us.`\n- Pain: `Still not sure what's in your water?`\n- Authority: `A water update worth two minutes`\n- Specific: `One free step, no sales pitch`\n**3. Preview text**\n`No pitch. Just what we're seeing in local water lately, and one simple next step.`\n**4. Email body**\nHi [First Name],\nYou reached out to us a while back and then we went quiet. That's on us, so I want to restart on the right foot.\nHere's what's worth knowing: across a lot of the homes we test in Virginia and Maryland, the water people assume is fine turns out to carry things they can't see or taste. Hardness that wears on appliances. Iron that stains. Chlorine and other contaminants that were never meant to be part of dinner.\nYou don't have to take my word for it, and you don't have to buy anything to find out.\nThe one next step: a free water assessment at your home. We test what's actually coming out of your tap, show you the numbers, and leave you with a clear picture. If everything looks good, we'll tell you that too.\nIf that's useful, just reply \"assessment\" or grab a time here: [LINK]\nGlad to be back in touch.\nJustin\nCEO / ClearWave\n**5. Send timing**\nThursday, 11:00 AM ET. A different send day than Proposal 1 avoids fatiguing any overlap, and a value-led (non-transactional) email performs better mid-week late morning.\n**6. Expected performance**\n- Open: 12; 20% (cold list, so far below your 42.3% average; but the value/news subject and honest \"we went quiet\" reset outperform stale \"still interested?\" openers, and these are still-subscribed contacts). Note: your recent broadcast opens (0.3; 0.5%) look like tracking/deliverability anomalies, not true engagement. Watch bounce and spam rates closely on this send.\n- Click: 1.0; 2.5% (a real link + reply CTA on a genuine value angle; multiples above the 0.28% blast average because the ask is one clear action, not a course promo)\n- Conversion: 5; 15 booked assessments from 1,000. Even at a 3-in-10 close rate on booked assessments, that's several installs from a list currently earning $0.\n**Deliverability caution:** given the recent sub-1% opens, send this in two batches (start with a 200-contact seed, confirm inbox placement, then release the remaining 800). Protects domain reputation on a large cold send.\n**7. Source justification**\nDraws from **Cold Lead Re-Engagement (Mailchimp segment)** and its three-part spec: (1) lead with new value / water news angle, (2) reset the relationship, (3) offer a free water assessment as the ONE next step. Complies with Hard Rule #3a (\"free water assessment,\" never \"free water test\") and #5 (no em/en dashes). No product names appear (cold leads have no install), so Rule #2 is moot here.\n---\n### Why these two\n- **Referral push = fastest path to cash** (a single close = $500, warm audience, near-zero cost).\n- **Cold re-engagement = biggest volume opportunity** (1,000 idle contacts producing nothing; even low single-digit conversion beats zero).\n- Sent on **different days (Tue / Thu)** to protect list health, especially given the concerning recent open rates that warrant a deliverability review regardless.\nWant me to build the Concierge year-1.5 \"is it worth it, here's the math\" email as next week's proposal?\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-09-08_c1": {
+        "decision": "pending"
+      },
+      "email_2026-09-08_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-09-08T10:30:00.780Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
