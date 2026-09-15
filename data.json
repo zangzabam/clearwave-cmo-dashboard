@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T10:01:34.724Z",
+  "generated_at": "2026-09-15T10:30:04.938Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.1x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-09-15",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3257,8 +3257,21 @@
   },
   "approvals": {
     "date": "2026-09-15",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-09-15",
+        "type": "daily_water_minute",
+        "title": "Water Minute · What iron is quietly doing to your water heater",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-09-15.email.md",
+        "preview": "Words I like;\nRust never sleeps, and neither does the damage it does when you ignore it.\nHere's something most folks never see coming. Iron in your water doesn't just stain your sinks and tubs orange. It settles.\nEvery time your water heater fires up, that dissolved iron drops out of the water and sinks to the bottom of the tank. Over time it builds up as a hard, rusty sludge sitting right on top of your heating element or burner. Now your heater has to work through a blanket of that gunk just to warm your water.\nWhat does that cost you? Higher energy bills, because your unit runs longer to hit the same temperature. Shorter tank life, because that sediment traps heat against the steel and eats it from the inside. And that rotten, metallic taste nobody wants in their coffee.\nA water heater should last ten to twelve years. Iron can cut that in half.\nIf you already treat your iron before it reaches your tank, good on you. That was a smart call, and your heater is quietly thanking you every single day.\nOn a private well and never had your iron checked? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-09-15": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-09-15T10:30:00.498Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
