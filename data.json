@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T10:01:35.789Z",
+  "generated_at": "2026-09-26T10:30:04.690Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.1x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-09-26",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3257,8 +3257,29 @@
   },
   "approvals": {
     "date": "2026-09-26",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-09-26_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge Year-1.5 \"Is It Worth It\" Campaign",
+        "preview": "**Audience:** Concierge upsell candidates (13-24 months post-install, not on Concierge). **100 members**\n**Why this is the top pick:** This is the highest-conversion opportunity on the board. These clients already passed their 12-month annual service, so they trust our service and clear the Rule 1 hard floor. There is a real dollar decision to frame, and 100 warm, already-serviced clients converting even at a low single-digit rate is meaningful monthly recurring revenue. The list is pre-filtered to 13-24 months, so we're safe.\n### Subject line + alternates (60 char max)\n- **Primary (curiosity):** The question we get most at 18 months\n- Alt (specific): Is Concierge worth it for you? Here's the actual math\n- Alt (pain): Filter swaps, parts, priority support: who's tracking that?\n- Alt (authority): What your year-1 service told us about your water\n- Alt (curiosity): $99 a month, or pay as you go? Let's do the numbers\n### Preview text (90 char max)\nNo pressure. Just the honest math on Concierge, now that you're past year one.\n### Body\nSubject: The question we get most at 18 months\nHi [First Name],\nIt's been about [X months] since we installed your ClearWave system, and you've already had your first annual service. That puts you right where a lot of our clients start asking the same question:\n\"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is $99/mo. It covers your annual service, filter swaps, priority phone support, and parts coverage on your standard install components. If you're currently paying as you go, you're likely covering most of that anyway, just in unpredictable chunks and with a phone queue instead of the front of the line.\nSome clients prefer to keep paying per visit. That's completely fine, and we'll keep taking great care of you either way. But if you'd rather have it handled, predictable, and jump the line when you call, Concierge is built for exactly that.\nWant me to run the numbers for your specific setup? Reply to this email and I'll send them over.\nJustin\nCEO / ClearWave\n*(Note: [X months] is calculated per-recipient from install date via merge logic. Legacy system names in this list. Reionator Pro Ultra, 30C, Micromax, Hydronex. Are NEVER printed. All use the blanket tenure line + \"your ClearWave system,\" per Rule 2.)*\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is peak B2C open window; this is a considered financial decision, not an impulse, so we want them at a desk, not on a phone at 6pm.\n### Expected performance\n- **Open: 40-46%.** Consistent with the 42.3% audience baseline. This is a warm, already-serviced segment and the subject is curiosity-driven, not salesy. Notably, the recent low-performers (0.4-0.5% open) were course/discount blasts that read as spam; a personal, relevant subject to serviced clients should track to baseline or above.\n- **Click/reply: 4-8%.** Far above the 0.28% audience click avg because the CTA is a reply (not a link) and the offer maps to a question this exact segment is already asking. Low list size (100) makes higher rates achievable.\n- **Conversion to Concierge: 3-6% (3-6 signups).** At $99/mo that's ~$3,500-$7,000 in year-one recurring value from one send.\n### Source justification\nDraws from **JOBBER LIFECYCLE TRIGGERS (Concierge upsell candidates)** and **CONCIERGE UPSELL CONTEXT** (the \"$99/mo,\" the \"year-1.5 is it worth it\" framing, and the \"here's the math\" non-pushy voice are pulled directly from that section). Clears Rule 1 hard floor via the pre-filtered 13-24 month list.\n---"
+      },
+      {
+        "id": "email_2026-09-26_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Cold Lead Re-Engagement. \"New Value\" Reset",
+        "preview": "**Audience:** Cold subscribers (joined >60d, no engagement >60d, still subscribed). **1,000 members**\n**Why second pick:** Biggest list on the board (1,000) and completely dormant. Even a low re-engagement rate recovers funnel value that's currently worth zero. Critically, this is DISTINCT from Justin's existing 30-day quote sequence, so we're not stepping on that flow. These never reached quote stage, so the offer is a clean **free water assessment** (Rule 3a exact phrase).\n### Subject line + alternates (60 char max)\n- **Primary (news/curiosity):** Something changed in the water this year\n- Alt (authority): What we learned testing water across Virginia in 2026\n- Alt (specific): One question about your tap water, then I'll go\n- Alt (pain): Still noticing spots, smell, or dry skin?\n- Alt (curiosity): We never finished our conversation\n### Preview text (90 char max)\nNo pitch. Just one honest next step if your water's been on your mind.\n### Body\nSubject: Something changed in the water this year\nHi [First Name],\nA while back you reached out to us about your water, and then things went quiet on our end. That's on me. Let me restart with something useful instead of a sales nudge.\nWater quality across our region has shifted this year. New testing has flagged higher iron, hardness, and treatment-byproduct levels in a lot of local supplies, the kind of thing you notice as spotting on glass, a faint smell, or skin that feels drier than it should.\nYou don't need to guess. The one next step, if you're curious, is a free water assessment. We come out, we test, we tell you exactly what's in your water. No pressure to do anything with it.\nJust reply \"assessment\" and I'll get you on the schedule.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET.** Separating from Proposal 1 (Tuesday) avoids audience fatigue. Thursday late-morning re-engagement performs well for dormant lists, and a full send buffer keeps the two campaigns from colliding in inboxes.\n### Expected performance\n- **Open: 12-20%.** Deliberately below the 42.3% baseline because this segment is defined by 60+ days of non-engagement; a warm baseline doesn't apply. A fresh news-angle subject (not \"still interested?\") should beat a typical cold re-engagement floor. Also sets up a **list-hygiene win**: non-openers can be sunset to protect sender reputation, which is currently at risk (those 0.4% campaigns are deliverability poison).\n- **Click/reply: 1-3%.** Reply-based CTA on a value-first message; higher than the 0.28% avg because the ask is soft and singular.\n- **Conversion to booked assessment: 0.5-1.5% (5-15 assessments).** From a dead segment, any booked assessments are pure recovered pipeline.\n### Source justification\nDraws from **COLD LEAD RE-ENGAGEMENT** section: leads with new value (2026 regional water news angle, not stale \"still interested?\"), resets the relationship (\"that's on me\"), and offers **free water assessment** as the ONE next step (Rule 3a exact phrase, singular CTA per spec).\n---\n### Rules compliance check (both emails)\n- ✅ No em/en dashes anywhere (Rule 5)\n- ✅ No legacy product names printed; blanket tenure line used (Rule 2)\n- ✅ No review ask (Rule 3)\n- ✅ Sign-off: two clean lines, no dash prefix (Rule 4)\n- ✅ Concierge only to pre-filtered 13-24mo list (Rule 1)\n- ✅ \"Free water assessment\" exact phrase (Rule 3a)\n- ✅ Luxury register tone for lead nurture; no forbidden brand words (\"best,\" \"premium,\" \"deal,\" \"discount\")\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-09-26_c1": {
+        "decision": "pending"
+      },
+      "email_2026-09-26_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-09-26T10:30:00.616Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
