@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T10:01:26.824Z",
+  "generated_at": "2026-09-29T10:30:04.286Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.1x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-09-29",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3257,8 +3257,21 @@
   },
   "approvals": {
     "date": "2026-09-29",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-09-29",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Iron filter vs. softener: not the same",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-09-29.email.md",
+        "preview": "Words I like;\n\"Right tool, right job. Everything else is just noise.\"\nHere's one I clear up at kitchen tables all the time: an iron filter and a water softener are not the same machine, and they do not do the same job.\nA softener handles hardness. That's the calcium and magnesium that leave spots on your glasses, crust up your faucets, and make soap feel like it never rinses off. It swaps those minerals out through a resin bed. That's it. That's its lane.\nAn iron filter handles iron and often that rotten-egg sulfur smell. It oxidizes the iron so it can be flushed away before it stains your sinks, toilets, and laundry that ugly orange-brown.\nHere's where folks get burned: they buy a softener hoping it'll fix rusty water. A softener can knock down a little iron, but load it up and you'll wreck the resin fast. Wrong tool, big repair bill.\nIf you're on well water, you usually need both, sized to what's actually in your water. If you already own a system built for your test results, that's exactly why you picked right. It was matched to your water, not sold off a shelf.\nNot sure what's in yours? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-09-29": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-09-29T10:30:00.460Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
