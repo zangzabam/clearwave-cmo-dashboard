@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T10:01:32.061Z",
+  "generated_at": "2026-10-03T10:30:04.404Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.3x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-10-03",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3279,8 +3279,29 @@
   },
   "approvals": {
     "date": "2026-10-03",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-10-03_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install, Satisfied)",
+        "preview": "**Audience:** Referral push candidates, 30 members\nThis is your highest-conversion play. These people just spent money (several north of $9k), the install is fresh, the water quality difference is obvious to them right now, and they are talking to neighbors about it. This is the exact window referrals convert.\n### Subject line (primary)\n`Who do you know with bad water?`\n### Alternates\n1. (curiosity) `A quick question about your neighbors`\n2. (specific) `$500 per referral. Here is how it works.`\n3. (pain) `Still thinking about how different the water feels?`\n4. (authority) `The favor we actually ask for`\n### Preview text\n`No review needed. Just a name. We handle the rest (and you get paid).`\n### Email body\nHi Anna,\nIt's been about a month since we installed your Meridian and RO system, and if you are anything like most of our clients, you are still noticing the difference every time you turn on the tap.\nSo here is the one favor we ask around this time.\nIf you know someone fighting bad water (a neighbor, a coworker, family), send them our way for a free water assessment. No pressure on them, no obligation.\nHere is how it works for you:\n- If they book a consult, you get a $50 gift card.\n- If they become a client, you get $500 cash. (It climbs to $750 for your sixth through ninth referral in a year, and $1,000 once you hit ten.)\nJust reply with a name and the best way to reach them, and we take it from there.\nThanks for trusting us with your home.\nJustin\nCEO / ClearWave\n> **Personalization logic per contact:**\n> - Anna Thompson → \"your Meridian and RO system\" (current brand name, allowed)\n> - Katie Helbling → \"your Clearwave Crest and RO system\" (current brand name, allowed)\n> - Mauro Boffa (RO Pure PRO QC = legacy) → \"It's been about a month since we installed your ClearWave system\"\n> - Elizabeth Simmeth (Liquid Luxe / Meridian mix, legacy present) → tenure line: \"your ClearWave system\"\n> - Mina Larraquel (Reionator Pro Ultra = legacy) → tenure line: \"your ClearWave system\"\n> **No legacy name ever prints. No review ask. \"free water assessment\" used verbatim.**\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is your best inbox window, and this audience is small enough to send clean without warmup concerns.\n### Expected performance\n- **Open: 48-55%.** Above your 42.3% baseline. Tiny, highly relevant, recently-engaged list + a personal-sounding subject (no spam triggers).\n- **Click: 3-6%.** Massive lift over your 0.28% average. The CTA is \"reply with a name,\" which is low-friction, and the audience just spent money so they are warm.\n- **Conversion: 2-4 named referrals, 1-2 booked consults.** Even one closed referral is $500 of pipeline from a 30-person send.\n### Source justification\nDraws on **Jobber \"Referral push candidates (30-60 days post-install)\"** trigger and the **Referral Bonus Structure** (exact $500/$750/$1,000 and $50 gift card figures). Honors Hard Rule 3 (no review, push referrals) and 3a (\"free water assessment\" verbatim).\n---"
+      },
+      {
+        "id": "email_2026-10-03_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It?\" Upsell (13-24 Months Post-Inst",
+        "preview": "**Audience:** Concierge upsell candidates, 100 members\nThese clients are all past their year-1 service, so the 12-month floor is cleared. They have experienced the service, they trust it, and they are the ideal window for recurring revenue. The voice here is explicitly non-pushy per your Concierge context: frame it as the honest math.\n### Subject line (primary)\n`Is the Concierge thing actually worth it for you?`\n### Alternates\n1. (curiosity) `The question we get asked at year 1.5`\n2. (specific) `$99/mo: here is exactly what it covers`\n3. (authority) `Most clients ask us this. Let me just answer it.`\n4. (pain) `Dreading the next filter swap?`\n### Preview text\n`No upsell pitch. Just the honest math so you can decide for yourself.`\n### Email body\nHi Jessica,\nIt's been a little over a year since we installed your water system, which means you have been through your first annual service with us. That is usually right about when clients ask me the same question:\n\"Is this Concierge plan actually worth it for me, or should I just pay as I go?\"\nFair question. Here is the honest math.\nConcierge is $99/mo and covers:\n- Your annual service\n- All filter swaps\n- Priority phone support\n- Parts coverage on your standard install components\nIf you like handling things yourself and remembering the service schedule, pay-as-you-go is perfectly fine and plenty of our clients stay there. But if you would rather never think about a filter again and get bumped to the front of the line when you call, Concierge usually comes out ahead.\nWant me to run the numbers for your specific setup? Just reply and I will send you the breakdown.\nJustin\nCEO / ClearWave\n> **Personalization logic:**\n> - Jessica & John Allen (Hydronex 30c = legacy) → tenure line: \"your water system\" / \"your ClearWave system\"\n> - Judith & Ralph Doll (30C = legacy) → tenure line\n> - Gunaseelan Muthukrishnan (Reionator Pro Ultra = legacy, appears twice, dedupe to one send) → tenure line\n> - Daniel Watson (legacy) → tenure line\n> **De-dupe duplicate contacts before send. No legacy name prints. Over-12-month floor confirmed by segment filter.**\n### Send timing\n**Thursday, 11:00 AM ET.** Spacing it two days after the referral send avoids over-mailing any overlap and gives the mid-week window a second, distinct offer.\n### Expected performance\n- **Open: 44-50%.** Slightly above baseline. Curiosity subject with zero spam words, sent to a trusting post-service segment.\n- **Click/reply: 1.5-3%.** Well above your 0.28% average. The \"reply and I'll run your numbers\" CTA converts better than a buy-now link for a recurring plan.\n- **Conversion: 3-8 Concierge signups.** At $99/mo, even 5 signups is ~$5,940/yr recurring from a single 100-person send. Highest dollar-value-per-send of the week.\n### Source justification\nDraws on **Jobber \"Concierge upsell candidates (13-24 months, not on Concierge)\"** trigger and the **Concierge Upsell Context** block (exact $99/mo, the four coverage items, and the prescribed \"is this worth it at year 1.5, here's the math\" non-pushy framing). Respects Hard Rule 1 (12-month floor; segment is pre-filtered to 13-24 months).\n---\n### Why not the cold 1000 this week?\nIt is the biggest list but the lowest conversion and highest deliverability risk given your recent 0.4% opens. Blasting 1,000 disengaged contacts now would further damage sender reputation. Recommend building that as a 3-email re-engagement sequence next week with a water-news value lead, after these two clean, high-engagement sends help rehab your domain reputation.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-10-03_c1": {
+        "decision": "pending"
+      },
+      "email_2026-10-03_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-10-03T10:30:00.704Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
