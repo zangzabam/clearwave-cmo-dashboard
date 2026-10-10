@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T10:01:43.155Z",
+  "generated_at": "2026-10-10T10:30:07.245Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.3x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-10-10",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3279,8 +3279,29 @@
   },
   "approvals": {
     "date": "2026-10-10",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-10-10_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push. 30/60 Day Post-Install Clients",
+        "preview": "**Why this is #1:** These clients just got a fresh install, satisfaction is peak, and the referral bonus is pure margin. No hard rules at risk (all well past install, no Concierge, no review ask). This is the single highest-ROI send on the board.\n### 1. Campaign + Audience\n- **Name:** \"Who's Next on Your Street\". Referral Activation\n- **Audience:** Referral push candidates, 30-60 days post-install = **30 members**\n### 2. Subject Lines (primary + 4 alternates)\n- **Primary (specific):** `$500 for an introduction. Here's how it works.`\n- Curiosity: `A quick question about your neighbors`\n- Pain: `Your friends are still drinking that water`\n- Authority: `The highest compliment you can pay us`\n- Specific: `Know someone on well water? Read this.`\n### 3. Preview Text\n`Three months in. If the water's treating you right, there's something worth knowing.`\n### 4. Email Body\nHi [First Name],\nIt's been about two months since we installed your ClearWave system, and by now the water should just feel like part of the house. The way it's supposed to be.\nHere's the thing most folks don't know: the best people we ever work with come from clients like you. A quick introduction to a friend, a neighbor, a family member who is tired of their water.\nSo here's how we say thank you.\nIf you introduce us to someone and they become a client, you get **$500 cash**. Introductions 6 through 9 in a year move up to **$750**, and 10 or more earns **$1,000** each. If they book a free water assessment but decide it's not the right time, you still get a **$50 gift card** just for the introduction.\nNo pressure, no catch. If someone comes to mind, just reply to this email with their name and I'll take it from there.\nThanks for trusting us with your water.\nJustin\nCEO / ClearWave\n### 5. Send Timing\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is the cleanest open window for a personal-feeling ask; avoids Monday inbox clearing and keeps it away from the weekend.\n### 6. Expected Performance\n- **Open:** 48-55% (above 42.3% baseline. Small, warm, recently-engaged list + personal non-promo subject lines outperform blast average)\n- **Click/reply:** 4-8% (this is a reply-driven campaign, not click; the CTA is \"reply with a name,\" which inflates engagement well past the 0.28% blast click rate)\n- **Conversion:** 2-4 booked consults realistic from 30 fresh, satisfied clients; even 1 closed referral returns far more than the send costs\n### 7. Source Justification\nDraws from **Jobber Lifecycle Triggers** (referral push candidates, 30-60 day segment) and the **Referral Bonus Structure** (exact $500/$750/$1,000/$50 figures). Satisfies Hard Rule 3 (referral push, no review ask) and 3a (\"free water assessment\").\n---"
+      },
+      {
+        "id": "email_2026-10-10_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge \"Is It Worth It?\". Year 1.5 Clients",
+        "preview": "**Why this is #2:** 100 candidates, all cleanly past the 12-month floor, all have survived their year-1 service (so trust is established). $99/mo recurring is high-LTV. The \"here's the math\" framing dodges the salesy tone that killed recent promos.\n### 1. Campaign + Audience\n- **Name:** \"The Year 1.5 Question\". Concierge Upsell\n- **Audience:** Concierge upsell candidates, 13-24 months post-install, not on Concierge = **100 members**\n### 2. Subject Lines (primary + 4 alternates)\n- **Primary (curiosity):** `The question everyone asks around year 1.5`\n- Pain: `What happens when a part fails at year 3?`\n- Authority: `Is Concierge actually worth it? The honest math.`\n- Specific: `$99/mo, and here's exactly what it covers`\n- Curiosity: `We get asked this a lot. Here's a straight answer.`\n### 3. Preview Text\n`No pressure. Just the math on whether Concierge makes sense for your household.`\n### 4. Email Body\nHi [First Name],\nIt's been a little over a year since we installed your ClearWave system, so you've been through your first annual service with us. Which means you've probably hit the question we get most around this point: *is this Concierge thing actually worth it for me?*\nFair question. Here's the honest math.\nConcierge is **$99/mo**, and it covers:\n- Your annual service, every year\n- Filter swaps when they're due\n- Priority phone support (you skip the line)\n- Parts coverage on your standard install components\nIf you'd rather handle service pay-as-you-go, that's completely fine. Plenty of our clients do, and your system is built to run clean with very little fuss. This isn't a thing you *need*.\nBut if you'd rather never think about a filter swap or a surprise part again, it tends to pay for itself the first time something comes due.\nWant me to run the numbers for your specific setup? Just reply and I'll send you a quick breakdown.\nJustin\nCEO / ClearWave\n### 5. Send Timing\n**Thursday, 1:00 PM ET.** Early-afternoon Thursday catches people in a considered, decision-making headspace; keeps it a full two days clear of Proposal 1 so the same house never gets two asks in one window.\n### 6. Expected Performance\n- **Open:** 44-50% (warm, serviced clients + a genuine-question subject line; the \"year 1.5\" specificity reads personal, not promo)\n- **Click/reply:** 2-4% (reply-driven \"run my numbers\" CTA; the low-pressure framing invites engagement where \"Discount Ends Today\" earned 0.00%)\n- **Conversion:** 2-5 Concierge sign-ups realistic from 100 trust-established clients; at $99/mo recurring, even 2 is strong LTV\n### 7. Source Justification\nDraws from **Jobber Concierge upsell candidates** (pre-filtered 13-24 months, satisfies Hard Rule 1's 12-month floor) and the **Concierge Upsell Context** block (exact $99/mo, four inclusions, \"is this worth it for me / here's the math\" framing, non-pushy voice).\n---\n## Notes on Compliance\n- **No legacy product names printed.** Both drafts use the tenure line (\"It's been about [X months]...\") per Hard Rule 2, since every candidate's system field holds legacy or unspecified names. No attempt to translate.\n- **No em/en dashes** anywhere in subject lines, preview text, or body.\n- **Sign-off** is the exact two-line format.\n- **\"Free water assessment\"** used verbatim (Proposal 1); no \"water test.\"\n- **No review ask** in either send.\n- **Deliberately held back:** the 1-year annual-service and RO-replacement sends. Those are transactional/service triggers better routed through Jobber's operational notifications than a marketing blast, and firing three sends at an overlapping client base this week would erode the open-rate advantage we have.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-10-10_c1": {
+        "decision": "pending"
+      },
+      "email_2026-10-10_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-10-10T10:30:03.528Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
