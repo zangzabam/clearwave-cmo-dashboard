@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T10:03:37.288Z",
+  "generated_at": "2026-10-13T10:30:31.426Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.3x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-10-13",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3279,8 +3279,21 @@
   },
   "approvals": {
     "date": "2026-10-13",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-10-13",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Nitrates: the problem you can't taste",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-10-13.email.md",
+        "preview": "Words I like;\n\"You can't fix what you don't test for.\"\nNitrates are the sneaky one. You can't see them, smell them, or taste them. Your water looks crystal clear and still carries a load of nitrates you'd never know about without a test.\nHere's where they come from. Nitrates get into groundwater from fertilizer, animal waste, and septic systems. So if you've got a farm, a feedlot, or even heavy lawn care up the road and upstream of you, those nitrates can work their way down into the same aquifer your well pulls from. Rain pushes them through the soil, and they keep moving.\nWhy care? High nitrate levels are a real concern for pregnant moms and especially for infants. It's one of the few water issues the EPA puts a hard limit on, and boiling won't help. Boiling actually concentrates it.\nThe good news: nitrates are very treatable once you know they're there. The hard part is simply knowing. That's why I always tell folks to test, not guess.\nIf you already run one of our well systems, this is exactly the kind of thing it was built to stay ahead of. Smart call.\nLive near farmland or on a well? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-10-13": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-10-13T10:30:01.236Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
