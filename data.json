@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T10:01:31.108Z",
+  "generated_at": "2026-10-27T10:30:04.993Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "2.3x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-10-27",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
@@ -3279,8 +3279,21 @@
   },
   "approvals": {
     "date": "2026-10-27",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "dwm_2026-10-27",
+        "type": "daily_water_minute",
+        "title": "Water Minute · Why \"free water tests\" aren't really free",
+        "source_path": "/Users/jwts3/Mirror/TRADING CHARTS/NFT/CLEARWAVE/ADMIN/AI ASSETS/clearwave-growth-agent/data/processed/daily_value_emails/2026-10-27.email.md",
+        "preview": "Words I like;\nIf the test is free, the test isn't the product. You are.\nHere's something most folks don't know about the \"free in-home water test\" guys who knock on doors.\nA lot of those tests are theater. The classic one is the soap trick. They put a little of your water in a vial, add a few drops of soap, shake it up, and when it doesn't lather they point and say, \"See? Hard water, scum everywhere.\" Truth is, almost no water lathers well in that test. It's designed to fail. Then they add their treated water, it foams up nice, and suddenly you're signing paperwork at your kitchen table at 9pm.\nA real test measures actual numbers. Hardness in grains, iron, pH, nitrates, bacteria if you're on a well. Numbers you can write down and verify. Not a magic trick meant to scare you.\nIf you already own one of our systems, this is exactly why you did your homework instead of buying off a pressure pitch. You bought on facts. That still holds up.\nSo before anyone shakes a vial at you, know what good water data actually looks like.\nOn a well and want the real numbers? Reply and I'll send you our free water assessment.\nAs promised, value in under a minute.\nJustin\nCEO / ClearWave"
+      }
+    ],
+    "decisions": {
+      "dwm_2026-10-27": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-10-27T10:30:00.626Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
