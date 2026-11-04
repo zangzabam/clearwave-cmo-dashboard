@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:00:00.548Z",
+  "generated_at": "2026-11-04T00:00:04.532Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-11-03",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
@@ -357,8 +357,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-11-03",
-      "projected_full_year": 762636.766286645,
+      "through": "2026-11-04",
+      "projected_full_year": 760160.6728896103,
       "prior_year_same_period": 308420.58,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -3300,30 +3300,9 @@
     }
   },
   "approvals": {
-    "date": "2026-11-03",
-    "items": [
-      {
-        "id": "email_2026-11-03_c1",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install Clients)",
-        "preview": "**Why this wins:** 30 freshly-installed, satisfied clients still in the honeymoon window. No service plan pitch allowed (they're under 1 year), and no review asks allowed, so referrals are the natural and highest-value ask. Dollar amounts are concrete and convert.\n**1. Campaign name + audience size**\n`Referral Program - New Client Honeymoon Window` | **30 members**\n**2. Subject line (60 char max) + alternates**\n- **Primary:** `Know someone drinking bad water?` (pain)\n- Alt 1: `$500 for a two-minute favor` (specific)\n- Alt 2: `The quiet thing most of our clients do next` (curiosity)\n- Alt 3: `We built this on neighbors telling neighbors` (authority)\n- Alt 4: `Your water is handled. Who's next?` (curiosity/specific)\n**3. Preview text (90 char max)**\n`A name and a number is all it takes. Here is exactly what it is worth to you.`\n**4. Email body draft**\n> Hi {First Name},\n>\n> It's been about a month since we installed your ClearWave system, and by now the water should just feel like a non-issue. That's the goal: you stop thinking about it.\n>\n> Here's the one ask we make of happy clients. If you know someone fighting hard water, staining, or water they don't trust, send them our way for a free water assessment.\n>\n> Here's what it's worth to you:\n>\n> - If they become a client: $500 cash. (It climbs to $750 after your fifth referral this year, and $1,000 once you hit ten.)\n> - If they just book a consult: a $50 gift card, win or lose.\n>\n> No pressure, no quota. Just reply with a name and a number, or send them straight to us.\n>\n> Justin\n> CEO / ClearWave\n**5. Send timing**\n**Tuesday, 10:00 AM ET.** Mid-morning Tuesday is the cleanest open window; avoids Monday inbox pileup and keeps it away from the fatigued weekend blast pattern.\n**6. Expected performance**\n- **Open: 44-48%.** Above the 42.3% baseline. These are recent, warm installs (vs. the whole stale 3,659 list), and the subject is client-benefit, not the \"course IS LIVE\" internal-sounding copy that tanked to 0.4%.\n- **Click: 3-5%.** Massive lift over the 0.28% average because there's a real, personal, dollar-denominated reason to engage (prior campaigns had no genuine client payoff).\n- **Conversion (referral submitted): 6-10% (2-3 referrals).** Honeymoon-window clients are most likely to advocate; even one closed referral returns $500 against near-zero send cost.\n**7. Source justification**\nDraws from the **Referral push candidates (30-60 days post-install, satisfied)** Jobber trigger (30 contacts). Uses exact **Referral Bonus Structure** numbers. Respects Hard Rule 1 (no service pitch pre-12-month), Hard Rule 3 (referral not review), and Hard Rule 3a (\"free water assessment\"). Product names withheld per Hard Rule 2 (all 30 systems carry legacy names like \"H2O Protector,\" \"Re-Ionator Pro Ultra,\" \"30c\"), so the blanket tenure line is used instead.\n---"
-      },
-      {
-        "id": "email_2026-11-03_c2",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Concierge \"Is It Worth It?\" (13-24 Month Clients)",
-        "preview": "**Why this wins:** 100 clients, all past their year-1 service (so Concierge is allowed and they already trust the service experience). This is the largest qualified segment and carries recurring-revenue upside ($99/mo). The non-pushy \"here's the math\" framing is tailor-made for a list showing fatigue toward hard-sell subject lines.\n**1. Campaign name + audience size**\n`Concierge: The Year 1.5 Question` | **100 members**\n**2. Subject line (60 char max) + alternates**\n- **Primary:** `The question we get at the 18-month mark` (curiosity)\n- Alt 1: `Is Concierge actually worth it? Let's do the math` (specific)\n- Alt 2: `Filters, parts, service: who's tracking yours?` (pain)\n- Alt 3: `$99 a month, and here's exactly what's in it` (specific/authority)\n- Alt 4: `You're past year one. One thing to consider.` (curiosity)\n**3. Preview text (90 char max)**\n`No pressure. Just the honest math on whether this makes sense for your home.`\n**4. Email body draft**\n> Hi {First Name},\n>\n> It's been about a year and a half since we installed your water system, which means you've had your first annual service and you know how we work.\n>\n> Around this point we get one question a lot: \"Is this Concierge thing actually worth it for me?\" Fair question. Here's the honest math.\n>\n> Concierge is $99/month and covers:\n>\n> - Your annual service, done without you having to remember it\n> - Filter swaps on schedule\n> - Priority phone support when you call\n> - Parts coverage on your standard install components\n>\n> If you're the type who'd rather it just be handled, it pays for itself in peace of mind alone. If you prefer pay-as-you-go, that's completely fine too. No wrong answer.\n>\n> Want me to run the numbers for your specific setup? Just reply and I'll send them over.\n>\n> Justin\n> CEO / ClearWave\n**5. Send timing**\n**Thursday, 11:00 AM ET.** Spaces it two days from the referral send so the two campaigns don't collide in anyone's inbox, and keeps a consistent mid-morning weekday rhythm.\n**6. Expected performance**\n- **Open: 40-45%.** Around baseline. Slightly lower than Proposal 1 because the segment is older (13-24 mo) and the recurring-charge topic is weightier, but the curiosity-framed subject beats the dead \"Discount Ends Today\" pattern.\n- **Click: 1-2.5%.** Strong lift over 0.28% baseline; the \"reply and I'll run your numbers\" soft CTA lowers friction vs. a hard buy button.\n- **Conversion (Concierge signup or reply): 2-4% (2-4 signups).** At $99/mo, even 3 signups is ~$3,500/yr recurring. These clients have already experienced the service, which is the strongest predictor of plan adoption.\n**7. Source justification**\nDraws from the **Concierge upsell candidates (13-24 months, not on Concierge)** Jobber trigger (100 contacts) and the **Concierge Upsell Context** block (exact $99/mo scope and the \"is it worth it at year 1.5\" framing). Honors Hard Rule 1 (all candidates are already past 12 months, list is pre-filtered). Product names are withheld per Hard Rule 2 since the sample systems carry legacy/unspecified names; blanket tenure line used. \"Free water assessment\" phrasing not needed here (existing clients, not prospects).\n---\n### Sequencing note\nRun **Proposal 1 Tuesday**, **Proposal 2 Thursday**. Different audiences (zero overlap: 30-60 day vs. 13-24 month), so no fatigue risk, and both move away from the hard-sell subject lines that drove recent opens to ~0.5%.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
-      }
-    ],
-    "decisions": {
-      "email_2026-11-03_c1": {
-        "decision": "pending"
-      },
-      "email_2026-11-03_c2": {
-        "decision": "pending"
-      }
-    },
-    "last_brief_sent": "2026-11-03T11:58:14.200Z"
+    "date": "2026-11-04",
+    "items": [],
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
