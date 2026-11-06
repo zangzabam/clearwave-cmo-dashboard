@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T18:00:00.534Z",
+  "generated_at": "2026-11-06T00:00:00.540Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-11-05",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
@@ -357,8 +357,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-11-05",
-      "projected_full_year": 757700.6059870549,
+      "through": "2026-11-06",
+      "projected_full_year": 755256.4104838709,
       "prior_year_same_period": 308420.58,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -3300,30 +3300,9 @@
     }
   },
   "approvals": {
-    "date": "2026-11-05",
-    "items": [
-      {
-        "id": "email_2026-11-05_c1",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install)",
-        "preview": "**Audience:** Referral push candidates, 30 members\n### Subject line (+ alternates)\n- **Primary (specific):** The $500 question we almost forgot to ask you\n- **Alt (curiosity):** Who comes to mind?\n- **Alt (pain):** Your neighbor's water is probably worse than yours was\n- **Alt (authority):** We built the referral program our clients asked for\n- **Alt (specific):** $500 per neighbor. Here is how it works.\n### Preview text\nA quick thank you, and a simple way to earn $500 for the people you already talk to.\n### Email body\nHi [First Name],\nIt's been about a month since we installed your ClearWave system, and I wanted to check in. No sales pitch here. Just a thank you, and one simple thing.\nWhen people make a change to their water, they tend to notice. If a neighbor, friend, or family member ever mentions theirs, you can point them our way.\nHere is how we say thank you:\n- Someone you refer books a free water assessment but doesn't move forward: **$50 gift card**, on us.\n- They become a client: **$500 cash.** (It goes up from there. $750 once you hit six referrals in a year, $1,000 at ten.)\nNo limit on how many people you help. Just reply to this email with a name, or forward it along and tell them to mention you.\nThanks for trusting us with your home.\nJustin\nCEO / ClearWave\n### Send timing\n**Tuesday, 10:00 AM ET.** Mid-morning midweek, when personal/reflective emails get read.\n### Expected performance\n- **Open: 45-50%.** Above your 42.3% baseline. Small warm list, personal subject, recent positive install experience.\n- **Click/reply: 3-6%.** Far above your 0.28% click avg, because the action is \"reply with a name,\" not a link click. Your historical click numbers are depressed by course/discount blasts to the full 3,666; this is a tight, relevant 30.\n- **Conversion: 1-3 booked consults** across the segment over 30-45 days. Even one closed referral returns $500 against near-zero send cost.\n### Source justification\nDraws on **Jobber Lifecycle Triggers (referral push candidates, 30-60 days post-install, satisfied)** and the **Referral Bonus Structure** (exact $50 / $500 / $750 / $1,000 tiers). Complies with HARD RULE #3 (referrals, not reviews) and #3a (exact phrase \"free water assessment\"). No legacy names printed (RULE #2 tenure line used instead).\n---"
-      },
-      {
-        "id": "email_2026-11-05_c2",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Concierge Upsell (13-24 Months Post-Install)",
-        "preview": "**Audience:** Concierge upsell candidates, 100 members\n### Subject line (+ alternates)\n- **Primary (curiosity):** The question we get at the 18 month mark\n- **Alt (specific):** Is $99 a month worth it for you? Let's do the math.\n- **Alt (pain):** Hate tracking when your filters need swapping?\n- **Alt (authority):** What your year-one service covered, and what comes next\n- **Alt (specific):** Annual service, filter swaps, priority support: one number\n### Preview text\nNo pressure. Just the honest math on whether Concierge makes sense for your home.\n### Email body\nHi [First Name],\nIt's been a little over a year since we installed your water system, which means you've had your first annual service and you know how we work.\nAround this point, we get one question a lot: \"Is this Concierge thing actually worth it for me?\"\nFair question. Here is the honest math.\nConcierge is **$99/month**, and it covers:\n- Your annual service\n- Filter swaps (no tracking dates, no guessing)\n- Priority phone support\n- Parts coverage on your standard install components\nIf you'd rather handle service as you go, that's completely fine. This isn't for everyone. But if you'd rather not think about any of it again, this is the set-it-and-forget-it option.\nWant me to run the numbers for your specific setup? Just reply and I'll send you a straight answer.\nJustin\nCEO / ClearWave\n### Send timing\n**Thursday, 11:00 AM ET.** Separated from the Tuesday referral send so the two don't compete; late-week midmorning works for considered-decision emails.\n### Expected performance\n- **Open: 40-46%.** Around baseline. Curiosity subject plus established trust (all recipients past year-1 service).\n- **Click/reply: 2-4%.** Well above the 0.28% avg because the CTA is a low-friction reply (\"run my numbers\") rather than a hard checkout.\n- **Conversion: 2-5 Concierge signups** over the follow-up window. At $99/mo recurring, even 3 signups is ~$3,500/yr in new recurring revenue.\n### Source justification\nDraws on **Concierge Upsell Context** ($99/mo, inclusions, \"is this worth it for me\" framing, non-pushy tone) and the pre-filtered **Concierge upsell candidates (13-24 months)** list. Respects HARD RULE #1 (no Concierge before 12 months; list is already filtered to 13+). Uses the tenure line per RULE #2 (legacy names like \"FerroMax,\" \"Reionator Pro Ultra,\" and \"(not specified)\" never printed; the \"(not specified)\" entries would read \"your water system\" / \"your ClearWave system\" on merge).\n---\n**One flag for you:** Several entries in these lists have `completedAt` dates in the **future** (e.g., referral candidates dated Sept 2026, Concierge candidate \"John Hutcheson\" at 2025-06-30 but others fine). If today's date is before those installs, the referral segment may be mis-tagged. Worth a quick check in Jobber before sending so we don't tell someone it's \"been about a month\" when their install hasn't happened yet.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
-      }
-    ],
-    "decisions": {
-      "email_2026-11-05_c1": {
-        "decision": "pending"
-      },
-      "email_2026-11-05_c2": {
-        "decision": "pending"
-      }
-    },
-    "last_brief_sent": "2026-11-05T11:56:15.959Z"
+    "date": "2026-11-06",
+    "items": [],
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
