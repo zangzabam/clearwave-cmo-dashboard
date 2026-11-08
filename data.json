@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T01:53:46.988Z",
+  "generated_at": "2026-11-08T11:52:19.616Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "—",
-        "status": "Watch"
+        "last_run": "2026-11-08",
+        "status": "Good"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-11-07",
+        "last_run": "2026-11-08",
         "status": "Good"
       },
       {
@@ -3301,8 +3301,29 @@
   },
   "approvals": {
     "date": "2026-11-08",
-    "items": [],
-    "decisions": {}
+    "items": [
+      {
+        "id": "email_2026-11-08_c1",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install Clients)",
+        "preview": "**Why this wins:** These clients are freshly satisfied, past install, well under the 12-month Concierge floor (compliant), and the referral bonus is concrete money. Highest-trust window with zero rule conflicts.\n**1. Campaign name + audience size**\nReferral Push: \"The Thing We Never Ask For\". 30 recipients\n**2. Subject line (60 char max) + 4 alternates**\n- Primary (curiosity): `The one thing we almost never ask you for`\n- Alt A (specific): `$500 for every neighbor you send our way`\n- Alt B (pain): `Know someone stuck with bad water?`\n- Alt C (authority): `Our best clients come from people like you`\n- Alt D (specific): `Refer a neighbor, earn $500 (here's how it works)`\n**3. Preview text (90 char max)**\n`No review ask, no catch. Just the referral program our clients keep asking about.`\n**4. Email body draft**\nHi [First Name],\nIt's been about a month since we installed your water system, and if the water has been doing exactly what it should (quietly, in the background), that's the goal.\nQuick one. We don't run ads the way most companies do. The best clients we get come from people who already trust us. So here's how our referral program works:\n- A neighbor you refer books a consult but doesn't move forward: you get a $50 gift card.\n- They become a client: you get $500 cash. Referrals six through nine in a year are $750 each, and ten or more are $1,000 each.\nAll they need is a free water assessment to get started. Send me their name, or send them my way directly.\nNo pressure either way. Just wanted you to know the door is open.\nJustin\nCEO / ClearWave\n**5. Send timing**\nTuesday, 10:00 AM ET (post-morning-inbox-clear, pre-lunch).\n**6. Expected performance**\n- Open: ~45-50% (above your 42.3% baseline; small, warm, recently-engaged segment, non-salesy curiosity subject).\n- Click: low relevance since the ask is \"reply with a name,\" not click. Expect 1-3% click, but **replies are the real KPI.**\n- Conversion: 2-4 referral consults booked across 30 recipients is realistic given the trust window and cash incentive.\n**7. Source justification**\nDraws from Jobber **Referral push candidates (30-60 days post-install, satisfied)** trigger. Uses the exact REFERRAL BONUS STRUCTURE and the mandated \"free water assessment\" phrase (Rule 3a). No review ask (Rule 3). Blanket tenure line used because all five sampled systems are legacy/unspecified names (Rule 2).\n---"
+      },
+      {
+        "id": "email_2026-11-08_c2",
+        "type": "email_proposal",
+        "title": "Email Campaign · : Concierge Upsell (13-24 Months, Not on Concierge)",
+        "preview": "**Why this wins:** 100 recipients, all past their year-1 service (so trust is established and the 12-month floor is cleared), and this is a recurring-revenue play ($99/mo). The \"is it worth it for me\" framing matches the context note and avoids the pushy tone your dead recent campaigns (\"Discount Ends Today,\" \"quote dropped 20 percent\") suffered from.\n**1. Campaign name + audience size**\nConcierge: \"The Year 1.5 Question\". 100 recipients\n**2. Subject line (60 char max) + 4 alternates**\n- Primary (curiosity): `The question we get asked at month 18`\n- Alt A (specific): `Is Concierge actually worth it? Here's the math`\n- Alt B (authority): `What your annual service looks like from here`\n- Alt C (pain): `Tired of tracking your own filter swaps?`\n- Alt D (specific): `$99/mo: what it does and doesn't cover`\n**3. Preview text (90 char max)**\n`No upsell theatrics. Just the honest math on whether Concierge makes sense for you.`\n**4. Email body draft**\nHi [First Name],\nIt's been a while since we installed your ClearWave system, and you've already been through your first annual service with us. So you know how we work.\nAround this point, we get one question a lot: \"Is this Concierge thing actually worth it for me?\" Fair question. Here's the honest math.\nConcierge is $99 a month. It covers:\n- Your annual service\n- Filter swaps\n- Priority phone support\n- Parts coverage on your standard install components\nIf you like handling maintenance yourself and don't mind tracking swap dates, pay-as-you-go may be the better fit, and that's a completely valid answer. Concierge makes the most sense if you'd rather never think about it and want everything handled on a schedule.\nWant me to run your specific numbers? Reply and I'll lay it out, no pressure.\nJustin\nCEO / ClearWave\n**5. Send timing**\nThursday, 11:00 AM ET (spacing it 2 days behind Proposal 1 so the two don't compete in the same inbox-day).\n**6. Expected performance**\n- Open: ~43-47% (at or slightly above baseline; these are engaged, serviced clients and the subject is low-threat curiosity, not a discount scream).\n- Click: low by design (reply-driven), but expect 2-5% engagement since the \"run my numbers\" CTA is a reply.\n- Conversion: even a 3-5% opt-in on 100 recipients = 3-5 new $99/mo plans = ~$3,600-$6,000 annual recurring. Strong ROI.\n**7. Source justification**\nDraws from the **Concierge upsell candidates (13-24 months, not on Concierge)** Jobber trigger and the CONCIERGE UPSELL CONTEXT block (the \"worth it for me\" framing, the $99/mo coverage list, the non-pushy tone). Honors the 12-month floor (Rule 1) since the list is pre-filtered. Uses \"your ClearWave system\" for unspecified entries and the blanket tenure line for legacy names (Rule 2).\n---\n**One note for your tracking:** your recent campaigns show open rates of 0.4-0.5%, which is radically below your stated 42.3% average. If that isn't a data artifact, something is broken (deliverability, bot-filtering, or a reporting pull error) and both proposals above will underperform regardless of copy quality. Worth having someone check sender reputation before Tuesday's send.\nWant me to draft the 1,000-contact cold lead re-engagement as a third option, or hold it until deliverability is confirmed?\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
+      }
+    ],
+    "decisions": {
+      "email_2026-11-08_c1": {
+        "decision": "pending"
+      },
+      "email_2026-11-08_c2": {
+        "decision": "pending"
+      }
+    },
+    "last_brief_sent": "2026-11-08T11:52:07.989Z"
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
