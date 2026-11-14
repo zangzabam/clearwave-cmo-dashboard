@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T00:00:00.423Z",
+  "generated_at": "2026-11-14T12:12:14.565Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -82,7 +82,7 @@
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-11-13",
+        "last_run": "2026-11-14",
         "status": "Good"
       },
       {
