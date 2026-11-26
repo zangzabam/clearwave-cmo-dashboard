@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T18:00:00.640Z",
+  "generated_at": "2026-11-26T00:00:01.347Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -23,7 +23,7 @@
       {
         "name": "Daily Water Minute",
         "last_run": "2026-11-24",
-        "status": "Good"
+        "status": "Watch"
       },
       {
         "name": "Investor Metrics",
@@ -77,8 +77,8 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-11-25",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
@@ -357,8 +357,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-11-25",
-      "projected_full_year": 711639.7788753798,
+      "through": "2026-11-26",
+      "projected_full_year": 709483.2946969696,
       "prior_year_same_period": 308420.58,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -3300,30 +3300,9 @@
     }
   },
   "approvals": {
-    "date": "2026-11-25",
-    "items": [
-      {
-        "id": "email_2026-11-25_c1",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Referral Push (30-60 Day Post-Install Clients)",
-        "preview": "**Why this wins:** These 30 clients just got their systems and are in the honeymoon window. No HARD RULE conflicts (all well past nothing, none near Concierge territory), referrals are explicitly encouraged, and the water tastes new to them right now. Highest intent-to-advocate moment in the lifecycle.\n### 1. Campaign + Audience\n**Referral Reward: 30-60 Day Satisfied Clients**. 30 members\n### 2. Subject Lines (60 char max)\n- **Primary:** `The water's in. Here's how it pays you back.`\n- Alt (curiosity): `A quick question about your neighbors`\n- Alt (pain): `Know someone stuck with bad water?`\n- Alt (authority): `Our clients send us their friends. Here's why.`\n- Alt (specific): `$500 for the first referral you send us`\n### 3. Preview Text (90 char max)\n`Your system's dialed in. If someone you know needs the same, it's worth real money.`\n### 4. Email Body\nHi [First Name],\nIt's been about a month since we installed your ClearWave system, and by now the difference in your water has probably stopped being a novelty and started being normal. That's exactly how it should feel.\nHere's the thing most people don't know: the folks who love their water the most usually know someone else fighting the same problem. If that's you, we make it worth your while.\nSend us a referral. If they book a free water assessment but don't move forward, you get a **$50 gift card**. If they become a client, you get **$500 cash**. And it climbs from there: referrals 6 through 9 in a calendar year pay **$750**, and 10 or more pay **$1,000** each.\nNo limit, no catch. Just reply to this email with a name and the best way to reach them, and we'll take it from there.\nThanks for trusting us with your home.\nJustin\nCEO / ClearWave\n### 5. Send Timing\n**Tuesday, 10:00 AM ET** (mid-morning, mid-week, strongest open window for your 42% baseline list).\n### 6. Expected Performance\n- **Open: 44-48%** (small, recently-engaged, warm segment beats your 42.3% list average; these are not the dead contacts dragging down recent 0.4% campaigns).\n- **Click/Reply: 3-6%**. Your historical click floor is near-zero, but those were sent to the full 3,738-person cold list with weak subjects (\"$1,300 referral reward\" buried the cash and used a dash). A 30-person warm segment with a reply-based CTA (not a click) should produce 1-2 actual referral conversations.\n- **Conversion: 1-3 booked consults** across the segment.\n### 7. Source Justification\nDraws from **Referral Push candidates (30-60 days post-install, satisfied)** Jobber trigger. Uses the exact REFERRAL BONUS STRUCTURE ($50 / $500 / $750 / $1,000). Note: every client in this sample is \"(not specified)\" or a current/legacy name, so I used the blanket tenure line (\"about a month since we installed your ClearWave system\") per HARD RULE #2.\n---"
-      },
-      {
-        "id": "email_2026-11-25_c2",
-        "type": "email_proposal",
-        "title": "Email Campaign · : Cold Lead Re-Engagement (New Value Angle)",
-        "preview": "**Why this wins:** 1,000 contacts sitting idle is your single biggest untapped volume. These never reached quote stage, so there's no sunk cost and no \"still interested?\" fatigue. A fresh value hook resets the relationship and the free water assessment is a low-friction single ask.\n### 1. Campaign + Audience\n**Cold Lead Reset: Free Water Assessment**. 1,000 members\n### 2. Subject Lines (60 char max)\n- **Primary:** `What's actually in your water this year?`\n- Alt (curiosity): `We never finished our conversation`\n- Alt (pain): `The stuff your tap won't tell you`\n- Alt (authority): `A water assessment, no strings`\n- Alt (specific): `15 minutes. Your water. Zero cost.`\n### 3. Preview Text (90 char max)\n`It's been a while. Here's one genuinely useful thing, no pitch required.`\n### 4. Email Body\nHi [First Name],\nA while back you reached out to learn about your water, and then life happened (on both our ends). No hard feelings. I wanted to reconnect with something actually worth your time.\nWater quality shifts: source conditions change, pipes age, and what was fine two years ago may not be fine now. Most people never actually know what's coming out of their tap. That's a solvable problem.\nSo here's the one and only thing I'm offering: a **free water assessment**. We come out, test what's really in your water, and give you the straight answers. No pressure to buy anything. If everything looks great, we'll tell you that too.\nWant it? Just reply \"yes\" and your city, and we'll set it up.\nGlad to reconnect.\nJustin\nCEO / ClearWave\n### 5. Send Timing\n**Thursday, 11:00 AM ET** (separated from Proposal 1 by two days so the warm segment and cold segment don't collide; Thursday late-morning performs well for re-engagement).\n### 6. Expected Performance\n- **Open: 8-14%**. Far below your list average because these are 60+ day disengaged contacts, but realistic for a cold re-engagement. The curiosity/value subject should beat a generic \"still interested?\"\n- **Click/Reply: 0.5-1.5%**. Against 1,000 contacts, that's 5-15 replies.\n- **Conversion: 3-8 booked assessments.** Even a low rate on 1,000 idle leads is pure found revenue.\n- **Bonus:** this cleans your list. Non-openers can be flagged for a final sunset, protecting the 42.3% sender reputation.\n### 7. Source Justification\nDraws from **COLD LEAD RE-ENGAGEMENT** segment. Follows all three required moves: (1) leads with new value (water-changes-over-time angle, not \"still interested?\"), (2) resets the relationship, (3) offers the **free water assessment** as the ONE next step (exact offer phrase per RULE #3a). Kept distinct from the existing 30-day quote follow-up sequence.\n---\n**Recommended priority if you only run one:** Proposal 1 (Referral). It targets your warmest, highest-intent audience with a zero-cost-to-acquire channel and the cleanest conversion path.\n\n---\n\n*Generated by the Email Sub-Agent · idea sourcing per IDEA_SOURCING.md · sign-off rule: \"Justin / CEO / ClearWave\" two-line, no em dash prefix.*"
-      }
-    ],
-    "decisions": {
-      "email_2026-11-25_c1": {
-        "decision": "pending"
-      },
-      "email_2026-11-25_c2": {
-        "decision": "pending"
-      }
-    },
-    "last_brief_sent": "2026-11-25T11:30:04.897Z"
+    "date": "2026-11-26",
+    "items": [],
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
