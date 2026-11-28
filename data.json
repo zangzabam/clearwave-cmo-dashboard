@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T23:16:15.179Z",
+  "generated_at": "2026-11-28T01:38:10.185Z",
   "overview": {
     "metrics": {
       "ltgp_cac": "3.5x",
@@ -77,12 +77,12 @@
       },
       {
         "name": "Morning Brief",
-        "last_run": "2026-11-27",
-        "status": "Good"
+        "last_run": "—",
+        "status": "Watch"
       },
       {
         "name": "Approval Watcher",
-        "last_run": "2026-11-27",
+        "last_run": "2026-11-28",
         "status": "Good"
       },
       {
@@ -357,8 +357,8 @@
           "invoices": 7
         }
       ],
-      "through": "2026-11-27",
-      "projected_full_year": 707339.840634441,
+      "through": "2026-11-28",
+      "projected_full_year": 705209.298945783,
       "prior_year_same_period": 308420.58,
       "prior_year_same_period_note": "prior-year data starts 2025-07",
       "milestone_1m_pct": 64.14506499999999
@@ -3300,10 +3300,9 @@
     }
   },
   "approvals": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "items": [],
-    "decisions": {},
-    "last_brief_sent": "2026-11-27T12:19:06.988Z"
+    "decisions": {}
   },
   "approval_github": {
     "repo": "zangzabam/clearwave-approvals-state",
